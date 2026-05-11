@@ -1,0 +1,1580 @@
+window.WORD_SNAP_WORDS = [
+  {
+    "id": 1,
+    "en": "ability",
+    "pos": "n.",
+    "zh": "能力",
+    "notes": "have the ability to do sth. (考查不定式作定语)",
+    "frequency": 21,
+    "sourceRow": 2
+  },
+  {
+    "id": 2,
+    "en": "absent",
+    "pos": "adj.",
+    "zh": "缺席的",
+    "notes": "be absent from; absence (n.)",
+    "frequency": 8,
+    "sourceRow": 3
+  },
+  {
+    "id": 3,
+    "en": "accept",
+    "pos": "v.",
+    "zh": "接受",
+    "notes": "辨析: receive(客观收到) vs accept(主观接受)",
+    "frequency": 15,
+    "sourceRow": 4
+  },
+  {
+    "id": 4,
+    "en": "achieve",
+    "pos": "v.",
+    "zh": "达到，实现",
+    "notes": "achieve one's dream/goal; achievement (n.)",
+    "frequency": 28,
+    "sourceRow": 5
+  },
+  {
+    "id": 5,
+    "en": "active",
+    "pos": "adj.",
+    "zh": "活跃的",
+    "notes": "take an active part in; activity (n.); actively (adv.)",
+    "frequency": 17,
+    "sourceRow": 6
+  },
+  {
+    "id": 6,
+    "en": "advantage",
+    "pos": "n.",
+    "zh": "优势，优点",
+    "notes": "take advantage of; 反义词: disadvantage",
+    "frequency": 12,
+    "sourceRow": 7
+  },
+  {
+    "id": 7,
+    "en": "afford",
+    "pos": "v.",
+    "zh": "承担得起",
+    "notes": "can't afford to do sth. / afford sth.",
+    "frequency": 16,
+    "sourceRow": 8
+  },
+  {
+    "id": 8,
+    "en": "allow",
+    "pos": "v.",
+    "zh": "允许",
+    "notes": "allow sb. to do sth. / allow doing sth.",
+    "frequency": 32,
+    "sourceRow": 9
+  },
+  {
+    "id": 9,
+    "en": "amazing",
+    "pos": "adj.",
+    "zh": "令人惊叹的",
+    "notes": "辨析: amazed (形容人) vs amazing (形容物)",
+    "frequency": 19,
+    "sourceRow": 10
+  },
+  {
+    "id": 10,
+    "en": "avoid",
+    "pos": "v.",
+    "zh": "避免",
+    "notes": "avoid doing sth. (必考非谓语搭配)",
+    "frequency": 25,
+    "sourceRow": 11
+  },
+  {
+    "id": 11,
+    "en": "background",
+    "pos": "n.",
+    "zh": "背景",
+    "notes": "完形填空高频词，指人或事件的背景",
+    "frequency": 9,
+    "sourceRow": 12
+  },
+  {
+    "id": 12,
+    "en": "balance",
+    "pos": "n./v.",
+    "zh": "平衡",
+    "notes": "keep a balance between...",
+    "frequency": 7,
+    "sourceRow": 13
+  },
+  {
+    "id": 13,
+    "en": "basic",
+    "pos": "adj.",
+    "zh": "基础的",
+    "notes": "base (n./v.); be based on; basically (adv.)",
+    "frequency": 18,
+    "sourceRow": 14
+  },
+  {
+    "id": 14,
+    "en": "beat",
+    "pos": "v.",
+    "zh": "击败，敲打",
+    "notes": "辨析: beat sb./team vs win a game/prize; 过去式beat",
+    "frequency": 14,
+    "sourceRow": 15
+  },
+  {
+    "id": 15,
+    "en": "blind",
+    "pos": "adj.",
+    "zh": "盲的",
+    "notes": "the blind (盲人，作复数主语); blindly (adv.)",
+    "frequency": 6,
+    "sourceRow": 16
+  },
+  {
+    "id": 16,
+    "en": "blood",
+    "pos": "n.",
+    "zh": "血",
+    "notes": "bleed (v.) 过去式/过去分词 bled",
+    "frequency": 8,
+    "sourceRow": 17
+  },
+  {
+    "id": 17,
+    "en": "breath",
+    "pos": "n.",
+    "zh": "呼吸",
+    "notes": "breathe (v.); hold one's breath; out of breath",
+    "frequency": 15,
+    "sourceRow": 18
+  },
+  {
+    "id": 18,
+    "en": "cancel",
+    "pos": "v.",
+    "zh": "取消",
+    "notes": "cancel the meeting/flight",
+    "frequency": 7,
+    "sourceRow": 19
+  },
+  {
+    "id": 19,
+    "en": "cause",
+    "pos": "v./n.",
+    "zh": "引起；原因",
+    "notes": "cause sb. to do sth.; the cause of...",
+    "frequency": 22,
+    "sourceRow": 20
+  },
+  {
+    "id": 20,
+    "en": "celebrate",
+    "pos": "v.",
+    "zh": "庆祝",
+    "notes": "celebration (n.); hold a celebration",
+    "frequency": 16,
+    "sourceRow": 21
+  },
+  {
+    "id": 21,
+    "en": "certain",
+    "pos": "adj.",
+    "zh": "确定的",
+    "notes": "make certain; certainly (adv.)",
+    "frequency": 14,
+    "sourceRow": 22
+  },
+  {
+    "id": 22,
+    "en": "choice",
+    "pos": "n.",
+    "zh": "选择",
+    "notes": "make a choice; choose (v.) 过去式 chose",
+    "frequency": 35,
+    "sourceRow": 23
+  },
+  {
+    "id": 23,
+    "en": "clear",
+    "pos": "adj./v.",
+    "zh": "清楚的；清除",
+    "notes": "clearly (adv.); clear up (清理)",
+    "frequency": 19,
+    "sourceRow": 24
+  },
+  {
+    "id": 24,
+    "en": "communicate",
+    "pos": "v.",
+    "zh": "交流",
+    "notes": "communicate with sb.; communication (n.)",
+    "frequency": 27,
+    "sourceRow": 25
+  },
+  {
+    "id": 25,
+    "en": "consider",
+    "pos": "v.",
+    "zh": "考虑，认为",
+    "notes": "consider doing sth.; consider sb. as/to be",
+    "frequency": 24,
+    "sourceRow": 26
+  },
+  {
+    "id": 26,
+    "en": "continue",
+    "pos": "v.",
+    "zh": "继续",
+    "notes": "continue to do / continue doing",
+    "frequency": 18,
+    "sourceRow": 27
+  },
+  {
+    "id": 27,
+    "en": "courage",
+    "pos": "n.",
+    "zh": "勇气",
+    "notes": "encourage (v.) encourage sb. to do sth.",
+    "frequency": 15,
+    "sourceRow": 28
+  },
+  {
+    "id": 28,
+    "en": "create",
+    "pos": "v.",
+    "zh": "创造",
+    "notes": "creative (adj.); creation (n.); creator (n.)",
+    "frequency": 16,
+    "sourceRow": 29
+  },
+  {
+    "id": 29,
+    "en": "custom",
+    "pos": "n.",
+    "zh": "风俗，习惯",
+    "notes": "区分: custom(社会风俗) vs habit(个人习惯)",
+    "frequency": 11,
+    "sourceRow": 30
+  },
+  {
+    "id": 30,
+    "en": "dead",
+    "pos": "adj.",
+    "zh": "死的",
+    "notes": "die (v.) - died - dying; death (n.)",
+    "frequency": 31,
+    "sourceRow": 31
+  },
+  {
+    "id": 31,
+    "en": "deal",
+    "pos": "v.",
+    "zh": "处理",
+    "notes": "deal with (搭配how); 过去式 dealt",
+    "frequency": 18,
+    "sourceRow": 32
+  },
+  {
+    "id": 32,
+    "en": "decision",
+    "pos": "n.",
+    "zh": "决定",
+    "notes": "make a decision to do sth.; decide (v.)",
+    "frequency": 29,
+    "sourceRow": 33
+  },
+  {
+    "id": 33,
+    "en": "depend",
+    "pos": "v.",
+    "zh": "依靠，取决于",
+    "notes": "depend on; independent (adj.)",
+    "frequency": 21,
+    "sourceRow": 34
+  },
+  {
+    "id": 34,
+    "en": "describe",
+    "pos": "v.",
+    "zh": "描述",
+    "notes": "description (n.)",
+    "frequency": 14,
+    "sourceRow": 35
+  },
+  {
+    "id": 35,
+    "en": "develop",
+    "pos": "v.",
+    "zh": "发展，培养",
+    "notes": "development (n.); developing / developed",
+    "frequency": 36,
+    "sourceRow": 36
+  },
+  {
+    "id": 36,
+    "en": "difference",
+    "pos": "n.",
+    "zh": "不同",
+    "notes": "make a difference; different (adj.); differently (adv.)",
+    "frequency": 28,
+    "sourceRow": 37
+  },
+  {
+    "id": 37,
+    "en": "direct",
+    "pos": "adj./v.",
+    "zh": "直接的；指导",
+    "notes": "directly (adv.); direction (n.); director (n.)",
+    "frequency": 17,
+    "sourceRow": 38
+  },
+  {
+    "id": 38,
+    "en": "discover",
+    "pos": "v.",
+    "zh": "发现",
+    "notes": "discovery (n.)",
+    "frequency": 16,
+    "sourceRow": 39
+  },
+  {
+    "id": 39,
+    "en": "divide",
+    "pos": "v.",
+    "zh": "分割，划分",
+    "notes": "divide... into...",
+    "frequency": 9,
+    "sourceRow": 40
+  },
+  {
+    "id": 40,
+    "en": "doubt",
+    "pos": "n./v.",
+    "zh": "怀疑",
+    "notes": "without doubt; I doubt if/whether...",
+    "frequency": 10,
+    "sourceRow": 41
+  },
+  {
+    "id": 41,
+    "en": "education",
+    "pos": "n.",
+    "zh": "教育",
+    "notes": "educational (adj.); educate (v.)",
+    "frequency": 23,
+    "sourceRow": 42
+  },
+  {
+    "id": 42,
+    "en": "effort",
+    "pos": "n.",
+    "zh": "努力",
+    "notes": "make an effort / make efforts to do sth.",
+    "frequency": 19,
+    "sourceRow": 43
+  },
+  {
+    "id": 43,
+    "en": "empty",
+    "pos": "adj./v.",
+    "zh": "空的；倒空",
+    "notes": "完形高频词，反义词: full",
+    "frequency": 11,
+    "sourceRow": 44
+  },
+  {
+    "id": 44,
+    "en": "encourage",
+    "pos": "v.",
+    "zh": "鼓励",
+    "notes": "encourage sb. to do sth.; 主语为single时加s",
+    "frequency": 26,
+    "sourceRow": 45
+  },
+  {
+    "id": 45,
+    "en": "energy",
+    "pos": "n.",
+    "zh": "能量，精力",
+    "notes": "energetic (adj.)",
+    "frequency": 18,
+    "sourceRow": 46
+  },
+  {
+    "id": 46,
+    "en": "environment",
+    "pos": "n.",
+    "zh": "环境",
+    "notes": "environmental (adj.); 拼写常考词",
+    "frequency": 42,
+    "sourceRow": 47
+  },
+  {
+    "id": 47,
+    "en": "especially",
+    "pos": "adv.",
+    "zh": "尤其",
+    "notes": "special (adj.)",
+    "frequency": 20,
+    "sourceRow": 48
+  },
+  {
+    "id": 48,
+    "en": "event",
+    "pos": "n.",
+    "zh": "事件，比赛项目",
+    "notes": "完形及阅读理解常考词",
+    "frequency": 14,
+    "sourceRow": 49
+  },
+  {
+    "id": 49,
+    "en": "exact",
+    "pos": "adj.",
+    "zh": "准确的",
+    "notes": "exactly (adv.)",
+    "frequency": 17,
+    "sourceRow": 50
+  },
+  {
+    "id": 50,
+    "en": "expect",
+    "pos": "v.",
+    "zh": "期待，预料",
+    "notes": "expect sb. to do sth.; expectation (n.)",
+    "frequency": 19,
+    "sourceRow": 51
+  },
+  {
+    "id": 51,
+    "en": "experience",
+    "pos": "n./v.",
+    "zh": "经验/经历",
+    "notes": "不可数(经验) / 可数(经历); experienced (adj.)",
+    "frequency": 38,
+    "sourceRow": 52
+  },
+  {
+    "id": 52,
+    "en": "explain",
+    "pos": "v.",
+    "zh": "解释",
+    "notes": "explain sth. to sb.; explanation (n.)",
+    "frequency": 16,
+    "sourceRow": 53
+  },
+  {
+    "id": 53,
+    "en": "express",
+    "pos": "v.",
+    "zh": "表达",
+    "notes": "expression (n.)",
+    "frequency": 12,
+    "sourceRow": 54
+  },
+  {
+    "id": 54,
+    "en": "fail",
+    "pos": "v.",
+    "zh": "失败",
+    "notes": "fail to do sth.; failure (n.)",
+    "frequency": 18,
+    "sourceRow": 55
+  },
+  {
+    "id": 55,
+    "en": "familiar",
+    "pos": "adj.",
+    "zh": "熟悉的",
+    "notes": "be familiar with / be familiar to",
+    "frequency": 15,
+    "sourceRow": 56
+  },
+  {
+    "id": 56,
+    "en": "force",
+    "pos": "v./n.",
+    "zh": "强迫；力量",
+    "notes": "force sb. to do sth.",
+    "frequency": 8,
+    "sourceRow": 57
+  },
+  {
+    "id": 57,
+    "en": "foreign",
+    "pos": "adj.",
+    "zh": "外国的",
+    "notes": "foreigner (n.) 外国人",
+    "frequency": 16,
+    "sourceRow": 58
+  },
+  {
+    "id": 58,
+    "en": "freeze",
+    "pos": "v.",
+    "zh": "结冰，冻结",
+    "notes": "过去式: froze; 过去分词: frozen; freezing (adj.)",
+    "frequency": 7,
+    "sourceRow": 59
+  },
+  {
+    "id": 59,
+    "en": "general",
+    "pos": "adj.",
+    "zh": "普遍的，大体的",
+    "notes": "generally (adv.); in general",
+    "frequency": 9,
+    "sourceRow": 60
+  },
+  {
+    "id": 60,
+    "en": "guess",
+    "pos": "v./n.",
+    "zh": "猜测",
+    "notes": "guess what; 主语为single时动词加es",
+    "frequency": 22,
+    "sourceRow": 61
+  },
+  {
+    "id": 61,
+    "en": "habit",
+    "pos": "n.",
+    "zh": "习惯",
+    "notes": "form/get into a habit of doing sth.",
+    "frequency": 18,
+    "sourceRow": 62
+  },
+  {
+    "id": 62,
+    "en": "hang",
+    "pos": "v.",
+    "zh": "悬挂",
+    "notes": "hang out; 过去式: hung (悬挂) / hanged (绞死)",
+    "frequency": 8,
+    "sourceRow": 63
+  },
+  {
+    "id": 63,
+    "en": "health",
+    "pos": "n.",
+    "zh": "健康",
+    "notes": "healthy (adj.); unhealthy; healthily (adv.)",
+    "frequency": 35,
+    "sourceRow": 64
+  },
+  {
+    "id": 64,
+    "en": "hero",
+    "pos": "n.",
+    "zh": "英雄",
+    "notes": "复数形式加 -es (heroes)",
+    "frequency": 16,
+    "sourceRow": 65
+  },
+  {
+    "id": 65,
+    "en": "hide",
+    "pos": "v.",
+    "zh": "隐藏",
+    "notes": "过去式 hid, 过去分词 hidden",
+    "frequency": 14,
+    "sourceRow": 66
+  },
+  {
+    "id": 66,
+    "en": "honest",
+    "pos": "adj.",
+    "zh": "诚实的",
+    "notes": "to be honest; honestly (adv.); honesty (n.); 加 an",
+    "frequency": 17,
+    "sourceRow": 67
+  },
+  {
+    "id": 67,
+    "en": "imagine",
+    "pos": "v.",
+    "zh": "想象",
+    "notes": "imagine doing sth.; imagination (n.)",
+    "frequency": 15,
+    "sourceRow": 68
+  },
+  {
+    "id": 68,
+    "en": "improve",
+    "pos": "v.",
+    "zh": "改善，提高",
+    "notes": "improvement (n.)",
+    "frequency": 32,
+    "sourceRow": 69
+  },
+  {
+    "id": 69,
+    "en": "include",
+    "pos": "v.",
+    "zh": "包括",
+    "notes": "including (prep.); 主语为single时加s",
+    "frequency": 21,
+    "sourceRow": 70
+  },
+  {
+    "id": 70,
+    "en": "increase",
+    "pos": "v./n.",
+    "zh": "增加",
+    "notes": "increase to/by",
+    "frequency": 17,
+    "sourceRow": 71
+  },
+  {
+    "id": 71,
+    "en": "influence",
+    "pos": "n./v.",
+    "zh": "影响",
+    "notes": "have a great influence on... (书面表达高级替换)",
+    "frequency": 20,
+    "sourceRow": 72
+  },
+  {
+    "id": 72,
+    "en": "information",
+    "pos": "n.",
+    "zh": "信息",
+    "notes": "不可数名词，a piece of information",
+    "frequency": 45,
+    "sourceRow": 73
+  },
+  {
+    "id": 73,
+    "en": "insist",
+    "pos": "v.",
+    "zh": "坚持",
+    "notes": "insist on doing sth.",
+    "frequency": 9,
+    "sourceRow": 74
+  },
+  {
+    "id": 74,
+    "en": "introduce",
+    "pos": "v.",
+    "zh": "介绍",
+    "notes": "introduce sb. to sb.; introduction (n.)",
+    "frequency": 16,
+    "sourceRow": 75
+  },
+  {
+    "id": 75,
+    "en": "invent",
+    "pos": "v.",
+    "zh": "发明",
+    "notes": "invention (n.); inventor (n.)",
+    "frequency": 18,
+    "sourceRow": 76
+  },
+  {
+    "id": 76,
+    "en": "knowledge",
+    "pos": "n.",
+    "zh": "知识",
+    "notes": "不可数名词",
+    "frequency": 24,
+    "sourceRow": 77
+  },
+  {
+    "id": 77,
+    "en": "lack",
+    "pos": "n./v.",
+    "zh": "缺乏",
+    "notes": "a lack of... / lack sth.",
+    "frequency": 8,
+    "sourceRow": 78
+  },
+  {
+    "id": 78,
+    "en": "lead",
+    "pos": "v.",
+    "zh": "带领，导致",
+    "notes": "lead to (后接名词/doing); 过去式 led",
+    "frequency": 19,
+    "sourceRow": 79
+  },
+  {
+    "id": 79,
+    "en": "local",
+    "pos": "adj.",
+    "zh": "当地的",
+    "notes": "locally (adv.)",
+    "frequency": 22,
+    "sourceRow": 80
+  },
+  {
+    "id": 80,
+    "en": "manage",
+    "pos": "v.",
+    "zh": "管理，设法完成",
+    "notes": "manage to do sth.; manager (n.)",
+    "frequency": 15,
+    "sourceRow": 81
+  },
+  {
+    "id": 81,
+    "en": "match",
+    "pos": "n./v.",
+    "zh": "比赛；相配",
+    "notes": "watch a match; sth. matches sth.",
+    "frequency": 18,
+    "sourceRow": 82
+  },
+  {
+    "id": 82,
+    "en": "material",
+    "pos": "n.",
+    "zh": "材料",
+    "notes": "完形及阅读常见词",
+    "frequency": 11,
+    "sourceRow": 83
+  },
+  {
+    "id": 83,
+    "en": "medical",
+    "pos": "adj.",
+    "zh": "医学的",
+    "notes": "medicine (n.)",
+    "frequency": 10,
+    "sourceRow": 84
+  },
+  {
+    "id": 84,
+    "en": "memory",
+    "pos": "n.",
+    "zh": "记忆力",
+    "notes": "memorize (v.)",
+    "frequency": 17,
+    "sourceRow": 85
+  },
+  {
+    "id": 85,
+    "en": "mention",
+    "pos": "v.",
+    "zh": "提及",
+    "notes": "don't mention it; mention doing sth.",
+    "frequency": 15,
+    "sourceRow": 86
+  },
+  {
+    "id": 86,
+    "en": "method",
+    "pos": "n.",
+    "zh": "方法",
+    "notes": "with this method / in this way",
+    "frequency": 19,
+    "sourceRow": 87
+  },
+  {
+    "id": 87,
+    "en": "mind",
+    "pos": "n./v.",
+    "zh": "头脑；介意",
+    "notes": "mind doing sth.; make up one's mind to do",
+    "frequency": 27,
+    "sourceRow": 88
+  },
+  {
+    "id": 88,
+    "en": "mistake",
+    "pos": "n./v.",
+    "zh": "错误；弄错",
+    "notes": "make a mistake; mistake A for B; 过去式 mistook",
+    "frequency": 16,
+    "sourceRow": 89
+  },
+  {
+    "id": 89,
+    "en": "national",
+    "pos": "adj.",
+    "zh": "国家的",
+    "notes": "nation (n.); nationality (n.)",
+    "frequency": 18,
+    "sourceRow": 90
+  },
+  {
+    "id": 90,
+    "en": "natural",
+    "pos": "adj.",
+    "zh": "自然的",
+    "notes": "nature (n.); naturally (adv.)",
+    "frequency": 21,
+    "sourceRow": 91
+  },
+  {
+    "id": 91,
+    "en": "necessary",
+    "pos": "adj.",
+    "zh": "必要的",
+    "notes": "necessity (n.); it is necessary for sb. to do sth.",
+    "frequency": 33,
+    "sourceRow": 92
+  },
+  {
+    "id": 92,
+    "en": "notice",
+    "pos": "v./n.",
+    "zh": "注意到；通知",
+    "notes": "notice sb. doing/do sth.",
+    "frequency": 28,
+    "sourceRow": 93
+  },
+  {
+    "id": 93,
+    "en": "offer",
+    "pos": "v.",
+    "zh": "提供",
+    "notes": "offer sb. sth. / offer to do sth.",
+    "frequency": 21,
+    "sourceRow": 94
+  },
+  {
+    "id": 94,
+    "en": "operate",
+    "pos": "v.",
+    "zh": "操作，动手术",
+    "notes": "operation (n.)",
+    "frequency": 7,
+    "sourceRow": 95
+  },
+  {
+    "id": 95,
+    "en": "opposite",
+    "pos": "adj./prep.",
+    "zh": "对面的",
+    "notes": "on the opposite side of",
+    "frequency": 9,
+    "sourceRow": 96
+  },
+  {
+    "id": 96,
+    "en": "patient",
+    "pos": "adj./n.",
+    "zh": "耐心的；病人",
+    "notes": "naturally (adv.); patience (n.)",
+    "frequency": 17,
+    "sourceRow": 97
+  },
+  {
+    "id": 97,
+    "en": "peace",
+    "pos": "n.",
+    "zh": "和平，平静",
+    "notes": "peaceful (adj.); peacefully (adv.)",
+    "frequency": 16,
+    "sourceRow": 98
+  },
+  {
+    "id": 98,
+    "en": "perfect",
+    "pos": "adj.",
+    "zh": "完美的",
+    "notes": "perfectly (adv.)",
+    "frequency": 18,
+    "sourceRow": 99
+  },
+  {
+    "id": 99,
+    "en": "perform",
+    "pos": "v.",
+    "zh": "表演，表现",
+    "notes": "performance (n.); performer (n.)",
+    "frequency": 15,
+    "sourceRow": 100
+  },
+  {
+    "id": 100,
+    "en": "period",
+    "pos": "n.",
+    "zh": "时期，一段时间",
+    "notes": "a period of time",
+    "frequency": 11,
+    "sourceRow": 101
+  },
+  {
+    "id": 101,
+    "en": "pity",
+    "pos": "n./v.",
+    "zh": "遗憾，同情",
+    "notes": "What a pity!; take pity on",
+    "frequency": 14,
+    "sourceRow": 102
+  },
+  {
+    "id": 102,
+    "en": "polite",
+    "pos": "adj.",
+    "zh": "礼貌的",
+    "notes": "impolite; politely (adv.); politeness (n.)",
+    "frequency": 16,
+    "sourceRow": 103
+  },
+  {
+    "id": 103,
+    "en": "praise",
+    "pos": "v./n.",
+    "zh": "赞扬",
+    "notes": "praise sb. for doing sth.",
+    "frequency": 8,
+    "sourceRow": 104
+  },
+  {
+    "id": 104,
+    "en": "prefer",
+    "pos": "v.",
+    "zh": "更喜欢",
+    "notes": "prefer A to B; prefer doing to doing; 双写r加ed",
+    "frequency": 25,
+    "sourceRow": 105
+  },
+  {
+    "id": 105,
+    "en": "prevent",
+    "pos": "v.",
+    "zh": "阻止",
+    "notes": "prevent sb. (from) doing sth.",
+    "frequency": 19,
+    "sourceRow": 106
+  },
+  {
+    "id": 106,
+    "en": "pride",
+    "pos": "n.",
+    "zh": "骄傲",
+    "notes": "take pride in = be proud of",
+    "frequency": 22,
+    "sourceRow": 107
+  },
+  {
+    "id": 107,
+    "en": "process",
+    "pos": "n.",
+    "zh": "过程",
+    "notes": "the process of...",
+    "frequency": 10,
+    "sourceRow": 108
+  },
+  {
+    "id": 108,
+    "en": "progress",
+    "pos": "n./v.",
+    "zh": "进步",
+    "notes": "make progress; 不可数名词",
+    "frequency": 16,
+    "sourceRow": 109
+  },
+  {
+    "id": 109,
+    "en": "promise",
+    "pos": "v./n.",
+    "zh": "承诺",
+    "notes": "promise to do sth.",
+    "frequency": 15,
+    "sourceRow": 110
+  },
+  {
+    "id": 110,
+    "en": "protect",
+    "pos": "v.",
+    "zh": "保护",
+    "notes": "protect... from...; protection (n.)",
+    "frequency": 31,
+    "sourceRow": 111
+  },
+  {
+    "id": 111,
+    "en": "prove",
+    "pos": "v.",
+    "zh": "证明",
+    "notes": "prove (to be) + adj.",
+    "frequency": 12,
+    "sourceRow": 112
+  },
+  {
+    "id": 112,
+    "en": "provide",
+    "pos": "v.",
+    "zh": "提供",
+    "notes": "provide sth. for sb. / provide sb. with sth.",
+    "frequency": 29,
+    "sourceRow": 113
+  },
+  {
+    "id": 113,
+    "en": "purpose",
+    "pos": "n.",
+    "zh": "目的",
+    "notes": "on purpose (故意地); for the purpose of",
+    "frequency": 17,
+    "sourceRow": 114
+  },
+  {
+    "id": 114,
+    "en": "raise",
+    "pos": "v.",
+    "zh": "举起，筹集，饲养",
+    "notes": "raise money/pets; 规律规则变化",
+    "frequency": 16,
+    "sourceRow": 115
+  },
+  {
+    "id": 115,
+    "en": "reach",
+    "pos": "v.",
+    "zh": "到达，够到",
+    "notes": "辨析: reach (及物) vs arrive in/at vs get to",
+    "frequency": 19,
+    "sourceRow": 116
+  },
+  {
+    "id": 116,
+    "en": "realize",
+    "pos": "v.",
+    "zh": "意识到，实现",
+    "notes": "realize one's dream/mistake",
+    "frequency": 26,
+    "sourceRow": 117
+  },
+  {
+    "id": 117,
+    "en": "receive",
+    "pos": "v.",
+    "zh": "收到",
+    "notes": "拼写易错: e在i前面",
+    "frequency": 20,
+    "sourceRow": 118
+  },
+  {
+    "id": 118,
+    "en": "recognize",
+    "pos": "v.",
+    "zh": "认出，认可",
+    "notes": "recognize sb.",
+    "frequency": 11,
+    "sourceRow": 119
+  },
+  {
+    "id": 119,
+    "en": "record",
+    "pos": "n./v.",
+    "zh": "记录",
+    "notes": "keep a record; record the score",
+    "frequency": 15,
+    "sourceRow": 120
+  },
+  {
+    "id": 120,
+    "en": "refuse",
+    "pos": "v.",
+    "zh": "拒绝",
+    "notes": "refuse to do sth.",
+    "frequency": 17,
+    "sourceRow": 121
+  },
+  {
+    "id": 121,
+    "en": "regret",
+    "pos": "v./n.",
+    "zh": "后悔，遗憾",
+    "notes": "regret doing sth.; 双写t加ed",
+    "frequency": 14,
+    "sourceRow": 122
+  },
+  {
+    "id": 122,
+    "en": "relax",
+    "pos": "v.",
+    "zh": "放松",
+    "notes": "relaxing (修饰物) / relaxed (修饰人)",
+    "frequency": 19,
+    "sourceRow": 123
+  },
+  {
+    "id": 123,
+    "en": "remain",
+    "pos": "v.",
+    "zh": "保持，留下",
+    "notes": "remain + adj. (系动词用法)",
+    "frequency": 11,
+    "sourceRow": 124
+  },
+  {
+    "id": 124,
+    "en": "require",
+    "pos": "v.",
+    "zh": "要求",
+    "notes": "require doing / require sb. to do sth.; requirement",
+    "frequency": 28,
+    "sourceRow": 125
+  },
+  {
+    "id": 125,
+    "en": "research",
+    "pos": "n./v.",
+    "zh": "研究",
+    "notes": "do some research on...",
+    "frequency": 12,
+    "sourceRow": 126
+  },
+  {
+    "id": 126,
+    "en": "result",
+    "pos": "n.",
+    "zh": "结果",
+    "notes": "as a result; result in",
+    "frequency": 21,
+    "sourceRow": 127
+  },
+  {
+    "id": 127,
+    "en": "review",
+    "pos": "v./n.",
+    "zh": "复习，回顾",
+    "notes": "review the lessons",
+    "frequency": 9,
+    "sourceRow": 128
+  },
+  {
+    "id": 128,
+    "en": "risk",
+    "pos": "n./v.",
+    "zh": "风险，冒险",
+    "notes": "take a risk; risk doing sth.",
+    "frequency": 8,
+    "sourceRow": 129
+  },
+  {
+    "id": 129,
+    "en": "rule",
+    "pos": "n./v.",
+    "zh": "规则，统治",
+    "notes": "break/obey the rules",
+    "frequency": 18,
+    "sourceRow": 130
+  },
+  {
+    "id": 130,
+    "en": "satisfy",
+    "pos": "v.",
+    "zh": "使满意",
+    "notes": "satisfied (adj.); satisfying (adj.); satisfaction (n.)",
+    "frequency": 17,
+    "sourceRow": 131
+  },
+  {
+    "id": 131,
+    "en": "secret",
+    "pos": "n./adj.",
+    "zh": "秘密",
+    "notes": "keep a secret",
+    "frequency": 16,
+    "sourceRow": 132
+  },
+  {
+    "id": 132,
+    "en": "sense",
+    "pos": "n.",
+    "zh": "感觉，意义",
+    "notes": "make sense; a sense of humor",
+    "frequency": 18,
+    "sourceRow": 133
+  },
+  {
+    "id": 133,
+    "en": "separate",
+    "pos": "v./adj.",
+    "zh": "分开",
+    "notes": "separate... from...; separately (adv.)",
+    "frequency": 16,
+    "sourceRow": 134
+  },
+  {
+    "id": 134,
+    "en": "shape",
+    "pos": "n./v.",
+    "zh": "形状，塑造",
+    "notes": "in the shape of; out of shape",
+    "frequency": 10,
+    "sourceRow": 135
+  },
+  {
+    "id": 135,
+    "en": "silence",
+    "pos": "n.",
+    "zh": "沉默，安静",
+    "notes": "silent (adj.); silently (adv.); in silence",
+    "frequency": 17,
+    "sourceRow": 136
+  },
+  {
+    "id": 136,
+    "en": "similar",
+    "pos": "adj.",
+    "zh": "相似的",
+    "notes": "be similar to",
+    "frequency": 19,
+    "sourceRow": 137
+  },
+  {
+    "id": 137,
+    "en": "situation",
+    "pos": "n.",
+    "zh": "状况，处境",
+    "notes": "in this situation",
+    "frequency": 20,
+    "sourceRow": 138
+  },
+  {
+    "id": 138,
+    "en": "skill",
+    "pos": "n.",
+    "zh": "技能",
+    "notes": "skillful (adj.)",
+    "frequency": 18,
+    "sourceRow": 139
+  },
+  {
+    "id": 139,
+    "en": "society",
+    "pos": "n.",
+    "zh": "社会",
+    "notes": "social (adj.)",
+    "frequency": 22,
+    "sourceRow": 140
+  },
+  {
+    "id": 140,
+    "en": "spirit",
+    "pos": "n.",
+    "zh": "精神",
+    "notes": "team spirit",
+    "frequency": 16,
+    "sourceRow": 141
+  },
+  {
+    "id": 141,
+    "en": "spread",
+    "pos": "v.",
+    "zh": "传播，展开",
+    "notes": "过去式和过去分词均为 spread",
+    "frequency": 9,
+    "sourceRow": 142
+  },
+  {
+    "id": 142,
+    "en": "standard",
+    "pos": "n./adj.",
+    "zh": "标准",
+    "notes": "high standards",
+    "frequency": 11,
+    "sourceRow": 143
+  },
+  {
+    "id": 143,
+    "en": "stick",
+    "pos": "v./n.",
+    "zh": "坚持，粘贴；棍",
+    "notes": "stick to doing sth.; 过去式 stuck",
+    "frequency": 8,
+    "sourceRow": 144
+  },
+  {
+    "id": 144,
+    "en": "strict",
+    "pos": "adj.",
+    "zh": "严格的",
+    "notes": "be strict with sb. / be strict in sth.",
+    "frequency": 15,
+    "sourceRow": 145
+  },
+  {
+    "id": 145,
+    "en": "succeed",
+    "pos": "v.",
+    "zh": "成功",
+    "notes": "succeed in doing; success(n.); successful(adj.)",
+    "frequency": 27,
+    "sourceRow": 146
+  },
+  {
+    "id": 146,
+    "en": "suggest",
+    "pos": "v.",
+    "zh": "建议",
+    "notes": "suggest doing sth.; suggestion(n.)可数",
+    "frequency": 28,
+    "sourceRow": 147
+  },
+  {
+    "id": 147,
+    "en": "supply",
+    "pos": "v./n.",
+    "zh": "供应",
+    "notes": "supply sb. with sth. / supply sth. to sb.",
+    "frequency": 8,
+    "sourceRow": 148
+  },
+  {
+    "id": 148,
+    "en": "support",
+    "pos": "v./n.",
+    "zh": "支持",
+    "notes": "support sb. to do sth.",
+    "frequency": 19,
+    "sourceRow": 149
+  },
+  {
+    "id": 149,
+    "en": "surface",
+    "pos": "n.",
+    "zh": "表面",
+    "notes": "on the surface of",
+    "frequency": 10,
+    "sourceRow": 150
+  },
+  {
+    "id": 150,
+    "en": "surprise",
+    "pos": "n./v.",
+    "zh": "惊奇",
+    "notes": "in surprise; surprising/surprised; to one's surprise",
+    "frequency": 34,
+    "sourceRow": 151
+  },
+  {
+    "id": 151,
+    "en": "survive",
+    "pos": "v.",
+    "zh": "幸存",
+    "notes": "survival (n.); survivor (n.)",
+    "frequency": 11,
+    "sourceRow": 152
+  },
+  {
+    "id": 152,
+    "en": "symbol",
+    "pos": "n.",
+    "zh": "象征",
+    "notes": "the symbol of",
+    "frequency": 9,
+    "sourceRow": 153
+  },
+  {
+    "id": 153,
+    "en": "task",
+    "pos": "n.",
+    "zh": "任务",
+    "notes": "finish the task",
+    "frequency": 12,
+    "sourceRow": 154
+  },
+  {
+    "id": 154,
+    "en": "taste",
+    "pos": "v./n.",
+    "zh": "品尝，味道",
+    "notes": "taste + adj. (系动词); 主语为single时加s",
+    "frequency": 16,
+    "sourceRow": 155
+  },
+  {
+    "id": 155,
+    "en": "technology",
+    "pos": "n.",
+    "zh": "技术",
+    "notes": "technological (adj.)",
+    "frequency": 20,
+    "sourceRow": 156
+  },
+  {
+    "id": 156,
+    "en": "temperature",
+    "pos": "n.",
+    "zh": "温度",
+    "notes": "take one's temperature; drop/rise",
+    "frequency": 15,
+    "sourceRow": 157
+  },
+  {
+    "id": 157,
+    "en": "that",
+    "pos": "conj./pron.",
+    "zh": "那个，引导词",
+    "notes": "写作核心：引导各类从句，构建“墙倒定非虚名”",
+    "frequency": 95,
+    "sourceRow": 158
+  },
+  {
+    "id": 158,
+    "en": "thirsty",
+    "pos": "adj.",
+    "zh": "口渴的，渴望的",
+    "notes": "be thirsty for (渴望)",
+    "frequency": 8,
+    "sourceRow": 159
+  },
+  {
+    "id": 159,
+    "en": "through",
+    "pos": "prep.",
+    "zh": "通过，穿过",
+    "notes": "辨析: through (内部穿过) vs across (表面跨过)",
+    "frequency": 22,
+    "sourceRow": 160
+  },
+  {
+    "id": 160,
+    "en": "tour",
+    "pos": "n./v.",
+    "zh": "旅行",
+    "notes": "tourist (n.) 游客",
+    "frequency": 15,
+    "sourceRow": 161
+  },
+  {
+    "id": 161,
+    "en": "trade",
+    "pos": "n./v.",
+    "zh": "贸易，交易",
+    "notes": "trade with",
+    "frequency": 7,
+    "sourceRow": 162
+  },
+  {
+    "id": 162,
+    "en": "tradition",
+    "pos": "n.",
+    "zh": "传统",
+    "notes": "traditional (adj.); traditionally (adv.)",
+    "frequency": 19,
+    "sourceRow": 163
+  },
+  {
+    "id": 163,
+    "en": "translate",
+    "pos": "v.",
+    "zh": "翻译",
+    "notes": "translate... into...; translation (n.)",
+    "frequency": 14,
+    "sourceRow": 164
+  },
+  {
+    "id": 164,
+    "en": "treat",
+    "pos": "v.",
+    "zh": "对待，治疗，请客",
+    "notes": "treat sb. nicely; treatment (n.)",
+    "frequency": 16,
+    "sourceRow": 165
+  },
+  {
+    "id": 165,
+    "en": "trust",
+    "pos": "v./n.",
+    "zh": "信任",
+    "notes": "trust sb.",
+    "frequency": 9,
+    "sourceRow": 166
+  },
+  {
+    "id": 166,
+    "en": "truth",
+    "pos": "n.",
+    "zh": "真相，真理",
+    "notes": "true (adj.); truly (adv.) (注意去e加ly)",
+    "frequency": 17,
+    "sourceRow": 167
+  },
+  {
+    "id": 167,
+    "en": "value",
+    "pos": "n./v.",
+    "zh": "价值；重视",
+    "notes": "valuable (adj.) (注意去e加able)",
+    "frequency": 18,
+    "sourceRow": 168
+  },
+  {
+    "id": 168,
+    "en": "volunteer",
+    "pos": "n./v.",
+    "zh": "志愿者；自愿",
+    "notes": "volunteer to do sth.",
+    "frequency": 19,
+    "sourceRow": 169
+  },
+  {
+    "id": 169,
+    "en": "wealth",
+    "pos": "n.",
+    "zh": "财富",
+    "notes": "wealthy (adj.)",
+    "frequency": 11,
+    "sourceRow": 170
+  },
+  {
+    "id": 170,
+    "en": "weigh",
+    "pos": "v.",
+    "zh": "称重",
+    "notes": "weight (n.) 重量",
+    "frequency": 15,
+    "sourceRow": 171
+  },
+  {
+    "id": 171,
+    "en": "whether",
+    "pos": "conj.",
+    "zh": "是否",
+    "notes": "whether... or not (引导名词性从句)",
+    "frequency": 24,
+    "sourceRow": 172
+  },
+  {
+    "id": 172,
+    "en": "whisper",
+    "pos": "v./n.",
+    "zh": "耳语",
+    "notes": "in a whisper",
+    "frequency": 7,
+    "sourceRow": 173
+  },
+  {
+    "id": 173,
+    "en": "wonder",
+    "pos": "v./n.",
+    "zh": "想知道；奇迹",
+    "notes": "I wonder if/whether...; wonderful (adj.)",
+    "frequency": 18,
+    "sourceRow": 174
+  },
+  {
+    "id": 174,
+    "en": "worth",
+    "pos": "adj.",
+    "zh": "值得的",
+    "notes": "be worth doing (主动表被动)",
+    "frequency": 16,
+    "sourceRow": 175
+  }
+];
+window.WORD_SNAP_WORDS_META = {
+  "source": "G:\\初三\\5.10初三英语第十一节课\\近五年中考结合最新一模单词整理.xlsx",
+  "sheet": "在上述表格中，后面的考察频次里面修改为在以上试卷中出现的次数，",
+  "columns": [
+    "单词 (Word)",
+    "词性 (POS)",
+    "中文释义 (Meaning)",
+    "核心考点/短语搭配/变形规律 (Test Points & Rules)",
+    "试卷出现次数"
+  ],
+  "count": 174
+};

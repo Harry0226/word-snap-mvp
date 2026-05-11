@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>秒懂词 - 初中英语反应训练</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="topbar" aria-label="训练控制">
+      <div>
+        <h1>秒懂词</h1>
+        <p>看到英文，立刻反应中文。</p>
+      </div>
+      <div class="controls">
+        <label>
+          训练量
+          <select id="sessionSize">
+            <option value="20">20 词</option>
+            <option value="50" selected>50 词</option>
+            <option value="100">100 词</option>
+          </select>
+        </label>
+        <label>
+          范围
+          <select id="deckMode">
+            <option value="all" selected>全部词库</option>
+            <option value="wrong">只练错词</option>
+            <option value="new">优先新词</option>
+          </select>
+        </label>
+        <label>
+          模式
+          <select id="practiceMode">
+            <option value="enToZh" selected>看英文选中文</option>
+            <option value="zhToEn">看中文说英文</option>
+          </select>
+        </label>
+        <button id="startBtn" type="button">开始</button>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="今日统计">
+      <div>
+        <strong id="totalWords">0</strong>
+        <span>内置词汇</span>
+      </div>
+      <div>
+        <strong id="doneCount">0</strong>
+        <span>已练</span>
+      </div>
+      <div>
+        <strong id="accuracy">0%</strong>
+        <span>正确率</span>
+      </div>
+      <div>
+        <strong id="fastRate">0%</strong>
+        <span>快速率</span>
+      </div>
+      <div>
+        <strong id="wrongCount">0</strong>
+        <span>错词</span>
+      </div>
+    </section>
+
+    <section class="trainer" aria-live="polite">
+      <div class="progress">
+        <span id="progressText">还未开始</span>
+        <div class="progress-track">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+      <article class="word-card">
+        <span id="tag">初中核心词</span>
+        <h2 id="word">Ready?</h2>
+        <p id="hint">选择训练量后点击开始。每个词越快选出中文越好。</p>
+      </article>
+      <div id="choices" class="choices"></div>
+      <form id="typingPanel" class="typing-panel" hidden>
+        <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入英文单词">
+        <button type="submit">确认</button>
+      </form>
+      <div class="feedback-row">
+        <p id="feedback">本地保存练习记录，刷新页面也不会丢。</p>
+        <button id="skipBtn" type="button" disabled>不会</button>
+      </div>
+    </section>
+
+    <section class="wrongbook">
+      <div class="section-head">
+        <h2>错词本</h2>
+        <button id="resetBtn" type="button">清空记录</button>
+      </div>
+      <div id="wrongList" class="word-list"></div>
+    </section>
+  </main>
+
+  <script src="./word-data/junior-exam-words.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
