@@ -121,6 +121,20 @@ h2 { font-size: 21px; }
   gap: 12px;
 }
 
+.primary-controls {
+  grid-template-columns: minmax(180px, 260px) auto;
+  justify-content: start;
+}
+
+.advanced-settings summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.advanced-settings .controls-panel {
+  margin-top: 14px;
+}
+
 label {
   display: grid;
   gap: 6px;
@@ -201,6 +215,11 @@ label {
 .status-text { margin-top: 12px; }
 
 .table-wrap { overflow-x: auto; }
+.text-import {
+  min-height: 150px;
+  margin-top: 12px;
+  resize: vertical;
+}
 .review-table { width: 100%; border-collapse: collapse; min-width: 760px; }
 .review-table th, .review-table td { border-bottom: 1px solid var(--line); padding: 8px; text-align: left; vertical-align: top; }
 .review-table th { color: var(--muted); font-weight: 600; font-size: 13px; }

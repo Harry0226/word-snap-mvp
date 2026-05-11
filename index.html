@@ -30,7 +30,7 @@
     </section>
 
     <section id="view-train" class="view active">
-      <div class="panel controls-panel">
+      <div class="panel controls-panel primary-controls">
         <label>学习阶段
           <select id="stageSelect">
             <option value="初一">初一</option>
@@ -43,29 +43,44 @@
             <option value="高考冲刺">高考冲刺</option>
           </select>
         </label>
-        <label>训练量
-          <select id="sessionSize">
-            <option value="20">20 词</option>
-            <option value="50" selected>50 词</option>
-            <option value="100">100 词</option>
-          </select>
-        </label>
-        <label>训练模式
-          <select id="practiceMode">
-            <option value="auto" selected>按阶段自动</option>
-            <option value="enToZh">看英文选中文</option>
-            <option value="zhToEn">看中文说英文</option>
-          </select>
-        </label>
-        <label>词库来源
-          <select id="deckFilter">
-            <option value="all" selected>全部可用词库</option>
-            <option value="builtin">只用内置词库</option>
-            <option value="custom">只用自定义词库</option>
-          </select>
-        </label>
         <button id="startBtn" type="button">开始训练</button>
       </div>
+
+      <details class="panel advanced-settings">
+        <summary>更多训练设置</summary>
+        <div class="controls-panel">
+          <label>训练量
+            <select id="sessionSize">
+              <option value="20">20 词</option>
+              <option value="50" selected>50 词</option>
+              <option value="100">100 词</option>
+              <option value="all">全部单词</option>
+            </select>
+          </label>
+          <label>训练范围
+            <select id="trainingScope">
+              <option value="smart" selected>智能混合</option>
+              <option value="weak">只练错词慢词</option>
+              <option value="new">只练新词</option>
+              <option value="all">全部单词</option>
+            </select>
+          </label>
+          <label>训练模式
+            <select id="practiceMode">
+              <option value="auto" selected>按阶段自动</option>
+              <option value="enToZh">看英文选中文</option>
+              <option value="zhToEn">看中文说英文</option>
+            </select>
+          </label>
+          <label>词库来源
+            <select id="deckFilter">
+              <option value="all" selected>全部可用词库</option>
+              <option value="builtin">只用内置词库</option>
+              <option value="custom">只用自定义词库</option>
+            </select>
+          </label>
+        </div>
+      </details>
 
       <div class="panel trainer" aria-live="polite">
         <div class="progress">
@@ -125,7 +140,18 @@
           </label>
           <button id="recognizeBtn" type="button">本地识别</button>
         </div>
-        <p id="ocrStatus" class="status-text">PDF 会优先提取文字；图片和扫描件会在浏览器本地 OCR。</p>
+        <p id="ocrStatus" class="status-text">优先使用 AI 识别图片/PDF；未配置服务端 Key 或识别失败时，会切换到本地识别。</p>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2>文字直接添加</h2>
+            <p>一行一个词，支持“achieve 达到，实现”或“achieve|达到，实现|v.|achieve one's dream”。</p>
+          </div>
+          <button id="parseTextBtn" type="button">解析文字</button>
+        </div>
+        <textarea id="textImport" class="text-import" rows="7" placeholder="achieve 达到，实现&#10;avoid|避免|v.|avoid doing sth."></textarea>
       </div>
 
       <div id="reviewPanel" class="panel" hidden>
@@ -163,7 +189,10 @@
             <h2>错词与慢词</h2>
             <p>答错、反应慢、掌握度低的词会集中在这里。</p>
           </div>
-          <button id="resetRecordsBtn" type="button" class="secondary danger">清空练习记录</button>
+          <div class="button-row">
+            <button id="trainWeakBtn" type="button">一键练这些词</button>
+            <button id="resetRecordsBtn" type="button" class="secondary danger">清空练习记录</button>
+          </div>
         </div>
         <div id="weakList" class="word-list"></div>
       </div>

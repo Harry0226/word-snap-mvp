@@ -27,6 +27,7 @@ const els = {
   weakCount: document.querySelector("#weakCount"),
   stageSelect: document.querySelector("#stageSelect"),
   sessionSize: document.querySelector("#sessionSize"),
+  trainingScope: document.querySelector("#trainingScope"),
   practiceMode: document.querySelector("#practiceMode"),
   deckFilter: document.querySelector("#deckFilter"),
   startBtn: document.querySelector("#startBtn"),
@@ -46,6 +47,8 @@ const els = {
   fileInput: document.querySelector("#fileInput"),
   recognizeBtn: document.querySelector("#recognizeBtn"),
   ocrStatus: document.querySelector("#ocrStatus"),
+  textImport: document.querySelector("#textImport"),
+  parseTextBtn: document.querySelector("#parseTextBtn"),
   reviewPanel: document.querySelector("#reviewPanel"),
   reviewBody: document.querySelector("#reviewBody"),
   addRowBtn: document.querySelector("#addRowBtn"),
@@ -55,6 +58,7 @@ const els = {
   exportBtn: document.querySelector("#exportBtn"),
   importJson: document.querySelector("#importJson"),
   weakList: document.querySelector("#weakList"),
+  trainWeakBtn: document.querySelector("#trainWeakBtn"),
   resetRecordsBtn: document.querySelector("#resetRecordsBtn"),
   reportContent: document.querySelector("#reportContent")
 };
@@ -235,8 +239,9 @@ function priorityScore(word) {
 }
 
 function buildQueue() {
-  const size = Number(els.sessionSize.value);
+  const sizeValue = els.sessionSize.value;
   const words = getEligibleWords();
+  const size = sizeValue === "all" ? words.length : Number(sizeValue);
   const now = Date.now();
   const newWords = words.filter((word) => getRecord(word.id).seen === 0);
   const weakWords = words.filter(isWeak);
@@ -245,6 +250,12 @@ function buildQueue() {
     return record.seen > 0 && record.nextReviewAt <= now && !isWeak(word);
   });
   const regular = words.filter((word) => !newWords.includes(word) && !weakWords.includes(word) && !dueWords.includes(word));
+  const scope = els.trainingScope.value;
+
+  if (scope === "weak") return weightedPick(weakWords, size);
+  if (scope === "new") return weightedPick(newWords, size);
+  if (scope === "all" || sizeValue === "all") return uniqueById([...weakWords, ...dueWords, ...newWords, ...regular]).sort((a, b) => priorityScore(b) - priorityScore(a));
+
   const picked = [
     ...weightedPick(newWords, Math.ceil(size * 0.4)),
     ...weightedPick(weakWords, Math.ceil(size * 0.4)),
@@ -365,7 +376,8 @@ function paintChoices(answerEn, clickedButton) {
 
 function feedbackText(word, isCorrect, isFast, elapsed) {
   const seconds = (elapsed / 1000).toFixed(2);
-  if (!isCorrect) return `错词：${word.en} = ${word.zh}`;
+  const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
+  if (!isCorrect) return `错词：${word.en} = ${word.zh}${detail ? `｜${detail}` : ""}`;
   if (isFast) return `快速答对：${seconds} 秒`;
   return `答对了，用时 ${seconds} 秒，已记为慢词。`;
 }
@@ -438,27 +450,97 @@ async function recognizeFile() {
     return;
   }
   els.recognizeBtn.disabled = true;
-  els.ocrStatus.textContent = "正在本地识别，文件不会上传到服务器。";
+  els.ocrStatus.textContent = "正在准备文件，优先使用 AI 识别。";
   try {
-    let text = "";
-    if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-      text = await extractPdfText(file);
-      if (!text.trim()) text = await ocrPdf(file);
-    } else if (file.type.startsWith("image/")) {
-      text = await ocrImage(file);
-    } else {
-      text = await file.text();
-    }
-    state.reviewRows = parseWordsFromText(text).slice(0, 300);
+    const rows = await recognizeWithAi(file);
+    state.reviewRows = rows.slice(0, 300);
     if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
     renderReviewRows();
     els.reviewPanel.hidden = false;
-    els.ocrStatus.textContent = `识别到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
+    els.ocrStatus.textContent = `AI 识别到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
   } catch (error) {
-    els.ocrStatus.textContent = `识别失败：${error.message || error}`;
+    els.ocrStatus.textContent = `AI 识别失败，正在切换本地识别：${error.message || error}`;
+    try {
+      let text = "";
+      if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
+        text = await extractPdfText(file);
+        if (!text.trim()) text = await ocrPdf(file);
+      } else if (file.type.startsWith("image/")) {
+        text = await ocrImage(file);
+      } else {
+        text = await file.text();
+      }
+      state.reviewRows = parseWordsFromText(text).slice(0, 300);
+      if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
+      renderReviewRows();
+      els.reviewPanel.hidden = false;
+      els.ocrStatus.textContent = `本地识别到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
+    } catch (fallbackError) {
+      els.ocrStatus.textContent = `识别失败：${fallbackError.message || fallbackError}`;
+    }
   } finally {
     els.recognizeBtn.disabled = false;
   }
+}
+
+async function recognizeWithAi(file) {
+  const images = file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")
+    ? await pdfToDataUrls(file)
+    : file.type.startsWith("image/")
+      ? [{ dataUrl: await imageFileToDataUrl(file), page: 1 }]
+      : [];
+  if (!images.length) {
+    return parseWordsFromText(await file.text());
+  }
+  els.ocrStatus.textContent = `正在请求 AI 识别 ${images.length} 张页面图片。`;
+  const response = await fetch("/api/recognize", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      images,
+      stage: els.uploadStage.value,
+      sourceName: els.sourceName.value.trim() || file.name
+    })
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || `AI 接口返回 ${response.status}`);
+  return sanitizeRows(data.words || []);
+}
+
+async function pdfToDataUrls(file) {
+  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  const buffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+  const pages = [];
+  for (let pageNo = 1; pageNo <= Math.min(pdf.numPages, 12); pageNo += 1) {
+    els.ocrStatus.textContent = `正在渲染 PDF：第 ${pageNo}/${pdf.numPages} 页`;
+    const page = await pdf.getPage(pageNo);
+    const viewport = page.getViewport({ scale: 1.8 });
+    const canvas = document.createElement("canvas");
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+    pages.push({ dataUrl: compressCanvasToDataUrl(canvas), page: pageNo });
+  }
+  return pages;
+}
+
+async function imageFileToDataUrl(file) {
+  return compressCanvasToDataUrl(await imageFileToCanvas(file));
+}
+
+function compressCanvasToDataUrl(canvas) {
+  const maxWidth = 1600;
+  const scale = Math.min(1, maxWidth / canvas.width);
+  if (scale < 1) {
+    const resized = document.createElement("canvas");
+    resized.width = Math.round(canvas.width * scale);
+    resized.height = Math.round(canvas.height * scale);
+    resized.getContext("2d").drawImage(canvas, 0, 0, resized.width, resized.height);
+    return resized.toDataURL("image/jpeg", 0.82);
+  }
+  return canvas.toDataURL("image/jpeg", 0.82);
 }
 
 async function extractPdfText(file) {
@@ -528,6 +610,15 @@ function parseWordsFromText(text) {
   String(text || "").split(/\n|;/).forEach((raw) => {
     const line = raw.replace(/\s+/g, " ").trim();
     if (!line) return;
+    const pipeParts = line.split("|").map((part) => part.trim());
+    if (pipeParts.length >= 2 && /^[A-Za-z][A-Za-z'-]{1,24}$/.test(pipeParts[0])) {
+      const en = pipeParts[0].toLowerCase();
+      if (!seen.has(en) && !COMMON_NOISE.has(en)) {
+        seen.add(en);
+        rows.push({ en, zh: pipeParts[1] || "", pos: pipeParts[2] || "", notes: pipeParts.slice(3).join(" | ") });
+      }
+      return;
+    }
     const match = line.match(/^([A-Za-z][A-Za-z'-]{1,24})\s*(?:\(([^)]{1,12})\)|\b(n\.|v\.|adj\.|adv\.|prep\.|conj\.|pron\.)\b)?\s*[:：\-—]?\s*(.*)$/i);
     if (!match) return;
     const en = match[1].toLowerCase();
@@ -539,6 +630,22 @@ function parseWordsFromText(text) {
     rows.push({ en, zh: zhMatch ? zhMatch[0].trim() : "", pos, notes: rest.slice(0, 120) });
   });
   return rows;
+}
+
+function sanitizeRows(rows) {
+  const seen = new Set();
+  return rows.map((row) => ({
+    en: String(row.en || "").trim().toLowerCase(),
+    zh: String(row.zh || "").trim(),
+    pos: String(row.pos || "").trim(),
+    notes: String(row.notes || "").trim(),
+    confidence: Number(row.confidence || 0)
+  })).filter((row) => {
+    if (!/^[a-z][a-z'-]{1,24}$/.test(row.en)) return false;
+    if (seen.has(row.en) || COMMON_NOISE.has(row.en)) return false;
+    seen.add(row.en);
+    return true;
+  });
 }
 
 const COMMON_NOISE = new Set(["the", "and", "for", "with", "from", "this", "that", "page", "unit", "name", "class"]);
@@ -658,8 +765,13 @@ function renderReport() {
     return { stage, total: words.length, practiced, mastered };
   }).filter((item) => item.total > 0);
   const due = state.words.filter((word) => getRecord(word.id).nextReviewAt <= Date.now() && getRecord(word.id).seen > 0).length;
+  const topReview = state.words
+    .filter((word) => getRecord(word.id).seen > 0)
+    .sort((a, b) => priorityScore(b) - priorityScore(a))
+    .slice(0, 10);
   els.reportContent.innerHTML = [
     `<div class="report-card"><strong>${due}</strong><span>今日到期复习词</span></div>`,
+    `<div class="report-card"><strong>今日最该复习</strong><span>${topReview.length ? topReview.map((word) => `${escapeHtml(word.en)}(${escapeHtml(word.zh)})`).join("、") : "完成一轮训练后生成"}</span></div>`,
     ...byStage.map((item) => `<div class="report-card"><strong>${item.stage}</strong><span>${item.practiced}/${item.total} 已练 · ${item.mastered} 已掌握</span></div>`)
   ].join("");
 }
@@ -675,7 +787,18 @@ function renderSessionReport() {
     <div class="session-report-card"><strong>${report.wrong}</strong><span>错词</span></div>
     <div class="session-report-card"><strong>${report.slow}</strong><span>慢词</span></div>
     <div class="session-report-card"><strong>${report.tomorrow}</strong><span>建议明天复习</span></div>
+    <button id="againWeakBtn" type="button">再练错词</button>
+    <button id="nextSessionBtn" type="button" class="secondary">继续下一组</button>
   `;
+  document.querySelector("#againWeakBtn").addEventListener("click", () => {
+    els.trainingScope.value = "weak";
+    els.sessionSize.value = "all";
+    startSession();
+  });
+  document.querySelector("#nextSessionBtn").addEventListener("click", () => {
+    els.trainingScope.value = "smart";
+    startSession();
+  });
 }
 
 async function exportData() {
@@ -716,6 +839,13 @@ function bindEvents() {
     answer(els.typingAnswer.value, null);
   });
   els.recognizeBtn.addEventListener("click", recognizeFile);
+  els.parseTextBtn.addEventListener("click", () => {
+    state.reviewRows = parseWordsFromText(els.textImport.value).slice(0, 300);
+    if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
+    renderReviewRows();
+    els.reviewPanel.hidden = false;
+    els.ocrStatus.textContent = `从文字中解析到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
+  });
   els.addRowBtn.addEventListener("click", () => {
     syncReviewRowsFromDom();
     state.reviewRows.push({ en: "", zh: "", pos: "", notes: "" });
@@ -740,9 +870,25 @@ function bindEvents() {
     await loadState();
   });
   els.exportBtn.addEventListener("click", exportData);
+  els.trainWeakBtn.addEventListener("click", () => {
+    switchView("train");
+    els.trainingScope.value = "weak";
+    els.sessionSize.value = "all";
+    startSession();
+  });
   els.importJson.addEventListener("change", () => {
     const file = els.importJson.files?.[0];
     if (file) importData(file);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (!els.views.train.classList.contains("active") || !state.session || state.session.answered) return;
+    if (state.session.mode === "enToZh" && /^[1-4]$/.test(event.key)) {
+      const button = els.choices.children[Number(event.key) - 1];
+      if (button) {
+        event.preventDefault();
+        button.click();
+      }
+    }
   });
 }
 
