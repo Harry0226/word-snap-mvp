@@ -1,26 +1,25 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>秒懂词 - 初中英语反应训练</title>
+  <title>秒懂词 - 分层刷词训练</title>
   <style>
 :root {
   color-scheme: light;
-  --ink: #18212f;
+  --ink: #172033;
   --muted: #667085;
   --line: #d9e0ea;
   --paper: #f7f5f0;
   --panel: #ffffff;
-  --green: #1f9d62;
-  --red: #d04444;
+  --soft: #f3f6fb;
+  --green: #138a56;
+  --red: #cf3f3f;
   --blue: #2563eb;
-  --yellow: #f2b84b;
+  --yellow: #f0b429;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -30,78 +29,75 @@ body {
   font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
 }
 
-button,
-select {
-  font: inherit;
-}
+button, select, input, textarea { font: inherit; }
 
-button {
+button, .file-button, .file-picker {
   border: 1px solid var(--ink);
   background: var(--ink);
   color: white;
   border-radius: 8px;
   padding: 10px 16px;
   cursor: pointer;
+  text-align: center;
 }
 
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.45;
+button:disabled { cursor: not-allowed; opacity: .45; }
+
+.secondary {
+  background: white;
+  color: var(--ink);
+  border-color: var(--line);
 }
 
-select {
-  min-width: 112px;
+.danger { color: var(--red); }
+
+select, input, textarea {
+  width: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 9px 10px;
+  padding: 10px 12px;
   background: white;
   color: var(--ink);
 }
 
+input[type="file"] { display: none; }
+
 .app-shell {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 40px;
+  padding: 26px 0 42px;
 }
 
-.topbar {
+.app-header {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 20px;
-  padding-bottom: 18px;
+  gap: 18px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
 }
 
-h1,
-h2,
-p {
-  margin: 0;
-}
+h1, h2, p { margin: 0; }
+h1 { font-size: 34px; line-height: 1.1; }
+h2 { font-size: 21px; }
+.app-header p, .section-head p, .status-text, .feedback-row, .progress { color: var(--muted); }
 
-h1 {
-  font-size: 34px;
-  line-height: 1.1;
-}
-
-.topbar p,
-.feedback-row,
-.wrongbook {
-  color: var(--muted);
-}
-
-.controls {
+.tabs {
   display: flex;
-  align-items: end;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
-.controls label {
-  display: grid;
-  gap: 6px;
-  color: var(--muted);
-  font-size: 13px;
+.tab {
+  background: white;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.tab.active {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
 }
 
 .stats {
@@ -111,54 +107,37 @@ h1 {
   margin: 18px 0;
 }
 
-.stats div {
+.stats div, .panel {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 14px;
 }
 
-.stats strong {
-  display: block;
-  font-size: 24px;
-  line-height: 1.1;
+.stats div { padding: 14px; }
+.stats strong { display: block; font-size: 25px; line-height: 1.1; }
+.stats span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+.view { display: none; }
+.view.active { display: grid; gap: 16px; }
+.panel { padding: 18px; }
+
+.controls-panel, .upload-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: end;
+  gap: 12px;
 }
 
-.stats span {
-  display: block;
-  margin-top: 4px;
+label {
+  display: grid;
+  gap: 6px;
   color: var(--muted);
   font-size: 13px;
 }
 
-.trainer,
-.wrongbook {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 18px;
-}
-
-.progress {
-  display: grid;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.progress-track {
-  height: 10px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: #eef2f7;
-}
-
-#progressBar {
-  width: 0%;
-  height: 100%;
-  background: var(--green);
-  transition: width 180ms ease;
-}
+.progress { display: grid; gap: 8px; font-size: 14px; }
+.progress-track { height: 10px; overflow: hidden; border-radius: 999px; background: #edf1f7; }
+#progressBar { width: 0%; height: 100%; background: var(--green); transition: width 180ms ease; }
 
 .word-card {
   margin: 18px 0;
@@ -184,38 +163,17 @@ h1 {
 
 #word {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(46px, 8vw, 86px);
-  line-height: 1;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
-#hint {
-  color: var(--muted);
-}
+#hint { color: var(--muted); }
 
 .choices {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-}
-
-.typing-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px;
-}
-
-.typing-panel[hidden] {
-  display: none;
-}
-
-.typing-panel input {
-  min-height: 54px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 10px 14px;
-  color: var(--ink);
-  font: 24px Georgia, "Times New Roman", serif;
 }
 
 .choice {
@@ -226,200 +184,250 @@ h1 {
   text-align: left;
 }
 
-.choice.correct {
-  border-color: var(--green);
-  background: #e8f7ef;
+.choice.correct { border-color: var(--green); background: #e8f7ef; }
+.choice.wrong { border-color: var(--red); background: #fff0f0; }
+
+.typing-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
 }
 
-.choice.wrong {
-  border-color: var(--red);
-  background: #fff0f0;
-}
+.typing-panel[hidden], [hidden] { display: none !important; }
+.typing-panel input { min-height: 54px; font: 24px Georgia, "Times New Roman", serif; }
 
-.feedback-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 54px;
-  margin-top: 12px;
-}
-
-#skipBtn,
-#resetBtn {
-  background: white;
-  color: var(--ink);
-  border-color: var(--line);
-}
-
-.wrongbook {
-  margin-top: 18px;
-}
-
-.section-head {
+.feedback-row, .section-head, .button-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
 }
 
-.section-head h2 {
-  color: var(--ink);
-  font-size: 20px;
-}
+.feedback-row { min-height: 54px; margin-top: 12px; }
+.button-row { justify-content: flex-start; flex-wrap: wrap; }
+.status-text { margin-top: 12px; }
 
-.word-list {
+.table-wrap { overflow-x: auto; }
+.review-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+.review-table th, .review-table td { border-bottom: 1px solid var(--line); padding: 8px; text-align: left; vertical-align: top; }
+.review-table th { color: var(--muted); font-weight: 600; font-size: 13px; }
+.review-table input { min-width: 130px; }
+
+.deck-list, .word-list, .report-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
 }
 
-.word-chip {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+.deck-card, .word-chip, .report-card, .session-report-card {
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 9px 10px;
-  background: #fbfcff;
-  color: var(--ink);
+  background: var(--soft);
+  padding: 12px;
 }
 
-.word-chip span:last-child {
+.deck-card strong, .word-chip strong, .report-card strong {
+  display: block;
+  font-size: 18px;
+}
+
+.meta, .word-chip span, .report-card span {
   color: var(--muted);
+  font-size: 13px;
 }
 
-@media (max-width: 760px) {
-  .app-shell {
-    width: min(100% - 20px, 1120px);
-    padding-top: 18px;
-  }
+.session-report {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
 
-  .topbar {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .controls,
-  .feedback-row,
-  .section-head {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .controls label,
-  .controls button,
-  .feedback-row button,
-  .section-head button {
-    width: 100%;
-  }
-
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .choices {
-    grid-template-columns: 1fr;
-  }
-
-  .typing-panel {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 860px) {
+  .app-shell { width: min(100% - 20px, 1180px); padding-top: 18px; }
+  .app-header, .feedback-row, .section-head { align-items: stretch; flex-direction: column; }
+  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .controls-panel, .upload-grid { grid-template-columns: 1fr; }
+  .choices, .typing-panel { grid-template-columns: 1fr; }
+  .button-row button, .file-button, .file-picker { width: 100%; }
 }
 
 </style>
 </head>
 <body>
   <main class="app-shell">
-    <section class="topbar" aria-label="训练控制">
+    <header class="app-header">
       <div>
         <h1>秒懂词</h1>
-        <p>看到英文，立刻反应中文。</p>
+        <p>从初一到高三，按阶段刷词，把错词和慢词优先练熟。</p>
       </div>
-      <div class="controls">
-        <label>
-          训练量
+      <nav class="tabs" aria-label="主导航">
+        <button class="tab active" type="button" data-view="train">训练</button>
+        <button class="tab" type="button" data-view="decks">词库</button>
+        <button class="tab" type="button" data-view="wrong">错词</button>
+        <button class="tab" type="button" data-view="report">报告</button>
+      </nav>
+    </header>
+
+    <section class="stats" aria-label="学习统计">
+      <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
+      <div><strong id="doneCount">0</strong><span>累计练习</span></div>
+      <div><strong id="accuracy">0%</strong><span>正确率</span></div>
+      <div><strong id="fastRate">0%</strong><span>快速率</span></div>
+      <div><strong id="weakCount">0</strong><span>弱词</span></div>
+    </section>
+
+    <section id="view-train" class="view active">
+      <div class="panel controls-panel">
+        <label>学习阶段
+          <select id="stageSelect">
+            <option value="初一">初一</option>
+            <option value="初二">初二</option>
+            <option value="初三" selected>初三</option>
+            <option value="高一">高一</option>
+            <option value="高二">高二</option>
+            <option value="高三">高三</option>
+            <option value="中考冲刺">中考冲刺</option>
+            <option value="高考冲刺">高考冲刺</option>
+          </select>
+        </label>
+        <label>训练量
           <select id="sessionSize">
             <option value="20">20 词</option>
             <option value="50" selected>50 词</option>
             <option value="100">100 词</option>
           </select>
         </label>
-        <label>
-          范围
-          <select id="deckMode">
-            <option value="all" selected>全部词库</option>
-            <option value="wrong">只练错词</option>
-            <option value="new">优先新词</option>
-          </select>
-        </label>
-        <label>
-          模式
+        <label>训练模式
           <select id="practiceMode">
-            <option value="enToZh" selected>看英文选中文</option>
+            <option value="auto" selected>按阶段自动</option>
+            <option value="enToZh">看英文选中文</option>
             <option value="zhToEn">看中文说英文</option>
           </select>
         </label>
-        <button id="startBtn" type="button">开始</button>
+        <label>词库来源
+          <select id="deckFilter">
+            <option value="all" selected>全部可用词库</option>
+            <option value="builtin">只用内置词库</option>
+            <option value="custom">只用自定义词库</option>
+          </select>
+        </label>
+        <button id="startBtn" type="button">开始训练</button>
       </div>
-    </section>
 
-    <section class="stats" aria-label="今日统计">
-      <div>
-        <strong id="totalWords">0</strong>
-        <span>内置词汇</span>
-      </div>
-      <div>
-        <strong id="doneCount">0</strong>
-        <span>已练</span>
-      </div>
-      <div>
-        <strong id="accuracy">0%</strong>
-        <span>正确率</span>
-      </div>
-      <div>
-        <strong id="fastRate">0%</strong>
-        <span>快速率</span>
-      </div>
-      <div>
-        <strong id="wrongCount">0</strong>
-        <span>错词</span>
-      </div>
-    </section>
-
-    <section class="trainer" aria-live="polite">
-      <div class="progress">
-        <span id="progressText">还未开始</span>
-        <div class="progress-track">
-          <div id="progressBar"></div>
+      <div class="panel trainer" aria-live="polite">
+        <div class="progress">
+          <span id="progressText">请选择阶段后开始训练</span>
+          <div class="progress-track"><div id="progressBar"></div></div>
+        </div>
+        <article class="word-card">
+          <span id="tag">分层训练</span>
+          <h2 id="word">Ready?</h2>
+          <p id="hint">系统会按新词、弱词、到期复习词自动组一轮。</p>
+        </article>
+        <div id="choices" class="choices"></div>
+        <form id="typingPanel" class="typing-panel" hidden>
+          <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入英文单词">
+          <button type="submit">确认</button>
+        </form>
+        <div class="feedback-row">
+          <p id="feedback">练习记录只保存在本机浏览器，不会上传。</p>
+          <button id="skipBtn" type="button" disabled>不会</button>
         </div>
       </div>
-      <article class="word-card">
-        <span id="tag">初中核心词</span>
-        <h2 id="word">Ready?</h2>
-        <p id="hint">选择训练量后点击开始。每个词越快选出中文越好。</p>
-      </article>
-      <div id="choices" class="choices"></div>
-      <form id="typingPanel" class="typing-panel" hidden>
-        <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入英文单词">
-        <button type="submit">确认</button>
-      </form>
-      <div class="feedback-row">
-        <p id="feedback">本地保存练习记录，刷新页面也不会丢。</p>
-        <button id="skipBtn" type="button" disabled>不会</button>
+
+      <div id="sessionReport" class="panel session-report" hidden></div>
+    </section>
+
+    <section id="view-decks" class="view">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2>词库管理</h2>
+            <p>上传图片、PDF 或文本，先识别，再确认入库。</p>
+          </div>
+          <div class="button-row">
+            <button id="exportBtn" type="button" class="secondary">导出词库</button>
+            <label class="file-button">导入 JSON<input id="importJson" type="file" accept="application/json"></label>
+          </div>
+        </div>
+
+        <div class="upload-grid">
+          <label>保存到阶段
+            <select id="uploadStage">
+              <option value="初一">初一</option>
+              <option value="初二">初二</option>
+              <option value="初三" selected>初三</option>
+              <option value="高一">高一</option>
+              <option value="高二">高二</option>
+              <option value="高三">高三</option>
+              <option value="中考冲刺">中考冲刺</option>
+              <option value="高考冲刺">高考冲刺</option>
+            </select>
+          </label>
+          <label>资料名称
+            <input id="sourceName" type="text" placeholder="例如：第12讲词汇">
+          </label>
+          <label class="file-picker">选择图片/PDF/文本
+            <input id="fileInput" type="file" accept=".pdf,.txt,.text,image/*">
+          </label>
+          <button id="recognizeBtn" type="button">本地识别</button>
+        </div>
+        <p id="ocrStatus" class="status-text">PDF 会优先提取文字；图片和扫描件会在浏览器本地 OCR。</p>
+      </div>
+
+      <div id="reviewPanel" class="panel" hidden>
+        <div class="section-head">
+          <div>
+            <h2>确认词表</h2>
+            <p>保存前可以修改中文、词性、考点；空英文不会保存。</p>
+          </div>
+          <div class="button-row">
+            <button id="addRowBtn" type="button" class="secondary">加一行</button>
+            <button id="saveDeckBtn" type="button">保存词库</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="review-table">
+            <thead><tr><th>英文</th><th>中文</th><th>词性</th><th>考点/备注</th><th></th></tr></thead>
+            <tbody id="reviewBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <h2>已有词库</h2>
+          <button id="clearCustomDecksBtn" type="button" class="secondary danger">清空自定义词库</button>
+        </div>
+        <div id="deckList" class="deck-list"></div>
       </div>
     </section>
 
-    <section class="wrongbook">
-      <div class="section-head">
-        <h2>错词本</h2>
-        <button id="resetBtn" type="button">清空记录</button>
+    <section id="view-wrong" class="view">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2>错词与慢词</h2>
+            <p>答错、反应慢、掌握度低的词会集中在这里。</p>
+          </div>
+          <button id="resetRecordsBtn" type="button" class="secondary danger">清空练习记录</button>
+        </div>
+        <div id="weakList" class="word-list"></div>
       </div>
-      <div id="wrongList" class="word-list"></div>
+    </section>
+
+    <section id="view-report" class="view">
+      <div class="panel">
+        <h2>学习报告</h2>
+        <div id="reportContent" class="report-grid"></div>
+      </div>
     </section>
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <script>
 window.WORD_SNAP_WORDS = [
   {
@@ -2004,1073 +2012,38 @@ window.WORD_SNAP_WORDS_META = {
 
 </script>
   <script>
-const RAW_WORDS = `
-ability|能力
-able|能够的
-about|关于
-above|在上面
-abroad|在国外
-accept|接受
-accident|事故
-according|根据
-achieve|实现
-across|穿过
-act|行动
-active|积极的
-activity|活动
-actor|男演员
-actress|女演员
-actually|实际上
-add|增加
-address|地址
-advantage|优点
-advice|建议
-advise|建议
-afford|负担得起
-afraid|害怕的
-after|在之后
-again|再次
-against|反对
-age|年龄
-ago|以前
-agree|同意
-air|空气
-airport|机场
-alive|活着的
-all|全部
-allow|允许
-almost|几乎
-alone|独自
-along|沿着
-already|已经
-also|也
-although|虽然
-always|总是
-amazing|令人惊奇的
-among|在中间
-ancient|古代的
-angry|生气的
-animal|动物
-another|另一个
-answer|回答
-anybody|任何人
-anymore|不再
-anyone|任何人
-anything|任何事
-anyway|无论如何
-appear|出现
-apple|苹果
-area|地区
-arm|手臂
-around|在周围
-arrive|到达
-art|艺术
-article|文章
-artist|艺术家
-as|作为
-Asia|亚洲
-ask|询问
-asleep|睡着的
-at|在
-attention|注意
-August|八月
-aunt|姑姑
-Australia|澳大利亚
-available|可获得的
-avoid|避免
-away|离开
-baby|婴儿
-back|背部
-bad|坏的
-bag|包
-ball|球
-bank|银行
-base|基础
-basic|基本的
-basketball|篮球
-bathroom|浴室
-beach|海滩
-bear|熊
-beautiful|美丽的
-because|因为
-become|成为
-bed|床
-bedroom|卧室
-before|在之前
-begin|开始
-behind|在后面
-believe|相信
-bell|铃
-belong|属于
-below|在下面
-beside|在旁边
-best|最好的
-better|更好的
-between|在之间
-bicycle|自行车
-big|大的
-bill|账单
-bird|鸟
-birthday|生日
-bit|一点
-black|黑色的
-blind|失明的
-block|街区
-blood|血液
-blue|蓝色的
-boat|船
-body|身体
-book|书
-born|出生
-borrow|借入
-boss|老板
-both|两者都
-bottle|瓶子
-bottom|底部
-bowl|碗
-box|盒子
-boy|男孩
-brain|大脑
-brave|勇敢的
-bread|面包
-break|打破
-breakfast|早餐
-bridge|桥
-bright|明亮的
-bring|带来
-brother|兄弟
-brown|棕色的
-brush|刷子
-build|建造
-building|建筑物
-burn|燃烧
-bus|公共汽车
-business|商业
-busy|忙碌的
-but|但是
-butter|黄油
-buy|买
-by|通过
-cake|蛋糕
-call|打电话
-camera|相机
-camp|营地
-can|能够
-Canada|加拿大
-candy|糖果
-capital|首都
-car|汽车
-card|卡片
-care|关心
-careful|小心的
-careless|粗心的
-carry|携带
-case|情况
-cat|猫
-catch|抓住
-cause|原因
-celebrate|庆祝
-center|中心
-century|世纪
-certain|确定的
-chair|椅子
-chance|机会
-change|改变
-cheap|便宜的
-check|检查
-cheer|欢呼
-cheese|奶酪
-chicken|鸡肉
-child|孩子
-China|中国
-Chinese|中文
-choice|选择
-choose|选择
-city|城市
-class|班级
-classmate|同班同学
-clean|干净的
-clear|清楚的
-clever|聪明的
-climb|攀登
-clock|时钟
-close|关闭
-clothes|衣服
-cloud|云
-club|俱乐部
-coach|教练
-coat|外套
-coffee|咖啡
-cold|寒冷的
-collect|收集
-college|大学
-color|颜色
-come|来
-comfortable|舒适的
-common|普通的
-communicate|交流
-community|社区
-company|公司
-compare|比较
-complete|完成
-computer|电脑
-condition|条件
-confidence|信心
-consider|考虑
-continue|继续
-control|控制
-conversation|谈话
-cook|烹饪
-cool|凉爽的
-copy|复制
-corner|角落
-correct|正确的
-cost|花费
-cotton|棉花
-could|能够
-country|国家
-courage|勇气
-course|课程
-cousin|堂兄弟姐妹
-cover|覆盖
-cow|奶牛
-create|创造
-cross|穿过
-crowd|人群
-cry|哭
-culture|文化
-cup|杯子
-cut|切
-daily|每日的
-dance|跳舞
-danger|危险
-dark|黑暗的
-date|日期
-daughter|女儿
-day|白天
-dead|死的
-deal|处理
-dear|亲爱的
-decide|决定
-deep|深的
-degree|程度
-delicious|美味的
-describe|描述
-desk|书桌
-develop|发展
-diary|日记
-dictionary|字典
-die|死亡
-difference|差异
-different|不同的
-difficult|困难的
-dinner|晚餐
-direct|直接的
-direction|方向
-dirty|脏的
-discover|发现
-dish|盘子
-doctor|医生
-dog|狗
-door|门
-double|双倍的
-down|向下
-draw|画画
-dream|梦想
-dress|连衣裙
-drink|喝
-drive|驾驶
-drop|掉落
-dry|干的
-during|在期间
-each|每个
-early|早的
-earth|地球
-east|东方
-easy|容易的
-eat|吃
-education|教育
-effect|影响
-effort|努力
-egg|鸡蛋
-eight|八
-either|也
-elder|年长的
-electric|电的
-elephant|大象
-else|其他
-email|电子邮件
-empty|空的
-encourage|鼓励
-end|结束
-energy|能量
-engineer|工程师
-England|英格兰
-English|英语
-enjoy|享受
-enough|足够的
-enter|进入
-environment|环境
-eraser|橡皮
-especially|尤其
-Europe|欧洲
-even|甚至
-evening|晚上
-event|事件
-ever|曾经
-every|每个
-everybody|每个人
-everyone|每个人
-everything|一切
-example|例子
-excellent|优秀的
-except|除了
-excited|兴奋的
-exciting|令人兴奋的
-exercise|锻炼
-expect|期待
-expensive|昂贵的
-experience|经历
-explain|解释
-eye|眼睛
-face|脸
-fact|事实
-factory|工厂
-fail|失败
-fair|公平的
-fall|落下
-family|家庭
-famous|著名的
-far|远的
-farm|农场
-fast|快的
-fat|胖的
-father|父亲
-favorite|最喜欢的
-fear|恐惧
-feed|喂养
-feel|感觉
-festival|节日
-few|少数
-field|田地
-fight|打架
-fill|填满
-film|电影
-final|最后的
-find|找到
-fine|好的
-finger|手指
-finish|完成
-fire|火
-first|第一
-fish|鱼
-fit|适合
-five|五
-floor|地板
-flower|花
-fly|飞
-follow|跟随
-food|食物
-foot|脚
-football|足球
-for|为了
-force|力量
-foreign|外国的
-forest|森林
-forget|忘记
-fork|叉子
-form|形式
-forty|四十
-forward|向前
-free|空闲的
-fresh|新鲜的
-Friday|星期五
-friend|朋友
-friendly|友好的
-from|来自
-front|前面
-fruit|水果
-full|满的
-fun|乐趣
-funny|有趣的
-future|未来
-game|游戏
-garden|花园
-gate|大门
-general|一般的
-gentle|温和的
-geography|地理
-German|德国的
-Germany|德国
-get|得到
-gift|礼物
-girl|女孩
-give|给
-glad|高兴的
-glass|玻璃
-go|去
-goal|目标
-gold|黄金
-good|好的
-government|政府
-grade|年级
-grammar|语法
-grandparent|祖父母
-grape|葡萄
-grass|草
-great|伟大的
-green|绿色的
-ground|地面
-group|小组
-grow|成长
-guess|猜测
-guest|客人
-guide|向导
-habit|习惯
-hair|头发
-half|一半
-hall|大厅
-hand|手
-happen|发生
-happy|快乐的
-hard|努力的
-hardly|几乎不
-hat|帽子
-hate|讨厌
-have|有
-he|他
-head|头
-health|健康
-healthy|健康的
-hear|听见
-heart|心脏
-heat|热
-heavy|重的
-hello|你好
-help|帮助
-helpful|有帮助的
-her|她的
-here|这里
-hero|英雄
-herself|她自己
-hide|隐藏
-high|高的
-hill|小山
-him|他
-history|历史
-hit|击打
-hobby|爱好
-hold|握住
-hole|洞
-holiday|假日
-home|家
-homework|家庭作业
-honest|诚实的
-hope|希望
-horse|马
-hospital|医院
-hot|热的
-hotel|酒店
-hour|小时
-house|房子
-how|怎样
-however|然而
-huge|巨大的
-human|人类
-hundred|百
-hungry|饥饿的
-hurry|匆忙
-hurt|受伤
-husband|丈夫
-idea|想法
-if|如果
-ill|生病的
-important|重要的
-improve|提高
-in|在里面
-include|包括
-increase|增加
-India|印度
-industry|工业
-information|信息
-inside|在里面
-instead|代替
-interest|兴趣
-interesting|有趣的
-international|国际的
-Internet|互联网
-interview|采访
-introduce|介绍
-invent|发明
-invite|邀请
-island|岛
-it|它
-itself|它自己
-jacket|夹克
-January|一月
-Japan|日本
-job|工作
-join|加入
-journey|旅行
-judge|判断
-juice|果汁
-July|七月
-jump|跳
-June|六月
-just|只是
-keep|保持
-key|钥匙
-kick|踢
-kid|小孩
-kill|杀死
-kind|种类
-kitchen|厨房
-kite|风筝
-knee|膝盖
-knife|刀
-know|知道
-knowledge|知识
-lab|实验室
-lady|女士
-lake|湖
-land|土地
-language|语言
-large|大的
-last|最后的
-late|迟的
-later|以后
-laugh|笑
-law|法律
-lazy|懒惰的
-lead|带领
-learn|学习
-leave|离开
-left|左边
-leg|腿
-lend|借出
-lesson|课程
-letter|信
-library|图书馆
-lie|躺
-life|生活
-lift|举起
-light|光
-like|喜欢
-line|线
-lion|狮子
-list|清单
-listen|听
-little|小的
-live|居住
-local|当地的
-lock|锁
-long|长的
-look|看
-lose|失去
-lot|许多
-loud|大声的
-love|爱
-low|低的
-luck|运气
-machine|机器
-mad|发疯的
-magazine|杂志
-mail|邮件
-main|主要的
-make|制作
-man|男人
-manage|管理
-many|许多
-map|地图
-March|三月
-market|市场
-marry|结婚
-match|比赛
-math|数学
-matter|事情
-may|可能
-meal|一餐
-mean|意思是
-meaning|意思
-measure|测量
-meat|肉
-medicine|药
-meet|遇见
-member|成员
-memory|记忆
-message|信息
-middle|中间
-milk|牛奶
-million|百万
-mind|头脑
-minute|分钟
-miss|错过
-mistake|错误
-model|模型
-modern|现代的
-Monday|星期一
-money|钱
-month|月份
-moon|月亮
-more|更多
-morning|早晨
-most|大多数
-mother|母亲
-mountain|山
-mouse|老鼠
-mouth|嘴
-move|移动
-movie|电影
-much|许多
-music|音乐
-must|必须
-name|名字
-nation|国家
-natural|自然的
-near|近的
-necessary|必要的
-need|需要
-neighbor|邻居
-never|从不
-new|新的
-news|新闻
-next|下一个
-nice|好的
-night|夜晚
-nine|九
-nobody|没有人
-noise|噪音
-none|没有
-noon|中午
-north|北方
-nose|鼻子
-note|笔记
-nothing|没有事
-notice|注意
-November|十一月
-now|现在
-number|数字
-nurse|护士
-object|物体
-ocean|海洋
-October|十月
-of|的
-off|离开
-offer|提供
-office|办公室
-often|经常
-oil|油
-old|老的
-on|在上面
-once|一次
-one|一
-only|仅仅
-open|打开
-opinion|观点
-opposite|相反的
-or|或者
-orange|橙子
-order|命令
-other|其他的
-outside|在外面
-over|在上方
-own|自己的
-page|页
-pain|疼痛
-paint|绘画
-pair|一双
-panda|熊猫
-paper|纸
-parent|父母
-park|公园
-part|部分
-party|聚会
-pass|通过
-past|过去
-pay|支付
-peace|和平
-pear|梨
-pen|钢笔
-pencil|铅笔
-people|人们
-perfect|完美的
-perhaps|也许
-person|人
-phone|电话
-photo|照片
-physics|物理
-piano|钢琴
-pick|挑选
-picture|图片
-piece|片
-pig|猪
-place|地方
-plan|计划
-plant|植物
-plate|盘子
-play|玩
-pleasant|令人愉快的
-please|请
-pocket|口袋
-point|点
-police|警察
-polite|礼貌的
-poor|贫穷的
-popular|受欢迎的
-possible|可能的
-post|邮寄
-potato|土豆
-practice|练习
-prefer|更喜欢
-prepare|准备
-present|礼物
-pretty|漂亮的
-price|价格
-print|打印
-problem|问题
-produce|生产
-program|节目
-promise|承诺
-protect|保护
-proud|骄傲的
-provide|提供
-public|公共的
-pull|拉
-push|推
-put|放
-question|问题
-quick|快的
-quiet|安静的
-quite|相当
-radio|收音机
-rain|雨
-raise|举起
-reach|到达
-read|阅读
-ready|准备好的
-real|真实的
-reason|原因
-receive|收到
-recent|最近的
-record|记录
-red|红色的
-refuse|拒绝
-remember|记得
-repeat|重复
-report|报告
-rest|休息
-restaurant|餐馆
-result|结果
-return|返回
-rice|米饭
-rich|富有的
-ride|骑
-right|右边
-river|河流
-road|道路
-robot|机器人
-room|房间
-round|圆的
-rule|规则
-run|跑
-safe|安全的
-salad|沙拉
-salt|盐
-same|相同的
-Saturday|星期六
-save|节省
-say|说
-school|学校
-science|科学
-sea|海
-season|季节
-seat|座位
-second|第二
-secret|秘密
-see|看见
-seem|似乎
-sell|卖
-send|发送
-sense|感觉
-sentence|句子
-September|九月
-serious|严肃的
-serve|服务
-set|设置
-seven|七
-several|几个
-shall|将
-share|分享
-she|她
-sheep|绵羊
-shirt|衬衫
-shoe|鞋
-shop|商店
-short|短的
-should|应该
-show|展示
-shy|害羞的
-sick|生病的
-side|边
-sight|视力
-sign|标志
-simple|简单的
-since|自从
-sing|唱歌
-sister|姐妹
-sit|坐
-six|六
-size|尺寸
-skill|技能
-skirt|裙子
-sky|天空
-sleep|睡觉
-slow|慢的
-small|小的
-smell|闻
-smile|微笑
-snow|雪
-so|所以
-society|社会
-sock|袜子
-soft|柔软的
-solve|解决
-some|一些
-someone|某人
-something|某事
-sometimes|有时
-son|儿子
-song|歌曲
-soon|很快
-sorry|抱歉
-sound|声音
-south|南方
-space|空间
-speak|说话
-special|特别的
-speed|速度
-spell|拼写
-spend|花费
-sport|运动
-spring|春天
-square|广场
-stand|站立
-star|星星
-start|开始
-state|状态
-station|车站
-stay|停留
-step|步骤
-still|仍然
-stone|石头
-stop|停止
-store|商店
-story|故事
-straight|直的
-strange|奇怪的
-street|街道
-strong|强壮的
-student|学生
-study|学习
-subject|科目
-success|成功
-such|这样的
-suddenly|突然
-summer|夏天
-sun|太阳
-Sunday|星期日
-support|支持
-sure|确定的
-surprise|惊喜
-sweater|毛衣
-swim|游泳
-table|桌子
-take|拿
-talk|谈话
-tall|高的
-taste|味道
-teach|教
-teacher|老师
-team|团队
-technology|技术
-teenager|青少年
-telephone|电话
-tell|告诉
-ten|十
-term|学期
-test|测试
-than|比
-thank|感谢
-that|那个
-the|这个
-their|他们的
-them|他们
-then|然后
-there|那里
-these|这些
-they|他们
-thing|东西
-think|思考
-third|第三
-thirsty|口渴的
-this|这个
-though|虽然
-thought|想法
-three|三
-through|通过
-throw|扔
-Thursday|星期四
-ticket|票
-tidy|整洁的
-tie|领带
-time|时间
-tired|疲倦的
-to|到
-today|今天
-together|一起
-tomato|西红柿
-tomorrow|明天
-tonight|今晚
-too|也
-tooth|牙齿
-top|顶部
-total|总共
-touch|触摸
-tour|旅行
-toward|朝向
-town|城镇
-traffic|交通
-train|火车
-travel|旅行
-tree|树
-trip|旅行
-trouble|麻烦
-true|真实的
-try|尝试
-Tuesday|星期二
-turn|转动
-twelve|十二
-twenty|二十
-two|二
-type|类型
-umbrella|雨伞
-uncle|叔叔
-under|在下面
-understand|理解
-unit|单元
-university|大学
-until|直到
-up|向上
-use|使用
-useful|有用的
-usual|通常的
-vacation|假期
-vegetable|蔬菜
-very|非常
-video|视频
-village|村庄
-visit|拜访
-voice|声音
-wait|等待
-wake|醒来
-walk|走路
-wall|墙
-want|想要
-warm|温暖的
-wash|洗
-watch|观看
-water|水
-way|方法
-we|我们
-weak|虚弱的
-wear|穿
-weather|天气
-Wednesday|星期三
-week|星期
-weekend|周末
-welcome|欢迎
-well|好地
-west|西方
-what|什么
-when|什么时候
-where|哪里
-whether|是否
-which|哪一个
-while|当时候
-white|白色的
-who|谁
-whole|整个的
-why|为什么
-wide|宽的
-wife|妻子
-will|将
-win|赢
-wind|风
-window|窗户
-winter|冬天
-wish|希望
-with|和
-without|没有
-woman|女人
-wonderful|精彩的
-word|单词
-work|工作
-world|世界
-worry|担心
-write|写
-wrong|错误的
-yard|院子
-year|年
-yellow|黄色的
-yes|是
-yesterday|昨天
-yet|还
-you|你
-young|年轻的
-your|你的
-zoo|动物园
-`;
+const STAGES = ["初一", "初二", "初三", "高一", "高二", "高三", "中考冲刺", "高考冲刺"];
+const DB_NAME = "word-snap-v2";
+const DB_VERSION = 1;
+const FAST_LIMITS = { enToZh: 1000, zhToEn: 3000 };
 
-const FALLBACK_WORDS = RAW_WORDS.trim().split("\n").slice(0, 500).map((line, index) => {
-  const [en, zh] = line.split("|");
-  return { id: index + 1, en, zh };
-});
-
-const WORDS = (window.WORD_SNAP_WORDS && window.WORD_SNAP_WORDS.length)
-  ? window.WORD_SNAP_WORDS.map((word, index) => ({
-      id: word.id || index + 1,
-      en: word.en,
-      zh: word.zh,
-      pos: word.pos || "",
-      notes: word.notes || "",
-      frequency: word.frequency || 0
-    }))
-  : FALLBACK_WORDS;
-
-const storeKey = "word-snap-mvp-v1";
 const state = {
-  queue: [],
-  current: null,
-  startedAt: 0,
-  done: 0,
-  correct: 0,
-  fast: 0,
-  answered: false,
-  records: loadRecords()
+  db: null,
+  words: [],
+  records: new Map(),
+  session: null,
+  reviewRows: [],
+  lastReport: null
 };
 
 const els = {
-  sessionSize: document.querySelector("#sessionSize"),
-  deckMode: document.querySelector("#deckMode"),
-  practiceMode: document.querySelector("#practiceMode"),
-  startBtn: document.querySelector("#startBtn"),
-  skipBtn: document.querySelector("#skipBtn"),
-  resetBtn: document.querySelector("#resetBtn"),
+  tabs: [...document.querySelectorAll(".tab")],
+  views: {
+    train: document.querySelector("#view-train"),
+    decks: document.querySelector("#view-decks"),
+    wrong: document.querySelector("#view-wrong"),
+    report: document.querySelector("#view-report")
+  },
   totalWords: document.querySelector("#totalWords"),
   doneCount: document.querySelector("#doneCount"),
   accuracy: document.querySelector("#accuracy"),
   fastRate: document.querySelector("#fastRate"),
-  wrongCount: document.querySelector("#wrongCount"),
+  weakCount: document.querySelector("#weakCount"),
+  stageSelect: document.querySelector("#stageSelect"),
+  sessionSize: document.querySelector("#sessionSize"),
+  practiceMode: document.querySelector("#practiceMode"),
+  deckFilter: document.querySelector("#deckFilter"),
+  startBtn: document.querySelector("#startBtn"),
   progressText: document.querySelector("#progressText"),
   progressBar: document.querySelector("#progressBar"),
   tag: document.querySelector("#tag"),
@@ -3080,19 +2053,171 @@ const els = {
   typingPanel: document.querySelector("#typingPanel"),
   typingAnswer: document.querySelector("#typingAnswer"),
   feedback: document.querySelector("#feedback"),
-  wrongList: document.querySelector("#wrongList")
+  skipBtn: document.querySelector("#skipBtn"),
+  sessionReport: document.querySelector("#sessionReport"),
+  uploadStage: document.querySelector("#uploadStage"),
+  sourceName: document.querySelector("#sourceName"),
+  fileInput: document.querySelector("#fileInput"),
+  recognizeBtn: document.querySelector("#recognizeBtn"),
+  ocrStatus: document.querySelector("#ocrStatus"),
+  reviewPanel: document.querySelector("#reviewPanel"),
+  reviewBody: document.querySelector("#reviewBody"),
+  addRowBtn: document.querySelector("#addRowBtn"),
+  saveDeckBtn: document.querySelector("#saveDeckBtn"),
+  deckList: document.querySelector("#deckList"),
+  clearCustomDecksBtn: document.querySelector("#clearCustomDecksBtn"),
+  exportBtn: document.querySelector("#exportBtn"),
+  importJson: document.querySelector("#importJson"),
+  weakList: document.querySelector("#weakList"),
+  resetRecordsBtn: document.querySelector("#resetRecordsBtn"),
+  reportContent: document.querySelector("#reportContent")
 };
 
-function loadRecords() {
-  try {
-    return JSON.parse(localStorage.getItem(storeKey)) || {};
-  } catch {
-    return {};
-  }
+function openDb() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains("words")) {
+        const words = db.createObjectStore("words", { keyPath: "id" });
+        words.createIndex("stage", "grade", { unique: false });
+        words.createIndex("sourceType", "sourceType", { unique: false });
+      }
+      if (!db.objectStoreNames.contains("records")) {
+        db.createObjectStore("records", { keyPath: "wordId" });
+      }
+      if (!db.objectStoreNames.contains("meta")) {
+        db.createObjectStore("meta", { keyPath: "key" });
+      }
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
 }
 
-function saveRecords() {
-  localStorage.setItem(storeKey, JSON.stringify(state.records));
+function tx(storeName, mode = "readonly") {
+  return state.db.transaction(storeName, mode).objectStore(storeName);
+}
+
+function getAll(storeName) {
+  return new Promise((resolve, reject) => {
+    const request = tx(storeName).getAll();
+    request.onsuccess = () => resolve(request.result || []);
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function put(storeName, value) {
+  return new Promise((resolve, reject) => {
+    const request = tx(storeName, "readwrite").put(value);
+    request.onsuccess = () => resolve();
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function clearStore(storeName) {
+  return new Promise((resolve, reject) => {
+    const request = tx(storeName, "readwrite").clear();
+    request.onsuccess = () => resolve();
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function deleteWordsBySourceType(sourceType) {
+  return new Promise((resolve, reject) => {
+    const store = tx("words", "readwrite");
+    const request = store.openCursor();
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (!cursor) {
+        resolve();
+        return;
+      }
+      if (cursor.value.sourceType === sourceType) cursor.delete();
+      cursor.continue();
+    };
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function normalizeBuiltinWord(word, index) {
+  return {
+    id: `builtin-${word.en.toLowerCase()}`,
+    en: word.en.trim(),
+    zh: word.zh.trim(),
+    pos: word.pos || "",
+    notes: word.notes || "",
+    grade: "初三",
+    goals: ["初三", "中考冲刺"],
+    source: "近五年中考结合最新一模",
+    sourceType: "builtin",
+    frequency: Number(word.frequency || 0),
+    createdAt: 0,
+    order: index + 1
+  };
+}
+
+async function seedBuiltinWords() {
+  const meta = await new Promise((resolve) => {
+    const request = tx("meta").get("builtinSeeded");
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => resolve(null);
+  });
+  if (meta?.value === true) return;
+
+  const builtin = (window.WORD_SNAP_WORDS || []).map(normalizeBuiltinWord).filter((word) => word.en && word.zh);
+  const store = tx("words", "readwrite");
+  await Promise.all(builtin.map((word) => new Promise((resolve, reject) => {
+    const request = store.put(word);
+    request.onsuccess = () => resolve();
+    request.onerror = () => reject(request.error);
+  })));
+  await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
+}
+
+async function loadState() {
+  state.words = await getAll("words");
+  const records = await getAll("records");
+  state.records = new Map(records.map((record) => [record.wordId, record]));
+  renderAll();
+}
+
+function switchView(view) {
+  els.tabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.view === view));
+  Object.entries(els.views).forEach(([name, el]) => el.classList.toggle("active", name === view));
+  renderAll();
+}
+
+function stageMatches(word, stage) {
+  return word.grade === stage || (word.goals || []).includes(stage);
+}
+
+function getEligibleWords() {
+  const stage = els.stageSelect.value;
+  const filter = els.deckFilter.value;
+  return state.words.filter((word) => {
+    const sourceOk = filter === "all" || (filter === "builtin" && word.sourceType === "builtin") || (filter === "custom" && word.sourceType === "custom");
+    return sourceOk && stageMatches(word, stage);
+  });
+}
+
+function getRecord(wordId) {
+  return state.records.get(wordId) || {
+    wordId,
+    seen: 0,
+    correct: 0,
+    wrong: 0,
+    fast: 0,
+    slow: 0,
+    mastery: 0,
+    lastSeenAt: 0,
+    nextReviewAt: 0
+  };
+}
+
+function isWeak(word) {
+  const record = getRecord(word.id);
+  return record.wrong > 0 || record.slow > 0 || (record.seen > 0 && record.mastery < 60);
 }
 
 function shuffle(items) {
@@ -3104,239 +2229,549 @@ function shuffle(items) {
   return copy;
 }
 
-function getWrongWords() {
-  return WORDS.filter((word) => (state.records[word.en]?.wrong || 0) > 0);
+function uniqueById(items) {
+  const seen = new Set();
+  return items.filter((item) => {
+    if (seen.has(item.id)) return false;
+    seen.add(item.id);
+    return true;
+  });
 }
 
-function scoreForNewWords(word) {
-  const record = state.records[word.en];
-  if (!record) return -100;
-  return (record.seen || 0) + (record.correct || 0) * 2 + (record.wrong || 0) * 5;
+function weightedPick(items, count) {
+  return shuffle(items).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, count);
+}
+
+function priorityScore(word) {
+  const record = getRecord(word.id);
+  const due = record.nextReviewAt && record.nextReviewAt <= Date.now() ? 20 : 0;
+  return (word.frequency || 0) + record.wrong * 10 + record.slow * 5 - record.mastery + due;
 }
 
 function buildQueue() {
   const size = Number(els.sessionSize.value);
-  const mode = els.deckMode.value;
-  if (mode === "wrong") {
-    const wrong = getWrongWords();
-    return shuffle(wrong.length ? wrong : WORDS).slice(0, size);
+  const words = getEligibleWords();
+  const now = Date.now();
+  const newWords = words.filter((word) => getRecord(word.id).seen === 0);
+  const weakWords = words.filter(isWeak);
+  const dueWords = words.filter((word) => {
+    const record = getRecord(word.id);
+    return record.seen > 0 && record.nextReviewAt <= now && !isWeak(word);
+  });
+  const regular = words.filter((word) => !newWords.includes(word) && !weakWords.includes(word) && !dueWords.includes(word));
+  const picked = [
+    ...weightedPick(newWords, Math.ceil(size * 0.4)),
+    ...weightedPick(weakWords, Math.ceil(size * 0.4)),
+    ...weightedPick(dueWords, Math.ceil(size * 0.2))
+  ];
+  return uniqueById([...picked, ...weightedPick(regular, size)]).slice(0, size);
+}
+
+function resolvePracticeMode(word) {
+  const selected = els.practiceMode.value;
+  if (selected !== "auto") return selected;
+  const stage = els.stageSelect.value;
+  if (stage.startsWith("高") || stage === "高考冲刺") {
+    return Math.random() < 0.45 ? "zhToEn" : "enToZh";
   }
-  if (mode === "new") {
-    return shuffle([...WORDS].sort((a, b) => scoreForNewWords(a) - scoreForNewWords(b)).slice(0, size * 2)).slice(0, size);
-  }
-  const weightedWrong = getWrongWords().flatMap((word) => [word, word]);
-  return shuffle([...WORDS, ...weightedWrong]).slice(0, size);
+  return Math.random() < 0.18 ? "zhToEn" : "enToZh";
 }
 
 function startSession() {
-  state.queue = buildQueue();
-  state.done = 0;
-  state.correct = 0;
-  state.fast = 0;
-  state.current = null;
+  const queue = buildQueue();
+  if (!queue.length) {
+    els.feedback.textContent = "当前阶段没有可训练词。请切换阶段，或先在词库页上传词表。";
+    return;
+  }
+  state.session = {
+    queue,
+    total: queue.length,
+    current: null,
+    mode: "enToZh",
+    startedAt: 0,
+    answered: false,
+    done: 0,
+    correct: 0,
+    fast: 0,
+    wrongWords: [],
+    slowWords: []
+  };
   els.skipBtn.disabled = false;
-  els.feedback.textContent = "开始后不要默念太久，第一反应最重要。";
+  els.sessionReport.hidden = true;
+  els.sessionReport.innerHTML = "";
   nextWord();
 }
 
 function nextWord() {
-  state.answered = false;
-  state.current = state.queue.shift();
-  if (!state.current) {
+  const session = state.session;
+  session.answered = false;
+  session.current = session.queue.shift();
+  if (!session.current) {
     finishSession();
     return;
   }
-
-  const choices = makeChoices(state.current);
-  const mode = els.practiceMode.value;
-  els.word.textContent = mode === "zhToEn" ? state.current.zh : state.current.en;
-  els.tag.textContent = `第 ${state.done + 1} 词`;
-  els.hint.textContent = mode === "zhToEn"
-    ? "说出或输入对应英文。大小写不影响判断。"
-    : "选出它最常见的中文意思。";
-  els.feedback.textContent = mode === "zhToEn"
-    ? "计时中：3 秒内答对记为快速反应。"
-    : "计时中：1 秒内答对记为秒反。";
+  session.mode = resolvePracticeMode(session.current);
+  const word = session.current;
+  els.word.textContent = session.mode === "zhToEn" ? word.zh : word.en;
+  els.tag.textContent = `${word.grade} · ${word.sourceType === "builtin" ? "内置" : "自定义"}`;
+  els.hint.textContent = session.mode === "zhToEn"
+    ? "说出或输入对应英文。3 秒内答对算快速。"
+    : [word.pos, word.notes].filter(Boolean).join(" · ") || "选出最常见的中文意思。1 秒内答对算快速。";
+  els.feedback.textContent = "计时中。";
   els.choices.innerHTML = "";
-  els.typingPanel.hidden = mode !== "zhToEn";
-  els.choices.hidden = mode === "zhToEn";
+  els.choices.hidden = session.mode === "zhToEn";
+  els.typingPanel.hidden = session.mode !== "zhToEn";
   els.typingAnswer.value = "";
   els.typingAnswer.disabled = false;
-  if (mode === "zhToEn") {
-    window.setTimeout(() => els.typingAnswer.focus(), 0);
+  if (session.mode === "zhToEn") {
+    setTimeout(() => els.typingAnswer.focus(), 0);
   } else {
-    choices.forEach((choice) => {
+    makeChoices(word).forEach((choice) => {
       const button = document.createElement("button");
-      button.type = "button";
       button.className = "choice";
+      button.type = "button";
       button.textContent = choice.zh;
-      button.addEventListener("click", () => answer(choice, button));
+      button.addEventListener("click", () => answer(choice.en, button));
       els.choices.append(button);
     });
   }
-  state.startedAt = performance.now();
+  session.startedAt = performance.now();
   updateProgress();
 }
 
 function makeChoices(answer) {
-  const wrongChoices = shuffle(WORDS.filter((word) => word.en !== answer.en)).slice(0, 3);
-  return shuffle([answer, ...wrongChoices]);
+  const pool = getEligibleWords().filter((word) => word.id !== answer.id && word.zh);
+  return shuffle([answer, ...shuffle(pool).slice(0, 3)]);
 }
 
-function answer(choice, button) {
-  if (state.answered || !state.current) return;
-  state.answered = true;
-  const elapsed = performance.now() - state.startedAt;
-  const mode = els.practiceMode.value;
-  const isCorrect = mode === "zhToEn"
-    ? normalizeEnglish(choice.en) === normalizeEnglish(state.current.en)
-    : choice.en === state.current.en;
-  state.done += 1;
-  state.correct += isCorrect ? 1 : 0;
-  const fastLimit = mode === "zhToEn" ? 3000 : 1000;
-  state.fast += isCorrect && elapsed <= fastLimit ? 1 : 0;
-
-  recordAnswer(state.current, isCorrect, elapsed);
-  if (mode === "zhToEn") {
-    els.typingAnswer.disabled = true;
-  } else {
-    paintChoices(choice, button);
-  }
-  els.feedback.textContent = getFeedback(isCorrect, elapsed);
-  updateStats();
+async function answer(value, button) {
+  const session = state.session;
+  if (!session || session.answered || !session.current) return;
+  session.answered = true;
+  const elapsed = performance.now() - session.startedAt;
+  const word = session.current;
+  const isCorrect = session.mode === "zhToEn"
+    ? normalizeEnglish(value) === normalizeEnglish(word.en)
+    : value === word.en;
+  const isFast = isCorrect && elapsed <= FAST_LIMITS[session.mode];
+  session.done += 1;
+  session.correct += isCorrect ? 1 : 0;
+  session.fast += isFast ? 1 : 0;
+  if (!isCorrect) session.wrongWords.push(word);
+  if (isCorrect && !isFast) session.slowWords.push(word);
+  if (session.mode === "enToZh") paintChoices(value, button);
+  if (session.mode === "zhToEn") els.typingAnswer.disabled = true;
+  els.feedback.textContent = feedbackText(word, isCorrect, isFast, elapsed);
+  await recordAnswer(word, isCorrect, isFast, elapsed);
+  renderAll();
   updateProgress();
-
-  setTimeout(nextWord, isCorrect ? 700 : 1200);
+  setTimeout(nextWord, isCorrect ? 750 : 1350);
 }
 
-function normalizeEnglish(value) {
-  return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
-}
-
-function paintChoices(choice, clickedButton) {
+function paintChoices(answerEn, clickedButton) {
   [...els.choices.children].forEach((button) => {
-    if (button.textContent === state.current.zh) button.classList.add("correct");
+    const isCorrectChoice = button.textContent === state.session.current.zh;
+    button.classList.toggle("correct", isCorrectChoice);
     button.disabled = true;
   });
-  if (choice.en !== state.current.en) clickedButton.classList.add("wrong");
+  if (answerEn !== state.session.current.en && clickedButton) clickedButton.classList.add("wrong");
 }
 
-function getFeedback(isCorrect, elapsed) {
-  const extra = state.current.pos ? ` (${state.current.pos})` : "";
-  if (!isCorrect) return `错词：${state.current.zh} = ${state.current.en}${extra}`;
-  if (elapsed <= 1000) return `秒反成功：${(elapsed / 1000).toFixed(2)} 秒`;
-  if (elapsed <= 3000) return `答对了，但还可以更快：${(elapsed / 1000).toFixed(2)} 秒`;
-  return `答对了，用时 ${(elapsed / 1000).toFixed(2)} 秒，建议再刷一遍。`;
+function feedbackText(word, isCorrect, isFast, elapsed) {
+  const seconds = (elapsed / 1000).toFixed(2);
+  if (!isCorrect) return `错词：${word.en} = ${word.zh}`;
+  if (isFast) return `快速答对：${seconds} 秒`;
+  return `答对了，用时 ${seconds} 秒，已记为慢词。`;
 }
 
-function recordAnswer(word, isCorrect, elapsed) {
-  const record = state.records[word.en] || {
-    zh: word.zh,
-    seen: 0,
-    correct: 0,
-    wrong: 0,
-    fast: 0,
-    totalMs: 0
-  };
+async function recordAnswer(word, isCorrect, isFast, elapsed) {
+  const record = getRecord(word.id);
   record.seen += 1;
   record.correct += isCorrect ? 1 : 0;
   record.wrong += isCorrect ? 0 : 1;
-  record.fast += isCorrect && elapsed <= 1000 ? 1 : 0;
-  record.totalMs += Math.round(elapsed);
-  state.records[word.en] = record;
-  saveRecords();
-  renderWrongBook();
+  record.fast += isFast ? 1 : 0;
+  record.slow += isCorrect && !isFast ? 1 : 0;
+  record.lastSeenAt = Date.now();
+  const delta = isCorrect ? (isFast ? 18 : 8) : -24;
+  record.mastery = Math.max(0, Math.min(100, Math.round((record.mastery || 0) + delta)));
+  const intervalHours = isCorrect ? (isFast ? 48 : 24) : 4;
+  record.nextReviewAt = Date.now() + intervalHours * 60 * 60 * 1000;
+  state.records.set(word.id, record);
+  await put("records", record);
 }
 
 function skipWord() {
-  if (state.answered || !state.current) return;
-  if (els.practiceMode.value === "zhToEn") {
-    answer({ en: "" }, null);
-    return;
-  }
-  const fakeButton = [...els.choices.children].find((button) => button.textContent !== state.current.zh);
-  answer({ en: "__skip__", zh: "" }, fakeButton || els.skipBtn);
+  if (!state.session?.current) return;
+  answer("", null);
 }
 
 function finishSession() {
-  state.current = null;
+  const session = state.session;
+  const tomorrow = uniqueById([...session.wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
+  state.lastReport = {
+    total: session.total,
+    correct: session.correct,
+    fast: session.fast,
+    wrong: session.wrongWords.length,
+    slow: session.slowWords.length,
+    tomorrow
+  };
   els.word.textContent = "Done";
   els.tag.textContent = "本轮完成";
-  els.hint.textContent = "可以继续练错词，或把错词截图发给家长/老师看。";
+  els.hint.textContent = "建议明天优先复习本轮错词和慢词。";
   els.choices.innerHTML = "";
   els.choices.hidden = false;
   els.typingPanel.hidden = true;
-  els.typingAnswer.disabled = false;
   els.skipBtn.disabled = true;
-  els.feedback.textContent = `本轮完成：${state.done} 词，正确率 ${percent(state.correct, state.done)}，秒反率 ${percent(state.fast, state.done)}。`;
-  updateProgress(true);
+  els.feedback.textContent = `完成 ${session.total} 词，正确率 ${percent(session.correct, session.total)}，快速率 ${percent(session.fast, session.total)}。`;
+  els.progressText.textContent = "本轮已完成";
+  els.progressBar.style.width = "100%";
+  renderSessionReport();
+  renderAll();
+}
+
+function updateProgress() {
+  const session = state.session;
+  if (!session) return;
+  els.progressText.textContent = `进度 ${session.done}/${session.total}`;
+  els.progressBar.style.width = `${Math.round((session.done / session.total) * 100)}%`;
 }
 
 function percent(value, total) {
   return total ? `${Math.round((value / total) * 100)}%` : "0%";
 }
 
-function updateProgress(done = false) {
-  const total = state.done + state.queue.length + (state.current && !state.answered ? 1 : 0);
-  const progress = total ? Math.min(100, Math.round((state.done / total) * 100)) : 0;
-  els.progressText.textContent = done ? "本轮已完成" : `进度 ${state.done}/${total}`;
-  els.progressBar.style.width = `${done ? 100 : progress}%`;
+function normalizeEnglish(value) {
+  return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
 }
 
-function updateStats() {
-  const wrongTotal = getWrongWords().length;
-  els.totalWords.textContent = WORDS.length;
-  els.doneCount.textContent = Object.values(state.records).reduce((sum, record) => sum + record.seen, 0);
-  const totalCorrect = Object.values(state.records).reduce((sum, record) => sum + record.correct, 0);
-  const totalSeen = Object.values(state.records).reduce((sum, record) => sum + record.seen, 0);
-  const totalFast = Object.values(state.records).reduce((sum, record) => sum + record.fast, 0);
-  els.accuracy.textContent = percent(totalCorrect, totalSeen);
-  els.fastRate.textContent = percent(totalFast, totalSeen);
-  els.wrongCount.textContent = wrongTotal;
-}
-
-function renderWrongBook() {
-  const wrongWords = getWrongWords()
-    .sort((a, b) => (state.records[b.en].wrong || 0) - (state.records[a.en].wrong || 0))
-    .slice(0, 60);
-  if (!wrongWords.length) {
-    els.wrongList.innerHTML = "<p>还没有错词。开始一轮训练后这里会自动出现。</p>";
+async function recognizeFile() {
+  const file = els.fileInput.files?.[0];
+  if (!file) {
+    els.ocrStatus.textContent = "请先选择一个图片、PDF 或文本文件。";
     return;
   }
-  els.wrongList.innerHTML = "";
-  wrongWords.forEach((word) => {
-    const record = state.records[word.en];
-    const item = document.createElement("div");
-    item.className = "word-chip";
-    item.innerHTML = `<span>${word.en}<br>${word.zh}</span><span>错 ${record.wrong}</span>`;
-    if (word.notes) item.title = word.notes;
-    els.wrongList.append(item);
+  els.recognizeBtn.disabled = true;
+  els.ocrStatus.textContent = "正在本地识别，文件不会上传到服务器。";
+  try {
+    let text = "";
+    if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
+      text = await extractPdfText(file);
+      if (!text.trim()) text = await ocrPdf(file);
+    } else if (file.type.startsWith("image/")) {
+      text = await ocrImage(file);
+    } else {
+      text = await file.text();
+    }
+    state.reviewRows = parseWordsFromText(text).slice(0, 300);
+    if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
+    renderReviewRows();
+    els.reviewPanel.hidden = false;
+    els.ocrStatus.textContent = `识别到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
+  } catch (error) {
+    els.ocrStatus.textContent = `识别失败：${error.message || error}`;
+  } finally {
+    els.recognizeBtn.disabled = false;
+  }
+}
+
+async function extractPdfText(file) {
+  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  const buffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+  const chunks = [];
+  for (let pageNo = 1; pageNo <= pdf.numPages; pageNo += 1) {
+    els.ocrStatus.textContent = `正在提取 PDF 文本：第 ${pageNo}/${pdf.numPages} 页`;
+    const page = await pdf.getPage(pageNo);
+    const content = await page.getTextContent();
+    chunks.push(content.items.map((item) => item.str).join(" "));
+  }
+  return chunks.join("\n");
+}
+
+async function ocrPdf(file) {
+  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
+  const buffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+  const chunks = [];
+  for (let pageNo = 1; pageNo <= Math.min(pdf.numPages, 12); pageNo += 1) {
+    els.ocrStatus.textContent = `扫描版 PDF OCR：第 ${pageNo}/${pdf.numPages} 页`;
+    const page = await pdf.getPage(pageNo);
+    const viewport = page.getViewport({ scale: 1.8 });
+    const canvas = document.createElement("canvas");
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+    chunks.push(await ocrCanvas(canvas));
+  }
+  return chunks.join("\n");
+}
+
+async function ocrImage(file) {
+  return ocrCanvas(await imageFileToCanvas(file));
+}
+
+async function imageFileToCanvas(file) {
+  const bitmap = await createImageBitmap(file);
+  const maxWidth = 1800;
+  const scale = Math.min(1, maxWidth / bitmap.width);
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  canvas.getContext("2d").drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  return canvas;
+}
+
+async function ocrCanvas(canvas) {
+  if (!window.Tesseract) throw new Error("OCR 识别库加载失败，请检查网络。");
+  const result = await Tesseract.recognize(canvas, "eng+chi_sim", {
+    logger: (message) => {
+      if (message.status) {
+        const progress = message.progress ? ` ${Math.round(message.progress * 100)}%` : "";
+        els.ocrStatus.textContent = `OCR ${message.status}${progress}`;
+      }
+    }
+  });
+  return result.data.text || "";
+}
+
+function parseWordsFromText(text) {
+  const rows = [];
+  const seen = new Set();
+  String(text || "").split(/\n|;/).forEach((raw) => {
+    const line = raw.replace(/\s+/g, " ").trim();
+    if (!line) return;
+    const match = line.match(/^([A-Za-z][A-Za-z'-]{1,24})\s*(?:\(([^)]{1,12})\)|\b(n\.|v\.|adj\.|adv\.|prep\.|conj\.|pron\.)\b)?\s*[:：\-—]?\s*(.*)$/i);
+    if (!match) return;
+    const en = match[1].toLowerCase();
+    if (seen.has(en) || COMMON_NOISE.has(en)) return;
+    seen.add(en);
+    const pos = (match[2] || match[3] || "").trim();
+    const rest = (match[4] || "").trim();
+    const zhMatch = rest.match(/[\u4e00-\u9fa5][\u4e00-\u9fa5，、；;（）() ]{0,50}/);
+    rows.push({ en, zh: zhMatch ? zhMatch[0].trim() : "", pos, notes: rest.slice(0, 120) });
+  });
+  return rows;
+}
+
+const COMMON_NOISE = new Set(["the", "and", "for", "with", "from", "this", "that", "page", "unit", "name", "class"]);
+
+function renderReviewRows() {
+  els.reviewBody.innerHTML = "";
+  state.reviewRows.forEach((row, index) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><input data-field="en" data-index="${index}" value="${escapeAttr(row.en)}"></td>
+      <td><input data-field="zh" data-index="${index}" value="${escapeAttr(row.zh)}"></td>
+      <td><input data-field="pos" data-index="${index}" value="${escapeAttr(row.pos)}"></td>
+      <td><input data-field="notes" data-index="${index}" value="${escapeAttr(row.notes)}"></td>
+      <td><button type="button" class="secondary danger" data-remove="${index}">删除</button></td>
+    `;
+    els.reviewBody.append(tr);
   });
 }
 
-function resetRecords() {
-  if (!confirm("确定清空所有本地练习记录吗？")) return;
-  state.records = {};
-  saveRecords();
-  updateStats();
-  renderWrongBook();
-  els.feedback.textContent = "记录已清空。";
+function syncReviewRowsFromDom() {
+  els.reviewBody.querySelectorAll("input").forEach((input) => {
+    const index = Number(input.dataset.index);
+    state.reviewRows[index][input.dataset.field] = input.value.trim();
+  });
 }
 
-els.startBtn.addEventListener("click", startSession);
-els.skipBtn.addEventListener("click", skipWord);
-els.resetBtn.addEventListener("click", resetRecords);
-els.typingPanel.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!state.current || state.answered) return;
-  answer({ en: els.typingAnswer.value }, null);
-  window.setTimeout(() => {
-    els.typingAnswer.disabled = false;
-  }, 500);
-});
+async function saveReviewDeck() {
+  syncReviewRowsFromDom();
+  const stage = els.uploadStage.value;
+  const source = els.sourceName.value.trim() || els.fileInput.files?.[0]?.name || "自定义词库";
+  const createdAt = Date.now();
+  const rows = state.reviewRows.filter((row) => row.en.trim()).map((row, index) => ({
+    id: `custom-${createdAt}-${index}-${row.en.toLowerCase()}`,
+    en: row.en.trim(),
+    zh: row.zh.trim() || "待补充中文",
+    pos: row.pos.trim(),
+    notes: row.notes.trim(),
+    grade: stage,
+    goals: stage.includes("考") ? [stage] : [stage],
+    source,
+    sourceType: "custom",
+    frequency: 0,
+    createdAt,
+    order: index + 1
+  }));
+  if (!rows.length) {
+    els.ocrStatus.textContent = "没有可保存的英文词条。";
+    return;
+  }
+  for (const row of rows) await put("words", row);
+  state.reviewRows = [];
+  els.reviewPanel.hidden = true;
+  els.ocrStatus.textContent = `已保存 ${rows.length} 个词到 ${stage}。`;
+  await loadState();
+}
 
-updateStats();
-renderWrongBook();
+function renderAll() {
+  renderStats();
+  renderDecks();
+  renderWeakList();
+  renderReport();
+}
+
+function renderStats() {
+  const eligible = getEligibleWords();
+  const records = [...state.records.values()];
+  const seen = records.reduce((sum, record) => sum + record.seen, 0);
+  const correct = records.reduce((sum, record) => sum + record.correct, 0);
+  const fast = records.reduce((sum, record) => sum + record.fast, 0);
+  els.totalWords.textContent = eligible.length;
+  els.doneCount.textContent = seen;
+  els.accuracy.textContent = percent(correct, seen);
+  els.fastRate.textContent = percent(fast, seen);
+  els.weakCount.textContent = state.words.filter(isWeak).length;
+}
+
+function renderDecks() {
+  const groups = new Map();
+  state.words.forEach((word) => {
+    const key = `${word.sourceType}|${word.source}|${word.grade}`;
+    if (!groups.has(key)) groups.set(key, { ...word, count: 0 });
+    groups.get(key).count += 1;
+  });
+  if (!groups.size) {
+    els.deckList.innerHTML = "<p class='status-text'>还没有词库。</p>";
+    return;
+  }
+  els.deckList.innerHTML = [...groups.values()].sort((a, b) => a.grade.localeCompare(b.grade, "zh")).map((deck) => `
+    <div class="deck-card">
+      <strong>${escapeHtml(deck.source)}</strong>
+      <p class="meta">${deck.grade} · ${deck.sourceType === "builtin" ? "内置词库" : "自定义词库"} · ${deck.count} 词</p>
+    </div>
+  `).join("");
+}
+
+function renderWeakList() {
+  const words = state.words.filter(isWeak).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, 120);
+  if (!words.length) {
+    els.weakList.innerHTML = "<p class='status-text'>还没有错词或慢词。完成一轮训练后这里会自动更新。</p>";
+    return;
+  }
+  els.weakList.innerHTML = words.map((word) => {
+    const record = getRecord(word.id);
+    return `<div class="word-chip">
+      <strong>${escapeHtml(word.en)}</strong>
+      <span>${escapeHtml(word.zh)} · ${word.grade}</span><br>
+      <span>错 ${record.wrong} · 慢 ${record.slow} · 掌握 ${record.mastery}%</span>
+    </div>`;
+  }).join("");
+}
+
+function renderReport() {
+  const byStage = STAGES.map((stage) => {
+    const words = state.words.filter((word) => stageMatches(word, stage));
+    const practiced = words.filter((word) => getRecord(word.id).seen > 0).length;
+    const mastered = words.filter((word) => getRecord(word.id).mastery >= 80).length;
+    return { stage, total: words.length, practiced, mastered };
+  }).filter((item) => item.total > 0);
+  const due = state.words.filter((word) => getRecord(word.id).nextReviewAt <= Date.now() && getRecord(word.id).seen > 0).length;
+  els.reportContent.innerHTML = [
+    `<div class="report-card"><strong>${due}</strong><span>今日到期复习词</span></div>`,
+    ...byStage.map((item) => `<div class="report-card"><strong>${item.stage}</strong><span>${item.practiced}/${item.total} 已练 · ${item.mastered} 已掌握</span></div>`)
+  ].join("");
+}
+
+function renderSessionReport() {
+  const report = state.lastReport;
+  if (!report) return;
+  els.sessionReport.hidden = false;
+  els.sessionReport.innerHTML = `
+    <div class="session-report-card"><strong>${report.total}</strong><span>本轮词数</span></div>
+    <div class="session-report-card"><strong>${percent(report.correct, report.total)}</strong><span>正确率</span></div>
+    <div class="session-report-card"><strong>${percent(report.fast, report.total)}</strong><span>快速率</span></div>
+    <div class="session-report-card"><strong>${report.wrong}</strong><span>错词</span></div>
+    <div class="session-report-card"><strong>${report.slow}</strong><span>慢词</span></div>
+    <div class="session-report-card"><strong>${report.tomorrow}</strong><span>建议明天复习</span></div>
+  `;
+}
+
+async function exportData() {
+  const payload = { version: 2, exportedAt: new Date().toISOString(), words: state.words, records: [...state.records.values()] };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `秒懂词词库-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+async function importData(file) {
+  const data = JSON.parse(await file.text());
+  const words = Array.isArray(data.words) ? data.words : [];
+  const records = Array.isArray(data.records) ? data.records : [];
+  for (const word of words) await put("words", word);
+  for (const record of records) await put("records", record);
+  await loadState();
+}
+
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
+}
+
+function escapeAttr(value) {
+  return escapeHtml(value).replace(/`/g, "&#96;");
+}
+
+function bindEvents() {
+  els.tabs.forEach((tab) => tab.addEventListener("click", () => switchView(tab.dataset.view)));
+  [els.stageSelect, els.deckFilter].forEach((el) => el.addEventListener("change", renderAll));
+  els.startBtn.addEventListener("click", startSession);
+  els.skipBtn.addEventListener("click", skipWord);
+  els.typingPanel.addEventListener("submit", (event) => {
+    event.preventDefault();
+    answer(els.typingAnswer.value, null);
+  });
+  els.recognizeBtn.addEventListener("click", recognizeFile);
+  els.addRowBtn.addEventListener("click", () => {
+    syncReviewRowsFromDom();
+    state.reviewRows.push({ en: "", zh: "", pos: "", notes: "" });
+    renderReviewRows();
+  });
+  els.reviewBody.addEventListener("click", (event) => {
+    const remove = event.target.dataset.remove;
+    if (remove === undefined) return;
+    syncReviewRowsFromDom();
+    state.reviewRows.splice(Number(remove), 1);
+    renderReviewRows();
+  });
+  els.saveDeckBtn.addEventListener("click", saveReviewDeck);
+  els.clearCustomDecksBtn.addEventListener("click", async () => {
+    if (!confirm("确定清空所有自定义词库吗？内置词库和练习记录会保留。")) return;
+    await deleteWordsBySourceType("custom");
+    await loadState();
+  });
+  els.resetRecordsBtn.addEventListener("click", async () => {
+    if (!confirm("确定清空所有练习记录吗？词库会保留。")) return;
+    await clearStore("records");
+    await loadState();
+  });
+  els.exportBtn.addEventListener("click", exportData);
+  els.importJson.addEventListener("change", () => {
+    const file = els.importJson.files?.[0];
+    if (file) importData(file);
+  });
+}
+
+async function init() {
+  bindEvents();
+  try {
+    state.db = await openDb();
+    await seedBuiltinWords();
+    await loadState();
+  } catch (error) {
+    els.feedback.textContent = `初始化失败：${error.message || error}`;
+  }
+}
+
+init();
 
 </script>
 </body>
