@@ -43,6 +43,15 @@
             <option value="高考冲刺">高考冲刺</option>
           </select>
         </label>
+        <label>训练模式
+          <select id="practiceMode">
+            <option value="enToZhChoice" selected>看英文选中文</option>
+            <option value="zhToEnChoice">看中文选英文</option>
+            <option value="enToZhType">看英文说中文</option>
+            <option value="zhToEnType">看中文说英文</option>
+            <option value="auto">按阶段自动</option>
+          </select>
+        </label>
         <button id="startBtn" type="button">开始训练</button>
       </div>
 
@@ -65,13 +74,6 @@
               <option value="all">全部单词</option>
             </select>
           </label>
-          <label>训练模式
-            <select id="practiceMode">
-              <option value="auto" selected>按阶段自动</option>
-              <option value="enToZh">看英文选中文</option>
-              <option value="zhToEn">看中文说英文</option>
-            </select>
-          </label>
           <label>词库来源
             <select id="deckFilter">
               <option value="all" selected>全部可用词库</option>
@@ -92,9 +94,10 @@
           <h2 id="word">Ready?</h2>
           <p id="hint">系统会按新词、弱词、到期复习词自动组一轮。</p>
         </article>
+        <div id="timer" class="timer">用时 0.0 秒 · 1.8 秒内答对算秒选</div>
         <div id="choices" class="choices"></div>
         <form id="typingPanel" class="typing-panel" hidden>
-          <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入英文单词">
+          <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入答案">
           <button type="submit">确认</button>
         </form>
         <div class="feedback-row">

@@ -122,7 +122,7 @@ h2 { font-size: 21px; }
 }
 
 .primary-controls {
-  grid-template-columns: minmax(180px, 260px) auto;
+  grid-template-columns: minmax(170px, 240px) minmax(190px, 260px) auto;
   justify-content: start;
 }
 
@@ -176,6 +176,18 @@ label {
 }
 
 #hint { color: var(--muted); }
+
+.timer {
+  margin: -6px 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.timer.fast {
+  color: var(--green);
+  font-weight: 700;
+}
 
 .choices {
   display: grid;

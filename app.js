@@ -1,7 +1,7 @@
 const STAGES = ["初一", "初二", "初三", "高一", "高二", "高三", "中考冲刺", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 1;
-const FAST_LIMITS = { enToZh: 1000, zhToEn: 3000 };
+const FAST_PICK_LIMIT = 1800;
 
 const state = {
   db: null,
@@ -36,6 +36,7 @@ const els = {
   tag: document.querySelector("#tag"),
   word: document.querySelector("#word"),
   hint: document.querySelector("#hint"),
+  timer: document.querySelector("#timer"),
   choices: document.querySelector("#choices"),
   typingPanel: document.querySelector("#typingPanel"),
   typingAnswer: document.querySelector("#typingAnswer"),
@@ -73,12 +74,8 @@ function openDb() {
         words.createIndex("stage", "grade", { unique: false });
         words.createIndex("sourceType", "sourceType", { unique: false });
       }
-      if (!db.objectStoreNames.contains("records")) {
-        db.createObjectStore("records", { keyPath: "wordId" });
-      }
-      if (!db.objectStoreNames.contains("meta")) {
-        db.createObjectStore("meta", { keyPath: "key" });
-      }
+      if (!db.objectStoreNames.contains("records")) db.createObjectStore("records", { keyPath: "wordId" });
+      if (!db.objectStoreNames.contains("meta")) db.createObjectStore("meta", { keyPath: "key" });
     };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => reject(request.error);
@@ -115,14 +112,10 @@ function clearStore(storeName) {
 
 function deleteWordsBySourceType(sourceType) {
   return new Promise((resolve, reject) => {
-    const store = tx("words", "readwrite");
-    const request = store.openCursor();
+    const request = tx("words", "readwrite").openCursor();
     request.onsuccess = () => {
       const cursor = request.result;
-      if (!cursor) {
-        resolve();
-        return;
-      }
+      if (!cursor) return resolve();
       if (cursor.value.sourceType === sourceType) cursor.delete();
       cursor.continue();
     };
@@ -148,16 +141,16 @@ function normalizeBuiltinWord(word, index) {
 }
 
 async function seedBuiltinWords() {
-  const meta = await new Promise((resolve) => {
+  const seeded = await new Promise((resolve) => {
     const request = tx("meta").get("builtinSeeded");
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => resolve(null);
   });
-  if (meta?.value === true) return;
+  if (seeded?.value === true) return;
 
-  const builtin = (window.WORD_SNAP_WORDS || []).map(normalizeBuiltinWord).filter((word) => word.en && word.zh);
+  const words = (window.WORD_SNAP_WORDS || []).map(normalizeBuiltinWord).filter((word) => word.en && word.zh);
   const store = tx("words", "readwrite");
-  await Promise.all(builtin.map((word) => new Promise((resolve, reject) => {
+  await Promise.all(words.map((word) => new Promise((resolve, reject) => {
     const request = store.put(word);
     request.onsuccess = () => resolve();
     request.onerror = () => reject(request.error);
@@ -228,26 +221,25 @@ function uniqueById(items) {
   });
 }
 
-function weightedPick(items, count) {
-  return shuffle(items).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, count);
-}
-
 function priorityScore(word) {
   const record = getRecord(word.id);
   const due = record.nextReviewAt && record.nextReviewAt <= Date.now() ? 20 : 0;
   return (word.frequency || 0) + record.wrong * 10 + record.slow * 5 - record.mastery + due;
 }
 
+function weightedPick(items, count) {
+  return shuffle(items).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, count);
+}
+
 function buildQueue() {
-  const sizeValue = els.sessionSize.value;
   const words = getEligibleWords();
+  const sizeValue = els.sessionSize.value;
   const size = sizeValue === "all" ? words.length : Number(sizeValue);
-  const now = Date.now();
   const newWords = words.filter((word) => getRecord(word.id).seen === 0);
   const weakWords = words.filter(isWeak);
   const dueWords = words.filter((word) => {
     const record = getRecord(word.id);
-    return record.seen > 0 && record.nextReviewAt <= now && !isWeak(word);
+    return record.seen > 0 && record.nextReviewAt <= Date.now() && !isWeak(word);
   });
   const regular = words.filter((word) => !newWords.includes(word) && !weakWords.includes(word) && !dueWords.includes(word));
   const scope = els.trainingScope.value;
@@ -264,14 +256,14 @@ function buildQueue() {
   return uniqueById([...picked, ...weightedPick(regular, size)]).slice(0, size);
 }
 
-function resolvePracticeMode(word) {
+function resolvePracticeMode() {
   const selected = els.practiceMode.value;
   if (selected !== "auto") return selected;
   const stage = els.stageSelect.value;
   if (stage.startsWith("高") || stage === "高考冲刺") {
-    return Math.random() < 0.45 ? "zhToEn" : "enToZh";
+    return Math.random() < 0.45 ? "zhToEnType" : "zhToEnChoice";
   }
-  return Math.random() < 0.18 ? "zhToEn" : "enToZh";
+  return Math.random() < 0.25 ? "zhToEnChoice" : "enToZhChoice";
 }
 
 function startSession() {
@@ -284,8 +276,9 @@ function startSession() {
     queue,
     total: queue.length,
     current: null,
-    mode: "enToZh",
+    mode: "enToZhChoice",
     startedAt: 0,
+    timerId: 0,
     answered: false,
     done: 0,
     correct: 0,
@@ -303,37 +296,55 @@ function nextWord() {
   const session = state.session;
   session.answered = false;
   session.current = session.queue.shift();
-  if (!session.current) {
-    finishSession();
-    return;
-  }
-  session.mode = resolvePracticeMode(session.current);
+  if (!session.current) return finishSession();
+
+  session.mode = resolvePracticeMode();
   const word = session.current;
-  els.word.textContent = session.mode === "zhToEn" ? word.zh : word.en;
+  const isPromptChinese = session.mode === "zhToEnChoice" || session.mode === "zhToEnType";
+  const isTyping = session.mode === "enToZhType" || session.mode === "zhToEnType";
+  els.word.textContent = isPromptChinese ? word.zh : word.en;
   els.tag.textContent = `${word.grade} · ${word.sourceType === "builtin" ? "内置" : "自定义"}`;
-  els.hint.textContent = session.mode === "zhToEn"
-    ? "说出或输入对应英文。3 秒内答对算快速。"
-    : [word.pos, word.notes].filter(Boolean).join(" · ") || "选出最常见的中文意思。1 秒内答对算快速。";
+  els.hint.textContent = hintForMode(session.mode, word);
   els.feedback.textContent = "计时中。";
   els.choices.innerHTML = "";
-  els.choices.hidden = session.mode === "zhToEn";
-  els.typingPanel.hidden = session.mode !== "zhToEn";
+  els.choices.hidden = isTyping;
+  els.typingPanel.hidden = !isTyping;
   els.typingAnswer.value = "";
   els.typingAnswer.disabled = false;
-  if (session.mode === "zhToEn") {
+  els.typingAnswer.placeholder = session.mode === "enToZhType" ? "输入中文意思" : "输入英文单词";
+  if (isTyping) {
     setTimeout(() => els.typingAnswer.focus(), 0);
   } else {
     makeChoices(word).forEach((choice) => {
       const button = document.createElement("button");
       button.className = "choice";
       button.type = "button";
-      button.textContent = choice.zh;
-      button.addEventListener("click", () => answer(choice.en, button));
+      button.textContent = session.mode === "zhToEnChoice" ? choice.en : choice.zh;
+      button.addEventListener("click", () => answer(choice, button));
       els.choices.append(button);
     });
   }
   session.startedAt = performance.now();
+  startTimer();
   updateProgress();
+}
+
+function hintForMode(mode, word) {
+  const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
+  if (mode === "enToZhChoice") return detail || "看英文选中文。1.8 秒内答对算秒选。";
+  if (mode === "zhToEnChoice") return "看中文选英文。1.8 秒内答对算秒选。";
+  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。1.8 秒内答对算秒选。";
+  return "看中文说英文，也可以输入英文。1.8 秒内答对算秒选。";
+}
+
+function startTimer() {
+  clearInterval(state.session.timerId);
+  els.timer.classList.remove("fast");
+  els.timer.textContent = "用时 0.0 秒 · 1.8 秒内答对算秒选";
+  state.session.timerId = setInterval(() => {
+    const elapsed = performance.now() - state.session.startedAt;
+    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.8 秒内答对算秒选`;
+  }, 100);
 }
 
 function makeChoices(answer) {
@@ -345,44 +356,53 @@ async function answer(value, button) {
   const session = state.session;
   if (!session || session.answered || !session.current) return;
   session.answered = true;
+  clearInterval(session.timerId);
   const elapsed = performance.now() - session.startedAt;
   const word = session.current;
-  const isCorrect = session.mode === "zhToEn"
-    ? normalizeEnglish(value) === normalizeEnglish(word.en)
-    : value === word.en;
-  const isFast = isCorrect && elapsed <= FAST_LIMITS[session.mode];
+  const isCorrect = isCorrectAnswer(value, word, session.mode);
+  const isFast = isCorrect && elapsed <= FAST_PICK_LIMIT;
+  els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(2)} 秒 · ${isFast ? "秒选成功" : "未达秒选"}`;
+  els.timer.classList.toggle("fast", isFast);
   session.done += 1;
   session.correct += isCorrect ? 1 : 0;
   session.fast += isFast ? 1 : 0;
   if (!isCorrect) session.wrongWords.push(word);
   if (isCorrect && !isFast) session.slowWords.push(word);
-  if (session.mode === "enToZh") paintChoices(value, button);
-  if (session.mode === "zhToEn") els.typingAnswer.disabled = true;
+  if (session.mode === "enToZhChoice" || session.mode === "zhToEnChoice") paintChoices(value, button);
+  if (session.mode === "enToZhType" || session.mode === "zhToEnType") els.typingAnswer.disabled = true;
   els.feedback.textContent = feedbackText(word, isCorrect, isFast, elapsed);
-  await recordAnswer(word, isCorrect, isFast, elapsed);
+  await recordAnswer(word, isCorrect, isFast);
   renderAll();
   updateProgress();
   setTimeout(nextWord, isCorrect ? 750 : 1350);
 }
 
-function paintChoices(answerEn, clickedButton) {
+function isCorrectAnswer(value, word, mode) {
+  if (mode === "enToZhChoice" || mode === "zhToEnChoice") return value?.id === word.id;
+  if (mode === "zhToEnType") return normalizeEnglish(value) === normalizeEnglish(word.en);
+  const input = normalizeChinese(value);
+  return input && normalizeChinese(word.zh).includes(input);
+}
+
+function paintChoices(answerWord, clickedButton) {
+  const correctText = state.session.mode === "zhToEnChoice" ? state.session.current.en : state.session.current.zh;
   [...els.choices.children].forEach((button) => {
-    const isCorrectChoice = button.textContent === state.session.current.zh;
+    const isCorrectChoice = button.textContent === correctText;
     button.classList.toggle("correct", isCorrectChoice);
     button.disabled = true;
   });
-  if (answerEn !== state.session.current.en && clickedButton) clickedButton.classList.add("wrong");
+  if (answerWord?.id !== state.session.current.id && clickedButton) clickedButton.classList.add("wrong");
 }
 
 function feedbackText(word, isCorrect, isFast, elapsed) {
   const seconds = (elapsed / 1000).toFixed(2);
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
   if (!isCorrect) return `错词：${word.en} = ${word.zh}${detail ? `｜${detail}` : ""}`;
-  if (isFast) return `快速答对：${seconds} 秒`;
+  if (isFast) return `秒选成功：${seconds} 秒`;
   return `答对了，用时 ${seconds} 秒，已记为慢词。`;
 }
 
-async function recordAnswer(word, isCorrect, isFast, elapsed) {
+async function recordAnswer(word, isCorrect, isFast) {
   const record = getRecord(word.id);
   record.seen += 1;
   record.correct += isCorrect ? 1 : 0;
@@ -405,6 +425,7 @@ function skipWord() {
 
 function finishSession() {
   const session = state.session;
+  clearInterval(session.timerId);
   const tomorrow = uniqueById([...session.wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
   state.lastReport = {
     total: session.total,
@@ -417,11 +438,13 @@ function finishSession() {
   els.word.textContent = "Done";
   els.tag.textContent = "本轮完成";
   els.hint.textContent = "建议明天优先复习本轮错词和慢词。";
+  els.timer.textContent = "本轮已完成";
+  els.timer.classList.remove("fast");
   els.choices.innerHTML = "";
   els.choices.hidden = false;
   els.typingPanel.hidden = true;
   els.skipBtn.disabled = true;
-  els.feedback.textContent = `完成 ${session.total} 词，正确率 ${percent(session.correct, session.total)}，快速率 ${percent(session.fast, session.total)}。`;
+  els.feedback.textContent = `完成 ${session.total} 词，正确率 ${percent(session.correct, session.total)}，秒选率 ${percent(session.fast, session.total)}。`;
   els.progressText.textContent = "本轮已完成";
   els.progressBar.style.width = "100%";
   renderSessionReport();
@@ -441,6 +464,10 @@ function percent(value, total) {
 
 function normalizeEnglish(value) {
   return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function normalizeChinese(value) {
+  return String(value || "").replace(/[，。；;、\s]/g, "").trim();
 }
 
 async function recognizeFile() {
@@ -489,9 +516,7 @@ async function recognizeWithAi(file) {
     : file.type.startsWith("image/")
       ? [{ dataUrl: await imageFileToDataUrl(file), page: 1 }]
       : [];
-  if (!images.length) {
-    return parseWordsFromText(await file.text());
-  }
+  if (!images.length) return parseWordsFromText(await file.text());
   els.ocrStatus.textContent = `正在请求 AI 识别 ${images.length} 张页面图片。`;
   const response = await fetch("/api/recognize", {
     method: "POST",
@@ -507,23 +532,65 @@ async function recognizeWithAi(file) {
   return sanitizeRows(data.words || []);
 }
 
-async function pdfToDataUrls(file) {
+async function extractPdfText(file) {
   if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
   pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-  const buffer = await file.arrayBuffer();
-  const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+  const chunks = [];
+  for (let pageNo = 1; pageNo <= pdf.numPages; pageNo += 1) {
+    els.ocrStatus.textContent = `正在提取 PDF 文本：第 ${pageNo}/${pdf.numPages} 页`;
+    const page = await pdf.getPage(pageNo);
+    const content = await page.getTextContent();
+    chunks.push(content.items.map((item) => item.str).join(" "));
+  }
+  return chunks.join("\n");
+}
+
+async function ocrPdf(file) {
+  const pages = await pdfToCanvases(file);
+  const chunks = [];
+  for (let i = 0; i < pages.length; i += 1) {
+    els.ocrStatus.textContent = `扫描版 PDF OCR：第 ${i + 1}/${pages.length} 页`;
+    chunks.push(await ocrCanvas(pages[i]));
+  }
+  return chunks.join("\n");
+}
+
+async function pdfToCanvases(file) {
+  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
   const pages = [];
   for (let pageNo = 1; pageNo <= Math.min(pdf.numPages, 12); pageNo += 1) {
-    els.ocrStatus.textContent = `正在渲染 PDF：第 ${pageNo}/${pdf.numPages} 页`;
     const page = await pdf.getPage(pageNo);
     const viewport = page.getViewport({ scale: 1.8 });
     const canvas = document.createElement("canvas");
     canvas.width = viewport.width;
     canvas.height = viewport.height;
     await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
-    pages.push({ dataUrl: compressCanvasToDataUrl(canvas), page: pageNo });
+    pages.push(canvas);
   }
   return pages;
+}
+
+async function pdfToDataUrls(file) {
+  const canvases = await pdfToCanvases(file);
+  return canvases.map((canvas, index) => ({ dataUrl: compressCanvasToDataUrl(canvas), page: index + 1 }));
+}
+
+async function ocrImage(file) {
+  return ocrCanvas(await imageFileToCanvas(file));
+}
+
+async function imageFileToCanvas(file) {
+  const bitmap = await createImageBitmap(file);
+  const maxWidth = 1800;
+  const scale = Math.min(1, maxWidth / bitmap.width);
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  canvas.getContext("2d").drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  return canvas;
 }
 
 async function imageFileToDataUrl(file) {
@@ -541,54 +608,6 @@ function compressCanvasToDataUrl(canvas) {
     return resized.toDataURL("image/jpeg", 0.82);
   }
   return canvas.toDataURL("image/jpeg", 0.82);
-}
-
-async function extractPdfText(file) {
-  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-  const buffer = await file.arrayBuffer();
-  const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
-  const chunks = [];
-  for (let pageNo = 1; pageNo <= pdf.numPages; pageNo += 1) {
-    els.ocrStatus.textContent = `正在提取 PDF 文本：第 ${pageNo}/${pdf.numPages} 页`;
-    const page = await pdf.getPage(pageNo);
-    const content = await page.getTextContent();
-    chunks.push(content.items.map((item) => item.str).join(" "));
-  }
-  return chunks.join("\n");
-}
-
-async function ocrPdf(file) {
-  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
-  const buffer = await file.arrayBuffer();
-  const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
-  const chunks = [];
-  for (let pageNo = 1; pageNo <= Math.min(pdf.numPages, 12); pageNo += 1) {
-    els.ocrStatus.textContent = `扫描版 PDF OCR：第 ${pageNo}/${pdf.numPages} 页`;
-    const page = await pdf.getPage(pageNo);
-    const viewport = page.getViewport({ scale: 1.8 });
-    const canvas = document.createElement("canvas");
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
-    chunks.push(await ocrCanvas(canvas));
-  }
-  return chunks.join("\n");
-}
-
-async function ocrImage(file) {
-  return ocrCanvas(await imageFileToCanvas(file));
-}
-
-async function imageFileToCanvas(file) {
-  const bitmap = await createImageBitmap(file);
-  const maxWidth = 1800;
-  const scale = Math.min(1, maxWidth / bitmap.width);
-  const canvas = document.createElement("canvas");
-  canvas.width = Math.round(bitmap.width * scale);
-  canvas.height = Math.round(bitmap.height * scale);
-  canvas.getContext("2d").drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-  return canvas;
 }
 
 async function ocrCanvas(canvas) {
@@ -632,6 +651,8 @@ function parseWordsFromText(text) {
   return rows;
 }
 
+const COMMON_NOISE = new Set(["the", "and", "for", "with", "from", "this", "that", "page", "unit", "name", "class"]);
+
 function sanitizeRows(rows) {
   const seen = new Set();
   return rows.map((row) => ({
@@ -647,8 +668,6 @@ function sanitizeRows(rows) {
     return true;
   });
 }
-
-const COMMON_NOISE = new Set(["the", "and", "for", "with", "from", "this", "that", "page", "unit", "name", "class"]);
 
 function renderReviewRows() {
   els.reviewBody.innerHTML = "";
@@ -765,10 +784,7 @@ function renderReport() {
     return { stage, total: words.length, practiced, mastered };
   }).filter((item) => item.total > 0);
   const due = state.words.filter((word) => getRecord(word.id).nextReviewAt <= Date.now() && getRecord(word.id).seen > 0).length;
-  const topReview = state.words
-    .filter((word) => getRecord(word.id).seen > 0)
-    .sort((a, b) => priorityScore(b) - priorityScore(a))
-    .slice(0, 10);
+  const topReview = state.words.filter((word) => getRecord(word.id).seen > 0).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, 10);
   els.reportContent.innerHTML = [
     `<div class="report-card"><strong>${due}</strong><span>今日到期复习词</span></div>`,
     `<div class="report-card"><strong>今日最该复习</strong><span>${topReview.length ? topReview.map((word) => `${escapeHtml(word.en)}(${escapeHtml(word.zh)})`).join("、") : "完成一轮训练后生成"}</span></div>`,
@@ -783,7 +799,7 @@ function renderSessionReport() {
   els.sessionReport.innerHTML = `
     <div class="session-report-card"><strong>${report.total}</strong><span>本轮词数</span></div>
     <div class="session-report-card"><strong>${percent(report.correct, report.total)}</strong><span>正确率</span></div>
-    <div class="session-report-card"><strong>${percent(report.fast, report.total)}</strong><span>快速率</span></div>
+    <div class="session-report-card"><strong>${percent(report.fast, report.total)}</strong><span>秒选率</span></div>
     <div class="session-report-card"><strong>${report.wrong}</strong><span>错词</span></div>
     <div class="session-report-card"><strong>${report.slow}</strong><span>慢词</span></div>
     <div class="session-report-card"><strong>${report.tomorrow}</strong><span>建议明天复习</span></div>
@@ -882,7 +898,7 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (event) => {
     if (!els.views.train.classList.contains("active") || !state.session || state.session.answered) return;
-    if (state.session.mode === "enToZh" && /^[1-4]$/.test(event.key)) {
+    if ((state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice") && /^[1-4]$/.test(event.key)) {
       const button = els.choices.children[Number(event.key) - 1];
       if (button) {
         event.preventDefault();
