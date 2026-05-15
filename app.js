@@ -12,7 +12,8 @@ const state = {
   session: null,
   reviewRows: [],
   lastReport: null,
-  weakFilter: "wrong"
+  weakFilter: "wrong",
+  queueNotice: ""
 };
 
 const els = {
@@ -265,11 +266,23 @@ function priorityScore(word) {
   return (word.frequency || 0) + record.wrong * 10 + record.slow * 5 - record.mastery + due;
 }
 
+function randomizedPrioritySort(items) {
+  return shuffle(items).sort((a, b) => priorityScore(b) - priorityScore(a));
+}
+
 function weightedPick(items, count) {
-  return shuffle(items).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, count);
+  return randomizedPrioritySort(items).slice(0, count);
+}
+
+function fillQueueToSize(preferred, fallback, size) {
+  return uniqueById([
+    ...preferred,
+    ...weightedPick(fallback, size)
+  ]).slice(0, size);
 }
 
 function buildQueue() {
+  state.queueNotice = "";
   const words = getEligibleWords();
   const sizeValue = els.sessionSize.value;
   const size = sizeValue === "all" ? words.length : Number(sizeValue);
@@ -284,17 +297,48 @@ function buildQueue() {
   const regular = words.filter((word) => !newWords.includes(word) && !weakWords.includes(word) && !dueWords.includes(word));
   const scope = els.trainingScope.value;
 
-  if (scope === "wrong" || scope === "weak") return weightedPick(wrongWords, size);
-  if (scope === "slow") return weightedPick(slowWords, size);
-  if (scope === "new") return weightedPick(newWords, size);
-  if (scope === "all" || sizeValue === "all") return uniqueById([...weakWords, ...dueWords, ...newWords, ...regular]).sort((a, b) => priorityScore(b) - priorityScore(a));
+  if (!words.length) {
+    state.queueNotice = "当前阶段没有可训练词。请切换阶段，或先在词库页上传词表。";
+    return [];
+  }
+
+  if (sizeValue !== "all" && words.length < size) {
+    state.queueNotice = `当前筛选只有 ${words.length} 个词，本轮会练完这些词。`;
+  }
+
+  if (scope === "wrong" || scope === "weak") {
+    if (!wrongWords.length) state.queueNotice = "还没有错词。请先完成一轮训练，或把训练范围切回智能混合。";
+    return weightedPick(wrongWords, size);
+  }
+  if (scope === "slow") {
+    if (!slowWords.length) state.queueNotice = "还没有慢词。请先完成一轮训练，或把训练范围切回智能混合。";
+    return weightedPick(slowWords, size);
+  }
+  if (scope === "new") {
+    if (!newWords.length) state.queueNotice = "当前阶段没有新词了。可以改练错词、慢词或全部单词。";
+    return weightedPick(newWords, size);
+  }
+  if (scope === "all" || sizeValue === "all") {
+    return randomizedPrioritySort(uniqueById([...weakWords, ...dueWords, ...newWords, ...regular]));
+  }
 
   const picked = [
     ...weightedPick(newWords, Math.ceil(size * 0.4)),
     ...weightedPick(weakWords, Math.ceil(size * 0.4)),
     ...weightedPick(dueWords, Math.ceil(size * 0.2))
   ];
-  return uniqueById([...picked, ...weightedPick(regular, size)]).slice(0, size);
+  return fillQueueToSize(picked, words, size);
+}
+
+function updateTrainingEstimate() {
+  if (state.session) return;
+  const queue = buildQueue();
+  if (!queue.length) {
+    els.progressText.textContent = state.queueNotice || "当前设置下暂无可练单词";
+    return;
+  }
+  const suffix = state.queueNotice ? ` · ${state.queueNotice}` : "";
+  els.progressText.textContent = `本轮预计 ${queue.length} 词${suffix}`;
 }
 
 function resolvePracticeMode() {
@@ -310,7 +354,8 @@ function resolvePracticeMode() {
 function startSession() {
   const queue = buildQueue();
   if (!queue.length) {
-    els.feedback.textContent = "当前阶段没有可训练词。请切换阶段，或先在词库页上传词表。";
+    els.feedback.textContent = state.queueNotice || "当前设置下暂无可练单词。";
+    els.progressText.textContent = els.feedback.textContent;
     return;
   }
   state.session = {
@@ -325,7 +370,8 @@ function startSession() {
     correct: 0,
     fast: 0,
     wrongWords: [],
-    slowWords: []
+    slowWords: [],
+    notice: state.queueNotice
   };
   els.skipBtn.disabled = false;
   els.sessionReport.hidden = true;
@@ -496,12 +542,14 @@ function finishSession() {
   els.progressBar.style.width = "100%";
   renderSessionReport();
   renderAll();
+  state.session = null;
 }
 
 function updateProgress() {
   const session = state.session;
   if (!session) return;
-  els.progressText.textContent = `进度 ${session.done}/${session.total}`;
+  const currentNo = session.current && !session.answered ? Math.min(session.done + 1, session.total) : session.done;
+  els.progressText.textContent = `题号 ${currentNo}/${session.total}`;
   els.progressBar.style.width = `${Math.round((session.done / session.total) * 100)}%`;
 }
 
@@ -773,6 +821,7 @@ function renderAll() {
   renderDecks();
   renderWeakList();
   renderReport();
+  updateTrainingEstimate();
 }
 
 function renderStats() {
@@ -900,7 +949,7 @@ function escapeAttr(value) {
 
 function bindEvents() {
   els.tabs.forEach((tab) => tab.addEventListener("click", () => switchView(tab.dataset.view)));
-  [els.stageSelect, els.deckFilter].forEach((el) => el.addEventListener("change", renderAll));
+  [els.stageSelect, els.deckFilter, els.sessionSize, els.trainingScope].forEach((el) => el.addEventListener("change", renderAll));
   els.startBtn.addEventListener("click", startSession);
   els.skipBtn.addEventListener("click", skipWord);
   els.typingPanel.addEventListener("submit", (event) => {

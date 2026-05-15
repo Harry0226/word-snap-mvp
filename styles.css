@@ -200,11 +200,12 @@ label {
   border-color: var(--line);
   background: white;
   color: var(--ink);
-  text-align: left;
+  text-align: center;
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
   align-items: center;
   gap: 12px;
+  position: relative;
 }
 
 .choice-key {
@@ -221,7 +222,10 @@ label {
 
 .choice-text {
   min-width: 0;
+  justify-self: center;
+  text-align: center;
   overflow-wrap: anywhere;
+  line-height: 1.35;
 }
 
 .choice.correct { border-color: var(--green); background: #e8f7ef; }
