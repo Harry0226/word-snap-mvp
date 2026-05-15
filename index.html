@@ -33,6 +33,7 @@
       <div class="panel controls-panel primary-controls">
         <label>学习阶段
           <select id="stageSelect">
+            <option value="小学六年级">小学六年级</option>
             <option value="初一">初一</option>
             <option value="初二">初二</option>
             <option value="初三" selected>初三</option>
@@ -69,7 +70,8 @@
           <label>训练范围
             <select id="trainingScope">
               <option value="smart" selected>智能混合</option>
-              <option value="weak">只练错词慢词</option>
+              <option value="wrong">只练错词</option>
+              <option value="slow">只练慢词</option>
               <option value="new">只练新词</option>
               <option value="all">全部单词</option>
             </select>
@@ -94,7 +96,7 @@
           <h2 id="word">Ready?</h2>
           <p id="hint">系统会按新词、弱词、到期复习词自动组一轮。</p>
         </article>
-        <div id="timer" class="timer">用时 0.0 秒 · 1.8 秒内答对算秒选</div>
+        <div id="timer" class="timer">用时 0.0 秒 · 1.5 秒内答对算秒选</div>
         <div id="choices" class="choices"></div>
         <form id="typingPanel" class="typing-panel" hidden>
           <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入答案">
@@ -125,6 +127,7 @@
         <div class="upload-grid">
           <label>保存到阶段
             <select id="uploadStage">
+              <option value="小学六年级">小学六年级</option>
               <option value="初一">初一</option>
               <option value="初二">初二</option>
               <option value="初三" selected>初三</option>
@@ -189,13 +192,17 @@
       <div class="panel">
         <div class="section-head">
           <div>
-            <h2>错词与慢词</h2>
-            <p>答错、反应慢、掌握度低的词会集中在这里。</p>
+            <h2>错词 / 慢词</h2>
+            <p>错词和慢词分开看，练习时也只练当前分类。</p>
           </div>
           <div class="button-row">
             <button id="trainWeakBtn" type="button">一键练这些词</button>
             <button id="resetRecordsBtn" type="button" class="secondary danger">清空练习记录</button>
           </div>
+        </div>
+        <div class="segmented weak-filter" aria-label="错词慢词筛选">
+          <button class="secondary active" type="button" data-weak-filter="wrong">错词</button>
+          <button class="secondary" type="button" data-weak-filter="slow">慢词</button>
         </div>
         <div id="weakList" class="word-list"></div>
       </div>
@@ -212,6 +219,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <script src="./word-data/junior-exam-words.js"></script>
+  <script src="./word-data/builtin-word-lists.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

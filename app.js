@@ -1,7 +1,9 @@
-const STAGES = ["初一", "初二", "初三", "高一", "高二", "高三", "中考冲刺", "高考冲刺"];
+const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考冲刺", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 1;
-const FAST_PICK_LIMIT = 1800;
+const BUILTIN_SEED_VERSION = 2;
+const FAST_PICK_LIMIT = 1500;
+const CHOICE_KEYS = ["A", "B", "C", "D"];
 
 const state = {
   db: null,
@@ -9,7 +11,8 @@ const state = {
   records: new Map(),
   session: null,
   reviewRows: [],
-  lastReport: null
+  lastReport: null,
+  weakFilter: "wrong"
 };
 
 const els = {
@@ -59,6 +62,7 @@ const els = {
   exportBtn: document.querySelector("#exportBtn"),
   importJson: document.querySelector("#importJson"),
   weakList: document.querySelector("#weakList"),
+  weakFilterBtns: [...document.querySelectorAll("[data-weak-filter]")],
   trainWeakBtn: document.querySelector("#trainWeakBtn"),
   resetRecordsBtn: document.querySelector("#resetRecordsBtn"),
   reportContent: document.querySelector("#reportContent")
@@ -123,16 +127,29 @@ function deleteWordsBySourceType(sourceType) {
   });
 }
 
-function normalizeBuiltinWord(word, index) {
+function slugWord(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "word";
+}
+
+function normalizeBuiltinWord(word, index, list) {
+  const grade = list.grade || "初三";
+  const source = list.source || "近五年中考结合最新一模";
+  const stageKey = encodeURIComponent(grade).replace(/%/g, "").toLowerCase();
+  const id = list.legacyIds
+    ? `builtin-${word.en.toLowerCase()}`
+    : `builtin-${stageKey}-${String(index + 1).padStart(4, "0")}-${slugWord(word.en)}`;
   return {
-    id: `builtin-${word.en.toLowerCase()}`,
+    id,
     en: word.en.trim(),
     zh: word.zh.trim(),
     pos: word.pos || "",
     notes: word.notes || "",
-    grade: "初三",
-    goals: ["初三", "中考冲刺"],
-    source: "近五年中考结合最新一模",
+    grade,
+    goals: list.goals || [grade],
+    source,
     sourceType: "builtin",
     frequency: Number(word.frequency || 0),
     createdAt: 0,
@@ -141,20 +158,33 @@ function normalizeBuiltinWord(word, index) {
 }
 
 async function seedBuiltinWords() {
-  const seeded = await new Promise((resolve) => {
-    const request = tx("meta").get("builtinSeeded");
+  const seedMeta = await new Promise((resolve) => {
+    const request = tx("meta").get("builtinSeedVersion");
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => resolve(null);
   });
-  if (seeded?.value === true) return;
+  if (Number(seedMeta?.value || 0) >= BUILTIN_SEED_VERSION) return;
 
-  const words = (window.WORD_SNAP_WORDS || []).map(normalizeBuiltinWord).filter((word) => word.en && word.zh);
+  const builtinLists = [
+    {
+      grade: "初三",
+      goals: ["初三", "中考冲刺"],
+      source: "近五年中考结合最新一模",
+      legacyIds: true,
+      words: window.WORD_SNAP_WORDS || []
+    },
+    ...(window.WORD_SNAP_BUILTIN_LISTS || [])
+  ];
+  const words = builtinLists.flatMap((list) => (list.words || [])
+    .map((word, index) => normalizeBuiltinWord(word, index, list))
+    .filter((word) => word.en && word.zh));
   const store = tx("words", "readwrite");
   await Promise.all(words.map((word) => new Promise((resolve, reject) => {
     const request = store.put(word);
     request.onsuccess = () => resolve();
     request.onerror = () => reject(request.error);
   })));
+  await put("meta", { key: "builtinSeedVersion", value: BUILTIN_SEED_VERSION, at: Date.now() });
   await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
 }
 
@@ -203,6 +233,14 @@ function isWeak(word) {
   return record.wrong > 0 || record.slow > 0 || (record.seen > 0 && record.mastery < 60);
 }
 
+function isWrongWord(word) {
+  return getRecord(word.id).wrong > 0;
+}
+
+function isSlowWord(word) {
+  return getRecord(word.id).slow > 0;
+}
+
 function shuffle(items) {
   const copy = [...items];
   for (let i = copy.length - 1; i > 0; i -= 1) {
@@ -237,6 +275,8 @@ function buildQueue() {
   const size = sizeValue === "all" ? words.length : Number(sizeValue);
   const newWords = words.filter((word) => getRecord(word.id).seen === 0);
   const weakWords = words.filter(isWeak);
+  const wrongWords = words.filter(isWrongWord);
+  const slowWords = words.filter(isSlowWord);
   const dueWords = words.filter((word) => {
     const record = getRecord(word.id);
     return record.seen > 0 && record.nextReviewAt <= Date.now() && !isWeak(word);
@@ -244,7 +284,8 @@ function buildQueue() {
   const regular = words.filter((word) => !newWords.includes(word) && !weakWords.includes(word) && !dueWords.includes(word));
   const scope = els.trainingScope.value;
 
-  if (scope === "weak") return weightedPick(weakWords, size);
+  if (scope === "wrong" || scope === "weak") return weightedPick(wrongWords, size);
+  if (scope === "slow") return weightedPick(slowWords, size);
   if (scope === "new") return weightedPick(newWords, size);
   if (scope === "all" || sizeValue === "all") return uniqueById([...weakWords, ...dueWords, ...newWords, ...regular]).sort((a, b) => priorityScore(b) - priorityScore(a));
 
@@ -315,11 +356,18 @@ function nextWord() {
   if (isTyping) {
     setTimeout(() => els.typingAnswer.focus(), 0);
   } else {
-    makeChoices(word).forEach((choice) => {
+    makeChoices(word).forEach((choice, index) => {
       const button = document.createElement("button");
       button.className = "choice";
       button.type = "button";
-      button.textContent = session.mode === "zhToEnChoice" ? choice.en : choice.zh;
+      button.dataset.wordId = choice.id;
+      const key = document.createElement("span");
+      key.className = "choice-key";
+      key.textContent = CHOICE_KEYS[index];
+      const text = document.createElement("span");
+      text.className = "choice-text";
+      text.textContent = session.mode === "zhToEnChoice" ? choice.en : choice.zh;
+      button.append(key, text);
       button.addEventListener("click", () => answer(choice, button));
       els.choices.append(button);
     });
@@ -331,19 +379,19 @@ function nextWord() {
 
 function hintForMode(mode, word) {
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  if (mode === "enToZhChoice") return detail || "看英文选中文。1.8 秒内答对算秒选。";
-  if (mode === "zhToEnChoice") return "看中文选英文。1.8 秒内答对算秒选。";
-  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。1.8 秒内答对算秒选。";
-  return "看中文说英文，也可以输入英文。1.8 秒内答对算秒选。";
+  if (mode === "enToZhChoice") return detail || "看英文选中文。1.5 秒内答对算秒选。";
+  if (mode === "zhToEnChoice") return "看中文选英文。1.5 秒内答对算秒选。";
+  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。1.5 秒内答对算秒选。";
+  return "看中文说英文，也可以输入英文。1.5 秒内答对算秒选。";
 }
 
 function startTimer() {
   clearInterval(state.session.timerId);
   els.timer.classList.remove("fast");
-  els.timer.textContent = "用时 0.0 秒 · 1.8 秒内答对算秒选";
+  els.timer.textContent = "用时 0.0 秒 · 1.5 秒内答对算秒选";
   state.session.timerId = setInterval(() => {
     const elapsed = performance.now() - state.session.startedAt;
-    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.8 秒内答对算秒选`;
+    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.5 秒内答对算秒选`;
   }, 100);
 }
 
@@ -385,9 +433,8 @@ function isCorrectAnswer(value, word, mode) {
 }
 
 function paintChoices(answerWord, clickedButton) {
-  const correctText = state.session.mode === "zhToEnChoice" ? state.session.current.en : state.session.current.zh;
   [...els.choices.children].forEach((button) => {
-    const isCorrectChoice = button.textContent === correctText;
+    const isCorrectChoice = button.dataset.wordId === state.session.current.id;
     button.classList.toggle("correct", isCorrectChoice);
     button.disabled = true;
   });
@@ -761,17 +808,23 @@ function renderDecks() {
 }
 
 function renderWeakList() {
-  const words = state.words.filter(isWeak).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, 120);
+  els.weakFilterBtns.forEach((button) => {
+    button.classList.toggle("active", button.dataset.weakFilter === state.weakFilter);
+  });
+  const isTarget = state.weakFilter === "slow" ? isSlowWord : isWrongWord;
+  const label = state.weakFilter === "slow" ? "慢词" : "错词";
+  const words = state.words.filter(isTarget).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, 120);
   if (!words.length) {
-    els.weakList.innerHTML = "<p class='status-text'>还没有错词或慢词。完成一轮训练后这里会自动更新。</p>";
+    els.weakList.innerHTML = `<p class='status-text'>还没有${label}。完成一轮训练后这里会自动更新。</p>`;
     return;
   }
   els.weakList.innerHTML = words.map((word) => {
     const record = getRecord(word.id);
+    const countText = state.weakFilter === "slow" ? `慢 ${record.slow}` : `错 ${record.wrong}`;
     return `<div class="word-chip">
       <strong>${escapeHtml(word.en)}</strong>
       <span>${escapeHtml(word.zh)} · ${word.grade}</span><br>
-      <span>错 ${record.wrong} · 慢 ${record.slow} · 掌握 ${record.mastery}%</span>
+      <span>${countText} · 掌握 ${record.mastery}%</span>
     </div>`;
   }).join("");
 }
@@ -807,7 +860,7 @@ function renderSessionReport() {
     <button id="nextSessionBtn" type="button" class="secondary">继续下一组</button>
   `;
   document.querySelector("#againWeakBtn").addEventListener("click", () => {
-    els.trainingScope.value = "weak";
+    els.trainingScope.value = "wrong";
     els.sessionSize.value = "all";
     startSession();
   });
@@ -886,9 +939,15 @@ function bindEvents() {
     await loadState();
   });
   els.exportBtn.addEventListener("click", exportData);
+  els.weakFilterBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.weakFilter = button.dataset.weakFilter;
+      renderWeakList();
+    });
+  });
   els.trainWeakBtn.addEventListener("click", () => {
     switchView("train");
-    els.trainingScope.value = "weak";
+    els.trainingScope.value = state.weakFilter === "slow" ? "slow" : "wrong";
     els.sessionSize.value = "all";
     startSession();
   });
@@ -898,8 +957,10 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (event) => {
     if (!els.views.train.classList.contains("active") || !state.session || state.session.answered) return;
-    if ((state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice") && /^[1-4]$/.test(event.key)) {
-      const button = els.choices.children[Number(event.key) - 1];
+    if (state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice") {
+      const key = event.key.toUpperCase();
+      const choiceIndex = /^[1-4]$/.test(key) ? Number(key) - 1 : CHOICE_KEYS.indexOf(key);
+      const button = choiceIndex >= 0 ? els.choices.children[choiceIndex] : null;
       if (button) {
         event.preventDefault();
         button.click();
