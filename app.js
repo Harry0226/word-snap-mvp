@@ -1,7 +1,7 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考冲刺", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 1;
-const BUILTIN_SEED_VERSION = 2;
+const BUILTIN_SEED_VERSION = 4;
 const FAST_PICK_LIMIT = 1500;
 const CHOICE_KEYS = ["A", "B", "C", "D"];
 
@@ -179,6 +179,14 @@ async function seedBuiltinWords() {
   const words = builtinLists.flatMap((list) => (list.words || [])
     .map((word, index) => normalizeBuiltinWord(word, index, list))
     .filter((word) => word.en && word.zh));
+  if (Number(seedMeta?.value || 0) < 3) {
+    await deleteBuiltinDecks([
+      { grade: "高一", source: "高一内置词库" },
+      { grade: "高二", source: "高二内置词库" },
+      { grade: "高三", source: "高三高频词库" },
+      { grade: "初三", source: "初三刷题词库" }
+    ]);
+  }
   const store = tx("words", "readwrite");
   await Promise.all(words.map((word) => new Promise((resolve, reject) => {
     const request = store.put(word);
@@ -187,6 +195,21 @@ async function seedBuiltinWords() {
   })));
   await put("meta", { key: "builtinSeedVersion", value: BUILTIN_SEED_VERSION, at: Date.now() });
   await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
+}
+
+function deleteBuiltinDecks(decks) {
+  return new Promise((resolve, reject) => {
+    const request = tx("words", "readwrite").openCursor();
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (!cursor) return resolve();
+      const word = cursor.value;
+      const shouldDelete = word.sourceType === "builtin" && decks.some((deck) => word.grade === deck.grade && word.source === deck.source);
+      if (shouldDelete) cursor.delete();
+      cursor.continue();
+    };
+    request.onerror = () => reject(request.error);
+  });
 }
 
 async function loadState() {
