@@ -32,3 +32,22 @@ wrangler pages secret put OPENAI_MODEL --project-name word-snap-mvp
 ## 部署
 
 这是静态站点 + Cloudflare Pages Function。入口文件是 `index.html`，AI 识别接口是 `functions/api/recognize.js`。
+
+### 日常修改发布
+
+```bash
+git pull origin main
+git add .
+git commit -m "描述这次修改"
+git push origin main
+wrangler pages deploy . --project-name word-snap-mvp --branch main
+```
+
+Cloudflare Pages 当前可以用 Wrangler 手动部署。如果 Dashboard 里完成 GitHub Provider 绑定，推送 `main` 后也可以自动部署。
+
+### 大陆访问稳定性
+
+- 对学生优先发自有域名，不直接发 `word-snap-mvp.pages.dev`。
+- 首屏只加载刷词必需资源，PDF/OCR 识别库会在用户上传图片或 PDF 时再加载。
+- `_headers` 为词库、样式和脚本设置缓存，降低高频访问时的重复下载。
+- 备用静态镜像可以直接部署本仓库根目录；没有 Cloudflare Function 时，AI 识别会降级为本地识别或文字导入，刷词、错词、报告和导入导出仍可使用。

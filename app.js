@@ -4,6 +4,15 @@ const DB_VERSION = 1;
 const BUILTIN_SEED_VERSION = 4;
 const FAST_PICK_LIMIT = 1500;
 const CHOICE_KEYS = ["A", "B", "C", "D"];
+const PDF_JS_SOURCES = [
+  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
+  "https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"
+];
+const TESSERACT_SOURCES = [
+  "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js",
+  "https://unpkg.com/tesseract.js@5/dist/tesseract.min.js"
+];
+const lazyScriptPromises = new Map();
 
 const state = {
   db: null,
@@ -650,10 +659,65 @@ async function recognizeWithAi(file) {
   return sanitizeRows(data.words || []);
 }
 
+function loadExternalScript(key, sources, isReady) {
+  if (isReady()) return Promise.resolve();
+  if (lazyScriptPromises.has(key)) return lazyScriptPromises.get(key);
+  const promise = new Promise((resolve, reject) => {
+    let index = 0;
+    const tryNextSource = () => {
+      const src = sources[index];
+      if (!src) {
+        reject(new Error(`${key} 识别库加载失败，请检查网络后重试。`));
+        return;
+      }
+      const script = document.createElement("script");
+      const timeout = window.setTimeout(() => {
+        script.remove();
+        index += 1;
+        tryNextSource();
+      }, 15000);
+      script.src = src;
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      script.onload = () => {
+        window.clearTimeout(timeout);
+        if (isReady()) resolve();
+        else {
+          script.remove();
+          index += 1;
+          tryNextSource();
+        }
+      };
+      script.onerror = () => {
+        window.clearTimeout(timeout);
+        script.remove();
+        index += 1;
+        tryNextSource();
+      };
+      document.head.append(script);
+    };
+    tryNextSource();
+  }).catch((error) => {
+    lazyScriptPromises.delete(key);
+    throw error;
+  });
+  lazyScriptPromises.set(key, promise);
+  return promise;
+}
+
+async function loadPdfJs() {
+  if (!window.pdfjsLib) els.ocrStatus.textContent = "正在加载 PDF 识别库，仅首次使用需要等待。";
+  await loadExternalScript("PDF.js", PDF_JS_SOURCES, () => Boolean(window.pdfjsLib));
+}
+
+async function loadTesseract() {
+  if (!window.Tesseract) els.ocrStatus.textContent = "正在加载 OCR 识别库，仅首次使用需要等待。";
+  await loadExternalScript("OCR", TESSERACT_SOURCES, () => Boolean(window.Tesseract));
+}
+
 async function extractPdfText(file) {
-  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+  await loadPdfJs();
+  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer(), disableWorker: true }).promise;
   const chunks = [];
   for (let pageNo = 1; pageNo <= pdf.numPages; pageNo += 1) {
     els.ocrStatus.textContent = `正在提取 PDF 文本：第 ${pageNo}/${pdf.numPages} 页`;
@@ -675,9 +739,8 @@ async function ocrPdf(file) {
 }
 
 async function pdfToCanvases(file) {
-  if (!window.pdfjsLib) throw new Error("PDF 识别库加载失败，请检查网络。");
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+  await loadPdfJs();
+  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer(), disableWorker: true }).promise;
   const pages = [];
   for (let pageNo = 1; pageNo <= Math.min(pdf.numPages, 12); pageNo += 1) {
     const page = await pdf.getPage(pageNo);
@@ -729,7 +792,7 @@ function compressCanvasToDataUrl(canvas) {
 }
 
 async function ocrCanvas(canvas) {
-  if (!window.Tesseract) throw new Error("OCR 识别库加载失败，请检查网络。");
+  await loadTesseract();
   const result = await Tesseract.recognize(canvas, "eng+chi_sim", {
     logger: (message) => {
       if (message.status) {
