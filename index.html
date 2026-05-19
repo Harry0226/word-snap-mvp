@@ -15,6 +15,7 @@
       </div>
       <nav class="tabs" aria-label="主导航">
         <button class="tab active" type="button" data-view="train">训练</button>
+        <button class="tab" type="button" data-view="battle">对战</button>
         <button class="tab" type="button" data-view="decks">词库</button>
         <button class="tab" type="button" data-view="wrong">错词</button>
         <button class="tab" type="button" data-view="report">报告</button>
@@ -120,6 +121,66 @@
       </div>
 
       <div id="sessionReport" class="panel session-report" hidden></div>
+    </section>
+
+    <section id="view-battle" class="view">
+      <div class="panel battle-controls">
+        <label>对战年级
+          <select id="battleStage">
+            <option value="小学六年级">小学六年级</option>
+            <option value="初一">初一</option>
+            <option value="初二">初二</option>
+            <option value="初三" selected>初三</option>
+            <option value="高一">高一</option>
+            <option value="高二">高二</option>
+            <option value="高三">高三</option>
+            <option value="中考冲刺">中考冲刺</option>
+            <option value="高考冲刺">高考冲刺</option>
+          </select>
+        </label>
+        <label>题量
+          <select id="battleSize">
+            <option value="10">10 题</option>
+            <option value="20" selected>20 题</option>
+            <option value="50">50 题</option>
+            <option value="all">全部单词</option>
+          </select>
+        </label>
+        <label>题型
+          <select id="battleMode">
+            <option value="enToZhChoice" selected>看英文选中文</option>
+            <option value="zhToEnChoice">看中文选英文</option>
+          </select>
+        </label>
+        <button id="startBattleBtn" type="button">开始对战</button>
+        <button id="resetBattleBtn" type="button" class="secondary">重新开始</button>
+      </div>
+
+      <div class="panel battle-scoreboard">
+        <div class="battle-score left"><span>左方</span><strong id="leftBattleScore">0</strong></div>
+        <div class="battle-round">
+          <span id="battleProgress">请选择年级后开始</span>
+          <strong id="battlePrompt">Ready?</strong>
+          <p id="battleHint">左右两边各自点击答案，先点对的一方得分。</p>
+        </div>
+        <div class="battle-score right"><span>右方</span><strong id="rightBattleScore">0</strong></div>
+      </div>
+
+      <div class="battle-arena">
+        <section class="battle-player battle-left" aria-label="左方答题区">
+          <h2>左方</h2>
+          <div id="leftBattleChoices" class="battle-choices"></div>
+        </section>
+        <section class="battle-player battle-right" aria-label="右方答题区">
+          <h2>右方</h2>
+          <div id="rightBattleChoices" class="battle-choices"></div>
+        </section>
+      </div>
+
+      <div class="panel battle-actions">
+        <p id="battleStatus">对战结果不会写入个人练习记录。</p>
+        <button id="skipBattleBtn" type="button" class="secondary" disabled>跳过本题</button>
+      </div>
     </section>
 
     <section id="view-decks" class="view">

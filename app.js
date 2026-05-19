@@ -19,6 +19,7 @@ const state = {
   words: [],
   records: new Map(),
   session: null,
+  battle: null,
   reviewRows: [],
   lastReport: null,
   weakFilter: "wrong",
@@ -29,6 +30,7 @@ const els = {
   tabs: [...document.querySelectorAll(".tab")],
   views: {
     train: document.querySelector("#view-train"),
+    battle: document.querySelector("#view-battle"),
     decks: document.querySelector("#view-decks"),
     wrong: document.querySelector("#view-wrong"),
     report: document.querySelector("#view-report")
@@ -77,6 +79,23 @@ const els = {
   resetRecordsBtn: document.querySelector("#resetRecordsBtn"),
   reportContent: document.querySelector("#reportContent")
 };
+
+Object.assign(els, {
+  battleStage: document.querySelector("#battleStage"),
+  battleSize: document.querySelector("#battleSize"),
+  battleMode: document.querySelector("#battleMode"),
+  startBattleBtn: document.querySelector("#startBattleBtn"),
+  resetBattleBtn: document.querySelector("#resetBattleBtn"),
+  skipBattleBtn: document.querySelector("#skipBattleBtn"),
+  battleProgress: document.querySelector("#battleProgress"),
+  battlePrompt: document.querySelector("#battlePrompt"),
+  battleHint: document.querySelector("#battleHint"),
+  battleStatus: document.querySelector("#battleStatus"),
+  leftBattleScore: document.querySelector("#leftBattleScore"),
+  rightBattleScore: document.querySelector("#rightBattleScore"),
+  leftBattleChoices: document.querySelector("#leftBattleChoices"),
+  rightBattleChoices: document.querySelector("#rightBattleChoices")
+});
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -577,6 +596,156 @@ function finishSession() {
   state.session = null;
 }
 
+function getBattleWords(stage) {
+  return state.words.filter((word) => stageMatches(word, stage) && word.en && word.zh);
+}
+
+function buildBattleQueue() {
+  const words = getBattleWords(els.battleStage.value);
+  const sizeValue = els.battleSize.value;
+  const size = sizeValue === "all" ? words.length : Math.min(Number(sizeValue), words.length);
+  return shuffle(words).slice(0, size);
+}
+
+function startBattle() {
+  const queue = buildBattleQueue();
+  if (!queue.length) {
+    els.battleStatus.textContent = "当前年级没有可对战单词，请换一个年级或先导入词库。";
+    return;
+  }
+  state.battle = {
+    queue,
+    total: queue.length,
+    current: null,
+    done: 0,
+    mode: els.battleMode.value,
+    scores: { left: 0, right: 0 },
+    playerLocked: { left: false, right: false },
+    choices: [],
+    answered: false
+  };
+  els.skipBattleBtn.disabled = false;
+  nextBattleWord();
+}
+
+function nextBattleWord() {
+  const battle = state.battle;
+  if (!battle) return;
+  battle.current = battle.queue.shift();
+  battle.answered = false;
+  battle.playerLocked = { left: false, right: false };
+  if (!battle.current) return finishBattle();
+
+  const isPromptChinese = battle.mode === "zhToEnChoice";
+  battle.choices = makeBattleChoices(battle.current);
+  els.battlePrompt.textContent = isPromptChinese ? battle.current.zh : battle.current.en;
+  els.battleHint.textContent = isPromptChinese ? "看中文，抢选正确英文。" : "看英文，抢选正确中文。";
+  els.battleStatus.textContent = "本题开始，左右双方各自点击答案。";
+  renderBattleScore();
+  renderBattleChoices("left");
+  renderBattleChoices("right");
+}
+
+function makeBattleChoices(answer) {
+  const stagePool = getBattleWords(els.battleStage.value).filter((word) => word.id !== answer.id);
+  const fallbackPool = state.words.filter((word) => word.id !== answer.id && word.en && word.zh);
+  const distractors = uniqueById([...shuffle(stagePool), ...shuffle(fallbackPool)]).slice(0, 3);
+  return shuffle([answer, ...distractors]);
+}
+
+function renderBattleChoices(player) {
+  const battle = state.battle;
+  const container = player === "left" ? els.leftBattleChoices : els.rightBattleChoices;
+  container.innerHTML = "";
+  battle.choices.forEach((choice, index) => {
+    const button = document.createElement("button");
+    button.className = "battle-choice";
+    button.type = "button";
+    button.dataset.wordId = choice.id;
+    button.innerHTML = `<span>${CHOICE_KEYS[index]}</span><strong>${escapeHtml(battle.mode === "zhToEnChoice" ? choice.en : choice.zh)}</strong>`;
+    button.addEventListener("click", () => answerBattle(player, choice, button));
+    container.append(button);
+  });
+}
+
+function answerBattle(player, choice, button) {
+  const battle = state.battle;
+  if (!battle || battle.answered || battle.playerLocked[player]) return;
+  const isCorrect = choice.id === battle.current.id;
+  if (!isCorrect) {
+    battle.playerLocked[player] = true;
+    button.classList.add("wrong");
+    [...(player === "left" ? els.leftBattleChoices : els.rightBattleChoices).children].forEach((item) => {
+      item.disabled = true;
+    });
+    els.battleStatus.textContent = `${player === "left" ? "左方" : "右方"}点错，本题不扣分，另一方还能继续答。`;
+    if (battle.playerLocked.left && battle.playerLocked.right) {
+      els.battleStatus.textContent = "双方本题都点错了，可以跳过进入下一题。";
+    }
+    return;
+  }
+  battle.answered = true;
+  battle.scores[player] += 1;
+  battle.done += 1;
+  markBattleResolved(player);
+  renderBattleScore();
+  els.battleStatus.textContent = `${player === "left" ? "左方" : "右方"}抢答正确，得 1 分。`;
+  setTimeout(nextBattleWord, 900);
+}
+
+function markBattleResolved(winner) {
+  ["left", "right"].forEach((player) => {
+    const container = player === "left" ? els.leftBattleChoices : els.rightBattleChoices;
+    [...container.children].forEach((button) => {
+      button.disabled = true;
+      if (button.dataset.wordId === state.battle.current.id) button.classList.add("correct");
+      if (player === winner && button.dataset.wordId === state.battle.current.id) button.classList.add("winner");
+    });
+  });
+}
+
+function skipBattleWord() {
+  if (!state.battle?.current) return;
+  state.battle.done += 1;
+  els.battleStatus.textContent = "已跳过本题。";
+  nextBattleWord();
+}
+
+function renderBattleScore() {
+  const battle = state.battle;
+  els.leftBattleScore.textContent = battle?.scores.left || 0;
+  els.rightBattleScore.textContent = battle?.scores.right || 0;
+  els.battleProgress.textContent = battle ? `题号 ${Math.min(battle.done + 1, battle.total)}/${battle.total}` : "请选择年级后开始";
+}
+
+function finishBattle() {
+  const battle = state.battle;
+  const left = battle.scores.left;
+  const right = battle.scores.right;
+  const result = left === right ? "平局" : left > right ? "左方获胜" : "右方获胜";
+  els.battlePrompt.textContent = result;
+  els.battleHint.textContent = `最终比分 左方 ${left} : ${right} 右方`;
+  els.battleStatus.textContent = `对战结束：${result}。本模式不会写入个人练习记录。`;
+  els.battleProgress.textContent = `完成 ${battle.total} 题`;
+  els.leftBattleChoices.innerHTML = "";
+  els.rightBattleChoices.innerHTML = "";
+  els.skipBattleBtn.disabled = true;
+  state.battle = null;
+}
+
+function resetBattle() {
+  state.battle = null;
+  els.leftBattleScore.textContent = "0";
+  els.rightBattleScore.textContent = "0";
+  els.battleProgress.textContent = "请选择年级后开始";
+  els.battlePrompt.textContent = "Ready?";
+  els.battleHint.textContent = "左右两边各自点击答案，先点对的一方得分。";
+  els.battleStatus.textContent = "对战结果不会写入个人练习记录。";
+  els.leftBattleChoices.innerHTML = "";
+  els.rightBattleChoices.innerHTML = "";
+  els.skipBattleBtn.disabled = true;
+}
+
 function updateProgress() {
   const session = state.session;
   if (!session) return;
@@ -1074,6 +1243,12 @@ function bindEvents() {
     await loadState();
   });
   els.exportBtn.addEventListener("click", exportData);
+  els.startBattleBtn.addEventListener("click", startBattle);
+  els.resetBattleBtn.addEventListener("click", resetBattle);
+  els.skipBattleBtn.addEventListener("click", skipBattleWord);
+  [els.battleStage, els.battleSize, els.battleMode].forEach((el) => {
+    el.addEventListener("change", resetBattle);
+  });
   els.weakFilterBtns.forEach((button) => {
     button.addEventListener("click", () => {
       state.weakFilter = button.dataset.weakFilter;

@@ -145,7 +145,7 @@ h2 { font-size: 21px; }
 .view.active { display: grid; gap: 16px; }
 .panel { padding: 18px; }
 
-.controls-panel, .upload-grid {
+.controls-panel, .upload-grid, .battle-controls {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: end;
@@ -335,13 +335,142 @@ label {
   gap: 10px;
 }
 
+.battle-controls {
+  grid-template-columns: repeat(3, minmax(150px, 1fr)) auto auto;
+}
+
+.battle-scoreboard {
+  display: grid;
+  grid-template-columns: minmax(130px, 180px) minmax(0, 1fr) minmax(130px, 180px);
+  align-items: center;
+  gap: 16px;
+}
+
+.battle-score {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  min-height: 112px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.battle-score strong {
+  font-size: clamp(44px, 7vw, 76px);
+  line-height: 1;
+}
+
+.battle-score.left strong { color: var(--blue); }
+.battle-score.right strong { color: var(--red); }
+
+.battle-round {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+#battleProgress, #battleHint, #battleStatus {
+  color: var(--muted);
+}
+
+#battlePrompt {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 6vw, 78px);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.battle-arena {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.battle-player {
+  display: grid;
+  gap: 14px;
+  min-height: 420px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 18px;
+}
+
+.battle-player h2 {
+  text-align: center;
+  font-size: 28px;
+}
+
+.battle-left { border-color: #bdd0ff; }
+.battle-right { border-color: #f4b7b7; }
+
+.battle-choices {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.battle-choice {
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  border-color: var(--line);
+  background: white;
+  color: var(--ink);
+  text-align: center;
+}
+
+.battle-choice span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.battle-choice strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(20px, 2.5vw, 32px);
+  line-height: 1.25;
+}
+
+.battle-choice.correct {
+  border-color: var(--green);
+  background: #e8f7ef;
+}
+
+.battle-choice.wrong {
+  border-color: var(--red);
+  background: #fff0f0;
+}
+
+.battle-choice.winner {
+  box-shadow: 0 0 0 4px rgba(19, 138, 86, .16);
+}
+
+.battle-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 @media (max-width: 860px) {
   .app-shell { width: min(100% - 20px, 1180px); padding-top: 18px; }
   .app-header, .feedback-row, .section-head { align-items: stretch; flex-direction: column; }
   .notice-board { grid-template-columns: 1fr; }
-  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .tabs { display: grid; grid-template-columns: repeat(5, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .controls-panel, .upload-grid { grid-template-columns: 1fr; }
+  .controls-panel, .upload-grid, .battle-controls, .battle-scoreboard, .battle-arena { grid-template-columns: 1fr; }
   .choices, .typing-panel { grid-template-columns: 1fr; }
+  .battle-actions { align-items: stretch; flex-direction: column; }
   .button-row button, .file-button, .file-picker { width: 100%; }
 }
