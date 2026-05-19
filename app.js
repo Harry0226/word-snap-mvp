@@ -1,23 +1,15 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考冲刺", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 1;
-const BUILTIN_SEED_VERSION = 4;
+const BUILTIN_SEED_VERSION = 5;
 const FAST_PICK_LIMIT = 1500;
 const CHOICE_KEYS = ["A", "B", "C", "D"];
-const PDF_JS_SOURCES = [
-  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
-  "https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"
-];
-const TESSERACT_SOURCES = [
-  "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js",
-  "https://unpkg.com/tesseract.js@5/dist/tesseract.min.js"
-];
-const lazyScriptPromises = new Map();
 
 const state = {
   db: null,
   words: [],
   records: new Map(),
+  rotationCursors: new Map(),
   session: null,
   battle: null,
   reviewRows: [],
@@ -60,9 +52,7 @@ const els = {
   sessionReport: document.querySelector("#sessionReport"),
   uploadStage: document.querySelector("#uploadStage"),
   sourceName: document.querySelector("#sourceName"),
-  fileInput: document.querySelector("#fileInput"),
-  recognizeBtn: document.querySelector("#recognizeBtn"),
-  ocrStatus: document.querySelector("#ocrStatus"),
+  importStatus: document.querySelector("#importStatus"),
   textImport: document.querySelector("#textImport"),
   parseTextBtn: document.querySelector("#parseTextBtn"),
   reviewPanel: document.querySelector("#reviewPanel"),
@@ -127,6 +117,14 @@ function getAll(storeName) {
   });
 }
 
+function getAllKeys(storeName) {
+  return new Promise((resolve, reject) => {
+    const request = tx(storeName).getAllKeys();
+    request.onsuccess = () => resolve(request.result || []);
+    request.onerror = () => reject(request.error);
+  });
+}
+
 function put(storeName, value) {
   return new Promise((resolve, reject) => {
     const request = tx(storeName, "readwrite").put(value);
@@ -156,6 +154,19 @@ function deleteWordsBySourceType(sourceType) {
   });
 }
 
+function deleteRecordsForMissingWords(validWordIds) {
+  return new Promise((resolve, reject) => {
+    const request = tx("records", "readwrite").openCursor();
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (!cursor) return resolve();
+      if (!validWordIds.has(cursor.value.wordId)) cursor.delete();
+      cursor.continue();
+    };
+    request.onerror = () => reject(request.error);
+  });
+}
+
 function slugWord(value) {
   return String(value || "")
     .toLowerCase()
@@ -165,7 +176,7 @@ function slugWord(value) {
 
 function normalizeBuiltinWord(word, index, list) {
   const grade = list.grade || "初三";
-  const source = list.source || "近五年中考结合最新一模";
+  const source = list.source || "初三核心词库";
   const stageKey = encodeURIComponent(grade).replace(/%/g, "").toLowerCase();
   const id = list.legacyIds
     ? `builtin-${word.en.toLowerCase()}`
@@ -198,8 +209,7 @@ async function seedBuiltinWords() {
     {
       grade: "初三",
       goals: ["初三", "中考冲刺"],
-      source: "近五年中考结合最新一模",
-      legacyIds: true,
+      source: "初三核心词库",
       words: window.WORD_SNAP_WORDS || []
     },
     ...(window.WORD_SNAP_BUILTIN_LISTS || [])
@@ -207,12 +217,18 @@ async function seedBuiltinWords() {
   const words = builtinLists.flatMap((list) => (list.words || [])
     .map((word, index) => normalizeBuiltinWord(word, index, list))
     .filter((word) => word.en && word.zh));
+  if (Number(seedMeta?.value || 0) < 5) {
+    await deleteBuiltinDecks([
+      { grade: "初三", source: "近五年中考结合最新一模" },
+      { grade: "初三", source: "初三核心词库" },
+      { grade: "初三", source: "初三刷题词库" }
+    ]);
+  }
   if (Number(seedMeta?.value || 0) < 3) {
     await deleteBuiltinDecks([
       { grade: "高一", source: "高一内置词库" },
       { grade: "高二", source: "高二内置词库" },
-      { grade: "高三", source: "高三高频词库" },
-      { grade: "初三", source: "初三刷题词库" }
+      { grade: "高三", source: "高三高频词库" }
     ]);
   }
   const store = tx("words", "readwrite");
@@ -221,6 +237,7 @@ async function seedBuiltinWords() {
     request.onsuccess = () => resolve();
     request.onerror = () => reject(request.error);
   })));
+  await deleteRecordsForMissingWords(new Set(await getAllKeys("words")));
   await put("meta", { key: "builtinSeedVersion", value: BUILTIN_SEED_VERSION, at: Date.now() });
   await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
 }
@@ -243,7 +260,11 @@ function deleteBuiltinDecks(decks) {
 async function loadState() {
   state.words = await getAll("words");
   const records = await getAll("records");
+  const meta = await getAll("meta");
   state.records = new Map(records.map((record) => [record.wordId, record]));
+  state.rotationCursors = new Map(meta
+    .filter((entry) => entry.key?.startsWith("queueCursor:"))
+    .map((entry) => [entry.key, Number(entry.value || 0)]));
   renderAll();
 }
 
@@ -325,65 +346,81 @@ function weightedPick(items, count) {
   return randomizedPrioritySort(items).slice(0, count);
 }
 
-function fillQueueToSize(preferred, fallback, size) {
-  return uniqueById([
-    ...preferred,
-    ...weightedPick(fallback, size)
-  ]).slice(0, size);
+function hashString(value) {
+  let hash = 2166136261;
+  for (let i = 0; i < value.length; i += 1) {
+    hash ^= value.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function stableShuffleWords(words, key) {
+  return [...words].sort((a, b) => {
+    const scoreA = hashString(`${key}:${a.id}`);
+    const scoreB = hashString(`${key}:${b.id}`);
+    return scoreA - scoreB || String(a.id).localeCompare(String(b.id));
+  });
+}
+
+function getTrainingCandidates(words, scope) {
+  if (scope === "wrong" || scope === "weak") return words.filter(isWrongWord);
+  if (scope === "slow") return words.filter(isSlowWord);
+  if (scope === "new") return words.filter((word) => getRecord(word.id).seen === 0);
+  return words;
+}
+
+function buildRotationKey() {
+  return `queueCursor:${els.stageSelect.value}|${els.deckFilter.value}|${els.trainingScope.value}`;
+}
+
+function peekRotatingQueue(candidates, sizeValue, key) {
+  const ordered = stableShuffleWords(candidates, key);
+  if (!ordered.length) return { queue: [], key, nextIndex: 0, shouldCommit: false };
+  if (sizeValue === "all") return { queue: ordered, key, nextIndex: 0, shouldCommit: false };
+  const size = Math.min(Number(sizeValue), ordered.length);
+  const start = (state.rotationCursors.get(key) || 0) % ordered.length;
+  const queue = Array.from({ length: size }, (_, index) => ordered[(start + index) % ordered.length]);
+  return { queue, key, nextIndex: (start + size) % ordered.length, shouldCommit: true };
+}
+
+async function commitQueueCursor(queueCursor) {
+  if (!queueCursor?.shouldCommit) return;
+  state.rotationCursors.set(queueCursor.key, queueCursor.nextIndex);
+  await put("meta", { key: queueCursor.key, value: queueCursor.nextIndex, at: Date.now() });
 }
 
 function buildQueue() {
   state.queueNotice = "";
   const words = getEligibleWords();
   const sizeValue = els.sessionSize.value;
-  const size = sizeValue === "all" ? words.length : Number(sizeValue);
-  const newWords = words.filter((word) => getRecord(word.id).seen === 0);
-  const weakWords = words.filter(isWeak);
-  const wrongWords = words.filter(isWrongWord);
-  const slowWords = words.filter(isSlowWord);
-  const dueWords = words.filter((word) => {
-    const record = getRecord(word.id);
-    return record.seen > 0 && record.nextReviewAt <= Date.now() && !isWeak(word);
-  });
-  const regular = words.filter((word) => !newWords.includes(word) && !weakWords.includes(word) && !dueWords.includes(word));
   const scope = els.trainingScope.value;
+  const candidates = getTrainingCandidates(words, scope);
+  const rotationKey = buildRotationKey();
 
   if (!words.length) {
     state.queueNotice = "当前阶段没有可训练词。请切换阶段，或先在词库页上传词表。";
-    return [];
+    return { queue: [], queueCursor: null };
   }
 
-  if (sizeValue !== "all" && words.length < size) {
-    state.queueNotice = `当前筛选只有 ${words.length} 个词，本轮会练完这些词。`;
+  if (!candidates.length) {
+    if (scope === "wrong" || scope === "weak") state.queueNotice = "还没有错词。请先完成一轮训练，或把训练范围切回智能混合。";
+    if (scope === "slow") state.queueNotice = "还没有慢词。请先完成一轮训练，或把训练范围切回智能混合。";
+    if (scope === "new") state.queueNotice = "当前阶段没有新词了。可以改练错词、慢词或全部单词。";
+    return { queue: [], queueCursor: null };
   }
 
-  if (scope === "wrong" || scope === "weak") {
-    if (!wrongWords.length) state.queueNotice = "还没有错词。请先完成一轮训练，或把训练范围切回智能混合。";
-    return weightedPick(wrongWords, size);
-  }
-  if (scope === "slow") {
-    if (!slowWords.length) state.queueNotice = "还没有慢词。请先完成一轮训练，或把训练范围切回智能混合。";
-    return weightedPick(slowWords, size);
-  }
-  if (scope === "new") {
-    if (!newWords.length) state.queueNotice = "当前阶段没有新词了。可以改练错词、慢词或全部单词。";
-    return weightedPick(newWords, size);
-  }
-  if (scope === "all" || sizeValue === "all") {
-    return randomizedPrioritySort(uniqueById([...weakWords, ...dueWords, ...newWords, ...regular]));
+  if (sizeValue !== "all" && candidates.length < Number(sizeValue)) {
+    state.queueNotice = `当前筛选只有 ${candidates.length} 个词，本轮会练完这些词。`;
   }
 
-  const picked = [
-    ...weightedPick(newWords, Math.ceil(size * 0.4)),
-    ...weightedPick(weakWords, Math.ceil(size * 0.4)),
-    ...weightedPick(dueWords, Math.ceil(size * 0.2))
-  ];
-  return fillQueueToSize(picked, words, size);
+  const result = peekRotatingQueue(candidates, sizeValue, rotationKey);
+  return { queue: result.queue, queueCursor: result };
 }
 
 function updateTrainingEstimate() {
   if (state.session) return;
-  const queue = buildQueue();
+  const { queue } = buildQueue();
   if (!queue.length) {
     els.progressText.textContent = state.queueNotice || "当前设置下暂无可练单词";
     return;
@@ -403,7 +440,7 @@ function resolvePracticeMode() {
 }
 
 function startSession() {
-  const queue = buildQueue();
+  const { queue, queueCursor } = buildQueue();
   if (!queue.length) {
     els.feedback.textContent = state.queueNotice || "当前设置下暂无可练单词。";
     els.progressText.textContent = els.feedback.textContent;
@@ -414,8 +451,10 @@ function startSession() {
     total: queue.length,
     current: null,
     mode: "enToZhChoice",
+    sessionStartedAt: performance.now(),
     startedAt: 0,
     timerId: 0,
+    queueCursor,
     answered: false,
     done: 0,
     correct: 0,
@@ -570,6 +609,7 @@ function skipWord() {
 function finishSession() {
   const session = state.session;
   clearInterval(session.timerId);
+  const totalSeconds = Math.max(1, Math.round((performance.now() - session.sessionStartedAt) / 1000));
   const tomorrow = uniqueById([...session.wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
   state.lastReport = {
     total: session.total,
@@ -577,8 +617,10 @@ function finishSession() {
     fast: session.fast,
     wrong: session.wrongWords.length,
     slow: session.slowWords.length,
-    tomorrow
+    tomorrow,
+    totalSeconds
   };
+  commitQueueCursor(session.queueCursor);
   els.word.textContent = "Done";
   els.tag.textContent = "本轮完成";
   els.hint.textContent = "建议明天优先复习本轮错词和慢词。";
@@ -758,6 +800,12 @@ function percent(value, total) {
   return total ? `${Math.round((value / total) * 100)}%` : "0%";
 }
 
+function formatDuration(totalSeconds) {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
 function normalizeEnglish(value) {
   return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
 }
@@ -766,221 +814,14 @@ function normalizeChinese(value) {
   return String(value || "").replace(/[，。；;、\s]/g, "").trim();
 }
 
-async function recognizeFile() {
-  const file = els.fileInput.files?.[0];
-  if (!file) {
-    els.ocrStatus.textContent = "请先选择一个图片、PDF 或文本文件。";
-    return;
-  }
-  els.recognizeBtn.disabled = true;
-  els.ocrStatus.textContent = "正在准备文件，优先使用 AI 识别。";
-  try {
-    const rows = await recognizeWithAi(file);
-    state.reviewRows = rows.slice(0, 300);
-    if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
-    renderReviewRows();
-    els.reviewPanel.hidden = false;
-    els.ocrStatus.textContent = `AI 识别到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
-  } catch (error) {
-    els.ocrStatus.textContent = `AI 识别失败，正在切换本地识别：${error.message || error}`;
-    try {
-      let text = "";
-      if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-        text = await extractPdfText(file);
-        if (!text.trim()) text = await ocrPdf(file);
-      } else if (file.type.startsWith("image/")) {
-        text = await ocrImage(file);
-      } else {
-        text = await file.text();
-      }
-      state.reviewRows = parseWordsFromText(text).slice(0, 300);
-      if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
-      renderReviewRows();
-      els.reviewPanel.hidden = false;
-      els.ocrStatus.textContent = `本地识别到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
-    } catch (fallbackError) {
-      els.ocrStatus.textContent = `识别失败：${fallbackError.message || fallbackError}`;
-    }
-  } finally {
-    els.recognizeBtn.disabled = false;
-  }
-}
-
-async function recognizeWithAi(file) {
-  const images = file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")
-    ? await pdfToDataUrls(file)
-    : file.type.startsWith("image/")
-      ? [{ dataUrl: await imageFileToDataUrl(file), page: 1 }]
-      : [];
-  if (!images.length) return parseWordsFromText(await file.text());
-  els.ocrStatus.textContent = `正在请求 AI 识别 ${images.length} 张页面图片。`;
-  const response = await fetch("/api/recognize", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      images,
-      stage: els.uploadStage.value,
-      sourceName: els.sourceName.value.trim() || file.name
-    })
-  });
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(data.error || `AI 接口返回 ${response.status}`);
-  return sanitizeRows(data.words || []);
-}
-
-function loadExternalScript(key, sources, isReady) {
-  if (isReady()) return Promise.resolve();
-  if (lazyScriptPromises.has(key)) return lazyScriptPromises.get(key);
-  const promise = new Promise((resolve, reject) => {
-    let index = 0;
-    const tryNextSource = () => {
-      const src = sources[index];
-      if (!src) {
-        reject(new Error(`${key} 识别库加载失败，请检查网络后重试。`));
-        return;
-      }
-      const script = document.createElement("script");
-      const timeout = window.setTimeout(() => {
-        script.remove();
-        index += 1;
-        tryNextSource();
-      }, 15000);
-      script.src = src;
-      script.async = true;
-      script.crossOrigin = "anonymous";
-      script.onload = () => {
-        window.clearTimeout(timeout);
-        if (isReady()) resolve();
-        else {
-          script.remove();
-          index += 1;
-          tryNextSource();
-        }
-      };
-      script.onerror = () => {
-        window.clearTimeout(timeout);
-        script.remove();
-        index += 1;
-        tryNextSource();
-      };
-      document.head.append(script);
-    };
-    tryNextSource();
-  }).catch((error) => {
-    lazyScriptPromises.delete(key);
-    throw error;
-  });
-  lazyScriptPromises.set(key, promise);
-  return promise;
-}
-
-async function loadPdfJs() {
-  if (!window.pdfjsLib) els.ocrStatus.textContent = "正在加载 PDF 识别库，仅首次使用需要等待。";
-  await loadExternalScript("PDF.js", PDF_JS_SOURCES, () => Boolean(window.pdfjsLib));
-}
-
-async function loadTesseract() {
-  if (!window.Tesseract) els.ocrStatus.textContent = "正在加载 OCR 识别库，仅首次使用需要等待。";
-  await loadExternalScript("OCR", TESSERACT_SOURCES, () => Boolean(window.Tesseract));
-}
-
-async function extractPdfText(file) {
-  await loadPdfJs();
-  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer(), disableWorker: true }).promise;
-  const chunks = [];
-  for (let pageNo = 1; pageNo <= pdf.numPages; pageNo += 1) {
-    els.ocrStatus.textContent = `正在提取 PDF 文本：第 ${pageNo}/${pdf.numPages} 页`;
-    const page = await pdf.getPage(pageNo);
-    const content = await page.getTextContent();
-    chunks.push(content.items.map((item) => item.str).join(" "));
-  }
-  return chunks.join("\n");
-}
-
-async function ocrPdf(file) {
-  const pages = await pdfToCanvases(file);
-  const chunks = [];
-  for (let i = 0; i < pages.length; i += 1) {
-    els.ocrStatus.textContent = `扫描版 PDF OCR：第 ${i + 1}/${pages.length} 页`;
-    chunks.push(await ocrCanvas(pages[i]));
-  }
-  return chunks.join("\n");
-}
-
-async function pdfToCanvases(file) {
-  await loadPdfJs();
-  const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer(), disableWorker: true }).promise;
-  const pages = [];
-  for (let pageNo = 1; pageNo <= Math.min(pdf.numPages, 12); pageNo += 1) {
-    const page = await pdf.getPage(pageNo);
-    const viewport = page.getViewport({ scale: 1.8 });
-    const canvas = document.createElement("canvas");
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
-    pages.push(canvas);
-  }
-  return pages;
-}
-
-async function pdfToDataUrls(file) {
-  const canvases = await pdfToCanvases(file);
-  return canvases.map((canvas, index) => ({ dataUrl: compressCanvasToDataUrl(canvas), page: index + 1 }));
-}
-
-async function ocrImage(file) {
-  return ocrCanvas(await imageFileToCanvas(file));
-}
-
-async function imageFileToCanvas(file) {
-  const bitmap = await createImageBitmap(file);
-  const maxWidth = 1800;
-  const scale = Math.min(1, maxWidth / bitmap.width);
-  const canvas = document.createElement("canvas");
-  canvas.width = Math.round(bitmap.width * scale);
-  canvas.height = Math.round(bitmap.height * scale);
-  canvas.getContext("2d").drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-  return canvas;
-}
-
-async function imageFileToDataUrl(file) {
-  return compressCanvasToDataUrl(await imageFileToCanvas(file));
-}
-
-function compressCanvasToDataUrl(canvas) {
-  const maxWidth = 1600;
-  const scale = Math.min(1, maxWidth / canvas.width);
-  if (scale < 1) {
-    const resized = document.createElement("canvas");
-    resized.width = Math.round(canvas.width * scale);
-    resized.height = Math.round(canvas.height * scale);
-    resized.getContext("2d").drawImage(canvas, 0, 0, resized.width, resized.height);
-    return resized.toDataURL("image/jpeg", 0.82);
-  }
-  return canvas.toDataURL("image/jpeg", 0.82);
-}
-
-async function ocrCanvas(canvas) {
-  await loadTesseract();
-  const result = await Tesseract.recognize(canvas, "eng+chi_sim", {
-    logger: (message) => {
-      if (message.status) {
-        const progress = message.progress ? ` ${Math.round(message.progress * 100)}%` : "";
-        els.ocrStatus.textContent = `OCR ${message.status}${progress}`;
-      }
-    }
-  });
-  return result.data.text || "";
-}
-
 function parseWordsFromText(text) {
   const rows = [];
   const seen = new Set();
   String(text || "").split(/\n|;/).forEach((raw) => {
     const line = raw.replace(/\s+/g, " ").trim();
-    if (!line) return;
+    if (!line || isSectionHeader(line)) return;
     const pipeParts = line.split("|").map((part) => part.trim());
-    if (pipeParts.length >= 2 && /^[A-Za-z][A-Za-z'-]{1,24}$/.test(pipeParts[0])) {
+    if (pipeParts.length >= 2 && /^[A-Za-z][A-Za-z'-]{0,24}$/.test(pipeParts[0])) {
       const en = pipeParts[0].toLowerCase();
       if (!seen.has(en) && !COMMON_NOISE.has(en)) {
         seen.add(en);
@@ -988,7 +829,8 @@ function parseWordsFromText(text) {
       }
       return;
     }
-    const match = line.match(/^([A-Za-z][A-Za-z'-]{1,24})\s*(?:\(([^)]{1,12})\)|\b(n\.|v\.|adj\.|adv\.|prep\.|conj\.|pron\.)\b)?\s*[:：\-—]?\s*(.*)$/i);
+    const compactMatch = matchCompactWordLine(line);
+    const match = compactMatch || line.match(/^([A-Za-z][A-Za-z'-]{0,24})\s*(?:\(([^)]{1,12})\)|\b(n\.|v\.|adj\.|adv\.|prep\.|conj\.|pron\.)\b)?\s*[:：\-—]?\s*(.*)$/i);
     if (!match) return;
     const en = match[1].toLowerCase();
     if (seen.has(en) || COMMON_NOISE.has(en)) return;
@@ -999,6 +841,16 @@ function parseWordsFromText(text) {
     rows.push({ en, zh: zhMatch ? zhMatch[0].trim() : "", pos, notes: rest.slice(0, 120) });
   });
   return rows;
+}
+
+function isSectionHeader(line) {
+  return /^[A-Z](?:-[A-Z])?$/.test(line);
+}
+
+function matchCompactWordLine(line) {
+  const match = line.match(/^([A-Za-z][A-Za-z'-]{0,24})([\u4e00-\u9fff].*)$/);
+  if (!match) return null;
+  return [match[0], match[1], "", "", match[2]];
 }
 
 const COMMON_NOISE = new Set(["the", "and", "for", "with", "from", "this", "that", "page", "unit", "name", "class"]);
@@ -1044,7 +896,7 @@ function syncReviewRowsFromDom() {
 async function saveReviewDeck() {
   syncReviewRowsFromDom();
   const stage = els.uploadStage.value;
-  const source = els.sourceName.value.trim() || els.fileInput.files?.[0]?.name || "自定义词库";
+  const source = els.sourceName.value.trim() || "自定义词库";
   const createdAt = Date.now();
   const rows = state.reviewRows.filter((row) => row.en.trim()).map((row, index) => ({
     id: `custom-${createdAt}-${index}-${row.en.toLowerCase()}`,
@@ -1061,13 +913,14 @@ async function saveReviewDeck() {
     order: index + 1
   }));
   if (!rows.length) {
-    els.ocrStatus.textContent = "没有可保存的英文词条。";
+    els.importStatus.textContent = "没有可保存的英文词条。";
     return;
   }
   for (const row of rows) await put("words", row);
   state.reviewRows = [];
   els.reviewPanel.hidden = true;
-  els.ocrStatus.textContent = `已保存 ${rows.length} 个词到 ${stage}。`;
+  els.textImport.value = "";
+  els.importStatus.textContent = `已保存 ${rows.length} 个词到 ${stage}。`;
   await loadState();
 }
 
@@ -1157,6 +1010,7 @@ function renderSessionReport() {
     <div class="session-report-card"><strong>${report.total}</strong><span>本轮词数</span></div>
     <div class="session-report-card"><strong>${percent(report.correct, report.total)}</strong><span>正确率</span></div>
     <div class="session-report-card"><strong>${percent(report.fast, report.total)}</strong><span>秒选率</span></div>
+    <div class="session-report-card"><strong>${formatDuration(report.totalSeconds)}</strong><span>本轮用时</span></div>
     <div class="session-report-card"><strong>${report.wrong}</strong><span>错词</span></div>
     <div class="session-report-card"><strong>${report.slow}</strong><span>慢词</span></div>
     <div class="session-report-card"><strong>${report.tomorrow}</strong><span>建议明天复习</span></div>
@@ -1211,13 +1065,12 @@ function bindEvents() {
     event.preventDefault();
     answer(els.typingAnswer.value, null);
   });
-  els.recognizeBtn.addEventListener("click", recognizeFile);
   els.parseTextBtn.addEventListener("click", () => {
-    state.reviewRows = parseWordsFromText(els.textImport.value).slice(0, 300);
+    state.reviewRows = parseWordsFromText(els.textImport.value);
     if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
     renderReviewRows();
     els.reviewPanel.hidden = false;
-    els.ocrStatus.textContent = `从文字中解析到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
+    els.importStatus.textContent = `从文字中解析到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
   });
   els.addRowBtn.addEventListener("click", () => {
     syncReviewRowsFromDom();

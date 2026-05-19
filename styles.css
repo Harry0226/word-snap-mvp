@@ -1,15 +1,17 @@
 :root {
   color-scheme: light;
-  --ink: #172033;
-  --muted: #667085;
-  --line: #d9e0ea;
-  --paper: #f7f5f0;
+  --ink: #182131;
+  --muted: #647084;
+  --line: #dce3ed;
+  --paper: #f6f7f9;
   --panel: #ffffff;
   --soft: #f3f6fb;
   --green: #138a56;
   --red: #cf3f3f;
   --blue: #2563eb;
   --yellow: #f0b429;
+  --shadow: 0 14px 36px rgba(24, 33, 49, .08);
+  --shadow-soft: 0 8px 22px rgba(24, 33, 49, .06);
 }
 
 * { box-sizing: border-box; }
@@ -17,7 +19,9 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--paper);
+  background:
+    linear-gradient(180deg, #eef3f8 0, var(--paper) 280px),
+    var(--paper);
   color: var(--ink);
   font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
 }
@@ -29,12 +33,19 @@ button, .file-button, .file-picker {
   background: var(--ink);
   color: white;
   border-radius: 8px;
-  padding: 10px 16px;
+  padding: 11px 17px;
   cursor: pointer;
   text-align: center;
+  font-weight: 700;
+  box-shadow: var(--shadow-soft);
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
 }
 
 button:disabled { cursor: not-allowed; opacity: .45; }
+button:not(:disabled):hover, .file-button:hover, .file-picker:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
 
 .secondary {
   background: white;
@@ -48,7 +59,7 @@ select, input, textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 11px 12px;
   background: white;
   color: var(--ink);
 }
@@ -66,8 +77,11 @@ input[type="file"] { display: none; }
   align-items: end;
   justify-content: space-between;
   gap: 18px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: var(--shadow-soft);
 }
 
 h1, h2, p { margin: 0; }
@@ -85,6 +99,7 @@ h2 { font-size: 21px; }
   background: white;
   color: var(--ink);
   border-color: var(--line);
+  box-shadow: none;
 }
 
 .tab.active {
@@ -135,6 +150,7 @@ h2 { font-size: 21px; }
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
+  box-shadow: var(--shadow-soft);
 }
 
 .stats div { padding: 14px; }
@@ -188,6 +204,7 @@ label {
   padding: 28px;
   background: #fbfcff;
   text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9);
 }
 
 #tag {
@@ -237,6 +254,11 @@ label {
   align-items: center;
   gap: 12px;
   position: relative;
+  box-shadow: none;
+}
+
+.choice:not(:disabled):hover, .battle-choice:not(:disabled):hover {
+  border-color: #9fb2ca;
 }
 
 .choice-key {
@@ -299,6 +321,12 @@ label {
   min-height: 150px;
   margin-top: 12px;
   resize: vertical;
+  line-height: 1.7;
+}
+
+.direct-import-panel .upload-grid {
+  grid-template-columns: minmax(170px, 220px) minmax(220px, 1fr);
+  margin-top: 14px;
 }
 .review-table { width: 100%; border-collapse: collapse; min-width: 760px; }
 .review-table th, .review-table td { border-bottom: 1px solid var(--line); padding: 8px; text-align: left; vertical-align: top; }
@@ -315,7 +343,7 @@ label {
 .deck-card, .word-chip, .report-card, .session-report-card {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--soft);
+  background: #fbfcff;
   padding: 12px;
 }
 
