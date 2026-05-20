@@ -7,35 +7,40 @@ import GoalsPage from './features/goals/GoalsPage'
 import GalleryPage from './features/gallery/GalleryPage'
 import GamesPage from './features/games/GamesPage'
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Shell />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+        },
+        {
+          path: 'anniversary',
+          element: <AnniversaryPage />,
+        },
+        {
+          path: 'interaction',
+          element: <InteractionPage />,
+        },
+        {
+          path: 'goals',
+          element: <GoalsPage />,
+        },
+        {
+          path: 'gallery',
+          element: <GalleryPage />,
+        },
+        {
+          path: 'games',
+          element: <GamesPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <Shell />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: 'anniversary',
-        element: <AnniversaryPage />,
-      },
-      {
-        path: 'interaction',
-        element: <InteractionPage />,
-      },
-      {
-        path: 'goals',
-        element: <GoalsPage />,
-      },
-      {
-        path: 'gallery',
-        element: <GalleryPage />,
-      },
-      {
-        path: 'games',
-        element: <GamesPage />,
-      },
-    ],
-  },
-])
+    basename: '/couple-website',
+  }
+)
