@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>代老师带你秒懂词 - 分层刷词训练</title>
+  <link rel="stylesheet" href="./styles.css?v=20260521-phrases">
+  <script defer src="./word-data/junior-exam-words.js?v=20260521-phrases"></script>
+  <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
+  <script defer src="./word-data/quiz-sentences.js?v=20260522-quiz"></script>
+  <script defer src="./word-data/builtin-word-lists.js?v=20260521-phrases"></script>
+  <script defer src="./app.js?v=20260521-phrases"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1>代老师带你秒懂词</h1>
+        <p>从初一到高三，按阶段刷词，把错词和慢词优先练熟。</p>
+      </div>
+      <nav class="tabs" aria-label="主导航">
+        <button class="tab active" type="button" data-view="train">训练</button>
+        <button class="tab" type="button" data-view="battle">对战</button>
+        <button class="tab" type="button" data-view="decks">词库</button>
+        <button class="tab" type="button" data-view="wrong">错词</button>
+        <button class="tab" type="button" data-view="report">报告</button>
+        <button class="tab" type="button" data-view="quiz">刷题</button>
+      </nav>
+    </header>
+
+    <section class="notice-board" aria-label="学习通知">
+      <strong>学习通知</strong>
+      <div class="notice-lines">
+        <p><b>每日任务：</b>请同学们每日对应自己的年级开始刷单词。</p>
+        <p><b>训练模式：</b>看英文选中文、看中文选英文。</p>
+        <p><b>更多设置：</b>训练量选择“全部单词”。</p>
+        <p><b>通过标准：</b>对应截图 2 张，正确率达到 95% 才算通过。</p>
+        <p><b>提交方式：</b>截图当天微信发给代老师。</p>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="学习统计">
+      <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
+      <div><strong id="doneCount">0</strong><span>累计练习</span></div>
+      <div><strong id="accuracy">0%</strong><span>正确率</span></div>
+      <div><strong id="fastRate">0%</strong><span>快速率</span></div>
+      <div><strong id="weakCount">0</strong><span>弱词</span></div>
+    </section>
+
+    <section id="view-train" class="view active">
+      <div class="panel controls-panel primary-controls">
+        <label>学习阶段
+          <select id="stageSelect">
+            <option value="小学六年级">小学六年级</option>
+            <option value="初一">初一</option>
+            <option value="初二">初二</option>
+            <option value="初三" selected>初三</option>
+            <option value="高一">高一</option>
+            <option value="高二">高二</option>
+            <option value="高三">高三</option>
+            <option value="中考常考词组总复习">中考常考词组总复习</option>
+            <option value="高考冲刺">高考冲刺</option>
+          </select>
+        </label>
+        <label>训练模式
+          <select id="practiceMode">
+            <option value="enToZhChoice" selected>看英文选中文</option>
+            <option value="zhToEnChoice">看中文选英文</option>
+            <option value="enToZhType">看英文说中文</option>
+            <option value="zhToEnType">看中文说英文</option>
+            <option value="auto">按阶段自动</option>
+          </select>
+        </label>
+        <button id="startBtn" type="button">开始训练</button>
+      </div>
+
+      <details class="panel advanced-settings">
+        <summary>更多训练设置</summary>
+        <div class="controls-panel">
+          <label>训练量
+            <select id="sessionSize">
+              <option value="200" selected>200 词</option>
+              <option value="all">全部单词</option>
+            </select>
+          </label>
+          <label>训练范围
+            <select id="trainingScope">
+              <option value="smart" selected>智能混合</option>
+              <option value="wrong">只练错词</option>
+              <option value="slow">只练慢词</option>
+              <option value="new">只练新词</option>
+              <option value="all">全部单词</option>
+            </select>
+          </label>
+          <label>词库来源
+            <select id="deckFilter">
+              <option value="all" selected>全部可用词库</option>
+              <option value="builtin">只用内置词库</option>
+              <option value="custom">只用自定义词库</option>
+            </select>
+          </label>
+        </div>
+      </details>
+
+      <div class="panel trainer" aria-live="polite">
+        <div class="progress">
+          <span id="progressText">请选择阶段后开始训练</span>
+          <div class="progress-track"><div id="progressBar"></div></div>
+        </div>
+        <article class="word-card">
+          <span id="tag">分层训练</span>
+          <h2 id="word">Ready?</h2>
+          <p id="hint">系统会按新词、弱词、到期复习词自动组一轮。</p>
+        </article>
+        <div id="timer" class="timer">用时 0.0 秒 · 1.5 秒内算秒选，超过 4 秒记慢词</div>
+        <div id="choices" class="choices"></div>
+        <form id="typingPanel" class="typing-panel" hidden>
+          <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入答案">
+          <button type="submit">确认</button>
+        </form>
+        <div class="feedback-row">
+          <p id="feedback">练习记录只保存在本机浏览器，不会上传。</p>
+          <button id="skipBtn" type="button" disabled>不会</button>
+        </div>
+      </div>
+
+      <div id="sessionReport" class="panel session-report" hidden></div>
+    </section>
+
+    <section id="view-battle" class="view">
+      <div class="panel battle-controls">
+        <label>对战年级
+          <select id="battleStage">
+            <option value="小学六年级">小学六年级</option>
+            <option value="初一">初一</option>
+            <option value="初二">初二</option>
+            <option value="初三" selected>初三</option>
+            <option value="高一">高一</option>
+            <option value="高二">高二</option>
+            <option value="高三">高三</option>
+            <option value="中考常考词组总复习">中考常考词组总复习</option>
+            <option value="高考冲刺">高考冲刺</option>
+          </select>
+        </label>
+        <label>题量
+          <select id="battleSize">
+            <option value="10">10 题</option>
+            <option value="20" selected>20 题</option>
+            <option value="50">50 题</option>
+            <option value="all">全部单词</option>
+          </select>
+        </label>
+        <label>题型
+          <select id="battleMode">
+            <option value="enToZhChoice" selected>看英文选中文</option>
+            <option value="zhToEnChoice">看中文选英文</option>
+          </select>
+        </label>
+        <button id="startBattleBtn" type="button">开始对战</button>
+        <button id="resetBattleBtn" type="button" class="secondary">重新开始</button>
+      </div>
+
+      <div class="panel battle-scoreboard">
+        <div class="battle-score left"><span>左方</span><strong id="leftBattleScore">0</strong></div>
+        <div class="battle-round">
+          <span id="battleProgress">请选择年级后开始</span>
+          <strong id="battlePrompt">Ready?</strong>
+          <p id="battleHint">左右两边各自点击答案，先点对的一方得分。</p>
+        </div>
+        <div class="battle-score right"><span>右方</span><strong id="rightBattleScore">0</strong></div>
+      </div>
+
+      <div class="battle-arena">
+        <section class="battle-player battle-left" aria-label="左方答题区">
+          <h2>左方</h2>
+          <div id="leftBattleChoices" class="battle-choices"></div>
+        </section>
+        <section class="battle-player battle-right" aria-label="右方答题区">
+          <h2>右方</h2>
+          <div id="rightBattleChoices" class="battle-choices"></div>
+        </section>
+      </div>
+
+      <div class="panel battle-actions">
+        <p id="battleStatus">对战结果不会写入个人练习记录。</p>
+        <button id="skipBattleBtn" type="button" class="secondary" disabled>跳过本题</button>
+      </div>
+    </section>
+
+    <section id="view-decks" class="view">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2>词库管理</h2>
+            <p>用文字直接添加词库，也可以导入或导出 JSON 做备份。</p>
+          </div>
+          <div class="button-row">
+            <button id="exportBtn" type="button" class="secondary">导出词库</button>
+            <label class="file-button">导入 JSON<input id="importJson" type="file" accept="application/json"></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel direct-import-panel">
+        <div class="section-head">
+          <div>
+            <h2>文字直接添加</h2>
+            <p>一行一个词，支持“achieve 达到，实现”或“achieve|达到，实现|v.|achieve one's dream”。</p>
+          </div>
+          <button id="parseTextBtn" type="button">解析文字</button>
+        </div>
+        <div class="upload-grid">
+          <label>保存到阶段
+            <select id="uploadStage">
+              <option value="小学六年级">小学六年级</option>
+              <option value="初一">初一</option>
+              <option value="初二">初二</option>
+              <option value="初三" selected>初三</option>
+              <option value="高一">高一</option>
+              <option value="高二">高二</option>
+              <option value="高三">高三</option>
+              <option value="中考常考词组总复习">中考常考词组总复习</option>
+              <option value="高考冲刺">高考冲刺</option>
+            </select>
+          </label>
+          <label>资料名称
+            <input id="sourceName" type="text" placeholder="例如：初三第 12 讲词汇">
+          </label>
+        </div>
+        <textarea id="textImport" class="text-import" rows="7" placeholder="achieve 达到，实现&#10;avoid|避免|v.|avoid doing sth."></textarea>
+        <p id="importStatus" class="status-text">粘贴词表后点击“解析文字”，确认后保存到指定年级和词库名称。</p>
+      </div>
+
+      <div id="reviewPanel" class="panel" hidden>
+        <div class="section-head">
+          <div>
+            <h2>确认词表</h2>
+            <p>保存前可以修改中文、词性、考点；空英文不会保存。</p>
+          </div>
+          <div class="button-row">
+            <button id="addRowBtn" type="button" class="secondary">加一行</button>
+            <button id="saveDeckBtn" type="button">保存词库</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="review-table">
+            <thead><tr><th>英文</th><th>中文</th><th>词性</th><th>考点/备注</th><th></th></tr></thead>
+            <tbody id="reviewBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <h2>已有词库</h2>
+          <button id="clearCustomDecksBtn" type="button" class="secondary danger">清空自定义词库</button>
+        </div>
+        <div id="deckList" class="deck-list"></div>
+      </div>
+    </section>
+
+    <section id="view-wrong" class="view">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2>错词 / 慢词</h2>
+            <p>错词和慢词分开看，练习时也只练当前分类。</p>
+          </div>
+          <div class="button-row">
+            <button id="trainWeakBtn" type="button">一键练这些词</button>
+            <button id="resetRecordsBtn" type="button" class="secondary danger">清空练习记录</button>
+          </div>
+        </div>
+        <div class="segmented weak-filter" aria-label="错词慢词筛选">
+          <button class="secondary active" type="button" data-weak-filter="wrong">错词</button>
+          <button class="secondary" type="button" data-weak-filter="slow">慢词</button>
+        </div>
+        <div id="weakList" class="word-list"></div>
+      </div>
+    </section>
+
+    <section id="view-report" class="view">
+      <div class="panel">
+        <h2>学习报告</h2>
+        <div id="reportContent" class="report-grid"></div>
+      </div>
+    </section>
+
+    <section id="view-quiz" class="view">
+      <div class="panel quiz-controls">
+        <div class="quiz-controls-row">
+          <label>刷题数量
+            <select id="quizSize">
+              <option value="100" selected>100 题</option>
+              <option value="150">150 题</option>
+              <option value="all">全部 192 题</option>
+            </select>
+          </label>
+          <button id="startQuizBtn" type="button">开始刷题</button>
+          <button id="reviewQuizWrongBtn" type="button" class="secondary">错题复盘</button>
+        </div>
+        <p class="status-text" id="quizStatusText">首字母填空，选词完成句子，干扰项同首字母。计时：3秒内快题，8秒以上慢题。</p>
+      </div>
+
+      <div class="panel quiz-area" id="quizArea" hidden>
+        <div class="progress">
+          <span id="quizProgressText">题号 0/0</span>
+          <div class="progress-track"><div id="quizProgressBar"></div></div>
+        </div>
+        <article class="word-card quiz-card">
+          <span id="quizTag">词组刷题</span>
+          <h2 id="quizSentence" class="quiz-sentence">Ready?</h2>
+          <p id="quizHint" class="quiz-hint"></p>
+        </article>
+        <div id="quizTimer" class="timer">用时 0.0 秒</div>
+        <div id="quizChoices" class="choices"></div>
+        <div class="feedback-row">
+          <p id="quizFeedback">计时中。</p>
+        </div>
+      </div>
+
+      <div id="quizReport" class="panel session-report" hidden></div>
+
+      <div class="panel quiz-wrong-panel">
+        <div class="section-head">
+          <div>
+            <h2>刷题错题本</h2>
+            <p>答错的题目会自动记录，可以错题复盘。</p>
+          </div>
+          <div class="button-row">
+            <button id="clearQuizWrongBtn" type="button" class="secondary danger">清空错题</button>
+          </div>
+        </div>
+        <div id="quizWrongList" class="word-list"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
