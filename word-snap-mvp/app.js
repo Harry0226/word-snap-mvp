@@ -91,6 +91,7 @@ Object.assign(els, {
   rightBattleScore: document.querySelector("#rightBattleScore"),
   leftBattleChoices: document.querySelector("#leftBattleChoices"),
   rightBattleChoices: document.querySelector("#rightBattleChoices"),
+  quizStage: document.querySelector("#quizStage"),
   quizSize: document.querySelector("#quizSize"),
   startQuizBtn: document.querySelector("#startQuizBtn"),
   reviewQuizWrongBtn: document.querySelector("#reviewQuizWrongBtn"),
@@ -831,6 +832,34 @@ function getQuizSentenceData() {
   return window.WORD_SNAP_QUIZ_SENTENCES || [];
 }
 
+function generateWordQuiz(grade) {
+  const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
+  const entry = lists.find((l) => l.grade === grade);
+  if (!entry || !entry.words || !entry.words.length) return [];
+  return entry.words
+    .filter((w) => w.en && w.zh)
+    .map((w, i) => ({ id: `w-${grade}-${i}`, sentence: w.zh, answer: w.en, type: "word" }));
+}
+
+function updateQuizSizeOptions() {
+  const grade = els.quizStage.value;
+  const sel = els.quizSize;
+  const prev = sel.value;
+  sel.innerHTML = "";
+  if (grade === "初三") {
+    sel.innerHTML = '<option value="100" selected>100 题</option><option value="150">150 题</option><option value="all">全部 304 题</option>';
+  } else {
+    const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
+    const entry = lists.find((l) => l.grade === grade);
+    const total = entry?.words?.filter((w) => w.en && w.zh).length || 0;
+    const opts = [];
+    if (total > 50) opts.push('<option value="50" selected>50 词</option>');
+    if (total > 100) opts.push('<option value="100">100 词</option>');
+    opts.push(`<option value="all">全部 ${total} 词</option>`);
+    sel.innerHTML = opts.join("");
+  }
+}
+
 function getQuizDistractorsForSentence(answer, vocabPool) {
   const pool = [];
   const used = new Set([answer.toLowerCase()]);
@@ -852,7 +881,20 @@ function getQuizDistractorsForSentence(answer, vocabPool) {
 }
 
 function startQuiz(isReview) {
-  const allData = getQuizSentenceData();
+  const grade = els.quizStage.value;
+  let allData;
+  let vocabPool;
+
+  if (grade === "初三") {
+    allData = getQuizSentenceData();
+    vocabPool = (window.WORD_SNAP_WORDS || []).filter((w) => w.en && w.zh);
+  } else {
+    allData = generateWordQuiz(grade);
+    const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
+    const entry = lists.find((l) => l.grade === grade);
+    vocabPool = (entry?.words || []).filter((w) => w.en && w.zh);
+  }
+
   if (!allData.length) {
     els.quizStatusText.textContent = "暂无题目数据。";
     return;
@@ -875,11 +917,10 @@ function startQuiz(isReview) {
     queue = queue.slice(0, Number(sizeOpt));
   }
 
-  const vocabPool = (window.WORD_SNAP_WORDS || []).filter((w) => w.en && w.zh);
-
   state.quiz = {
     queue,
     vocabPool,
+    grade,
     total: queue.length,
     done: 0,
     correct: 0,
@@ -897,7 +938,7 @@ function startQuiz(isReview) {
   els.quizArea.hidden = false;
   els.quizReport.hidden = true;
   els.quizReport.innerHTML = "";
-  els.quizStatusText.textContent = isReview ? `错题复盘模式：${queue.length} 题` : `刷题模式：${queue.length} 题`;
+  els.quizStatusText.textContent = isReview ? `错题复盘模式：${queue.length} 题` : `${grade} 刷题模式：${queue.length} 题`;
   nextQuizQuestion();
 }
 
@@ -914,7 +955,7 @@ function nextQuizQuestion() {
 
   els.quizTag.textContent = `第 ${quiz.done + 1}/${quiz.total} 题`;
   els.quizSentence.textContent = q.sentence;
-  els.quizHint.textContent = `首字母：${q.answer[0]}`;
+  els.quizHint.textContent = q.type === "word" ? "选择正确的英文单词" : `首字母：${q.answer[0]}`;
   els.quizFeedback.textContent = "计时中。";
   els.quizChoices.innerHTML = "";
 
@@ -1409,6 +1450,7 @@ function bindEvents() {
   });
   els.startQuizBtn.addEventListener("click", () => startQuiz(false));
   els.reviewQuizWrongBtn.addEventListener("click", () => startQuiz(true));
+  els.quizStage.addEventListener("change", updateQuizSizeOptions);
   els.clearQuizWrongBtn.addEventListener("click", async () => {
     if (!confirm("确定清空所有刷题错题记录吗？")) return;
     await clearStore("quizWrongAnswers");

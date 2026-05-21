@@ -2,14 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260521-phrases">
+  <link rel="stylesheet" href="./styles.css?v=20260522-mobile">
   <script defer src="./word-data/junior-exam-words.js?v=20260521-phrases"></script>
   <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
   <script defer src="./word-data/quiz-sentences.js?v=20260522-quiz"></script>
   <script defer src="./word-data/builtin-word-lists.js?v=20260521-phrases"></script>
-  <script defer src="./app.js?v=20260521-phrases"></script>
+  <script defer src="./app.js?v=20260522-mobile"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -289,11 +293,22 @@
     <section id="view-quiz" class="view">
       <div class="panel quiz-controls">
         <div class="quiz-controls-row">
+          <label>刷题年级
+            <select id="quizStage">
+              <option value="小学六年级">小学六年级</option>
+              <option value="初一">初一</option>
+              <option value="初二">初二</option>
+              <option value="初三" selected>初三</option>
+              <option value="高一">高一</option>
+              <option value="高二">高二</option>
+              <option value="高三">高三</option>
+            </select>
+          </label>
           <label>刷题数量
             <select id="quizSize">
               <option value="100" selected>100 题</option>
               <option value="150">150 题</option>
-              <option value="all">全部 192 题</option>
+              <option value="all">全部 304 题</option>
             </select>
           </label>
           <button id="startQuizBtn" type="button">开始刷题</button>
