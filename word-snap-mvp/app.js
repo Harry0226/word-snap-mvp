@@ -2,11 +2,11 @@ const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高�
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 2;
 const BUILTIN_SEED_VERSION = 6;
-const FAST_PICK_LIMIT = 1500;
-const SLOW_PICK_LIMIT = 4000;
+const FAST_PICK_LIMIT = 5000;
+const SLOW_PICK_LIMIT = 12000;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
-const QUIZ_FAST = 3000;
-const QUIZ_SLOW = 8000;
+const QUIZ_FAST = 5000;
+const QUIZ_SLOW = 12000;
 
 const state = {
   db: null,
@@ -553,19 +553,19 @@ function nextWord() {
 
 function hintForMode(mode, word) {
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  if (mode === "enToZhChoice") return detail || "看英文选中文。1.5 秒内算秒选，超过 4 秒记慢词。";
-  if (mode === "zhToEnChoice") return "看中文选英文。1.5 秒内算秒选，超过 4 秒记慢词。";
-  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。1.5 秒内算秒选，超过 4 秒记慢词。";
-  return "看中文说英文，也可以输入英文。1.5 秒内算秒选，超过 4 秒记慢词。";
+  if (mode === "enToZhChoice") return detail || "看英文选中文。5 秒内算秒选，超过 12 秒记慢词。";
+  if (mode === "zhToEnChoice") return "看中文选英文。5 秒内算秒选，超过 12 秒记慢词。";
+  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。5 秒内算秒选，超过 12 秒记慢词。";
+  return "看中文说英文，也可以输入英文。5 秒内算秒选，超过 12 秒记慢词。";
 }
 
 function startTimer() {
   clearInterval(state.session.timerId);
   els.timer.classList.remove("fast");
-  els.timer.textContent = "用时 0.0 秒 · 1.5 秒内算秒选，超过 4 秒记慢词";
+  els.timer.textContent = "用时 0.0 秒 · 5 秒内算秒选，超过 12 秒记慢词";
   state.session.timerId = setInterval(() => {
     const elapsed = performance.now() - state.session.startedAt;
-    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.5 秒内算秒选，超过 4 秒记慢词`;
+    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 5 秒内算秒选，超过 12 秒记慢词`;
   }, 100);
 }
 
@@ -847,7 +847,7 @@ function updateQuizSizeOptions() {
   const prev = sel.value;
   sel.innerHTML = "";
   if (grade === "初三") {
-    sel.innerHTML = '<option value="100" selected>100 题</option><option value="150">150 题</option><option value="all">全部 304 题</option>';
+    sel.innerHTML = '<option value="50" selected>50 题</option><option value="100">100 题</option><option value="150">150 题</option><option value="all">全部 304 题</option>';
   } else {
     const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
     const entry = lists.find((l) => l.grade === grade);
@@ -855,6 +855,7 @@ function updateQuizSizeOptions() {
     const opts = [];
     if (total > 50) opts.push('<option value="50" selected>50 词</option>');
     if (total > 100) opts.push('<option value="100">100 词</option>');
+    if (total > 150) opts.push('<option value="150">150 词</option>');
     opts.push(`<option value="all">全部 ${total} 词</option>`);
     sel.innerHTML = opts.join("");
   }
