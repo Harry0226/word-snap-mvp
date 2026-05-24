@@ -828,8 +828,11 @@ function resetBattle() {
   els.skipBattleBtn.disabled = true;
 }
 
-function getQuizSentenceData() {
-  return window.WORD_SNAP_QUIZ_SENTENCES || [];
+function getQuizSentenceData(grade) {
+  if (grade === "初一") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
+  if (grade === "初二") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
+  if (grade === "初三") return window.WORD_SNAP_QUIZ_SENTENCES || [];
+  return [];
 }
 
 function generateWordQuiz(grade) {
@@ -846,8 +849,14 @@ function updateQuizSizeOptions() {
   const sel = els.quizSize;
   const prev = sel.value;
   sel.innerHTML = "";
-  if (grade === "初三") {
-    sel.innerHTML = '<option value="50" selected>50 题</option><option value="100">100 题</option><option value="150">150 题</option><option value="all">全部 304 题</option>';
+  const sentenceQuizTotal = getQuizSentenceData(grade).length;
+  if (sentenceQuizTotal) {
+    const opts = [];
+    if (sentenceQuizTotal > 50) opts.push('<option value="50" selected>50 题</option>');
+    if (sentenceQuizTotal > 100) opts.push('<option value="100">100 题</option>');
+    if (sentenceQuizTotal > 150) opts.push('<option value="150">150 题</option>');
+    opts.push(`<option value="all">全部 ${sentenceQuizTotal} 题</option>`);
+    sel.innerHTML = opts.join("");
   } else {
     const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
     const entry = lists.find((l) => l.grade === grade);
@@ -886,9 +895,13 @@ function startQuiz(isReview) {
   let allData;
   let vocabPool;
 
-  if (grade === "初三") {
-    allData = getQuizSentenceData();
-    vocabPool = (window.WORD_SNAP_WORDS || []).filter((w) => w.en && w.zh);
+  const sentenceQuizData = getQuizSentenceData(grade);
+  if (sentenceQuizData.length) {
+    allData = sentenceQuizData;
+    vocabPool = sentenceQuizData
+      .flatMap((q) => q.options?.length ? q.options : [q.answer])
+      .filter(Boolean)
+      .map((en, index) => ({ id: `quiz-${grade}-${index}`, en, zh: "" }));
   } else {
     allData = generateWordQuiz(grade);
     const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
@@ -951,8 +964,9 @@ function nextQuizQuestion() {
   if (!quiz.currentQ) return finishQuiz();
 
   const q = quiz.currentQ;
-  const distractors = getQuizDistractorsForSentence(q.answer, quiz.vocabPool);
-  const allChoices = shuffle([q.answer, ...distractors]);
+  const allChoices = q.options?.length
+    ? shuffle([...q.options])
+    : shuffle([q.answer, ...getQuizDistractorsForSentence(q.answer, quiz.vocabPool)]);
 
   els.quizTag.textContent = `第 ${quiz.done + 1}/${quiz.total} 题`;
   els.quizSentence.textContent = q.sentence;
