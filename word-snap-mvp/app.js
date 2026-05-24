@@ -830,6 +830,7 @@ function resetBattle() {
 
 function getQuizSentenceData(grade) {
   if (grade === "初一") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
+  if (grade === "初二") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
   if (grade === "初三") return window.WORD_SNAP_QUIZ_SENTENCES || [];
   return [];
 }

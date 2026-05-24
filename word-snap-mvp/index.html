@@ -13,6 +13,7 @@
   <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
   <script defer src="./word-data/quiz-sentences.js?v=20260522-quiz"></script>
   <script defer src="./word-data/quiz-grade7-sentences.js?v=20260524-grade7"></script>
+  <script defer src="./word-data/quiz-grade8-sentences.js?v=20260525-grade8"></script>
   <script defer src="./word-data/builtin-word-lists.js?v=20260521-phrases"></script>
   <script defer src="./app.js?v=20260522-mobile"></script>
 </head>
@@ -315,7 +316,7 @@
           <button id="startQuizBtn" type="button">开始刷题</button>
           <button id="reviewQuizWrongBtn" type="button" class="secondary">错题复盘</button>
         </div>
-        <p class="status-text" id="quizStatusText">首字母填空，选词完成句子，干扰项同首字母。计时：3秒内快题，8秒以上慢题。</p>
+        <p class="status-text" id="quizStatusText"></p>
       </div>
 
       <div class="panel quiz-area" id="quizArea" hidden>
