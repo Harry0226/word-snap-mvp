@@ -456,7 +456,7 @@ label {
           <h2 id="word">Ready?</h2>
           <p id="hint">系统会按新词、弱词、到期复习词自动组一轮。</p>
         </article>
-        <div id="timer" class="timer">用时 0.0 秒 · 5 秒内答对算秒选</div>
+        <div id="timer" class="timer">用时 0.0 秒 · 1.5 秒内答对算秒选</div>
         <div id="choices" class="choices"></div>
         <form id="typingPanel" class="typing-panel" hidden>
           <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入答案">
@@ -15310,7 +15310,7 @@ const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高�
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 1;
 const BUILTIN_SEED_VERSION = 4;
-const FAST_PICK_LIMIT = 5000;
+const FAST_PICK_LIMIT = 1500;
 const CHOICE_KEYS = ["A", "B", "C", "D"];
 
 const state = {
@@ -15756,19 +15756,19 @@ function nextWord() {
 
 function hintForMode(mode, word) {
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  if (mode === "enToZhChoice") return detail || "看英文选中文。5 秒内答对算秒选。";
-  if (mode === "zhToEnChoice") return "看中文选英文。5 秒内答对算秒选。";
-  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。5 秒内答对算秒选。";
-  return "看中文说英文，也可以输入英文。5 秒内答对算秒选。";
+  if (mode === "enToZhChoice") return detail || "看英文选中文。1.5 秒内答对算秒选。";
+  if (mode === "zhToEnChoice") return "看中文选英文。1.5 秒内答对算秒选。";
+  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。1.5 秒内答对算秒选。";
+  return "看中文说英文，也可以输入英文。1.5 秒内答对算秒选。";
 }
 
 function startTimer() {
   clearInterval(state.session.timerId);
   els.timer.classList.remove("fast");
-  els.timer.textContent = "用时 0.0 秒 · 5 秒内答对算秒选";
+  els.timer.textContent = "用时 0.0 秒 · 1.5 秒内答对算秒选";
   state.session.timerId = setInterval(() => {
     const elapsed = performance.now() - state.session.startedAt;
-    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 5 秒内答对算秒选`;
+    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.5 秒内答对算秒选`;
   }, 100);
 }
 

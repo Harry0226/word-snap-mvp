@@ -1,12 +1,12 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考常考词组总复习", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 2;
-const BUILTIN_SEED_VERSION = 6;
-const FAST_PICK_LIMIT = 5000;
-const SLOW_PICK_LIMIT = 12000;
+const BUILTIN_SEED_VERSION = 7;
+const FAST_PICK_LIMIT = 1500;
+const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
-const QUIZ_FAST = 5000;
-const QUIZ_SLOW = 12000;
+const QUIZ_FAST = 1500;
+const QUIZ_SLOW = 3500;
 
 const state = {
   db: null,
@@ -553,19 +553,19 @@ function nextWord() {
 
 function hintForMode(mode, word) {
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  if (mode === "enToZhChoice") return detail || "看英文选中文。5 秒内算秒选，超过 12 秒记慢词。";
-  if (mode === "zhToEnChoice") return "看中文选英文。5 秒内算秒选，超过 12 秒记慢词。";
-  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。5 秒内算秒选，超过 12 秒记慢词。";
-  return "看中文说英文，也可以输入英文。5 秒内算秒选，超过 12 秒记慢词。";
+  if (mode === "enToZhChoice") return detail || "看英文选中文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
+  if (mode === "zhToEnChoice") return "看中文选英文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
+  if (mode === "enToZhType") return "看英文说中文，也可以输入中文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
+  return "看中文说英文，也可以输入英文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
 }
 
 function startTimer() {
   clearInterval(state.session.timerId);
   els.timer.classList.remove("fast");
-  els.timer.textContent = "用时 0.0 秒 · 5 秒内算秒选，超过 12 秒记慢词";
+  els.timer.textContent = "用时 0.0 秒 · 1.5 秒内算秒选，超过 3.5 秒记慢词";
   state.session.timerId = setInterval(() => {
     const elapsed = performance.now() - state.session.startedAt;
-    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 5 秒内算秒选，超过 12 秒记慢词`;
+    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.5 秒内算秒选，超过 3.5 秒记慢词`;
   }, 100);
 }
 
