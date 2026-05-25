@@ -1,2792 +1,3587 @@
 window.WORD_SNAP_GRADE8_QUIZ_SENTENCES = [
   {
-    "id": "g8-20260524-0001",
+    "id": "g8-001",
     "grade": "初二",
-    "sentence": "Polar bears have ________ to keep them warm in winter.",
-    "answer": "fur",
+    "sentence": "We should learn good ______（礼仪）to get along well with others in daily life.",
+    "answer": "manners",
     "options": [
-      "fever",
-      "farmhouse",
-      "fur",
-      "fishing",
-      "firework"
+      "manners",
+      "make a living",
+      "muddy",
+      "modest",
+      "move"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
   },
   {
-    "id": "g8-20260524-0002",
+    "id": "g8-002",
     "grade": "初二",
-    "sentence": "He never barks or bites, and he doesn't like to ________.",
-    "answer": "fight",
+    "sentence": "The old man waited ______（耐心地）for the bus without jumping the line.",
+    "answer": "patiently",
     "options": [
-      "fishing",
-      "farmhouse",
-      "fight",
-      "fever",
-      "firework"
+      "patiently",
+      "pleased",
+      "politeness",
+      "promise",
+      "politely"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
   },
   {
-    "id": "g8-20260524-0003",
+    "id": "g8-003",
     "grade": "初二",
-    "sentence": "The birds are collecting some ________ to build a new house.",
-    "answer": "sticks",
+    "sentence": "We should show our ______（礼貌）by greeting others warmly when we meet them.",
+    "answer": "politeness",
     "options": [
-      "seaside",
-      "sticks",
-      "south",
-      "square",
-      "study"
+      "push",
+      "pleased",
+      "politeness",
+      "promise",
+      "patiently"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
   },
   {
-    "id": "g8-20260524-0004",
+    "id": "g8-004",
     "grade": "初二",
-    "sentence": "After my grandpa died, my grandma often sits ________ in the corner of the room.",
-    "answer": "alone",
+    "sentence": "It’s important for students to ______（表现）well in class and respect their teachers.",
+    "answer": "behave",
     "options": [
-      "anyone",
-      "alone",
+      "birthplace",
+      "body",
+      "business",
+      "behave",
+      "bank"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-005",
+    "grade": "初二",
+    "sentence": "People in different countries may ______（不同地）treat guests because of their own cultures.",
+    "answer": "differently",
+    "options": [
+      "differently",
+      "discuss",
+      "discussion",
+      "dynasty",
+      "development"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-006",
+    "grade": "初二",
+    "sentence": "My parents were ______（高兴的）with my good grades in the English test about manners.",
+    "answer": "pleased",
+    "options": [
+      "promise",
+      "patiently",
+      "pleased",
+      "politeness",
+      "push"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-007",
+    "grade": "初二",
+    "sentence": "We had a warm ______（讨论）about how to be a polite person in our class meeting.",
+    "answer": "discussion",
+    "options": [
+      "discussion",
+      "dynasty",
+      "development",
+      "discuss",
+      "differently"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-008",
+    "grade": "初二",
+    "sentence": "I p______to keep my word and never be late for the class meeting again.",
+    "answer": "promise",
+    "options": [
+      "patiently",
+      "push",
+      "politeness",
+      "promise",
+      "pleased"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-009",
+    "grade": "初二",
+    "sentence": "We should talk ______（恭敬地）to the elderly and listen to their advice carefully.",
+    "answer": "respectfully",
+    "options": [
+      "replied",
+      "refused",
+      "reply",
+      "respectfully",
+      "realized"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-010",
+    "grade": "初二",
+    "sentence": "The host served us some t______local food to make us feel at home.",
+    "answer": "tasty",
+    "options": [
+      "transport",
+      "tasty",
+      "technology",
+      "trouble",
+      "tourism"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-011",
+    "grade": "初二",
+    "sentence": "The _______ (host) at the party are all very kind to the guests.",
+    "answer": "hosts",
+    "options": [
+      "hospitable",
+      "hosting",
+      "hosts",
+      "hosted",
+      "host"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-012",
+    "grade": "初二",
+    "sentence": "It is _________（polite）to cut in on others when they are talking.",
+    "answer": "impolite",
+    "options": [
+      "politeness",
+      "polite",
+      "politely",
+      "instead of",
+      "impolite"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-013",
+    "grade": "初二",
+    "sentence": "She ________ (refuse) to take part in the activity yesterday.",
+    "answer": "refused",
+    "options": [
+      "replied",
+      "refused",
+      "refusing",
+      "refuses",
+      "refuse"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-014",
+    "grade": "初二",
+    "sentence": "He ________ (reply) to my email the day before yesterday.",
+    "answer": "replied",
+    "options": [
+      "replying",
+      "reply",
+      "replies",
+      "replied",
+      "refused"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-015",
+    "grade": "初二",
+    "sentence": "We are very ________ (please) with you because you have such good manners.",
+    "answer": "pleased",
+    "options": [
+      "pleasant",
+      "please",
+      "pleasure",
+      "pleasing",
+      "pleased"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-016",
+    "grade": "初二",
+    "sentence": "Don’t throw ______ (litter) everywhere in the park.",
+    "answer": "litter",
+    "options": [
+      "leave",
+      "littered",
+      "litters",
+      "littering",
+      "litter"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-017",
+    "grade": "初二",
+    "sentence": "________ (normal), people shake hands when they meet for the first time.",
+    "answer": "Normally",
+    "options": [
+      "no doubt",
+      "normal",
+      "nightlife",
+      "no matter",
+      "Normally"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-018",
+    "grade": "初二",
+    "sentence": "My brother has got used to________ (get ) up early these days.",
+    "answer": "getting",
+    "options": [
+      "getting",
+      "get",
+      "got",
+      "gotten",
+      "gets"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-019",
+    "grade": "初二",
+    "sentence": "They were about to ________ (leave) when it began to rain.",
+    "answer": "leave",
+    "options": [
+      "leave",
+      "leaving",
+      "leaves",
+      "left",
+      "litter"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-020",
+    "grade": "初二",
+    "sentence": "The ________ (host) at the welcome party are very kind and friendly to all the foreign students.",
+    "answer": "hosts",
+    "options": [
+      "hospitable",
+      "hosting",
+      "hosts",
+      "hosted",
+      "host"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-021",
+    "grade": "初二",
+    "sentence": "We should know that good ________ （polite）is very important when we talk with guests.",
+    "answer": "politeness",
+    "options": [
+      "patiently",
+      "polite",
+      "politely",
+      "politeness",
+      "impolite"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-022",
+    "grade": "初二",
+    "sentence": "All the visitors should arrive ________ for the welcome party.",
+    "answer": "on time",
+    "options": [
+      "on time",
+      "Of course not",
+      "one another",
+      "on board",
+      "Of all the attractions, Hao River is the most beautiful."
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-023",
+    "grade": "初二",
+    "sentence": "The kind host family tried their best to make us ________.",
+    "answer": "feel at home",
+    "options": [
+      "feel at home",
+      "fall over",
+      "one another",
+      "on time",
+      "first of all"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-024",
+    "grade": "初二",
+    "sentence": "When I was in England, I ________ that different countries have different manners.",
+    "answer": "realized",
+    "options": [
+      "replied",
+      "respectfully",
+      "rush",
+      "realized",
+      "refused"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-025",
+    "grade": "初二",
+    "sentence": "In Western countries, people often use proper ________ when they speak to the old.",
+    "answer": "addresses",
+    "options": [
+      "at the heart of",
+      "a wealth of",
+      "addresses",
+      "address",
+      "as well as"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-026",
+    "grade": "初二",
+    "sentence": "We should help ________ when we are in trouble.",
+    "answer": "one another",
+    "options": [
+      "opened up",
+      "one another",
+      "Of all the attractions, Hao River is the most beautiful.",
+      "on time",
+      "Of course not"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-027",
+    "grade": "初二",
+    "sentence": "Don’t ________ others all the time. It’s not polite.",
+    "answer": "push",
+    "options": [
+      "push",
+      "promise",
+      "patiently",
+      "politeness",
+      "pleased"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-028",
+    "grade": "初二",
+    "sentence": "We won’t make great progress ________ we work hard.",
+    "answer": "unless",
+    "options": [
+      "unless",
+      "university",
+      "until",
+      "used to",
+      "underground"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-029",
+    "grade": "初二",
+    "sentence": "We should speak in a low voice ________ shouting loudly in public.",
+    "answer": "instead of",
+    "options": [
+      "in our way",
+      "is reminded / was reminded",
+      "is made up of",
+      "instead of",
+      "if I can keep it for another week"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-030",
+    "grade": "初二",
+    "sentence": "If you are in ________, you can ask the host family for help.",
+    "answer": "trouble",
+    "options": [
+      "transport",
+      "technology",
+      "tourism",
+      "tasty",
+      "trouble"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-031",
+    "grade": "初二",
+    "sentence": "As students, we should learn to ________ (表现) well at school and in public.",
+    "answer": "behave",
+    "options": [
+      "birthplace",
+      "behave",
+      "bank",
+      "business",
+      "body"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-032",
+    "grade": "初二",
+    "sentence": "We should speak to our teachers and parents ________ (恭敬地).",
+    "answer": "respectfully",
+    "options": [
+      "reply",
+      "respectfully",
+      "realized",
+      "refused",
+      "replied"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-033",
+    "grade": "初二",
+    "sentence": "We should always be ________ (谦虚的) and not be proud when we get good grades or make progress.",
+    "answer": "modest",
+    "options": [
+      "make a living",
+      "manners",
+      "move",
+      "muddy",
+      "modest"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-034",
+    "grade": "初二",
+    "sentence": "We should ________ (承诺) to be honest and never cheat (欺骗) in exams.",
+    "answer": "promise",
+    "options": [
+      "push",
+      "politeness",
+      "patiently",
+      "promise",
+      "pleased"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-035",
+    "grade": "初二",
+    "sentence": "We should promise (承诺) to be honest and never ________ (欺骗) in exams.",
+    "answer": "cheat",
+    "options": [
+      "congratulations",
+      "cheat",
+      "care about",
+      "convenient",
+      "crowded"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-036",
+    "grade": "初二",
+    "sentence": "Our friend held a wonderful party yesterday, and we all want to ________ (praise) her for her careful preparation.",
+    "answer": "praise",
+    "options": [
+      "praising",
+      "praise",
+      "praises",
+      "praised",
+      "patiently"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-037",
+    "grade": "初二",
+    "sentence": "Her parents were very ________ (hospitable) to us—they prepared plenty of delicious food and talked with each of us warmly.",
+    "answer": "hospitable",
+    "options": [
+      "hospitable",
+      "hosts",
+      "honour",
+      "high-speed train",
+      "high-tech"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-038",
+    "grade": "初二",
+    "sentence": "Before the party started, we ________ (full) discussed how to make her feel happy.",
+    "answer": "fully",
+    "options": [
+      "fully",
+      "full",
+      "feel at home",
+      "feel",
+      "facility"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-039",
+    "grade": "初二",
+    "sentence": "At the end of the party, we stood up together to say “________ ”(congratulate) to her.",
+    "answer": "congratulations",
+    "options": [
+      "congratulated",
+      "congratulates",
+      "congratulating",
+      "congratulations",
+      "congratulate"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-040",
+    "grade": "初二",
+    "sentence": "After going home, I thought about the party and wrote down a ________ (suggest) for next time: we can prepare a small handmade gift to show our love better.",
+    "answer": "suggestion",
+    "options": [
+      "suggested",
+      "suggest",
+      "suggesting",
+      "suggestion",
+      "suggests"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-041",
+    "grade": "初二",
+    "sentence": "It is ________ to speak loudly, push others or make too much noise.",
+    "answer": "impolite",
+    "options": [
+      "instead of",
+      "in our way",
+      "innovation",
+      "industry",
+      "impolite"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-042",
+    "grade": "初二",
+    "sentence": "When we are in a hurry, we should not ________ past others without saying “Excuse me”.",
+    "answer": "rush",
+    "options": [
+      "refused",
+      "respectfully",
+      "rush",
+      "replied",
+      "realized"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-043",
+    "grade": "初二",
+    "sentence": "If someone is ________, we should wait patiently instead of being angry.",
+    "answer": "in our way",
+    "options": [
+      "in person",
+      "in our way",
+      "in case",
+      "in addition",
+      "in one’s way"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-044",
+    "grade": "初二",
+    "sentence": "When we ________ our friends or teachers in the street, it’s polite to greet them warmly.",
+    "answer": "run into",
+    "options": [
+      "run out",
+      "on time",
+      "run into",
+      "remind sb to do sth",
+      "feel at home"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-045",
+    "grade": "初二",
+    "sentence": "If everyone can behave politely, our public places will become much ________ and more pleasant.",
+    "answer": "peaceful",
+    "options": [
+      "politeness",
+      "peaceful",
+      "pleased",
+      "patiently",
+      "promise"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-046",
+    "grade": "初二",
+    "sentence": "When we talk with others, we should listen to them ________ (耐心地).",
+    "answer": "patiently",
+    "options": [
+      "pleased",
+      "patiently",
+      "politeness",
+      "politely",
+      "promise"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-047",
+    "grade": "初二",
+    "sentence": "We should eat ________ (安静地) at the dinner table and not make too much noise.",
+    "answer": "quietly",
+    "options": [
+      "differently",
+      "queen",
+      "respectfully",
+      "patiently",
+      "quietly"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-048",
+    "grade": "初二",
+    "sentence": "As we communicate with people from different countries, we will ________ (意识到) that different cultures have different customs.",
+    "answer": "realize",
+    "options": [
+      "refused",
+      "respectfully",
+      "replied",
+      "realize",
+      "realized"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-049",
+    "grade": "初二",
+    "sentence": "People in different countries may do things ________ (不同地).",
+    "answer": "differently",
+    "options": [
+      "discuss",
+      "discussion",
+      "development",
+      "dynasty",
+      "differently"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-050",
+    "grade": "初二",
+    "sentence": "We can’t learn good manners easily ________ (除非) we keep practicing every day.",
+    "answer": "unless",
+    "options": [
+      "until",
+      "unless",
+      "university",
+      "used to",
+      "underground"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-051",
+    "grade": "初二",
+    "sentence": "It is necessary to know how to ________ (polite) ask for help and how to address (address) others correctly.",
+    "answer": "politely",
+    "options": [
+      "address",
+      "addressed",
+      "addresses",
+      "addressing",
+      "politely"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-052",
+    "grade": "初二",
+    "sentence": "It is necessary to know how to politely (polite) ask for help and how to ________ (address) others correctly.",
+    "answer": "address",
+    "options": [
+      "addressed",
+      "addresses",
+      "address",
+      "at the heart of",
+      "addressing"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-053",
+    "grade": "初二",
+    "sentence": "When we have questions, we can ________ (discuss) them with our teachers or parents politely.",
+    "answer": "discuss",
+    "options": [
+      "discussing",
+      "discussed",
+      "discusses",
+      "discuss",
+      "differently"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-054",
+    "grade": "初二",
+    "sentence": "When they give us advice, we should ________ (reply) in time and show our thanks.",
+    "answer": "reply",
+    "options": [
+      "respectfully",
+      "reply",
+      "replies",
+      "replying",
+      "replied"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-055",
+    "grade": "初二",
+    "sentence": "If we want to listen to music, we should wear ________ (earphone) so that we won’t disturb others.",
+    "answer": "earphones",
+    "options": [
+      "excellent",
+      "even though",
+      "educational",
+      "earphone",
+      "earphones"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-056",
+    "grade": "初二",
+    "sentence": "It is ________ to talk with food in our mouth or make a lot of noise at the table.",
+    "answer": "impolite",
+    "options": [
+      "innovation",
+      "in our way",
+      "impolite",
+      "industry",
+      "instead of"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-057",
+    "grade": "初二",
+    "sentence": "________ different countries have different eating habits, we should always respect them.",
+    "answer": "even though",
+    "options": [
+      "ever; yet",
+      "excuse me",
+      "even though",
+      "experience; experiences",
+      "everything; something"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-058",
+    "grade": "初二",
+    "sentence": "At home, we should learn to ________ our family members.",
+    "answer": "care about",
+    "options": [
+      "care about",
+      "check out",
+      "Can, mustn’t",
+      "click on",
+      "count down"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-059",
+    "grade": "初二",
+    "sentence": "What’s more, home-made food is usually clean and ________.",
+    "answer": "tasty",
+    "options": [
+      "transport",
+      "technology",
+      "tourism",
+      "trouble",
+      "tasty"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-060",
+    "grade": "初二",
+    "sentence": "Learning good table manners can help us understand and love ________ better and make our family life warm and happy.",
+    "answer": "one another",
+    "options": [
+      "opened up",
+      "Of all the attractions, Hao River is the most beautiful.",
+      "Of course not",
+      "on time",
+      "one another"
+    ],
+    "type": "passage-blank",
+    "source": "8B Unit5 词汇运用"
+  },
+  {
+    "id": "g8-061",
+    "grade": "初二",
+    "sentence": "The local government has built special facilities for the ________ (盲人) to walk safely on the streets.",
+    "answer": "blind",
+    "options": [
+      "background",
+      "body",
+      "blind",
+      "bank",
+      "blood"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-062",
+    "grade": "初二",
+    "sentence": "Although the old man is completely ________ (聋的), he enjoys listening to music through vibrations.",
+    "answer": "deaf",
+    "options": [
+      "disabled",
+      "deaf",
+      "disability",
+      "donate",
+      "disease"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-063",
+    "grade": "初二",
+    "sentence": "He was born ________ (残疾的), but his strong will made him a successful artist.",
+    "answer": "disabled",
+    "options": [
+      "disability",
+      "disabled",
+      "donate",
+      "disease",
+      "deaf"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-064",
+    "grade": "初二",
+    "sentence": "The community centre offers free fitness classes for the ________ (老年人) every morning.",
+    "answer": "elderly",
+    "options": [
+      "expected",
+      "expect",
+      "excellent",
+      "elderly",
+      "expectation"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-065",
+    "grade": "初二",
+    "sentence": "His ________ (残疾) is not physical but mental, which requires more patience from teachers.",
+    "answer": "disability",
+    "options": [
+      "disabled",
+      "donate",
+      "disability",
+      "deaf",
+      "disease"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-066",
+    "grade": "初二",
+    "sentence": "The hospital provides emergency medical ________ (服务) 24 hours a day, even on public holidays.",
+    "answer": "services",
+    "options": [
+      "services",
+      "suffered",
+      "suffer",
+      "seat belts",
+      "silver"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-067",
+    "grade": "初二",
+    "sentence": "They decided to ________ (捐赠) all the money raised from the charity concert to the children's hospital.",
+    "answer": "donate",
+    "options": [
+      "donate",
+      "deaf",
+      "disability",
+      "disabled",
+      "disease"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-068",
+    "grade": "初二",
+    "sentence": "Most parents ________ (期望) too much from their children, which may cause unnecessary stress.",
+    "answer": "expect",
+    "options": [
+      "expectation",
+      "expected",
+      "excellent",
+      "elderly",
+      "expect"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-069",
+    "grade": "初二",
+    "sentence": "Only the best ________ (运动员) in the world can compete in the Olympic final.",
+    "answer": "athletes",
+    "options": [
+      "ability",
+      "athlete",
+      "achieve",
+      "achieved",
+      "athletes"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-070",
+    "grade": "初二",
+    "sentence": "His sudden success gave him a false sense of ________ (自信) that later led to failure.",
+    "answer": "confidence",
+    "options": [
+      "cross",
+      "competition",
+      "courage",
+      "charity",
+      "confidence"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-071",
+    "grade": "初二",
+    "sentence": "All visitors are ________ (要求) to show their ID cards before entering the sports centre.",
+    "answer": "required",
+    "options": [
+      "remind",
+      "reminded",
+      "receive",
+      "received",
+      "required"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-072",
+    "grade": "初二",
+    "sentence": "She was excited to ________ (收到) a letter from the famous athlete she had always admired.",
+    "answer": "receive",
+    "options": [
+      "required",
+      "receive",
+      "remind",
+      "requirement",
+      "receiver"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-073",
+    "grade": "初二",
+    "sentence": "It is ________ (必要的) for every driver to fasten the seat belt, no matter how short the trip is.",
+    "answer": "necessary",
+    "options": [
+      "north-western",
+      "north-eastern",
+      "no matter",
+      "no doubt",
+      "necessary"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-074",
+    "grade": "初二",
+    "sentence": "After the accident, he has been forced to move around in a ________ (轮椅) for the rest of his life.",
+    "answer": "wheelchair",
+    "options": [
+      "will have served",
+      "was crossing",
+      "were required / was required",
+      "wheelchair",
+      "warm-hearted"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-075",
+    "grade": "初二",
+    "sentence": "Please ________ (提醒) me to call my grandmother before she goes to bed tonight.",
+    "answer": "remind",
+    "options": [
+      "required",
+      "remind",
+      "receiver",
+      "receive",
+      "requirement"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-076",
+    "grade": "初二",
+    "sentence": "The pilot told all passengers to fasten their ________ (安全带) immediately due to turbulence.",
+    "answer": "seat belts",
+    "options": [
+      "show time",
+      "seat of power",
+      "shares; with; hers",
+      "seat belts",
+      "seat belt"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-077",
+    "grade": "初二",
+    "sentence": "Winning an Olympic ________ (奖牌) is the dream of almost every professional athlete.",
+    "answer": "medal",
+    "options": [
+      "make a living",
+      "muddy",
+      "move",
+      "make one’s way",
+      "medal"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-078",
+    "grade": "初二",
+    "sentence": "She finally won the ________ (金牌) after three failed attempts in previous competitions.",
+    "answer": "gold",
+    "options": [
+      "greenway",
+      "guest",
+      "giant",
+      "gold",
+      "greatly"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-079",
+    "grade": "初二",
+    "sentence": "He was proud to receive a ________ (银牌), even though his goal was the gold one.",
+    "answer": "silver",
+    "options": [
+      "suffered",
+      "silver",
+      "services",
+      "suffer",
+      "seat belts"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-080",
+    "grade": "初二",
+    "sentence": "The singing ________ (比赛) attracted over 200 participants from different high schools.",
+    "answer": "competition",
+    "options": [
+      "charity",
+      "confidence",
+      "competition",
+      "courage",
+      "cross"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-081",
+    "grade": "初二",
+    "sentence": "Despite his poor family ________ (背景), he never gave up his dream of becoming a doctor.",
+    "answer": "background",
+    "options": [
+      "background",
+      "blood",
+      "bank",
+      "blind",
+      "body"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-082",
+    "grade": "初二",
+    "sentence": "The young teacher has a natural ________ (能力) to explain difficult ideas in simple words.",
+    "answer": "ability",
+    "options": [
+      "ability",
+      "athlete",
+      "achieve",
+      "achieved",
+      "athletes"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-083",
+    "grade": "初二",
+    "sentence": "The ________ (热心的) neighbour often helps the disabled woman carry her groceries upstairs.",
+    "answer": "warm-hearted",
+    "options": [
+      "warm-hearted",
+      "wheelchair",
+      "was crossing",
+      "will have served",
+      "were required / was required"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-084",
+    "grade": "初二",
+    "sentence": "It takes great ________ (勇气) to admit your mistakes in front of so many people.",
+    "answer": "courage",
+    "options": [
+      "cross",
+      "competition",
+      "charity",
+      "courage",
+      "confidence"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-085",
+    "grade": "初二",
+    "sentence": "Only by working extremely hard can you ________ (实现) your goal of winning a scholarship.",
+    "answer": "achieve",
+    "options": [
+      "ability",
+      "achieved",
+      "athlete",
+      "athletes",
+      "achieve"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-086",
+    "grade": "初二",
+    "sentence": "His speech ________ (极大地) influenced the public's attitude towards the disabled community.",
+    "answer": "greatly",
+    "options": [
+      "giant",
+      "gold",
+      "greenway",
+      "greatly",
+      "guest"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-087",
+    "grade": "初二",
+    "sentence": "The famous scientist had a lifelong ________ (影响) on the development of modern medicine.",
+    "answer": "influence",
+    "options": [
+      "industry",
+      "influence",
+      "innovation",
+      "imagine",
+      "is reminded / was reminded"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-088",
+    "grade": "初二",
+    "sentence": "Look both ways before you ________ (穿过) the street, especially when you are with children.",
+    "answer": "cross",
+    "options": [
+      "confidence",
+      "courage",
+      "cross",
+      "charities",
+      "competition"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-089",
+    "grade": "初二",
+    "sentence": "All the money raised will go to a local ________ (慈善机构) that helps blind orphans.",
+    "answer": "charity",
+    "options": [
+      "confidence",
+      "courage",
+      "cross",
+      "charity",
+      "competition"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-090",
+    "grade": "初二",
+    "sentence": "Many Western ________ (慈善机构) have started working in remote areas of Africa and Asia.",
+    "answer": "charities",
+    "options": [
+      "cross",
+      "charities",
+      "courage",
+      "competition",
+      "confidence"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-091",
+    "grade": "初二",
+    "sentence": "The ________ (流行) of online courses has greatly increased during the past few years.",
+    "answer": "popularity",
+    "options": [
+      "popularity",
+      "public",
+      "pioneer",
+      "pioneering",
+      "planner"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-092",
+    "grade": "初二",
+    "sentence": "He won the Nobel Prize in ________ (化学) for his groundbreaking research on blood diseases.",
+    "answer": "chemistry",
+    "options": [
+      "courage",
+      "confidence",
+      "chemistry",
+      "competition",
+      "cross"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-093",
+    "grade": "初二",
+    "sentence": "The factory is located in the ________ (西北的) part of the city, far from the city centre.",
+    "answer": "north-western",
+    "options": [
+      "north-western",
+      "necessary",
+      "north-eastern",
+      "no doubt",
+      "no matter"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-094",
+    "grade": "初二",
+    "sentence": "Her hometown is in the ________ (东北的) region of China, where winters are extremely cold.",
+    "answer": "north-eastern",
+    "options": [
+      "no matter",
+      "necessary",
+      "north-western",
+      "no doubt",
+      "north-eastern"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-095",
+    "grade": "初二",
+    "sentence": "Many office workers ________ (遭受) from neck pain because of poor sitting posture.",
+    "answer": "suffer",
+    "options": [
+      "services",
+      "silver",
+      "suffered",
+      "suffer",
+      "seat belts"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-096",
+    "grade": "初二",
+    "sentence": "He ________ (遭受) from a rare blood disease for nearly a decade before the new treatment was invented.",
+    "answer": "suffered",
+    "options": [
+      "seat belts",
+      "silver",
+      "services",
+      "suffered",
+      "suffer"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-097",
+    "grade": "初二",
+    "sentence": "The doctor took a sample of his ________ (血液) to test for possible infections.",
+    "answer": "blood",
+    "options": [
+      "background",
+      "blind",
+      "bank",
+      "blood",
+      "body"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-098",
+    "grade": "初二",
+    "sentence": "Heart ________ (疾病) remains one of the leading causes of death among the elderly worldwide.",
+    "answer": "disease",
+    "options": [
+      "disease",
+      "disabled",
+      "donate",
+      "deaf",
+      "disability"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-099",
+    "grade": "初二",
+    "sentence": "The patient will need an emergency ________ (手术) tonight, or his life will be in danger.",
+    "answer": "Operation",
+    "options": [
+      "ongoing",
+      "on time",
+      "opinion",
+      "operations",
+      "Operation"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-100",
+    "grade": "初二",
+    "sentence": "His ________ (able) to remain calm during the operation surprised even the doctors.",
+    "answer": "ability",
+    "options": [
       "able",
-      "ahlan",
-      "anything"
+      "disabled",
+      "athletes",
+      "unable",
+      "ability"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0005",
+    "id": "g8-101",
     "grade": "初二",
-    "sentence": "The children have learnt about the fact that light travels faster than ________.",
-    "answer": "sound",
+    "sentence": "The sudden ________ (popular) of online charity events caught many western organizations off guard.",
+    "answer": "popularity",
     "options": [
-      "south",
-      "seaside",
-      "study",
-      "sound",
-      "square"
+      "popularly",
+      "popular",
+      "popularity",
+      "pioneer",
+      "public"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0006",
+    "id": "g8-102",
     "grade": "初二",
-    "sentence": "Andy likes keeping ________ as pets.",
-    "answer": "goldfish/goldfishes",
+    "sentence": "It takes great ________ (courage) for a deaf athlete to compete without hearing the starter’s gun.",
+    "answer": "courage",
     "options": [
-      "golden",
-      "goldfish/goldfishes",
-      "grassland",
-      "ground",
-      "gram"
+      "couraged",
+      "courages",
+      "courage",
+      "confidence",
+      "couraging"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0007",
+    "id": "g8-103",
     "grade": "初二",
-    "sentence": "There are many ________ in this old house.",
-    "answer": "mice",
+    "sentence": "The ________ (warm-heart) stranger not only helped the disabled man cross the street but also donated his own wheelchair.",
+    "answer": "warm-hearted",
     "options": [
-      "mice",
-      "mobile",
-      "million",
-      "mile",
-      "metre"
+      "warm-hearted",
+      "warm-hearts",
+      "warm-hearting",
+      "wheelchair",
+      "warm-heart"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0008",
+    "id": "g8-104",
     "grade": "初二",
-    "sentence": "Grandmother always ________ my head when she talks with me.",
-    "answer": "touches",
+    "sentence": "A strong background in ________ (chemistry) is often necessary for north-eastern medical researchers.",
+    "answer": "chemistry",
     "options": [
-      "town",
-      "tidy",
-      "tent",
-      "throat",
-      "touches"
+      "chemistries",
+      "chemistriest",
+      "chemistrier",
+      "chemistry",
+      "chemistried"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0009",
+    "id": "g8-105",
     "grade": "初二",
-    "sentence": "Your cousin is waiting for you at the street ________.",
-    "answer": "corner",
+    "sentence": "The amount of money people ________ (donate) to blood disease research has doubled since last year.",
+    "answer": "donate",
     "options": [
-      "collect",
-      "cottage",
-      "corner",
-      "carpet",
-      "calendar"
+      "donates",
+      "donated",
+      "donation",
+      "donating",
+      "donate"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0010",
+    "id": "g8-106",
     "grade": "初二",
-    "sentence": "There is an interesting place ________ the Great Wall in China.",
-    "answer": "called",
+    "sentence": "The ________ (expect) that every disabled person should achieve the same as healthy athletes is unfair.",
+    "answer": "expectation",
     "options": [
-      "cottage",
-      "collect",
-      "calendar",
-      "called",
-      "carpet"
+      "expecting",
+      "expects",
+      "expectation",
+      "expect",
+      "expected"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0011",
+    "id": "g8-107",
     "grade": "初二",
-    "sentence": "Neil Armstrong was the first person to walk on the ________ of the moon.",
-    "answer": "surface",
+    "sentence": "His ________ (confident) was greatly shaken after he failed to receive even a silver medal.",
+    "answer": "confidence",
     "options": [
-      "study",
-      "surface",
-      "seaside",
-      "south",
-      "square"
+      "confidence",
+      "competition",
+      "confident",
+      "courage",
+      "confidently"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0012",
+    "id": "g8-108",
     "grade": "初二",
-    "sentence": "As far as we know, the Sahara Desert is the biggest ________ in the world.",
-    "answer": "desert",
+    "sentence": "One basic ________ (require) for joining the competition is that each athlete must have a physical examination.",
+    "answer": "requirement",
     "options": [
-      "destroy",
-      "down",
-      "dry",
-      "detail",
-      "desert"
+      "requiring",
+      "requirement",
+      "requires",
+      "required",
+      "require"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0013",
+    "id": "g8-109",
     "grade": "初二",
-    "sentence": "In the past, people believed that the earth was ________.",
-    "answer": "flat",
+    "sentence": "The ________ (receive) of the gold medal burst into tears as the national anthem played.",
+    "answer": "receiver",
     "options": [
-      "farmhouse",
-      "fishing",
-      "firework",
-      "fever",
-      "flat"
+      "receiver",
+      "receive",
+      "receives",
+      "received",
+      "receiving"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0014",
+    "id": "g8-110",
     "grade": "初二",
-    "sentence": "The elephant is the largest living ________ animal.",
-    "answer": "land",
+    "sentence": "By the time the ambulance arrived, the elderly man ________ (suffer) from a heart disease attack for nearly twenty minutes.",
+    "answer": "had suffered",
     "options": [
-      "land",
-      "laptop",
-      "lawyer",
-      "lunar",
-      "law"
+      "has been on",
+      "had suffered",
+      "has gone to",
+      "hand it in",
+      "had donated"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0015",
+    "id": "g8-111",
     "grade": "初二",
-    "sentence": "One tree can't make a ________, so we need teamwork.",
-    "answer": "forest",
+    "sentence": "She ________ (remind) her son to fasten his seat belt at least three times before he finally listened.",
+    "answer": "reminded",
     "options": [
-      "fever",
-      "firework",
-      "forest",
-      "fishing",
-      "farmhouse"
+      "reminded",
+      "required",
+      "reminds",
+      "reminding",
+      "remind"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0016",
+    "id": "g8-112",
     "grade": "初二",
-    "sentence": "Italy is a beautiful country and ________ an area of 301,333 square kilometres.",
-    "answer": "covers",
+    "sentence": "The charity organization ________ (donate) more than one million dollars to the north-western hospital by the end of last year.",
+    "answer": "had donated",
     "options": [
-      "cottage",
-      "covers",
-      "calendar",
-      "collect",
-      "carpet"
+      "has gone to",
+      "had suffered",
+      "had donated",
+      "has been on",
+      "hand it in"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0017",
+    "id": "g8-113",
     "grade": "初二",
-    "sentence": "When spring comes, hills become green again, rivers begin to ________, and the sun shines more brightly.",
-    "answer": "rise",
+    "sentence": "If every driver ________ (require) to wear a seat belt, the number of deaths in car accidents would drop greatly.",
+    "answer": "were required / was required",
     "options": [
-      "rise",
-      "relax",
-      "relaxing",
-      "restaurant",
-      "ride"
+      "were required / was required",
+      "will have served",
+      "What, on",
+      "What good advice; It’s a pleasure",
+      "was crossing"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0018",
+    "id": "g8-114",
     "grade": "初二",
-    "sentence": "There are ________ boys walking their dogs along the lake.",
-    "answer": "several",
+    "sentence": "While the blind athlete ________ (cross) the finish line, the whole stadium stood up and cheered.",
+    "answer": "was crossing",
     "options": [
-      "seaside",
-      "square",
-      "study",
-      "south",
-      "several"
+      "were required / was required",
+      "will have served",
+      "What, on",
+      "was watching",
+      "was crossing"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0019",
+    "id": "g8-115",
     "grade": "初二",
-    "sentence": "There are only a few ________ to the top.",
-    "answer": "steps",
+    "sentence": "The doctor told me that my blood disease ________ (suffer) from lack of early treatment.",
+    "answer": "had suffered",
     "options": [
-      "square",
-      "study",
-      "seaside",
-      "steps",
-      "south"
+      "has gone to",
+      "had donated",
+      "has been on",
+      "hand it in",
+      "had suffered"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0020",
+    "id": "g8-116",
     "grade": "初二",
-    "sentence": "This small country has many types of amazing ________.",
-    "answer": "landforms",
+    "sentence": "She ________ (receive) the silver medal with a smile, even though everyone expected her to win gold.",
+    "answer": "received",
     "options": [
-      "laptop",
-      "lawyer",
-      "law",
-      "landforms",
-      "lunar"
+      "receive",
+      "received",
+      "receives",
+      "receiving",
+      "receiver"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0021",
+    "id": "g8-117",
     "grade": "初二",
-    "sentence": "Judy has worked as a primary school teacher in ________ China for one year.",
-    "answer": "North-west",
+    "sentence": "By next summer, this north-eastern charity ________ (serve) disabled children for exactly a decade.",
+    "answer": "will have served",
     "options": [
-      "neighbourhood",
-      "neighbour",
-      "number",
-      "north",
-      "North-west"
+      "will have",
+      "was crossing",
+      "What, on",
+      "will have served",
+      "were required / was required"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0022",
+    "id": "g8-118",
     "grade": "初二",
-    "sentence": "It is very important for us to f a good habit ________ of reading.",
-    "answer": "form",
+    "sentence": "The moment he ________ (achieve) his goal of winning a medal, he called his mother to share the good news.",
+    "answer": "achieved",
     "options": [
-      "farmhouse",
-      "form",
-      "fishing",
-      "fever",
-      "firework"
+      "achieves",
+      "achievement",
+      "achieved",
+      "achieving",
+      "achieve"
     ],
-    "sourceType": "汉语提示",
-    "sourceLabel": "一．根据句意及汉语提示写出单词。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0023",
+    "id": "g8-119",
     "grade": "初二",
-    "sentence": "The twins are the ________ of the toy shop.",
-    "answer": "owners",
+    "sentence": "No one ________ (expect) the old man in a wheelchair to finish the race, but he proved everyone wrong.",
+    "answer": "expected",
     "options": [
-      "owners",
-      "Olympic",
-      "own",
-      "organize",
-      "officer"
+      "expect",
+      "expects",
+      "expecting",
+      "expected",
+      "expectation"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0024",
+    "id": "g8-120",
     "grade": "初二",
-    "sentence": "Ba Jin is one of the most famous ________ in China.",
-    "answer": "writers",
+    "sentence": "The ________ (athlete) from different backgrounds trained together despite their different disabilities.",
+    "answer": "athletes",
     "options": [
-      "willing",
-      "writers",
-      "west",
-      "wind",
-      "wood"
+      "ability",
+      "achieve",
+      "achieved",
+      "athlete",
+      "athletes"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0025",
+    "id": "g8-121",
     "grade": "初二",
-    "sentence": "When I am free, I ________ enjoy walking around the town.",
-    "answer": "really",
+    "sentence": "The hospital offers free medical ________ (service) to any elderly person who cannot afford them.",
+    "answer": "services",
     "options": [
-      "ride",
-      "really",
-      "relax",
-      "relaxing",
-      "restaurant"
+      "suffer",
+      "seat belts",
+      "service",
+      "silver",
+      "services"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0026",
+    "id": "g8-122",
     "grade": "初二",
-    "sentence": "I think monkeys are the ________ animals of all.",
-    "answer": "cleverest",
+    "sentence": "All passengers must keep their ________ (seat belt) fastened until the plane comes to a complete stop.",
+    "answer": "seat belts",
     "options": [
-      "cleverest",
-      "carpet",
-      "collect",
-      "cottage",
-      "calendar"
+      "show time",
+      "shares; with; hers",
+      "seat of power",
+      "seat belt",
+      "seat belts"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0027",
+    "id": "g8-123",
     "grade": "初二",
-    "sentence": "He always says goodbye to his grandmother before ________ to school.",
-    "answer": "going",
+    "sentence": "Several Western ________ (charity) have joined forces to fight blood diseases in north-eastern Africa.",
+    "answer": "charities",
     "options": [
-      "gram",
-      "ground",
-      "going",
-      "golden",
-      "grassland"
+      "charity",
+      "charities",
+      "cross",
+      "confidence",
+      "competition"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0028",
+    "id": "g8-124",
     "grade": "初二",
-    "sentence": "It is very ________ to be able to speak a foreign language.",
-    "answer": "useful",
+    "sentence": "The ________ (blind) are often able to recognize people by their voices alone.",
+    "answer": "blind",
     "options": [
-      "using",
-      "useful",
-      "unusual",
-      "usually",
-      "unhappy"
+      "background",
+      "blinded",
+      "blind",
+      "blinding",
+      "blinds"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0029",
+    "id": "g8-125",
     "grade": "初二",
-    "sentence": "I have a new classmate ________ Daniel.",
-    "answer": "named",
+    "sentence": "The ________ (deaf) in this community use a special video system to communicate with doctors.",
+    "answer": "deaf",
     "options": [
-      "neighbour",
-      "named",
-      "number",
-      "north",
-      "neighbourhood"
+      "deafs",
+      "disabled",
+      "deaf",
+      "deafed",
+      "deafing"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0030",
+    "id": "g8-126",
     "grade": "初二",
-    "sentence": "—Peter, the music sounds too ________.",
-    "answer": "noisy",
+    "sentence": "Not all ________ (disability) are visible; some, like blood diseases, are hidden inside the body.",
+    "answer": "disabilities",
     "options": [
-      "number",
-      "noisy",
-      "neighbour",
-      "north",
-      "neighbourhood"
+      "disability",
+      "deaf",
+      "disabilities",
+      "disabled",
+      "diseases"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0031",
+    "id": "g8-127",
     "grade": "初二",
-    "sentence": "My goldfish ________ in the fish tank(鱼缸) now.",
-    "answer": "are bubbling",
+    "sentence": "The ________ (elderly) in this north-western town suffer greatly from the cold winter weather.",
+    "answer": "elderly",
     "options": [
-      "Arctic char",
-      "are bubbling",
-      "are",
-      "any time",
-      "a few"
+      "elderlied",
+      "elderlies",
+      "elderly",
+      "elderlier",
+      "elderliest"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0032",
+    "id": "g8-128",
     "grade": "初二",
-    "sentence": "Surprisingly, my 12-year-old daughter is worried about her ________.",
-    "answer": "weight",
+    "sentence": "Different ________ (disease) require different treatments, and some even need multiple operations.",
+    "answer": "diseases",
     "options": [
-      "west",
-      "weight",
-      "wood",
-      "wind",
-      "willing"
+      "deaf",
+      "disease",
+      "diseases",
+      "disabled",
+      "disabilities"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0033",
+    "id": "g8-129",
     "grade": "初二",
-    "sentence": "Let's clean up the ________.",
-    "answer": "paths",
+    "sentence": "Three separate ________ (operation) were performed on the same patient to cure his rare blood disease.",
+    "answer": "operations",
     "options": [
-      "past",
-      "paths",
-      "post",
-      "palace",
-      "present"
+      "operation",
+      "on time",
+      "opinion",
+      "operations",
+      "ongoing"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0034",
+    "id": "g8-130",
     "grade": "初二",
-    "sentence": "It's ________ today.",
-    "answer": "cloudy",
+    "sentence": "To become a world-class ________ (athlete), one needs both physical ability and mental confidence.",
+    "answer": "athlete",
     "options": [
-      "collect",
-      "calendar",
-      "cloudy",
-      "carpet",
-      "cottage"
+      "achieve",
+      "athlete",
+      "athletes",
+      "achieved",
+      "ability"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0035",
+    "id": "g8-131",
     "grade": "初二",
-    "sentence": "I like to stay in the ________ world to spend my holiday.",
-    "answer": "natural",
+    "sentence": "Coming from a poor ________ (background) did not stop her from winning the gold medal.",
+    "answer": "background",
     "options": [
-      "north",
-      "neighbour",
-      "natural",
-      "neighbourhood",
-      "number"
+      "backgrounding",
+      "backgrounded",
+      "backgrounds",
+      "background",
+      "blind"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
   },
   {
-    "id": "g8-20260524-0036",
+    "id": "g8-132",
     "grade": "初二",
-    "sentence": "This park is a good place for people ________ for a walk.",
+    "sentence": "Many ________ (western) countries have developed advanced treatments for heart disease.",
+    "answer": "western",
+    "options": [
+      "were required / was required",
+      "western",
+      "wheelchair",
+      "was crossing",
+      "warm-hearted"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-133",
+    "grade": "初二",
+    "sentence": "The ________ (north-eastern) region of China suffers from extremely cold winters, which is hard for the elderly.",
+    "answer": "north-eastern",
+    "options": [
+      "north-easterns",
+      "north-eastern",
+      "north-easterning",
+      "necessary",
+      "north-easterned"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-134",
+    "grade": "初二",
+    "sentence": "Her speech ________ (greatly) influenced the government’s decision to build more facilities for the disabled.",
+    "answer": "greatly",
+    "options": [
+      "greatlies",
+      "greatlier",
+      "greatliest",
+      "greatly",
+      "greatlied"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-135",
+    "grade": "初二",
+    "sentence": "This ________ (operate) is the only necessary treatment for his blood disease.",
+    "answer": "operation",
+    "options": [
+      "operates",
+      "operation",
+      "operate",
+      "operated",
+      "operating"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-136",
+    "grade": "初二",
+    "sentence": "The sudden ________ (popular) of wheelchair basketball among teenagers surprised even the coaches.",
+    "answer": "popularity",
+    "options": [
+      "pioneer",
+      "popular",
+      "popularly",
+      "public",
+      "popularity"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-137",
+    "grade": "初二",
+    "sentence": "She ________ (remind) to take her medicine every four hours by an alarm clock because she often forgets.",
+    "answer": "is reminded / was reminded",
+    "options": [
+      "in our way",
+      "is used to living",
+      "is reminded / was reminded",
+      "is made up of",
+      "instead of"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-138",
+    "grade": "初二",
+    "sentence": "The doctor finally identified the ________ (disease) after testing the patient’s blood three times.",
+    "answer": "disease",
+    "options": [
+      "disability",
+      "disabled",
+      "diseases",
+      "disease",
+      "deaf"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-139",
+    "grade": "初二",
+    "sentence": "Winning a ________ (medal) in the national competition requires not only courage but also years of hard work.",
+    "answer": "medal",
+    "options": [
+      "make one’s way",
+      "muddy",
+      "move",
+      "make a living",
+      "medal"
+    ],
+    "type": "sentence-blank",
+    "source": "8B Unit6 词汇应用练习"
+  },
+  {
+    "id": "g8-140",
+    "grade": "初二",
+    "sentence": "________ good advice he gave me ________ how to make a book report!",
+    "answer": "What, on",
+    "options": [
+      "What, on",
+      "must; can’t",
+      "What a, on",
+      "How a, about",
+      "How, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-141",
+    "grade": "初二",
+    "sentence": "—Look! The light in Henry’s room is still on. He ________ be in the room. —It ______ be him. He has just gone to the library.",
+    "answer": "must; can’t",
+    "options": [
+      "must; can’t",
+      "can; mustn’t",
+      "What, on",
+      "can’t; must",
+      "must; mustn’t"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-142",
+    "grade": "初二",
+    "sentence": "— Jim, where is your homework? You must________ now. — Wait for a moment, Mr Smith.",
+    "answer": "hand it in",
+    "options": [
+      "hand it in",
+      "hand in it",
+      "What, on",
+      "hand it on",
+      "hand on it"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-143",
+    "grade": "初二",
+    "sentence": "—Look! It ________ be Mr. Wang. —No, it ________ be him. He has gone abroad.",
+    "answer": "must; can’t",
+    "options": [
+      "What, on",
+      "can; may not",
+      "may; mustn’t",
+      "must; may not",
+      "must; can’t"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-144",
+    "grade": "初二",
+    "sentence": "—________ I swim here? —I’m sorry. Children _______ swim alone here.",
+    "answer": "Can, mustn’t",
+    "options": [
+      "What, on",
+      "Must , can’t",
+      "Can’t can",
+      "Can, mustn’t",
+      "May , must"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-145",
+    "grade": "初二",
+    "sentence": "—The novel Gulliver’s Travels is very nice. —So it is. Could you tell me ______?",
+    "answer": "if I can keep it for another week",
+    "options": [
+      "What, on",
+      "when should I return it",
+      "that I can borrow it",
+      "if I can keep it for another week",
+      "how long I can borrow it"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-146",
+    "grade": "初二",
+    "sentence": "—Is Mr. Wang a teacher with lots of teaching _______? —Yes, he is. He likes travelling, so he always tells us his funny _______ in Africa.",
+    "answer": "experience; experiences",
+    "options": [
+      "experiences; experiences",
+      "What, on",
+      "experiences; experience",
+      "experience; experiences",
+      "experience; experience"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-147",
+    "grade": "初二",
+    "sentence": "The books on travel he has written these years are ________ and sell well.",
+    "answer": "a great success",
+    "options": [
+      "a great successful",
+      "great successful",
+      "a great success",
+      "What, on",
+      "great success"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-148",
+    "grade": "初二",
+    "sentence": "—_________! Thanks a lot. —_________.",
+    "answer": "What good advice; It’s a pleasure",
+    "options": [
+      "What a good advice; With pleasure",
+      "How good advices; My pleasure",
+      "What good advice; It’s a pleasure",
+      "What, on",
+      "How a good advice; You’re welcome"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-149",
+    "grade": "初二",
+    "sentence": "I didn’t know ________ the wall, Amy didn’t know ________.",
+    "answer": "which colour to paint; either",
+    "options": [
+      "What, on",
+      "which colour to paint; either",
+      "which to paint colour; either",
+      "which to colour paint; too",
+      "which to paint; too"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-150",
+    "grade": "初二",
+    "sentence": "________ good advice he gave me ________ how to make a poster!",
+    "answer": "What; on",
+    "options": [
+      "What; on",
+      "How a; about",
+      "What, on",
+      "How; on",
+      "What a; on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-151",
+    "grade": "初二",
+    "sentence": "My hometown has changed a lot. It is quite different from what it ________.",
+    "answer": "used to be",
+    "options": [
+      "was used to being",
+      "What, on",
+      "used to have",
+      "used to be",
+      "was used to have"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-152",
+    "grade": "初二",
+    "sentence": "—Must I return the book this week? —No, you ________. You can ________ it for 20 days.",
+    "answer": "don’t have to; keep",
+    "options": [
+      "mustn’t; keep",
+      "needn’t; borrow",
+      "What, on",
+      "mustn’t; lend",
+      "don’t have to; keep"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-153",
+    "grade": "初二",
+    "sentence": "—Have you decided ________, Amy? —Sorry, I have trouble making decisions.",
+    "answer": "which one to buy",
+    "options": [
+      "which one should you buy",
+      "buy which one",
+      "which one to buy",
+      "What, on",
+      "to buy which one"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-154",
+    "grade": "初二",
+    "sentence": "Our teacher tells us ________ many books ________, just one by one.",
+    "answer": "not to read; at a time",
+    "options": [
+      "not reading; in time",
+      "not to read; at times",
+      "not reading; on time",
+      "What, on",
+      "not to read; at a time"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-155",
+    "grade": "初二",
+    "sentence": "—Have you ________ visited Shanghai Disneyland? —Not ________. I’m looking forward to visiting it as soon as possible.",
+    "answer": "ever; yet",
+    "options": [
+      "already; yet",
+      "yet; already",
+      "ever; never",
+      "What, on",
+      "ever; yet"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-156",
+    "grade": "初二",
+    "sentence": "—When _________ the football player ______ his wife? --_____ he was 30.",
+    "answer": "did; marry; Not until",
+    "options": [
+      "has; been married to; Since",
+      "did; marry with; Until",
+      "What, on",
+      "has; got married to; Since",
+      "did; marry; Not until"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-157",
+    "grade": "初二",
+    "sentence": "“After our ship crashed against the rocks, I swam as far as I could.” The underlined word “After” is used to ________.",
+    "answer": "show time",
+    "options": [
+      "show time",
+      "add more information",
+      "show cause effect",
+      "What, on",
+      "give examples"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-158",
+    "grade": "初二",
+    "sentence": "He is standing by the window, watching the rain beating _________ the window.",
+    "answer": "against",
+    "options": [
+      "against",
+      "What, on",
+      "along",
+      "across",
+      "above"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-159",
+    "grade": "初二",
+    "sentence": "—Would you please look after my pet cat while I am on holiday in Sydney? —_________. Have a nice trip.",
+    "answer": "With pleasure",
+    "options": [
+      "You are welcome",
+      "With pleasure",
+      "What, on",
+      "My pleasure",
+      "That’s OK"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-160",
+    "grade": "初二",
+    "sentence": "DeepSeek, ________ AI language model, has become one of ________ most popular learning tools.",
+    "answer": "an; the",
+    "options": [
+      "the; the",
+      "a; a",
+      "a; the",
+      "What, on",
+      "an; the"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-161",
+    "grade": "初二",
+    "sentence": "—Daniel, how was your trip to Hill Yushan during the Qingming Festival? —Great! It is a fantastic ________ that I will never forget.",
+    "answer": "experience",
+    "options": [
+      "environment",
+      "experience",
+      "What, on",
+      "communication",
+      "knowledge"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-162",
+    "grade": "初二",
+    "sentence": "My father ________ drive to his workplace, but now he has ________ riding a bike there to keep fit.",
+    "answer": "used to; got used to",
+    "options": [
+      "got used to; used to",
+      "used to; used to",
+      "used to; got used to",
+      "used to; get used to",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-163",
+    "grade": "初二",
+    "sentence": "With the help of an iRobot floor cleaner, my mum ________ sweep the floor herself.",
+    "answer": "doesn’t have to",
+    "options": [
+      "What, on",
+      "can’t",
+      "shouldn’t",
+      "mustn’t",
+      "doesn’t have to"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-164",
+    "grade": "初二",
+    "sentence": "The parade of Disney characters ________ for hours, but we are still excited.",
+    "answer": "has been on",
+    "options": [
+      "has been on",
+      "has been over",
+      "What, on",
+      "has finished",
+      "has begun"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-165",
+    "grade": "初二",
+    "sentence": "—What do you think of Na Zha 2? —Wonderful! I ________ Na Zha 1 in 2019 and was amazed. This one is even better.",
+    "answer": "watched",
+    "options": [
+      "What, on",
+      "have watched",
+      "watch",
+      "has watched",
+      "watched"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-166",
+    "grade": "初二",
+    "sentence": "—Where is your partner, Peter? —He ________ the school library to return books.",
+    "answer": "has gone to",
+    "options": [
+      "went to",
+      "What, on",
+      "has gone to",
+      "has been",
+      "has been to"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-167",
+    "grade": "初二",
+    "sentence": "Xiaomi SU7 Ultra car is smart enough to “know” ________ to slow down, stop and start again.",
+    "answer": "when",
+    "options": [
+      "when",
+      "What, on",
+      "why",
+      "who",
+      "what"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-168",
+    "grade": "初二",
+    "sentence": "At the 2025 Spring Festival Gala, 16 robots danced Yangko ________ the dancers from Xinjiang.",
+    "answer": "as well as",
+    "options": [
+      "What, on",
+      "as good as",
+      "as better as",
+      "so good as",
+      "as well as"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-169",
+    "grade": "初二",
+    "sentence": "—Chengdu will host the 12th World Games from August 7 to 17. —________. It is preparing for this large sports event.",
+    "answer": "Exactly",
+    "options": [
+      "Not at all",
+      "What, on",
+      "Good idea",
+      "Exactly",
+      "Certainly not"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-170",
+    "grade": "初二",
+    "sentence": "I ________ China for three months and this is the first time I’ve tried on hanfu.",
+    "answer": "have been in",
+    "options": [
+      "have been to",
+      "What, on",
+      "have been in",
+      "have gone to",
+      "have arrived in"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-171",
+    "grade": "初二",
+    "sentence": "Jeff ________ Touching China on CCTV with his family from 8 to 9 last Saturday.",
+    "answer": "was watching",
+    "options": [
+      "watched",
+      "What, on",
+      "has watched",
+      "will watch",
+      "was watching"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-172",
+    "grade": "初二",
+    "sentence": "The bird in Picture ________ is standing against the box.",
+    "answer": "B．",
+    "options": [
+      "must; can’t",
+      "B．",
+      "hand it in",
+      "D．",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-173",
+    "grade": "初二",
+    "sentence": "—How can I open the file (文件) on the computer? —That’s easy. Just double ________ it.",
+    "answer": "click on",
+    "options": [
+      "try on",
+      "click on",
+      "What, on",
+      "turn on",
+      "get on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-174",
+    "grade": "初二",
+    "sentence": "—WeChat really influences (影响) people’s lives. —________. It’s easier for people to make friends with others.",
+    "answer": "Exactly",
+    "options": [
+      "Mainly",
+      "What, on",
+      "Nearly",
+      "Possibly",
+      "Exactly"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-175",
+    "grade": "初二",
+    "sentence": "—Did Simon invite you to his party? —Yes. But I had to ________ it because it is hard for me to spare time for it.",
+    "answer": "refuse",
+    "options": [
+      "What, on",
+      "repeat",
+      "receive",
+      "return",
+      "refuse"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-176",
+    "grade": "初二",
+    "sentence": "People did not worry about AI safety ________ Deepseek became popular.",
+    "answer": "until",
+    "options": [
+      "while",
+      "when",
+      "What, on",
+      "until",
+      "since"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-177",
+    "grade": "初二",
+    "sentence": "—Look at this sign. What does it mean? —It means we ________ bring mobile phones into the meeting room.",
+    "answer": "mustn’t",
+    "options": [
+      "shouldn’t",
+      "What, on",
+      "needn’t",
+      "mustn’t",
+      "can’t"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-178",
+    "grade": "初二",
+    "sentence": "Which of the following is an OPINION?",
+    "answer": "Of all the attractions, Hao River is the most beautiful.",
+    "options": [
+      "In Nantong, old people often play chess in the park.",
+      "There are lots of places of interest in Nantong.",
+      "What, on",
+      "Many tourists go to Nantong to enjoy flowers in spring.",
+      "Of all the attractions, Hao River is the most beautiful."
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-179",
+    "grade": "初二",
+    "sentence": "—I have some trouble connecting the smartphone to the Wifi. Could you give me a hand? —________.",
+    "answer": "With pleasure",
+    "options": [
+      "You are welcome",
+      "That’s OK",
+      "What, on",
+      "My pleasure",
+      "With pleasure"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-180",
+    "grade": "初二",
+    "sentence": "As a new type of AI, ChatGPT is becoming a popular way of ________. It can understand and answer natural languages.",
+    "answer": "communication",
+    "options": [
+      "condition",
+      "situation",
+      "communication",
+      "pollution",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-181",
+    "grade": "初二",
+    "sentence": "—I dislike those so-called Internet celebrity (网红) restaurants. The food there doesn’t taste as good as it ________. —Couldn’t agree more. Some people eat only with their eyes.",
+    "answer": "looks",
+    "options": [
+      "sounds",
+      "looks",
+      "smells",
+      "feels",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-182",
+    "grade": "初二",
+    "sentence": "Pick up your pen and draw your own originality（创意）. Maybe we will ________ a real product one day!",
+    "answer": "turn it into",
+    "options": [
+      "turn it on",
+      "turn it into",
+      "turn it down",
+      "turn it off",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-183",
+    "grade": "初二",
+    "sentence": "Daniel doesn’t know who _______ this history book.",
+    "answer": "to talk to about",
+    "options": [
+      "What, on",
+      "talk about to",
+      "to talk about",
+      "to talk to about",
+      "talk to about"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-184",
+    "grade": "初二",
+    "sentence": "--- Where is Mike? --- He to New York. He the airport at 5 in the morning.",
+    "answer": "has gone; left for",
+    "options": [
+      "has gone; left for",
+      "What, on",
+      "has been; has left for",
+      "has been; left for",
+      "has gone; has left for"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-185",
+    "grade": "初二",
+    "sentence": "There ________ a few small farms here, but now they have become a beautiful park. People ________ fun in it.",
+    "answer": "used to be; are used to having",
+    "options": [
+      "used to be; used to be",
+      "used to have; are used to having",
+      "used to be; are used to having",
+      "What, on",
+      "were used to being; used to have"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-186",
+    "grade": "初二",
+    "sentence": "—Shall we meet at the station at 7 a.m.? —In fact, we ________. The train ________ until 10 a.m.",
+    "answer": "needn’t; won’t leave",
+    "options": [
+      "mustn’t; leaves",
+      "What, on",
+      "needn’t; will leave",
+      "mustn’t; doesn’t leave",
+      "needn’t; won’t leave"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-187",
+    "grade": "初二",
+    "sentence": "—Your cousin Mike refuses ________ pork for dinner. —Oh, yes. But I don’t mind ________ any food.",
+    "answer": "to have; eating",
+    "options": [
+      "to have; to eat",
+      "having; eating",
+      "What, on",
+      "to have; eating",
+      "having; to eat"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-188",
+    "grade": "初二",
+    "sentence": "—She’s never been to Singapore, ________? 一________. She went there last week for the first time.",
+    "answer": "has she; Yes, she has",
+    "options": [
+      "has she; Yes, she has",
+      "is she; No, she isn’t",
+      "is she; Yes, she is",
+      "What, on",
+      "has she; No, she hasn’t"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-189",
+    "grade": "初二",
+    "sentence": "— This World Cup created too many surprises. — ________. Saudi Arabia defeated (击败) Argentina by 2-1, and then Japan reversed (使反转) Spain, which made a lot of talk for the Qatar World Cup.",
+    "answer": "Exactly",
+    "options": [
+      "Exactly",
+      "I hope so",
+      "What, on",
+      "I don’t agree",
+      "No way"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-190",
+    "grade": "初二",
+    "sentence": "―Tomorrow is Sunday. How do you spend it? ―I want to go on________ trip to ________Great Wall.",
+    "answer": "a; the",
+    "options": [
+      "What, on",
+      "/; the",
+      "a; the",
+      "the; /",
+      "the; a"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-191",
+    "grade": "初二",
+    "sentence": "— How did you go to Lijiang for a trip last summer? —_______. It was very fast but a bit expensive.",
+    "answer": "By plane",
+    "options": [
+      "What, on",
+      "By plane",
+      "By bike",
+      "Take plane",
+      "Take bus"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-192",
+    "grade": "初二",
+    "sentence": "—_______ ten years ago? —It used to be a town with many trees.",
+    "answer": "What was the town like",
+    "options": [
+      "What, on",
+      "How did the town like",
+      "How was the town like",
+      "What did the town like",
+      "What was the town like"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-193",
+    "grade": "初二",
+    "sentence": "We can swim in the river. It is much _______ than before.",
+    "answer": "cleaner",
+    "options": [
+      "clean",
+      "cleaner",
+      "more clean",
+      "most clean",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-194",
+    "grade": "初二",
+    "sentence": "Yesterday Andy _______ his dictionary to me, and said I could _______ it for a week.",
+    "answer": "lent; keep",
+    "options": [
+      "gave; keep",
+      "lent; keep",
+      "borrowed; have",
+      "lent; borrow",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-195",
+    "grade": "初二",
+    "sentence": "My grandfather lives _______ in the country but he never feels _______.",
+    "answer": "alone; lonely",
+    "options": [
+      "lonely; lonely",
+      "What, on",
+      "lonely; alone",
+      "alone; alone",
+      "alone; lonely"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-196",
+    "grade": "初二",
+    "sentence": "the concert, she sang a song in English.",
+    "answer": "At the end of",
+    "options": [
+      "At the end of",
+      "At the end",
+      "What, on",
+      "In the end of",
+      "In the end"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-197",
+    "grade": "初二",
+    "sentence": "—I will go to Harbin for my summer vacation. What about you? —I haven’t decided where ______.",
     "answer": "to go",
     "options": [
       "to go",
-      "to play",
-      "to try",
-      "to keep",
-      "to exercise"
+      "go",
+      "went",
+      "going",
+      "What, on"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
   },
   {
-    "id": "g8-20260524-0037",
+    "id": "g8-198",
     "grade": "初二",
-    "sentence": "One-third of the students ________ good at playing basketball.",
+    "sentence": "—_______ will I receive the CD I ordered? —In one or two days, dear.",
+    "answer": "How soon",
+    "options": [
+      "How far",
+      "How many",
+      "How soon",
+      "How long",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-199",
+    "grade": "初二",
+    "sentence": "—Could you please help me solve these problems? —_______. Let me have a try.",
+    "answer": "With pleasure",
+    "options": [
+      "What, on",
+      "With pleasure",
+      "I hope not",
+      "It’s my pleasure",
+      "I don’t think so"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-200",
+    "grade": "初二",
+    "sentence": "The story of “Mengzi’s mother makes three moves” tells us that the ________ is very important to children’s growth.",
+    "answer": "environment",
+    "options": [
+      "situation",
+      "environment",
+      "condition",
+      "What, on",
+      "movement"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-201",
+    "grade": "初二",
+    "sentence": "—Are you going to John’s birthday party? —Yes. It’s hard for me to ________ his invitation because he is really nice to me.",
+    "answer": "refuse",
+    "options": [
+      "repeat",
+      "What, on",
+      "refuse",
+      "receive",
+      "return"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-202",
+    "grade": "初二",
+    "sentence": "—Where is your book report? —It’s in Mr Smith’s office now. I ________ on it for two hours last night.",
+    "answer": "worked",
+    "options": [
+      "am working",
+      "have worked",
+      "What, on",
+      "worked",
+      "will work"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-203",
+    "grade": "初二",
+    "sentence": "The old lady sat _________ me, so I could see the happiness clearly on her face.",
+    "answer": "opposite",
+    "options": [
+      "opposite",
+      "What, on",
+      "outside",
+      "between",
+      "behind"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-204",
+    "grade": "初二",
+    "sentence": "The volunteers kept planting trees at the foot of the mountain ________ it got dark. They hoped to make our hometown greener.",
+    "answer": "until",
+    "options": [
+      "after",
+      "What, on",
+      "until",
+      "if",
+      "when"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-205",
+    "grade": "初二",
+    "sentence": "The novel Harry Potter series ________ seven books by J. K. Rowling over a period of 10 years.",
+    "answer": "is made up of",
+    "options": [
+      "is made of",
+      "is made into",
+      "is made up of",
+      "is made from",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-206",
+    "grade": "初二",
+    "sentence": "Students ________ to the toilet and back to class with no time for anything else. But now they have more time to rest and share interesting things with their classmates because of the longer break time between classes.",
+    "answer": "used to rush",
+    "options": [
+      "is used to rushing",
+      "was used to rush",
+      "is used to rush",
+      "What, on",
+      "used to rush"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-207",
+    "grade": "初二",
+    "sentence": "—When I looked out, I saw the children ________ the Christmas tree. —It seems that they are looking forward to Christmas.",
+    "answer": "decorating",
+    "options": [
+      "What, on",
+      "are decorating",
+      "decorating",
+      "have decorated",
+      "were decorated"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-208",
+    "grade": "初二",
+    "sentence": "—Mom, I don’t want to say sorry to Lisa. —I’m afraid you ________. After all, you lost her favourite book.",
+    "answer": "have to",
+    "options": [
+      "needn’t",
+      "have to",
+      "mustn’t",
+      "may",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-209",
+    "grade": "初二",
+    "sentence": "—My mother ________ Shanghai to attend a meeting for 2 days. —Really? Have you started to miss her?",
+    "answer": "has been in",
+    "options": [
+      "has been in",
+      "What, on",
+      "has gone to",
+      "has been to",
+      "has arrived in"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-210",
+    "grade": "初二",
+    "sentence": "Which of the following about The Small Pink Stove is not a fact but an opinion?",
+    "answer": "The rare pink colour makes it a special treasure in the museum's collection.",
+    "options": [
+      "It was on show in Zhenjiang Museum for a few days last month.",
+      "The rare pink colour makes it a special treasure in the museum's collection.",
+      "Lots of visitors came to Zhenjiang Museum to enjoy this fine work of art.",
+      "People invented it in Tang Dynasty.",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-211",
+    "grade": "初二",
+    "sentence": "I must return my friend’s camera to her now because I ________ it for 2 months.",
+    "answer": "have kept",
+    "options": [
+      "have borrowed",
+      "have bought",
+      "have kept",
+      "have lent",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-212",
+    "grade": "初二",
+    "sentence": "—After the football matches in our school, I am thinking about ________ to improve my skills. —You can attend a training camp and take part in more matches.",
+    "answer": "how to train",
+    "options": [
+      "how to train",
+      "when to start practising",
+      "What, on",
+      "where to buy football boots",
+      "which team to join"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-213",
+    "grade": "初二",
+    "sentence": "—________ has your father been in the Sunshine Society? —Since we moved to this block.",
+    "answer": "How long",
+    "options": [
+      "Which day",
+      "How long",
+      "How soon",
+      "How much",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-214",
+    "grade": "初二",
+    "sentence": "—Mum, do you mind me using your mobile phone to listen to music for a while? My work is finished already. —________. But please don’t play games.",
+    "answer": "Of course not",
+    "options": [
+      "Of course",
+      "Sorry, I do",
+      "Of course not",
+      "What, on",
+      "You’d better not"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-215",
+    "grade": "初二",
+    "sentence": "Today there are more ways of ________, but people are not as close as before.",
+    "answer": "communication",
+    "options": [
+      "communication",
+      "What, on",
+      "condition",
+      "collection",
+      "competition"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-216",
+    "grade": "初二",
+    "sentence": "—________have you known each other? —Since two years ago.",
+    "answer": "How long",
+    "options": [
+      "How long",
+      "How soon",
+      "When",
+      "How often",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-217",
+    "grade": "初二",
+    "sentence": "The old man ________ by the seaside, because he can enjoy the cool in summer.",
+    "answer": "is used to living",
+    "options": [
+      "used to live",
+      "used to living",
+      "What, on",
+      "is used to living",
+      "is used to live"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-218",
+    "grade": "初二",
+    "sentence": "—What beautiful works of art! May I take photos of them? —Sorry, you ________ take photos in the museum. The flash is bad for them.",
+    "answer": "mustn’t",
+    "options": [
+      "needn’t",
+      "couldn’t",
+      "shouldn’t",
+      "mustn’t",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-219",
+    "grade": "初二",
+    "sentence": "It’s really hard work. ________, we’ll try our best to finish it in time.",
+    "answer": "Anyway",
+    "options": [
+      "Anyway",
+      "Otherwise",
+      "Moreover",
+      "Instead",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-220",
+    "grade": "初二",
+    "sentence": "Our new goods (商品) have ______ new markets in Europe and America over the past years.",
+    "answer": "opened up",
+    "options": [
+      "put up",
+      "turned up",
+      "opened up",
+      "given up",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-221",
+    "grade": "初二",
+    "sentence": "—Where is your father? —He ________ Beijing on business, and he will come back in three days.",
+    "answer": "has gone to",
+    "options": [
+      "has gone to",
+      "What, on",
+      "goes to",
+      "went to",
+      "has been to"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-222",
+    "grade": "初二",
+    "sentence": "Lucy had few close friends at school, so she didn’t know ________ about the trouble.",
+    "answer": "who to talk to",
+    "options": [
+      "who to talk",
+      "What, on",
+      "what to talk",
+      "who to talk to",
+      "who to say"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-223",
+    "grade": "初二",
+    "sentence": "Which of the following sentences is a fact?",
+    "answer": "Beijing is the capital of China.",
+    "options": [
+      "Beijing is the capital of China.",
+      "What, on",
+      "Some subjects are difficult.",
+      "I think my pet dog is very cute.",
+      "The new park looks beautiful."
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-224",
+    "grade": "初二",
+    "sentence": "—Thanks for listening to my problem and giving me some useful advice. —________. That’s what friends are for.",
+    "answer": "My pleasure",
+    "options": [
+      "All right",
+      "It doesn’t matter",
+      "With pleasure",
+      "What, on",
+      "My pleasure"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-225",
+    "grade": "初二",
+    "sentence": "—How do you like ________ film Ne Zha 2 (《哪吒2》)? —It is so wonderful that I want to see it for ________ second time.",
+    "answer": "the; a",
+    "options": [
+      "a; a",
+      "the; an",
+      "the; a",
+      "What, on",
+      "an; the"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-226",
+    "grade": "初二",
+    "sentence": "There are five hundred books in our library. But only ________ them are new.",
+    "answer": "two hundred of",
+    "options": [
+      "two hundred",
+      "two thousand of",
+      "two thousand",
+      "What, on",
+      "two hundred of"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-227",
+    "grade": "初二",
+    "sentence": "The ________ in our hometown is a good place to watch wonderful plays and operas.",
+    "answer": "theatre",
+    "options": [
+      "company",
+      "library",
+      "museum",
+      "theatre",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-228",
+    "grade": "初二",
+    "sentence": "—Are you free? I’d like you to go to the museum with me. —Sorry, there _______ some important meetings this coming weekend.",
+    "answer": "are going to be",
+    "options": [
+      "is going to have",
+      "What, on",
+      "will have",
+      "are going to be",
+      "is going to be"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-229",
+    "grade": "初二",
+    "sentence": "Mary ________ a room ________ a friend of ________ in the town center.",
+    "answer": "shares; with; hers",
+    "options": [
+      "What, on",
+      "shares; with; her",
+      "shares; with; hers",
+      "shares; and; hers",
+      "shares; and; her"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-230",
+    "grade": "初二",
+    "sentence": "—________ is it from your home to the Slender West Lake? —It’s about three miles ________.",
+    "answer": "How far; away",
+    "options": [
+      "How long; away",
+      "How long; far",
+      "How far; away",
+      "How far; far",
+      "What, on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-231",
+    "grade": "初二",
+    "sentence": "We read the number 78,459 as ________.",
+    "answer": "seventy-eight thousand, four hundred and fifty-nine",
+    "options": [
+      "seventy-eight thousand, four hundred and fifty-nine",
+      "seventy-eight thousands, four hundreds and fifty-nine",
+      "What, on",
+      "seventy-eight thousands, four hundred and fifty-nine",
+      "seventy-eight thousand, four hundreds fifty-nine"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-232",
+    "grade": "初二",
+    "sentence": "Yangzhou is ________ the east of China and ________ the west of Japan.",
+    "answer": "in; to",
+    "options": [
+      "in; to",
+      "to; on",
+      "What, on",
+      "to; in",
+      "in; on"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-233",
+    "grade": "初二",
+    "sentence": "If it doesn’t rain tomorrow, we ________ a picnic in the garden.",
+    "answer": "will have",
+    "options": [
+      "will have",
+      "have",
+      "What, on",
+      "had",
+      "are having"
+    ],
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
+  },
+  {
+    "id": "g8-234",
+    "grade": "初二",
+    "sentence": "To the north of the park ________ many tall buildings.",
     "answer": "are",
     "options": [
+      "has",
       "are",
-      "able",
-      "ahlan",
-      "anything",
-      "anyone"
+      "is",
+      "had",
+      "What, on"
     ],
-    "sourceType": "适当形式",
-    "sourceLabel": "二.用括号内所给词的适当形式填空。"
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
   },
   {
-    "id": "g8-20260524-0038",
+    "id": "g8-235",
     "grade": "初二",
-    "sentence": "Winter is a good time for ________.",
-    "answer": "skating",
+    "sentence": "Chinese people usually ___________ paper-cuts on windows as a symbol of good luck.",
+    "answer": "put up",
     "options": [
-      "seaside",
-      "skating",
-      "study",
-      "square",
-      "south"
+      "stand up",
+      "What, on",
+      "pick up",
+      "look up",
+      "put up"
     ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
   },
   {
-    "id": "g8-20260524-0039",
+    "id": "g8-236",
     "grade": "初二",
-    "sentence": "She becomes a local star because of her great ________.",
-    "answer": "skills",
+    "sentence": "________ birds are flying to the south. ________ them ________ over 1000.",
+    "answer": "A number of; The number of; is",
     "options": [
-      "seaside",
-      "study",
-      "skills",
-      "south",
-      "square"
+      "The number of; A number of; is",
+      "The number of; A number of; are",
+      "A number of; The number of; is",
+      "A number of; The number of; are",
+      "What, on"
     ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
   },
   {
-    "id": "g8-20260524-0040",
+    "id": "g8-237",
     "grade": "初二",
-    "sentence": "But Liu’s children let her try this sport ________ of helping them to look after their children every day.",
-    "answer": "instead",
+    "sentence": "—Do you get ________ ready for the sports meeting? —No. We still have ________ to do.",
+    "answer": "everything; something",
     "options": [
-      "interest",
-      "information",
-      "if",
-      "instead",
-      "invite"
+      "something; everything",
+      "anything; nothing",
+      "everything; something",
+      "What, on",
+      "anything; something"
     ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
   },
   {
-    "id": "g8-20260524-0041",
+    "id": "g8-238",
     "grade": "初二",
-    "sentence": "Liu ________ skiing very hard.",
-    "answer": "practises",
+    "sentence": "—Excuse me, is this ________ new house? —Yes, it’s ________. Their parents bought it last week.",
+    "answer": "Sandy and Daniel’s; theirs",
     "options": [
-      "post",
-      "present",
-      "palace",
-      "practises",
-      "past"
+      "Sandy and Daniel’s; theirs",
+      "Sandy and Daniel’s; them",
+      "What, on",
+      "Sandy’s and Daniel’s; them",
+      "Sandy’s and Daniel’s; theirs"
     ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
   },
   {
-    "id": "g8-20260524-0042",
+    "id": "g8-239",
     "grade": "初二",
-    "sentence": "“Doing sports helps me live ________ every day,” Liu says.",
-    "answer": "healthily",
+    "sentence": "—What about visiting Shanghai Disneyland this May Day holiday? —________. By bus or by train?",
+    "answer": "Sounds great.",
     "options": [
-      "hen",
-      "high",
-      "healthily",
-      "hundred",
-      "hold"
+      "I’m not sure.",
+      "I’m afraid not",
+      "Sounds great.",
+      "No way",
+      "What, on"
     ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0043",
-    "grade": "初二",
-    "sentence": "As we know, ________ sports is good for us.",
-    "answer": "doing",
-    "options": [
-      "dry",
-      "destroy",
-      "desert",
-      "doing",
-      "down"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0044",
-    "grade": "初二",
-    "sentence": "Choose one of our favourite sports ________.",
-    "answer": "events",
-    "options": [
-      "emperor",
-      "engineer",
-      "events",
-      "east",
-      "exchange"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0045",
-    "grade": "初二",
-    "sentence": "Exercise ________ us so much fun and makes us happy.",
-    "answer": "gives",
-    "options": [
-      "gram",
-      "gives",
-      "ground",
-      "grassland",
-      "golden"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0046",
-    "grade": "初二",
-    "sentence": "It is great ________ with our friends or just enjoy ourselves.",
-    "answer": "to exercise",
-    "options": [
-      "to go",
-      "to keep",
-      "to exercise",
-      "to try",
-      "to play"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0047",
-    "grade": "初二",
-    "sentence": "It is great to exercise with our friends or just enjoy ________.",
-    "answer": "ourselves",
-    "options": [
-      "ourselves",
-      "own",
-      "officer",
-      "organize",
-      "Olympic"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0048",
-    "grade": "初二",
-    "sentence": "I believe playing volleyball is a great way to keep ________.",
-    "answer": "fit",
-    "options": [
-      "fit",
-      "farmhouse",
-      "fishing",
-      "fever",
-      "firework"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0049",
-    "grade": "初二",
-    "sentence": "To get better at it, I practice ________ a week.",
-    "answer": "twice",
-    "options": [
-      "throat",
-      "tent",
-      "twice",
-      "town",
-      "tidy"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0050",
-    "grade": "初二",
-    "sentence": "Sometimes I’m so tired that I can ________ move, but I know practice makes perfect.",
-    "answer": "hardly",
-    "options": [
-      "hundred",
-      "hardly",
-      "high",
-      "hold",
-      "hen"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0051",
-    "grade": "初二",
-    "sentence": "Before it, I set a ________ to spike (扣球) the ball well.",
-    "answer": "goal",
-    "options": [
-      "golden",
-      "goal",
-      "ground",
-      "gram",
-      "grassland"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0052",
-    "grade": "初二",
-    "sentence": "This ________ made me see my progress.",
-    "answer": "match",
-    "options": [
-      "mobile",
-      "mile",
-      "million",
-      "metre",
-      "match"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0053",
-    "grade": "初二",
-    "sentence": "In a small village, there is a young ________ named Lucy who loves to swim in the river.",
-    "answer": "swimmer",
-    "options": [
-      "study",
-      "seaside",
-      "south",
-      "swimmer",
-      "square"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0054",
-    "grade": "初二",
-    "sentence": "They always take ________ of one another and ensure everyone is safe from danger.",
-    "answer": "care",
-    "options": [
-      "cottage",
-      "care",
-      "carpet",
-      "collect",
-      "calendar"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0055",
-    "grade": "初二",
-    "sentence": "They always take care of one another and ensure everyone is safe from ________.",
-    "answer": "danger",
-    "options": [
-      "desert",
-      "destroy",
-      "dry",
-      "danger",
-      "down"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0056",
-    "grade": "初二",
-    "sentence": "After swimming for two hours, they ________ for a few minutes, and eat some salad with fruit and vegetables.",
-    "answer": "relax",
-    "options": [
-      "restaurant",
-      "repair",
-      "relaxing",
-      "relax",
-      "ride"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0057",
-    "grade": "初二",
-    "sentence": "She thinks a ________ diet can help her to keep fit and it can help her get more energy.",
-    "answer": "balanced",
-    "options": [
-      "balcony",
-      "bamboo",
-      "balanced",
-      "BBQ",
-      "bedroom"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0058",
-    "grade": "初二",
-    "sentence": "I will share some of my ________ with you.",
-    "answer": "advice",
-    "options": [
-      "able",
-      "ahlan",
-      "anyone",
-      "anything",
-      "advice"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0059",
-    "grade": "初二",
-    "sentence": "I play with my friends ________ a week.",
-    "answer": "twice",
-    "options": [
-      "town",
-      "throat",
-      "tent",
-      "tidy",
-      "twice"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0060",
-    "grade": "初二",
-    "sentence": "Second, eating ________ is important.",
-    "answer": "well",
-    "options": [
-      "wind",
-      "wood",
-      "west",
-      "willing",
-      "well"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0061",
-    "grade": "初二",
-    "sentence": "Good sleep ________ me focus better in class!",
-    "answer": "helps",
-    "options": [
-      "hen",
-      "high",
-      "hold",
-      "hundred",
-      "helps"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0062",
-    "grade": "初二",
-    "sentence": "Will you share ________ with me?",
-    "answer": "yours",
-    "options": [
-      "yours",
-      "your",
-      "youred",
-      "yard",
-      "youring"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0063",
-    "grade": "初二",
-    "sentence": "She is a very helpful and ________ girl.",
-    "answer": "polite",
-    "options": [
-      "present",
-      "palace",
-      "post",
-      "polite",
-      "past"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0064",
-    "grade": "初二",
-    "sentence": "Every morning, she ________ helps her parents with housework or takes care of the small animals around her home.",
-    "answer": "either",
-    "options": [
-      "emperor",
-      "east",
-      "exchange",
-      "engineer",
-      "either"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0065",
-    "grade": "初二",
-    "sentence": "There are two sheep that she ________ carefully.",
-    "answer": "looks after",
-    "options": [
-      "look",
-      "little by little",
-      "looks after",
-      "look after",
-      "living room"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0066",
-    "grade": "初二",
-    "sentence": "She feeds them ________ a day.",
-    "answer": "twice",
-    "options": [
-      "twice",
-      "two",
-      "town",
-      "tent",
-      "tidy"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0067",
-    "grade": "初二",
-    "sentence": "One day, when she is taking the sheep to the grassland, two big ________ suddenly appear (出现).",
-    "answer": "wolves",
-    "options": [
-      "wind",
-      "wolf",
-      "wolves",
-      "west",
-      "wood"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0068",
-    "grade": "初二",
-    "sentence": "It’s a kind of sport and one of the symbols of Chinese ________.",
-    "answer": "culture",
-    "options": [
-      "culture",
-      "carpet",
-      "cottage",
-      "collect",
-      "calendar"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0069",
-    "grade": "初二",
-    "sentence": "These actions may make us ________ on our hands and feet.",
-    "answer": "focus",
-    "options": [
-      "fishing",
-      "farmhouse",
-      "fever",
-      "focus",
-      "firework"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0070",
-    "grade": "初二",
-    "sentence": "People will become healthier if they often ________ it.",
-    "answer": "practice",
-    "options": [
-      "palace",
-      "past",
-      "practice",
-      "post",
-      "present"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0071",
-    "grade": "初二",
-    "sentence": "The world is ________ of yin and yang, such as dark and light, soft and hard.",
-    "answer": "full",
-    "options": [
-      "farmhouse",
-      "full",
-      "firework",
-      "fever",
-      "fishing"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0072",
-    "grade": "初二",
-    "sentence": "Everything is ________—that is how we should see the world.",
-    "answer": "changing",
-    "options": [
-      "collect",
-      "carpet",
-      "changing",
-      "calendar",
-      "cottage"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0073",
-    "grade": "初二",
-    "sentence": "I practice ________ rope a few times a week.",
-    "answer": "jumping",
-    "options": [
-      "jumps",
-      "jump",
-      "jumped",
-      "jumping",
-      "just"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0074",
-    "grade": "初二",
-    "sentence": "We make a team and have ________ with other groups.",
-    "answer": "matches",
-    "options": [
-      "metre",
-      "mile",
-      "million",
-      "matches",
-      "mobile"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0075",
-    "grade": "初二",
-    "sentence": "For example, we ________ ever communicate well during the game and make mistakes.",
-    "answer": "hardly",
-    "options": [
-      "hundred",
-      "hold",
-      "high",
-      "hardly",
-      "hen"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0076",
-    "grade": "初二",
-    "sentence": "To keep fit, I also do sit-ups and go jogging wearing ________ favorite T-shirt.",
-    "answer": "my",
-    "options": [
-      "metre",
-      "mobile",
-      "mile",
-      "million",
-      "my"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0077",
-    "grade": "初二",
-    "sentence": "We encourage each other ________ new things.",
-    "answer": "to try",
-    "options": [
-      "to try",
-      "to exercise",
-      "to go",
-      "to play",
-      "to keep"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0078",
-    "grade": "初二",
-    "sentence": "She also has soft drinks to ________ them, but she hardly ever plays sports.",
-    "answer": "go with",
-    "options": [
-      "give up",
-      "guinea pig",
-      "go",
-      "give away",
-      "go with"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0079",
-    "grade": "初二",
-    "sentence": "That makes her ________.",
-    "answer": "put on weight",
-    "options": [
-      "put",
-      "police station",
-      "put on weight",
-      "police officer",
-      "pick up"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0080",
-    "grade": "初二",
-    "sentence": "Candies are her favorites, ________.",
-    "answer": "after all",
-    "options": [
-      "after all",
-      "Arctic char",
-      "after",
-      "a few",
-      "any time"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0081",
-    "grade": "初二",
-    "sentence": "And she starts to learn how to ________.She practices half an hour every day and she thinks it's a good way to keep fit.These changes make her feel great.",
-    "answer": "jump rope",
-    "options": [
-      "after all",
-      "jump",
-      "jump rope",
-      "jumping",
-      "just"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0082",
-    "grade": "初二",
-    "sentence": "And she starts to learn how to jump rope.She practices half an hour every day and she thinks it's a good way to ________.These changes make her feel great.",
-    "answer": "keep fit",
-    "options": [
-      "keep",
-      "keep fit",
-      "after all",
-      "kilometre",
-      "knife"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0083",
-    "grade": "初二",
-    "sentence": "We move our bodies ________ when we do Tai Chi.",
-    "answer": "slowly",
-    "options": [
-      "square",
-      "study",
-      "slowly",
-      "south",
-      "seaside"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0084",
-    "grade": "初二",
-    "sentence": "We Chinese like to practice Tai Chi, especially in the early morning both on ________ and weekends.",
-    "answer": "weekdays",
-    "options": [
-      "wind",
-      "wood",
-      "weekdays",
-      "willing",
-      "west"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0085",
-    "grade": "初二",
-    "sentence": "________, not all people have the time to do Tai Chi in public places.",
-    "answer": "However",
-    "options": [
-      "high",
-      "However",
-      "hundred",
-      "hold",
-      "hen"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0086",
-    "grade": "初二",
-    "sentence": "Many foreigners like it because it helps them ________ and it is good for both body and mind.",
-    "answer": "relax",
-    "options": [
-      "repair",
-      "restaurant",
-      "relaxing",
-      "ride",
-      "relax"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0087",
-    "grade": "初二",
-    "sentence": "So if you want to find true peace and balance in life, Tai Chi will be a ________ exercise!",
-    "answer": "perfect",
-    "options": [
-      "perfect",
-      "past",
-      "post",
-      "palace",
-      "present"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0088",
-    "grade": "初二",
-    "sentence": "For most American people, basketball is ________ and interesting.",
-    "answer": "exciting",
-    "options": [
-      "exciting",
-      "emperor",
-      "east",
-      "exchange",
-      "engineer"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0089",
-    "grade": "初二",
-    "sentence": "Smith, ________ it in 1891.",
-    "answer": "made",
-    "options": [
-      "million",
-      "mobile",
-      "mile",
-      "metre",
-      "made"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0090",
-    "grade": "初二",
-    "sentence": "He wanted to encourage his students ________ exercising indoors in winter.",
-    "answer": "to keep",
-    "options": [
-      "to keep",
-      "to play",
-      "to go",
-      "to try",
-      "to exercise"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0091",
-    "grade": "初二",
-    "sentence": "Basketball is played by two ________.",
-    "answer": "groups",
-    "options": [
-      "gram",
-      "groups",
-      "ground",
-      "golden",
-      "grassland"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0092",
-    "grade": "初二",
-    "sentence": "It helps us be ________ for the next day.",
-    "answer": "full of energy",
-    "options": [
-      "fish and chips",
-      "full of energy",
-      "from time to time",
-      "full",
-      "focus on"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0093",
-    "grade": "初二",
-    "sentence": "If we don’t have enough sleep, we may feel tired and can’t ________ studies or work.",
-    "answer": "focus on",
-    "options": [
-      "from time to time",
-      "fish and chips",
-      "full of energy",
-      "focus",
-      "focus on"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0094",
-    "grade": "初二",
-    "sentence": "Try to exercise ________ a week.",
-    "answer": "a few hours",
-    "options": [
-      "a few",
-      "Arctic char",
-      "any time",
-      "a",
-      "a few hours"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0095",
-    "grade": "初二",
-    "sentence": "What’s more, have ________.",
-    "answer": "good eating habits",
-    "options": [
-      "give up",
-      "guinea pig",
-      "good",
-      "give away",
-      "good eating habits"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0096",
-    "grade": "初二",
-    "sentence": "We may ________.",
-    "answer": "put on weight",
-    "options": [
-      "police station",
-      "put on weight",
-      "put",
-      "police officer",
-      "pick up"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0097",
-    "grade": "初二",
-    "sentence": "Many teenagers worry about their ________ because they spend too much time on phones.",
-    "answer": "weight",
-    "options": [
-      "weight",
-      "wind",
-      "willing",
-      "west",
-      "wood"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0098",
-    "grade": "初二",
-    "sentence": "Doctors say this habit can lead to a ________ against health problems.",
-    "answer": "fight",
-    "options": [
-      "fever",
-      "farmhouse",
-      "fishing",
-      "firework",
-      "fight"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0099",
-    "grade": "初二",
-    "sentence": "When using phones, we often touch the smooth ________ of screens for hours.",
-    "answer": "surface",
-    "options": [
-      "seaside",
-      "surface",
-      "square",
-      "south",
-      "study"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0100",
-    "grade": "初二",
-    "sentence": "This makes our bodies ________ less energy.",
-    "answer": "produce",
-    "options": [
-      "present",
-      "post",
-      "past",
-      "produce",
-      "palace"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0101",
-    "grade": "初二",
-    "sentence": "Experts suggest keeping a good ________ between screen time and exercise.",
-    "answer": "balance",
-    "options": [
-      "balcony",
-      "BBQ",
-      "bedroom",
-      "bamboo",
-      "balance"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0102",
-    "grade": "初二",
-    "sentence": "She was one of the emperor’s ________.",
-    "answer": "wives",
-    "options": [
-      "wives",
-      "wind",
-      "wood",
-      "willing",
-      "west"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0103",
-    "grade": "初二",
-    "sentence": "Sadly, the wife became ________ ill and died one day.",
-    "answer": "badly",
-    "options": [
-      "balcony",
-      "BBQ",
-      "badly",
-      "bedroom",
-      "bamboo"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0104",
-    "grade": "初二",
-    "sentence": "But he just spent more time in his garden and less time ________after his people’s needs.",
-    "answer": "looking",
-    "options": [
-      "law",
-      "lunar",
-      "lawyer",
-      "looking",
-      "laptop"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0105",
-    "grade": "初二",
-    "sentence": "The emperor’s people felt ________that he might become too weak.",
-    "answer": "worried",
-    "options": [
-      "wood",
-      "wind",
-      "willing",
-      "west",
-      "worried"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0106",
-    "grade": "初二",
-    "sentence": "The dancing shadow ________his eyes.",
-    "answer": "caught",
-    "options": [
-      "collect",
-      "cottage",
-      "calendar",
-      "carpet",
-      "caught"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0107",
-    "grade": "初二",
-    "sentence": "I have made ________ survey (调查).",
-    "answer": "a",
-    "options": [
-      "ahlan",
-      "a",
-      "and",
-      "anything",
-      "anyone"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0108",
-    "grade": "初二",
-    "sentence": "He runs ________ 30 minutes on the playground every evening before he goes to bed.",
-    "answer": "for",
-    "options": [
-      "for",
-      "firework",
-      "fever",
-      "farmhouse",
-      "fishing"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0109",
-    "grade": "初二",
-    "sentence": "________ he’s pretty healthy.",
-    "answer": "so",
-    "options": [
-      "study",
-      "so",
-      "south",
-      "square",
-      "seaside"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0110",
-    "grade": "初二",
-    "sentence": "They all eat meat ________ vegetables.",
-    "answer": "and",
-    "options": [
-      "and",
-      "ahlan",
-      "anyone",
-      "anything",
-      "a"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0111",
-    "grade": "初二",
-    "sentence": "15 students say they drink milk three ________ four times a week.",
-    "answer": "or",
-    "options": [
-      "own",
-      "or",
-      "Olympic",
-      "organize",
-      "officer"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0112",
-    "grade": "初二",
-    "sentence": "Let me give you an ________.",
-    "answer": "example",
-    "options": [
-      "example",
-      "engineer",
-      "emperor",
-      "exchange",
-      "east"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0113",
-    "grade": "初二",
-    "sentence": "Instead, he was always ________ about training and himself.",
-    "answer": "confident",
-    "options": [
-      "calendar",
-      "collect",
-      "confident",
-      "carpet",
-      "cottage"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0114",
-    "grade": "初二",
-    "sentence": "They were busy with work every day, but they never forgot to ________ him.",
-    "answer": "encourage",
-    "options": [
-      "engineer",
-      "encourage",
-      "emperor",
-      "east",
-      "exchange"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0115",
-    "grade": "初二",
-    "sentence": "They always told him to keep going, and they believed ________ would go well if he held on and worked hard for his dream.",
-    "answer": "everything",
-    "options": [
-      "everything",
-      "engineer",
-      "emperor",
-      "east",
-      "exchange"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0116",
-    "grade": "初二",
-    "sentence": "Slowly, his love for running and his strong will deeply ________ his classmates.",
-    "answer": "touched",
-    "options": [
-      "touched",
-      "tidy",
-      "throat",
-      "tent",
-      "town"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0117",
-    "grade": "初二",
-    "sentence": "It’s a ________ symbol of the city.",
-    "answer": "cultural",
-    "options": [
-      "calendar",
-      "cottage",
-      "collect",
-      "carpet",
-      "cultural"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0118",
-    "grade": "初二",
-    "sentence": "They know that ________ needs both effort and teamwork.",
-    "answer": "success",
-    "options": [
-      "square",
-      "south",
-      "seaside",
-      "success",
-      "study"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0119",
-    "grade": "初二",
-    "sentence": "During the marathon, runners encourage one another ________ running.",
-    "answer": "to keep",
-    "options": [
-      "to keep",
-      "to go",
-      "to play",
-      "to try",
-      "to exercise"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0120",
-    "grade": "初二",
-    "sentence": "“The marathon is different from other races because it ________ on health, not just speed.”",
-    "answer": "focuses",
-    "options": [
-      "firework",
-      "farmhouse",
-      "fishing",
-      "fever",
-      "focuses"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0121",
-    "grade": "初二",
-    "sentence": "As Zhang Wei says, “A strong heart starts with small ________!”",
-    "answer": "steps",
-    "options": [
-      "square",
-      "steps",
-      "study",
-      "seaside",
-      "south"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0122",
-    "grade": "初二",
-    "sentence": "He is only five, but I don’t know how to answer his ________.",
-    "answer": "question",
-    "options": [
-      "question",
-      "quickly",
-      "quality",
-      "questions",
-      "difficult"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。"
-  },
-  {
-    "id": "g8-20260524-0123",
-    "grade": "初二",
-    "sentence": "The thing is that just before you run, it’s still ________ to explain (解释) to someone why you run.",
-    "answer": "difficult",
-    "options": [
-      "difficult",
-      "down",
-      "destroy",
-      "dry",
-      "desert"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。"
-  },
-  {
-    "id": "g8-20260524-0124",
-    "grade": "初二",
-    "sentence": "And these are good ________.",
-    "answer": "reasons",
-    "options": [
-      "relaxing",
-      "run",
-      "reasons",
-      "relax",
-      "reason"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。"
-  },
-  {
-    "id": "g8-20260524-0125",
-    "grade": "初二",
-    "sentence": "After a busy day at school, I ________ go out to run.",
-    "answer": "usually",
-    "options": [
-      "using",
-      "usual",
-      "usually",
-      "unusual",
-      "useful"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。"
-  },
-  {
-    "id": "g8-20260524-0126",
-    "grade": "初二",
-    "sentence": "I love running and I will keep ________.",
-    "answer": "running",
-    "options": [
-      "relax",
-      "reason",
-      "relaxing",
-      "running",
-      "run"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。"
-  },
-  {
-    "id": "g8-20260524-0127",
-    "grade": "初二",
-    "sentence": "Now it is ________ all over the world.",
-    "answer": "common",
-    "options": [
-      "cottage",
-      "carpet",
-      "collect",
-      "calendar",
-      "common"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0128",
-    "grade": "初二",
-    "sentence": "Many people of all ages do it to ________ their health.",
-    "answer": "improve",
-    "options": [
-      "improve",
-      "interest",
-      "information",
-      "if",
-      "invite"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0129",
-    "grade": "初二",
-    "sentence": "It can also ________ your body when you do yoga.",
-    "answer": "relax",
-    "options": [
-      "ride",
-      "repair",
-      "relax",
-      "relaxing",
-      "restaurant"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0130",
-    "grade": "初二",
-    "sentence": "That’s ________ for a beginner to learn some easy poses.",
-    "answer": "enough",
-    "options": [
-      "east",
-      "enough",
-      "engineer",
-      "emperor",
-      "exchange"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0131",
-    "grade": "初二",
-    "sentence": "It’s great for a beginner to have the class ________ or three times a week.",
-    "answer": "twice",
-    "options": [
-      "tent",
-      "town",
-      "twice",
-      "tidy",
-      "throat"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0132",
-    "grade": "初二",
-    "sentence": "My parents often said, “Why not go out ________ sports with your friends?” One day, I tried playing basketball in the neighborhood, and then found it interesting.",
-    "answer": "to play",
-    "options": [
-      "to try",
-      "to play",
-      "to exercise",
-      "to go",
-      "to keep"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0133",
-    "grade": "初二",
-    "sentence": "My parents often said, “Why not go out to play sports with your friends?” One day, I tried playing basketball in the neighborhood, and then found it ________.",
-    "answer": "interesting",
-    "options": [
-      "interest",
-      "if",
-      "information",
-      "interesting",
-      "invite"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0134",
-    "grade": "初二",
-    "sentence": "I also joined the basketball team, which helped me improve quite a few ________.",
-    "answer": "skills",
-    "options": [
-      "study",
-      "seaside",
-      "south",
-      "square",
-      "skills"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0135",
-    "grade": "初二",
-    "sentence": "Playing sports not only helped me stay healthy, but also ________ me some other important things, such as teamwork.",
-    "answer": "taught",
-    "options": [
-      "tent",
-      "throat",
-      "town",
-      "tidy",
-      "taught"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0136",
-    "grade": "初二",
-    "sentence": "And it’s important to respect each other and enjoy ________.",
-    "answer": "ourselves",
-    "options": [
-      "Olympic",
-      "own",
-      "organize",
-      "officer",
-      "ourselves"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0137",
-    "grade": "初二",
-    "sentence": "On this app, they can not only share their step numbers with friends but also can see their ________ steps on the phone.",
-    "answer": "friends’",
-    "options": [
-      "friend",
-      "friends’",
-      "fishing",
-      "farmhouse",
-      "firework"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0138",
-    "grade": "初二",
-    "sentence": "“After ________ the pedometer app, I love walking and lose weight successfully.",
-    "answer": "using",
-    "options": [
-      "use",
-      "usual",
-      "using",
-      "unusual",
-      "useful"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0139",
-    "grade": "初二",
-    "sentence": "“After using the pedometer app, I love walking and lose ________ successfully.",
-    "answer": "weight",
-    "options": [
-      "wood",
-      "west",
-      "weight",
-      "wind",
-      "weigh"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0140",
-    "grade": "初二",
-    "sentence": "Now I am full of ________ every day.” he says.",
-    "answer": "energy",
-    "options": [
-      "emperor",
-      "engineer",
-      "energy",
-      "east",
-      "exchange"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0141",
-    "grade": "初二",
-    "sentence": "Recording the steps and showing the numbers can make people ________ in walking.",
-    "answer": "interested",
-    "options": [
-      "invite",
-      "I",
-      "interest",
-      "if",
-      "interested"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0142",
-    "grade": "初二",
-    "sentence": "I want to become a ________ player when I was a child.",
-    "answer": "volleyball",
-    "options": [
-      "view",
-      "visitor",
-      "volunteer",
-      "volleyball",
-      "village"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0143",
-    "grade": "初二",
-    "sentence": "His words made me ________ in myself.",
-    "answer": "believe",
-    "options": [
-      "believe",
-      "balcony",
-      "bamboo",
-      "BBQ",
-      "bedroom"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0144",
-    "grade": "初二",
-    "sentence": "I trained hard every afternoon and my ________ began to improve quickly.",
-    "answer": "skill",
-    "options": [
-      "south",
-      "seaside",
-      "skill",
-      "study",
-      "square"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0145",
-    "grade": "初二",
-    "sentence": "Finally, I ________ in finding out my own ways of playing.",
-    "answer": "succeeded",
-    "options": [
-      "square",
-      "study",
-      "succeeded",
-      "seaside",
-      "south"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0146",
-    "grade": "初二",
-    "sentence": "________, it takes time and effort.",
-    "answer": "Instead",
-    "options": [
-      "invite",
-      "if",
-      "information",
-      "Instead",
-      "interest"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0147",
-    "grade": "初二",
-    "sentence": "Many students enjoy ________ basketball, dancing, or drawing after school.",
-    "answer": "playing",
-    "options": [
-      "present",
-      "palace",
-      "past",
-      "post",
-      "playing"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0148",
-    "grade": "初二",
-    "sentence": "This makes their school life ________ and full of energy.",
-    "answer": "colorful",
-    "options": [
-      "calendar",
-      "colorful",
-      "carpet",
-      "cottage",
-      "collect"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0149",
-    "grade": "初二",
-    "sentence": "________ eyes may look tired, and they might even feel sad because they have no one to talk to.",
-    "answer": "Their",
-    "options": [
-      "throat",
-      "tent",
-      "tidy",
-      "town",
-      "Their"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0150",
-    "grade": "初二",
-    "sentence": "They can finish homework ________ and sleep well at night.",
-    "answer": "easily",
-    "options": [
-      "easily",
-      "east",
-      "exchange",
-      "engineer",
-      "emperor"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0151",
-    "grade": "初二",
-    "sentence": "If you do this, you will grow up stronger and ________.",
-    "answer": "happier",
-    "options": [
-      "hold",
-      "happier",
-      "hen",
-      "high",
-      "hundred"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0152",
-    "grade": "初二",
-    "sentence": "China has started the “Weight Management (管理) Year” and wants ________ a healthy China.",
-    "answer": "to build",
-    "options": [
-      "to build",
-      "to keep",
-      "to try",
-      "to go",
-      "to exercise"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0153",
-    "grade": "初二",
-    "sentence": "So, keeping a proper (合适的) ________ is very important for everyone.",
-    "answer": "weight",
-    "options": [
-      "weigh",
-      "wind",
-      "we",
-      "west",
-      "weight"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0154",
-    "grade": "初二",
-    "sentence": "We should follow a ________ diet.",
-    "answer": "balanced",
-    "options": [
-      "bedroom",
-      "because",
-      "build",
-      "balanced",
-      "balance"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0155",
-    "grade": "初二",
-    "sentence": "Never watch too much TV or play games late at night, or we will feel ________ the next day.",
-    "answer": "sleepy",
-    "options": [
-      "succeed",
-      "study",
-      "sleepy",
-      "seaside",
-      "sleep"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0156",
-    "grade": "初二",
-    "sentence": "Let’s take part in this activity to stay fit, and our country can ________ in building a more beautiful future for us all.",
-    "answer": "succeed",
-    "options": [
-      "seaside",
-      "sleep",
-      "succeed",
-      "south",
-      "study"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0157",
-    "grade": "初二",
-    "sentence": "We like PE best, but we only have PE lessons ________ a week.",
-    "answer": "once",
-    "options": [
-      "Olympic",
-      "organize",
-      "own",
-      "once",
-      "officer"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0158",
-    "grade": "初二",
-    "sentence": "We ________ each other to show tricks.",
-    "answer": "encourage",
-    "options": [
-      "east",
-      "encourage",
-      "exchange",
-      "emperor",
-      "engineer"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0159",
-    "grade": "初二",
-    "sentence": "And when we ________, we feel really excited.",
-    "answer": "succeed",
-    "options": [
-      "south",
-      "square",
-      "seaside",
-      "succeed",
-      "study"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0160",
-    "grade": "初二",
-    "sentence": "They often play ________ with others, and many of us go to watch them.",
-    "answer": "matches",
-    "options": [
-      "million",
-      "matches",
-      "mile",
-      "mobile",
-      "metre"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0161",
-    "grade": "初二",
-    "sentence": "All the teams are good ________, but I think ours is the best.",
-    "answer": "enough",
-    "options": [
-      "emperor",
-      "enough",
-      "east",
-      "exchange",
-      "engineer"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0162",
-    "grade": "初二",
-    "sentence": "One day, one of his ________ advised him to try Taichi.",
-    "answer": "friends",
-    "options": [
-      "fever",
-      "farmhouse",
-      "fishing",
-      "firework",
-      "friends"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0163",
-    "grade": "初二",
-    "sentence": "“Is that a kind of tea?” His friend ________ and said, “No, it isn’t.",
-    "answer": "smiled",
-    "options": [
-      "south",
-      "square",
-      "study",
-      "seaside",
-      "smiled"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0164",
-    "grade": "初二",
-    "sentence": "He said, “I don’t like exercising.” To help my grandpa, my family decided ________ it a try.",
-    "answer": "to give",
-    "options": [
-      "to try",
-      "to give",
-      "to go",
-      "to keep",
-      "to exercise"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0165",
-    "grade": "初二",
-    "sentence": "Even my brother John, the best basketball ________ in his school, couldn’t succeed in doing all the movements (动作).",
-    "answer": "player",
-    "options": [
-      "post",
-      "present",
-      "palace",
-      "past",
-      "player"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0166",
-    "grade": "初二",
-    "sentence": "But my grandpa was ________ in Taichi at once.",
-    "answer": "interested",
-    "options": [
-      "invite",
-      "interested",
-      "interest",
-      "information",
-      "if"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0167",
-    "grade": "初二",
-    "sentence": "It was a big ________ for him because he had never run long distances before.",
-    "answer": "challenge",
-    "options": [
-      "calendar",
-      "carpet",
-      "cottage",
-      "collect",
-      "challenge"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0168",
-    "grade": "初二",
-    "sentence": "At first, Tom wanted to ________ up when he felt tired.",
-    "answer": "give",
-    "options": [
-      "gram",
-      "golden",
-      "give",
-      "ground",
-      "grassland"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0169",
-    "grade": "初二",
-    "sentence": "But his father told him, “It’s ________ to keep trying.",
-    "answer": "important",
-    "options": [
-      "interest",
-      "if",
-      "important",
-      "invite",
-      "information"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0170",
-    "grade": "初二",
-    "sentence": "He kept running and ________ that perseverance is the key to success.",
-    "answer": "realized",
-    "options": [
-      "realized",
-      "remain",
-      "relaxing",
-      "realize",
-      "relax"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0171",
-    "grade": "初二",
-    "sentence": "The experience ________ always in his mind and made him more confident.",
-    "answer": "remained",
-    "options": [
-      "realize",
-      "remained",
-      "remain",
-      "relaxing",
-      "relax"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0172",
-    "grade": "初二",
-    "sentence": "When he feels ________, he drinks some coffee.",
-    "answer": "sleepy",
-    "options": [
-      "study",
-      "south",
-      "sleepy",
-      "seaside",
-      "square"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0173",
-    "grade": "初二",
-    "sentence": "He usually gets up late the next morning and ________ at school late.",
-    "answer": "arrives",
-    "options": [
-      "able",
-      "anyone",
-      "ahlan",
-      "anything",
-      "arrives"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0174",
-    "grade": "初二",
-    "sentence": "It makes his teacher ________.",
-    "answer": "unhappy",
-    "options": [
-      "useful",
-      "unusual",
-      "usually",
-      "unhappy",
-      "using"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0175",
-    "grade": "初二",
-    "sentence": "And he ________ ever exercises.",
-    "answer": "hardly",
-    "options": [
-      "hardly",
-      "hundred",
-      "hen",
-      "hold",
-      "high"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0176",
-    "grade": "初二",
-    "sentence": "And I am sure good life must ________ to me.”",
-    "answer": "belong",
-    "options": [
-      "bedroom",
-      "belong",
-      "balcony",
-      "BBQ",
-      "bamboo"
-    ],
-    "sourceType": "句子填空",
-    "sourceLabel": "（A）根据下列短文，写出与各小题所给汉语相对应的英语单词(每空一词)。"
-  },
-  {
-    "id": "g8-20260524-0177",
-    "grade": "初二",
-    "sentence": "And exercise helps make ________ tired, so they sleep better at night.",
-    "answer": "them",
-    "options": [
-      "them",
-      "tent",
-      "throat",
-      "tidy",
-      "town"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0178",
-    "grade": "初二",
-    "sentence": "Running ________ a week is good for you.",
-    "answer": "twice",
-    "options": [
-      "twice",
-      "throat",
-      "town",
-      "tent",
-      "tidy"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0179",
-    "grade": "初二",
-    "sentence": "Winning or ________ is not the important thing.",
-    "answer": "losing",
-    "options": [
-      "lunar",
-      "law",
-      "lawyer",
-      "laptop",
-      "losing"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0180",
-    "grade": "初二",
-    "sentence": "It’s important ________ fun.",
-    "answer": "to have",
-    "options": [
-      "to exercise",
-      "to try",
-      "to have",
-      "to keep",
-      "to go"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0181",
-    "grade": "初二",
-    "sentence": "Happiness always ________ to you.",
-    "answer": "belongs",
-    "options": [
-      "belongs",
-      "bamboo",
-      "bedroom",
-      "balcony",
-      "BBQ"
-    ],
-    "sourceType": "适当形式",
-    "sourceLabel": "（B）用括号内所给单词的适当形式完成短文"
-  },
-  {
-    "id": "g8-20260524-0182",
-    "grade": "初二",
-    "sentence": "Some tricks are difficult, ________ when you make it, you feel great.",
-    "answer": "but",
-    "options": [
-      "bedroom",
-      "BBQ",
-      "balcony",
-      "but",
-      "bamboo"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0183",
-    "grade": "初二",
-    "sentence": "It helps me with daily workouts and ________ my progress.",
-    "answer": "shows",
-    "options": [
-      "shows",
-      "south",
-      "study",
-      "seaside",
-      "show"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0184",
-    "grade": "初二",
-    "sentence": "He says to me, “I want ________ fun with my daughter by exercising.”",
-    "answer": "to have",
-    "options": [
-      "to exercise",
-      "to have",
-      "to try",
-      "to go",
-      "to keep"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0185",
-    "grade": "初二",
-    "sentence": "We have many ________.",
-    "answer": "matches",
-    "options": [
-      "match",
-      "matches",
-      "metre",
-      "mile",
-      "mobile"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
-  },
-  {
-    "id": "g8-20260524-0186",
-    "grade": "初二",
-    "sentence": "All of us are good friends both on ________ off the field.",
-    "answer": "and",
-    "options": [
-      "anyone",
-      "and",
-      "able",
-      "ahlan",
-      "anything"
-    ],
-    "sourceType": "方框选词",
-    "sourceLabel": "（C）阅读下面短文，用方框中所给的单词或短语填空，使短文在结构、语意和逻辑上正确。（提示：方框中有一个单词或短语是多余的。）"
+    "type": "multiple-choice",
+    "source": "八下英语期中复习100题"
   }
 ];

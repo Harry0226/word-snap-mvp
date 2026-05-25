@@ -1,12 +1,13 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考常考词组总复习", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 2;
-const BUILTIN_SEED_VERSION = 7;
+const BUILTIN_SEED_VERSION = 8;
 const FAST_PICK_LIMIT = 1500;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
 const QUIZ_FAST = 1500;
 const QUIZ_SLOW = 3500;
+const GRADE8_QUIZ_COUNT = 239;
 
 const state = {
   db: null,
@@ -260,6 +261,11 @@ async function seedBuiltinWords() {
       { grade: "中考常考词组总复习", source: "中考常考词组总复习" }
     ]);
   }
+  if (Number(seedMeta?.value || 0) < 8) {
+    await deleteBuiltinDecks([
+      { grade: "初三", source: "初三核心词库" }
+    ]);
+  }
   if (Number(seedMeta?.value || 0) < 3) {
     await deleteBuiltinDecks([
       { grade: "高一", source: "高一内置词库" },
@@ -465,6 +471,26 @@ function updateTrainingEstimate() {
   }
   const suffix = state.queueNotice ? ` · ${state.queueNotice}` : "";
   els.progressText.textContent = `本轮预计 ${queue.length} 词${suffix}`;
+}
+
+function updateSessionSizeOptions() {
+  const previous = els.sessionSize.value || "200";
+  const isJuniorThree = els.stageSelect.value === "初三";
+  const options = isJuniorThree
+    ? [
+        ["200", "200 词"],
+        ["400", "400 词"],
+        ["600", "600 词"],
+        ["all", "全部单词"]
+      ]
+    : [
+        ["200", "200 词"],
+        ["all", "全部单词"]
+      ];
+  els.sessionSize.innerHTML = options
+    .map(([value, label], index) => `<option value="${value}"${index === 0 ? " selected" : ""}>${label}</option>`)
+    .join("");
+  els.sessionSize.value = options.some(([value]) => value === previous) ? previous : "200";
 }
 
 function resolvePracticeMode() {
@@ -850,7 +876,9 @@ function updateQuizSizeOptions() {
   const prev = sel.value;
   sel.innerHTML = "";
   const sentenceQuizTotal = getQuizSentenceData(grade).length;
-  if (sentenceQuizTotal) {
+  if (grade === "初二" && sentenceQuizTotal !== GRADE8_QUIZ_COUNT) {
+    sel.innerHTML = '<option value="all">暂无初二题库</option>';
+  } else if (sentenceQuizTotal) {
     const opts = [];
     if (sentenceQuizTotal > 50) opts.push('<option value="50" selected>50 题</option>');
     if (sentenceQuizTotal > 100) opts.push('<option value="100">100 题</option>');
@@ -896,6 +924,11 @@ function startQuiz(isReview) {
   let vocabPool;
 
   const sentenceQuizData = getQuizSentenceData(grade);
+  if (grade === "初二" && sentenceQuizData.length !== GRADE8_QUIZ_COUNT) {
+    els.quizStatusText.textContent = `初二题库应为 ${GRADE8_QUIZ_COUNT} 题，当前未正确加载。请刷新页面后再试。`;
+    return;
+  }
+
   if (sentenceQuizData.length) {
     allData = sentenceQuizData;
     vocabPool = sentenceQuizData
@@ -970,7 +1003,7 @@ function nextQuizQuestion() {
 
   els.quizTag.textContent = `第 ${quiz.done + 1}/${quiz.total} 题`;
   els.quizSentence.textContent = q.sentence;
-  els.quizHint.textContent = q.type === "word" ? "选择正确的英文单词" : `首字母：${q.answer[0]}`;
+  els.quizHint.textContent = q.type === "word" ? "选择正确的英文单词" : q.type === "multiple-choice" ? "选择最佳答案" : `首字母：${q.answer[0]}`;
   els.quizFeedback.textContent = "计时中。";
   els.quizChoices.innerHTML = "";
 
@@ -1269,6 +1302,7 @@ async function saveReviewDeck() {
 }
 
 function renderAll() {
+  updateSessionSizeOptions();
   renderStats();
   renderDecks();
   renderWeakList();

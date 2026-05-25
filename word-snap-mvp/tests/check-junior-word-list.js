@@ -3,6 +3,7 @@ const vm = require("vm");
 const assert = require("assert");
 
 const juniorSource = fs.readFileSync("word-data/junior-exam-words.js", "utf8");
+const juniorJson = JSON.parse(fs.readFileSync("word-data/junior-exam-words.json", "utf8"));
 const builtinSource = fs.readFileSync("word-data/builtin-word-lists.js", "utf8");
 const app = fs.readFileSync("app.js", "utf8");
 
@@ -11,19 +12,20 @@ vm.createContext(sandbox);
 vm.runInContext(juniorSource, sandbox);
 
 const words = sandbox.window.WORD_SNAP_WORDS || [];
-const meta = sandbox.window.WORD_SNAP_WORDS_META || {};
+const meta = juniorJson.meta || {};
 const unique = new Set(words.map((word) => word.en));
 
-assert(words.length >= 790, "new junior word list should contain the full provided deck");
+assert.strictEqual(words.length, 1887, "new junior word list should contain the updated 1887-word deck");
+assert.strictEqual(juniorJson.words.length, 1887, "junior JSON should contain the updated 1887-word deck");
 assert.strictEqual(unique.size, words.length, "new junior word list should not contain duplicate English entries");
-assert(words.some((word) => word.en === "able" && word.zh.includes("能够")), "new junior list should include the provided first entry");
-assert(words.some((word) => word.en === "young" && word.zh.includes("年轻")), "new junior list should include the provided last entry");
-assert.strictEqual(meta.source, "初三核心词库", "new junior source name should be stable");
+assert(words.some((word) => word.en === "people" && word.zh.includes("人")), "new junior list should include the updated first entry");
+assert(words.some((word) => word.en === "zambezi" && word.zh.includes("赞比西")), "new junior list should include the updated last entry");
+assert.strictEqual(meta.source, "中考英语高频词汇整理", "new junior source name should match the 1887-word deck");
 assert.strictEqual(JSON.stringify(meta.goals), JSON.stringify(["初三"]), "new junior list should only cover 初三");
 assert(!juniorSource.includes("中考冲刺"), "old exam sprint stage should be removed from junior word data");
 assert(!juniorSource.includes("近五年中考结合最新一模"), "old exam source name should be removed from junior word data");
 assert(!juniorSource.includes("初三刷题词库"), "old junior source name should be removed from junior word data");
-assert(app.includes("BUILTIN_SEED_VERSION = 6"), "builtin seed version should be bumped for existing browsers");
+assert(app.includes("BUILTIN_SEED_VERSION = 8"), "builtin seed version should be bumped for existing browsers");
 assert(app.includes('"初三核心词库"'), "app should seed the new junior source name");
 assert(app.includes("deleteRecordsForMissingWords"), "old builtin records should be removed after reseeding");
 assert(!builtinSource.includes('"source":  "初三刷题词库"'), "old junior builtin deck should not remain in builtin lists");
