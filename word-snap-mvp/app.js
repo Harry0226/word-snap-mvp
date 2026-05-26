@@ -1,7 +1,7 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考常考词组总复习", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 2;
-const BUILTIN_SEED_VERSION = 8;
+const BUILTIN_SEED_VERSION = 9;
 const FAST_PICK_LIMIT = 1500;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
@@ -264,6 +264,13 @@ async function seedBuiltinWords() {
   if (Number(seedMeta?.value || 0) < 8) {
     await deleteBuiltinDecks([
       { grade: "初三", source: "初三核心词库" }
+    ]);
+  }
+  if (Number(seedMeta?.value || 0) < 9) {
+    await deleteBuiltinDecks([
+      { grade: "高一", source: "高一内置词库" },
+      { grade: "高二", source: "高二内置词库" },
+      { grade: "高三", source: "高三高频词库" }
     ]);
   }
   if (Number(seedMeta?.value || 0) < 3) {
