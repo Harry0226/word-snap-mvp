@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>英语作文批改工作台</title>
+  <link rel="stylesheet" href="./essay-styles.css?v=20260528-teacher">
+</head>
+<body>
+  <main class="essay-shell">
+    <header class="essay-header">
+      <div>
+        <p class="eyebrow">English Writing Review</p>
+        <h1>英语作文批改工作台</h1>
+        <p>上传学生作文图，自动找出语法、拼写、标点错误，圈出来并附上双语小注释。</p>
+      </div>
+      <div class="header-actions">
+        <a class="ghost-link" href="./index.html">返回秒懂词</a>
+      </div>
+    </header>
+
+    <section class="hero-strip" aria-label="功能说明">
+      <div><strong>批改单张</strong><span>自动圈错、可手动拖拽微调</span></div>
+      <div><strong>批量处理</strong><span>支持多个学生，也支持同一学生多页作文</span></div>
+      <div><strong>家长沟通</strong><span>自动生成开头结尾优化句，支持直接复制</span></div>
+      <div><strong>课堂讲解</strong><span>自动汇总全班常见错误类型</span></div>
+    </section>
+
+    <section class="essay-layout">
+      <aside class="column left-column">
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>上传与任务设置</h2>
+              <p>先把图片加入本次任务，再填写学生姓名和作文分组。</p>
+            </div>
+          </div>
+          <label>本次任务名称
+            <input id="batchName" type="text" placeholder="例如：初二周三作文批改">
+          </label>
+          <label class="file-picker">选择作文图片 / PDF
+            <input id="essayFiles" type="file" accept=".pdf,image/*" multiple>
+          </label>
+          <div class="button-row">
+            <button id="addFilesBtn" type="button">加入任务</button>
+            <button id="startReviewBtn" type="button">开始批改</button>
+          </div>
+          <div class="button-row compact">
+            <button id="exportEssayDataBtn" type="button" class="secondary">导出批改记录</button>
+            <label class="file-button secondary">导入记录<input id="importEssayData" type="file" accept="application/json"></label>
+          </div>
+          <p id="uploadStatus" class="status-text">建议上传清晰、正向拍摄的作文图片。手写作文也支持，但可能需要手动微调圈错位置。</p>
+        </div>
+
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>待批改页</h2>
+              <p>默认每张图是一篇作文；如果同一学生有多页，请把分组编号改成一致。</p>
+            </div>
+          </div>
+          <div id="draftList" class="draft-list"></div>
+        </div>
+
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>历史任务</h2>
+              <p>保存在当前浏览器，可导入导出备份。</p>
+            </div>
+          </div>
+          <div id="batchList" class="batch-list"></div>
+        </div>
+      </aside>
+
+      <section class="column center-column">
+        <div class="panel toolbar-panel">
+          <div class="toolbar-stack">
+            <div class="button-row compact toolbar-row">
+              <button id="prevPageBtn" type="button" class="secondary">上一页</button>
+              <button id="nextPageBtn" type="button" class="secondary">下一页</button>
+              <button id="viewOriginalBtn" type="button" class="secondary">原图</button>
+              <button id="viewAnnotatedBtn" type="button" class="secondary">批改图</button>
+              <button id="viewFocusBtn" type="button" class="secondary">聚焦问题</button>
+            </div>
+            <div class="button-row compact toolbar-row">
+              <button id="zoomOutBtn" type="button" class="secondary">缩小</button>
+              <button id="zoomInBtn" type="button" class="secondary">放大</button>
+              <button id="resetZoomBtn" type="button" class="secondary">适应画布</button>
+              <button id="exportCurrentBtn" type="button">导出当前学生批改图</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel canvas-panel">
+          <div class="canvas-head">
+            <div>
+              <h2 id="canvasTitle">还没有批改结果</h2>
+              <p id="canvasMeta" class="status-text">上传图片并开始批改后，这里会显示原图与圈错批注。</p>
+            </div>
+          </div>
+          <div id="canvasEmpty" class="canvas-empty">等待批改结果...</div>
+          <div id="essayViewport" class="essay-viewport" hidden>
+            <div id="essayStage" class="essay-stage">
+              <div id="essayImageWrap" class="essay-image-wrap">
+                <img id="essayImage" alt="作文批改预览">
+              </div>
+              <div id="annotationLayer" class="annotation-layer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel drawer-panel">
+          <div class="section-head">
+            <div>
+              <h2 id="studentTitle">学生反馈</h2>
+              <p id="studentMeta">选择一篇已批改作文后，这里会展示家长沟通、总结和批注编辑内容。</p>
+            </div>
+          </div>
+          <div class="drawer-tabs" role="tablist" aria-label="反馈内容">
+            <button id="tabParentBtn" type="button" class="secondary active" data-drawer-tab="parent">家长沟通</button>
+            <button id="tabPersonalBtn" type="button" class="secondary" data-drawer-tab="personal">个人总结</button>
+            <button id="tabClassBtn" type="button" class="secondary" data-drawer-tab="class">全班总结</button>
+            <button id="tabTextBtn" type="button" class="secondary" data-drawer-tab="text">识别正文</button>
+            <button id="tabIssuesBtn" type="button" class="secondary" data-drawer-tab="issues">批注编辑</button>
+          </div>
+
+          <div class="drawer-panes">
+            <section id="drawerParent" class="drawer-pane active" data-drawer-pane="parent">
+              <div class="copy-grid">
+                <div class="copy-card">
+                  <div class="copy-head">
+                    <h3>开头优化句</h3>
+                    <button type="button" class="secondary" data-copy-target="introRewrite">复制</button>
+                  </div>
+                  <p id="introRewrite" class="copy-text">暂无内容</p>
+                </div>
+                <div class="copy-card">
+                  <div class="copy-head">
+                    <h3>结尾优化句</h3>
+                    <button type="button" class="secondary" data-copy-target="outroRewrite">复制</button>
+                  </div>
+                  <p id="outroRewrite" class="copy-text">暂无内容</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="drawerPersonal" class="drawer-pane" data-drawer-pane="personal" hidden>
+              <div class="section-head">
+                <div>
+                  <h3>个人常见错误</h3>
+                  <p>按错误类型归类，方便直接发给家长。</p>
+                </div>
+                <button id="copyPersonalBtn" type="button" class="secondary">复制个人总结</button>
+              </div>
+              <div id="personalSummary" class="summary-list"></div>
+            </section>
+
+            <section id="drawerClass" class="drawer-pane" data-drawer-pane="class" hidden>
+              <div class="section-head">
+                <div>
+                  <h3>全班共性错误</h3>
+                  <p>只有多位学生时才会生成，适合课堂统一讲解。</p>
+                </div>
+                <button id="copyClassBtn" type="button" class="secondary">复制全班总结</button>
+              </div>
+              <div id="classSummary" class="summary-list"></div>
+            </section>
+
+            <section id="drawerText" class="drawer-pane" data-drawer-pane="text" hidden>
+              <div class="section-head">
+                <div>
+                  <h3>作文识别正文</h3>
+                  <p>仅用于核对 AI 是否读对了原文，不会回写到图上。</p>
+                </div>
+              </div>
+              <textarea id="recognizedText" class="recognized-text" readonly placeholder="批改完成后会显示识别出的作文正文"></textarea>
+            </section>
+
+            <section id="drawerIssues" class="drawer-pane" data-drawer-pane="issues" hidden>
+              <div class="section-head">
+                <div>
+                  <h3>当前页批注编辑</h3>
+                  <p>可以修改中文/英文小注释、拖动位置、删除误判，或标记为已确认。</p>
+                </div>
+              </div>
+              <div id="issueList" class="issue-list"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script type="module" src="./essay-app.js?v=20260528-teacher"></script>
+</body>
+</html>
