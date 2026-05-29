@@ -6747,2857 +6747,22 @@ window.WORD_SNAP_BUILTIN_LISTS = [
         "source": "高一内置词库",
         "words": [
             {
-                "en": "acceptance",
-                "zh": "接受，接纳，认可",
+                "en": "adventurous",
+                "zh": "冒险的，大胆的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "preference",
-                "zh": "偏好，偏爱，优先选择",
+                "en": "application",
+                "zh": "申请，应用，程序",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "deposit",
-                "zh": "保证金，押金，存款，使沉积",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "availability",
-                "zh": "可用性，空闲情况，可得性",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "alternative",
-                "zh": "替代的，供选择的，二选一",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "reference",
-                "zh": "参考，推荐信，介绍信",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "environmental",
-                "zh": "环境的，环境保护的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "individual",
-                "zh": "个人，独特的，单独的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "flexible",
-                "zh": "灵活的，可变通的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "option",
-                "zh": "选项，选择",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "arrangement",
-                "zh": "安排，筹备",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "departure",
-                "zh": "出发，离开",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "accommodation",
-                "zh": "住宿，住处",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "approximate",
-                "zh": "近实的，大约的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "reservation",
-                "zh": "预约，预订，保留意见",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "status",
-                "zh": "地位，身份，状态",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "register",
-                "zh": "注册，登记",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "custom",
-                "zh": "习惯，风俗，海关",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "conflict",
-                "zh": "冲突，矛盾，争执",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "expert",
-                "zh": "专家，能手，熟练的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "professional",
-                "zh": "专业的，职业的，专业人员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "presence",
-                "zh": "存在，仪态，风度",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "session",
-                "zh": "一场，会议，一段时间",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fee",
-                "zh": "费用，服务费",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fully",
-                "zh": "完全地，彻底地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "challenge",
-                "zh": "挑战，质疑",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "balance",
-                "zh": "平衡，均衡",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "category",
-                "zh": "类别，种类",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "specific",
-                "zh": "特定的，明确的，具体的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "routine",
-                "zh": "常规，惯例，例行公事",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "unique",
-                "zh": "独特的，唯一的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "standard",
-                "zh": "标准，水准，规范",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "method",
-                "zh": "方法，条理",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "approach",
-                "zh": "方法，途径，接近",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "process",
-                "zh": "过程，进程，加工，处理",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "criteria",
-                "zh": "标准，准则",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "review",
-                "zh": "审查，复习，评论",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "update",
-                "zh": "更新，最新消息",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "evaluate",
-                "zh": "评估，评价",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "strategy",
-                "zh": "策略，计谋",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "structure",
-                "zh": "结构，建筑物，建造",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "technique",
-                "zh": "技术，技巧，手段",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "theory",
-                "zh": "理论，学说",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "accurate",
-                "zh": "准确的，精确的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "potential",
-                "zh": "潜在的，可能性",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "permanent",
-                "zh": "永久的，长期的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "temporary",
-                "zh": "暂时的，临时的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "initial",
-                "zh": "最初的，开始的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "stable",
-                "zh": "稳定的，马厩",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "function",
-                "zh": "功能，作用，运转",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dynamic",
-                "zh": "动态的，有活力的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "constant",
-                "zh": "持续的，恒定的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "automatic",
-                "zh": "自动的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "digital",
-                "zh": "数字的，数码的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "device",
-                "zh": "设备，装置",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "instrument",
-                "zh": "仪器，乐器",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "material",
-                "zh": "材料，物资",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "substance",
-                "zh": "物质，实质",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "element",
-                "zh": "元素，要素",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "mass",
-                "zh": "质量，大量，大众",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "volume",
-                "zh": "体积，容量，音量，卷",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "distance",
-                "zh": "距离",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "range",
-                "zh": "范围，幅度，变动",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "region",
-                "zh": "地区，区域",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "horizon",
-                "zh": "地平线，眼界",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "landscape",
-                "zh": "风景，地形，地貌",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "resource",
-                "zh": "资源",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "source",
-                "zh": "来源，水源",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "origin",
-                "zh": "起源，出身",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trace",
-                "zh": "追踪，痕迹，微量",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tracking",
-                "zh": "追踪，跟踪",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "access",
-                "zh": "通道，进入，获取",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "exit",
-                "zh": "出口，离开",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "barrier",
-                "zh": "障碍，隔阂",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "channel",
-                "zh": "频道，渠道，海峡",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "network",
-                "zh": "网络，网状物",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "signal",
-                "zh": "信号，标志，发信号",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "symbol",
-                "zh": "象征，符号",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "image",
-                "zh": "形象，图像",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "representation",
-                "zh": "表现，陈述，代表",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "expression",
-                "zh": "表达，表情，词语",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "concept",
-                "zh": "概念，观念",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "definition",
-                "zh": "定义，清晰度",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "framework",
-                "zh": "框架，结构",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "context",
-                "zh": "上下文，背景",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "profile",
-                "zh": "简介，侧面轮廓",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "feature",
-                "zh": "特征，以……为特色",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trait",
-                "zh": "特征，品质",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "character",
-                "zh": "性格，品质，角色",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "attribute",
-                "zh": "属性，特质，把……归因于",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "quality",
-                "zh": "质量，品质",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "property",
-                "zh": "财产，所有物，性质",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "estate",
-                "zh": "地产，财产",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "wealth",
-                "zh": "财富，财产",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "legacy",
-                "zh": "遗产，遗留物",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "heritage",
-                "zh": "遗产，传统",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dynamic",
-                "zh": "动力，动态，有活力的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "force",
-                "zh": "力量，势力，强迫",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "energy",
-                "zh": "精力，能量，活力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "power",
-                "zh": "力量，权力，电能",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "capability",
-                "zh": "能力，才能",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "capacity",
-                "zh": "容量，能力，生产力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "competence",
-                "zh": "能力，胜任",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "expert",
-                "zh": "专家，熟练的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "professional",
-                "zh": "专业人员，职业的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pioneer",
-                "zh": "先驱，倡导者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "authority",
-                "zh": "权威，当局，权力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "leader",
-                "zh": "领导者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "partner",
-                "zh": "伙伴，合伙人",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "peer",
-                "zh": "同龄人，同辈",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "generation",
-                "zh": "世代，一代人",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "youth",
-                "zh": "青年，青春",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "adolescent",
-                "zh": "青少年",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "teenager",
-                "zh": "青少年",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "infant",
-                "zh": "婴儿",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "senior",
-                "zh": "年长的，资深的，高级的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "elder",
-                "zh": "长者，年长的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ancestor",
-                "zh": "祖先，祖宗",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "resident",
-                "zh": "居民",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "citizen",
-                "zh": "公民，市民",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "community",
-                "zh": "社区，共同体",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "society",
-                "zh": "社会，协会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "institution",
-                "zh": "机构，制度",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "organization",
-                "zh": "组织，机构",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "association",
-                "zh": "协会，社团",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "committee",
-                "zh": "委员会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "agency",
-                "zh": "代理机构，中介",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "corporation",
-                "zh": "公司，企业",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "firm",
-                "zh": "公司，商号，坚固的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "industry",
-                "zh": "工业，行业",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "market",
-                "zh": "市场",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "economy",
-                "zh": "经济，节约",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "finance",
-                "zh": "财政，金融，资助",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "commerce",
-                "zh": "商业，贸易",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "business",
-                "zh": "商业，事务，生意",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "consumer",
-                "zh": "消费者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "client",
-                "zh": "客户，顾客",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "customer",
-                "zh": "顾客",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "employer",
-                "zh": "雇主",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "employee",
-                "zh": "雇员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "staff",
-                "zh": "全体职工，工作人员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "executive",
-                "zh": "执行官，高级管理人员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "professional",
-                "zh": "专业人员，专家的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "expert",
-                "zh": "专家，精通的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "specialist",
-                "zh": "专家，专科医生",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "consultant",
-                "zh": "顾问",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "technician",
-                "zh": "技术员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "engineer",
-                "zh": "工程师",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "researcher",
-                "zh": "研究员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "scholar",
-                "zh": "学者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "professor",
-                "zh": "教授",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "teacher",
-                "zh": "教师",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "instructor",
-                "zh": "教练，导师",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tutor",
-                "zh": "导师，家庭教师",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "student",
-                "zh": "学生",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "candidate",
-                "zh": "候选人，应试者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "volunteer",
-                "zh": "志愿者，自愿",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "traveler",
-                "zh": "旅行者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "passenger",
-                "zh": "乘客",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "guest",
-                "zh": "客人",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "host",
-                "zh": "主办，主持，主人",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "crowd",
-                "zh": "人群，拥挤",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "audience",
-                "zh": "听众，观众",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "spectator",
-                "zh": "观众，旁观者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "witness",
-                "zh": "见证人，目击",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "victim",
-                "zh": "受害者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "survivor",
-                "zh": "幸存者",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "patient",
-                "zh": "病人，耐心的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "doctor",
-                "zh": "医生，博士",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "nurse",
-                "zh": "护士",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "career",
-                "zh": "生涯，职业",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "profession",
-                "zh": "职业",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "occupation",
-                "zh": "职业，占领",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "employment",
-                "zh": "就业，雇用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "unemployment",
-                "zh": "失业",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "retirement",
-                "zh": "退休",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "shift",
-                "zh": "轮班，改变，移动",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "duty",
-                "zh": "责任，义务，关税",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "task",
-                "zh": "任务，工作",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "project",
-                "zh": "项目，工程",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "mission",
-                "zh": "使命，任务",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "goal",
-                "zh": "目标",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "target",
-                "zh": "目标，靶子",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "objective",
-                "zh": "目标，客观的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "purpose",
-                "zh": "目的，意图",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "intention",
-                "zh": "意图，目的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "motive",
-                "zh": "动机，目的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "scheme",
-                "zh": "计划，方案",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "policy",
-                "zh": "政策，方针",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "strategy",
-                "zh": "策略，规划",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "schedule",
-                "zh": "时间表，进度表",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "routine",
-                "zh": "常规，程序",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "custom",
-                "zh": "习俗，惯例",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "habit",
-                "zh": "习惯",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "practice",
-                "zh": "实践，练习，做法",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "exercise",
-                "zh": "练习，运动",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "performance",
-                "zh": "表演，性能，表现",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "presentation",
-                "zh": "呈现，陈述，演讲",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "lecture",
-                "zh": "讲座，演讲",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "speech",
-                "zh": "演讲",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "debate",
-                "zh": "辩论，争论",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "discussion",
-                "zh": "讨论",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "conversation",
-                "zh": "对话",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "interview",
-                "zh": "面试，采访",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "meeting",
-                "zh": "会议，集会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "conference",
-                "zh": "会议，讨论会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "seminar",
-                "zh": "研讨会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "workshop",
-                "zh": "研讨会，工作坊",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "exhibition",
-                "zh": "展览，展览会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "display",
-                "zh": "陈列，展示",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "show",
-                "zh": "展示，演出",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fair",
-                "zh": "公平的，集市，展览会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "festival",
-                "zh": "节日",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ceremony",
-                "zh": "仪式，典礼",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trend",
-                "zh": "趋势，倾向",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fashion",
-                "zh": "时尚，时装",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "style",
-                "zh": "风格，文体",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "taste",
-                "zh": "滋味，鉴赏力，品尝",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "flavor",
-                "zh": "风味，味道",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "texture",
-                "zh": "质地，纹理",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "format",
-                "zh": "格式，版式",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pattern",
-                "zh": "模式，图案",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "type",
-                "zh": "类型，品种",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "category",
-                "zh": "类别",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "class",
-                "zh": "班级，阶级，课",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "grade",
-                "zh": "年级，成绩",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "score",
-                "zh": "分数，得分",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "mark",
-                "zh": "标记，分数",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "rank",
-                "zh": "军衔，顺位，排名",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "rate",
-                "zh": "比率，率，费用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ratio",
-                "zh": "比例，比率",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "scale",
-                "zh": "规模，天平，刻度",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "measure",
-                "zh": "测量，措施",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "standard",
-                "zh": "标准",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "value",
-                "zh": "价值",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "cost",
-                "zh": "成本，费用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "price",
-                "zh": "价格",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "expense",
-                "zh": "费用，代价",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "budget",
-                "zh": "预算",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fund",
-                "zh": "资金，基金",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "deposit",
-                "zh": "保证金，存款",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fee",
-                "zh": "费用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fare",
-                "zh": "车费，船费",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fine",
-                "zh": "罚款，好的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tax",
-                "zh": "税，税金",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "bill",
-                "zh": "账单，法案",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "check",
-                "zh": "支票，检查",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "cash",
-                "zh": "现金",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "coin",
-                "zh": "硬币",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "note",
-                "zh": "纸币，笔记，注释",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "card",
-                "zh": "卡片",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ticket",
-                "zh": "票",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "receipt",
-                "zh": "收据，发票",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "voucher",
-                "zh": "凭证，代金券",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "contract",
-                "zh": "合同，契约",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "agreement",
-                "zh": "协议，一致",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "document",
-                "zh": "文件，文献",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "record",
-                "zh": "记录，唱片",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "file",
-                "zh": "档案，文件",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "folder",
-                "zh": "文件夹",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "archive",
-                "zh": "档案馆，档案",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "library",
-                "zh": "图书馆",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "museum",
-                "zh": "博物馆",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "gallery",
-                "zh": "画廊，美术馆",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "theater",
-                "zh": "剧院",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "cinema",
-                "zh": "电影院",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "studio",
-                "zh": "工作室，演播室",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "laboratory",
-                "zh": "实验室",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "clinic",
-                "zh": "诊所",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "hospital",
-                "zh": "医院",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pharmacy",
-                "zh": "药房",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "factory",
-                "zh": "工厂",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "plant",
-                "zh": "工厂，植物",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "office",
-                "zh": "办公室",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "agency",
-                "zh": "代理处",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "firm",
-                "zh": "公司",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "company",
-                "zh": "公司",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "enterprise",
-                "zh": "企业，事业",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "organization",
-                "zh": "组织",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "institution",
-                "zh": "机构",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "foundation",
-                "zh": "基金会，基础",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "institute",
-                "zh": "学院，研究院",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "academy",
-                "zh": "学院",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "university",
-                "zh": "大学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "college",
-                "zh": "学院，大学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "school",
-                "zh": "学校",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "campus",
-                "zh": "校园",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "class",
-                "zh": "班级，课堂",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "course",
-                "zh": "课程",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "term",
-                "zh": "学期，条款，术语",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "session",
-                "zh": "会议，开庭",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "seminar",
-                "zh": "研讨会",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "lecture",
-                "zh": "讲座",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tutorial",
-                "zh": "辅导课",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "assignment",
-                "zh": "作业，分配",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "homework",
-                "zh": "家庭作业",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "project",
-                "zh": "项目",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "thesis",
-                "zh": "论文",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dissertation",
-                "zh": "毕业论文",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "essay",
-                "zh": "散文，随笔",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "article",
-                "zh": "文章",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "report",
-                "zh": "报告",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "paper",
-                "zh": "论文，报纸，纸张",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "journal",
-                "zh": "期刊，日志",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "magazine",
-                "zh": "杂志",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "book",
-                "zh": "书籍",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "textbook",
-                "zh": "教科书",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "novel",
-                "zh": "小说",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "poem",
-                "zh": "诗歌",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "poetry",
-                "zh": "诗歌，诗集",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "literature",
-                "zh": "文学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "history",
-                "zh": "历史",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "philosophy",
-                "zh": "哲学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "psychology",
-                "zh": "心理学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sociology",
-                "zh": "社会学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "science",
-                "zh": "科学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "technology",
-                "zh": "技术",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "engineering",
-                "zh": "工程学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "mathematics",
-                "zh": "数学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "physics",
-                "zh": "物理学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "chemistry",
-                "zh": "化学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "biology",
-                "zh": "生物学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "geography",
-                "zh": "地理学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "geology",
-                "zh": "地质学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "astronomy",
-                "zh": "天文学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "arts",
-                "zh": "艺术，文科",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "music",
-                "zh": "音乐",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "painting",
-                "zh": "绘画",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "drawing",
-                "zh": "绘画，素描",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sculpture",
-                "zh": "雕塑",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "carving",
-                "zh": "雕刻",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "embroidery",
-                "zh": "刺绣",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "craft",
-                "zh": "工艺，手艺",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pottery",
-                "zh": "陶器",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "design",
-                "zh": "设计",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fashion",
-                "zh": "时尚",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "style",
-                "zh": "风格",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "culture",
-                "zh": "文化",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tradition",
-                "zh": "传统",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "heritage",
-                "zh": "遗产",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "custom",
-                "zh": "习俗",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "habit",
-                "zh": "习惯",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "routine",
-                "zh": "常规",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "schedule",
-                "zh": "时间表",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "agenda",
-                "zh": "议程",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "calendar",
-                "zh": "日历",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "timeline",
-                "zh": "时间线",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "deadline",
-                "zh": "截止日期",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "period",
-                "zh": "时期，阶段",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "phase",
-                "zh": "阶段，时期",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "stage",
-                "zh": "阶段，舞台",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "generation",
-                "zh": "世代",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "era",
-                "zh": "时代",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "century",
-                "zh": "世纪",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "decade",
-                "zh": "十年",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "annual",
-                "zh": "每年的，年报",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "biannual",
-                "zh": "一年两次的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "quarterly",
-                "zh": "每季度的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "monthly",
-                "zh": "每月的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "weekly",
-                "zh": "每周的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "daily",
-                "zh": "每日的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "hourly",
-                "zh": "每小时的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "duration",
-                "zh": "持续时间",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "span",
-                "zh": "跨度，一段时间",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "interval",
-                "zh": "间隔，休息时间",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "gap",
-                "zh": "差距，隔阂",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pause",
-                "zh": "暂停",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "delay",
-                "zh": "延迟，耽搁",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "extension",
-                "zh": "延长，扩建",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "permanent",
-                "zh": "永久的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "temporary",
-                "zh": "暂时的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "transient",
-                "zh": "短暂的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "brief",
-                "zh": "简短的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "rapid",
-                "zh": "迅速的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "swift",
-                "zh": "快捷的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "gradual",
-                "zh": "逐渐的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "slow",
-                "zh": "缓慢的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "instant",
-                "zh": "立即的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "prompt",
-                "zh": "敏捷的，促使",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "immediate",
-                "zh": "立即的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "current",
-                "zh": "当前的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "contemporary",
-                "zh": "当当代的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "initial",
-                "zh": "最初的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "final",
-                "zh": "最终的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ultimate",
-                "zh": "最终的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "future",
-                "zh": "未来",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "past",
-                "zh": "过去",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ancient",
-                "zh": "古代的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "historical",
-                "zh": "历史的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "modern",
-                "zh": "现代的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "novel",
-                "zh": "新颖的，小说",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "original",
-                "zh": "原始的，独创的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "traditional",
-                "zh": "传统的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "classical",
-                "zh": "古典的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "typical",
-                "zh": "典型的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "average",
-                "zh": "平均的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "normal",
-                "zh": "正常的，正规的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ordinary",
-                "zh": "普通的，平凡的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "common",
-                "zh": "常见的，共同的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "universal",
-                "zh": "普遍的，通用的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "global",
-                "zh": "全球的，全面的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "international",
-                "zh": "国际的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "regional",
-                "zh": "地区的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "local",
-                "zh": "当地的，局部的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "domestic",
-                "zh": "国内的，家庭的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "foreign",
-                "zh": "外国的，外交的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "exotic",
-                "zh": "异国情调的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "native",
-                "zh": "本土的，天生的",
+                "en": "continent",
+                "zh": "大陆，洲",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -9610,309 +6775,134 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "urban",
-                "zh": "城市的",
+                "en": "community",
+                "zh": "社区，群体",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "coastal",
-                "zh": "沿海的",
+                "en": "surf",
+                "zh": "冲浪",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "environmental",
-                "zh": "环境的",
+                "en": "challenge",
+                "zh": "挑战",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "ecological",
-                "zh": "生态的",
+                "en": "opportunity",
+                "zh": "机会，时机",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "cultural",
-                "zh": "文化的",
+                "en": "growth",
+                "zh": "生长，增长，发展",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "social",
-                "zh": "社会的",
+                "en": "determine",
+                "zh": "决定，确定",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "political",
-                "zh": "政治的",
+                "en": "preference",
+                "zh": "偏好，偏爱",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "economic",
-                "zh": "经济的",
+                "en": "secure",
+                "zh": "获得，保护，安全的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "financial",
-                "zh": "金融的",
+                "en": "deposit",
+                "zh": "保证金，押金，存款",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "commercial",
-                "zh": "商业的",
+                "en": "tentatively",
+                "zh": "暂时地，试验性地",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "legal",
-                "zh": "合法的，法律的",
+                "en": "confirm",
+                "zh": "确认，证实",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "official",
-                "zh": "官方的，正式的",
+                "en": "availability",
+                "zh": "可用性，有效性",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "private",
-                "zh": "私人的，私立的",
+                "en": "opening",
+                "zh": "空缺，机会，开端",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "public",
-                "zh": "公共的，大众的",
+                "en": "paperwork",
+                "zh": "文书工作，资料",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "personal",
-                "zh": "个人的，私人的",
+                "en": "mental",
+                "zh": "心理的，精神的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "individual",
-                "zh": "个人的，单独的",
+                "en": "reference",
+                "zh": "推荐信，参考，查阅",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "specific",
-                "zh": "特定的",
+                "en": "review",
+                "zh": "审查，复习，评论",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "particular",
-                "zh": "特定的，挑剔的",
+                "en": "necessary",
+                "zh": "必要的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "unique",
-                "zh": "独特的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "rare",
-                "zh": "罕见的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "scarce",
-                "zh": "缺乏的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "abundant",
-                "zh": "丰富的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sufficient",
-                "zh": "足够的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "adequate",
-                "zh": "充足的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "excess",
-                "zh": "过量的，过剩的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "excessive",
-                "zh": "过多的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "deficit",
-                "zh": "赤字，缺陷",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "lack",
-                "zh": "缺乏",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ignorance",
-                "zh": "无知，愚昧",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "wisdom",
-                "zh": "智慧",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "intelligence",
-                "zh": "智力，情报",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "knowledge",
-                "zh": "知识",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "insight",
-                "zh": "洞察力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "perspective",
-                "zh": "视角，观点",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "viewpoint",
-                "zh": "观点",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "opinion",
-                "zh": "意见，看法",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "belief",
-                "zh": "信念",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "faith",
-                "zh": "信任，信仰",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trust",
-                "zh": "信任",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "confidence",
-                "zh": "信心，把握",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "courage",
-                "zh": "勇气",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pride",
-                "zh": "自豪，骄傲",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "honor",
-                "zh": "荣誉，荣幸",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "glory",
-                "zh": "荣耀",
+                "en": "influencer",
+                "zh": "网红，有影响力的人",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -9925,1002 +6915,71 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "reputation",
-                "zh": "声誉，名望",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "respect",
-                "zh": "尊重，敬意",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dignity",
-                "zh": "尊严",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "integrity",
-                "zh": "正直，完整",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "virtue",
-                "zh": "美德，优点",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "moral",
-                "zh": "道德的，寓意",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ethic",
-                "zh": "伦理，道德",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "justice",
-                "zh": "正义，公正",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "conflict",
-                "zh": "冲突",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dispute",
-                "zh": "争端，纠纷",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "controversy",
-                "zh": "争论，辩论",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "chaos",
-                "zh": "混乱",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "crisis",
-                "zh": "危机",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "disaster",
-                "zh": "灾难",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "catastrophe",
-                "zh": "大灾难",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tragedy",
-                "zh": "悲剧",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "hazard",
-                "zh": "危险，危害",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "threat",
-                "zh": "威胁",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "danger",
-                "zh": "危险",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "risk",
-                "zh": "风险",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fear",
-                "zh": "恐惧，害怕",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "anxiety",
-                "zh": "焦虑",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "stress",
-                "zh": "压力，强调",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "distress",
-                "zh": "痛苦",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sorrow",
-                "zh": "悲伤",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "grief",
-                "zh": "极度悲伤",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "panic",
-                "zh": "恐慌",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "shock",
-                "zh": "震惊",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "relief",
-                "zh": "宽慰，减轻",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "comfort",
-                "zh": "安慰，舒适",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pleasure",
-                "zh": "快乐",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "joy",
-                "zh": "欢乐，喜悦",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "delight",
-                "zh": "高兴",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "satisfaction",
-                "zh": "满意",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "gratitude",
-                "zh": "感激",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "admiration",
-                "zh": "钦佩，赞赏",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "affection",
-                "zh": "喜爱，感情",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sympathy",
-                "zh": "同情",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "empathy",
-                "zh": "共鸣",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "compassion",
-                "zh": "同情，怜悯",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "kindness",
-                "zh": "善良，善意",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "generosity",
-                "zh": "慷慨",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tolerance",
-                "zh": "宽容",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "patience",
-                "zh": "耐心",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "humility",
-                "zh": "谦逊",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "modesty",
-                "zh": "谦虚",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "honesty",
-                "zh": "诚实",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "wisdom",
-                "zh": "智慧",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "creativity",
-                "zh": "创造力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "innovation",
-                "zh": "创新",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "vision",
-                "zh": "远见，视力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ambition",
-                "zh": "雄心，抱负",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "passion",
-                "zh": "激情",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "enthusiasm",
-                "zh": "热情",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "motivation",
-                "zh": "动机，积极性",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "drive",
-                "zh": "驱动力，迫使",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "determination",
-                "zh": "决心",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "perseverance",
-                "zh": "坚持不懈",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "resilience",
-                "zh": "韧性，复原力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "discipline",
-                "zh": "纪律，学科",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "patience",
-                "zh": "耐心",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "caution",
-                "zh": "谨慎",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "attention",
-                "zh": "注意力，关注",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "focus",
-                "zh": "焦点，集中",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "concentration",
-                "zh": "专心，集中",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "awareness",
-                "zh": "意识，知道",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "perception",
-                "zh": "感知，观念",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sensation",
-                "zh": "感觉",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "impression",
-                "zh": "印象",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "memory",
-                "zh": "记忆",
+                "en": "routine",
+                "zh": "常规，例行公事",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "recall",
-                "zh": "回忆",
+                "zh": "回忆，回想",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "recognition",
-                "zh": "认出，赞赏",
+                "en": "audience",
+                "zh": "观众，听众",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "reflection",
-                "zh": "反思，反射",
+                "en": "inspire",
+                "zh": "鼓舞，激起，启发",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "association",
-                "zh": "联想，协会",
+                "en": "drive",
+                "zh": "动力，驱动力，驾驶",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "illusion",
-                "zh": "错觉，幻觉",
+                "en": "modern",
+                "zh": "现代的，摩登的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "fantasy",
-                "zh": "幻想",
+                "en": "traditional",
+                "zh": "传统的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "imagination",
-                "zh": "想象力",
+                "en": "mix",
+                "zh": "混合，结合",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "inspiration",
-                "zh": "灵感",
+                "en": "style",
+                "zh": "风格，款式",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "genius",
-                "zh": "天才",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "talent",
-                "zh": "天赋，才能",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "skill",
-                "zh": "技能，技巧",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "gift",
-                "zh": "礼物，天赋",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ability",
-                "zh": "能力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "capacity",
-                "zh": "容量，能力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "competence",
-                "zh": "能力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "expert",
-                "zh": "专家",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "master",
-                "zh": "掌握，精通",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "explore",
-                "zh": "探索",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "discover",
-                "zh": "发现",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "analyze",
-                "zh": "分析",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "investigate",
-                "zh": "调查",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "observe",
-                "zh": "观察",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "realize",
-                "zh": "意识到，实现",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "recognize",
-                "zh": "认出",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "identify",
-                "zh": "识别，找出",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "identify",
-                "zh": "确认",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "distinguish",
-                "zh": "区分，辨别",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "define",
-                "zh": "定义，界定",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "assume",
-                "zh": "假定，设想",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "predict",
-                "zh": "预测",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "forecast",
-                "zh": "预报，预测",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "estimate",
-                "zh": "估计，估算",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "calculate",
-                "zh": "计算",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "evaluate",
-                "zh": "评估",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "assess",
-                "zh": "评估",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "determine",
-                "zh": "确定，决定",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "judge",
-                "zh": "评判，法官",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "conclude",
-                "zh": "做出结论",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "imply",
-                "zh": "暗示",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "indicate",
-                "zh": "表明，暗示",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "reveal",
-                "zh": "揭露，展现",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "demonstrate",
-                "zh": "证明，展示",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "illustrate",
-                "zh": "说明，阐明",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "explain",
-                "zh": "解释",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "describe",
-                "zh": "描述",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "represent",
-                "zh": "代表",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "symbolize",
-                "zh": "象征",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "signify",
-                "zh": "意味着",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "highlight",
-                "zh": "强调，突出",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "emphasize",
-                "zh": "强调",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "stress",
-                "zh": "强调，压力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "balance",
-                "zh": "平衡",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "contrast",
-                "zh": "对比，对照",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "compare",
-                "zh": "比较",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "match",
-                "zh": "相配，比赛",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "vary",
-                "zh": "变化，不同",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "separate",
-                "zh": "分开，孤立的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "divide",
-                "zh": "分开，分配",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "isolate",
-                "zh": "隔离，孤立",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "link",
-                "zh": "联系，连接",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "connect",
-                "zh": "连接，联合",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "associate",
-                "zh": "联系，交往",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "combine",
-                "zh": "结合，联合",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "integrate",
-                "zh": "结合，融入",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "incorporate",
-                "zh": "包含，吸收",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "include",
-                "zh": "包括",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "exclude",
-                "zh": "排除，不包括",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "list",
-                "zh": "列出，名单",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "detail",
-                "zh": "详情，细节",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "specific",
-                "zh": "具体的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "general",
-                "zh": "一般的，大体的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "universal",
-                "zh": "普遍的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "global",
-                "zh": "全球的",
+                "en": "standout",
+                "zh": "杰出的，突出的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -10933,64 +6992,1464 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "local",
-                "zh": "当地的",
+                "en": "viewer",
+                "zh": "观众，观看者",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "focus",
-                "zh": "聚焦",
+                "en": "amaze",
+                "zh": "使惊奇，使惊叹",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "performance",
+                "zh": "表演，表现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "instrument",
+                "zh": "乐器，仪器，工具",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unfortunate",
+                "zh": "不幸的，遗憾的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "translation",
+                "zh": "翻译，译文",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "root",
+                "zh": "根，根源",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "present",
+                "zh": "呈现，展示，出席的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "confidence",
+                "zh": "信心，自信",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "global",
+                "zh": "全球的，世界的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stage",
+                "zh": "舞台，阶段",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "introduce",
+                "zh": "介绍，引出",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "universal",
+                "zh": "普遍的，通用的，宇宙的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "term",
+                "zh": "术语，学期，条款",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "technique",
+                "zh": "技巧，技术",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "original",
+                "zh": "原始的，独创的，原作",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "composition",
+                "zh": "作品，作文，成分",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expand",
+                "zh": "扩大，扩展",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "limit",
-                "zh": "限制",
+                "zh": "限制，界限",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "restrict",
-                "zh": "限制",
+                "en": "explore",
+                "zh": "探索，探究",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "confine",
-                "zh": "限制，禁闭",
+                "en": "innovative",
+                "zh": "创新的，革新的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "regular",
-                "zh": "规则的",
+                "en": "honest",
+                "zh": "诚实的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "normal",
-                "zh": "正常的",
+                "en": "considerate",
+                "zh": "体贴的，周到的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "generous",
+                "zh": "慷慨的，大方的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "remarkable",
+                "zh": "非凡的，显著的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "migratory",
+                "zh": "迁徙的，流浪的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "maintain",
+                "zh": "维持，保持，维修",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "balance",
+                "zh": "平衡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grand",
+                "zh": "盛大的，宏伟的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "journey",
+                "zh": "旅行，旅程",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "seed",
+                "zh": "种子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "insect",
+                "zh": "昆虫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ecosystem",
+                "zh": "生态系统",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "contribute",
+                "zh": "贡献，促成，投稿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "security",
+                "zh": "安全，保障",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "biologist",
+                "zh": "生物学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bioindicator",
+                "zh": "生物指示物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "avoid",
+                "zh": "避免，躲开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pollute",
+                "zh": "污染",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "valuable",
+                "zh": "有价值的，贵重的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "data",
+                "zh": "数据，资料",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "quality",
+                "zh": "质量，品质，特征",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decrease",
+                "zh": "减少，降低",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "daylight",
+                "zh": "日光，白昼",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "supply",
+                "zh": "供应，供给",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "coastline",
+                "zh": "海岸线",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "resource",
+                "zh": "资源，财力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "impact",
+                "zh": "影响，冲击",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "coastal",
+                "zh": "海岸的，沿海的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stopover",
+                "zh": "中途停留",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "acidity",
+                "zh": "酸度，酸性",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rely",
+                "zh": "依赖，依靠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "extreme",
+                "zh": "极度的，极端的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "weather",
+                "zh": "天气",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "deadly",
+                "zh": "致命的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "temperature",
+                "zh": "温度",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "habitat",
+                "zh": "栖息地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "conflict",
+                "zh": "冲突，矛盾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "species",
+                "zh": "物种",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "adapt",
+                "zh": "适应，改装",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "recommend",
+                "zh": "推荐，建议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "protected",
+                "zh": "保护的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "effort",
+                "zh": "努力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "support",
+                "zh": "支持，拥护",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "promote",
+                "zh": "促进，提升，宣传",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "coexistence",
+                "zh": "共存",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "creation",
+                "zh": "创造，作品",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "reduce",
+                "zh": "减少，降低",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pollution",
+                "zh": "污染",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "glass",
+                "zh": "玻璃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "significant",
+                "zh": "重大的，显著的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crash",
+                "zh": "碰撞，坠毁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "disappear",
+                "zh": "消失",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "upset",
+                "zh": "打乱，使心烦",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "agriculture",
+                "zh": "农业",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "survival",
+                "zh": "生存，幸存",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "depend",
+                "zh": "依靠，取决于",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "future",
+                "zh": "未来",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "task",
+                "zh": "任务",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "title",
+                "zh": "标题",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "climate",
+                "zh": "气候",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "childhood",
+                "zh": "童年",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beloved",
+                "zh": "心爱的，钟爱的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "discover",
+                "zh": "发现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "memory",
+                "zh": "记忆，回忆",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fall short",
+                "zh": "没达到，缺乏，失效",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "case",
+                "zh": "情况，案件",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neuropsychologist",
+                "zh": "神经心理学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "explain",
+                "zh": "解释，说明",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "long-term",
+                "zh": "长期的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "declarative",
+                "zh": "述说的，陈述的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "procedural",
+                "zh": "程序性的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "subtype",
+                "zh": "子类型",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "episodic",
+                "zh": "情景的，偶然发生的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "semantic",
+                "zh": "语义的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "factual",
+                "zh": "事实的，真实的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "acquire",
+                "zh": "获得，学到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "skill",
+                "zh": "技能，技术",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "store",
+                "zh": "储存，商店",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "brain",
+                "zh": "大脑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "theory",
+                "zh": "理论",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suffer",
+                "zh": "遭受，忍受",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "injury",
+                "zh": "伤害，损伤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "steal",
+                "zh": "偷窃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suppose",
+                "zh": "假设，推测",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "process",
+                "zh": "处理，加工，过程",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unharmed",
+                "zh": "未受伤害的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "incident",
+                "zh": "事件，插曲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "without incident",
+                "zh": "平安无事地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "region",
+                "zh": "地区，区域",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "movement",
+                "zh": "运动，移动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pattern",
+                "zh": "模式，图案",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "experience",
+                "zh": "经历，体验",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nerve",
+                "zh": "神经",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cell",
+                "zh": "细胞",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "turnover",
+                "zh": "更替，营业额",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "action",
+                "zh": "行动，行为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "necessarily",
+                "zh": "必然地，必要地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "movie",
+                "zh": "电影",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "moment",
+                "zh": "瞬间，时刻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fail",
+                "zh": "失败，未能",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "match",
+                "zh": "匹配，相配",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flash",
+                "zh": "闪光，闪现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vary",
+                "zh": "改变，不同",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "master",
+                "zh": "精通，掌握",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "swim",
+                "zh": "游泳",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "capital",
+                "zh": "首都，资本",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pick up",
+                "zh": "偶然学到，捡起，接人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "damage",
+                "zh": "损害，破坏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "frequent",
+                "zh": "频繁的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "purpose",
+                "zh": "目的，意图",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "discovery",
+                "zh": "发现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "argue",
+                "zh": "争论，主张",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "particular",
+                "zh": "特定的，挑剔的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "viewpoint",
+                "zh": "观点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "describe",
+                "zh": "描述",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "phenomenon",
+                "zh": "现象",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "depression",
+                "zh": "抑郁，沮丧，萧条",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anxiety",
+                "zh": "焦虑，不安",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "illness",
+                "zh": "疾病",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "teenager",
+                "zh": "青少年",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decade",
+                "zh": "十年",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "contributor",
+                "zh": "促成因素，投稿者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "role",
+                "zh": "角色，作用",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "appear",
+                "zh": "似乎，出现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "choose",
+                "zh": "选择",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "internet",
+                "zh": "互联网",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worldwide",
+                "zh": "全世界地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "connection",
+                "zh": "连接，联系",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "generation",
+                "zh": "代，世代",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "online",
+                "zh": "在线地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "content",
+                "zh": "内容，满意的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "harmful",
+                "zh": "有害的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "survey",
+                "zh": "调查",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cyberbully",
+                "zh": "网络欺凌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "compare",
+                "zh": "比较",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pretty",
+                "zh": "漂亮的，相当地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smart",
+                "zh": "聪明的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cool",
+                "zh": "酷的，凉爽的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "report",
+                "zh": "报告",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "viewing",
+                "zh": "观看",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "surgeon",
+                "zh": "外科医生",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "issue",
+                "zh": "发行，发布，问题",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "warning",
+                "zh": "警告",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "evidence",
+                "zh": "证据",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "psychologist",
+                "zh": "心理学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flag",
+                "zh": "标记，把...标出",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "potential",
+                "zh": "潜在的，潜能",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "conclude",
+                "zh": "得出结论，结束",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "safe",
+                "zh": "安全的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "practice",
+                "zh": "练习，惯例，做法",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anxious",
+                "zh": "焦虑的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "distraction",
+                "zh": "干扰，分心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "include",
+                "zh": "包含",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hateful",
+                "zh": "充满仇恨的，可恶的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "outdoor",
+                "zh": "室外的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "celebrate",
+                "zh": "庆祝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "win",
+                "zh": "胜利，赢得",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perceive",
+                "zh": "感知，理解",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perform",
+                "zh": "表演，履行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beyond",
+                "zh": "超过，在那边",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hometown",
+                "zh": "家乡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ocean",
+                "zh": "海洋",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mountain",
+                "zh": "高山",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "travel",
+                "zh": "旅行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fantasy",
+                "zh": "幻想",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "successfully",
+                "zh": "成功地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "visit",
+                "zh": "访问，参观",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "prove",
+                "zh": "证明",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expiration",
+                "zh": "截止，期满",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "date",
+                "zh": "日期",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "realize",
+                "zh": "意识到，实现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "invitation",
+                "zh": "邀请",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "partnership",
+                "zh": "伙伴关系",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "complete",
+                "zh": "完成",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "record",
+                "zh": "记录",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "oldest",
+                "zh": "最老的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "standard",
-                "zh": "标准的",
+                "zh": "标准",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "average",
-                "zh": "平均的",
+                "en": "goal",
+                "zh": "目标",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "example",
+                "zh": "例子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "broaden",
+                "zh": "拓宽，扩大",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "horizon",
+                "zh": "眼界，地平线",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "further",
+                "zh": "更进一步地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "set out",
+                "zh": "出发，开始",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "originally",
+                "zh": "原始地，起初",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finally",
+                "zh": "终于，最后",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Antarctica",
+                "zh": "南极洲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "destination",
+                "zh": "目的地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rethink",
+                "zh": "重新思考",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11003,6 +8462,13 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "launch",
+                "zh": "发起，发动，发射",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "unique",
                 "zh": "独特的",
                 "pos": "",
@@ -11010,162 +8476,1226 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "rare",
-                "zh": "罕见的",
+                "en": "adventure",
+                "zh": "冒险",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "special",
-                "zh": "特别的",
+                "en": "reach",
+                "zh": "到达",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "particular",
-                "zh": "特定的",
+                "en": "aboard",
+                "zh": "在船上，在机上",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "choice",
-                "zh": "选择",
+                "en": "brave",
+                "zh": "勇敢面对，勇敢的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "preference",
-                "zh": "偏好",
+                "en": "dangerous",
+                "zh": "危险的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "option",
-                "zh": "选项",
+                "en": "landscape",
+                "zh": "景观，风景",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "alternative",
-                "zh": "供选择的",
+                "en": "polar",
+                "zh": "极地的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "decision",
-                "zh": "决定",
+                "en": "breathless",
+                "zh": "屏息的，喘不过气来的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "selection",
-                "zh": "选择",
+                "en": "confused",
+                "zh": "困惑的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "collection",
-                "zh": "收集，收藏",
+                "en": "scared",
+                "zh": "恐惧的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "gathering",
-                "zh": "聚集，聚会",
+                "en": "grateful",
+                "zh": "感激的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "summary",
-                "zh": "总结，摘要",
+                "en": "wildest",
+                "zh": "最疯狂的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "conclusion",
-                "zh": "结论",
+                "en": "possible",
+                "zh": "可能的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "result",
-                "zh": "结果",
+                "en": "profession",
+                "zh": "职业",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "consequence",
-                "zh": "后果",
+                "en": "nationality",
+                "zh": "国籍",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "impact",
-                "zh": "影响",
+                "en": "share",
+                "zh": "分享，共同拥有",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "effect",
-                "zh": "影响，效果",
+                "en": "associate",
+                "zh": "联系，交往",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "outcome",
-                "zh": "结果",
+                "en": "discuss",
+                "zh": "讨论",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "output",
-                "zh": "输出，产量",
+                "en": "exchange",
+                "zh": "交换",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "production",
-                "zh": "生产",
+                "en": "strengthen",
+                "zh": "加强",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "product",
-                "zh": "产品",
+                "en": "bond",
+                "zh": "纽带，联系，结合",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "trust",
+                "zh": "信任",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "position",
+                "zh": "位置，职位",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tech",
+                "zh": "技术，科技",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "giant",
+                "zh": "巨头，巨大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smartphone",
+                "zh": "智能手机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fold",
+                "zh": "折叠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "transform",
+                "zh": "转型，转变",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tablet",
+                "zh": "平板电脑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "commercial",
+                "zh": "商业的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "triple",
+                "zh": "三倍的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "foldable",
+                "zh": "可折叠的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "innovation",
+                "zh": "创新",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "model",
+                "zh": "型号，模型",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flexible",
+                "zh": "柔韧的，灵活的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "touchscreen",
+                "zh": "触摸屏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "direction",
+                "zh": "方向",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unfold",
+                "zh": "展开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "brand",
+                "zh": "品牌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cinema-level",
+                "zh": "影院级的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ratio",
+                "zh": "比率",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "device",
-                "zh": "设备",
+                "zh": "设备，装置",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "instrument",
-                "zh": "乐器",
+                "en": "switch",
+                "zh": "切换，开关",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "automatically",
+                "zh": "自动地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mode",
+                "zh": "模式",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "achieve",
+                "zh": "达到，实现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "novel",
+                "zh": "新颖的，长篇小说",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "joint",
+                "zh": "接头，关节，联合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "track",
+                "zh": "轨道，追踪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enable",
+                "zh": "使能够",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "inward",
+                "zh": "向内的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "outward",
+                "zh": "向外的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "integrated",
+                "zh": "整体的，综合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "connecting",
+                "zh": "连接的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pole",
+                "zh": "杆，极",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "slide",
+                "zh": "滑动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rail",
+                "zh": "铁轨，轨道",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "structure",
+                "zh": "结构",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "overall",
+                "zh": "全部的，总体的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thickness",
+                "zh": "厚度",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "measure",
+                "zh": "测量，尺寸为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "firm",
+                "zh": "公司，坚固的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lineup",
+                "zh": "阵容，产品系列",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "found",
+                "zh": "创立，创建",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "telecommunication",
+                "zh": "电信",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "operate",
+                "zh": "运营，操作，手术",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "carrier",
+                "zh": "运营商，载体",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "producer",
+                "zh": "生产商",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "constant",
+                "zh": "持续的，恒定的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "change",
+                "zh": "改变",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "superior",
+                "zh": "优于...的，上级的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stick",
+                "zh": "坚持，粘贴，木棍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "principle",
+                "zh": "原则",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "prison",
+                "zh": "监狱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pursue",
+                "zh": "追求",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "professional",
+                "zh": "专业地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "excellence",
+                "zh": "卓越",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "continuous",
+                "zh": "持续的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "criminal",
+                "zh": "犯罪的，罪犯",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "innocent",
+                "zh": "无辜的，天真的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "communication",
+                "zh": "通讯，交流",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "account",
+                "zh": "占比，账目，叙述",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "appointment",
+                "zh": "任命，预约",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "manager",
+                "zh": "经理",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "announce",
+                "zh": "宣布",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meeting",
+                "zh": "会议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "face",
+                "zh": "面对",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "confident",
+                "zh": "自信的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expansion",
+                "zh": "扩张",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "subscribe",
+                "zh": "认同，订阅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "belief",
+                "zh": "信仰，信念",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "intelligent",
+                "zh": "聪明的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "figure",
+                "zh": "人物，数字",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vividly",
+                "zh": "生动地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "comparison",
+                "zh": "比较",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "historical",
+                "zh": "历史的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "event",
+                "zh": "事件",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "golden",
+                "zh": "金色的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "holiday",
+                "zh": "假期",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "approach",
+                "zh": "临近，方法",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perfect",
+                "zh": "完美的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meaning",
+                "zh": "意义",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "conduct",
+                "zh": "开展，实施，行为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "initiative",
+                "zh": "倡议书",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "encourage",
+                "zh": "鼓励",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ward",
+                "zh": "病房",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hospital",
+                "zh": "医院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "carrying",
+                "zh": "携带",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worn",
+                "zh": "破旧的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guitar",
+                "zh": "吉他",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "puppet",
+                "zh": "木偶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cancer",
+                "zh": "癌症",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "volunteer",
+                "zh": "志愿者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "entertainer",
+                "zh": "演艺人员，招待者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "laughter",
+                "zh": "笑声",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gentle",
+                "zh": "温柔的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "patient",
+                "zh": "有耐心的，病人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smile",
+                "zh": "微笑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "eventually",
+                "zh": "最终",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "company",
+                "zh": "陪伴，公司",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wild",
+                "zh": "疯狂的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "joy",
+                "zh": "欢乐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clap",
+                "zh": "鼓掌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "song",
+                "zh": "歌曲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "doctor",
+                "zh": "医生",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nurse",
+                "zh": "护士",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "medicine",
+                "zh": "药物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "degree",
+                "zh": "程度",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "notebook",
+                "zh": "笔记本",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clutch",
+                "zh": "紧抓",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "chest",
+                "zh": "胸膛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rarely",
+                "zh": "很少",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "speak",
+                "zh": "说话",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "eye contact",
+                "zh": "眼神接触",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "silent",
+                "zh": "沉默的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "still",
+                "zh": "静止的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "interest",
+                "zh": "兴趣",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "drawing",
+                "zh": "画作",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sky",
+                "zh": "天空",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "star",
+                "zh": "星星",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suit",
+                "zh": "西装",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wing",
+                "zh": "翅膀",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strange",
+                "zh": "奇怪的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "distance",
+                "zh": "距离",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "keep a distance",
+                "zh": "保持距离",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "voice",
+                "zh": "声音",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "silly",
+                "zh": "傻的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "serious",
+                "zh": "严肃的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hat",
+                "zh": "帽子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "reaction",
+                "zh": "反应",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pack up",
+                "zh": "打包，收拾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "notice",
+                "zh": "注意到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nightstand",
+                "zh": "床头柜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "warmth",
+                "zh": "温暖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flood",
+                "zh": "涌入，洪水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "heart",
+                "zh": "心灵，心脏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "note",
+                "zh": "便条",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beside",
+                "zh": "在...旁边",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "imagine",
+                "zh": "想象",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "softly",
+                "zh": "温柔地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "surprise",
+                "zh": "惊奇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "drop",
+                "zh": "掉落，下降",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "years later",
+                "zh": "多年以后",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shyness",
+                "zh": "害羞",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "discomfort",
+                "zh": "不适",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "setting",
+                "zh": "环境，背景",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "prevent",
+                "zh": "阻止，预防",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "personal",
+                "zh": "个人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "social",
+                "zh": "社交的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stranger",
+                "zh": "陌生人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stomach",
+                "zh": "胃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "turn",
+                "zh": "翻转，不适",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "undesirable",
+                "zh": "不受欢的，不良的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "characteristic",
+                "zh": "特征，特点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tackle",
+                "zh": "解决，应付",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11178,141 +9708,57 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "material",
-                "zh": "材料",
+                "en": "individual",
+                "zh": "个人，个体",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "substance",
-                "zh": "物质",
+                "en": "frequently",
+                "zh": "频繁地",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "element",
-                "zh": "元素",
+                "en": "negative",
+                "zh": "负面的，消极的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "context",
-                "zh": "语境",
+                "en": "thought",
+                "zh": "想法，思考",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "background",
-                "zh": "背景",
+                "en": "running through",
+                "zh": "掠过，贯穿",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "profile",
-                "zh": "简介",
+                "en": "awkward",
+                "zh": "尴尬的，笨拙的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "feature",
-                "zh": "特色",
+                "en": "fool",
+                "zh": "傻瓜",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "trait",
-                "zh": "特征",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "character",
-                "zh": "品格",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "quality",
-                "zh": "品质",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "property",
-                "zh": "性能",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "value",
-                "zh": "价值",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "cost",
-                "zh": "成本",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "price",
-                "zh": "价格",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "expense",
-                "zh": "费用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "budget",
-                "zh": "预算",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fund",
-                "zh": "资金",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "secure",
-                "zh": "获得，安全的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "schedule",
-                "zh": "安排",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "routine",
-                "zh": "常规",
+                "en": "self-conscious",
+                "zh": "局促不安的，有自尊心的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11325,50 +9771,1156 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "practice",
-                "zh": "践行",
+                "en": "become aware",
+                "zh": "意识到",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "process",
-                "zh": "过程",
+                "en": "fall victim",
+                "zh": "成为受害者",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "method",
-                "zh": "方法",
+                "en": "logic",
+                "zh": "逻辑",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "approach",
-                "zh": "途径",
+                "en": "approachable",
+                "zh": "容易接近的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "strategy",
-                "zh": "策略",
+                "en": "bitter",
+                "zh": "痛苦的，苦涩的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "target",
-                "zh": "目标",
+                "en": "expression",
+                "zh": "表情",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "unexpected",
-                "zh": "意料之外的",
+                "en": "assumption",
+                "zh": "假设",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lean",
+                "zh": "倾斜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "forward",
+                "zh": "向前",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relaxed",
+                "zh": "放松的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "posture",
+                "zh": "姿势",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sincere",
+                "zh": "真诚的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "compliment",
+                "zh": "赞美",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "over the top",
+                "zh": "太夸张，过头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guarantee",
+                "zh": "保证",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "walk away",
+                "zh": "走开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "positive",
+                "zh": "积极的，正面的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "impression",
+                "zh": "印象",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "interact",
+                "zh": "互动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "progress",
+                "zh": "进步",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "identifiable",
+                "zh": "可识别的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "proudly",
+                "zh": "自豪地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "keep track",
+                "zh": "记录，追踪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "connect",
+                "zh": "联系",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "heartwarming",
+                "zh": "暖心的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tale",
+                "zh": "故事",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stray",
+                "zh": "流浪的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "extraordinary",
+                "zh": "非凡的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spirit",
+                "zh": "精神",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "twist",
+                "zh": "转折，扭曲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "showcase",
+                "zh": "展示",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "human",
+                "zh": "人类",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "marathon",
+                "zh": "马拉松",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "runner",
+                "zh": "跑者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "encounter",
+                "zh": "遭遇，邂逅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tiring",
+                "zh": "累人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "desert",
+                "zh": "沙漠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "race",
+                "zh": "比赛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "endurance",
+                "zh": "耐力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vast",
+                "zh": "辽阔的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "condition",
+                "zh": "条件，状况",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decide",
+                "zh": "决定",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "run alongside",
+                "zh": "一起跑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "day after day",
+                "zh": "日复一日",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finishing line",
+                "zh": "终点线",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "display",
+                "zh": "展示",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "incredible",
+                "zh": "难以置信的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "determination",
+                "zh": "决心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "passing",
+                "zh": "逝去的，经过的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mile",
+                "zh": "英里",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stronger",
+                "zh": "更强",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unbreakable",
+                "zh": "牢不可破的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unconditional",
+                "zh": "无条件的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "delicate",
+                "zh": "微妙的，脆弱的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "overcome",
+                "zh": "克服",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "together",
+                "zh": "一起",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "deeply",
+                "zh": "深深地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "moved",
+                "zh": "感动的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "companionship",
+                "zh": "陪伴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hesitate",
+                "zh": "犹豫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "refuse",
+                "zh": "拒绝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "resolve",
+                "zh": "下定决心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "prefer",
+                "zh": "更喜欢",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bring home",
+                "zh": "带回家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fully",
+                "zh": "完全地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "commit",
+                "zh": "致力于，做出承诺",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "oppose",
+                "zh": "反对",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expose",
+                "zh": "暴露",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mission",
+                "zh": "任务",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relocate",
+                "zh": "搬迁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "therefore",
+                "zh": "因此",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "however",
+                "zh": "然而",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "besides",
+                "zh": "此外",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "instead",
+                "zh": "相反",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "new life",
+                "zh": "新生活",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "seem",
+                "zh": "似乎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "in order",
+                "zh": "整齐，按顺序",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "in place",
+                "zh": "妥当",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "in reach",
+                "zh": "触手可及",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "in vain",
+                "zh": "徒劳",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "disaster",
+                "zh": "灾难",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strike",
+                "zh": "侵袭，打击",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "go missing",
+                "zh": "失踪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "upsetting",
+                "zh": "令人心烦的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "news",
+                "zh": "新闻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shake",
+                "zh": "震惊，摇晃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "core",
+                "zh": "核心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shake to the core",
+                "zh": "深度震惊",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "force",
+                "zh": "迫使",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "allow",
+                "zh": "允许",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "inquire",
+                "zh": "询问",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "board",
+                "zh": "登机，上船",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plane",
+                "zh": "飞机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bound for",
+                "zh": "驶向...，前往...",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ready",
+                "zh": "准备好的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "convenient",
+                "zh": "方便的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "search",
+                "zh": "搜寻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hundreds",
+                "zh": "数百",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flyer",
+                "zh": "传单",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "armed with",
+                "zh": "装备有",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "filled with",
+                "zh": "充满",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "refreshed with",
+                "zh": "恢复精神",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mixed with",
+                "zh": "混合着",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "city",
+                "zh": "城市",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "last seen",
+                "zh": "最后被看见",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "locate",
+                "zh": "找到，定位",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "impossible",
+                "zh": "不可能的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "give up",
+                "zh": "放弃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "against all odds",
+                "zh": "克服一切困难",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bore fruit",
+                "zh": "结出硕果，成功",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "local",
+                "zh": "当地的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "resident",
+                "zh": "居民",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spot",
+                "zh": "发现，瞥见",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ignore",
+                "zh": "忽视",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "doubt",
+                "zh": "怀疑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "contact",
+                "zh": "联系",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "emotional",
+                "zh": "情感的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "reunion",
+                "zh": "重聚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nothing short of",
+                "zh": "简直就是",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "miraculous",
+                "zh": "奇迹般的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anything",
+                "zh": "任何事",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "everything",
+                "zh": "一切",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "something",
+                "zh": "某事",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rush",
+                "zh": "奔跑，冲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "push",
+                "zh": "推",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kick",
+                "zh": "踢",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "struggle",
+                "zh": "挣扎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "towards",
+                "zh": "朝向",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "circle",
+                "zh": "环绕",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "leg",
+                "zh": "腿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "excitedly",
+                "zh": "兴奋地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "jump",
+                "zh": "跳跃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arm",
+                "zh": "手臂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tremble",
+                "zh": "颤抖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "delight",
+                "zh": "高兴，欣喜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sorrow",
+                "zh": "悲伤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "disappointment",
+                "zh": "失望",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guilt",
+                "zh": "内疚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "negotiation",
+                "zh": "谈判",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anchoring effect",
+                "zh": "锚点效应",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tendency",
+                "zh": "倾向",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rely heavily",
+                "zh": "过度依赖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "information",
+                "zh": "信息",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "receive",
+                "zh": "接收",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decision",
+                "zh": "决定",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shape",
+                "zh": "塑造，形状",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thinking",
+                "zh": "思考",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "consider",
+                "zh": "考虑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "landmark",
+                "zh": "里程碑式的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "experiment",
+                "zh": "实验",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pioneer",
+                "zh": "先驱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "behavioral",
+                "zh": "行为的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "economist",
+                "zh": "经济学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "researcher",
+                "zh": "研究员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "participant",
+                "zh": "参与者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "estimate",
+                "zh": "估计",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "percentage",
+                "zh": "百分比",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nation",
+                "zh": "国家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "United Nations",
+                "zh": "联合国",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guess",
+                "zh": "猜测",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spin",
+                "zh": "旋转",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wheel",
+                "zh": "轮子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "randomly",
+                "zh": "随机地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stop",
+                "zh": "停止",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "either",
+                "zh": "或者",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11381,71 +10933,974 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "permanent",
-                "zh": "永久的",
+                "en": "striking",
+                "zh": "引人注目的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "temporary",
-                "zh": "暂时的",
+                "en": "give estimates",
+                "zh": "给出估计",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "higher",
+                "zh": "更高的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "subsequent",
+                "zh": "随后的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "study",
+                "zh": "研究",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "reproduce",
+                "zh": "复制，再现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "culture",
+                "zh": "文化",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "across cultures",
+                "zh": "跨文化",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suggest",
+                "zh": "表明",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rather than",
+                "zh": "而不是",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cultural-specific",
+                "zh": "文化特异的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "everywhere",
+                "zh": "到处",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "daily life",
+                "zh": "日常生活",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shopping",
+                "zh": "购物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suggested",
+                "zh": "建议的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sale price",
+                "zh": "售价",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "serve as",
+                "zh": "充当",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anchor",
+                "zh": "锚点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "salary",
+                "zh": "薪水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mention",
+                "zh": "提到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "final",
+                "zh": "最终的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "agreement",
+                "zh": "协议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "courtroom",
+                "zh": "法庭",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "judge",
+                "zh": "法官",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sentence",
+                "zh": "判刑，句子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "affect",
+                "zh": "影响",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "initial",
-                "zh": "最初的",
+                "zh": "初始的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "dynamic",
-                "zh": "动态的",
+                "en": "recommendation",
+                "zh": "建议",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "constant",
-                "zh": "持续的",
+                "en": "marketing",
+                "zh": "营销",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "automatic",
-                "zh": "自动的",
+                "en": "take advantage of",
+                "zh": "利用",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "digital",
-                "zh": "数字的",
+                "en": "bias",
+                "zh": "偏见",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "reverse",
-                "zh": "颠倒，反转",
+                "en": "discount",
+                "zh": "折扣",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "absent-minded",
-                "zh": "心不在焉的",
+                "en": "substantial",
+                "zh": "实质性的，可观的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "savor",
-                "zh": "细细品尝，含辛茹苦",
+                "en": "powerful",
+                "zh": "强大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "aware",
+                "zh": "意识到的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "first step",
+                "zh": "第一步",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strategy",
+                "zh": "策略",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "seek",
+                "zh": "寻找",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "multiple",
+                "zh": "多重的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rely on",
+                "zh": "依赖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "organization",
+                "zh": "组织",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "evaluation",
+                "zh": "评估",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "continue",
+                "zh": "继续",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scientist",
+                "zh": "科学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "influence",
+                "zh": "影响",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fascinating",
+                "zh": "迷人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "aspect",
+                "zh": "方面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "psychology",
+                "zh": "心理学",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "education",
+                "zh": "教育",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "economics",
+                "zh": "经济学",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "function",
+                "zh": "功能",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "criticize",
+                "zh": "批评",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "summarize",
+                "zh": "总结",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "concept",
+                "zh": "概念",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "demonstrate",
+                "zh": "证明",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "correctly",
+                "zh": "正确地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "behave",
+                "zh": "表现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "differently",
+                "zh": "不同地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "specifically",
+                "zh": "特定地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "western",
+                "zh": "西方的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "author",
+                "zh": "作者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "develop",
+                "zh": "展开，开发",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "explanation",
+                "zh": "解释",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "quote",
+                "zh": "引用",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "attitude",
+                "zh": "态度",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "uninterested",
+                "zh": "不感兴趣的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "supportive",
+                "zh": "支持的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "objective",
+                "zh": "客观的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "uncertain",
+                "zh": "不确定的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "first-time",
+                "zh": "初次的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "foreign",
+                "zh": "外国的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tourist",
+                "zh": "游客",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "head to",
+                "zh": "前往",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "popular",
+                "zh": "受欢迎的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "path",
+                "zh": "道路",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "historic",
+                "zh": "历史性的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scenic spot",
+                "zh": "景区",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "province",
+                "zh": "省份",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "northwest",
+                "zh": "西北",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ancient",
+                "zh": "古老的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Silk Road",
+                "zh": "丝绸之路",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "camera",
+                "zh": "相机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "travel blogger",
+                "zh": "旅游博主",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "colorful",
+                "zh": "色彩鲜艳的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "landform",
+                "zh": "地貌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "timeless",
+                "zh": "永恒的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "appeal",
+                "zh": "吸引力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "corridor",
+                "zh": "走廊",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "long-lasting",
+                "zh": "持久的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guest",
+                "zh": "客人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "conference",
+                "zh": "会议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hold",
+                "zh": "举行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "official",
+                "zh": "官员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "representative",
+                "zh": "代表",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "agency",
+                "zh": "机构",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "social media",
+                "zh": "社交媒体",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beauty",
+                "zh": "美丽",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "development",
+                "zh": "发展",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tourism",
+                "zh": "旅游业",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "deliver",
+                "zh": "带来，交付",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "real-time",
+                "zh": "实时",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "update",
+                "zh": "更新",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "draw",
+                "zh": "吸引，画",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enthusiastic",
+                "zh": "热情的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "response",
+                "zh": "回复",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "follower",
+                "zh": "粉丝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thanks to",
+                "zh": "多亏了",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expanded",
+                "zh": "扩大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "visa-free",
+                "zh": "免签的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "policy",
+                "zh": "政策",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "travel hit",
+                "zh": "旅游热潮",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "famous",
+                "zh": "著名的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lesser-known",
+                "zh": "较少人知的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "full recovery",
+                "zh": "完全康复",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "heart operation",
+                "zh": "心脏手术",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sweep",
+                "zh": "席卷",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neighborhood",
+                "zh": "街区",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "in ruins",
+                "zh": "成为废墟",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "public",
+                "zh": "公众",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pleased",
+                "zh": "高兴的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "free access",
+                "zh": "免费进入",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "exhibition",
+                "zh": "展览",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "previously",
+                "zh": "以前",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "open to",
+                "zh": "开放",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "member",
+                "zh": "会员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "special guest",
+                "zh": "特邀嘉宾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "polluted area",
+                "zh": "污染区域",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "government action",
+                "zh": "政府行动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "public support",
+                "zh": "公众支持",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plain",
+                "zh": "朴素的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "simple",
+                "zh": "简单的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fancy",
+                "zh": "华丽的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decoration",
+                "zh": "装饰",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "desk",
+                "zh": "书桌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "white wall",
+                "zh": "白墙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "university",
+                "zh": "大学",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "typically",
+                "zh": "典型地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "provide",
+                "zh": "提供",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sound",
+                "zh": "健全的，合理的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11458,190 +11913,1709 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "theoretical",
-                "zh": "理论上的",
+                "en": "base",
+                "zh": "基础",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "theoretically",
-                "zh": "理论上地",
+                "en": "higher-level",
+                "zh": "高级的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "transformation",
-                "zh": "转型，转变",
+                "en": "course",
+                "zh": "课程",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "transform",
-                "zh": "改造，转变",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "consume",
-                "zh": "消耗，消费",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "consumption",
-                "zh": "消耗，消费",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "destructive",
-                "zh": "毁灭性的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "destroy",
-                "zh": "毁坏，摧毁",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "continental",
-                "zh": "大陆的，洲的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "continent",
-                "zh": "大陆，大洲",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dramatically",
-                "zh": "戏剧性地，猛烈地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dramatic",
-                "zh": "戏剧性的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ignorance",
-                "zh": "无知",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ignore",
-                "zh": "忽视，不理睬",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "theoretical",
-                "zh": "理论基础",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "companion",
-                "zh": "伙伴，同伴",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "accompany",
+                "en": "accompanied",
                 "zh": "陪伴",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "theoretically",
-                "zh": "理论推导",
+                "en": "loyal",
+                "zh": "忠诚的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "swept",
-                "zh": "席卷，横扫（sweep的过去式）",
+                "en": "spend",
+                "zh": "度过",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "recovery",
-                "zh": "康复",
+                "en": "travelling",
+                "zh": "旅游",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "recover",
-                "zh": "恢复健康",
+                "en": "state",
+                "zh": "国家，州",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "relief",
-                "zh": "欣慰，宽心",
+                "en": "spread",
+                "zh": "传播",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "relieve",
-                "zh": "缓解，减轻",
+                "en": "idea",
+                "zh": "思想",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "extinction",
-                "zh": "灭绝",
+                "en": "discussing",
+                "zh": "讨论",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "extinct",
-                "zh": "灭绝的",
+                "en": "philosophical",
+                "zh": "哲学的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "inclusive",
-                "zh": "包括在内的",
+                "en": "question",
+                "zh": "问题",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "involve",
-                "zh": "涉及，参与",
+                "en": "gradually",
+                "zh": "逐渐地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "energy",
+                "zh": "能源",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "consumption",
+                "zh": "消耗",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "in line with",
+                "zh": "符合",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "requirement",
+                "zh": "要求",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "green economy",
+                "zh": "绿色经济",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hold records",
+                "zh": "保持记录",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "marathon swimming",
+                "zh": "马拉松游泳",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "best known",
+                "zh": "最出名的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "raise awareness",
+                "zh": "提高意识",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "water pollution",
+                "zh": "水污染",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "widely",
+                "zh": "广泛地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dramatically",
+                "zh": "戏剧性地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unexpected",
+                "zh": "出乎意料的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ending",
+                "zh": "结局",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "school newspaper",
+                "zh": "学校报纸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "special column",
+                "zh": "特别专栏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unforgettable",
+                "zh": "难忘的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "taste",
+                "zh": "味道",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "editor",
+                "zh": "编辑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "background",
+                "zh": "背景",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "theme",
+                "zh": "主题",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "word count",
+                "zh": "字数",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "submission",
+                "zh": "投稿方式",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "deadline",
+                "zh": "截止时间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "details",
+                "zh": "细节",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "coherent",
+                "zh": "连贯的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "written expression",
+                "zh": "书面表达",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "character",
+                "zh": "线索",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dream",
+                "zh": "梦想",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "join",
+                "zh": "加入",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dance team",
+                "zh": "舞蹈队",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lack",
+                "zh": "缺乏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "self-confidence",
+                "zh": "自信",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "frustrated",
+                "zh": "沮丧的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "accidental",
+                "zh": "偶然的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "word",
+                "zh": "话语",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "aggravate",
+                "zh": "加剧",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "by chance",
+                "zh": "偶然地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lawn",
+                "zh": "草地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "care about",
+                "zh": "在乎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "obsession",
+                "zh": "执念",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "focus on",
+                "zh": "专注于",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enjoyment",
+                "zh": "享受",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nervousness",
+                "zh": "紧张",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "graceful",
+                "zh": "优雅的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "recognition",
+                "zh": "认可",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "find",
+                "zh": "找到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "happiness",
+                "zh": "快乐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "knock",
+                "zh": "敲门",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "all year long",
+                "zh": "整整一年",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bright lights",
+                "zh": "聚光灯",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "catch",
+                "zh": "抓住",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shaky",
+                "zh": "颤抖的，不稳的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "make it",
+                "zh": "成功",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cut",
+                "zh": "淘汰",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "first round",
+                "zh": "第一轮",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hurt",
+                "zh": "伤害",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stay quiet",
+                "zh": "保持沉默",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bedroom",
+                "zh": "卧室",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "replay",
+                "zh": "重放",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "landing",
+                "zh": "落地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "miss",
+                "zh": "错过",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "step",
+                "zh": "步伐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hit",
+                "zh": "撞击",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "knock over",
+                "zh": "撞翻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fill",
+                "zh": "充满",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wipe",
+                "zh": "擦拭",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sweat",
+                "zh": "汗水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pants",
+                "zh": "裤子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "jacket",
+                "zh": "夹克",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "go for a walk",
+                "zh": "散步",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fresh air",
+                "zh": "新鲜空气",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clear mind",
+                "zh": "清醒头脑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "outside",
+                "zh": "外面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wind",
+                "zh": "风",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sweaty",
+                "zh": "流汗的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "not far away",
+                "zh": "不远处",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soccer ball",
+                "zh": "足球",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "carry",
+                "zh": "传播",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "field",
+                "zh": "田野",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tumble",
+                "zh": "翻滚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grass",
+                "zh": "草地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pop up",
+                "zh": "跳起来",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "instantly",
+                "zh": "立即",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shout",
+                "zh": "喊叫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "failure",
+                "zh": "失败",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mean",
+                "zh": "意味着",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nothing",
+                "zh": "毫无意义",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "slow down",
+                "zh": "放慢脚步",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "watch",
+                "zh": "观看",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worry about",
+                "zh": "担心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "try again",
+                "zh": "再试一次",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "realization",
+                "zh": "意识",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "excited",
+                "zh": "兴奋的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "count",
+                "zh": "计数",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mistake",
+                "zh": "错误",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "move",
+                "zh": "移动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rhythm",
+                "zh": "节奏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "feel",
+                "zh": "感受",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fight",
+                "zh": "对抗",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "text",
+                "zh": "发短信",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wait and see",
+                "zh": "等着瞧",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "on the very day",
+                "zh": "就在当天",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "call",
+                "zh": "叫到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "walk onstage",
+                "zh": "走上舞台",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "calm",
+                "zh": "冷静的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Southeast Asia",
+                "zh": "东南亚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "backpacking",
+                "zh": "背包旅行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tour",
+                "zh": "旅游",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "budget",
+                "zh": "预算",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guide",
+                "zh": "导游",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lead",
+                "zh": "带领",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cover",
+                "zh": "覆盖，涉及",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "must-see",
+                "zh": "必看的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "highlight",
+                "zh": "亮点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hot-spot",
+                "zh": "热点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lifetime",
+                "zh": "一生",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "duration",
+                "zh": "时长",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suitability",
+                "zh": "适宜性",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "general",
+                "zh": "一般的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "level",
+                "zh": "水平",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fitness",
+                "zh": "身体健康",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "require",
+                "zh": "要求",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "age",
+                "zh": "年龄",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "option",
+                "zh": "选择",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "loop",
+                "zh": "环线",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arrival",
+                "zh": "到达",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "begin",
+                "zh": "开始",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arrangement",
+                "zh": "安排",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meet",
+                "zh": "见面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "group",
+                "zh": "团队",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "departure",
+                "zh": "出发",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "depart",
+                "zh": "离开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finish",
+                "zh": "结束",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "accommodation",
+                "zh": "住宿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thoroughly",
+                "zh": "彻底地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "checked",
+                "zh": "检查过的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clean",
+                "zh": "干净的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "comfortable",
+                "zh": "舒适的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expect",
+                "zh": "期待",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "room",
+                "zh": "房间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "upgrade",
+                "zh": "升级",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "extra",
+                "zh": "额外的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pay",
+                "zh": "支付",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arrange",
+                "zh": "安排",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "airport",
+                "zh": "机场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "transfer",
+                "zh": "接送",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "way",
+                "zh": "路线",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "detailed",
+                "zh": "详细的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "list",
+                "zh": "清单",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "prior to",
+                "zh": "在...之前",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "physically-disabled",
+                "zh": "残疾的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unfit",
+                "zh": "不适合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "luxury",
+                "zh": "奢华的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "high-standard",
+                "zh": "高标准的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hotel",
+                "zh": "酒店",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "free of charge",
+                "zh": "免费",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "advertisement",
+                "zh": "广告",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "billboard",
+                "zh": "看板",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "website",
+                "zh": "网站",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "newspaper",
+                "zh": "报纸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "brochure",
+                "zh": "手册",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "honored",
+                "zh": "受尊敬的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "generosity",
+                "zh": "慷慨",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "selfless",
+                "zh": "无私的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "deed",
+                "zh": "行为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ordinary",
+                "zh": "普通的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soldier",
+                "zh": "士兵",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soul",
+                "zh": "灵魂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hero",
+                "zh": "英雄",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "symbolize",
+                "zh": "象征",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "altruism",
+                "zh": "利他主义",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "warmed",
+                "zh": "温暖的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "commitment",
+                "zh": "奉献，承诺",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "social welfare",
+                "zh": "社会福利",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "warmly",
+                "zh": "热情地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "primary",
+                "zh": "主要的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vocational",
+                "zh": "职业的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "school",
+                "zh": "学校",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Canadian",
+                "zh": "加拿大人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Santa",
+                "zh": "圣诞老人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "homeless",
+                "zh": "无家可归的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "child",
+                "zh": "孩子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "environmentalist",
+                "zh": "环保主义者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "serve",
+                "zh": "履行，服务",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "various",
+                "zh": "各种各样的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "team",
+                "zh": "团队",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "settle",
+                "zh": "定居",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "registered",
+                "zh": "注册的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pour",
+                "zh": "倾注",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "majority",
+                "zh": "大多数",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spare time",
+                "zh": "业余时间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "volunteerism",
+                "zh": "志愿服务",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "long",
+                "zh": "渴望",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pass on",
+                "zh": "传递",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nobly",
+                "zh": "高尚地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "continuously",
+                "zh": "连续地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "weekly",
+                "zh": "每周的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "appearance",
+                "zh": "出现，外貌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nursing home",
+                "zh": "养老院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "welfare home",
+                "zh": "福利院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crowded",
+                "zh": "拥挤的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crossway",
+                "zh": "十字路口",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "small",
+                "zh": "小的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "indispensable",
+                "zh": "不可或缺的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "machine",
+                "zh": "机器",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wholeheartedly",
+                "zh": "全心全意地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "people",
+                "zh": "人民",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "go beyond",
+                "zh": "超过",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hours",
+                "zh": "小时",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "value",
+                "zh": "价值",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "noble",
+                "zh": "高尚的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "moral",
+                "zh": "道德的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strength",
+                "zh": "力量",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "towering",
+                "zh": "杰出的，高耸的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "geographic",
+                "zh": "地域的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "limitation",
+                "zh": "限制",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perfectly",
+                "zh": "完美地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "demonstrated",
+                "zh": "展示的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "countless",
+                "zh": "无数的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "achievement",
+                "zh": "成就",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "define",
+                "zh": "定义",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "true worth",
+                "zh": "真正的价值",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "financially",
+                "zh": "经济上地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rewarded",
+                "zh": "得到回报的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "barrier",
+                "zh": "障碍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suitable",
+                "zh": "适合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "invaluable",
+                "zh": "无价的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "virtue",
+                "zh": "美德",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "trend",
+                "zh": "趋势",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11656,15 +13630,99 @@ window.WORD_SNAP_BUILTIN_LISTS = [
         "source": "高二内置词库",
         "words": [
             {
-                "en": "backpack",
-                "zh": "背包旅行，背包",
+                "en": "Southeast",
+                "zh": "东南，东南部",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Asia",
+                "zh": "亚洲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "backpacking",
+                "zh": "背包旅行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tour",
+                "zh": "旅游，巡回",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "explore",
+                "zh": "探索，探究",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "budget",
-                "zh": "预算，低廉的，经济的",
+                "zh": "预算",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "exciting",
+                "zh": "令人兴奋的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Thailand",
+                "zh": "泰国",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Lao",
+                "zh": "老挝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Vietnam",
+                "zh": "越南",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Cambodia",
+                "zh": "柬埔寨",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "experienced",
+                "zh": "经验丰富的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guide",
+                "zh": "导游，向导，指引",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lead",
+                "zh": "带领，引导，导致",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11677,36 +13735,99 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "cover",
+                "zh": "覆盖，涉及，掩护",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "must-see",
+                "zh": "必看的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "highlight",
-                "zh": "最精彩的部分，强调，突出",
+                "zh": "亮点，最精彩部分",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lesser-known",
+                "zh": "较少人知的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hot-spot",
+                "zh": "热点，热门场所",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guarantee",
+                "zh": "保证，担保",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "lifetime",
-                "zh": "终生，一生",
+                "zh": "一生，终生",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "duration",
-                "zh": "持续时间",
+                "zh": "时长，持续时间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "click",
+                "zh": "点击",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "book",
+                "zh": "预订，书籍",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "availability",
-                "zh": "可用性，空闲情况",
+                "zh": "可用性，有效性",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "suitability",
-                "zh": "适合性，适用性",
+                "zh": "适宜性，合适",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "general",
+                "zh": "一般的，普遍的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "level",
+                "zh": "水平，级别",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11719,8 +13840,36 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "require",
+                "zh": "要求，需要",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "option",
-                "zh": "选项，选择",
+                "zh": "选择，选项",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "choose",
+                "zh": "选择，挑选",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "half",
+                "zh": "一半",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "full",
+                "zh": "全部的，满的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11733,8 +13882,43 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "arrival",
+                "zh": "到达",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "begin",
+                "zh": "开始",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Bangkok",
+                "zh": "曼谷",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pick up",
+                "zh": "接人，恢复，偶然学到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Hanoi",
+                "zh": "河内",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "arrangement",
-                "zh": "安排，筹备",
+                "zh": "安排，准备",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11747,8 +13931,22 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "depart",
+                "zh": "离开，出发",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finish",
+                "zh": "结束，完成",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "accommodation",
-                "zh": "住宿，住处",
+                "zh": "住宿，膳宿",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11761,36 +13959,225 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "checked",
+                "zh": "检查过的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clean",
+                "zh": "干净的，清洁的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "comfortable",
+                "zh": "舒适的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expect",
+                "zh": "期待，预期",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "share",
+                "zh": "分享，共同拥有",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "room",
+                "zh": "房间，空间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "upgrade",
-                "zh": "升级，提高档次",
+                "zh": "升级，提高",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "extra",
+                "zh": "额外的，外加的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pay",
+                "zh": "支付，付款",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arrange",
+                "zh": "安排，布置",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "airport",
+                "zh": "机场",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "transfer",
-                "zh": "接送，转移，转让",
+                "zh": "接送，转让，转移",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "way",
+                "zh": "路线，方式",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "detailed",
+                "zh": "详细的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "list",
+                "zh": "清单，列表",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "provide",
+                "zh": "提供，给予",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "prior to",
+                "zh": "在...之前",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tourist",
+                "zh": "游客",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "physically-disabled",
+                "zh": "残疾的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unfit",
+                "zh": "不适合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "luxury",
+                "zh": "奢华的，奢侈",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "high-standard",
+                "zh": "高标准的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hotel",
+                "zh": "酒店",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "free",
+                "zh": "免费的，自由的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "charge",
+                "zh": "收费，控告，负责",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "free of charge",
+                "zh": "免费",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "advertisement",
+                "zh": "广告",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "billboard",
-                "zh": "广告牌",
+                "zh": "广告牌，布告栏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "website",
+                "zh": "网站",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "newspaper",
+                "zh": "报纸",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "brochure",
-                "zh": "小册子，指南",
+                "zh": "手册，小册子",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "honor",
-                "zh": "荣幸，致敬，荣誉",
+                "zh": "尊敬，荣幸",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11824,141 +14211,463 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "soldier",
+                "zh": "士兵",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "extraordinary",
-                "zh": "非凡的，特异的",
+                "zh": "非凡的，特别的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soul",
+                "zh": "灵魂，心灵",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hero",
+                "zh": "英雄",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "symbolize",
-                "zh": "象征，代表",
+                "zh": "象征",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "altruism",
+                "zh": "利他主义",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "foreign",
+                "zh": "外国的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "volunteer",
-                "zh": "志愿者，自愿做",
+                "zh": "志愿者，自愿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "warm",
+                "zh": "温暖，使温暖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "heart",
+                "zh": "心灵，心脏",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "commitment",
-                "zh": "奉献，投入，承诺",
+                "zh": "奉献，承诺",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "social",
+                "zh": "社会的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "welfare",
-                "zh": "福利，幸福",
+                "zh": "福利",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "social welfare",
+                "zh": "社会福利",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "locals",
+                "zh": "当地人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "primary",
+                "zh": "主要的，初级的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "role",
+                "zh": "角色，作用",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "English",
+                "zh": "英语",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "teacher",
+                "zh": "老师",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "vocational",
-                "zh": "职业的，职校的",
+                "zh": "职业的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "school",
+                "zh": "学校",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Wuxi",
+                "zh": "无锡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Jiangsu",
+                "zh": "江苏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "province",
+                "zh": "省份",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Canadian",
+                "zh": "加拿大人的，加拿大人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Santa",
+                "zh": "圣诞老人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "homeless",
+                "zh": "无家可归的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "child",
+                "zh": "孩子",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "environmentalist",
-                "zh": "环境保护主义者",
+                "zh": "环保主义者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "serve",
+                "zh": "履行，服务，服侍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "various",
+                "zh": "各种各样的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "team",
+                "zh": "团队",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "settle",
-                "zh": "定居，安家，解决",
+                "zh": "定居，解决",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "register",
-                "zh": "注册，登记",
+                "en": "registered",
+                "zh": "注册的，登记的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "pour...into...",
-                "zh": "把……倾注于……",
+                "en": "pour",
+                "zh": "倾注，倒",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "majority",
+                "zh": "大多数",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "spare",
-                "zh": "空闲的，抽出（时间）",
+                "zh": "业余的，闲暇的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "energy",
+                "zh": "精力，能量",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spare time",
+                "zh": "业余时间",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "volunteerism",
-                "zh": "志愿服务精神",
+                "zh": "志愿服务",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "noble",
-                "zh": "高尚的，崇高的",
+                "en": "long",
+                "zh": "渴望，长期的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pass on",
+                "zh": "传递，传给",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spirit",
+                "zh": "精神",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "carry",
+                "zh": "承载，携带",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nobly",
+                "zh": "高尚地，崇高地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "past",
+                "zh": "过去的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decade",
+                "zh": "十年",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "continuously",
-                "zh": "连续不断地",
+                "zh": "连续地，持续地",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "expand",
-                "zh": "扩大，扩展",
+                "zh": "扩大，扩张",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "public",
+                "zh": "公共的，公众",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "effort",
-                "zh": "努力，尝试",
+                "zh": "努力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "weekly",
+                "zh": "每周的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "appearance",
-                "zh": "露面，出现，外貌",
+                "zh": "出现，外貌，露面",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "nursing home",
-                "zh": "疗养院，养老院",
+                "zh": "养老院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "welfare home",
+                "zh": "福利院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crowded",
+                "zh": "拥挤的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crossway",
+                "zh": "十字路口",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "scenic",
-                "zh": "风景优美的",
+                "zh": "风景的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "compare...to...",
-                "zh": "把……比作……",
+                "en": "spot",
+                "zh": "地点，场所，瞥见",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scenic spot",
+                "zh": "景区",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "compare",
+                "zh": "比较",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "small",
+                "zh": "小的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "indispensable",
+                "zh": "不可或缺的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "part",
+                "zh": "部分，零件",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "inside",
+                "zh": "在...里面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "machine",
+                "zh": "机器",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -11971,183 +14680,428 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "service",
+                "zh": "服务，服役",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "beyond",
-                "zh": "超过，越过",
+                "zh": "超过，在那边",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hours",
+                "zh": "小时",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "think",
+                "zh": "认为，思考",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "person",
+                "zh": "人",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "judge",
-                "zh": "评判，判断，法官",
+                "zh": "判断",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "do for",
+                "zh": "为...做",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "life",
+                "zh": "生活，生命",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "better",
+                "zh": "更好的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "someone",
+                "zh": "某人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "else",
+                "zh": "其他的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "noble",
+                "zh": "高尚的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "moral",
-                "zh": "道德的，品行",
+                "zh": "道德的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "tower",
-                "zh": "巍峨屹立，超越",
+                "en": "strength",
+                "zh": "力量",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "towering",
+                "zh": "高耸的，杰出的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "geographic",
+                "zh": "地理的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "limitation",
-                "zh": "限制，局限",
+                "zh": "限制",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "demonstrate",
-                "zh": "论证，证明，展示",
+                "en": "perfectly",
+                "zh": "完美地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "demonstrated",
+                "zh": "展示的，论证的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "countless",
-                "zh": "无数的，数不尽的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "throughout",
-                "zh": "遍及，贯穿",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pride",
-                "zh": "自豪，骄傲",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "establish",
-                "zh": "建立，创立",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "essential",
-                "zh": "必不可少的，核心的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "infer",
-                "zh": "推断，推论",
+                "zh": "无数的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "achievement",
-                "zh": "成就，功绩",
+                "zh": "成就",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "define",
-                "zh": "下定义，界定，决定",
+                "zh": "定义",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "value",
+                "zh": "价值",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "true",
+                "zh": "真实的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "worth",
-                "zh": "价值，值得的",
+                "zh": "值得，价值",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "reward",
-                "zh": "奖励，回报",
+                "en": "help",
+                "zh": "帮助",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "financially",
+                "zh": "经济上地，财政上地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rewarded",
+                "zh": "得到回报的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "barrier",
-                "zh": "障碍，隔阂",
+                "zh": "障碍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "limit",
+                "zh": "限制",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "action",
+                "zh": "行动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suitable",
+                "zh": "适合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "title",
+                "zh": "标题",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "invaluable",
-                "zh": "极宝贵的，无价的",
+                "zh": "无价的，极宝贵的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "virtue",
-                "zh": "美德，优秀品质",
+                "zh": "美德",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "modern",
+                "zh": "现代的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "trend",
-                "zh": "趋势，倾向",
+                "zh": "趋势",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "collective",
-                "zh": "集体的，共同的",
+                "en": "spread",
+                "zh": "传播",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "intelligence",
-                "zh": "智慧，智力，情报",
+                "en": "ant",
+                "zh": "蚂蚁",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "violent",
-                "zh": "暴力的，猛烈的",
+                "zh": "暴力的，剧烈的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "predatory",
+                "zh": "食肉的，捕食的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "animal",
+                "zh": "动物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "eat",
+                "zh": "吃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "insect",
+                "zh": "昆虫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sometimes",
+                "zh": "有时",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "frog",
+                "zh": "青蛙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lizard",
+                "zh": "蜥蜴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bird",
+                "zh": "鸟",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "remarkable",
-                "zh": "非凡的，引人注目的",
+                "zh": "非凡的，显著的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "architectural",
-                "zh": "建筑学的，建筑风格的",
+                "zh": "建筑的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "skill",
+                "zh": "技能，技术",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "commonly",
+                "zh": "通常地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Central America",
+                "zh": "中美洲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "South America",
+                "zh": "南美洲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Africa",
+                "zh": "非洲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "search",
+                "zh": "搜寻，寻找",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "forest",
+                "zh": "森林",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "floor",
+                "zh": "地面，地板",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hunting",
+                "zh": "打猎，捕猎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "line",
+                "zh": "路线，排",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "encounter",
-                "zh": "遭遇，遇到",
+                "zh": "遭遇，邂逅",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12160,15 +15114,99 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "leave",
+                "zh": "树叶，离开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "branch",
+                "zh": "树枝，分支",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "build",
+                "zh": "建造",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bridge",
+                "zh": "桥梁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "link",
-                "zh": "连接，联系",
+                "zh": "连接",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "group",
+                "zh": "群体，小组",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "monkey",
+                "zh": "猴子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worker",
+                "zh": "工人",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "string",
-                "zh": "串起，连成串，细绳",
+                "zh": "串联，线绳",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "across",
+                "zh": "跨越",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "walk",
+                "zh": "步行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "top",
+                "zh": "顶部",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "basically",
+                "zh": "基本上",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "create",
+                "zh": "创造",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12181,6 +15219,27 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "easy",
+                "zh": "容易的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "allow",
+                "zh": "允许",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "travel",
+                "zh": "旅行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "otherwise",
                 "zh": "否则，要不然",
                 "pos": "",
@@ -12188,29 +15247,78 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "study",
+                "zh": "研究，学习",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decision-making",
+                "zh": "集体决策，决策",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "intentionally",
-                "zh": "故意地，蓄意地",
+                "zh": "故意地，有意地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "place",
+                "zh": "放置，地方",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "object",
+                "zh": "物体，目标，反对",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "block",
-                "zh": "阻挡，堵塞，街区",
+                "zh": "阻挡，街区",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "greatest",
+                "zh": "最大的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "benefit",
-                "zh": "利益，好处，受益",
+                "zh": "利益，好处，得益",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "least",
-                "zh": "最少的，最小的",
+                "zh": "最少的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "amount",
+                "zh": "数量，总计",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "body",
+                "zh": "身体，尸体",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12224,70 +15332,301 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             },
             {
                 "en": "sweet spot",
-                "zh": "最佳平衡点，理想位置",
+                "zh": "最佳位置，甜点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "large",
+                "zh": "大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enough",
+                "zh": "足够地",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "justify",
-                "zh": "证明……有道理，合理",
+                "zh": "证明...正当，证明...有理",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "influence",
-                "zh": "影响",
+                "en": "power",
+                "zh": "力量，能力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ant power",
+                "zh": "蚁力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "willing",
+                "zh": "乐意的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "invest",
-                "zh": "投入（时间/精力），投资",
+                "zh": "投入，投资",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "individual",
-                "zh": "单个的，单独的，个人",
+                "zh": "个人的，个体",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "brainpower",
-                "zh": "脑力，智能",
+                "en": "important",
+                "zh": "重要",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "importantly",
+                "zh": "重要地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "despite",
+                "zh": "尽管",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "brain",
+                "zh": "大脑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "collectively",
+                "zh": "集体地，共同地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "weigh",
+                "zh": "权衡，称重",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cost",
+                "zh": "成本，代价",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "professor",
+                "zh": "教授",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "engineering",
+                "zh": "工程学",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Georgia",
+                "zh": "乔治亚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cast",
+                "zh": "投射，演员阵容",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "cast light on",
-                "zh": "阐明，使……明朗",
+                "zh": "启发，阐明",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "collective",
+                "zh": "集体的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "intelligence",
+                "zh": "智力，情报",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "army",
+                "zh": "军队",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "army ant",
+                "zh": "军团蚁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neuron",
+                "zh": "神经元",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "moving",
+                "zh": "移动的，感人的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "singular",
-                "zh": "单一的，非凡的",
+                "zh": "单个的，奇异的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decide",
+                "zh": "决定",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "implication",
-                "zh": "影响，暗示，启示",
+                "zh": "启示，含义",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "apply...to...",
-                "zh": "将……应用于……",
+                "en": "human",
+                "zh": "人类",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "technology",
+                "zh": "技术",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "engineer",
+                "zh": "工程师",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "already",
+                "zh": "已经",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "apply",
+                "zh": "应用，申请",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "behavior",
+                "zh": "行为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "learn",
+                "zh": "学习",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "algorithm",
+                "zh": "算法",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "self-assembling",
+                "zh": "自动组装的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "robot",
+                "zh": "机器人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kind",
+                "zh": "种类，善良的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "existence",
+                "zh": "存在",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "proof",
+                "zh": "证据，证明",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12300,29 +15639,281 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "pile up",
-                "zh": "堆积，积累",
+                "en": "interesting",
+                "zh": "有趣的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "problem",
+                "zh": "问题",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "solve",
+                "zh": "解决",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "real world",
+                "zh": "现实世界",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "capable",
+                "zh": "有能力的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "brainpower",
+                "zh": "脑力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pile",
+                "zh": "堆积",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "surrounding",
-                "zh": "周围的，环绕的",
+                "zh": "周围的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stone",
+                "zh": "石头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "connect",
+                "zh": "连接",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "collect",
+                "zh": "收集",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "consider",
+                "zh": "考虑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "factor",
+                "zh": "因素",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "except",
+                "zh": "除了",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "size",
+                "zh": "尺寸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "number",
+                "zh": "数量",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "refer to",
+                "zh": "指的是，参考",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "special",
+                "zh": "特别的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "saying",
+                "zh": "谚语，格言",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "inspire",
+                "zh": "鼓舞，启发",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "working",
+                "zh": "原理，工作的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "principle",
+                "zh": "原则",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "march",
+                "zh": "前进，游行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rain",
+                "zh": "雨",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cook",
+                "zh": "厨师，烹饪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ruin",
+                "zh": "毁灭，毁坏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soup",
+                "zh": "汤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hand",
+                "zh": "手",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "light",
+                "zh": "轻的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "work",
+                "zh": "工作",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "think twice",
+                "zh": "三思",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "act",
+                "zh": "行动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wonder",
+                "zh": "想知道",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hear",
+                "zh": "听到",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "negotiation",
-                "zh": "谈判，商议",
+                "zh": "谈判",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "stick in mind",
-                "zh": "牢记在心，挥之不去",
+                "en": "seem",
+                "zh": "似乎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stick",
+                "zh": "粘住，坚持",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mind",
+                "zh": "头脑，介意",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "psychologist",
+                "zh": "心理学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "call",
+                "zh": "称呼",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12335,22 +15926,99 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "tendency",
-                "zh": "倾向，趋势",
+                "en": "anchoring",
+                "zh": "锚定",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "rely heavily on",
-                "zh": "严重依赖，仰仗",
+                "en": "effect",
+                "zh": "效应，影响",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anchoring effect",
+                "zh": "锚点效应",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tendency",
+                "zh": "倾向",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rely",
+                "zh": "依赖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "heavily",
+                "zh": "过度地，沉重地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "piece",
+                "zh": "碎片，一件",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "information",
+                "zh": "信息",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "receive",
+                "zh": "接收",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "make decisions",
+                "zh": "做决定",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "far",
+                "zh": "远地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shape",
+                "zh": "塑造，形状",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thinking",
+                "zh": "思考",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "landmark",
-                "zh": "里程碑式的，地标",
+                "zh": "里程碑式的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12364,14 +16032,14 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             },
             {
                 "en": "pioneer",
-                "zh": "先驱，倡导者",
+                "zh": "先驱",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "behavioral",
-                "zh": "行为的，行为科学的",
+                "zh": "行为的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12384,78 +16052,295 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "researcher",
+                "zh": "研究员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "participant",
+                "zh": "参与者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "estimate",
-                "zh": "估计，估算",
+                "zh": "估计",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "percentage",
-                "zh": "百分比，百分率",
+                "zh": "百分比",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "African",
+                "zh": "非洲的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nation",
+                "zh": "国家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "United Nations",
+                "zh": "联合国",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guess",
+                "zh": "猜测",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spin",
+                "zh": "旋转",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wheel",
+                "zh": "轮子",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "randomly",
-                "zh": "随机地，任意地",
+                "zh": "随机地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stop",
+                "zh": "停止",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "completely",
+                "zh": "完全地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "random",
+                "zh": "随机的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "result",
+                "zh": "结果",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "striking",
-                "zh": "显著的，惊人的",
+                "zh": "引人注目的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "give estimates",
+                "zh": "给出估计",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "higher",
+                "zh": "更高的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "subsequent",
-                "zh": "随后的，后来的",
+                "zh": "随后的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "reproduce",
-                "zh": "复制，再现，繁殖",
+                "zh": "复制，再现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "same",
+                "zh": "相同的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "culture",
+                "zh": "文化",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "across cultures",
+                "zh": "跨文化",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suggest",
+                "zh": "表明",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "universal",
-                "zh": "普遍的，通用的",
+                "zh": "普遍的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "suggested price",
-                "zh": "建议零售价",
+                "en": "rather than",
+                "zh": "而不是",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "serve as",
-                "zh": "充当，起……作用",
+                "en": "cultural-specific",
+                "zh": "文化特异的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "everywhere",
+                "zh": "到处",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "daily",
+                "zh": "日常的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "daily life",
+                "zh": "日常生活",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shopping",
+                "zh": "购物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "price",
+                "zh": "价格",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "original",
+                "zh": "原始的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suggested",
+                "zh": "建议的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sale price",
+                "zh": "售价",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anchor",
+                "zh": "锚点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "salary",
+                "zh": "薪水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mention",
+                "zh": "提到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "often",
+                "zh": "经常",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "determine",
-                "zh": "决定，确定",
+                "zh": "决定",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "final",
+                "zh": "最终的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "agreement",
-                "zh": "协议，一致意见",
+                "zh": "协议",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12469,42 +16354,70 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             },
             {
                 "en": "sentence",
-                "zh": "判决，宣判",
+                "zh": "判刑，句子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "affect",
+                "zh": "影响",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "initial",
-                "zh": "最初的，开始的",
+                "zh": "初始的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sentencing",
+                "zh": "判刑",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "recommendation",
-                "zh": "建议，推荐",
+                "zh": "建议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "marketing",
+                "zh": "营销",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "professional",
-                "zh": "专业人员，专业的",
+                "zh": "专业人员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "frequently",
+                "zh": "频繁地",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "take advantage of",
-                "zh": "利用，占……便宜",
+                "zh": "利用",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "bias",
-                "zh": "偏见，偏向",
+                "zh": "偏见",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12517,120 +16430,365 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
+                "en": "next to",
+                "zh": "紧邻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sale",
+                "zh": "销售",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "discount",
+                "zh": "折扣",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "appear",
+                "zh": "显得，出现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
                 "en": "substantial",
-                "zh": "大量的，实质性的",
+                "zh": "实质性的，可观的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "powerful",
-                "zh": "强有力的，有影响力的",
+                "zh": "强大的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "overcome",
-                "zh": "克服，战胜",
+                "zh": "克服",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "aware",
-                "zh": "意识到的，察觉的",
+                "zh": "意识到的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "first step",
+                "zh": "第一步",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "strategy",
-                "zh": "策略，计谋",
+                "zh": "策略",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "seek",
-                "zh": "寻找，寻求",
+                "zh": "寻找",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "multiple",
+                "zh": "多重的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "viewpoint",
-                "zh": "观点，视角",
+                "zh": "观点",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "take time",
+                "zh": "花时间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decision",
+                "zh": "决定",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rely on",
+                "zh": "依赖",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "factual",
-                "zh": "基于事实的，真实的",
+                "zh": "事实的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "data",
+                "zh": "数据",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "impression",
-                "zh": "印象，感想",
+                "zh": "印象",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "organization",
-                "zh": "组织，机构",
+                "zh": "组织",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anchor-free",
+                "zh": "无锚点的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "process",
+                "zh": "过程",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "evaluation",
-                "zh": "评估，评价",
+                "zh": "评估",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "explore",
-                "zh": "探索，探究",
+                "en": "continue",
+                "zh": "继续",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scientist",
+                "zh": "科学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "influence",
+                "zh": "影响",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fascinating",
+                "zh": "迷人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "aspect",
+                "zh": "方面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "psychology",
+                "zh": "心理学",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "potential",
-                "zh": "潜在的，潜力",
+                "zh": "潜在的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "application",
-                "zh": "应用，运用，申请",
+                "zh": "应用",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "education",
+                "zh": "教育",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "economics",
+                "zh": "经济学",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "function",
-                "zh": "功能，作用",
+                "zh": "功能",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "paragraph",
+                "zh": "段落",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "introduce",
+                "zh": "介绍",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "criticize",
-                "zh": "批评，指责",
+                "zh": "批评",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "summarize",
+                "zh": "总结",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "concept",
+                "zh": "概念",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "demonstrate",
+                "zh": "证明",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "correctly",
+                "zh": "正确地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "answer",
+                "zh": "回答",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "differently",
+                "zh": "不同地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Western",
+                "zh": "西方的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "author",
+                "zh": "作者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "develop",
+                "zh": "展开，开发",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "example",
+                "zh": "例子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "explanation",
+                "zh": "解释",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "quote",
+                "zh": "引用",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "attitude",
-                "zh": "态度，看法",
+                "zh": "态度",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "uninterested",
+                "zh": "不感兴趣的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "supportive",
+                "zh": "支持的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12650,43 +16808,78 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "二、",
-                "zh": "七选五与完形填空部分",
+                "en": "shyness",
+                "zh": "害羞",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "shyness",
-                "zh": "害羞，胆怯",
+                "en": "feeling",
+                "zh": "感觉",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "discomfort",
-                "zh": "不适，不舒服",
+                "zh": "不适",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "social setting",
-                "zh": "社交场合，环境",
+                "en": "setting",
+                "zh": "环境，背景",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "prevent...from...",
-                "zh": "阻止，阻碍",
+                "en": "prevent",
+                "zh": "阻止，预防",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "personal",
+                "zh": "个人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "goal",
+                "zh": "目标",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stranger",
+                "zh": "陌生人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stomach",
+                "zh": "胃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "turn",
+                "zh": "翻转，不适",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "undesirable",
-                "zh": "不良的，不受欢迎的",
+                "zh": "不受欢迎的，不良的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -12700,462 +16893,714 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             },
             {
                 "en": "tackle",
-                "zh": "应对，解决（难题）",
+                "zh": "解决，应付",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "right",
+                "zh": "正确的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tool",
+                "zh": "工具",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "anxious",
-                "zh": "焦虑的，忧虑的",
+                "zh": "焦虑的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "frequently",
-                "zh": "频繁地，经常",
+                "en": "negative",
+                "zh": "负面的，消极的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thought",
+                "zh": "想法，思考",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "running through",
+                "zh": "掠过，贯穿",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "awkward",
-                "zh": "尴尬的，别扭的",
+                "zh": "尴尬的，笨拙的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fool",
+                "zh": "傻瓜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tell",
+                "zh": "辨别，告诉",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "self-conscious",
-                "zh": "局促不安的，有自知之明的",
+                "zh": "局促不安的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "break the habit",
-                "zh": "改变习惯",
+                "en": "break",
+                "zh": "打破",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "fall victim to",
-                "zh": "成为……的受害者",
+                "en": "habit",
+                "zh": "习惯",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "become aware",
+                "zh": "意识到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fall victim",
+                "zh": "成为受害者",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "challenge",
-                "zh": "质疑，挑战",
+                "zh": "挑战",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "logic",
-                "zh": "逻辑，思维方式",
+                "zh": "逻辑",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "approachable",
-                "zh": "平易近人的，可接近的",
+                "zh": "容易接近的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "approach",
+                "zh": "接近，方法",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "bitter",
-                "zh": "痛苦的，怨恨的（此处指面部表情严厉）",
+                "zh": "痛苦的，苦涩的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expression",
+                "zh": "表情",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "face",
+                "zh": "脸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "desk",
+                "zh": "书桌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "likely",
+                "zh": "可能的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "body language",
+                "zh": "身体语言",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "assumption",
-                "zh": "假定，设想",
+                "zh": "假设",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "speak",
+                "zh": "说话",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sit",
+                "zh": "坐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lean",
+                "zh": "倾斜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "forward",
+                "zh": "向前",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "direction",
+                "zh": "方向",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "keep",
+                "zh": "保持",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "leg",
+                "zh": "腿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arm",
+                "zh": "手臂",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "maintain",
-                "zh": "保持，维持",
+                "zh": "保持",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relaxed",
+                "zh": "放松的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "posture",
-                "zh": "姿势，姿态",
+                "zh": "姿势",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "sincere",
-                "zh": "真诚的，诚挚的",
+                "zh": "真诚的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "compliment",
+                "zh": "赞美",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "over the top",
-                "zh": "太过头，夸张",
+                "zh": "太夸张，过头",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "guarantee",
-                "zh": "保证，担保",
+                "en": "conversation",
+                "zh": "对话",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "start",
+                "zh": "开始",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shirt",
+                "zh": "衬衫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "store",
+                "zh": "商店",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "what's more",
+                "zh": "此外",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "walk away",
+                "zh": "走开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smile",
+                "zh": "微微一笑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "complimenting",
+                "zh": "赞美",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "feel good",
+                "zh": "感觉良好",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "take steps",
+                "zh": "采取步骤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "progress",
+                "zh": "进步",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "broken down",
+                "zh": "分解的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "identifiable",
-                "zh": "可识别的，可确定的",
+                "zh": "可识别的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "keep track of",
-                "zh": "记录，掌握……的线索",
+                "en": "step",
+                "zh": "步骤",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "seek out",
-                "zh": "寻找，搜寻",
+                "en": "proudly",
+                "zh": "自豪地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "keep track",
+                "zh": "记录，追踪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "opportunity",
+                "zh": "机会",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "adjust",
+                "zh": "调整",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "mindset",
-                "zh": "心态，思维模式",
+                "zh": "心态",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "focus",
+                "zh": "聚焦",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "attention",
+                "zh": "注意力",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "outward",
-                "zh": "向外（的）",
+                "zh": "向外",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "practice",
+                "zh": "练习",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "send",
+                "zh": "发送",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "message",
+                "zh": "信息",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "interact",
-                "zh": "互动，交流",
+                "zh": "互动",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "celebrate",
-                "zh": "庆祝，赞美",
+                "zh": "庆祝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "win",
+                "zh": "胜利，收获",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "positive",
+                "zh": "积极的，正面的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "perceive",
-                "zh": "看待，感知，理解",
+                "zh": "感知，看待",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perform",
+                "zh": "表演，履行",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "heartwarming",
-                "zh": "暖心的，感人的",
+                "zh": "暖心的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "tale",
-                "zh": "故事，传说",
+                "zh": "故事",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "stray",
-                "zh": "流浪的，走失的动物",
+                "zh": "流浪的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "bond",
-                "zh": "纽带，情感联系，结合",
+                "en": "dog",
+                "zh": "狗",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "showcase",
-                "zh": "展示，展现",
+                "en": "took",
+                "zh": "采取，花费",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "adventurous",
-                "zh": "充满冒险精神的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tiring",
-                "zh": "累人的，令人疲倦的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "endurance",
-                "zh": "耐力，忍耐力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "vast",
-                "zh": "辽阔的，巨大的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "condition",
-                "zh": "条件，状况，环境",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "display",
-                "zh": "展示，显露",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "determination",
-                "zh": "决心，坚毅",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "companionship",
-                "zh": "陪伴，友谊",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "resolve",
-                "zh": "下定决心（做某事），解决",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "be committed to",
-                "zh": "致力于……，全心投入……",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "mission",
-                "zh": "任务，使命",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "get down to",
-                "zh": "开始认真做，着手处理",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "complicated",
-                "zh": "复杂的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "process",
-                "zh": "过程，进程，加工",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "relocate",
-                "zh": "（使）搬迁，迁移",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "disaster",
-                "zh": "灾难，祸患",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "strike",
-                "zh": "袭击，爆发，罢工",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "upsetting",
-                "zh": "令人心烦意乱的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "shake to the core",
-                "zh": "深度震撼，强烈动摇",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "force",
-                "zh": "强迫，迫使，力量",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "search through",
-                "zh": "搜寻，搜遍",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "locate",
-                "zh": "找到……的位置，定位",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "refuse",
-                "zh": "拒绝",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "against all odds",
-                "zh": "历经艰难险阻，克服一切困难",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "eventually",
-                "zh": "最终，结果",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "bore fruit",
-                "zh": "结出硕果，见成效",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "resident",
-                "zh": "居民",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "contact",
-                "zh": "联系，联络",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "emotional",
-                "zh": "充满情感的，情绪激动的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "reunion",
-                "zh": "重聚，团聚",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "nothing short of",
-                "zh": "简直就是，完全是",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "circle",
-                "zh": "环绕，盘旋，圆圈",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "excitedly",
-                "zh": "兴奋地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tremble",
-                "zh": "颤抖，发抖",
+                "en": "surprising",
+                "zh": "令人惊讶的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "twist",
-                "zh": "转折，转变，缠绕",
+                "zh": "转折，扭曲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "showcase",
+                "zh": "展示",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bond",
+                "zh": "纽带，结合",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "marathon",
+                "zh": "马拉松",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "runner",
+                "zh": "跑者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Scotland",
+                "zh": "苏格兰",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "first",
+                "zh": "第一",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tiring",
+                "zh": "累人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "desert",
+                "zh": "沙漠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "race",
+                "zh": "比赛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "endurance",
+                "zh": "耐力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vast",
+                "zh": "辽阔的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "area",
+                "zh": "区域",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "condition",
+                "zh": "条件，状况",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "run alongside",
+                "zh": "一起跑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "day after day",
+                "zh": "日复一日",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finishing line",
+                "zh": "终点线",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "display",
+                "zh": "展示",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "incredible",
+                "zh": "难以置信的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "determination",
+                "zh": "决心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "passing",
+                "zh": "逝去的，经过的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mile",
+                "zh": "英里",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stronger",
+                "zh": "更强",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "unbreakable",
-                "zh": "不可破裂的，牢不可破的",
+                "zh": "牢不可破的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "significant",
+                "zh": "重大的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13169,140 +17614,637 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             },
             {
                 "en": "delicate",
-                "zh": "微妙的，脆弱的，精美的",
+                "zh": "微妙的，脆弱的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "opposed",
-                "zh": "反对的，对立的",
+                "en": "together",
+                "zh": "一起",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "exposed",
-                "zh": "暴露的，无遮蔽的",
+                "en": "deeply",
+                "zh": "深深地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "moved",
+                "zh": "感动的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "companionship",
+                "zh": "陪伴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bring home",
+                "zh": "带回家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fully",
+                "zh": "完全地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "commit",
+                "zh": "致力于，做出承诺",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "oppose",
+                "zh": "反对",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expose",
+                "zh": "暴露",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mission",
+                "zh": "任务",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "complicated",
+                "zh": "复杂的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relocate",
+                "zh": "搬迁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "therefore",
+                "zh": "因此",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "however",
+                "zh": "然而",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "besides",
+                "zh": "此外",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "instead",
+                "zh": "相反",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "new life",
+                "zh": "新生活",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "in order",
-                "zh": "井然有序，处于良好状态",
+                "zh": "整齐，按顺序",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "in place",
-                "zh": "准备就绪，在正确位置",
+                "zh": "妥当",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "in reach",
-                "zh": "触手可及，能达到",
+                "zh": "触手可及",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "in vain",
-                "zh": "徒劳，白费力气",
+                "zh": "徒劳",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "inspire",
-                "zh": "鼓舞，激励，启发",
+                "en": "disaster",
+                "zh": "灾难",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "inquiring",
-                "zh": "好奇的，探询的",
+                "en": "strike",
+                "zh": "侵袭，打击",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "go missing",
+                "zh": "失踪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "upsetting",
+                "zh": "令人心烦的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "news",
+                "zh": "新闻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shake",
+                "zh": "震惊，摇晃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "core",
+                "zh": "核心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shake to the core",
+                "zh": "深度震惊",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "force",
+                "zh": "迫使",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "inquire",
+                "zh": "询问",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "board",
+                "zh": "登机，上船",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plane",
+                "zh": "飞机",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "bound for",
-                "zh": "前往……，开往……",
+                "zh": "驶向...，前往...",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "be armed with",
-                "zh": "装备有……，备有……",
+                "en": "ready",
+                "zh": "准备好的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "spot",
-                "zh": "看见，发现，斑点，地点",
+                "en": "convenient",
+                "zh": "方便的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "sorrow",
-                "zh": "悲伤，伤心",
+                "en": "hundreds",
+                "zh": "数百",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flyer",
+                "zh": "传单",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "armed with",
+                "zh": "装备有",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "filled with",
+                "zh": "充满",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "refreshed with",
+                "zh": "恢复精神",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mixed with",
+                "zh": "混合着",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "city",
+                "zh": "城市",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "last seen",
+                "zh": "最后被看见",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "locate",
+                "zh": "找到，定位",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "impossible",
+                "zh": "不可能的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "refuse",
+                "zh": "拒绝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "give up",
+                "zh": "放弃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "against all odds",
+                "zh": "克服一切困难",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "eventually",
+                "zh": "最终",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bore fruit",
+                "zh": "结出硕果，成功",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "local",
+                "zh": "当地的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "resident",
+                "zh": "居民",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ignore",
+                "zh": "忽视",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "doubt",
+                "zh": "怀疑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "contact",
+                "zh": "联系",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "emotional",
+                "zh": "情感的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "reunion",
+                "zh": "重聚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nothing short of",
+                "zh": "简直就是",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "miraculous",
+                "zh": "奇迹般的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anything",
+                "zh": "任何事",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "everything",
+                "zh": "一切",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "something",
+                "zh": "某事",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rush",
+                "zh": "奔跑，冲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "push",
+                "zh": "推",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kick",
+                "zh": "踢",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "struggle",
+                "zh": "挣扎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "towards",
+                "zh": "朝向",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "circle",
+                "zh": "环绕",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "excitedly",
+                "zh": "兴奋地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "jump",
+                "zh": "跳跃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "voice",
+                "zh": "声音",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tremble",
+                "zh": "颤抖",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "delight",
-                "zh": "高兴，快乐",
+                "zh": "高兴，欣喜",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "三、",
-                "zh": "语法填空部分",
+                "en": "sorrow",
+                "zh": "悲伤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "disappointment",
+                "zh": "失望",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guilt",
+                "zh": "内疚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tech",
+                "zh": "技术，科技",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "giant",
+                "zh": "巨头，巨大的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "launch",
-                "zh": "发布，投放（市场），启动",
+                "zh": "发布，推出",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smartphone",
+                "zh": "智能手机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fold",
+                "zh": "折叠",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "transform",
-                "zh": "转变，将……改造",
+                "zh": "转型，转变",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tablet",
+                "zh": "平板电脑",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "describe",
-                "zh": "描述，形容",
+                "zh": "描述",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "commercial",
-                "zh": "商业的，商品化的，商业广告",
+                "zh": "商业的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "triple",
+                "zh": "三倍的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "foldable",
+                "zh": "可折叠的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "innovation",
-                "zh": "创新，新事物",
+                "zh": "创新",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "model",
+                "zh": "型号，模型",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13315,29 +18257,43 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "unfold",
-                "zh": "展开，打开，（情节）发展",
+                "en": "touchscreen",
+                "zh": "触摸屏",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "deliver",
-                "zh": "呈现（观影效果），递送，发表",
+                "en": "unfold",
+                "zh": "展开",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "brand",
-                "zh": "品牌，牌子",
+                "zh": "品牌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cinema-level",
+                "zh": "影院级的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "viewing",
+                "zh": "观看",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "ratio",
-                "zh": "比率，比例",
+                "zh": "比率",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13351,70 +18307,119 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             },
             {
                 "en": "switch",
-                "zh": "转换，切换，开关",
+                "zh": "切换，开关",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "automatic",
-                "zh": "自动的",
+                "en": "automatically",
+                "zh": "自动地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mode",
+                "zh": "模式",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "achieve",
-                "zh": "实现，达到",
+                "zh": "达到，实现",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "novel",
-                "zh": "新颖的，珍奇的，小说",
+                "zh": "新颖的，长篇小说",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "joint",
+                "zh": "接头，关节，联合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "track",
+                "zh": "轨道，追踪",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "enable",
-                "zh": "使能够，使可行",
+                "zh": "使能够",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "inward",
-                "zh": "向内（的）",
+                "zh": "向内的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "integrated",
-                "zh": "综合的，一体化的",
+                "zh": "整体的，综合的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "connecting",
+                "zh": "连接的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pole",
+                "zh": "杆，极",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "slide",
+                "zh": "滑动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rail",
+                "zh": "铁轨，轨道",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "structure",
-                "zh": "结构，构造，组织",
+                "zh": "结构",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "reduce",
-                "zh": "减少，降低",
+                "zh": "减少",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "overall",
-                "zh": "全部的，整体的，总共",
+                "zh": "全部的，总体的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13428,7 +18433,14 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             },
             {
                 "en": "measure",
-                "zh": "尺寸为……，测量，措施",
+                "zh": "测量，尺寸为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "firm",
+                "zh": "公司，坚固的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13448,71 +18460,253 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "telecommunications",
-                "zh": "电信，远距离通信",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "firm",
-                "zh": "公司，坚固的",
+                "en": "telecommunication",
+                "zh": "电信",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "operate",
-                "zh": "运营，营业，操作，动手术",
+                "zh": "运营，操作，手术",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "carrier",
-                "zh": "运营商，载体，运输工具",
+                "zh": "运营商，载体",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "producer",
-                "zh": "生产者，制作人",
+                "zh": "生产商",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "四、",
-                "zh": "写作部分",
+                "en": "constant",
+                "zh": "持续的，恒定的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "approaching",
-                "zh": "逼近的，来临的，接近",
+                "en": "change",
+                "zh": "改变",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "significance",
-                "zh": "意义，重要性",
+                "en": "superior",
+                "zh": "优于...的，上级的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "advocate",
-                "zh": "倡议，主张，倡议书",
+                "en": "prison",
+                "zh": "监狱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pursue",
+                "zh": "追求",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "excellence",
+                "zh": "卓越",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "continuous",
-                "zh": "连续的，流贯的",
+                "zh": "持续的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "criminal",
+                "zh": "犯罪的，罪犯",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "innocent",
+                "zh": "无辜的，天真的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "communication",
+                "zh": "通讯，交流",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "account",
+                "zh": "占比，账目，叙述",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "appointment",
+                "zh": "任命，预约",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "manager",
+                "zh": "经理",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "announce",
+                "zh": "宣布",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meeting",
+                "zh": "会议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "confident",
+                "zh": "自信的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expansion",
+                "zh": "扩张",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "subscribe",
+                "zh": "认同，订阅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "belief",
+                "zh": "信仰，信念",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "intelligent",
+                "zh": "聪明的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "figure",
+                "zh": "人物，数字",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vividly",
+                "zh": "生动地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "comparison",
+                "zh": "比较",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "historical",
+                "zh": "历史的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "event",
+                "zh": "事件",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "golden",
+                "zh": "金色的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "holiday",
+                "zh": "假期",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perfect",
+                "zh": "完美的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meaning",
+                "zh": "意义",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "conduct",
+                "zh": "开展，实施，行为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "initiative",
+                "zh": "倡议书",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "encourage",
+                "zh": "鼓励",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13525,43 +18719,71 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "worn",
-                "zh": "破旧的，磨损的",
+                "en": "hospital",
+                "zh": "医院",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "blood cancer",
-                "zh": "血癌（白血病）",
+                "en": "carrying",
+                "zh": "携带",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worn",
+                "zh": "破旧的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guitar",
+                "zh": "吉他",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "puppet",
+                "zh": "木偶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cancer",
+                "zh": "癌症",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "entertainer",
-                "zh": "表演者，娱乐演艺人员",
+                "zh": "演艺人员，招待者",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "laughter",
-                "zh": "笑声，欢乐",
+                "zh": "笑声",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "gentle",
-                "zh": "温柔的，文雅的",
+                "zh": "温柔的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "patient",
-                "zh": "耐心的，病人",
+                "zh": "有耐心的，病人",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13574,78 +18796,218 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "be wild with joy",
-                "zh": "欣喜若狂",
+                "en": "wild",
+                "zh": "疯狂的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "clap along",
-                "zh": "拍手拍掌（随之附和）",
+                "en": "joy",
+                "zh": "欢乐",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "to some degree",
-                "zh": "在某种程度上",
+                "en": "clap",
+                "zh": "鼓掌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "song",
+                "zh": "歌曲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "doctor",
+                "zh": "医生",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nurse",
+                "zh": "护士",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "medicine",
+                "zh": "药物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "degree",
+                "zh": "程度",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "reach",
-                "zh": "触动，打动（内心），到达",
+                "zh": "触及，触动，到达",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "notebook",
+                "zh": "笔记本",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "clutch",
-                "zh": "紧抓，紧握",
+                "zh": "紧抓",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "chest",
+                "zh": "胸膛",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "rarely",
-                "zh": "罕见地，很少",
+                "zh": "很少",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "make eye contact",
-                "zh": "眼神交流，接触",
+                "en": "eye contact",
+                "zh": "眼神接触",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "silent",
-                "zh": "沉默的，无声的",
+                "zh": "沉默的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "still",
-                "zh": "静止的，仍然",
+                "zh": "静止的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "interest",
+                "zh": "兴趣",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "drawing",
+                "zh": "画作",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sky",
+                "zh": "天空",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "star",
+                "zh": "星星",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suit",
+                "zh": "西装",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wing",
+                "zh": "翅膀",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strange",
+                "zh": "奇怪的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "distance",
-                "zh": "距离，疏远",
+                "zh": "距离",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "keep a distance",
+                "zh": "保持距离",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "silly",
+                "zh": "傻的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "serious",
+                "zh": "严肃的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hat",
+                "zh": "帽子",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "reaction",
-                "zh": "反应，回应，回馈",
+                "zh": "反应",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pack up",
+                "zh": "打包，收拾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "notice",
+                "zh": "注意到",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -13658,1555 +19020,64 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "flood into",
-                "zh": "涌入（心中）",
+                "en": "warmth",
+                "zh": "温暖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flood",
+                "zh": "涌入，洪水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "note",
+                "zh": "便条",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beside",
+                "zh": "在...旁边",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "imagine",
-                "zh": "想象，设想",
+                "zh": "想象",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "softly",
+                "zh": "温柔地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "surprise",
+                "zh": "惊奇",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
                 "en": "drop",
-                "zh": "掉落，落下，一滴",
+                "zh": "掉落，下降",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
             },
             {
-                "en": "typically",
-                "zh": "典型地，通常地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "couple",
-                "zh": "夫妻，情侣，两人，两物",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "flexible",
-                "zh": "灵活的，可变通的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "refund",
-                "zh": "退款，偿还",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "due to",
-                "zh": "由于，因为",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "permit",
-                "zh": "许可证，执照，允许",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "routine",
-                "zh": "常规，惯例，例行公事的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "poverty",
-                "zh": "贫困，贫穷",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "application",
-                "zh": "申请，申请表，应用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "carriage",
-                "zh": "马车，车厢",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "harness",
-                "zh": "马具，挽具，控制，利用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sweat",
-                "zh": "汗水，出汗",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "groom",
-                "zh": "刷洗，梳理，新郎",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "choking",
-                "zh": "令人窒息的，呛人的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sting",
-                "zh": "刺痛，叮蜇",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "hardly",
-                "zh": "几乎不，简直不",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "scared",
-                "zh": "害怕的，恐惧的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "budge",
-                "zh": "挪动，移动，改变主意",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "terrified",
-                "zh": "极度恐惧的，吓坏了的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fierce",
-                "zh": "猛烈的，凶猛的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "flicker",
-                "zh": "闪烁，摇曳",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "snort",
-                "zh": "喷鼻息，哼着鼻子表达轻蔑",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "panic",
-                "zh": "惊慌，恐慌",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "steady",
-                "zh": "稳固的，冷静的，使稳定",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pat",
-                "zh": "轻拍，拍打",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "bridle",
-                "zh": "马笼头，马缰绳",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trust",
-                "zh": "信任，信赖",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dart",
-                "zh": "猛冲，飞奔",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trait",
-                "zh": "特征，特点，品质",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ambition",
-                "zh": "抱负，雄心，野心",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "approach",
-                "zh": "方法，接近",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "assign",
-                "zh": "分配，布置",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "chronological",
-                "zh": "按时间顺序的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "incident",
-                "zh": "事件，事变",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "attempt",
-                "zh": "尝试，试图",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "comfort",
-                "zh": "安慰，慰藉",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "escape",
-                "zh": "逃跑，逃脱",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "ride high",
-                "zh": "处于成功的巅峰，非常受欢迎",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "equivalent to",
-                "zh": "相当于……，与……等值",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "roll out",
-                "zh": "推出，开展",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "jostle for",
-                "zh": "争夺，竞争",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "subscriber",
-                "zh": "订阅者，用户",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "access to",
-                "zh": "获得……的机会，获得……的权利，使用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "boast",
-                "zh": "拥有，自夸",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dominant",
-                "zh": "占支配地位的，最主要的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "account for",
-                "zh": "占，解释",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "boom",
-                "zh": "繁荣，激增",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trade body",
-                "zh": "行业协会，行业组织",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "share",
-                "zh": "份额，股份，分享",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pine for",
-                "zh": "渴望，怀念",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fraction",
-                "zh": "极小部分，碎片",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "enthusiastic",
-                "zh": "热情的，热心的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "physical book",
-                "zh": "纸质书",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "point to",
-                "zh": "指向，引导",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "boost",
-                "zh": "促进，推动，激发",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "grip",
-                "zh": "吸引……的注意力，紧握",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "non-fiction",
-                "zh": "非虚构类文学，纪实文学",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fret",
-                "zh": "发愁，苦恼，焦虑",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "drag away",
-                "zh": "吸引走，拉走",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dominance",
-                "zh": "优势，支配地位",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "statistical",
-                "zh": "统计的，统计学的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "component",
-                "zh": "组成部分，成分",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "core business",
-                "zh": "核心业务",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "cooperate",
-                "zh": "合作，协作",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "decline",
-                "zh": "衰落，下降",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "mainstream",
-                "zh": "主流",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "era",
-                "zh": "时代，年代",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "take by storm",
-                "zh": "风靡……，席卷……",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "dedicated to",
-                "zh": "专注于……的，奉献于……的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "icon",
-                "zh": "偶像，符号，象征",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "emerge",
-                "zh": "出现，浮现",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "viral",
-                "zh": "病毒式传播的，疯狂流传的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "heritage",
-                "zh": "遗产，传统",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "background",
-                "zh": "背景",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "interpretation",
-                "zh": "诠释，解释，解读",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "intellectual",
-                "zh": "智力的，理智的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "resonate with",
-                "zh": "与……产生共鸣",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "draw on",
-                "zh": "借鉴，利用",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "engaging",
-                "zh": "迷人的，引人入胜的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "relevant",
-                "zh": "紧密相关的，切题的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "rely heavily on",
-                "zh": "严重依赖……",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "respect",
-                "zh": "尊重，敬意",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "optimistic",
-                "zh": "乐观的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "easy-going",
-                "zh": "随和的，好说话的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "innovative",
-                "zh": "创新的，革新的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "enhance",
-                "zh": "提高，增强",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "echo",
-                "zh": "赞同，附和，回声，呼应，共鸣",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "inspiration",
-                "zh": "灵感，鼓舞人心的人，鼓舞人心的物",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "breathe new life into",
-                "zh": "为……注入新生命",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "raise red flags",
-                "zh": "引起警惕，发出警告信号",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "potential",
-                "zh": "潜在的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "infringement",
-                "zh": "侵权，违背",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "artistic",
-                "zh": "艺术的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "mindful",
-                "zh": "留心的，注意的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "diverse",
-                "zh": "多样的，多元的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "lack",
-                "zh": "缺乏，缺少",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "depth",
-                "zh": "深度，深刻",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "accuracy",
-                "zh": "准确性，精确度",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "stress",
-                "zh": "强调，压力",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "appreciation",
-                "zh": "欣赏，理解，感激",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "revival",
-                "zh": "复兴，再生",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "excel in",
-                "zh": "在……方面擅长，在……方面出众",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "passion",
-                "zh": "热情，激情，酷爱",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "adaptation",
-                "zh": "改编，适应",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "insight",
-                "zh": "洞察力，深刻见解",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trapped",
-                "zh": "陷入困境的，被捕获的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "take charge of",
-                "zh": "掌管，负责，控制",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "back",
-                "zh": "支持，证实",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "trick",
-                "zh": "窍门，恶作剧，欺骗，哄骗",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "schedule",
-                "zh": "安排，排定，时间表",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "whisper",
-                "zh": "低语，耳语",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "physically",
-                "zh": "身体上地，物理上地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "relax",
-                "zh": "放松",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "meditation",
-                "zh": "冥想，打坐",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "reward",
-                "zh": "奖赏，回报",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "impulsive",
-                "zh": "冲动的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "structured",
-                "zh": "有结构的，有条理的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "limit",
-                "zh": "限制，界限",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "overthinking",
-                "zh": "想太多，过度思考",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "snap",
-                "zh": "厉声说，恶狠狠地说，啪地折断",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "therapy",
-                "zh": "治疗，疗法",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pose",
-                "zh": "姿势，造成",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "playfulness",
-                "zh": "趣味性，顽皮",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "puzzle",
-                "zh": "谜题，拼图，使困惑",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "temporary",
-                "zh": "暂时的，临时的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "numbness",
-                "zh": "麻木",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "logical",
-                "zh": "逻辑的，符合逻辑的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "make it",
-                "zh": "获得成功，按时到达",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "forward",
-                "zh": "前锋，向前",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "be committed to",
-                "zh": "全心投入于……，致力于……",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "opportunity",
-                "zh": "机会，时机",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "various",
-                "zh": "各种各样的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "recess",
-                "zh": "课间休息",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "marvel at",
-                "zh": "对……感到惊奇，对……感到惊叹",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "recall",
-                "zh": "回忆起，回想起",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "get enough of",
-                "zh": "享用够，过足瘾",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fulfill",
-                "zh": "实现，履行",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pursue",
-                "zh": "追求，致力于",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "court",
-                "zh": "球场，法庭",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "path",
-                "zh": "道路，途径",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "permanent",
-                "zh": "永久的，长期的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "official",
-                "zh": "官方的，正式的，官员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "addicted",
-                "zh": "上瘾的，沉迷的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "accustomed",
-                "zh": "习惯的，适应的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "promote",
-                "zh": "提升，晋升，促进",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "draft",
-                "zh": "选拔，起草，草稿",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "seize",
-                "zh": "抓住",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "glance",
-                "zh": "扫视，看一眼",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "responsibility",
-                "zh": "责任，职责",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "tease",
-                "zh": "取笑，戏弄",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "get rid of",
-                "zh": "摆脱，除去，处理掉",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "get along with",
-                "zh": "与……相处融洽",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "get through",
-                "zh": "度度过，接通电话",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "delete",
-                "zh": "删除",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "principal",
-                "zh": "校长，主要的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "persuade",
-                "zh": "说服，劝说",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "compete",
-                "zh": "竞争，比赛",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "multiple",
-                "zh": "诸多的，多重的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "identical",
-                "zh": "完全相同的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "strive to do",
-                "zh": "努力做某事，力求做某事",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "revive",
-                "zh": "使复兴，恢复",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "authenticity",
-                "zh": "真实性，真实",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fascination",
-                "zh": "入迷，迷恋",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "unprecedented",
-                "zh": "空前的，史无前例的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "advancement",
-                "zh": "前进，进步，提升",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "compose",
-                "zh": "创作，组成",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "admiration",
-                "zh": "钦佩，赞赏",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "artistry",
-                "zh": "艺术技巧，艺术效果",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "acquire",
-                "zh": "获得，取得",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "exceptionally",
-                "zh": "极其地，异常地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "vessel",
-                "zh": "容器，器皿，船只，血管",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "originate from",
-                "zh": "起源于……，来自……",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "translucent",
-                "zh": "半透明的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "feature",
-                "zh": "以……为特色，特征",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "intricately",
-                "zh": "错综复杂地，精细地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "carve",
-                "zh": "雕刻",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "pattern",
-                "zh": "图案，模式",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "recruit",
-                "zh": "招募，招聘，新兵，新成员",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "renowned",
-                "zh": "著名的，有声望的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "refined",
-                "zh": "精制的，高雅的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "temperament",
-                "zh": "气质，性格",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "virtue",
-                "zh": "美德，品德",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "cease",
-                "zh": "停止，中止",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "resource-intensive",
-                "zh": "资源密集型的，耗费资源的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "subsequently",
-                "zh": "随后，接着",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "prejudice",
-                "zh": "偏见，成见",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "unjust",
-                "zh": "不公正的，不公平的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "outcome",
-                "zh": "结果，结局",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "prioritize",
-                "zh": "优先考虑，优先处理",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "fluent",
-                "zh": "流利的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "anticipate",
-                "zh": "预料，预期",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "opposed",
-                "zh": "反对的，对立的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "initially",
-                "zh": "最初，起初",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "broaden",
-                "zh": "扩大，拓宽",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "perspective",
-                "zh": "视角，观点",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "excuse",
-                "zh": "原谅，为……找借口，借口",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "unintentionally",
-                "zh": "无意地，非故意地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "hinder",
-                "zh": "阻碍，妨碍",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sympathy",
-                "zh": "同情",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "communicate",
-                "zh": "通信，交流",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "respective",
-                "zh": "各自的，分别的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "integrate",
-                "zh": "融入，加入，结合",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "approval",
-                "zh": "批准，通过，赞成",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "view",
-                "zh": "看法，观点，观察",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "call on",
-                "zh": "号召，呼吁",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "log",
-                "zh": "原木，木材，记录",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "lumber",
-                "zh": "木料，木材",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "drag",
-                "zh": "拖，拉，拽",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "remove",
-                "zh": "移开，去除",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "earn one's keep",
-                "zh": "谋生，挣饭吃，维持生计",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "barn",
-                "zh": "谷仓，牲口棚",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "grain",
-                "zh": "谷物，粮食",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "creek",
-                "zh": "小溪，小河",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "grab",
-                "zh": "抓住，夺取",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "clear view",
-                "zh": "清晰的视野，清晰的画面",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "iron shoe",
-                "zh": "马蹄铁",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "injured",
-                "zh": "受伤的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "raise",
-                "zh": "饲养，筹集，养育",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "basin",
-                "zh": "水盆，脸盆",
+                "en": "years later",
+                "zh": "多年以后",
                 "pos": "",
                 "notes": "",
                 "frequency": 0

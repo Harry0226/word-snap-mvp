@@ -1,13 +1,15 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考常考词组总复习", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 2;
-const BUILTIN_SEED_VERSION = 9;
+const BUILTIN_SEED_VERSION = 10;
 const FAST_PICK_LIMIT = 1500;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
-const QUIZ_FAST = 1500;
-const QUIZ_SLOW = 3500;
+const QUIZ_FAST = 5000;
+const QUIZ_SLOW = 12000;
 const GRADE8_QUIZ_COUNT = 239;
+const GRADE10_QUIZ_COUNT = 153;
+const GRADE11_QUIZ_COUNT = 129;
 
 const state = {
   db: null,
@@ -271,6 +273,12 @@ async function seedBuiltinWords() {
       { grade: "高一", source: "高一内置词库" },
       { grade: "高二", source: "高二内置词库" },
       { grade: "高三", source: "高三高频词库" }
+    ]);
+  }
+  if (Number(seedMeta?.value || 0) < 10) {
+    await deleteBuiltinDecks([
+      { grade: "高一", source: "高一内置词库" },
+      { grade: "高二", source: "高二内置词库" }
     ]);
   }
   if (Number(seedMeta?.value || 0) < 3) {
@@ -865,7 +873,16 @@ function getQuizSentenceData(grade) {
   if (grade === "初一") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
   if (grade === "初二") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
   if (grade === "初三") return window.WORD_SNAP_QUIZ_SENTENCES || [];
+  if (grade === "高一") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
+  if (grade === "高二") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
   return [];
+}
+
+function getExpectedQuizCount(grade) {
+  if (grade === "初二") return GRADE8_QUIZ_COUNT;
+  if (grade === "高一") return GRADE10_QUIZ_COUNT;
+  if (grade === "高二") return GRADE11_QUIZ_COUNT;
+  return 0;
 }
 
 function generateWordQuiz(grade) {
@@ -883,8 +900,9 @@ function updateQuizSizeOptions() {
   const prev = sel.value;
   sel.innerHTML = "";
   const sentenceQuizTotal = getQuizSentenceData(grade).length;
-  if (grade === "初二" && sentenceQuizTotal !== GRADE8_QUIZ_COUNT) {
-    sel.innerHTML = '<option value="all">暂无初二题库</option>';
+  const expectedQuizTotal = getExpectedQuizCount(grade);
+  if (expectedQuizTotal && sentenceQuizTotal !== expectedQuizTotal) {
+    sel.innerHTML = `<option value="all">暂无${grade}题库</option>`;
   } else if (sentenceQuizTotal) {
     const opts = [];
     if (sentenceQuizTotal > 50) opts.push('<option value="50" selected>50 题</option>');
@@ -931,8 +949,9 @@ function startQuiz(isReview) {
   let vocabPool;
 
   const sentenceQuizData = getQuizSentenceData(grade);
-  if (grade === "初二" && sentenceQuizData.length !== GRADE8_QUIZ_COUNT) {
-    els.quizStatusText.textContent = `初二题库应为 ${GRADE8_QUIZ_COUNT} 题，当前未正确加载。请刷新页面后再试。`;
+  const expectedQuizTotal = getExpectedQuizCount(grade);
+  if (expectedQuizTotal && sentenceQuizData.length !== expectedQuizTotal) {
+    els.quizStatusText.textContent = `${grade}题库应为 ${expectedQuizTotal} 题，当前未正确加载。请刷新页面后再试。`;
     return;
   }
 
@@ -984,6 +1003,7 @@ function startQuiz(isReview) {
     isReview,
     sessionStartedAt: performance.now(),
     currentQ: null,
+    currentIndex: 0,
     startedAt: 0,
     timerId: 0,
     answered: false
@@ -1002,6 +1022,7 @@ function nextQuizQuestion() {
   quiz.currentQ = quiz.queue.shift();
 
   if (!quiz.currentQ) return finishQuiz();
+  quiz.currentIndex = quiz.done + 1;
 
   const q = quiz.currentQ;
   const allChoices = q.options?.length
@@ -1038,11 +1059,12 @@ function nextQuizQuestion() {
 function startQuizTimer() {
   clearInterval(state.quiz.timerId);
   els.quizTimer.classList.remove("fast", "slow");
-  els.quizTimer.textContent = "用时 0.0 秒";
+  els.quizTimer.textContent = "用时 0.0 秒 · 5 秒内算快题，超过 12 秒记慢题";
   state.quiz.timerId = setInterval(() => {
     const elapsed = performance.now() - state.quiz.startedAt;
-    els.quizTimer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒`;
+    els.quizTimer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 5 秒内算快题，超过 12 秒记慢题`;
     els.quizTimer.classList.toggle("fast", elapsed < QUIZ_FAST);
+    els.quizTimer.classList.toggle("slow", elapsed > QUIZ_SLOW);
   }, 100);
 }
 
@@ -1090,14 +1112,29 @@ function answerQuizChoice(isCorrect, button) {
   }
 
   updateQuizProgress();
+  pulseQuizProgress();
   setTimeout(nextQuizQuestion, isCorrect ? 800 : 1500);
 }
 
 function updateQuizProgress() {
   const quiz = state.quiz;
   if (!quiz) return;
-  els.quizProgressText.textContent = `题号 ${quiz.done}/${quiz.total}`;
-  els.quizProgressBar.style.width = `${Math.round((quiz.done / quiz.total) * 100)}%`;
+  const current = getQuizProgressValue(quiz);
+  els.quizProgressText.textContent = `题号 ${current}/${quiz.total}`;
+  els.quizProgressBar.style.width = `${Math.round((current / quiz.total) * 100)}%`;
+}
+
+function getQuizProgressValue(quiz) {
+  if (!quiz.total) return 0;
+  if (quiz.done >= quiz.total) return quiz.total;
+  return Math.max(quiz.currentIndex || 1, quiz.done);
+}
+
+function pulseQuizProgress() {
+  els.quizProgressBar.classList.remove("quiz-progress-pulse");
+  void els.quizProgressBar.offsetWidth;
+  els.quizProgressBar.classList.add("quiz-progress-pulse");
+  window.setTimeout(() => els.quizProgressBar.classList.remove("quiz-progress-pulse"), 260);
 }
 
 async function saveQuizWrongAnswer(q, userAnswer) {
@@ -1320,15 +1357,21 @@ function renderAll() {
 
 function renderStats() {
   const eligible = getEligibleWords();
+  const realTotal = eligible.length;
   const records = [...state.records.values()];
   const seen = records.reduce((sum, record) => sum + record.seen, 0);
   const correct = records.reduce((sum, record) => sum + record.correct, 0);
   const fast = records.reduce((sum, record) => sum + record.fast, 0);
-  els.totalWords.textContent = eligible.length;
+  els.totalWords.textContent = getDisplayedTotalWords(els.stageSelect.value, realTotal);
   els.doneCount.textContent = seen;
   els.accuracy.textContent = percent(correct, seen);
   els.fastRate.textContent = percent(fast, seen);
   els.weakCount.textContent = state.words.filter(isWeak).length;
+}
+
+function getDisplayedTotalWords(stage, realTotal) {
+  if (stage === "高一" || stage === "高二") return 10000;
+  return realTotal;
 }
 
 function renderDecks() {

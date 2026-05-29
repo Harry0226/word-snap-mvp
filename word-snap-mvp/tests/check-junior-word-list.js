@@ -25,7 +25,7 @@ assert.strictEqual(JSON.stringify(meta.goals), JSON.stringify(["初三"]), "new 
 assert(!juniorSource.includes("中考冲刺"), "old exam sprint stage should be removed from junior word data");
 assert(!juniorSource.includes("近五年中考结合最新一模"), "old exam source name should be removed from junior word data");
 assert(!juniorSource.includes("初三刷题词库"), "old junior source name should be removed from junior word data");
-assert(app.includes("BUILTIN_SEED_VERSION = 9"), "builtin seed version should be bumped for existing browsers");
+assert(app.includes("BUILTIN_SEED_VERSION = 10"), "builtin seed version should be bumped for existing browsers");
 assert(app.includes('"初三核心词库"'), "app should seed the new junior source name");
 assert(app.includes("deleteRecordsForMissingWords"), "old builtin records should be removed after reseeding");
 assert(!builtinSource.includes('"source":  "初三刷题词库"'), "old junior builtin deck should not remain in builtin lists");

@@ -30,6 +30,6 @@ assert(phraseWords.some((word) => word.en === "pay attention to (doing) sth."), 
 assert(phraseWords.some((word) => word.en === "would rather do sth. than do sth."), "phrase deck should split the first expression in item 3");
 assert(phraseWords.some((word) => word.en === "prefer (doing) sth. to (doing) sth."), "phrase deck should split the second expression in item 3");
 assert(phraseWords.some((word) => word.en === "remind sb. of sth."), "phrase deck should include the final phrase");
-assert(app.includes("BUILTIN_SEED_VERSION = 9"), "builtin seed version should be bumped for existing browsers");
+assert(app.includes("BUILTIN_SEED_VERSION = 10"), "builtin seed version should be bumped for existing browsers");
 
 console.log("phrase review stage checks passed");

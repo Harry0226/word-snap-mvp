@@ -11,8 +11,8 @@ vm.runInContext(builtinSource, sandbox);
 
 const lists = sandbox.window.WORD_SNAP_BUILTIN_LISTS || [];
 const expected = [
-  { grade: "高一", source: "高一内置词库", count: 700, first: "acceptance", last: "involve" },
-  { grade: "高二", source: "高二内置词库", count: 508, first: "backpack", last: "basin" },
+  { grade: "高一", source: "高一内置词库", count: 982, first: "adventurous", last: "trend" },
+  { grade: "高二", source: "高二内置词库", count: 779, first: "Southeast", last: "years later" },
   { grade: "高三", source: "高三高频词库", count: 730, first: "contemporary", last: "solution" }
 ];
 
@@ -26,8 +26,8 @@ for (const deck of expected) {
   assert.strictEqual(list.words.at(-1).en, deck.last, `${deck.grade} last word should come from the 5.26 file`);
 }
 
-assert(app.includes("BUILTIN_SEED_VERSION = 9"), "builtin seed version should be bumped for senior deck replacement");
-assert(app.includes("Number(seedMeta?.value || 0) < 9"), "existing browsers should reseed the senior deck update");
+assert(app.includes("BUILTIN_SEED_VERSION = 10"), "builtin seed version should be bumped for senior deck replacement");
+assert(app.includes("Number(seedMeta?.value || 0) < 10"), "existing browsers should reseed the senior deck update");
 assert(app.includes('{ grade: "高一", source: "高一内置词库" }'), "old 高一 builtin words should be cleared before reseeding");
 assert(app.includes('{ grade: "高二", source: "高二内置词库" }'), "old 高二 builtin words should be cleared before reseeding");
 assert(app.includes('{ grade: "高三", source: "高三高频词库" }'), "old 高三 builtin words should be cleared before reseeding");

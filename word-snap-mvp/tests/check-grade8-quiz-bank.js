@@ -9,7 +9,7 @@ assert(index.includes('src="./word-data/quiz-grade8-sentences.js?v='), "index sh
 assert(fs.existsSync("word-data/quiz-grade8-sentences.js"), "grade 8 quiz data file should exist");
 assert(app.includes("const GRADE8_QUIZ_COUNT = 239;"), "app should pin the grade 8 quiz bank to 239 questions");
 assert(app.includes('if (grade === "初二") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];'), "app should read the dedicated grade 8 sentence quiz bank");
-assert(app.includes('grade === "初二" && sentenceQuizTotal !== GRADE8_QUIZ_COUNT'), "grade 8 quiz should not fall back to generated builtin questions");
+assert(app.includes('if (grade === "初二") return GRADE8_QUIZ_COUNT;'), "grade 8 quiz should not fall back to generated builtin questions");
 
 const sandbox = { window: {} };
 vm.createContext(sandbox);
