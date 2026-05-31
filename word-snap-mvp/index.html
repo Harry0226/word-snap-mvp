@@ -9,15 +9,10 @@
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
   <link rel="stylesheet" href="./styles.css?v=20260522-mobile">
-  <script defer src="./word-data/junior-exam-words.js?v=20260525-junior1887"></script>
+  <script defer src="./word-data/junior-exam-words.js?v=20260601-0109-junior775"></script>
   <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
-  <script defer src="./word-data/quiz-sentences.js?v=20260522-quiz"></script>
-  <script defer src="./word-data/quiz-grade7-sentences.js?v=20260524-grade7"></script>
-  <script defer src="./word-data/quiz-grade8-sentences.js?v=20260525-grade8"></script>
-  <script defer src="./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz"></script>
-  <script defer src="./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"></script>
-  <script defer src="./word-data/builtin-word-lists.js?v=20260530-senior-final"></script>
-  <script defer src="./app.js?v=20260530-senior-final"></script>
+  <script defer src="./word-data/builtin-word-lists.js?v=20260601-0109-grade71002"></script>
+  <script defer src="./app.js?v=20260601-quiz-lazy"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -72,11 +67,9 @@
         </label>
         <label>训练模式
           <select id="practiceMode">
-            <option value="enToZhChoice" selected>看英文选中文</option>
-            <option value="zhToEnChoice">看中文选英文</option>
-            <option value="enToZhType">看英文说中文</option>
-            <option value="zhToEnType">看中文说英文</option>
-            <option value="auto">按阶段自动</option>
+            <option value="zhToEnChoice" selected>看中文选英文</option>
+            <option value="enToZhChoice">看英文选中文</option>
+            <option value="auto">智能双选</option>
           </select>
         </label>
         <button id="startBtn" type="button">开始训练</button>
@@ -122,10 +115,6 @@
         </article>
         <div id="timer" class="timer">用时 0.0 秒 · 1.5 秒内算秒选，超过 3.5 秒记慢词</div>
         <div id="choices" class="choices"></div>
-        <form id="typingPanel" class="typing-panel" hidden>
-          <input id="typingAnswer" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="输入答案">
-          <button type="submit">确认</button>
-        </form>
         <div class="feedback-row">
           <p id="feedback">练习记录只保存在本机浏览器，不会上传。</p>
           <button id="skipBtn" type="button" disabled>不会</button>
@@ -312,7 +301,7 @@
             <select id="quizSize">
               <option value="100" selected>100 题</option>
               <option value="150">150 题</option>
-              <option value="all">全部 304 题</option>
+              <option value="all">全部 340 题</option>
             </select>
           </label>
           <button id="startQuizBtn" type="button">开始刷题</button>

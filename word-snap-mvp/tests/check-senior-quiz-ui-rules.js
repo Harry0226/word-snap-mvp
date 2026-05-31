@@ -16,8 +16,9 @@ assert(styles.includes("quiz-progress-pulse"), "quiz progress should support a s
 assert(app.includes("quiz-progress-pulse"), "answering a quiz question should trigger visible progress feedback");
 
 assert(app.includes("getDisplayedTotalWords"), "stats should separate displayed count from real eligible word count");
-assert(app.includes('stage === "高一" || stage === "高二"'), "高一/高二 should use the 10000 display easter egg");
-assert(app.includes("return 10000"), "高一/高二 current word count should display 10000 only in the stats card");
+assert(!app.includes('if (stage === "初二") return 5650;'), "初二 should no longer have a hardcoded count");
+assert(!app.includes('if (stage === "初三") return 18870;'), "初三 should no longer have a hardcoded count");
+assert(app.includes('if (stage === "高一" || stage === "高二") return 10000;'), "高一/高二 should keep the 10000 display easter egg");
 assert(app.includes("const realTotal = eligible.length"), "real eligible word count should remain available for training logic");
 assert(index.includes("<span>当前词汇</span>"), "the existing stats card label should remain unchanged");
 

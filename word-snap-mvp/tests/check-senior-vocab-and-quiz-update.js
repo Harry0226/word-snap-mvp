@@ -39,12 +39,14 @@ for (const question of [...grade10Quiz, ...grade11Quiz]) {
   assert(question.sentence.includes("______"), `${question.id} should render as a blank question`);
 }
 
-assert(index.includes("quiz-grade10-sentences.js?v="), "index should load 高一 quiz data with a versioned URL");
-assert(index.includes("quiz-grade11-sentences.js?v="), "index should load 高二 quiz data with a versioned URL");
+assert(!index.includes('src="./word-data/quiz-grade10-sentences.js?v='), "index should not block first paint with 高一 quiz data");
+assert(!index.includes('src="./word-data/quiz-grade11-sentences.js?v='), "index should not block first paint with 高二 quiz data");
+assert(app.includes('"高一": "./word-data/quiz-grade10-sentences.js?v='), "app should lazily load 高一 quiz data with a versioned URL");
+assert(app.includes('"高二": "./word-data/quiz-grade11-sentences.js?v='), "app should lazily load 高二 quiz data with a versioned URL");
 assert(app.includes('if (grade === "高一") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];'), "高一 quiz should read the dedicated quiz bank");
 assert(app.includes('if (grade === "高二") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];'), "高二 quiz should read the dedicated quiz bank");
 assert(app.includes("GRADE10_QUIZ_COUNT = 153"), "高一 quiz should have a load guard");
 assert(app.includes("GRADE11_QUIZ_COUNT = 129"), "高二 quiz should have a load guard");
-assert(app.includes("BUILTIN_SEED_VERSION = 10"), "builtin seed version should be bumped for 高一/高二 replacement");
+assert(app.includes("BUILTIN_SEED_VERSION = 13"), "builtin seed version should be bumped for 高一/高二 replacement");
 
 console.log("senior vocab and quiz update checks passed");

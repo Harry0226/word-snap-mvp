@@ -5,9 +5,10 @@ const assert = require("assert");
 const index = fs.readFileSync("index.html", "utf8");
 const app = fs.readFileSync("app.js", "utf8");
 
-assert(index.includes('src="./word-data/quiz-grade8-sentences.js?v='), "index should load the grade 8 quiz bank");
+assert(!index.includes('src="./word-data/quiz-grade8-sentences.js?v='), "index should not block first paint with the grade 8 quiz bank");
 assert(fs.existsSync("word-data/quiz-grade8-sentences.js"), "grade 8 quiz data file should exist");
 assert(app.includes("const GRADE8_QUIZ_COUNT = 239;"), "app should pin the grade 8 quiz bank to 239 questions");
+assert(app.includes('"初二": "./word-data/quiz-grade8-sentences.js?v='), "app should lazily load the grade 8 quiz bank with a versioned URL");
 assert(app.includes('if (grade === "初二") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];'), "app should read the dedicated grade 8 sentence quiz bank");
 assert(app.includes('if (grade === "初二") return GRADE8_QUIZ_COUNT;'), "grade 8 quiz should not fall back to generated builtin questions");
 

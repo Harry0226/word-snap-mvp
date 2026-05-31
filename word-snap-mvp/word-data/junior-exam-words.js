@@ -1,2763 +1,2763 @@
 window.WORD_SNAP_WORDS = [
   {
     "id": 1,
-    "en": "people",
+    "en": "traffic",
     "pos": "",
-    "zh": "人们，人",
+    "zh": "交通",
     "notes": "",
     "frequency": 0,
     "sourceRow": 1
   },
   {
     "id": 2,
-    "en": "like",
+    "en": "rule",
     "pos": "",
-    "zh": "喜欢，像",
+    "zh": "规则，规章",
     "notes": "",
     "frequency": 0,
     "sourceRow": 2
   },
   {
     "id": 3,
-    "en": "china",
+    "en": "helmet",
     "pos": "",
-    "zh": "中国",
+    "zh": "头盔",
     "notes": "",
     "frequency": 0,
     "sourceRow": 3
   },
   {
     "id": 4,
-    "en": "make",
+    "en": "ride",
     "pos": "",
-    "zh": "制造，做，使得",
+    "zh": "骑，驾驶",
     "notes": "",
     "frequency": 0,
     "sourceRow": 4
   },
   {
     "id": 5,
-    "en": "time",
+    "en": "busy",
     "pos": "",
-    "zh": "时间，次数，时代",
+    "zh": "忙碌的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 5
   },
   {
     "id": 6,
-    "en": "different",
+    "en": "naturally",
     "pos": "",
-    "zh": "不同的",
+    "zh": "自然地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 6
   },
   {
     "id": 7,
-    "en": "said",
+    "en": "memory",
     "pos": "",
-    "zh": "说（say的过去式）",
+    "zh": "记忆，回忆",
     "notes": "",
     "frequency": 0,
     "sourceRow": 7
   },
   {
     "id": 8,
-    "en": "brain",
+    "en": "forget",
     "pos": "",
-    "zh": "大脑，脑力",
+    "zh": "忘记",
     "notes": "",
     "frequency": 0,
     "sourceRow": 8
   },
   {
     "id": 9,
-    "en": "suzhou",
+    "en": "gravity",
     "pos": "",
-    "zh": "苏州（中国城市）",
+    "zh": "重力，引力",
     "notes": "",
     "frequency": 0,
     "sourceRow": 9
   },
   {
     "id": 10,
-    "en": "world",
+    "en": "documentary",
     "pos": "",
-    "zh": "世界",
+    "zh": "纪录片",
     "notes": "",
     "frequency": 0,
     "sourceRow": 10
   },
   {
     "id": 11,
-    "en": "day",
+    "en": "plastic",
     "pos": "",
-    "zh": "天，日子",
+    "zh": "塑料",
     "notes": "",
     "frequency": 0,
     "sourceRow": 11
   },
   {
     "id": 12,
-    "en": "school",
+    "en": "ocean",
     "pos": "",
-    "zh": "学校",
+    "zh": "海洋",
     "notes": "",
     "frequency": 0,
     "sourceRow": 12
   },
   {
     "id": 13,
-    "en": "chinese",
+    "en": "impressive",
     "pos": "",
-    "zh": "中国的，中文",
+    "zh": "给人深刻印象的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 13
   },
   {
     "id": 14,
-    "en": "know",
+    "en": "holiday",
     "pos": "",
-    "zh": "知道，了解",
+    "zh": "假期，节日",
     "notes": "",
     "frequency": 0,
     "sourceRow": 14
   },
   {
     "id": 15,
-    "en": "get",
+    "en": "avoid",
     "pos": "",
-    "zh": "得到，获得",
+    "zh": "避免，逃避",
     "notes": "",
     "frequency": 0,
     "sourceRow": 15
   },
   {
     "id": 16,
-    "en": "new",
+    "en": "stay",
     "pos": "",
-    "zh": "新的，新颖的",
+    "zh": "up 熬夜",
     "notes": "",
     "frequency": 0,
     "sourceRow": 16
   },
   {
     "id": 17,
-    "en": "miss",
+    "en": "oversleep",
     "pos": "",
-    "zh": "想念，错过，小姐",
+    "zh": "睡过头",
     "notes": "",
     "frequency": 0,
     "sourceRow": 17
   },
   {
     "id": 18,
-    "en": "night",
+    "en": "teenager",
     "pos": "",
-    "zh": "夜晚，夜间",
+    "zh": "青少年",
     "notes": "",
     "frequency": 0,
     "sourceRow": 18
   },
   {
     "id": 19,
-    "en": "good",
+    "en": "encourage",
     "pos": "",
-    "zh": "好的，好处",
+    "zh": "鼓励",
     "notes": "",
     "frequency": 0,
     "sourceRow": 19
   },
   {
     "id": 20,
-    "en": "better",
+    "en": "voluntary",
     "pos": "",
-    "zh": "更好的，更好地",
+    "zh": "自愿的，志愿的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 20
   },
   {
     "id": 21,
-    "en": "hard",
+    "en": "local",
     "pos": "",
-    "zh": "努力地，困难的",
+    "zh": "本地的，当地的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 21
   },
   {
     "id": 22,
-    "en": "find",
+    "en": "finish",
     "pos": "",
-    "zh": "找到，发现",
+    "zh": "完成，结束",
     "notes": "",
     "frequency": 0,
     "sourceRow": 22
   },
   {
     "id": 23,
-    "en": "life",
+    "en": "report",
     "pos": "",
-    "zh": "生活，生命",
+    "zh": "报告，汇报",
     "notes": "",
     "frequency": 0,
     "sourceRow": 23
   },
   {
     "id": 24,
-    "en": "sleep",
+    "en": "afraid",
     "pos": "",
-    "zh": "睡觉，睡眠",
+    "zh": "害怕的，担心的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 24
   },
   {
     "id": 25,
-    "en": "learn",
+    "en": "worry",
     "pos": "",
-    "zh": "学习，学会",
+    "zh": "担心，发愁",
     "notes": "",
     "frequency": 0,
     "sourceRow": 25
   },
   {
     "id": 26,
-    "en": "made",
+    "en": "refuse",
     "pos": "",
-    "zh": "制造（make的过去式）",
+    "zh": "拒绝",
     "notes": "",
     "frequency": 0,
     "sourceRow": 26
   },
   {
     "id": 27,
-    "en": "years",
+    "en": "decide",
     "pos": "",
-    "zh": "年，年数",
+    "zh": "决定",
     "notes": "",
     "frequency": 0,
     "sourceRow": 27
   },
   {
     "id": 28,
-    "en": "way",
+    "en": "regret",
     "pos": "",
-    "zh": "方式，方法，路，道路",
+    "zh": "后悔，遗憾",
     "notes": "",
     "frequency": 0,
     "sourceRow": 28
   },
   {
     "id": 29,
-    "en": "friends",
+    "en": "doubt",
     "pos": "",
-    "zh": "朋友们",
+    "zh": "怀疑",
     "notes": "",
     "frequency": 0,
     "sourceRow": 29
   },
   {
     "id": 30,
-    "en": "home",
+    "en": "speech",
     "pos": "",
-    "zh": "家，家庭",
+    "zh": "演讲",
     "notes": "",
     "frequency": 0,
     "sourceRow": 30
   },
   {
     "id": 31,
-    "en": "take",
+    "en": "assembly",
     "pos": "",
-    "zh": "拿，取，花费",
+    "zh": "集会，大会",
     "notes": "",
     "frequency": 0,
     "sourceRow": 31
   },
   {
     "id": 32,
-    "en": "small",
+    "en": "difference",
     "pos": "",
-    "zh": "小的",
+    "zh": "不同，影响",
     "notes": "",
     "frequency": 0,
     "sourceRow": 32
   },
   {
     "id": 33,
-    "en": "tell",
+    "en": "environmental",
     "pos": "",
-    "zh": "告诉，讲述",
+    "zh": "环境的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 33
   },
   {
     "id": 34,
-    "en": "things",
+    "en": "physical",
     "pos": "",
-    "zh": "事物，东西",
+    "zh": "身体的，物质的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 34
   },
   {
     "id": 35,
-    "en": "think",
+    "en": "educational",
     "pos": "",
-    "zh": "认为，思考",
+    "zh": "教育的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 35
   },
   {
     "id": 36,
-    "en": "best",
+    "en": "medical",
     "pos": "",
-    "zh": "最好的，最好地",
+    "zh": "医学的，医疗的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 36
   },
   {
     "id": 37,
-    "en": "students",
+    "en": "problem",
     "pos": "",
-    "zh": "学生们",
+    "zh": "问题",
     "notes": "",
     "frequency": 0,
     "sourceRow": 37
   },
   {
     "id": 38,
-    "en": "auggie",
+    "en": "pollution",
     "pos": "",
-    "zh": "奥吉（《奇迹男孩》人名）",
+    "zh": "污染",
     "notes": "",
     "frequency": 0,
     "sourceRow": 38
   },
   {
     "id": 39,
-    "en": "great",
+    "en": "hunting",
     "pos": "",
-    "zh": "伟大的，极好的",
+    "zh": "打猎，狩猎",
     "notes": "",
     "frequency": 0,
     "sourceRow": 39
   },
   {
     "id": 40,
-    "en": "love",
+    "en": "animal",
     "pos": "",
-    "zh": "爱，热爱",
+    "zh": "动物",
     "notes": "",
     "frequency": 0,
     "sourceRow": 40
   },
   {
     "id": 41,
-    "en": "mind",
+    "en": "situation",
     "pos": "",
-    "zh": "思想，心智，介意",
+    "zh": "处境，形势",
     "notes": "",
     "frequency": 0,
     "sourceRow": 41
   },
   {
     "id": 42,
-    "en": "yang",
+    "en": "communication",
     "pos": "",
-    "zh": "杨（中国姓氏）",
+    "zh": "交流，沟通",
     "notes": "",
     "frequency": 0,
     "sourceRow": 42
   },
   {
     "id": 43,
-    "en": "food",
+    "en": "throw",
     "pos": "",
-    "zh": "食物，食品",
+    "zh": "扔，抛",
     "notes": "",
     "frequency": 0,
     "sourceRow": 43
   },
   {
     "id": 44,
-    "en": "help",
+    "en": "question",
     "pos": "",
-    "zh": "帮助，帮忙",
+    "zh": "问题，疑问",
     "notes": "",
     "frequency": 0,
     "sourceRow": 44
   },
   {
     "id": 45,
-    "en": "passage",
+    "en": "challenge",
     "pos": "",
-    "zh": "段落，文章",
+    "zh": "挑战",
     "notes": "",
     "frequency": 0,
     "sourceRow": 45
   },
   {
     "id": 46,
-    "en": "learning",
+    "en": "leader",
     "pos": "",
-    "zh": "学习，学到",
+    "zh": "领导者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 46
   },
   {
     "id": 47,
-    "en": "want",
+    "en": "grown-up",
     "pos": "",
-    "zh": "想要",
+    "zh": "成年人",
     "notes": "",
     "frequency": 0,
     "sourceRow": 47
   },
   {
     "id": 48,
-    "en": "children",
+    "en": "care",
     "pos": "",
-    "zh": "孩子们",
+    "zh": "照顾，关心",
     "notes": "",
     "frequency": 0,
     "sourceRow": 48
   },
   {
     "id": 49,
-    "en": "feel",
+    "en": "thunderous",
     "pos": "",
-    "zh": "感觉，感受",
+    "zh": "雷鸣般的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 49
   },
   {
     "id": 50,
-    "en": "gardens",
+    "en": "applause",
     "pos": "",
-    "zh": "园林",
+    "zh": "掌声，喝彩",
     "notes": "",
     "frequency": 0,
     "sourceRow": 50
   },
   {
     "id": 51,
-    "en": "important",
+    "en": "brave",
     "pos": "",
-    "zh": "重要的",
+    "zh": "勇敢的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 51
   },
   {
     "id": 52,
-    "en": "really",
+    "en": "perhaps",
     "pos": "",
-    "zh": "真正地，确实",
+    "zh": "也许，可能",
     "notes": "",
     "frequency": 0,
     "sourceRow": 52
   },
   {
     "id": 53,
-    "en": "beautiful",
+    "en": "recycle",
     "pos": "",
-    "zh": "美丽的",
+    "zh": "回收利用，循环",
     "notes": "",
     "frequency": 0,
     "sourceRow": 53
   },
   {
     "id": 54,
-    "en": "big",
+    "en": "strong",
     "pos": "",
-    "zh": "大的，重要的",
+    "zh": "强壮的，强烈的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 54
   },
   {
     "id": 55,
-    "en": "books",
+    "en": "bottle",
     "pos": "",
-    "zh": "书籍",
+    "zh": "瓶子",
     "notes": "",
     "frequency": 0,
     "sourceRow": 55
   },
   {
     "id": 56,
-    "en": "got",
+    "en": "purpose",
     "pos": "",
-    "zh": "得到（get的过去式）",
+    "zh": "目的，意图",
     "notes": "",
     "frequency": 0,
     "sourceRow": 56
   },
   {
     "id": 57,
-    "en": "history",
+    "en": "introduce",
     "pos": "",
-    "zh": "历史",
+    "zh": "介绍，引见",
     "notes": "",
     "frequency": 0,
     "sourceRow": 57
   },
   {
     "id": 58,
-    "en": "kinds",
+    "en": "type",
     "pos": "",
-    "zh": "种类（复数）",
+    "zh": "类型，种类",
     "notes": "",
     "frequency": 0,
     "sourceRow": 58
   },
   {
     "id": 59,
-    "en": "mother",
+    "en": "display",
     "pos": "",
-    "zh": "母亲，妈妈",
+    "zh": "展示，陈列",
     "notes": "",
     "frequency": 0,
     "sourceRow": 59
   },
   {
     "id": 60,
-    "en": "see",
+    "en": "reusable",
     "pos": "",
-    "zh": "看见，明白",
+    "zh": "可重复使用的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 60
   },
   {
     "id": 61,
-    "en": "birds",
+    "en": "item",
     "pos": "",
-    "zh": "鸟儿们",
+    "zh": "物品，项目",
     "notes": "",
     "frequency": 0,
     "sourceRow": 61
   },
   {
     "id": 62,
-    "en": "light",
+    "en": "explain",
     "pos": "",
-    "zh": "光，灯，轻的",
+    "zh": "解释，说明",
     "notes": "",
     "frequency": 0,
     "sourceRow": 62
   },
   {
     "id": 63,
-    "en": "temple",
+    "en": "method",
     "pos": "",
-    "zh": "寺庙",
+    "zh": "方法，办法",
     "notes": "",
     "frequency": 0,
     "sourceRow": 63
   },
   {
     "id": 64,
-    "en": "told",
+    "en": "recommend",
     "pos": "",
-    "zh": "告诉（tell的过去式）",
+    "zh": "推荐，介绍",
     "notes": "",
     "frequency": 0,
     "sourceRow": 64
   },
   {
     "id": 65,
-    "en": "grow",
+    "en": "shopping",
     "pos": "",
-    "zh": "生长，成长",
+    "zh": "购物",
     "notes": "",
     "frequency": 0,
     "sourceRow": 65
   },
   {
     "id": 66,
-    "en": "happy",
+    "en": "dialect",
     "pos": "",
-    "zh": "高兴的，幸福的",
+    "zh": "方言",
     "notes": "",
     "frequency": 0,
     "sourceRow": 66
   },
   {
     "id": 67,
-    "en": "part",
+    "en": "understand",
     "pos": "",
-    "zh": "部分，角色",
+    "zh": "理解，明白",
     "notes": "",
     "frequency": 0,
     "sourceRow": 67
   },
   {
     "id": 68,
-    "en": "story",
+    "en": "speak",
     "pos": "",
-    "zh": "故事",
+    "zh": "说话，讲话",
     "notes": "",
     "frequency": 0,
     "sourceRow": 68
   },
   {
     "id": 69,
-    "en": "atticus",
+    "en": "province",
     "pos": "",
-    "zh": "阿提克斯（《杀死一只知更鸟》人名）",
+    "zh": "省",
     "notes": "",
     "frequency": 0,
     "sourceRow": 69
   },
   {
     "id": 70,
-    "en": "enough",
+    "en": "international",
     "pos": "",
-    "zh": "足够地",
+    "zh": "国际的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 70
   },
   {
     "id": 71,
-    "en": "family",
+    "en": "official",
     "pos": "",
-    "zh": "家庭",
+    "zh": "官方的，正式的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 71
   },
   {
     "id": 72,
-    "en": "fish",
+    "en": "language",
     "pos": "",
-    "zh": "鱼，钓鱼",
+    "zh": "语言",
     "notes": "",
     "frequency": 0,
     "sourceRow": 72
   },
   {
     "id": 73,
-    "en": "little",
+    "en": "include",
     "pos": "",
-    "zh": "小的，少量的",
+    "zh": "包含，包括",
     "notes": "",
     "frequency": 0,
     "sourceRow": 73
   },
   {
     "id": 74,
-    "en": "look",
+    "en": "population",
     "pos": "",
-    "zh": "看，查找",
+    "zh": "人口",
     "notes": "",
     "frequency": 0,
     "sourceRow": 74
   },
   {
     "id": 75,
-    "en": "reading",
+    "en": "main",
     "pos": "",
-    "zh": "阅读，读书",
+    "zh": "主要的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 75
   },
   {
     "id": 76,
-    "en": "scout",
+    "en": "common",
     "pos": "",
-    "zh": "斯科特（人名），侦察",
+    "zh": "常见的，普通的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 76
   },
   {
     "id": 77,
-    "en": "tea",
+    "en": "beautiful",
     "pos": "",
-    "zh": "茶，茶叶",
+    "zh": "美丽的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 77
   },
   {
     "id": 78,
-    "en": "year",
+    "en": "special",
     "pos": "",
-    "zh": "年",
+    "zh": "特别的，特殊的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 78
   },
   {
     "id": 79,
-    "en": "change",
+    "en": "interesting",
     "pos": "",
-    "zh": "改变，变化",
+    "zh": "有趣的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 79
   },
   {
     "id": 80,
-    "en": "going",
+    "en": "neighbour",
     "pos": "",
-    "zh": "进行中，离去",
+    "zh": "邻居",
     "notes": "",
     "frequency": 0,
     "sourceRow": 80
   },
   {
     "id": 81,
-    "en": "living",
+    "en": "rest",
     "pos": "",
-    "zh": "生活，生存",
+    "zh": "休息",
     "notes": "",
     "frequency": 0,
     "sourceRow": 81
   },
   {
     "id": 82,
-    "en": "miles",
+    "en": "shoulder",
     "pos": "",
-    "zh": "英里（复数）",
+    "zh": "肩膀",
     "notes": "",
     "frequency": 0,
     "sourceRow": 82
   },
   {
     "id": 83,
-    "en": "pencil",
+    "en": "waist",
     "pos": "",
-    "zh": "铅笔",
+    "zh": "腰部",
     "notes": "",
     "frequency": 0,
     "sourceRow": 83
   },
   {
     "id": 84,
-    "en": "place",
+    "en": "apartment",
     "pos": "",
-    "zh": "地方，放置",
+    "zh": "公寓",
     "notes": "",
     "frequency": 0,
     "sourceRow": 84
   },
   {
     "id": 85,
-    "en": "railway",
+    "en": "fire",
     "pos": "",
-    "zh": "铁路，铁道",
+    "zh": "火，火灾",
     "notes": "",
     "frequency": 0,
     "sourceRow": 85
   },
   {
     "id": 86,
-    "en": "timothy",
+    "en": "cheerful",
     "pos": "",
-    "zh": "蒂莫西（人名）",
+    "zh": "快乐的，高兴的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 86
   },
   {
     "id": 87,
-    "en": "class",
+    "en": "armchair",
     "pos": "",
-    "zh": "班级，课",
+    "zh": "单人沙发，扶手椅",
     "notes": "",
     "frequency": 0,
     "sourceRow": 87
   },
   {
     "id": 88,
-    "en": "english",
+    "en": "sadness",
     "pos": "",
-    "zh": "英语",
+    "zh": "悲伤，忧伤",
     "notes": "",
     "frequency": 0,
     "sourceRow": 88
   },
   {
     "id": 89,
-    "en": "jenna",
+    "en": "punish",
     "pos": "",
-    "zh": "珍娜（人名）",
+    "zh": "惩罚",
     "notes": "",
     "frequency": 0,
     "sourceRow": 89
   },
   {
     "id": 90,
-    "en": "long",
+    "en": "trust",
     "pos": "",
-    "zh": "长的，渴望",
+    "zh": "信任",
     "notes": "",
     "frequency": 0,
     "sourceRow": 90
   },
   {
     "id": 91,
-    "en": "nature",
+    "en": "accuse",
     "pos": "",
-    "zh": "自然，自然界",
+    "zh": "指控，控告",
     "notes": "",
     "frequency": 0,
     "sourceRow": 91
   },
   {
     "id": 92,
-    "en": "read",
+    "en": "truth",
     "pos": "",
-    "zh": "读（read的过去式）",
+    "zh": "真相，事实",
     "notes": "",
     "frequency": 0,
     "sourceRow": 92
   },
   {
     "id": 93,
-    "en": "remember",
+    "en": "add",
     "pos": "",
-    "zh": "记得，记住",
+    "zh": "增加，添加",
     "notes": "",
     "frequency": 0,
     "sourceRow": 93
   },
   {
     "id": 94,
-    "en": "spoken",
+    "en": "exaggerate",
     "pos": "",
-    "zh": "口语的，说过（speak的过去分词）",
+    "zh": "夸大，夸张",
     "notes": "",
     "frequency": 0,
     "sourceRow": 94
   },
   {
     "id": 95,
-    "en": "understand",
+    "en": "childhood",
     "pos": "",
-    "zh": "理解，明白",
+    "zh": "童年",
     "notes": "",
     "frequency": 0,
     "sourceRow": 95
   },
   {
     "id": 96,
-    "en": "asked",
+    "en": "behave",
     "pos": "",
-    "zh": "问道（ask的过去式）",
+    "zh": "表现，举止",
     "notes": "",
     "frequency": 0,
     "sourceRow": 96
   },
   {
     "id": 97,
-    "en": "auster",
+    "en": "brain",
     "pos": "",
-    "zh": "奥斯特（人名）",
+    "zh": "大脑",
     "notes": "",
     "frequency": 0,
     "sourceRow": 97
   },
   {
     "id": 98,
-    "en": "body",
+    "en": "store",
     "pos": "",
-    "zh": "身体，主体",
+    "zh": "储存，店铺",
     "notes": "",
     "frequency": 0,
     "sourceRow": 98
   },
   {
     "id": 99,
-    "en": "called",
+    "en": "file",
     "pos": "",
-    "zh": "叫做（call的过去式）",
+    "zh": "文件，档案",
     "notes": "",
     "frequency": 0,
     "sourceRow": 99
   },
   {
     "id": 100,
-    "en": "kids",
+    "en": "picture",
     "pos": "",
-    "zh": "孩子们（口语）",
+    "zh": "图片，画面",
     "notes": "",
     "frequency": 0,
     "sourceRow": 100
   },
   {
     "id": 101,
-    "en": "used",
+    "en": "compare",
     "pos": "",
-    "zh": "曾经（used to），用过的",
+    "zh": "比较",
     "notes": "",
     "frequency": 0,
     "sourceRow": 101
   },
   {
     "id": 102,
-    "en": "according",
+    "en": "huge",
     "pos": "",
-    "zh": "根据（~ to）",
+    "zh": "巨大的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 102
   },
   {
     "id": 103,
-    "en": "bad",
+    "en": "cupboard",
     "pos": "",
-    "zh": "坏的，不好的",
+    "zh": "碗柜，橱柜",
     "notes": "",
     "frequency": 0,
     "sourceRow": 103
   },
   {
     "id": 104,
-    "en": "june",
+    "en": "shelf",
     "pos": "",
-    "zh": "六月，朱恩（人名）",
+    "zh": "书架，搁板",
     "notes": "",
     "frequency": 0,
     "sourceRow": 104
   },
   {
     "id": 105,
-    "en": "keep",
+    "en": "information",
     "pos": "",
-    "zh": "保持，继续",
+    "zh": "信息",
     "notes": "",
     "frequency": 0,
     "sourceRow": 105
   },
   {
     "id": 106,
-    "en": "makes",
+    "en": "hope",
     "pos": "",
-    "zh": "使得（第三人称单数）",
+    "zh": "希望",
     "notes": "",
     "frequency": 0,
     "sourceRow": 106
   },
   {
     "id": 107,
-    "en": "severn",
+    "en": "grow",
     "pos": "",
-    "zh": "塞文（人名/地名）",
+    "zh": "生长，种植",
     "notes": "",
     "frequency": 0,
     "sourceRow": 107
   },
   {
     "id": 108,
-    "en": "show",
+    "en": "learning",
     "pos": "",
-    "zh": "显示，展示",
+    "zh": "学习",
     "notes": "",
     "frequency": 0,
     "sourceRow": 108
   },
   {
     "id": 109,
-    "en": "took",
+    "en": "change",
     "pos": "",
-    "zh": "拿（take的过去式）",
+    "zh": "改变，变化",
     "notes": "",
     "frequency": 0,
     "sourceRow": 109
   },
   {
     "id": 110,
-    "en": "winds",
+    "en": "lesson",
     "pos": "",
-    "zh": "风（复数）",
+    "zh": "课，教训",
     "notes": "",
     "frequency": 0,
     "sourceRow": 110
   },
   {
     "id": 111,
-    "en": "work",
+    "en": "solve",
     "pos": "",
-    "zh": "工作，劳动",
+    "zh": "解决",
     "notes": "",
     "frequency": 0,
     "sourceRow": 111
   },
   {
     "id": 112,
-    "en": "area",
+    "en": "maths",
     "pos": "",
-    "zh": "地区，区域，面积",
+    "zh": "数学",
     "notes": "",
     "frequency": 0,
     "sourceRow": 112
   },
   {
     "id": 113,
-    "en": "child",
+    "en": "sing",
     "pos": "",
-    "zh": "孩子",
+    "zh": "唱歌",
     "notes": "",
     "frequency": 0,
     "sourceRow": 113
   },
   {
     "id": 114,
-    "en": "garden",
+    "en": "network",
     "pos": "",
-    "zh": "花园，园子",
+    "zh": "网络",
     "notes": "",
     "frequency": 0,
     "sourceRow": 114
   },
   {
     "id": 115,
-    "en": "grandpa",
+    "en": "think",
     "pos": "",
-    "zh": "爷爷，外公",
+    "zh": "思考，想法",
     "notes": "",
     "frequency": 0,
     "sourceRow": 115
   },
   {
     "id": 116,
-    "en": "house",
+    "en": "remember",
     "pos": "",
-    "zh": "房子，住宅",
+    "zh": "记住，记得",
     "notes": "",
     "frequency": 0,
     "sourceRow": 116
   },
   {
     "id": 117,
-    "en": "library",
+    "en": "control",
     "pos": "",
-    "zh": "图书馆",
+    "zh": "控制",
     "notes": "",
     "frequency": 0,
     "sourceRow": 117
   },
   {
     "id": 118,
-    "en": "million",
+    "en": "task",
     "pos": "",
-    "zh": "百万",
+    "zh": "任务，工作",
     "notes": "",
     "frequency": 0,
     "sourceRow": 118
   },
   {
     "id": 119,
-    "en": "money",
+    "en": "develop",
     "pos": "",
-    "zh": "钱，金钱",
+    "zh": "发展，培养",
     "notes": "",
     "frequency": 0,
     "sourceRow": 119
   },
   {
     "id": 120,
-    "en": "paragraph",
+    "en": "system",
     "pos": "",
-    "zh": "段落",
+    "zh": "系统，体系",
     "notes": "",
     "frequency": 0,
     "sourceRow": 120
   },
   {
     "id": 121,
-    "en": "saw",
+    "en": "smart",
     "pos": "",
-    "zh": "看见（see的过去式）",
+    "zh": "聪明的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 121
   },
   {
     "id": 122,
-    "en": "says",
+    "en": "interest",
     "pos": "",
-    "zh": "说（第三人称单数）",
+    "zh": "兴趣，利息",
     "notes": "",
     "frequency": 0,
     "sourceRow": 122
   },
   {
     "id": 123,
-    "en": "stay",
+    "en": "meet",
     "pos": "",
-    "zh": "停留，保持",
+    "zh": "遇见，满足",
     "notes": "",
     "frequency": 0,
     "sourceRow": 123
   },
   {
     "id": 124,
-    "en": "stress",
+    "en": "quiet",
     "pos": "",
-    "zh": "压力，强调",
+    "zh": "安静的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 124
   },
   {
     "id": 125,
-    "en": "thought",
+    "en": "area",
     "pos": "",
-    "zh": "认为（think的过去式），想法",
+    "zh": "区域，面积",
     "notes": "",
     "frequency": 0,
     "sourceRow": 125
   },
   {
     "id": 126,
-    "en": "use",
+    "en": "library",
     "pos": "",
-    "zh": "使用，用途",
+    "zh": "图书馆",
     "notes": "",
     "frequency": 0,
     "sourceRow": 126
   },
   {
     "id": 127,
-    "en": "words",
+    "en": "strange",
     "pos": "",
-    "zh": "词语，话语",
+    "zh": "奇怪的，陌生的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 127
   },
   {
     "id": 128,
-    "en": "air",
+    "en": "watch",
     "pos": "",
-    "zh": "空气，空中",
+    "zh": "观看，手表",
     "notes": "",
     "frequency": 0,
     "sourceRow": 128
   },
   {
     "id": 129,
-    "en": "become",
+    "en": "money",
     "pos": "",
-    "zh": "变成，成为",
+    "zh": "钱",
     "notes": "",
     "frequency": 0,
     "sourceRow": 129
   },
   {
     "id": 130,
-    "en": "believe",
+    "en": "smile",
     "pos": "",
-    "zh": "相信",
+    "zh": "微校",
     "notes": "",
     "frequency": 0,
     "sourceRow": 130
   },
   {
     "id": 131,
-    "en": "buildings",
+    "en": "sell",
     "pos": "",
-    "zh": "建筑群",
+    "zh": "卖，出售",
     "notes": "",
     "frequency": 0,
     "sourceRow": 131
   },
   {
     "id": 132,
-    "en": "came",
+    "en": "answer",
     "pos": "",
-    "zh": "来了（come的过去式）",
+    "zh": "答案，回答",
     "notes": "",
     "frequency": 0,
     "sourceRow": 132
   },
   {
     "id": 133,
-    "en": "care",
+    "en": "excellent",
     "pos": "",
-    "zh": "关心，照顾",
+    "zh": "优秀的，杰出的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 133
   },
   {
     "id": 134,
-    "en": "come",
+    "en": "homework",
     "pos": "",
-    "zh": "来，到来",
+    "zh": "家庭作业",
     "notes": "",
     "frequency": 0,
     "sourceRow": 134
   },
   {
     "id": 135,
-    "en": "following",
+    "en": "jump",
     "pos": "",
-    "zh": "以下的，遵循",
+    "zh": "跳跃",
     "notes": "",
     "frequency": 0,
     "sourceRow": 135
   },
   {
     "id": 136,
-    "en": "frogs",
+    "en": "surprise",
     "pos": "",
-    "zh": "青蛙们",
+    "zh": "使惊奇，外",
     "notes": "",
     "frequency": 0,
     "sourceRow": 136
   },
   {
     "id": 137,
-    "en": "mike",
+    "en": "laugh",
     "pos": "",
-    "zh": "迈克（人名）",
+    "zh": "笑，嘲笑",
     "notes": "",
     "frequency": 0,
     "sourceRow": 137
   },
   {
     "id": 138,
-    "en": "photos",
+    "en": "ground",
     "pos": "",
-    "zh": "照片（复数）",
+    "zh": "地面",
     "notes": "",
     "frequency": 0,
     "sourceRow": 138
   },
   {
     "id": 139,
-    "en": "plastic",
+    "en": "swallow",
     "pos": "",
-    "zh": "塑料",
+    "zh": "吞没，燕子",
     "notes": "",
     "frequency": 0,
     "sourceRow": 139
   },
   {
     "id": 140,
-    "en": "practice",
+    "en": "novel",
     "pos": "",
-    "zh": "练习，实践",
+    "zh": "小说，新奇的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 140
   },
   {
     "id": 141,
-    "en": "ren",
+    "en": "fresh",
     "pos": "",
-    "zh": "任（中国姓氏）",
+    "zh": "新鲜的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 141
   },
   {
     "id": 142,
-    "en": "strong",
+    "en": "air",
     "pos": "",
-    "zh": "强壮的，强烈的",
+    "zh": "空气",
     "notes": "",
     "frequency": 0,
     "sourceRow": 142
   },
   {
     "id": 143,
-    "en": "sure",
+    "en": "lift",
     "pos": "",
-    "zh": "确定的，当然",
+    "zh": "举起，电梯",
     "notes": "",
     "frequency": 0,
     "sourceRow": 143
   },
   {
     "id": 144,
-    "en": "turned",
+    "en": "mood",
     "pos": "",
-    "zh": "转（turn的过去式）",
+    "zh": "心情，情绪",
     "notes": "",
     "frequency": 0,
     "sourceRow": 144
   },
   {
     "id": 145,
-    "en": "whole",
+    "en": "stressful",
     "pos": "",
-    "zh": "整个的，全部的",
+    "zh": "压力重的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 145
   },
   {
     "id": 146,
-    "en": "cooking",
+    "en": "stand",
     "pos": "",
-    "zh": "烹饪，做饭",
+    "zh": "站立，忍受",
     "notes": "",
     "frequency": 0,
     "sourceRow": 146
   },
   {
     "id": 147,
-    "en": "group",
+    "en": "straight",
     "pos": "",
-    "zh": "群体，小组",
+    "zh": "笔直地，直的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 147
   },
   {
     "id": 148,
-    "en": "helps",
+    "en": "advantage",
     "pos": "",
-    "zh": "帮助（第三人称单数）",
+    "zh": "优势，好处",
     "notes": "",
     "frequency": 0,
     "sourceRow": 148
   },
   {
     "id": 149,
-    "en": "hope",
+    "en": "goldfish",
     "pos": "",
-    "zh": "希望",
+    "zh": "金鱼",
     "notes": "",
     "frequency": 0,
     "sourceRow": 149
   },
   {
     "id": 150,
-    "en": "introduce",
+    "en": "fact",
     "pos": "",
-    "zh": "介绍",
+    "zh": "事实",
     "notes": "",
     "frequency": 0,
     "sourceRow": 150
   },
   {
     "id": 151,
-    "en": "paper",
+    "en": "safe",
     "pos": "",
-    "zh": "纸，论文",
+    "zh": "安全的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 151
   },
   {
     "id": 152,
-    "en": "rain",
+    "en": "relative",
     "pos": "",
-    "zh": "雨，下雨",
+    "zh": "亲戚，相对的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 152
   },
   {
     "id": 153,
-    "en": "same",
+    "en": "egg",
     "pos": "",
-    "zh": "相同的",
+    "zh": "蛋",
     "notes": "",
     "frequency": 0,
     "sourceRow": 153
   },
   {
     "id": 154,
-    "en": "science",
+    "en": "world",
     "pos": "",
-    "zh": "科学",
+    "zh": "世界",
     "notes": "",
     "frequency": 0,
     "sourceRow": 154
   },
   {
     "id": 155,
-    "en": "special",
+    "en": "smell",
     "pos": "",
-    "zh": "特别的，特殊的",
+    "zh": "嗅觉，闻",
     "notes": "",
     "frequency": 0,
     "sourceRow": 155
   },
   {
     "id": 156,
-    "en": "stop",
+    "en": "touch",
     "pos": "",
-    "zh": "停止",
+    "zh": "触觉，触摸",
     "notes": "",
     "frequency": 0,
     "sourceRow": 156
   },
   {
     "id": 157,
-    "en": "underlined",
+    "en": "feeding",
     "pos": "",
-    "zh": "带下划线的",
+    "zh": "喂养，饲养",
     "notes": "",
     "frequency": 0,
     "sourceRow": 157
   },
   {
     "id": 158,
-    "en": "walk",
+    "en": "appear",
     "pos": "",
-    "zh": "走路，步行",
+    "zh": "出现，看来",
     "notes": "",
     "frequency": 0,
     "sourceRow": 158
   },
   {
     "id": 159,
-    "en": "writer",
+    "en": "tank",
     "pos": "",
-    "zh": "作家，写作者",
+    "zh": "鱼缸，坦克",
     "notes": "",
     "frequency": 0,
     "sourceRow": 159
   },
   {
     "id": 160,
-    "en": "zekro",
+    "en": "drop",
     "pos": "",
-    "zh": "泽克罗（人名）",
+    "zh": "掉落，投下",
     "notes": "",
     "frequency": 0,
     "sourceRow": 160
   },
   {
     "id": 161,
-    "en": "changes",
+    "en": "dead",
     "pos": "",
-    "zh": "变化，改变",
+    "zh": "死的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 161
   },
   {
     "id": 162,
-    "en": "country",
+    "en": "morning",
     "pos": "",
-    "zh": "国家，乡村",
+    "zh": "早晨",
     "notes": "",
     "frequency": 0,
     "sourceRow": 162
   },
   {
     "id": 163,
-    "en": "douglas",
+    "en": "sun",
     "pos": "",
-    "zh": "道格拉斯（人名）",
+    "zh": "太阳",
     "notes": "",
     "frequency": 0,
     "sourceRow": 163
   },
   {
     "id": 164,
-    "en": "fall",
+    "en": "rise",
     "pos": "",
-    "zh": "秋天，落下，跌倒",
+    "zh": "升起，上涨",
     "notes": "",
     "frequency": 0,
     "sourceRow": 164
   },
   {
     "id": 165,
-    "en": "fly",
+    "en": "minute",
     "pos": "",
-    "zh": "飞",
+    "zh": "分钟",
     "notes": "",
     "frequency": 0,
     "sourceRow": 165
   },
   {
     "id": 166,
-    "en": "gave",
+    "en": "strength",
     "pos": "",
-    "zh": "给了（give的过去式）",
+    "zh": "力量，长处",
     "notes": "",
     "frequency": 0,
     "sourceRow": 166
   },
   {
     "id": 167,
-    "en": "ground",
+    "en": "night",
     "pos": "",
-    "zh": "地面，土地",
+    "zh": "夜晚",
     "notes": "",
     "frequency": 0,
     "sourceRow": 167
   },
   {
     "id": 168,
-    "en": "idea",
+    "en": "lucky",
     "pos": "",
-    "zh": "想法，主意",
+    "zh": "幸运的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 168
   },
   {
     "id": 169,
-    "en": "let",
+    "en": "save",
     "pos": "",
-    "zh": "让，允许",
+    "zh": "拯救，节约",
     "notes": "",
     "frequency": 0,
     "sourceRow": 169
   },
   {
     "id": 170,
-    "en": "live",
+    "en": "double",
     "pos": "",
-    "zh": "生活，居住",
+    "zh": "加倍，双重的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 170
   },
   {
     "id": 171,
-    "en": "move",
+    "en": "weight",
     "pos": "",
-    "zh": "移动，感动",
+    "zh": "重量",
     "notes": "",
     "frequency": 0,
     "sourceRow": 171
   },
   {
     "id": 172,
-    "en": "music",
+    "en": "happy",
     "pos": "",
-    "zh": "音乐",
+    "zh": "高兴的，幸福的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 172
   },
   {
     "id": 173,
-    "en": "plants",
+    "en": "healthy",
     "pos": "",
-    "zh": "植物（复数）",
+    "zh": "健康的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 173
   },
   {
     "id": 174,
-    "en": "say",
+    "en": "move",
     "pos": "",
-    "zh": "说，讲",
+    "zh": "移动，搬家",
     "notes": "",
     "frequency": 0,
     "sourceRow": 174
   },
   {
     "id": 175,
-    "en": "study",
+    "en": "ideal",
     "pos": "",
-    "zh": "学习，研究",
+    "zh": "理想的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 175
   },
   {
     "id": 176,
-    "en": "taking",
+    "en": "home",
     "pos": "",
-    "zh": "拿取，参加",
+    "zh": "家",
     "notes": "",
     "frequency": 0,
     "sourceRow": 176
   },
   {
     "id": 177,
-    "en": "trip",
+    "en": "center",
     "pos": "",
-    "zh": "旅行，远足",
+    "zh": "中心",
     "notes": "",
     "frequency": 0,
     "sourceRow": 177
   },
   {
     "id": 178,
-    "en": "turn",
+    "en": "build",
     "pos": "",
-    "zh": "转，转动，轮到",
+    "zh": "建造",
     "notes": "",
     "frequency": 0,
     "sourceRow": 178
   },
   {
     "id": 179,
-    "en": "attention",
+    "en": "sleeping",
     "pos": "",
-    "zh": "注意，关注",
+    "zh": "睡觉的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 179
   },
   {
     "id": 180,
-    "en": "became",
+    "en": "pool",
     "pos": "",
-    "zh": "变成（become的过去式）",
+    "zh": "水池，游泳池",
     "notes": "",
     "frequency": 0,
     "sourceRow": 180
   },
   {
     "id": 181,
-    "en": "birthday",
+    "en": "swim",
     "pos": "",
-    "zh": "生日",
+    "zh": "游泳",
     "notes": "",
     "frequency": 0,
     "sourceRow": 181
   },
   {
     "id": 182,
-    "en": "club",
+    "en": "grass",
     "pos": "",
-    "zh": "俱乐部，社团",
+    "zh": "草",
     "notes": "",
     "frequency": 0,
     "sourceRow": 182
   },
   {
     "id": 183,
-    "en": "eat",
+    "en": "hide",
     "pos": "",
-    "zh": "吃",
+    "zh": "隐藏",
     "notes": "",
     "frequency": 0,
     "sourceRow": 183
   },
   {
     "id": 184,
-    "en": "energy",
+    "en": "fight",
     "pos": "",
-    "zh": "能量，精力",
+    "zh": "战斗，打架",
     "notes": "",
     "frequency": 0,
     "sourceRow": 184
   },
   {
     "id": 185,
-    "en": "full",
+    "en": "shyness",
     "pos": "",
-    "zh": "满的，完整的",
+    "zh": "羞怯",
     "notes": "",
     "frequency": 0,
     "sourceRow": 185
   },
   {
     "id": 186,
-    "en": "glass",
+    "en": "remain",
     "pos": "",
-    "zh": "玻璃，玻璃杯",
+    "zh": "保持，留下",
     "notes": "",
     "frequency": 0,
     "sourceRow": 186
   },
   {
     "id": 187,
-    "en": "green",
+    "en": "year",
     "pos": "",
-    "zh": "绿色的，绿色",
+    "zh": "年",
     "notes": "",
     "frequency": 0,
     "sourceRow": 187
   },
   {
     "id": 188,
-    "en": "heavy",
+    "en": "zoo",
     "pos": "",
-    "zh": "重的，繁重的",
+    "zh": "动物园",
     "notes": "",
     "frequency": 0,
     "sourceRow": 188
   },
   {
     "id": 189,
-    "en": "hippo",
+    "en": "wild",
     "pos": "",
-    "zh": "河马",
+    "zh": "野生的，荒野",
     "notes": "",
     "frequency": 0,
     "sourceRow": 189
   },
   {
     "id": 190,
-    "en": "hurricane",
+    "en": "opinion",
     "pos": "",
-    "zh": "飓风",
+    "zh": "观点，看法",
     "notes": "",
     "frequency": 0,
     "sourceRow": 190
   },
   {
     "id": 191,
-    "en": "jane",
+    "en": "survive",
     "pos": "",
-    "zh": "简（人名）",
+    "zh": "幸存，活下来",
     "notes": "",
     "frequency": 0,
     "sourceRow": 191
   },
   {
     "id": 192,
-    "en": "moment",
+    "en": "practice",
     "pos": "",
-    "zh": "时刻，片刻",
+    "zh": "练习，实践",
     "notes": "",
     "frequency": 0,
     "sourceRow": 192
   },
   {
     "id": 193,
-    "en": "oxygen",
+    "en": "perfect",
     "pos": "",
-    "zh": "氧气",
+    "zh": "完美的，使完美",
     "notes": "",
     "frequency": 0,
     "sourceRow": 193
   },
   {
     "id": 194,
-    "en": "parents",
+    "en": "mean",
     "pos": "",
-    "zh": "父母",
+    "zh": "意味着，刻薄的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 194
   },
   {
     "id": 195,
-    "en": "possible",
+    "en": "protect",
     "pos": "",
-    "zh": "可能的",
+    "zh": "保护",
     "notes": "",
     "frequency": 0,
     "sourceRow": 195
   },
   {
     "id": 196,
-    "en": "space",
+    "en": "prepare",
     "pos": "",
-    "zh": "太空，空间",
+    "zh": "准备",
     "notes": "",
     "frequency": 0,
     "sourceRow": 196
   },
   {
     "id": 197,
-    "en": "wonder",
+    "en": "provide",
     "pos": "",
-    "zh": "奇迹，想知道",
+    "zh": "提供",
     "notes": "",
     "frequency": 0,
     "sourceRow": 197
   },
   {
     "id": 198,
-    "en": "ago",
+    "en": "weak",
     "pos": "",
-    "zh": "以前",
+    "zh": "虚弱的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 198
   },
   {
     "id": 199,
-    "en": "bag",
+    "en": "tired",
     "pos": "",
-    "zh": "袋子，包",
+    "zh": "疲劳的，厌倦的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 199
   },
   {
     "id": 200,
-    "en": "countries",
+    "en": "relaxed",
     "pos": "",
-    "zh": "国家（复数）",
+    "zh": "放松的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 200
   },
   {
     "id": 201,
-    "en": "early",
+    "en": "angry",
     "pos": "",
-    "zh": "早的，早地",
+    "zh": "生气的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 201
   },
   {
     "id": 202,
-    "en": "else",
+    "en": "clean",
     "pos": "",
-    "zh": "其他地，另外",
+    "zh": "up 打扫干净",
     "notes": "",
     "frequency": 0,
     "sourceRow": 202
   },
   {
     "id": 203,
-    "en": "face",
+    "en": "break",
     "pos": "",
-    "zh": "面对，脸",
+    "zh": "into 闯入",
     "notes": "",
     "frequency": 0,
     "sourceRow": 203
   },
   {
     "id": 204,
-    "en": "high",
+    "en": "set",
     "pos": "",
-    "zh": "高的，高度",
+    "zh": "up 建立，设立",
     "notes": "",
     "frequency": 0,
     "sourceRow": 204
   },
   {
     "id": 205,
-    "en": "hold",
+    "en": "shy",
     "pos": "",
-    "zh": "握住，举行",
+    "zh": "羞怯的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 205
   },
   {
     "id": 206,
-    "en": "interest",
+    "en": "sad",
     "pos": "",
-    "zh": "兴趣，利息",
+    "zh": "悲伤的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 206
   },
   {
     "id": 207,
-    "en": "journey",
+    "en": "proud",
     "pos": "",
-    "zh": "旅程，旅行",
+    "zh": "自豪的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 207
   },
   {
     "id": 208,
-    "en": "less",
+    "en": "polite",
     "pos": "",
-    "zh": "更少的，少",
+    "zh": "有礼貌的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 208
   },
   {
     "id": 209,
-    "en": "probably",
+    "en": "clearly",
     "pos": "",
-    "zh": "可能，大概",
+    "zh": "清晰地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 209
   },
   {
     "id": 210,
-    "en": "purpose",
+    "en": "carefully",
     "pos": "",
-    "zh": "目的，用途",
+    "zh": "仔细地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 210
   },
   {
     "id": 211,
-    "en": "ran",
+    "en": "successfully",
     "pos": "",
-    "zh": "跑（run的过去式）",
+    "zh": "成功地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 211
   },
   {
     "id": 212,
-    "en": "recharge",
+    "en": "traditionally",
     "pos": "",
-    "zh": "充电，恢复精力",
+    "zh": "传统地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 212
   },
   {
     "id": 213,
-    "en": "step",
+    "en": "accept",
     "pos": "",
-    "zh": "步骤，步，步伐",
+    "zh": "接受",
     "notes": "",
     "frequency": 0,
     "sourceRow": 213
   },
   {
     "id": 214,
-    "en": "teach",
+    "en": "courage",
     "pos": "",
-    "zh": "教，教授",
+    "zh": "勇气",
     "notes": "",
     "frequency": 0,
     "sourceRow": 214
   },
   {
     "id": 215,
-    "en": "teacher",
+    "en": "victory",
     "pos": "",
-    "zh": "教师，老师",
+    "zh": "胜利",
     "notes": "",
     "frequency": 0,
     "sourceRow": 215
   },
   {
     "id": 216,
-    "en": "teenagers",
+    "en": "support",
     "pos": "",
-    "zh": "青少年（复数）",
+    "zh": "支持",
     "notes": "",
     "frequency": 0,
     "sourceRow": 216
   },
   {
     "id": 217,
-    "en": "try",
+    "en": "reward",
     "pos": "",
-    "zh": "尝试，努力",
+    "zh": "奖励，回报",
     "notes": "",
     "frequency": 0,
     "sourceRow": 217
   },
   {
     "id": 218,
-    "en": "walls",
+    "en": "wish",
     "pos": "",
-    "zh": "墙壁（复数）",
+    "zh": "愿望，祝福",
     "notes": "",
     "frequency": 0,
     "sourceRow": 218
   },
   {
     "id": 219,
-    "en": "writing",
+    "en": "chance",
     "pos": "",
-    "zh": "写作，书写",
+    "zh": "机会，巧合",
     "notes": "",
     "frequency": 0,
     "sourceRow": 219
   },
   {
     "id": 220,
-    "en": "able",
+    "en": "luck",
     "pos": "",
-    "zh": "能够的，有能力的",
+    "zh": "运气",
     "notes": "",
     "frequency": 0,
     "sourceRow": 220
   },
   {
     "id": 221,
-    "en": "camera",
+    "en": "fear",
     "pos": "",
-    "zh": "相机，摄像机",
+    "zh": "恐惧",
     "notes": "",
     "frequency": 0,
     "sourceRow": 221
   },
   {
     "id": 222,
-    "en": "caroline",
+    "en": "hard",
     "pos": "",
-    "zh": "卡罗琳（人名）",
+    "zh": "艰难的，硬的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 222
   },
   {
     "id": 223,
-    "en": "challenges",
+    "en": "better",
     "pos": "",
-    "zh": "挑战（复数）",
+    "zh": "更好的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 223
   },
   {
     "id": 224,
-    "en": "create",
+    "en": "crazy",
     "pos": "",
-    "zh": "创造，创建",
+    "zh": "疯狂的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 224
   },
   {
     "id": 225,
-    "en": "development",
+    "en": "concert",
     "pos": "",
-    "zh": "发展，开发",
+    "zh": "音乐会",
     "notes": "",
     "frequency": 0,
     "sourceRow": 225
   },
   {
     "id": 226,
-    "en": "difficult",
+    "en": "date",
     "pos": "",
-    "zh": "困难的",
+    "zh": "日期，约会",
     "notes": "",
     "frequency": 0,
     "sourceRow": 226
   },
   {
     "id": 227,
-    "en": "dream",
+    "en": "suitable",
     "pos": "",
-    "zh": "梦想，梦",
+    "zh": "合适的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 227
   },
   {
     "id": 228,
-    "en": "healthy",
+    "en": "modern",
     "pos": "",
-    "zh": "健康的",
+    "zh": "现代的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 228
   },
   {
     "id": 229,
-    "en": "hot",
+    "en": "jazz",
     "pos": "",
-    "zh": "热的",
+    "zh": "爵士乐",
     "notes": "",
     "frequency": 0,
     "sourceRow": 229
   },
   {
     "id": 230,
-    "en": "leave",
+    "en": "lover",
     "pos": "",
-    "zh": "离开，留下",
+    "zh": "爱好者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 230
   },
   {
     "id": 231,
-    "en": "likely",
+    "en": "warm",
     "pos": "",
-    "zh": "可能的，很可能",
+    "zh": "温暖的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 231
   },
   {
     "id": 232,
-    "en": "local",
+    "en": "winter",
     "pos": "",
-    "zh": "当地的，本地的",
+    "zh": "冬天",
     "notes": "",
     "frequency": 0,
     "sourceRow": 232
   },
   {
     "id": 233,
-    "en": "looking",
+    "en": "window",
     "pos": "",
-    "zh": "看，查找",
+    "zh": "窗户",
     "notes": "",
     "frequency": 0,
     "sourceRow": 233
   },
   {
     "id": 234,
-    "en": "math",
+    "en": "old",
     "pos": "",
-    "zh": "数学",
+    "zh": "老的，旧的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 234
   },
   {
     "id": 235,
-    "en": "mays",
+    "en": "photo",
     "pos": "",
-    "zh": "梅斯（人名）",
+    "zh": "照片",
     "notes": "",
     "frequency": 0,
     "sourceRow": 235
   },
   {
     "id": 236,
-    "en": "next",
+    "en": "bring",
     "pos": "",
-    "zh": "下一个，紧接着",
+    "zh": "带来",
     "notes": "",
     "frequency": 0,
     "sourceRow": 236
   },
   {
     "id": 237,
-    "en": "old",
+    "en": "joy",
     "pos": "",
-    "zh": "老的，旧的，岁",
+    "zh": "快乐",
     "notes": "",
     "frequency": 0,
     "sourceRow": 237
   },
   {
     "id": 238,
-    "en": "parts",
+    "en": "happiness",
     "pos": "",
-    "zh": "部分（复数）",
+    "zh": "幸福",
     "notes": "",
     "frequency": 0,
     "sourceRow": 238
   },
   {
     "id": 239,
-    "en": "please",
+    "en": "expected",
     "pos": "",
-    "zh": "请，使高兴",
+    "zh": "预期的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 239
   },
   {
     "id": 240,
-    "en": "quiet",
+    "en": "activity",
     "pos": "",
-    "zh": "安静的",
+    "zh": "活动",
     "notes": "",
     "frequency": 0,
     "sourceRow": 240
   },
   {
     "id": 241,
-    "en": "right",
+    "en": "family",
     "pos": "",
-    "zh": "正确的，权利，右边",
+    "zh": "家庭",
     "notes": "",
     "frequency": 0,
     "sourceRow": 241
   },
   {
     "id": 242,
-    "en": "running",
+    "en": "member",
     "pos": "",
-    "zh": "跑步，运行",
+    "zh": "成员",
     "notes": "",
     "frequency": 0,
     "sourceRow": 242
   },
   {
     "id": 243,
-    "en": "started",
+    "en": "early",
     "pos": "",
-    "zh": "开始了",
+    "zh": "早的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 243
   },
   {
     "id": 244,
-    "en": "such",
+    "en": "whole",
     "pos": "",
-    "zh": "这样的，如此",
+    "zh": "整个的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 244
   },
   {
     "id": 245,
-    "en": "tried",
+    "en": "reunite",
     "pos": "",
-    "zh": "尝试（try的过去式）",
+    "zh": "团聚",
     "notes": "",
     "frequency": 0,
     "sourceRow": 245
   },
   {
     "id": 246,
-    "en": "water",
+    "en": "dress",
     "pos": "",
-    "zh": "水",
+    "zh": "up 穿上盛装，乔装打扮",
     "notes": "",
     "frequency": 0,
     "sourceRow": 246
   },
   {
     "id": 247,
-    "en": "word",
+    "en": "wait",
     "pos": "",
-    "zh": "词，单词",
+    "zh": "等待",
     "notes": "",
     "frequency": 0,
     "sourceRow": 247
   },
   {
     "id": 248,
-    "en": "young",
+    "en": "photographer",
     "pos": "",
-    "zh": "年轻的",
+    "zh": "摄影师",
     "notes": "",
     "frequency": 0,
     "sourceRow": 248
   },
   {
     "id": 249,
-    "en": "act",
+    "en": "camera",
     "pos": "",
-    "zh": "行动，表演，法案",
+    "zh": "相机",
     "notes": "",
     "frequency": 0,
     "sourceRow": 249
   },
   {
     "id": 250,
-    "en": "amazing",
+    "en": "record",
     "pos": "",
-    "zh": "惊人的，令人叹服的",
+    "zh": "记录",
     "notes": "",
     "frequency": 0,
     "sourceRow": 250
   },
   {
     "id": 251,
-    "en": "animals",
+    "en": "hometown",
     "pos": "",
-    "zh": "动物们",
+    "zh": "家乡",
     "notes": "",
     "frequency": 0,
     "sourceRow": 251
   },
   {
     "id": 252,
-    "en": "asleep",
+    "en": "painful",
     "pos": "",
-    "zh": "睡着的",
+    "zh": "痛苦的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 252
   },
   {
     "id": 253,
-    "en": "building",
+    "en": "founding",
     "pos": "",
-    "zh": "建筑物",
+    "zh": "成立，建立",
     "notes": "",
     "frequency": 0,
     "sourceRow": 253
   },
   {
     "id": 254,
-    "en": "chance",
+    "en": "seldom",
     "pos": "",
-    "zh": "机会，可能性",
+    "zh": "很少",
     "notes": "",
     "frequency": 0,
     "sourceRow": 254
   },
   {
     "id": 255,
-    "en": "city",
+    "en": "turn",
     "pos": "",
-    "zh": "城市",
+    "zh": "转向，转弯",
     "notes": "",
     "frequency": 0,
     "sourceRow": 255
   },
   {
     "id": 256,
-    "en": "classical",
+    "en": "grandson",
     "pos": "",
-    "zh": "古典的",
+    "zh": "孙子",
     "notes": "",
     "frequency": 0,
     "sourceRow": 256
   },
   {
     "id": 257,
-    "en": "coming",
+    "en": "idea",
     "pos": "",
-    "zh": "即将来临",
+    "zh": "想法",
     "notes": "",
     "frequency": 0,
     "sourceRow": 257
   },
   {
     "id": 258,
-    "en": "dialect",
+    "en": "growth",
     "pos": "",
-    "zh": "方言",
+    "zh": "生长，成长",
     "notes": "",
     "frequency": 0,
     "sourceRow": 258
   },
   {
     "id": 259,
-    "en": "drink",
+    "en": "development",
     "pos": "",
-    "zh": "喝，饮料",
+    "zh": "发展",
     "notes": "",
     "frequency": 0,
     "sourceRow": 259
   },
   {
     "id": 260,
-    "en": "enjoy",
+    "en": "tradition",
     "pos": "",
-    "zh": "享受，喜欢",
+    "zh": "传统",
     "notes": "",
     "frequency": 0,
     "sourceRow": 260
   },
   {
     "id": 261,
-    "en": "environment",
+    "en": "city",
     "pos": "",
-    "zh": "环境",
+    "zh": "城市",
     "notes": "",
     "frequency": 0,
     "sourceRow": 261
   },
   {
     "id": 262,
-    "en": "feelings",
+    "en": "return",
     "pos": "",
-    "zh": "感情，感觉",
+    "zh": "返回",
     "notes": "",
     "frequency": 0,
     "sourceRow": 262
   },
   {
     "id": 263,
-    "en": "flowers",
+    "en": "moment",
     "pos": "",
-    "zh": "花朵（复数）",
+    "zh": "瞬间，时刻",
     "notes": "",
     "frequency": 0,
     "sourceRow": 263
   },
   {
     "id": 264,
-    "en": "follow",
+    "en": "important",
     "pos": "",
-    "zh": "跟随，遵循",
+    "zh": "重要的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 264
   },
   {
     "id": 265,
-    "en": "found",
+    "en": "wear",
     "pos": "",
-    "zh": "找到（find的过去式），创立",
+    "zh": "穿，戴",
     "notes": "",
     "frequency": 0,
     "sourceRow": 265
   },
   {
     "id": 266,
-    "en": "government",
+    "en": "clothes",
     "pos": "",
-    "zh": "政府",
+    "zh": "衣服",
     "notes": "",
     "frequency": 0,
     "sourceRow": 266
   },
   {
     "id": 267,
-    "en": "growing",
+    "en": "dinner",
     "pos": "",
-    "zh": "生长，增长",
+    "zh": "正餐，宴会",
     "notes": "",
     "frequency": 0,
     "sourceRow": 267
   },
   {
     "id": 268,
-    "en": "habit",
+    "en": "visit",
     "pos": "",
-    "zh": "习惯",
+    "zh": "拜访，参观",
     "notes": "",
     "frequency": 0,
     "sourceRow": 268
   },
   {
     "id": 269,
-    "en": "henry",
+    "en": "separate",
     "pos": "",
-    "zh": "亨利（人名）",
+    "zh": "分开的，不同的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 269
   },
   {
     "id": 270,
-    "en": "libraries",
+    "en": "interview",
     "pos": "",
-    "zh": "图书馆（复数）",
+    "zh": "采访，面试",
     "notes": "",
     "frequency": 0,
     "sourceRow": 270
   },
   {
     "id": 271,
-    "en": "main",
+    "en": "learn",
     "pos": "",
-    "zh": "主要的",
+    "zh": "学习",
     "notes": "",
     "frequency": 0,
     "sourceRow": 271
   },
   {
     "id": 272,
-    "en": "problem",
+    "en": "highest",
     "pos": "",
-    "zh": "问题，难题",
+    "zh": "最高的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 272
   },
   {
     "id": 273,
-    "en": "ready",
+    "en": "railway",
     "pos": "",
-    "zh": "准备好的",
+    "zh": "铁路",
     "notes": "",
     "frequency": 0,
     "sourceRow": 273
   },
   {
     "id": 274,
-    "en": "reduce",
+    "en": "oxygen",
     "pos": "",
-    "zh": "减少，降低",
+    "zh": "氧气",
     "notes": "",
     "frequency": 0,
     "sourceRow": 274
   },
   {
     "id": 275,
-    "en": "series",
+    "en": "breathe",
     "pos": "",
-    "zh": "系列，连续",
+    "zh": "呼吸",
     "notes": "",
     "frequency": 0,
     "sourceRow": 275
   },
   {
     "id": 276,
-    "en": "showing",
+    "en": "passenger",
     "pos": "",
-    "zh": "展示，显示",
+    "zh": "乘客",
     "notes": "",
     "frequency": 0,
     "sourceRow": 276
   },
   {
     "id": 277,
-    "en": "start",
+    "en": "personal",
     "pos": "",
-    "zh": "开始，出发",
+    "zh": "个人的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 277
   },
   {
     "id": 278,
-    "en": "starting",
+    "en": "mask",
     "pos": "",
-    "zh": "开始，出发",
+    "zh": "口罩，面具",
     "notes": "",
     "frequency": 0,
     "sourceRow": 278
   },
   {
     "id": 279,
-    "en": "train",
+    "en": "plane",
     "pos": "",
-    "zh": "训练，火车",
+    "zh": "飞机",
     "notes": "",
     "frequency": 0,
     "sourceRow": 279
   },
   {
     "id": 280,
-    "en": "type",
+    "en": "station",
     "pos": "",
-    "zh": "类型，打字",
+    "zh": "车站",
     "notes": "",
     "frequency": 0,
     "sourceRow": 280
   },
   {
     "id": 281,
-    "en": "view",
+    "en": "designer",
     "pos": "",
-    "zh": "看法，景色，查看",
+    "zh": "设计师",
     "notes": "",
     "frequency": 0,
     "sourceRow": 281
   },
   {
     "id": 282,
-    "en": "watch",
+    "en": "high",
     "pos": "",
-    "zh": "看，观看",
+    "zh": "高的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 282
   },
   {
     "id": 283,
-    "en": "white",
+    "en": "altitude",
     "pos": "",
-    "zh": "白色的，白色",
+    "zh": "海拔",
     "notes": "",
     "frequency": 0,
     "sourceRow": 283
   },
   {
     "id": 284,
-    "en": "window",
+    "en": "bus",
     "pos": "",
-    "zh": "窗户",
+    "zh": "公共汽车",
     "notes": "",
     "frequency": 0,
     "sourceRow": 284
   },
   {
     "id": 285,
-    "en": "afraid",
+    "en": "train",
     "pos": "",
-    "zh": "害怕的，担心的",
+    "zh": "火车，训练",
     "notes": "",
     "frequency": 0,
     "sourceRow": 285
   },
   {
     "id": 286,
-    "en": "auto",
+    "en": "ship",
     "pos": "",
-    "zh": "自动的，汽车",
+    "zh": "轮船",
     "notes": "",
     "frequency": 0,
     "sourceRow": 286
   },
   {
     "id": 287,
-    "en": "baby",
+    "en": "text",
     "pos": "",
-    "zh": "婴儿，宝宝",
+    "zh": "文本，课文",
     "notes": "",
     "frequency": 0,
     "sourceRow": 287
   },
   {
     "id": 288,
-    "en": "began",
+    "en": "amazing",
     "pos": "",
-    "zh": "开始（begin的过去式）",
+    "zh": "令人惊奇的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 288
   },
   {
     "id": 289,
-    "en": "book",
+    "en": "story",
     "pos": "",
-    "zh": "书",
+    "zh": "故事",
     "notes": "",
     "frequency": 0,
     "sourceRow": 289
   },
   {
     "id": 290,
-    "en": "carefully",
+    "en": "word",
     "pos": "",
-    "zh": "仔细地，小心地",
+    "zh": "单词，话语",
     "notes": "",
     "frequency": 0,
     "sourceRow": 290
   },
   {
     "id": 291,
-    "en": "common",
+    "en": "tunnel",
     "pos": "",
-    "zh": "普通的，共同的",
+    "zh": "隧道",
     "notes": "",
     "frequency": 0,
     "sourceRow": 291
   },
   {
     "id": 292,
-    "en": "drama",
+    "en": "weather",
     "pos": "",
-    "zh": "戏剧，话剧",
+    "zh": "天气",
     "notes": "",
     "frequency": 0,
     "sourceRow": 292
   },
   {
     "id": 293,
-    "en": "empty",
+    "en": "danger",
     "pos": "",
-    "zh": "空的，清空",
+    "zh": "危险",
     "notes": "",
     "frequency": 0,
     "sourceRow": 293
   },
   {
     "id": 294,
-    "en": "enjoying",
+    "en": "hot",
     "pos": "",
-    "zh": "享受，喜欢（进行式）",
+    "zh": "热的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 294
   },
   {
     "id": 295,
-    "en": "fear",
+    "en": "dream",
     "pos": "",
-    "zh": "恐惧，担心",
+    "zh": "梦想",
     "notes": "",
     "frequency": 0,
     "sourceRow": 295
   },
   {
     "id": 296,
-    "en": "fun",
+    "en": "basketball",
     "pos": "",
-    "zh": "乐趣，有趣",
+    "zh": "篮球",
     "notes": "",
     "frequency": 0,
     "sourceRow": 296
   },
   {
     "id": 297,
-    "en": "game",
+    "en": "player",
     "pos": "",
-    "zh": "游戏，比赛",
+    "zh": "运动员",
     "notes": "",
     "frequency": 0,
     "sourceRow": 297
   },
   {
     "id": 298,
-    "en": "hand",
+    "en": "team",
     "pos": "",
-    "zh": "手",
+    "zh": "队",
     "notes": "",
     "frequency": 0,
     "sourceRow": 298
   },
   {
     "id": 299,
-    "en": "heard",
+    "en": "give",
     "pos": "",
-    "zh": "听见（hear的过去式）",
+    "zh": "给予",
     "notes": "",
     "frequency": 0,
     "sourceRow": 299
   },
   {
     "id": 300,
-    "en": "huge",
+    "en": "birthday",
     "pos": "",
-    "zh": "巨大的",
+    "zh": "生日",
     "notes": "",
     "frequency": 0,
     "sourceRow": 300
   },
   {
     "id": 301,
-    "en": "influence",
+    "en": "sport",
     "pos": "",
-    "zh": "影响",
+    "zh": "运动",
     "notes": "",
     "frequency": 0,
     "sourceRow": 301
   },
   {
     "id": 302,
-    "en": "kind",
+    "en": "running",
     "pos": "",
-    "zh": "种类，友善的",
+    "zh": "跑步",
     "notes": "",
     "frequency": 0,
     "sourceRow": 302
   },
   {
     "id": 303,
-    "en": "last",
+    "en": "athlete",
     "pos": "",
-    "zh": "最后的，持续",
+    "zh": "运动员",
     "notes": "",
     "frequency": 0,
     "sourceRow": 303
   },
   {
     "id": 304,
-    "en": "lead",
+    "en": "gently",
     "pos": "",
-    "zh": "领导，铅",
+    "zh": "温柔地，轻轻地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 304
   },
   {
     "id": 305,
-    "en": "learned",
+    "en": "mile",
     "pos": "",
-    "zh": "学到（learn的过去式）",
+    "zh": "英里",
     "notes": "",
     "frequency": 0,
     "sourceRow": 305
   },
   {
     "id": 306,
-    "en": "looked",
+    "en": "extra",
     "pos": "",
-    "zh": "看（look的过去式）",
+    "zh": "额外的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 306
   },
   {
     "id": 307,
-    "en": "lot",
+    "en": "run",
     "pos": "",
-    "zh": "许多，停车场",
+    "zh": "跑步，经营",
     "notes": "",
     "frequency": 0,
     "sourceRow": 307
@@ -2766,1357 +2766,1357 @@ window.WORD_SNAP_WORDS = [
     "id": 308,
     "en": "marathon",
     "pos": "",
-    "zh": "马拉松（比赛）",
+    "zh": "马拉松",
     "notes": "",
     "frequency": 0,
     "sourceRow": 308
   },
   {
     "id": 309,
-    "en": "mean",
+    "en": "ready",
     "pos": "",
-    "zh": "意思是，残忍的",
+    "zh": "准备好的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 309
   },
   {
     "id": 310,
-    "en": "memory",
+    "en": "promise",
     "pos": "",
-    "zh": "记忆，回忆",
+    "zh": "答应，承诺",
     "notes": "",
     "frequency": 0,
     "sourceRow": 310
   },
   {
     "id": 311,
-    "en": "mum",
+    "en": "walk",
     "pos": "",
-    "zh": "妈妈（英式）",
+    "zh": "步行",
     "notes": "",
     "frequency": 0,
     "sourceRow": 311
   },
   {
     "id": 312,
-    "en": "networks",
+    "en": "cheer",
     "pos": "",
-    "zh": "网络（复数）",
+    "zh": "欢呼，使高兴",
     "notes": "",
     "frequency": 0,
     "sourceRow": 312
   },
   {
     "id": 313,
-    "en": "perfect",
+    "en": "fast",
     "pos": "",
-    "zh": "完美的",
+    "zh": "快地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 313
   },
   {
     "id": 314,
-    "en": "person",
+    "en": "fall",
     "pos": "",
-    "zh": "人，个人",
+    "zh": "摔倒，秋天",
     "notes": "",
     "frequency": 0,
     "sourceRow": 314
   },
   {
     "id": 315,
-    "en": "pick",
+    "en": "drive",
     "pos": "",
-    "zh": "挑选，摘取",
+    "zh": "驾驶",
     "notes": "",
     "frequency": 0,
     "sourceRow": 315
   },
   {
     "id": 316,
-    "en": "pocket",
+    "en": "hospital",
     "pos": "",
-    "zh": "口袋，兜里",
+    "zh": "医院",
     "notes": "",
     "frequency": 0,
     "sourceRow": 316
   },
   {
     "id": 317,
-    "en": "pollution",
+    "en": "call",
     "pos": "",
-    "zh": "污染",
+    "zh": "打电话，喊",
     "notes": "",
     "frequency": 0,
     "sourceRow": 317
   },
   {
     "id": 318,
-    "en": "put",
+    "en": "fail",
     "pos": "",
-    "zh": "放置（put的过去式）",
+    "zh": "失败",
     "notes": "",
     "frequency": 0,
     "sourceRow": 318
   },
   {
     "id": 319,
-    "en": "roy",
+    "en": "calmly",
     "pos": "",
-    "zh": "罗伊（人名）",
+    "zh": "冷静地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 319
   },
   {
     "id": 320,
-    "en": "scientists",
+    "en": "discover",
     "pos": "",
-    "zh": "科学家们",
+    "zh": "发现",
     "notes": "",
     "frequency": 0,
     "sourceRow": 320
   },
   {
     "id": 321,
-    "en": "side",
+    "en": "true",
     "pos": "",
-    "zh": "旁边，侧面",
+    "zh": "真实的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 321
   },
   {
     "id": 322,
-    "en": "simple",
+    "en": "school",
     "pos": "",
-    "zh": "简单的",
+    "zh": "学校",
     "notes": "",
     "frequency": 0,
     "sourceRow": 322
   },
   {
     "id": 323,
-    "en": "strange",
+    "en": "tall",
     "pos": "",
-    "zh": "奇怪的",
+    "zh": "高的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 323
   },
   {
     "id": 324,
-    "en": "surprise",
+    "en": "quick",
     "pos": "",
-    "zh": "惊讶，惊喜",
+    "zh": "快的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 324
   },
   {
     "id": 325,
-    "en": "tall",
+    "en": "learner",
     "pos": "",
-    "zh": "高的（人/物）",
+    "zh": "学习者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 325
   },
   {
     "id": 326,
-    "en": "times",
+    "en": "creative",
     "pos": "",
-    "zh": "倍，乘，时期",
+    "zh": "有创造力的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 326
   },
   {
     "id": 327,
-    "en": "truth",
+    "en": "modest",
     "pos": "",
-    "zh": "真相，真理",
+    "zh": "谦虚的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 327
   },
   {
     "id": 328,
-    "en": "wanted",
+    "en": "generous",
     "pos": "",
-    "zh": "想要（want的过去式）",
+    "zh": "慷慨的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 328
   },
   {
     "id": 329,
-    "en": "week",
+    "en": "encouraging",
     "pos": "",
-    "zh": "星期，周",
+    "zh": "鼓励的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 329
   },
   {
     "id": 330,
-    "en": "art",
+    "en": "title",
     "pos": "",
-    "zh": "艺术",
+    "zh": "标题",
     "notes": "",
     "frequency": 0,
     "sourceRow": 330
   },
   {
     "id": 331,
-    "en": "begin",
+    "en": "bird",
     "pos": "",
-    "zh": "开始",
+    "zh": "鸟",
     "notes": "",
     "frequency": 0,
     "sourceRow": 331
   },
   {
     "id": 332,
-    "en": "childhood",
+    "en": "fly",
     "pos": "",
-    "zh": "童年，幼年时期",
+    "zh": "飞，苍蝇",
     "notes": "",
     "frequency": 0,
     "sourceRow": 332
   },
   {
     "id": 333,
-    "en": "cold",
+    "en": "forest",
     "pos": "",
-    "zh": "冷的，感冒",
+    "zh": "森林",
     "notes": "",
     "frequency": 0,
     "sourceRow": 333
   },
   {
     "id": 334,
-    "en": "conflict",
+    "en": "wetland",
     "pos": "",
-    "zh": "冲突，矛盾",
+    "zh": "湿地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 334
   },
   {
     "id": 335,
-    "en": "created",
+    "en": "glass",
     "pos": "",
-    "zh": "创造（create的过去式）",
+    "zh": "玻璃",
     "notes": "",
     "frequency": 0,
     "sourceRow": 335
   },
   {
     "id": 336,
-    "en": "creative",
+    "en": "direction",
     "pos": "",
-    "zh": "有创意的，创造性的",
+    "zh": "方向",
     "notes": "",
     "frequency": 0,
     "sourceRow": 336
   },
   {
     "id": 337,
-    "en": "decided",
+    "en": "building",
     "pos": "",
-    "zh": "决定（decide的过去式）",
+    "zh": "建筑物",
     "notes": "",
     "frequency": 0,
     "sourceRow": 337
   },
   {
     "id": 338,
-    "en": "difference",
+    "en": "light",
     "pos": "",
-    "zh": "差别，不同",
+    "zh": "灯光，轻的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 338
   },
   {
     "id": 339,
-    "en": "environmental",
+    "en": "confuse",
     "pos": "",
-    "zh": "环境的",
+    "zh": "使迷惑",
     "notes": "",
     "frequency": 0,
     "sourceRow": 339
   },
   {
     "id": 340,
-    "en": "extra",
+    "en": "office",
     "pos": "",
-    "zh": "额外的，额外",
+    "zh": "办公室",
     "notes": "",
     "frequency": 0,
     "sourceRow": 340
   },
   {
     "id": 341,
-    "en": "father",
+    "en": "reduce",
     "pos": "",
-    "zh": "父亲，爸爸",
+    "zh": "减少",
     "notes": "",
     "frequency": 0,
     "sourceRow": 341
   },
   {
     "id": 342,
-    "en": "favorite",
+    "en": "number",
     "pos": "",
-    "zh": "最喜欢的",
+    "zh": "数量",
     "notes": "",
     "frequency": 0,
     "sourceRow": 342
   },
   {
     "id": 343,
-    "en": "festival",
+    "en": "energy",
     "pos": "",
-    "zh": "节日，庆典",
+    "zh": "能量，精力",
     "notes": "",
     "frequency": 0,
     "sourceRow": 343
   },
   {
     "id": 344,
-    "en": "filled",
+    "en": "foggy",
     "pos": "",
-    "zh": "装满（fill的过去式）",
+    "zh": "有雾的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 344
   },
   {
     "id": 345,
-    "en": "finish",
+    "en": "rainy",
     "pos": "",
-    "zh": "完成，结束",
+    "zh": "下雨的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 345
   },
   {
     "id": 346,
-    "en": "free",
+    "en": "app",
     "pos": "",
-    "zh": "自由的，免费的",
+    "zh": "应用程序",
     "notes": "",
     "frequency": 0,
     "sourceRow": 346
   },
   {
     "id": 347,
-    "en": "frog",
+    "en": "offer",
     "pos": "",
-    "zh": "青蛙",
+    "zh": "提供，主动提出",
     "notes": "",
     "frequency": 0,
     "sourceRow": 347
   },
   {
     "id": 348,
-    "en": "happened",
+    "en": "detailed",
     "pos": "",
-    "zh": "发生（happen的过去式）",
+    "zh": "详细的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 348
   },
   {
     "id": 349,
-    "en": "information",
+    "en": "instruction",
     "pos": "",
-    "zh": "信息",
+    "zh": "说明，指示",
     "notes": "",
     "frequency": 0,
     "sourceRow": 349
   },
   {
     "id": 350,
-    "en": "joy",
+    "en": "step",
     "pos": "",
-    "zh": "喜悦，快乐",
+    "zh": "步骤，迈步",
     "notes": "",
     "frequency": 0,
     "sourceRow": 350
   },
   {
     "id": 351,
-    "en": "kept",
+    "en": "video",
     "pos": "",
-    "zh": "保持（keep的过去式）",
+    "zh": "视频",
     "notes": "",
     "frequency": 0,
     "sourceRow": 351
   },
   {
     "id": 352,
-    "en": "lying",
+    "en": "beginner",
     "pos": "",
-    "zh": "躺着，撒谎",
+    "zh": "初学者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 352
   },
   {
     "id": 353,
-    "en": "members",
+    "en": "week",
     "pos": "",
-    "zh": "成员（复数）",
+    "zh": "星期",
     "notes": "",
     "frequency": 0,
     "sourceRow": 353
   },
   {
     "id": 354,
-    "en": "metres",
+    "en": "pick",
     "pos": "",
-    "zh": "米（复数）",
+    "zh": "up 捡起，学会",
     "notes": "",
     "frequency": 0,
     "sourceRow": 354
   },
   {
     "id": 355,
-    "en": "moved",
+    "en": "popular",
     "pos": "",
-    "zh": "移动（move的过去式），感动的",
+    "zh": "受欢迎的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 355
   },
   {
     "id": 356,
-    "en": "needed",
+    "en": "recipe",
     "pos": "",
-    "zh": "需要（need的过去式）",
+    "zh": "食谱",
     "notes": "",
     "frequency": 0,
     "sourceRow": 356
   },
   {
     "id": 357,
-    "en": "neuronal",
+    "en": "cook",
     "pos": "",
-    "zh": "神经元的，神经的",
+    "zh": "烹饪，厨师",
     "notes": "",
     "frequency": 0,
     "sourceRow": 357
   },
   {
     "id": 358,
-    "en": "open",
+    "en": "taste",
     "pos": "",
-    "zh": "打开，开放的",
+    "zh": "尝起来，味道",
     "notes": "",
     "frequency": 0,
     "sourceRow": 358
   },
   {
     "id": 359,
-    "en": "picture",
+    "en": "delicious",
     "pos": "",
-    "zh": "图片，描绘",
+    "zh": "美味的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 359
   },
   {
     "id": 360,
-    "en": "problems",
+    "en": "couple",
     "pos": "",
-    "zh": "问题（复数）",
+    "zh": "对，双，夫妇",
     "notes": "",
     "frequency": 0,
     "sourceRow": 360
   },
   {
     "id": 361,
-    "en": "protect",
+    "en": "skill",
     "pos": "",
-    "zh": "保护",
+    "zh": "技能",
     "notes": "",
     "frequency": 0,
     "sourceRow": 361
   },
   {
     "id": 362,
-    "en": "quickly",
+    "en": "invite",
     "pos": "",
-    "zh": "迅速地，快速地",
+    "zh": "邀请",
     "notes": "",
     "frequency": 0,
     "sourceRow": 362
   },
   {
     "id": 363,
-    "en": "reporter",
+    "en": "weekend",
     "pos": "",
-    "zh": "记者，报道者",
+    "zh": "周末",
     "notes": "",
     "frequency": 0,
     "sourceRow": 363
   },
   {
     "id": 364,
-    "en": "rubbish",
+    "en": "speed",
     "pos": "",
-    "zh": "垃圾，废物",
+    "zh": "速度",
     "notes": "",
     "frequency": 0,
     "sourceRow": 364
   },
   {
     "id": 365,
-    "en": "rules",
+    "en": "wind",
     "pos": "",
-    "zh": "规则（复数）",
+    "zh": "风",
     "notes": "",
     "frequency": 0,
     "sourceRow": 365
   },
   {
     "id": 366,
-    "en": "run",
+    "en": "eye",
     "pos": "",
-    "zh": "跑，运行",
+    "zh": "眼睛",
     "notes": "",
     "frequency": 0,
     "sourceRow": 366
   },
   {
     "id": 367,
-    "en": "several",
+    "en": "wall",
     "pos": "",
-    "zh": "几个，若干",
+    "zh": "墙",
     "notes": "",
     "frequency": 0,
     "sourceRow": 367
   },
   {
     "id": 368,
-    "en": "society",
+    "en": "heavy",
     "pos": "",
-    "zh": "社会",
+    "zh": "下雨大的，沉重的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 368
   },
   {
     "id": 369,
-    "en": "sth",
+    "en": "flood",
     "pos": "",
-    "zh": "某事（something缩写）",
+    "zh": "洪水",
     "notes": "",
     "frequency": 0,
     "sourceRow": 369
   },
   {
     "id": 370,
-    "en": "support",
+    "en": "close",
     "pos": "",
-    "zh": "支持，支撑",
+    "zh": "近的，关闭",
     "notes": "",
     "frequency": 0,
     "sourceRow": 370
   },
   {
     "id": 371,
-    "en": "talk",
+    "en": "coast",
     "pos": "",
-    "zh": "谈话，说",
+    "zh": "海岸",
     "notes": "",
     "frequency": 0,
     "sourceRow": 371
   },
   {
     "id": 372,
-    "en": "team",
+    "en": "deep",
     "pos": "",
-    "zh": "团队，队",
+    "zh": "深的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 372
   },
   {
     "id": 373,
-    "en": "title",
+    "en": "reach",
     "pos": "",
-    "zh": "标题，题目",
+    "zh": "达到",
     "notes": "",
     "frequency": 0,
     "sourceRow": 373
   },
   {
     "id": 374,
-    "en": "today",
+    "en": "top",
     "pos": "",
-    "zh": "今天",
+    "zh": "顶部",
     "notes": "",
     "frequency": 0,
     "sourceRow": 374
   },
   {
     "id": 375,
-    "en": "tree",
+    "en": "house",
     "pos": "",
-    "zh": "树",
+    "zh": "房子",
     "notes": "",
     "frequency": 0,
     "sourceRow": 375
   },
   {
     "id": 376,
-    "en": "trees",
+    "en": "book",
     "pos": "",
-    "zh": "树木（复数）",
+    "zh": "书，预订",
     "notes": "",
     "frequency": 0,
     "sourceRow": 376
   },
   {
     "id": 377,
-    "en": "watched",
+    "en": "knowledge",
     "pos": "",
-    "zh": "看（watch的过去式）",
+    "zh": "知识",
     "notes": "",
     "frequency": 0,
     "sourceRow": 377
   },
   {
     "id": 378,
-    "en": "ways",
+    "en": "recently",
     "pos": "",
-    "zh": "方式（复数）",
+    "zh": "最近",
     "notes": "",
     "frequency": 0,
     "sourceRow": 378
   },
   {
     "id": 379,
-    "en": "wish",
+    "en": "prefer",
     "pos": "",
-    "zh": "希望，祝愿",
+    "zh": "更喜欢",
     "notes": "",
     "frequency": 0,
     "sourceRow": 379
   },
   {
     "id": 380,
-    "en": "write",
+    "en": "internet",
     "pos": "",
-    "zh": "写，书写",
+    "zh": "互联网",
     "notes": "",
     "frequency": 0,
     "sourceRow": 380
   },
   {
     "id": 381,
-    "en": "ability",
+    "en": "click",
     "pos": "",
-    "zh": "能力，才能",
+    "zh": "点击",
     "notes": "",
     "frequency": 0,
     "sourceRow": 381
   },
   {
     "id": 382,
-    "en": "activities",
+    "en": "mouse",
     "pos": "",
-    "zh": "活动（复数）",
+    "zh": "鼠标，老鼠",
     "notes": "",
     "frequency": 0,
     "sourceRow": 382
   },
   {
     "id": 383,
-    "en": "altay",
+    "en": "room",
     "pos": "",
-    "zh": "阿勒泰（新疆地名）",
+    "zh": "房间，空间",
     "notes": "",
     "frequency": 0,
     "sourceRow": 383
   },
   {
     "id": 384,
-    "en": "asia",
+    "en": "fantastic",
     "pos": "",
-    "zh": "亚洲",
+    "zh": "极好的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 384
   },
   {
     "id": 385,
-    "en": "astronauts",
+    "en": "choose",
     "pos": "",
-    "zh": "宇航员（复数）",
+    "zh": "选择",
     "notes": "",
     "frequency": 0,
     "sourceRow": 385
   },
   {
     "id": 386,
-    "en": "battery",
+    "en": "poetry",
     "pos": "",
-    "zh": "电池",
+    "zh": "诗歌",
     "notes": "",
     "frequency": 0,
     "sourceRow": 386
   },
   {
     "id": 387,
-    "en": "break",
+    "en": "workshop",
     "pos": "",
-    "zh": "打破，休息",
+    "zh": "研讨会，车间",
     "notes": "",
     "frequency": 0,
     "sourceRow": 387
   },
   {
     "id": 388,
-    "en": "busy",
+    "en": "guitar",
     "pos": "",
-    "zh": "忙碌的",
+    "zh": "吉他",
     "notes": "",
     "frequency": 0,
     "sourceRow": 388
   },
   {
     "id": 389,
-    "en": "cards",
+    "en": "writer",
     "pos": "",
-    "zh": "卡片（复数）",
+    "zh": "作家",
     "notes": "",
     "frequency": 0,
     "sourceRow": 389
   },
   {
     "id": 390,
-    "en": "computer",
+    "en": "playground",
     "pos": "",
-    "zh": "电脑，计算机",
+    "zh": "操场",
     "notes": "",
     "frequency": 0,
     "sourceRow": 390
   },
   {
     "id": 391,
-    "en": "confucianism",
+    "en": "dining",
     "pos": "",
-    "zh": "儒家思想，儒学",
+    "zh": "hall 餐厅",
     "notes": "",
     "frequency": 0,
     "sourceRow": 391
   },
   {
     "id": 392,
-    "en": "dance",
+    "en": "calm",
     "pos": "",
-    "zh": "跳舞，舞蹈",
+    "zh": "镇静的，使平静",
     "notes": "",
     "frequency": 0,
     "sourceRow": 392
   },
   {
     "id": 393,
-    "en": "days",
+    "en": "peaceful",
     "pos": "",
-    "zh": "日子，时代",
+    "zh": "宁静的，和平的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 393
   },
   {
     "id": 394,
-    "en": "dialects",
+    "en": "borrow",
     "pos": "",
-    "zh": "方言（复数）",
+    "zh": "借",
     "notes": "",
     "frequency": 0,
     "sourceRow": 394
   },
   {
     "id": 395,
-    "en": "discover",
+    "en": "disease",
     "pos": "",
-    "zh": "发现",
+    "zh": "疾病",
     "notes": "",
     "frequency": 0,
     "sourceRow": 395
   },
   {
     "id": 396,
-    "en": "drinking",
+    "en": "operation",
     "pos": "",
-    "zh": "喝，饮酒",
+    "zh": "手术",
     "notes": "",
     "frequency": 0,
     "sourceRow": 396
   },
   {
     "id": 397,
-    "en": "earth",
+    "en": "treatment",
     "pos": "",
-    "zh": "地球，土地",
+    "zh": "治疗",
     "notes": "",
     "frequency": 0,
     "sourceRow": 397
   },
   {
     "id": 398,
-    "en": "easy",
+    "en": "volunteer",
     "pos": "",
-    "zh": "容易的",
+    "zh": "志愿者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 398
   },
   {
     "id": 399,
-    "en": "education",
+    "en": "simple",
     "pos": "",
-    "zh": "教育",
+    "zh": "简单的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 399
   },
   {
     "id": 400,
-    "en": "encouraging",
+    "en": "kindness",
     "pos": "",
-    "zh": "鼓励（进行式）",
+    "zh": "仁慈，善举",
     "notes": "",
     "frequency": 0,
     "sourceRow": 400
   },
   {
     "id": 401,
-    "en": "example",
+    "en": "organization",
     "pos": "",
-    "zh": "例子，榜样",
+    "zh": "组织",
     "notes": "",
     "frequency": 0,
     "sourceRow": 401
   },
   {
     "id": 402,
-    "en": "explain",
+    "en": "charity",
     "pos": "",
-    "zh": "解释，说明",
+    "zh": "慈善机构",
     "notes": "",
     "frequency": 0,
     "sourceRow": 402
   },
   {
     "id": 403,
-    "en": "explore",
+    "en": "sick",
     "pos": "",
-    "zh": "探索",
+    "zh": "生病的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 403
   },
   {
     "id": 404,
-    "en": "eye",
+    "en": "alive",
     "pos": "",
-    "zh": "眼睛",
+    "zh": "活着的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 404
   },
   {
     "id": 405,
-    "en": "fantastic",
+    "en": "medicine",
     "pos": "",
-    "zh": "极好的，令人难以置信的",
+    "zh": "药物，医学",
     "notes": "",
     "frequency": 0,
     "sourceRow": 405
   },
   {
     "id": 406,
-    "en": "fast",
+    "en": "doctor",
     "pos": "",
-    "zh": "快速的",
+    "zh": "医生",
     "notes": "",
     "frequency": 0,
     "sourceRow": 406
   },
   {
     "id": 407,
-    "en": "felt",
+    "en": "subject",
     "pos": "",
-    "zh": "感觉（feel的过去式）",
+    "zh": "学科，主题",
     "notes": "",
     "frequency": 0,
     "sourceRow": 407
   },
   {
     "id": 408,
-    "en": "foreigners",
+    "en": "history",
     "pos": "",
-    "zh": "外国人（复数）",
+    "zh": "历史",
     "notes": "",
     "frequency": 0,
     "sourceRow": 408
   },
   {
     "id": 409,
-    "en": "form",
+    "en": "period",
     "pos": "",
-    "zh": "形式",
+    "zh": "时期，时代",
     "notes": "",
     "frequency": 0,
     "sourceRow": 409
   },
   {
     "id": 410,
-    "en": "forms",
+    "en": "culture",
     "pos": "",
-    "zh": "形式（复数/三单）",
+    "zh": "文化",
     "notes": "",
     "frequency": 0,
     "sourceRow": 410
   },
   {
     "id": 411,
-    "en": "friend",
+    "en": "channel",
     "pos": "",
-    "zh": "朋友",
+    "zh": "频道",
     "notes": "",
     "frequency": 0,
     "sourceRow": 411
   },
   {
     "id": 412,
-    "en": "front",
+    "en": "art",
     "pos": "",
-    "zh": "前面，正面",
+    "zh": "艺术",
     "notes": "",
     "frequency": 0,
     "sourceRow": 412
   },
   {
     "id": 413,
-    "en": "future",
+    "en": "express",
     "pos": "",
-    "zh": "未来，将来",
+    "zh": "表达",
     "notes": "",
     "frequency": 0,
     "sourceRow": 413
   },
   {
     "id": 414,
-    "en": "give",
+    "en": "feeling",
     "pos": "",
-    "zh": "给，给予",
+    "zh": "感觉，情感",
     "notes": "",
     "frequency": 0,
     "sourceRow": 414
   },
   {
     "id": 415,
-    "en": "goes",
+    "en": "artwork",
     "pos": "",
-    "zh": "去，走（复数/三单）",
+    "zh": "艺术品",
     "notes": "",
     "frequency": 0,
     "sourceRow": 415
   },
   {
     "id": 416,
-    "en": "groups",
+    "en": "self-confidence",
     "pos": "",
-    "zh": "群体，小组（复数/三单）",
+    "zh": "自信",
     "notes": "",
     "frequency": 0,
     "sourceRow": 416
   },
   {
     "id": 417,
-    "en": "happen",
+    "en": "social",
     "pos": "",
-    "zh": "发生",
+    "zh": "社会的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 417
   },
   {
     "id": 418,
-    "en": "happens",
+    "en": "role",
     "pos": "",
-    "zh": "发生（复数/三单）",
+    "zh": "角色",
     "notes": "",
     "frequency": 0,
     "sourceRow": 418
   },
   {
     "id": 419,
-    "en": "hearing",
+    "en": "society",
     "pos": "",
-    "zh": "听见（进行式）",
+    "zh": "社会",
     "notes": "",
     "frequency": 0,
     "sourceRow": 419
   },
   {
     "id": 420,
-    "en": "heart",
+    "en": "course",
     "pos": "",
-    "zh": "心，心脏",
+    "zh": "课程，进程",
     "notes": "",
     "frequency": 0,
     "sourceRow": 420
   },
   {
     "id": 421,
-    "en": "helen",
+    "en": "science",
     "pos": "",
-    "zh": "海伦（人名）",
+    "zh": "科学",
     "notes": "",
     "frequency": 0,
     "sourceRow": 421
   },
   {
     "id": 422,
-    "en": "hometown",
+    "en": "curious",
     "pos": "",
-    "zh": "家乡，故乡",
+    "zh": "好奇的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 422
   },
   {
     "id": 423,
-    "en": "industry",
+    "en": "wisely",
     "pos": "",
-    "zh": "工业，行业",
+    "zh": "明智地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 423
   },
   {
     "id": 424,
-    "en": "jack",
+    "en": "connect",
     "pos": "",
-    "zh": "杰克（人名）",
+    "zh": "连接",
     "notes": "",
     "frequency": 0,
     "sourceRow": 424
   },
   {
     "id": 425,
-    "en": "late",
+    "en": "reason",
     "pos": "",
-    "zh": "晚的，晚",
+    "zh": "原因",
     "notes": "",
     "frequency": 0,
     "sourceRow": 425
   },
   {
     "id": 426,
-    "en": "lesson",
+    "en": "bright",
     "pos": "",
-    "zh": "课，功课",
+    "zh": "明亮的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 426
   },
   {
     "id": 427,
-    "en": "lessons",
+    "en": "dark",
     "pos": "",
-    "zh": "课，功课（复数/三单）",
+    "zh": "黑暗的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 427
   },
   {
     "id": 428,
-    "en": "lights",
+    "en": "wise",
     "pos": "",
-    "zh": "光，灯，轻的（复数/三单）",
+    "zh": "明智的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 428
   },
   {
     "id": 429,
-    "en": "loud",
+    "en": "humorous",
     "pos": "",
-    "zh": "吵闹的",
+    "zh": "幽默的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 429
   },
   {
     "id": 430,
-    "en": "min",
+    "en": "hardworking",
     "pos": "",
-    "zh": "明/闵（中国名字）",
+    "zh": "勤奋的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 430
   },
   {
     "id": 431,
-    "en": "minutes",
+    "en": "organized",
     "pos": "",
-    "zh": "分钟（复数）",
+    "zh": "有组织的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 431
   },
   {
     "id": 432,
-    "en": "nations",
+    "en": "late",
     "pos": "",
-    "zh": "国家，民族（复数/三单）",
+    "zh": "迟的，晚的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 432
   },
   {
     "id": 433,
-    "en": "number",
+    "en": "strict",
     "pos": "",
-    "zh": "数字，号码",
+    "zh": "严格的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 433
   },
   {
     "id": 434,
-    "en": "party",
+    "en": "open-minded",
     "pos": "",
-    "zh": "派对，聚会，政党",
+    "zh": "思想开放的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 434
   },
   {
     "id": 435,
-    "en": "pet",
+    "en": "explore",
     "pos": "",
-    "zh": "宠物，抚摸",
+    "zh": "探索",
     "notes": "",
     "frequency": 0,
     "sourceRow": 435
   },
   {
     "id": 436,
-    "en": "poor",
+    "en": "survey",
     "pos": "",
-    "zh": "贫穷的，可怜的",
+    "zh": "调查",
     "notes": "",
     "frequency": 0,
     "sourceRow": 436
   },
   {
     "id": 437,
-    "en": "popular",
+    "en": "travel",
     "pos": "",
-    "zh": "流行的，受欢迎的",
+    "zh": "旅游",
     "notes": "",
     "frequency": 0,
     "sourceRow": 437
   },
   {
     "id": 438,
-    "en": "prepared",
+    "en": "behavior",
     "pos": "",
-    "zh": "准备（过去式）",
+    "zh": "行为",
     "notes": "",
     "frequency": 0,
     "sourceRow": 438
   },
   {
     "id": 439,
-    "en": "provide",
+    "en": "proper",
     "pos": "",
-    "zh": "提供",
+    "zh": "恰当的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 439
   },
   {
     "id": 440,
-    "en": "recent",
+    "en": "respect",
     "pos": "",
-    "zh": "最近的，近来的",
+    "zh": "尊重",
     "notes": "",
     "frequency": 0,
     "sourceRow": 440
   },
   {
     "id": 441,
-    "en": "record",
+    "en": "ancestor",
     "pos": "",
-    "zh": "记录，唱片",
+    "zh": "祖先",
     "notes": "",
     "frequency": 0,
     "sourceRow": 441
   },
   {
     "id": 442,
-    "en": "respect",
+    "en": "duty",
     "pos": "",
-    "zh": "尊重",
+    "zh": "责任，义务",
     "notes": "",
     "frequency": 0,
     "sourceRow": 442
   },
   {
     "id": 443,
-    "en": "sat",
+    "en": "obey",
     "pos": "",
-    "zh": "坐（sit的过去式）",
+    "zh": "服从",
     "notes": "",
     "frequency": 0,
     "sourceRow": 443
   },
   {
     "id": 444,
-    "en": "seeing",
+    "en": "harmonious",
     "pos": "",
-    "zh": "看见，明白（进行式）",
+    "zh": "和谐的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 444
   },
   {
     "id": 445,
-    "en": "sir",
+    "en": "mess",
     "pos": "",
-    "zh": "先生（尊称）",
+    "zh": "混乱",
     "notes": "",
     "frequency": 0,
     "sourceRow": 445
   },
   {
     "id": 446,
-    "en": "sleeping",
+    "en": "constant",
     "pos": "",
-    "zh": "睡觉",
+    "zh": "常数，不变的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 446
   },
   {
     "id": 447,
-    "en": "sounds",
+    "en": "virtue",
     "pos": "",
-    "zh": "声音，听起来（复数/三单）",
+    "zh": "美德",
     "notes": "",
     "frequency": 0,
     "sourceRow": 447
   },
   {
     "id": 448,
-    "en": "spring",
+    "en": "golden",
     "pos": "",
-    "zh": "春天，弹簧",
+    "zh": "黄金的，金色的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 448
   },
   {
     "id": 449,
-    "en": "studies",
+    "en": "supper",
     "pos": "",
-    "zh": "学习，研究（复数）",
+    "zh": "晚餐",
     "notes": "",
     "frequency": 0,
     "sourceRow": 449
   },
   {
     "id": 450,
-    "en": "success",
+    "en": "prison",
     "pos": "",
-    "zh": "成功",
+    "zh": "监狱",
     "notes": "",
     "frequency": 0,
     "sourceRow": 450
   },
   {
     "id": 451,
-    "en": "system",
+    "en": "wrong",
     "pos": "",
-    "zh": "系统",
+    "zh": "错误的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 451
   },
   {
     "id": 452,
-    "en": "taiwan",
+    "en": "trick",
     "pos": "",
-    "zh": "台湾",
+    "zh": "诀窍，诡计",
     "notes": "",
     "frequency": 0,
     "sourceRow": 452
   },
   {
     "id": 453,
-    "en": "task",
+    "en": "skin",
     "pos": "",
-    "zh": "任务，工作",
+    "zh": "皮肤",
     "notes": "",
     "frequency": 0,
     "sourceRow": 453
   },
   {
     "id": 454,
-    "en": "taught",
+    "en": "expect",
     "pos": "",
-    "zh": "教（teach的过去式）",
+    "zh": "期待",
     "notes": "",
     "frequency": 0,
     "sourceRow": 454
   },
   {
     "id": 455,
-    "en": "text",
+    "en": "look",
     "pos": "",
-    "zh": "文本，发短信",
+    "zh": "表情，看",
     "notes": "",
     "frequency": 0,
     "sourceRow": 455
   },
   {
     "id": 456,
-    "en": "thinking",
+    "en": "compromise",
     "pos": "",
-    "zh": "思考，思想",
+    "zh": "妥协",
     "notes": "",
     "frequency": 0,
     "sourceRow": 456
   },
   {
     "id": 457,
-    "en": "travel",
+    "en": "law",
     "pos": "",
-    "zh": "旅行",
+    "zh": "法律",
     "notes": "",
     "frequency": 0,
     "sourceRow": 457
   },
   {
     "id": 458,
-    "en": "united",
+    "en": "agreement",
     "pos": "",
-    "zh": "单位，单元（过去式）",
+    "zh": "协议",
     "notes": "",
     "frequency": 0,
     "sourceRow": 458
@@ -4125,12861 +4125,2853 @@ window.WORD_SNAP_WORDS = [
     "id": 459,
     "en": "usual",
     "pos": "",
-    "zh": "通常的，平常的",
+    "zh": "通常的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 459
   },
   {
     "id": 460,
-    "en": "watching",
+    "en": "point",
     "pos": "",
-    "zh": "看，观看（进行式）",
+    "zh": "of view 观点",
     "notes": "",
     "frequency": 0,
     "sourceRow": 460
   },
   {
     "id": 461,
-    "en": "weather",
+    "en": "primary",
     "pos": "",
-    "zh": "天气",
+    "zh": "school 小学",
     "notes": "",
     "frequency": 0,
     "sourceRow": 461
   },
   {
     "id": 462,
-    "en": "wild",
+    "en": "suggest",
     "pos": "",
-    "zh": "野生的，狂野的",
+    "zh": "建议",
     "notes": "",
     "frequency": 0,
     "sourceRow": 462
   },
   {
     "id": 463,
-    "en": "wind",
+    "en": "nature",
     "pos": "",
-    "zh": "风",
+    "zh": "自然",
     "notes": "",
     "frequency": 0,
     "sourceRow": 463
   },
   {
     "id": 464,
-    "en": "yoga",
+    "en": "soil",
     "pos": "",
-    "zh": "瑜伽",
+    "zh": "土壤",
     "notes": "",
     "frequency": 0,
     "sourceRow": 464
   },
   {
     "id": 465,
-    "en": "avoid",
+    "en": "stone",
     "pos": "",
-    "zh": "避免，回避",
+    "zh": "石头",
     "notes": "",
     "frequency": 0,
     "sourceRow": 465
   },
   {
     "id": 466,
-    "en": "basketball",
+    "en": "leaf",
     "pos": "",
-    "zh": "篮球",
+    "zh": "叶子",
     "notes": "",
     "frequency": 0,
     "sourceRow": 466
   },
   {
     "id": 467,
-    "en": "bigger",
+    "en": "impress",
     "pos": "",
-    "zh": "更大的",
+    "zh": "留下印象",
     "notes": "",
     "frequency": 0,
     "sourceRow": 467
   },
   {
     "id": 468,
-    "en": "bright",
+    "en": "imagination",
     "pos": "",
-    "zh": "明亮的，聪明的",
+    "zh": "想象力",
     "notes": "",
     "frequency": 0,
     "sourceRow": 468
   },
   {
     "id": 469,
-    "en": "built",
+    "en": "flow",
     "pos": "",
-    "zh": "建造（build的过去式）",
+    "zh": "流动",
     "notes": "",
     "frequency": 0,
     "sourceRow": 469
   },
   {
     "id": 470,
-    "en": "call",
+    "en": "lake",
     "pos": "",
-    "zh": "叫做，打电话，呼喊",
+    "zh": "湖泊",
     "notes": "",
     "frequency": 0,
     "sourceRow": 470
   },
   {
     "id": 471,
-    "en": "calm",
+    "en": "shade",
     "pos": "",
-    "zh": "平静的，冷静的",
+    "zh": "阴凉",
     "notes": "",
     "frequency": 0,
     "sourceRow": 471
   },
   {
     "id": 472,
-    "en": "chances",
+    "en": "schoolwork",
     "pos": "",
-    "zh": "机会，可能性（复数/三单）",
+    "zh": "学业",
     "notes": "",
     "frequency": 0,
     "sourceRow": 472
   },
   {
     "id": 473,
-    "en": "cheer",
+    "en": "pleasant",
     "pos": "",
-    "zh": "欢呼，加油，振奋",
+    "zh": "舒适的，愉快的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 473
   },
   {
     "id": 474,
-    "en": "clean",
+    "en": "relax",
     "pos": "",
-    "zh": "打扫，清洁的",
+    "zh": "放松",
     "notes": "",
     "frequency": 0,
     "sourceRow": 474
   },
   {
     "id": 475,
-    "en": "color",
+    "en": "notice",
     "pos": "",
-    "zh": "颜色",
+    "zh": "注意",
     "notes": "",
     "frequency": 0,
     "sourceRow": 475
   },
   {
     "id": 476,
-    "en": "connect",
+    "en": "path",
     "pos": "",
-    "zh": "连接",
+    "zh": "路径，小路",
     "notes": "",
     "frequency": 0,
     "sourceRow": 476
   },
   {
     "id": 477,
-    "en": "countryside",
+    "en": "boundary",
     "pos": "",
-    "zh": "乡村，农村",
+    "zh": "边界",
     "notes": "",
     "frequency": 0,
     "sourceRow": 477
   },
   {
     "id": 478,
-    "en": "cried",
+    "en": "loss",
     "pos": "",
-    "zh": "哭了，喊叫（cry的过去式）",
+    "zh": "损失",
     "notes": "",
     "frequency": 0,
     "sourceRow": 478
   },
   {
     "id": 479,
-    "en": "culture",
+    "en": "covering",
     "pos": "",
-    "zh": "文化",
+    "zh": "覆盖物",
     "notes": "",
     "frequency": 0,
     "sourceRow": 479
   },
   {
     "id": 480,
-    "en": "danger",
+    "en": "landscape",
     "pos": "",
-    "zh": "危险",
+    "zh": "风景，山水",
     "notes": "",
     "frequency": 0,
     "sourceRow": 480
   },
   {
     "id": 481,
-    "en": "deep",
+    "en": "color",
     "pos": "",
-    "zh": "深的，深刻",
+    "zh": "颜色",
     "notes": "",
     "frequency": 0,
     "sourceRow": 481
   },
   {
     "id": 482,
-    "en": "describe",
+    "en": "notebook",
     "pos": "",
-    "zh": "描述，形容",
+    "zh": "笔记本",
     "notes": "",
     "frequency": 0,
     "sourceRow": 482
   },
   {
     "id": 483,
-    "en": "direction",
+    "en": "guide",
     "pos": "",
-    "zh": "方向，指向",
+    "zh": "指南，导游",
     "notes": "",
     "frequency": 0,
     "sourceRow": 483
   },
   {
     "id": 484,
-    "en": "discovered",
+    "en": "ancient",
     "pos": "",
-    "zh": "发现（过去式）",
+    "zh": "古老的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 484
   },
   {
     "id": 485,
-    "en": "especially",
+    "en": "contribution",
     "pos": "",
-    "zh": "特别是，尤其是",
+    "zh": "贡献",
     "notes": "",
     "frequency": 0,
     "sourceRow": 485
   },
   {
     "id": 486,
-    "en": "famous",
+    "en": "latest",
     "pos": "",
-    "zh": "著名的",
+    "zh": "最新的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 486
   },
   {
     "id": 487,
-    "en": "fans",
+    "en": "drum",
     "pos": "",
-    "zh": "粉丝，风扇（复数/三单）",
+    "zh": "鼓",
     "notes": "",
     "frequency": 0,
     "sourceRow": 487
   },
   {
     "id": 488,
-    "en": "finds",
+    "en": "foreigner",
     "pos": "",
-    "zh": "找到，发现（复数/三单）",
+    "zh": "外国人",
     "notes": "",
     "frequency": 0,
     "sourceRow": 488
   },
   {
     "id": 489,
-    "en": "followed",
+    "en": "topic",
     "pos": "",
-    "zh": "跟随，遵循（过去式）",
+    "zh": "话题",
     "notes": "",
     "frequency": 0,
     "sourceRow": 489
   },
   {
     "id": 490,
-    "en": "fresh",
+    "en": "environment",
     "pos": "",
-    "zh": "新鲜的",
+    "zh": "环境",
     "notes": "",
     "frequency": 0,
     "sourceRow": 490
   },
   {
     "id": 491,
-    "en": "girl",
+    "en": "spit",
     "pos": "",
-    "zh": "女孩",
+    "zh": "吐痰",
     "notes": "",
     "frequency": 0,
     "sourceRow": 491
   },
   {
     "id": 492,
-    "en": "grass",
+    "en": "friendly",
     "pos": "",
-    "zh": "草，草地",
+    "zh": "友好的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 492
   },
   {
     "id": 493,
-    "en": "guys",
+    "en": "helpful",
     "pos": "",
-    "zh": "伙伴们（口语）",
+    "zh": "有帮助的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 493
   },
   {
     "id": 494,
-    "en": "harder",
+    "en": "yoga",
     "pos": "",
-    "zh": "更努力地，困难的",
+    "zh": "瑜伽",
     "notes": "",
     "frequency": 0,
     "sourceRow": 494
   },
   {
     "id": 495,
-    "en": "helped",
+    "en": "donate",
     "pos": "",
-    "zh": "帮助（help的过去式）",
+    "zh": "捐赠",
     "notes": "",
     "frequency": 0,
     "sourceRow": 495
   },
   {
     "id": 496,
-    "en": "innovation",
+    "en": "send",
     "pos": "",
-    "zh": "创新，革新",
+    "zh": "发送",
     "notes": "",
     "frequency": 0,
     "sourceRow": 496
   },
   {
     "id": 497,
-    "en": "knowledge",
+    "en": "rush",
     "pos": "",
-    "zh": "知识",
+    "zh": "匆忙",
     "notes": "",
     "frequency": 0,
     "sourceRow": 497
   },
   {
     "id": 498,
-    "en": "known",
+    "en": "breathing",
     "pos": "",
-    "zh": "已知（know的过去分词）",
+    "zh": "呼吸",
     "notes": "",
     "frequency": 0,
     "sourceRow": 498
   },
   {
     "id": 499,
-    "en": "land",
+    "en": "exercise",
     "pos": "",
-    "zh": "土地，着陆",
+    "zh": "练习，锻炼",
     "notes": "",
     "frequency": 0,
     "sourceRow": 499
   },
   {
     "id": 500,
-    "en": "large",
+    "en": "posture",
     "pos": "",
-    "zh": "大的",
+    "zh": "姿势",
     "notes": "",
     "frequency": 0,
     "sourceRow": 500
   },
   {
     "id": 501,
-    "en": "loss",
+    "en": "envious",
     "pos": "",
-    "zh": "损失，失去",
+    "zh": "羡慕的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 501
   },
   {
     "id": 502,
-    "en": "magic",
+    "en": "research",
     "pos": "",
-    "zh": "魔法，神奇的",
+    "zh": "研究",
     "notes": "",
     "frequency": 0,
     "sourceRow": 502
   },
   {
     "id": 503,
-    "en": "makers",
+    "en": "partner",
     "pos": "",
-    "zh": "制作者，创作者（复数）",
+    "zh": "伙伴",
     "notes": "",
     "frequency": 0,
     "sourceRow": 503
   },
   {
     "id": 504,
-    "en": "medical",
+    "en": "stretching",
     "pos": "",
-    "zh": "医疗的，医学的",
+    "zh": "伸展",
     "notes": "",
     "frequency": 0,
     "sourceRow": 504
   },
   {
     "id": 505,
-    "en": "met",
+    "en": "sunshine",
     "pos": "",
-    "zh": "见面（meet的过去式）",
+    "zh": "阳光",
     "notes": "",
     "frequency": 0,
     "sourceRow": 505
   },
   {
     "id": 506,
-    "en": "mile",
+    "en": "rainfall",
     "pos": "",
-    "zh": "英里",
+    "zh": "降雨",
     "notes": "",
     "frequency": 0,
     "sourceRow": 506
   },
   {
     "id": 507,
-    "en": "morning",
+    "en": "classical",
     "pos": "",
-    "zh": "早晨",
+    "zh": "古典的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 507
   },
   {
     "id": 508,
-    "en": "movie",
+    "en": "garden",
     "pos": "",
-    "zh": "电影",
+    "zh": "园林，花园",
     "notes": "",
     "frequency": 0,
     "sourceRow": 508
   },
   {
     "id": 509,
-    "en": "patients",
+    "en": "design",
     "pos": "",
-    "zh": "病人们（复数）",
+    "zh": "设计",
     "notes": "",
     "frequency": 0,
     "sourceRow": 509
   },
   {
     "id": 510,
-    "en": "peaceful",
+    "en": "feature",
     "pos": "",
-    "zh": "和平的，宁静的",
+    "zh": "特点",
     "notes": "",
     "frequency": 0,
     "sourceRow": 510
   },
   {
     "id": 511,
-    "en": "plant",
+    "en": "bloom",
     "pos": "",
-    "zh": "植物，工厂，种植",
+    "zh": "开花",
     "notes": "",
     "frequency": 0,
     "sourceRow": 511
   },
   {
     "id": 512,
-    "en": "play",
+    "en": "view",
     "pos": "",
-    "zh": "玩，演奏，戏剧",
+    "zh": "景色",
     "notes": "",
     "frequency": 0,
     "sourceRow": 512
   },
   {
     "id": 513,
-    "en": "pool",
+    "en": "stop",
     "pos": "",
-    "zh": "游泳池，水池，汇集",
+    "zh": "停止",
     "notes": "",
     "frequency": 0,
     "sourceRow": 513
   },
   {
     "id": 514,
-    "en": "putonghua",
+    "en": "fog",
     "pos": "",
-    "zh": "普通话",
+    "zh": "雾",
     "notes": "",
     "frequency": 0,
     "sourceRow": 514
   },
   {
     "id": 515,
-    "en": "real",
+    "en": "series",
     "pos": "",
-    "zh": "真实的，现实的",
+    "zh": "连续剧",
     "notes": "",
     "frequency": 0,
     "sourceRow": 515
   },
   {
     "id": 516,
-    "en": "report",
+    "en": "hit",
     "pos": "",
-    "zh": "报告，汇报",
+    "zh": "轰动，成功",
     "notes": "",
     "frequency": 0,
     "sourceRow": 516
   },
   {
     "id": 517,
-    "en": "sad",
+    "en": "direct",
     "pos": "",
-    "zh": "悲伤的",
+    "zh": "导演",
     "notes": "",
     "frequency": 0,
     "sourceRow": 517
   },
   {
     "id": 518,
-    "en": "save",
+    "en": "poetic",
     "pos": "",
-    "zh": "拯救，储存",
+    "zh": "诗意的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 518
   },
   {
     "id": 519,
-    "en": "sense",
+    "en": "wisdom",
     "pos": "",
-    "zh": "感觉，意义",
+    "zh": "智慧",
     "notes": "",
     "frequency": 0,
     "sourceRow": 519
   },
   {
     "id": 520,
-    "en": "set",
+    "en": "drama",
     "pos": "",
-    "zh": "设置（set的过去式）",
+    "zh": "戏剧",
     "notes": "",
     "frequency": 0,
     "sourceRow": 520
   },
   {
     "id": 521,
-    "en": "showed",
+    "en": "journey",
     "pos": "",
-    "zh": "展示（show的过去式）",
+    "zh": "旅程",
     "notes": "",
     "frequency": 0,
     "sourceRow": 521
   },
   {
     "id": 522,
-    "en": "shy",
+    "en": "capital",
     "pos": "",
-    "zh": "害羞的，腼腆的",
+    "zh": "首都",
     "notes": "",
     "frequency": 0,
     "sourceRow": 522
   },
   {
     "id": 523,
-    "en": "sick",
+    "en": "traditional",
     "pos": "",
-    "zh": "生病的，恶心的",
+    "zh": "传统的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 523
   },
   {
     "id": 524,
-    "en": "skin",
+    "en": "lifestyle",
     "pos": "",
-    "zh": "皮肤",
+    "zh": "生活方式",
     "notes": "",
     "frequency": 0,
     "sourceRow": 524
   },
   {
     "id": 525,
-    "en": "sky",
+    "en": "fan",
     "pos": "",
-    "zh": "天空",
+    "zh": "迷，粉丝",
     "notes": "",
     "frequency": 0,
     "sourceRow": 525
   },
   {
     "id": 526,
-    "en": "speak",
+    "en": "wonderland",
     "pos": "",
-    "zh": "说话，讲",
+    "zh": "仙境",
     "notes": "",
     "frequency": 0,
     "sourceRow": 526
   },
   {
     "id": 527,
-    "en": "station",
+    "en": "unique",
     "pos": "",
-    "zh": "站，车站",
+    "zh": "独特的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 527
   },
   {
     "id": 528,
-    "en": "stopped",
+    "en": "grassland",
     "pos": "",
-    "zh": "停止（stop的过去式）",
+    "zh": "草原",
     "notes": "",
     "frequency": 0,
     "sourceRow": 528
   },
   {
     "id": 529,
-    "en": "stronger",
+    "en": "success",
     "pos": "",
-    "zh": "更强壮的，强烈的",
+    "zh": "成功",
     "notes": "",
     "frequency": 0,
     "sourceRow": 529
   },
   {
     "id": 530,
-    "en": "student",
+    "en": "viewer",
     "pos": "",
-    "zh": "学生",
+    "zh": "观众",
     "notes": "",
     "frequency": 0,
     "sourceRow": 530
   },
   {
     "id": 531,
-    "en": "studying",
+    "en": "communicate",
     "pos": "",
-    "zh": "学习，研究",
+    "zh": "交流",
     "notes": "",
     "frequency": 0,
     "sourceRow": 531
   },
   {
     "id": 532,
-    "en": "subject",
+    "en": "sincerely",
     "pos": "",
-    "zh": "科目，主题",
+    "zh": "真诚地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 532
   },
   {
     "id": 533,
-    "en": "taken",
+    "en": "goodness",
     "pos": "",
-    "zh": "已拿（take的过去分词）",
+    "zh": "善良",
     "notes": "",
     "frequency": 0,
     "sourceRow": 533
   },
   {
     "id": 534,
-    "en": "tibet",
+    "en": "beauty",
     "pos": "",
-    "zh": "西藏",
+    "zh": "美丽",
     "notes": "",
     "frequency": 0,
     "sourceRow": 534
   },
   {
     "id": 535,
-    "en": "training",
+    "en": "producer",
     "pos": "",
-    "zh": "训练，火车（进行式）",
+    "zh": "生产者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 535
   },
   {
     "id": 536,
-    "en": "true",
+    "en": "market",
     "pos": "",
-    "zh": "真的，真实的",
+    "zh": "市场",
     "notes": "",
     "frequency": 0,
     "sourceRow": 536
   },
   {
     "id": 537,
-    "en": "trust",
+    "en": "sale",
     "pos": "",
-    "zh": "信任",
+    "zh": "销售",
     "notes": "",
     "frequency": 0,
     "sourceRow": 537
   },
   {
     "id": 538,
-    "en": "trying",
+    "en": "export",
     "pos": "",
-    "zh": "尝试，努力（进行式）",
+    "zh": "出口",
     "notes": "",
     "frequency": 0,
     "sourceRow": 538
   },
   {
     "id": 539,
-    "en": "twenty",
+    "en": "government",
     "pos": "",
-    "zh": "二十",
+    "zh": "政府",
     "notes": "",
     "frequency": 0,
     "sourceRow": 539
   },
   {
     "id": 540,
-    "en": "using",
+    "en": "green",
     "pos": "",
-    "zh": "使用，用途（进行式）",
+    "zh": "绿色的，环保的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 540
   },
   {
     "id": 541,
-    "en": "wait",
+    "en": "high-quality",
     "pos": "",
-    "zh": "等待，等候",
+    "zh": "高质量的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 541
   },
   {
     "id": 542,
-    "en": "wonderful",
+    "en": "industry",
     "pos": "",
-    "zh": "精彩的，美妙的",
+    "zh": "工业",
     "notes": "",
     "frequency": 0,
     "sourceRow": 542
   },
   {
     "id": 543,
-    "en": "worked",
+    "en": "model",
     "pos": "",
-    "zh": "工作（work的过去式）",
+    "zh": "型号",
     "notes": "",
     "frequency": 0,
     "sourceRow": 543
   },
   {
     "id": 544,
-    "en": "zhang",
+    "en": "brand",
     "pos": "",
-    "zh": "张（中国姓氏）",
+    "zh": "品牌",
     "notes": "",
     "frequency": 0,
     "sourceRow": 544
   },
   {
     "id": 545,
-    "en": "accused",
+    "en": "price",
     "pos": "",
-    "zh": "被指控的，指控",
+    "zh": "价格",
     "notes": "",
     "frequency": 0,
     "sourceRow": 545
   },
   {
     "id": 546,
-    "en": "adding",
+    "en": "cut",
     "pos": "",
-    "zh": "增加，添加（进行式）",
+    "zh": "削减",
     "notes": "",
     "frequency": 0,
     "sourceRow": 546
   },
   {
     "id": 547,
-    "en": "app",
+    "en": "maker",
     "pos": "",
-    "zh": "应用程序（手机软件）",
+    "zh": "制造者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 547
   },
   {
     "id": 548,
-    "en": "arms",
+    "en": "innovation",
     "pos": "",
-    "zh": "手臂（复数），武器",
+    "zh": "创新",
     "notes": "",
     "frequency": 0,
     "sourceRow": 548
   },
   {
     "id": 549,
-    "en": "autograph",
+    "en": "risk",
     "pos": "",
-    "zh": "亲笔签名",
+    "zh": "风险",
     "notes": "",
     "frequency": 0,
     "sourceRow": 549
   },
   {
     "id": 550,
-    "en": "beauty",
+    "en": "technology",
     "pos": "",
-    "zh": "美丽",
+    "zh": "技术",
     "notes": "",
     "frequency": 0,
     "sourceRow": 550
   },
   {
     "id": 551,
-    "en": "benefits",
+    "en": "battery",
     "pos": "",
-    "zh": "好处，福利（复数）",
+    "zh": "电池",
     "notes": "",
     "frequency": 0,
     "sourceRow": 551
   },
   {
     "id": 552,
-    "en": "bodies",
+    "en": "charging",
     "pos": "",
-    "zh": "身体，主体（复数）",
+    "zh": "point 充电站",
     "notes": "",
     "frequency": 0,
     "sourceRow": 552
   },
   {
     "id": 553,
-    "en": "bond",
+    "en": "aware",
     "pos": "",
-    "zh": "纽带，联系",
+    "zh": "意识到的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 553
   },
   {
     "id": 554,
-    "en": "boston",
+    "en": "transport",
     "pos": "",
-    "zh": "波士顿（美国城市）",
+    "zh": "运输",
     "notes": "",
     "frequency": 0,
     "sourceRow": 554
   },
   {
     "id": 555,
-    "en": "bottles",
+    "en": "future",
     "pos": "",
-    "zh": "瓶子（复数）",
+    "zh": "未来",
     "notes": "",
     "frequency": 0,
     "sourceRow": 555
   },
   {
     "id": 556,
-    "en": "brands",
+    "en": "attitude",
     "pos": "",
-    "zh": "品牌（复数）",
+    "zh": "态度",
     "notes": "",
     "frequency": 0,
     "sourceRow": 556
   },
   {
     "id": 557,
-    "en": "brave",
+    "en": "hopeful",
     "pos": "",
-    "zh": "勇敢的",
+    "zh": "充满希望的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 557
   },
   {
     "id": 558,
-    "en": "breakfast",
+    "en": "flashlight",
     "pos": "",
-    "zh": "早餐，早饭",
+    "zh": "手电筒",
     "notes": "",
     "frequency": 0,
     "sourceRow": 558
   },
   {
     "id": 559,
-    "en": "breathing",
+    "en": "seat",
     "pos": "",
-    "zh": "呼吸",
+    "zh": "座位",
     "notes": "",
     "frequency": 0,
     "sourceRow": 559
   },
   {
     "id": 560,
-    "en": "broke",
+    "en": "trip",
     "pos": "",
-    "zh": "打破（break的过去式）",
+    "zh": "旅行",
     "notes": "",
     "frequency": 0,
     "sourceRow": 560
   },
   {
     "id": 561,
-    "en": "cannot",
+    "en": "ruin",
     "pos": "",
-    "zh": "不能（=can not）",
+    "zh": "毁坏",
     "notes": "",
     "frequency": 0,
     "sourceRow": 561
   },
   {
     "id": 562,
-    "en": "card",
+    "en": "awful",
     "pos": "",
-    "zh": "卡片",
+    "zh": "糟糕的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 562
   },
   {
     "id": 563,
-    "en": "cause",
+    "en": "earth",
     "pos": "",
-    "zh": "原因，导致",
+    "zh": "地球",
     "notes": "",
     "frequency": 0,
     "sourceRow": 563
   },
   {
     "id": 564,
-    "en": "challenging",
+    "en": "head",
     "pos": "",
-    "zh": "挑战（进行式）",
+    "zh": "头",
     "notes": "",
     "frequency": 0,
     "sourceRow": 564
   },
   {
     "id": 565,
-    "en": "changed",
+    "en": "low-battery",
     "pos": "",
-    "zh": "改变（change的过去式）",
+    "zh": "低电量",
     "notes": "",
     "frequency": 0,
     "sourceRow": 565
   },
   {
     "id": 566,
-    "en": "closely",
+    "en": "present",
     "pos": "",
-    "zh": "关闭，靠近（副词）",
+    "zh": "现在的，出席的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 566
   },
   {
     "id": 567,
-    "en": "collected",
+    "en": "grateful",
     "pos": "",
-    "zh": "收集，采集（过去式）",
+    "zh": "感激的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 567
   },
   {
     "id": 568,
-    "en": "concert",
+    "en": "shower",
     "pos": "",
-    "zh": "音乐会，演唱会",
+    "zh": "淋浴",
     "notes": "",
     "frequency": 0,
     "sourceRow": 568
   },
   {
     "id": 569,
-    "en": "cook",
+    "en": "crowded",
     "pos": "",
-    "zh": "烹饪",
+    "zh": "拥挤的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 569
   },
   {
     "id": 570,
-    "en": "courage",
+    "en": "short",
     "pos": "",
-    "zh": "勇气",
+    "zh": "短的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 570
   },
   {
     "id": 571,
-    "en": "course",
+    "en": "habit",
     "pos": "",
-    "zh": "课程，过程",
+    "zh": "习惯",
     "notes": "",
     "frequency": 0,
     "sourceRow": 571
   },
   {
     "id": 572,
-    "en": "covered",
+    "en": "way",
     "pos": "",
-    "zh": "覆盖着的，盖过（cover的过去式）",
+    "zh": "方法",
     "notes": "",
     "frequency": 0,
     "sourceRow": 572
   },
   {
     "id": 573,
-    "en": "cultures",
+    "en": "warning",
     "pos": "",
-    "zh": "文化（复数/三单）",
+    "zh": "警告",
     "notes": "",
     "frequency": 0,
     "sourceRow": 573
   },
   {
     "id": 574,
-    "en": "damage",
+    "en": "condition",
     "pos": "",
-    "zh": "损坏，损害",
+    "zh": "条件，状态",
     "notes": "",
     "frequency": 0,
     "sourceRow": 574
   },
   {
     "id": 575,
-    "en": "dave",
+    "en": "chain",
     "pos": "",
-    "zh": "戴夫（人名）",
+    "zh": "链",
     "notes": "",
     "frequency": 0,
     "sourceRow": 575
   },
   {
     "id": 576,
-    "en": "develops",
+    "en": "insect",
     "pos": "",
-    "zh": "发展，开发（复数/三单）",
+    "zh": "昆虫",
     "notes": "",
     "frequency": 0,
     "sourceRow": 576
   },
   {
     "id": 577,
-    "en": "eggs",
+    "en": "grasshopper",
     "pos": "",
-    "zh": "鸡蛋（复数）",
+    "zh": "蝗虫",
     "notes": "",
     "frequency": 0,
     "sourceRow": 577
   },
   {
     "id": 578,
-    "en": "encouraged",
+    "en": "clothing",
     "pos": "",
-    "zh": "鼓励（过去式）",
+    "zh": "服装",
     "notes": "",
     "frequency": 0,
     "sourceRow": 578
   },
   {
     "id": 579,
-    "en": "expect",
+    "en": "trade",
     "pos": "",
-    "zh": "期望，期待",
+    "zh": "贸易",
     "notes": "",
     "frequency": 0,
     "sourceRow": 579
   },
   {
     "id": 580,
-    "en": "expected",
+    "en": "sugar",
     "pos": "",
-    "zh": "被期望的，预期的",
+    "zh": "cane 甘蔗",
     "notes": "",
     "frequency": 0,
     "sourceRow": 580
   },
   {
     "id": 581,
-    "en": "express",
+    "en": "juice",
     "pos": "",
-    "zh": "表达，快递",
+    "zh": "果汁",
     "notes": "",
     "frequency": 0,
     "sourceRow": 581
   },
   {
     "id": 582,
-    "en": "fact",
+    "en": "island",
     "pos": "",
-    "zh": "事实，真相",
+    "zh": "岛屿",
     "notes": "",
     "frequency": 0,
     "sourceRow": 582
   },
   {
     "id": 583,
-    "en": "focus",
+    "en": "wide",
     "pos": "",
-    "zh": "集中注意力",
+    "zh": "广阔的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 583
   },
   {
     "id": 584,
-    "en": "fujian",
+    "en": "cocoa",
     "pos": "",
-    "zh": "福建（中国省份）",
+    "zh": "可可",
     "notes": "",
     "frequency": 0,
     "sourceRow": 584
   },
   {
     "id": 585,
-    "en": "habits",
+    "en": "spicy",
     "pos": "",
-    "zh": "习惯（复数/三单）",
+    "zh": "辛辣的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 585
   },
   {
     "id": 586,
-    "en": "head",
+    "en": "sweet",
     "pos": "",
-    "zh": "头，负责人",
+    "zh": "甜的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 586
   },
   {
     "id": 587,
-    "en": "hear",
+    "en": "expensive",
     "pos": "",
-    "zh": "听见",
+    "zh": "昂贵的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 587
   },
   {
     "id": 588,
-    "en": "highest",
+    "en": "baseball",
     "pos": "",
-    "zh": "最高的，高度",
+    "zh": "棒球",
     "notes": "",
     "frequency": 0,
     "sourceRow": 588
   },
   {
     "id": 589,
-    "en": "hong",
+    "en": "major",
     "pos": "",
-    "zh": "洪/红（中国人名/地名用字）",
+    "zh": "league 大联盟",
     "notes": "",
     "frequency": 0,
     "sourceRow": 589
   },
   {
     "id": 590,
-    "en": "hospital",
+    "en": "game",
     "pos": "",
-    "zh": "医院",
+    "zh": "比赛",
     "notes": "",
     "frequency": 0,
     "sourceRow": 590
   },
   {
     "id": 591,
-    "en": "hours",
+    "en": "hero",
     "pos": "",
-    "zh": "小时（复数）",
+    "zh": "英雄",
     "notes": "",
     "frequency": 0,
     "sourceRow": 591
   },
   {
     "id": 592,
-    "en": "ian",
+    "en": "autograph",
     "pos": "",
-    "zh": "伊恩（人名）",
+    "zh": "签名",
     "notes": "",
     "frequency": 0,
     "sourceRow": 592
   },
   {
     "id": 593,
-    "en": "include",
+    "en": "pencil",
     "pos": "",
-    "zh": "包括",
+    "zh": "铅笔",
     "notes": "",
     "frequency": 0,
     "sourceRow": 593
   },
   {
     "id": 594,
-    "en": "jazz",
+    "en": "patiently",
     "pos": "",
-    "zh": "爵士乐",
+    "zh": "耐心地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 594
   },
   {
     "id": 595,
-    "en": "kid",
+    "en": "pocket",
     "pos": "",
-    "zh": "小孩，开玩笑",
+    "zh": "口袋",
     "notes": "",
     "frequency": 0,
     "sourceRow": 595
   },
   {
     "id": 596,
-    "en": "kong",
+    "en": "plan",
     "pos": "",
-    "zh": "港（香港的港字）",
+    "zh": "计划",
     "notes": "",
     "frequency": 0,
     "sourceRow": 596
   },
   {
     "id": 597,
-    "en": "languages",
+    "en": "unprepared",
     "pos": "",
-    "zh": "语言（复数/三单）",
+    "zh": "未准备好的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 597
   },
   {
     "id": 598,
-    "en": "leaving",
+    "en": "empty-handed",
     "pos": "",
-    "zh": "离开，留下（进行式）",
+    "zh": "空手的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 598
   },
   {
     "id": 599,
-    "en": "left",
+    "en": "cartoonist",
     "pos": "",
-    "zh": "离开（leave的过去式），左边",
+    "zh": "漫画家",
     "notes": "",
     "frequency": 0,
     "sourceRow": 599
   },
   {
     "id": 600,
-    "en": "level",
+    "en": "trouble",
     "pos": "",
-    "zh": "水平，级别",
+    "zh": "麻烦",
     "notes": "",
     "frequency": 0,
     "sourceRow": 600
   },
   {
     "id": 601,
-    "en": "low",
+    "en": "help",
     "pos": "",
-    "zh": "低的",
+    "zh": "帮助",
     "notes": "",
     "frequency": 0,
     "sourceRow": 601
   },
   {
     "id": 602,
-    "en": "luckily",
+    "en": "rain",
     "pos": "",
-    "zh": "幸运的（副词）",
+    "zh": "雨",
     "notes": "",
     "frequency": 0,
     "sourceRow": 602
   },
   {
     "id": 603,
-    "en": "matter",
+    "en": "mountain",
     "pos": "",
-    "zh": "要紧，物质",
+    "zh": "山",
     "notes": "",
     "frequency": 0,
     "sourceRow": 603
   },
   {
     "id": 604,
-    "en": "mission",
+    "en": "village",
     "pos": "",
-    "zh": "任务，使命",
+    "zh": "村庄",
     "notes": "",
     "frequency": 0,
     "sourceRow": 604
   },
   {
     "id": 605,
-    "en": "mood",
+    "en": "excited",
     "pos": "",
-    "zh": "心情，情绪",
+    "zh": "兴奋的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 605
   },
   {
     "id": 606,
-    "en": "natural",
+    "en": "teach",
     "pos": "",
-    "zh": "自然的",
+    "zh": "教学",
     "notes": "",
     "frequency": 0,
     "sourceRow": 606
   },
   {
     "id": 607,
-    "en": "needs",
+    "en": "nervous",
     "pos": "",
-    "zh": "需要（复数/三单）",
+    "zh": "紧张的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 607
   },
   {
     "id": 608,
-    "en": "numbers",
+    "en": "surprised",
     "pos": "",
-    "zh": "数字，号码（复数/三单）",
+    "zh": "惊讶的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 608
   },
   {
     "id": 609,
-    "en": "official",
+    "en": "corner",
     "pos": "",
-    "zh": "官方的，官员",
+    "zh": "角落",
     "notes": "",
     "frequency": 0,
     "sourceRow": 609
   },
   {
     "id": 610,
-    "en": "painful",
+    "en": "poster",
     "pos": "",
-    "zh": "痛苦的，难受的",
+    "zh": "海报",
     "notes": "",
     "frequency": 0,
     "sourceRow": 610
   },
   {
     "id": 611,
-    "en": "painted",
+    "en": "shyly",
     "pos": "",
-    "zh": "涂漆，画画（过去式）",
+    "zh": "羞怯地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 611
   },
   {
     "id": 612,
-    "en": "predominant",
+    "en": "quietly",
     "pos": "",
-    "zh": "主要的，占主导地位的",
+    "zh": "安静地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 612
   },
   {
     "id": 613,
-    "en": "present",
+    "en": "finger",
     "pos": "",
-    "zh": "礼物，目前的，呈现",
+    "zh": "手指",
     "notes": "",
     "frequency": 0,
     "sourceRow": 613
   },
   {
     "id": 614,
-    "en": "program",
+    "en": "slowly",
     "pos": "",
-    "zh": "节目，程序",
+    "zh": "慢地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 614
   },
   {
     "id": 615,
-    "en": "progress",
+    "en": "directly",
     "pos": "",
-    "zh": "进步，进展",
+    "zh": "直接地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 615
   },
   {
     "id": 616,
-    "en": "promise",
+    "en": "finally",
     "pos": "",
-    "zh": "承诺，保证",
+    "zh": "最终",
     "notes": "",
     "frequency": 0,
     "sourceRow": 616
   },
   {
     "id": 617,
-    "en": "proud",
+    "en": "meaningful",
     "pos": "",
-    "zh": "骄傲的，自豪的",
+    "zh": "有意义的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 617
   },
   {
     "id": 618,
-    "en": "public",
+    "en": "sure",
     "pos": "",
-    "zh": "公共的，公众",
+    "zh": "确信的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 618
   },
   {
     "id": 619,
-    "en": "questions",
+    "en": "storm",
     "pos": "",
-    "zh": "问题，疑问（复数/三单）",
+    "zh": "暴风雨",
     "notes": "",
     "frequency": 0,
     "sourceRow": 619
   },
   {
     "id": 620,
-    "en": "recycled",
+    "en": "power",
     "pos": "",
-    "zh": "回收利用（过去式）",
+    "zh": "cut 停电",
     "notes": "",
     "frequency": 0,
     "sourceRow": 620
   },
   {
     "id": 621,
-    "en": "red",
+    "en": "darkness",
     "pos": "",
-    "zh": "红色的",
+    "zh": "黑暗",
     "notes": "",
     "frequency": 0,
     "sourceRow": 621
   },
   {
     "id": 622,
-    "en": "relax",
+    "en": "frozen",
     "pos": "",
-    "zh": "放松，休息",
+    "zh": "惊呆的，冻结的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 622
   },
   {
     "id": 623,
-    "en": "result",
+    "en": "soft",
     "pos": "",
-    "zh": "结果，后果",
+    "zh": "柔和的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 623
   },
   {
     "id": 624,
-    "en": "returned",
+    "en": "lantern",
     "pos": "",
-    "zh": "返回，归还（过去式）",
+    "zh": "灯笼",
     "notes": "",
     "frequency": 0,
     "sourceRow": 624
   },
   {
     "id": 625,
-    "en": "reunite",
+    "en": "candle",
     "pos": "",
-    "zh": "重聚，再联合",
+    "zh": "蜡烛",
     "notes": "",
     "frequency": 0,
     "sourceRow": 625
   },
   {
     "id": 626,
-    "en": "rich",
+    "en": "lamp",
     "pos": "",
-    "zh": "富有的",
+    "zh": "灯",
     "notes": "",
     "frequency": 0,
     "sourceRow": 626
   },
   {
     "id": 627,
-    "en": "ride",
+    "en": "whisper",
     "pos": "",
-    "zh": "骑，旅行",
+    "zh": "低语",
     "notes": "",
     "frequency": 0,
     "sourceRow": 627
   },
   {
     "id": 628,
-    "en": "risks",
+    "en": "voice",
     "pos": "",
-    "zh": "风险（复数）",
+    "zh": "声音",
     "notes": "",
     "frequency": 0,
     "sourceRow": 628
   },
   {
     "id": 629,
-    "en": "river",
+    "en": "closer",
     "pos": "",
-    "zh": "河流",
+    "zh": "更近的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 629
   },
   {
     "id": 630,
-    "en": "rock",
+    "en": "volunteering",
     "pos": "",
-    "zh": "岩石，摇滚",
+    "zh": "志愿服务",
     "notes": "",
     "frequency": 0,
     "sourceRow": 630
   },
   {
     "id": 631,
-    "en": "room",
+    "en": "loud",
     "pos": "",
-    "zh": "房间，空间",
+    "zh": "大声的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 631
   },
   {
     "id": 632,
-    "en": "seemed",
+    "en": "returned",
     "pos": "",
-    "zh": "好像，似乎（过去式）",
+    "zh": "归还，回报",
     "notes": "",
     "frequency": 0,
     "sourceRow": 632
   },
   {
     "id": 633,
-    "en": "selling",
+    "en": "collected",
     "pos": "",
-    "zh": "出售，卖",
+    "zh": "收集",
     "notes": "",
     "frequency": 0,
     "sourceRow": 633
   },
   {
     "id": 634,
-    "en": "sign",
+    "en": "connected",
     "pos": "",
-    "zh": "标志，符号，签名",
+    "zh": "连接",
     "notes": "",
     "frequency": 0,
     "sourceRow": 634
   },
   {
     "id": 635,
-    "en": "smiling",
+    "en": "accepted",
     "pos": "",
-    "zh": "微笑的（smile的-ing形式）",
+    "zh": "接受",
     "notes": "",
     "frequency": 0,
     "sourceRow": 635
   },
   {
     "id": 636,
-    "en": "social",
+    "en": "education",
     "pos": "",
-    "zh": "社会的",
+    "zh": "教育",
     "notes": "",
     "frequency": 0,
     "sourceRow": 636
   },
   {
     "id": 637,
-    "en": "sound",
+    "en": "events",
     "pos": "",
-    "zh": "声音，听起来",
+    "zh": "活动",
     "notes": "",
     "frequency": 0,
     "sourceRow": 637
   },
   {
     "id": 638,
-    "en": "southeast",
+    "en": "contact",
     "pos": "",
-    "zh": "东南方",
+    "zh": "联系",
     "notes": "",
     "frequency": 0,
     "sourceRow": 638
   },
   {
     "id": 639,
-    "en": "speech",
+    "en": "dig",
     "pos": "",
-    "zh": "演讲，讲话",
+    "zh": "挖",
     "notes": "",
     "frequency": 0,
     "sourceRow": 639
   },
   {
     "id": 640,
-    "en": "spread",
+    "en": "share",
     "pos": "",
-    "zh": "传播，蔓延，涂抹",
+    "zh": "分享",
     "notes": "",
     "frequency": 0,
     "sourceRow": 640
   },
   {
     "id": 641,
-    "en": "stevenson",
+    "en": "outdoor",
     "pos": "",
-    "zh": "史蒂文森（人名）",
+    "zh": "户外的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 641
   },
   {
     "id": 642,
-    "en": "stories",
+    "en": "field",
     "pos": "",
-    "zh": "故事（复数）",
+    "zh": "田野，领域",
     "notes": "",
     "frequency": 0,
     "sourceRow": 642
   },
   {
     "id": 643,
-    "en": "surprised",
+    "en": "news",
     "pos": "",
-    "zh": "惊讶的",
+    "zh": "新闻",
     "notes": "",
     "frequency": 0,
     "sourceRow": 643
   },
   {
     "id": 644,
-    "en": "takes",
+    "en": "fruit",
     "pos": "",
-    "zh": "拿，取，花费（复数/三单）",
+    "zh": "水果",
     "notes": "",
     "frequency": 0,
     "sourceRow": 644
   },
   {
     "id": 645,
-    "en": "tammy",
+    "en": "harvest",
     "pos": "",
-    "zh": "塔米（人名）",
+    "zh": "收获",
     "notes": "",
     "frequency": 0,
     "sourceRow": 645
   },
   {
     "id": 646,
-    "en": "teng",
+    "en": "gardening",
     "pos": "",
-    "zh": "滕（中国姓氏）",
+    "zh": "园艺",
     "notes": "",
     "frequency": 0,
     "sourceRow": 646
   },
   {
     "id": 647,
-    "en": "top",
+    "en": "club",
     "pos": "",
-    "zh": "顶部，最好的",
+    "zh": "俱乐部",
     "notes": "",
     "frequency": 0,
     "sourceRow": 647
   },
   {
     "id": 648,
-    "en": "topics",
+    "en": "email",
     "pos": "",
-    "zh": "话题，主题（复数/三单）",
+    "zh": "电子邮件",
     "notes": "",
     "frequency": 0,
     "sourceRow": 648
   },
   {
     "id": 649,
-    "en": "uncertain",
+    "en": "indoor",
     "pos": "",
-    "zh": "不确定的",
+    "zh": "室内的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 649
   },
   {
     "id": 650,
-    "en": "west",
+    "en": "instrument",
     "pos": "",
-    "zh": "西方，西部",
+    "zh": "乐器",
     "notes": "",
     "frequency": 0,
     "sourceRow": 650
   },
   {
     "id": 651,
-    "en": "working",
+    "en": "playlist",
     "pos": "",
-    "zh": "工作的，运转",
+    "zh": "播放列表",
     "notes": "",
     "frequency": 0,
     "sourceRow": 651
   },
   {
     "id": 652,
-    "en": "worried",
+    "en": "personality",
     "pos": "",
-    "zh": "担忧的",
+    "zh": "个性",
     "notes": "",
     "frequency": 0,
     "sourceRow": 652
   },
   {
     "id": 653,
-    "en": "worry",
+    "en": "musical",
     "pos": "",
-    "zh": "担心，忧虑",
+    "zh": "音乐的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 653
   },
   {
     "id": 654,
-    "en": "xiao",
+    "en": "style",
     "pos": "",
-    "zh": "小/晓（中国名字）",
+    "zh": "风格",
     "notes": "",
     "frequency": 0,
     "sourceRow": 654
   },
   {
     "id": 655,
-    "en": "yuan",
+    "en": "rock",
     "pos": "",
-    "zh": "元（人民币单位）",
+    "zh": "摇摇欲坠，摇滚乐",
     "notes": "",
     "frequency": 0,
     "sourceRow": 655
   },
   {
     "id": 656,
-    "en": "zoo",
+    "en": "cowboy",
     "pos": "",
-    "zh": "动物园",
+    "zh": "hat 牛仔帽",
     "notes": "",
     "frequency": 0,
     "sourceRow": 656
   },
   {
     "id": 657,
-    "en": "active",
+    "en": "value",
     "pos": "",
-    "zh": "积极的，活跃的",
+    "zh": "价值观",
     "notes": "",
     "frequency": 0,
     "sourceRow": 657
   },
   {
     "id": 658,
-    "en": "added",
+    "en": "self-confident",
     "pos": "",
-    "zh": "增加，添加（过去式）",
+    "zh": "自信的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 658
   },
   {
     "id": 659,
-    "en": "alone",
+    "en": "comfortable",
     "pos": "",
-    "zh": "独自的，单独的",
+    "zh": "舒适的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 659
   },
   {
     "id": 660,
-    "en": "ambassador",
+    "en": "experience",
     "pos": "",
-    "zh": "大使",
+    "zh": "经验，经历",
     "notes": "",
     "frequency": 0,
     "sourceRow": 660
   },
   {
     "id": 661,
-    "en": "angry",
+    "en": "breakthrough",
     "pos": "",
-    "zh": "生气的",
+    "zh": "突破",
     "notes": "",
     "frequency": 0,
     "sourceRow": 661
   },
   {
     "id": 662,
-    "en": "anhui",
+    "en": "spinal",
     "pos": "",
-    "zh": "安徽（中国省份）",
+    "zh": "cord 脊髓",
     "notes": "",
     "frequency": 0,
     "sourceRow": 662
   },
   {
     "id": 663,
-    "en": "answered",
+    "en": "injury",
     "pos": "",
-    "zh": "回答，答案（过去式）",
+    "zh": "损伤",
     "notes": "",
     "frequency": 0,
     "sourceRow": 663
   },
   {
     "id": 664,
-    "en": "answers",
+    "en": "scientist",
     "pos": "",
-    "zh": "回答，答案（复数/三单）",
+    "zh": "科学家",
     "notes": "",
     "frequency": 0,
     "sourceRow": 664
   },
   {
     "id": 665,
-    "en": "assembly",
+    "en": "chip",
     "pos": "",
-    "zh": "集会，议会，装配",
+    "zh": "芯片",
     "notes": "",
     "frequency": 0,
     "sourceRow": 665
   },
   {
     "id": 666,
-    "en": "boxes",
+    "en": "paralyzed",
     "pos": "",
-    "zh": "箱子（复数）",
+    "zh": "瘫痪的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 666
   },
   {
     "id": 667,
-    "en": "bridge",
+    "en": "patient",
     "pos": "",
-    "zh": "桥",
+    "zh": "病人",
     "notes": "",
     "frequency": 0,
     "sourceRow": 667
   },
   {
     "id": 668,
-    "en": "bridges",
+    "en": "leg",
     "pos": "",
-    "zh": "桥（复数/三单）",
+    "zh": "腿",
     "notes": "",
     "frequency": 0,
     "sourceRow": 668
   },
   {
     "id": 669,
-    "en": "bring",
+    "en": "muscle",
     "pos": "",
-    "zh": "带来",
+    "zh": "肌肉",
     "notes": "",
     "frequency": 0,
     "sourceRow": 669
   },
   {
     "id": 670,
-    "en": "brought",
+    "en": "bridge",
     "pos": "",
-    "zh": "带来（bring的过去式）",
+    "zh": "桥",
     "notes": "",
     "frequency": 0,
     "sourceRow": 670
   },
   {
     "id": 671,
-    "en": "byd",
+    "en": "connection",
     "pos": "",
-    "zh": "比亚迪（中国汽车品牌）",
+    "zh": "连接",
     "notes": "",
     "frequency": 0,
     "sourceRow": 671
   },
   {
     "id": 672,
-    "en": "capsule",
+    "en": "damage",
     "pos": "",
-    "zh": "胶囊，太空舱",
+    "zh": "损害",
     "notes": "",
     "frequency": 0,
     "sourceRow": 672
   },
   {
     "id": 673,
-    "en": "car",
+    "en": "progress",
     "pos": "",
-    "zh": "汽车",
+    "zh": "进步",
     "notes": "",
     "frequency": 0,
     "sourceRow": 673
   },
   {
     "id": 674,
-    "en": "caring",
+    "en": "researcher",
     "pos": "",
-    "zh": "汽车（进行式）",
+    "zh": "研究员",
     "notes": "",
     "frequency": 0,
     "sourceRow": 674
   },
   {
     "id": 675,
-    "en": "chain",
+    "en": "wheelchair",
     "pos": "",
-    "zh": "链条，链，连锁店",
+    "zh": "轮椅",
     "notes": "",
     "frequency": 0,
     "sourceRow": 675
   },
   {
     "id": 676,
-    "en": "changing",
+    "en": "achievement",
     "pos": "",
-    "zh": "改变，变化",
+    "zh": "成就",
     "notes": "",
     "frequency": 0,
     "sourceRow": 676
   },
   {
     "id": 677,
-    "en": "charity",
+    "en": "bold",
     "pos": "",
-    "zh": "慈善，慈善机构",
+    "zh": "大胆的，粗体的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 677
   },
   {
     "id": 678,
-    "en": "chip",
+    "en": "fiction",
     "pos": "",
-    "zh": "芯片，薯片，碎片",
+    "zh": "小说",
     "notes": "",
     "frequency": 0,
     "sourceRow": 678
   },
   {
     "id": 679,
-    "en": "choose",
+    "en": "brighter",
     "pos": "",
-    "zh": "选择",
+    "zh": "更明亮的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 679
   },
   {
     "id": 680,
-    "en": "close",
+    "en": "dictionary",
     "pos": "",
-    "zh": "关闭，靠近",
+    "zh": "词典",
     "notes": "",
     "frequency": 0,
     "sourceRow": 680
   },
   {
     "id": 681,
-    "en": "comic",
+    "en": "gold",
     "pos": "",
-    "zh": "漫画，滑稽的",
+    "zh": "黄金",
     "notes": "",
     "frequency": 0,
     "sourceRow": 681
   },
   {
     "id": 682,
-    "en": "communication",
+    "en": "empty",
     "pos": "",
-    "zh": "交流，通讯",
+    "zh": "空的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 682
   },
   {
     "id": 683,
-    "en": "completed",
+    "en": "heart",
     "pos": "",
-    "zh": "完成，完整的（过去式）",
+    "zh": "心脏",
     "notes": "",
     "frequency": 0,
     "sourceRow": 683
   },
   {
     "id": 684,
-    "en": "control",
+    "en": "beat",
     "pos": "",
-    "zh": "控制",
+    "zh": "跳动",
     "notes": "",
     "frequency": 0,
     "sourceRow": 684
   },
   {
     "id": 685,
-    "en": "crew",
+    "en": "gather",
     "pos": "",
-    "zh": "全体工作人员，乘务组",
+    "zh": "聚集",
     "notes": "",
     "frequency": 0,
     "sourceRow": 685
   },
   {
     "id": 686,
-    "en": "cup",
+    "en": "pancake",
     "pos": "",
-    "zh": "杯子",
+    "zh": "薄煎饼",
     "notes": "",
     "frequency": 0,
     "sourceRow": 686
   },
   {
     "id": 687,
-    "en": "cut",
+    "en": "ceremony",
     "pos": "",
-    "zh": "切，割",
+    "zh": "仪式",
     "notes": "",
     "frequency": 0,
     "sourceRow": 687
   },
   {
     "id": 688,
-    "en": "cycle",
+    "en": "company",
     "pos": "",
-    "zh": "循环，周期，骑自行车",
+    "zh": "公司",
     "notes": "",
     "frequency": 0,
     "sourceRow": 688
   },
   {
     "id": 689,
-    "en": "dead",
+    "en": "reporter",
     "pos": "",
-    "zh": "死的，死寂的",
+    "zh": "记者",
     "notes": "",
     "frequency": 0,
     "sourceRow": 689
   },
   {
     "id": 690,
-    "en": "deng",
+    "en": "hidden",
     "pos": "",
-    "zh": "邓（中国姓氏）",
+    "zh": "隐藏的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 690
   },
   {
     "id": 691,
-    "en": "designer",
+    "en": "underground",
     "pos": "",
-    "zh": "更设计",
+    "zh": "地下",
     "notes": "",
     "frequency": 0,
     "sourceRow": 691
   },
   {
     "id": 692,
-    "en": "died",
+    "en": "tiny",
     "pos": "",
-    "zh": "死亡，枯萎（过去式）",
+    "zh": "微小的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 692
   },
   {
     "id": 693,
-    "en": "difficulty",
+    "en": "burrow",
     "pos": "",
-    "zh": "困难，难处",
+    "zh": "洞穴",
     "notes": "",
     "frequency": 0,
     "sourceRow": 693
   },
   {
     "id": 694,
-    "en": "eating",
+    "en": "owl",
     "pos": "",
-    "zh": "吃",
+    "zh": "猫头鹰",
     "notes": "",
     "frequency": 0,
     "sourceRow": 694
   },
   {
     "id": 695,
-    "en": "end",
+    "en": "sign",
     "pos": "",
-    "zh": "结束，末端",
+    "zh": "标志，迹象",
     "notes": "",
     "frequency": 0,
     "sourceRow": 695
   },
   {
     "id": 696,
-    "en": "exactly",
+    "en": "mark",
     "pos": "",
-    "zh": "正确地，确实，恰好",
+    "zh": "标记",
     "notes": "",
     "frequency": 0,
     "sourceRow": 696
   },
   {
     "id": 697,
-    "en": "fan",
+    "en": "fence",
     "pos": "",
-    "zh": "粉丝，风扇",
+    "zh": "栅栏",
     "notes": "",
     "frequency": 0,
     "sourceRow": 697
   },
   {
     "id": 698,
-    "en": "fed",
+    "en": "machine",
     "pos": "",
-    "zh": "喂食了（feed的过去式）",
+    "zh": "机器",
     "notes": "",
     "frequency": 0,
     "sourceRow": 698
   },
   {
     "id": 699,
-    "en": "fei",
+    "en": "destroy",
     "pos": "",
-    "zh": "飞/斐（中国名字）",
+    "zh": "破坏",
     "notes": "",
     "frequency": 0,
     "sourceRow": 699
   },
   {
     "id": 700,
-    "en": "finally",
+    "en": "living",
     "pos": "",
-    "zh": "最终，终于",
+    "zh": "area 居住区",
     "notes": "",
     "frequency": 0,
     "sourceRow": 700
   },
   {
     "id": 701,
-    "en": "football",
+    "en": "boy",
     "pos": "",
-    "zh": "足球",
+    "zh": "男孩",
     "notes": "",
     "frequency": 0,
     "sourceRow": 701
   },
   {
     "id": 702,
-    "en": "forward",
+    "en": "microphone",
     "pos": "",
-    "zh": "向前，前进",
+    "zh": "麦克风",
     "notes": "",
     "frequency": 0,
     "sourceRow": 702
   },
   {
     "id": 703,
-    "en": "gift",
+    "en": "shake",
     "pos": "",
-    "zh": "礼物，天赋",
+    "zh": "摇晃",
     "notes": "",
     "frequency": 0,
     "sourceRow": 703
   },
   {
     "id": 704,
-    "en": "golden",
+    "en": "crowd",
     "pos": "",
-    "zh": "金色的，黄金的，极好的",
+    "zh": "人群",
     "notes": "",
     "frequency": 0,
     "sourceRow": 704
   },
   {
     "id": 705,
-    "en": "grades",
+    "en": "manager",
     "pos": "",
-    "zh": "年级，等级（复数/三单）",
+    "zh": "经理",
     "notes": "",
     "frequency": 0,
     "sourceRow": 705
   },
   {
     "id": 706,
-    "en": "guitar",
+    "en": "business",
     "pos": "",
-    "zh": "吉他",
+    "zh": "事务，生意",
     "notes": "",
     "frequency": 0,
     "sourceRow": 706
   },
   {
     "id": 707,
-    "en": "headphones",
+    "en": "wonder",
     "pos": "",
-    "zh": "耳机（复数）",
+    "zh": "奇迹",
     "notes": "",
     "frequency": 0,
     "sourceRow": 707
   },
   {
     "id": 708,
-    "en": "helpful",
+    "en": "mother",
     "pos": "",
-    "zh": "有帮助的",
+    "zh": "母亲",
     "notes": "",
     "frequency": 0,
     "sourceRow": 708
   },
   {
     "id": 709,
-    "en": "hermit",
+    "en": "nod",
     "pos": "",
-    "zh": "隐士，隐居者",
+    "zh": "点头",
     "notes": "",
     "frequency": 0,
     "sourceRow": 709
   },
   {
     "id": 710,
-    "en": "hero",
+    "en": "uncertain",
     "pos": "",
-    "zh": "英雄",
+    "zh": "不确定的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 710
   },
   {
     "id": 711,
-    "en": "highly",
+    "en": "silence",
     "pos": "",
-    "zh": "高的，高度（副词）",
+    "zh": "沉默",
     "notes": "",
     "frequency": 0,
     "sourceRow": 711
   },
   {
     "id": 712,
-    "en": "human",
+    "en": "action",
     "pos": "",
-    "zh": "人类的，人",
+    "zh": "行动",
     "notes": "",
     "frequency": 0,
     "sourceRow": 712
   },
   {
     "id": 713,
-    "en": "improve",
+    "en": "patience",
     "pos": "",
-    "zh": "改善，提高",
+    "zh": "耐心",
     "notes": "",
     "frequency": 0,
     "sourceRow": 713
   },
   {
     "id": 714,
-    "en": "improves",
+    "en": "choice",
     "pos": "",
-    "zh": "改善，提高（复数/三单）",
+    "zh": "选择",
     "notes": "",
     "frequency": 0,
     "sourceRow": 714
   },
   {
     "id": 715,
-    "en": "internet",
+    "en": "worth",
     "pos": "",
-    "zh": "互联网",
+    "zh": "值得的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 715
   },
   {
     "id": 716,
-    "en": "job",
+    "en": "paper",
     "pos": "",
-    "zh": "工作，职业",
+    "zh": "money 纸币",
     "notes": "",
     "frequency": 0,
     "sourceRow": 716
   },
   {
     "id": 717,
-    "en": "join",
+    "en": "note",
     "pos": "",
-    "zh": "加入，连接",
+    "zh": "纸币",
     "notes": "",
     "frequency": 0,
     "sourceRow": 717
   },
   {
     "id": 718,
-    "en": "kate",
+    "en": "praise",
     "pos": "",
-    "zh": "凯特（人名）",
+    "zh": "赞美",
     "notes": "",
     "frequency": 0,
     "sourceRow": 718
   },
   {
     "id": 719,
-    "en": "key",
+    "en": "century",
     "pos": "",
-    "zh": "关键的，钥匙",
+    "zh": "世纪",
     "notes": "",
     "frequency": 0,
     "sourceRow": 719
   },
   {
     "id": 720,
-    "en": "knew",
+    "en": "cash",
     "pos": "",
-    "zh": "知道（know的过去式）",
+    "zh": "现金",
     "notes": "",
     "frequency": 0,
     "sourceRow": 720
   },
   {
     "id": 721,
-    "en": "leaves",
+    "en": "phone",
     "pos": "",
-    "zh": "离开，留下（复数/三单）",
+    "zh": "电话",
     "notes": "",
     "frequency": 0,
     "sourceRow": 721
   },
   {
     "id": 722,
-    "en": "lies",
+    "en": "card",
     "pos": "",
-    "zh": "李（中国姓氏）（复数/三单）",
+    "zh": "卡片",
     "notes": "",
     "frequency": 0,
     "sourceRow": 722
   },
   {
     "id": 723,
-    "en": "liked",
+    "en": "meaning",
     "pos": "",
-    "zh": "喜欢，像（过去式）",
+    "zh": "意义",
     "notes": "",
     "frequency": 0,
     "sourceRow": 723
   },
   {
     "id": 724,
-    "en": "lost",
+    "en": "museum",
     "pos": "",
-    "zh": "迷路的，失去（lose的过去式）",
+    "zh": "博物馆",
     "notes": "",
     "frequency": 0,
     "sourceRow": 724
   },
   {
     "id": 725,
-    "en": "lovely",
+    "en": "artist",
     "pos": "",
-    "zh": "爱，热爱（副词）",
+    "zh": "艺术家",
     "notes": "",
     "frequency": 0,
     "sourceRow": 725
   },
   {
     "id": 726,
-    "en": "luck",
+    "en": "coin",
     "pos": "",
-    "zh": "运气，幸运",
+    "zh": "硬币",
     "notes": "",
     "frequency": 0,
     "sourceRow": 726
   },
   {
     "id": 727,
-    "en": "mandarin",
+    "en": "pet",
     "pos": "",
-    "zh": "普通话，国语，官员",
+    "zh": "宠物",
     "notes": "",
     "frequency": 0,
     "sourceRow": 727
   },
   {
     "id": 728,
-    "en": "master",
+    "en": "job",
     "pos": "",
-    "zh": "主人，精通，硕士",
+    "zh": "工作",
     "notes": "",
     "frequency": 0,
     "sourceRow": 728
   },
   {
     "id": 729,
-    "en": "meet",
+    "en": "until",
     "pos": "",
-    "zh": "见面，满足",
+    "zh": "直到",
     "notes": "",
     "frequency": 0,
     "sourceRow": 729
   },
   {
     "id": 730,
-    "en": "milk",
+    "en": "honest",
     "pos": "",
-    "zh": "牛奶",
+    "zh": "诚实的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 730
   },
   {
     "id": 731,
-    "en": "modest",
+    "en": "highly",
     "pos": "",
-    "zh": "谦虚的，适度的",
+    "zh": "高度地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 731
   },
   {
     "id": 732,
-    "en": "mom",
+    "en": "astronaut",
     "pos": "",
-    "zh": "妈妈（美式）",
+    "zh": "宇航员",
     "notes": "",
     "frequency": 0,
     "sourceRow": 732
   },
   {
     "id": 733,
-    "en": "months",
+    "en": "space",
     "pos": "",
-    "zh": "月份（复数/三单）",
+    "zh": "空间",
     "notes": "",
     "frequency": 0,
     "sourceRow": 733
   },
   {
     "id": 734,
-    "en": "mostly",
+    "en": "dragon",
     "pos": "",
-    "zh": "主要地，大多数情况下",
+    "zh": "dance 舞龙",
     "notes": "",
     "frequency": 0,
     "sourceRow": 734
   },
   {
     "id": 735,
-    "en": "national",
+    "en": "piece",
     "pos": "",
-    "zh": "国家的，民族的",
+    "zh": "一片，一块",
     "notes": "",
     "frequency": 0,
     "sourceRow": 735
   },
   {
     "id": 736,
-    "en": "nice",
+    "en": "hermit",
     "pos": "",
-    "zh": "好的，令人愉快的",
+    "zh": "crab 寄居蟹",
     "notes": "",
     "frequency": 0,
     "sourceRow": 736
   },
   {
     "id": 737,
-    "en": "noises",
+    "en": "beach",
     "pos": "",
-    "zh": "噪音（复数）",
+    "zh": "海滩",
     "notes": "",
     "frequency": 0,
     "sourceRow": 737
   },
   {
     "id": 738,
-    "en": "ocean",
+    "en": "shell",
     "pos": "",
-    "zh": "海洋",
+    "zh": "壳",
     "notes": "",
     "frequency": 0,
     "sourceRow": 738
   },
   {
     "id": 739,
-    "en": "operation",
+    "en": "cover",
     "pos": "",
-    "zh": "手术，操作，运转",
+    "zh": "覆盖",
     "notes": "",
     "frequency": 0,
     "sourceRow": 739
   },
   {
     "id": 740,
-    "en": "organization",
+    "en": "cleanup",
     "pos": "",
-    "zh": "组织，机构",
+    "zh": "清理",
     "notes": "",
     "frequency": 0,
     "sourceRow": 740
   },
   {
     "id": 741,
-    "en": "photo",
+    "en": "tea",
     "pos": "",
-    "zh": "照片",
+    "zh": "茶",
     "notes": "",
     "frequency": 0,
     "sourceRow": 741
   },
   {
     "id": 742,
-    "en": "pictures",
+    "en": "master",
     "pos": "",
-    "zh": "图片，描绘（复数/三单）",
+    "zh": "大师",
     "notes": "",
     "frequency": 0,
     "sourceRow": 742
   },
   {
     "id": 743,
-    "en": "piece",
+    "en": "tourist",
     "pos": "",
-    "zh": "一块，一片，一件",
+    "zh": "游客",
     "notes": "",
     "frequency": 0,
     "sourceRow": 743
   },
   {
     "id": 744,
-    "en": "places",
+    "en": "translate",
     "pos": "",
-    "zh": "地方，放置（复数/三单）",
+    "zh": "翻译",
     "notes": "",
     "frequency": 0,
     "sourceRow": 744
   },
   {
     "id": 745,
-    "en": "plenty",
+    "en": "daughter",
     "pos": "",
-    "zh": "大量，充足",
+    "zh": "女儿",
     "notes": "",
     "frequency": 0,
     "sourceRow": 745
   },
   {
     "id": 746,
-    "en": "poetry",
+    "en": "college",
     "pos": "",
-    "zh": "诗歌，诗词",
+    "zh": "大学",
     "notes": "",
     "frequency": 0,
     "sourceRow": 746
   },
   {
     "id": 747,
-    "en": "point",
+    "en": "visitors",
     "pos": "",
-    "zh": "要点，指向，分",
+    "zh": "游客",
     "notes": "",
     "frequency": 0,
     "sourceRow": 747
   },
   {
     "id": 748,
-    "en": "prefer",
+    "en": "deeply",
     "pos": "",
-    "zh": "更喜欢，偏爱",
+    "zh": "深深地",
     "notes": "",
     "frequency": 0,
     "sourceRow": 748
   },
   {
     "id": 749,
-    "en": "prepare",
+    "en": "favourite",
     "pos": "",
-    "zh": "准备",
+    "zh": "最喜欢的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 749
   },
   {
     "id": 750,
-    "en": "primary",
+    "en": "treasured",
     "pos": "",
-    "zh": "主要的，小学的",
+    "zh": "珍爱的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 750
   },
   {
     "id": 751,
-    "en": "prove",
+    "en": "cup",
     "pos": "",
-    "zh": "证明，表明",
+    "zh": "杯子",
     "notes": "",
     "frequency": 0,
     "sourceRow": 751
   },
   {
     "id": 752,
-    "en": "qinghai",
+    "en": "harm",
     "pos": "",
-    "zh": "青海（中国省份）",
+    "zh": "伤害",
     "notes": "",
     "frequency": 0,
     "sourceRow": 752
   },
   {
     "id": 753,
-    "en": "rail",
+    "en": "hearing",
     "pos": "",
-    "zh": "铁路，栏杆",
+    "zh": "听觉",
     "notes": "",
     "frequency": 0,
     "sourceRow": 753
   },
   {
     "id": 754,
-    "en": "raise",
+    "en": "measured",
     "pos": "",
-    "zh": "举起，提高，养育",
+    "zh": "测量",
     "notes": "",
     "frequency": 0,
     "sourceRow": 754
   },
   {
     "id": 755,
-    "en": "reason",
+    "en": "decibel",
     "pos": "",
-    "zh": "原因，理由",
+    "zh": "分贝",
     "notes": "",
     "frequency": 0,
     "sourceRow": 755
   },
   {
     "id": 756,
-    "en": "recipes",
+    "en": "chart",
     "pos": "",
-    "zh": "食谱，配方（复数/三单）",
+    "zh": "图表",
     "notes": "",
     "frequency": 0,
     "sourceRow": 756
   },
   {
     "id": 757,
-    "en": "recommend",
+    "en": "ear",
     "pos": "",
-    "zh": "推荐",
+    "zh": "耳朵",
     "notes": "",
     "frequency": 0,
     "sourceRow": 757
   },
   {
     "id": 758,
-    "en": "recorded",
+    "en": "harmful",
     "pos": "",
-    "zh": "记录，唱片（过去式）",
+    "zh": "有害的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 758
   },
   {
     "id": 759,
-    "en": "records",
+    "en": "pay",
     "pos": "",
-    "zh": "记录，唱片（复数/三单）",
+    "zh": "attention 关注",
     "notes": "",
     "frequency": 0,
     "sourceRow": 759
   },
   {
     "id": 760,
-    "en": "relatives",
+    "en": "loudness",
     "pos": "",
-    "zh": "亲戚，亲属（复数）",
+    "zh": "响度",
     "notes": "",
     "frequency": 0,
     "sourceRow": 760
   },
   {
     "id": 761,
-    "en": "seasons",
+    "en": "distance",
     "pos": "",
-    "zh": "季节（复数/三单）",
+    "zh": "距离",
     "notes": "",
     "frequency": 0,
     "sourceRow": 761
   },
   {
     "id": 762,
-    "en": "seldom",
+    "en": "listen",
     "pos": "",
-    "zh": "很少，不常",
+    "zh": "听",
     "notes": "",
     "frequency": 0,
     "sourceRow": 762
   },
   {
     "id": 763,
-    "en": "send",
+    "en": "level",
     "pos": "",
-    "zh": "发送，寄",
+    "zh": "水平",
     "notes": "",
     "frequency": 0,
     "sourceRow": 763
   },
   {
     "id": 764,
-    "en": "serious",
+    "en": "carry",
     "pos": "",
-    "zh": "严肃的，严重的",
+    "zh": "携带",
     "notes": "",
     "frequency": 0,
     "sourceRow": 764
   },
   {
     "id": 765,
-    "en": "shanghai",
+    "en": "hurt",
     "pos": "",
-    "zh": "上海（中国城市）",
+    "zh": "疼痛",
     "notes": "",
     "frequency": 0,
     "sourceRow": 765
   },
   {
     "id": 766,
-    "en": "share",
+    "en": "ring",
     "pos": "",
-    "zh": "分享，份额",
+    "zh": "鸣响",
     "notes": "",
     "frequency": 0,
     "sourceRow": 766
   },
   {
     "id": 767,
-    "en": "sitting",
+    "en": "headphone",
     "pos": "",
-    "zh": "坐",
+    "zh": "耳机",
     "notes": "",
     "frequency": 0,
     "sourceRow": 767
   },
   {
     "id": 768,
-    "en": "smell",
+    "en": "tricky",
     "pos": "",
-    "zh": "气味，闻",
+    "zh": "棘手的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 768
   },
   {
     "id": 769,
-    "en": "sold",
+    "en": "volume",
     "pos": "",
-    "zh": "卖出（sell的过去式）",
+    "zh": "音量",
     "notes": "",
     "frequency": 0,
     "sourceRow": 769
   },
   {
     "id": 770,
-    "en": "solve",
+    "en": "gift",
     "pos": "",
-    "zh": "解决",
+    "zh": "礼物，天赋",
     "notes": "",
     "frequency": 0,
     "sourceRow": 770
   },
   {
     "id": 771,
-    "en": "sorry",
+    "en": "clear",
     "pos": "",
-    "zh": "抱歉的，遗憾的",
+    "zh": "清楚的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 771
   },
   {
     "id": 772,
-    "en": "southern",
+    "en": "practical",
     "pos": "",
-    "zh": "南方的，南部的",
+    "zh": "实用的",
     "notes": "",
     "frequency": 0,
     "sourceRow": 772
   },
   {
     "id": 773,
-    "en": "speed",
+    "en": "tool",
     "pos": "",
-    "zh": "速度，加速",
+    "zh": "工具",
     "notes": "",
     "frequency": 0,
     "sourceRow": 773
   },
   {
     "id": 774,
-    "en": "spend",
+    "en": "paint",
     "pos": "",
-    "zh": "花费（时间/钱）",
+    "zh": "画",
     "notes": "",
     "frequency": 0,
     "sourceRow": 774
   },
   {
     "id": 775,
-    "en": "stood",
+    "en": "write",
     "pos": "",
-    "zh": "站（stand的过去式）",
+    "zh": "写",
     "notes": "",
     "frequency": 0,
     "sourceRow": 775
-  },
-  {
-    "id": 776,
-    "en": "stressful",
-    "pos": "",
-    "zh": "有压力的，紧张的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 776
-  },
-  {
-    "id": 777,
-    "en": "strongest",
-    "pos": "",
-    "zh": "最强壮的，强烈的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 777
-  },
-  {
-    "id": 778,
-    "en": "sun",
-    "pos": "",
-    "zh": "太阳",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 778
-  },
-  {
-    "id": 779,
-    "en": "systems",
-    "pos": "",
-    "zh": "系统（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 779
-  },
-  {
-    "id": 780,
-    "en": "tasks",
-    "pos": "",
-    "zh": "任务（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 780
-  },
-  {
-    "id": 781,
-    "en": "teachers",
-    "pos": "",
-    "zh": "教师，老师（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 781
-  },
-  {
-    "id": 782,
-    "en": "teaching",
-    "pos": "",
-    "zh": "教学，教导",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 782
-  },
-  {
-    "id": 783,
-    "en": "technology",
-    "pos": "",
-    "zh": "技术，科技",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 783
-  },
-  {
-    "id": 784,
-    "en": "teens",
-    "pos": "",
-    "zh": "青少年（13-19岁）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 784
-  },
-  {
-    "id": 785,
-    "en": "thank",
-    "pos": "",
-    "zh": "感谢",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 785
-  },
-  {
-    "id": 786,
-    "en": "thing",
-    "pos": "",
-    "zh": "事情，东西",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 786
-  },
-  {
-    "id": 787,
-    "en": "thoughts",
-    "pos": "",
-    "zh": "认为（think的过去式），想法（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 787
-  },
-  {
-    "id": 788,
-    "en": "thousand",
-    "pos": "",
-    "zh": "千",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 788
-  },
-  {
-    "id": 789,
-    "en": "tired",
-    "pos": "",
-    "zh": "累的，疲倦的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 789
-  },
-  {
-    "id": 790,
-    "en": "tolan",
-    "pos": "",
-    "zh": "托兰（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 790
-  },
-  {
-    "id": 791,
-    "en": "total",
-    "pos": "",
-    "zh": "总计，总数",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 791
-  },
-  {
-    "id": 792,
-    "en": "traditional",
-    "pos": "",
-    "zh": "传统的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 792
-  },
-  {
-    "id": 793,
-    "en": "unhappy",
-    "pos": "",
-    "zh": "不高兴的，悲伤的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 793
-  },
-  {
-    "id": 794,
-    "en": "viewers",
-    "pos": "",
-    "zh": "观看者，观众（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 794
-  },
-  {
-    "id": 795,
-    "en": "visiting",
-    "pos": "",
-    "zh": "参观，拜访",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 795
-  },
-  {
-    "id": 796,
-    "en": "walked",
-    "pos": "",
-    "zh": "走路，步行（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 796
-  },
-  {
-    "id": 797,
-    "en": "wall",
-    "pos": "",
-    "zh": "墙壁",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 797
-  },
-  {
-    "id": 798,
-    "en": "went",
-    "pos": "",
-    "zh": "去了（go的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 798
-  },
-  {
-    "id": 799,
-    "en": "wide",
-    "pos": "",
-    "zh": "宽广的，广泛的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 799
-  },
-  {
-    "id": 800,
-    "en": "wife",
-    "pos": "",
-    "zh": "妻子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 800
-  },
-  {
-    "id": 801,
-    "en": "willie",
-    "pos": "",
-    "zh": "威利（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 801
-  },
-  {
-    "id": 802,
-    "en": "windows",
-    "pos": "",
-    "zh": "窗户（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 802
-  },
-  {
-    "id": 803,
-    "en": "wisdom",
-    "pos": "",
-    "zh": "智慧",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 803
-  },
-  {
-    "id": 804,
-    "en": "wisely",
-    "pos": "",
-    "zh": "明智的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 804
-  },
-  {
-    "id": 805,
-    "en": "wished",
-    "pos": "",
-    "zh": "希望，祝愿（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 805
-  },
-  {
-    "id": 806,
-    "en": "works",
-    "pos": "",
-    "zh": "工作，劳动（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 806
-  },
-  {
-    "id": 807,
-    "en": "workshops",
-    "pos": "",
-    "zh": "研讨会，工作坊（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 807
-  },
-  {
-    "id": 808,
-    "en": "writers",
-    "pos": "",
-    "zh": "作家，写作者（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 808
-  },
-  {
-    "id": 809,
-    "en": "written",
-    "pos": "",
-    "zh": "写过（write的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 809
-  },
-  {
-    "id": 810,
-    "en": "aboard",
-    "pos": "",
-    "zh": "在（船/飞机/车）上",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 810
-  },
-  {
-    "id": 811,
-    "en": "abroad",
-    "pos": "",
-    "zh": "在国外，到海外",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 811
-  },
-  {
-    "id": 812,
-    "en": "action",
-    "pos": "",
-    "zh": "行动，活动",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 812
-  },
-  {
-    "id": 813,
-    "en": "advice",
-    "pos": "",
-    "zh": "建议，忠告",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 813
-  },
-  {
-    "id": 814,
-    "en": "alphabet",
-    "pos": "",
-    "zh": "字母表",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 814
-  },
-  {
-    "id": 815,
-    "en": "america",
-    "pos": "",
-    "zh": "美国，美洲",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 815
-  },
-  {
-    "id": 816,
-    "en": "amos",
-    "pos": "",
-    "zh": "阿莫斯（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 816
-  },
-  {
-    "id": 817,
-    "en": "areas",
-    "pos": "",
-    "zh": "地区，区域，面积（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 817
-  },
-  {
-    "id": 818,
-    "en": "asking",
-    "pos": "",
-    "zh": "问，请求",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 818
-  },
-  {
-    "id": 819,
-    "en": "baseball",
-    "pos": "",
-    "zh": "棒球",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 819
-  },
-  {
-    "id": 820,
-    "en": "based",
-    "pos": "",
-    "zh": "基于的（base的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 820
-  },
-  {
-    "id": 821,
-    "en": "bench",
-    "pos": "",
-    "zh": "长椅，长凳，板凳",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 821
-  },
-  {
-    "id": 822,
-    "en": "bit",
-    "pos": "",
-    "zh": "一点，一些，咬（bite的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 822
-  },
-  {
-    "id": 823,
-    "en": "boundaries",
-    "pos": "",
-    "zh": "边界，界限（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 823
-  },
-  {
-    "id": 824,
-    "en": "build",
-    "pos": "",
-    "zh": "建造，建立",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 824
-  },
-  {
-    "id": 825,
-    "en": "bus",
-    "pos": "",
-    "zh": "公共汽车",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 825
-  },
-  {
-    "id": 826,
-    "en": "cafe",
-    "pos": "",
-    "zh": "咖啡馆，小餐馆",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 826
-  },
-  {
-    "id": 827,
-    "en": "camp",
-    "pos": "",
-    "zh": "营地，露营",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 827
-  },
-  {
-    "id": 828,
-    "en": "cars",
-    "pos": "",
-    "zh": "汽车（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 828
-  },
-  {
-    "id": 829,
-    "en": "causing",
-    "pos": "",
-    "zh": "原因，导致（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 829
-  },
-  {
-    "id": 830,
-    "en": "challenge",
-    "pos": "",
-    "zh": "挑战",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 830
-  },
-  {
-    "id": 831,
-    "en": "charging",
-    "pos": "",
-    "zh": "充电，收费（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 831
-  },
-  {
-    "id": 832,
-    "en": "chipembele",
-    "pos": "",
-    "zh": "奇彭贝莱（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 832
-  },
-  {
-    "id": 833,
-    "en": "chips",
-    "pos": "",
-    "zh": "薯片（复数），芯片（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 833
-  },
-  {
-    "id": 834,
-    "en": "circle",
-    "pos": "",
-    "zh": "圆形，圆圈",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 834
-  },
-  {
-    "id": 835,
-    "en": "collecting",
-    "pos": "",
-    "zh": "收集，采集（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 835
-  },
-  {
-    "id": 836,
-    "en": "company",
-    "pos": "",
-    "zh": "公司，陪伴",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 836
-  },
-  {
-    "id": 837,
-    "en": "compared",
-    "pos": "",
-    "zh": "比较（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 837
-  },
-  {
-    "id": 838,
-    "en": "conclusion",
-    "pos": "",
-    "zh": "结论，结尾",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 838
-  },
-  {
-    "id": 839,
-    "en": "confucian",
-    "pos": "",
-    "zh": "儒家的，孔子的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 839
-  },
-  {
-    "id": 840,
-    "en": "congcong",
-    "pos": "",
-    "zh": "聪聪（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 840
-  },
-  {
-    "id": 841,
-    "en": "constants",
-    "pos": "",
-    "zh": "常数，常量（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 841
-  },
-  {
-    "id": 842,
-    "en": "couple",
-    "pos": "",
-    "zh": "夫妻，一对，几个",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 842
-  },
-  {
-    "id": 843,
-    "en": "crabs",
-    "pos": "",
-    "zh": "螃蟹（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 843
-  },
-  {
-    "id": 844,
-    "en": "crowd",
-    "pos": "",
-    "zh": "人群，聚集",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 844
-  },
-  {
-    "id": 845,
-    "en": "cupboard",
-    "pos": "",
-    "zh": "橱柜，碗柜",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 845
-  },
-  {
-    "id": 846,
-    "en": "curious",
-    "pos": "",
-    "zh": "好奇的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 846
-  },
-  {
-    "id": 847,
-    "en": "deal",
-    "pos": "",
-    "zh": "处理，交易，一大量",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 847
-  },
-  {
-    "id": 848,
-    "en": "describes",
-    "pos": "",
-    "zh": "描述，形容（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 848
-  },
-  {
-    "id": 849,
-    "en": "designed",
-    "pos": "",
-    "zh": "设计（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 849
-  },
-  {
-    "id": 850,
-    "en": "disaster",
-    "pos": "",
-    "zh": "灾难，灾害",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 850
-  },
-  {
-    "id": 851,
-    "en": "disk",
-    "pos": "",
-    "zh": "磁盘，圆片",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 851
-  },
-  {
-    "id": 852,
-    "en": "divided",
-    "pos": "",
-    "zh": "分开的（divide的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 852
-  },
-  {
-    "id": 853,
-    "en": "doctor",
-    "pos": "",
-    "zh": "医生",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 853
-  },
-  {
-    "id": 854,
-    "en": "duty",
-    "pos": "",
-    "zh": "职责，义务，关税",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 854
-  },
-  {
-    "id": 855,
-    "en": "enjoyed",
-    "pos": "",
-    "zh": "享受，喜欢（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 855
-  },
-  {
-    "id": 856,
-    "en": "europe",
-    "pos": "",
-    "zh": "欧洲",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 856
-  },
-  {
-    "id": 857,
-    "en": "excited",
-    "pos": "",
-    "zh": "兴奋的，激动的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 857
-  },
-  {
-    "id": 858,
-    "en": "experience",
-    "pos": "",
-    "zh": "经历，经验",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 858
-  },
-  {
-    "id": 859,
-    "en": "experiences",
-    "pos": "",
-    "zh": "经历，经验（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 859
-  },
-  {
-    "id": 860,
-    "en": "experiment",
-    "pos": "",
-    "zh": "实验，试验",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 860
-  },
-  {
-    "id": 861,
-    "en": "explanation",
-    "pos": "",
-    "zh": "解释，说明",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 861
-  },
-  {
-    "id": 862,
-    "en": "fail",
-    "pos": "",
-    "zh": "失败",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 862
-  },
-  {
-    "id": 863,
-    "en": "favourite",
-    "pos": "",
-    "zh": "最喜爱的（英式拼法）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 863
-  },
-  {
-    "id": 864,
-    "en": "features",
-    "pos": "",
-    "zh": "特征，特点（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 864
-  },
-  {
-    "id": 865,
-    "en": "feeling",
-    "pos": "",
-    "zh": "感觉，感受",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 865
-  },
-  {
-    "id": 866,
-    "en": "film",
-    "pos": "",
-    "zh": "电影，胶卷",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 866
-  },
-  {
-    "id": 867,
-    "en": "finished",
-    "pos": "",
-    "zh": "完成了（finish的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 867
-  },
-  {
-    "id": 868,
-    "en": "fire",
-    "pos": "",
-    "zh": "火，火灾",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 868
-  },
-  {
-    "id": 869,
-    "en": "flashlight",
-    "pos": "",
-    "zh": "手电筒（美式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 869
-  },
-  {
-    "id": 870,
-    "en": "general",
-    "pos": "",
-    "zh": "一般的，将军",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 870
-  },
-  {
-    "id": 871,
-    "en": "generally",
-    "pos": "",
-    "zh": "一般的，将军（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 871
-  },
-  {
-    "id": 872,
-    "en": "gets",
-    "pos": "",
-    "zh": "得到，获得（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 872
-  },
-  {
-    "id": 873,
-    "en": "given",
-    "pos": "",
-    "zh": "已给（give的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 873
-  },
-  {
-    "id": 874,
-    "en": "gives",
-    "pos": "",
-    "zh": "给，给予（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 874
-  },
-  {
-    "id": 875,
-    "en": "goldfish",
-    "pos": "",
-    "zh": "金鱼",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 875
-  },
-  {
-    "id": 876,
-    "en": "goldman",
-    "pos": "",
-    "zh": "戈德曼（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 876
-  },
-  {
-    "id": 877,
-    "en": "grew",
-    "pos": "",
-    "zh": "生长（grow的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 877
-  },
-  {
-    "id": 878,
-    "en": "grows",
-    "pos": "",
-    "zh": "生长，成长（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 878
-  },
-  {
-    "id": 879,
-    "en": "guide",
-    "pos": "",
-    "zh": "指南，导游",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 879
-  },
-  {
-    "id": 880,
-    "en": "hakka",
-    "pos": "",
-    "zh": "客家（族群）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 880
-  },
-  {
-    "id": 881,
-    "en": "half",
-    "pos": "",
-    "zh": "一半，半个",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 881
-  },
-  {
-    "id": 882,
-    "en": "handed",
-    "pos": "",
-    "zh": "手（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 882
-  },
-  {
-    "id": 883,
-    "en": "happening",
-    "pos": "",
-    "zh": "发生（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 883
-  },
-  {
-    "id": 884,
-    "en": "harm",
-    "pos": "",
-    "zh": "伤害，损害",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 884
-  },
-  {
-    "id": 885,
-    "en": "hdpe",
-    "pos": "",
-    "zh": "HDPE（高密度聚乙烯）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 885
-  },
-  {
-    "id": 886,
-    "en": "holding",
-    "pos": "",
-    "zh": "握住，举行（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 886
-  },
-  {
-    "id": 887,
-    "en": "homework",
-    "pos": "",
-    "zh": "家庭作业",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 887
-  },
-  {
-    "id": 888,
-    "en": "hour",
-    "pos": "",
-    "zh": "小时，钟头",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 888
-  },
-  {
-    "id": 889,
-    "en": "houses",
-    "pos": "",
-    "zh": "房子，住宅（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 889
-  },
-  {
-    "id": 890,
-    "en": "humorous",
-    "pos": "",
-    "zh": "幽默的，滑稽的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 890
-  },
-  {
-    "id": 891,
-    "en": "hurt",
-    "pos": "",
-    "zh": "伤害（hurt的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 891
-  },
-  {
-    "id": 892,
-    "en": "ideal",
-    "pos": "",
-    "zh": "理想的，完美的，理想",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 892
-  },
-  {
-    "id": 893,
-    "en": "imagine",
-    "pos": "",
-    "zh": "想象",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 893
-  },
-  {
-    "id": 894,
-    "en": "impressed",
-    "pos": "",
-    "zh": "印象深刻的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 894
-  },
-  {
-    "id": 895,
-    "en": "increase",
-    "pos": "",
-    "zh": "增加，增长",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 895
-  },
-  {
-    "id": 896,
-    "en": "insects",
-    "pos": "",
-    "zh": "昆虫（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 896
-  },
-  {
-    "id": 897,
-    "en": "instead",
-    "pos": "",
-    "zh": "代替，反而",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 897
-  },
-  {
-    "id": 898,
-    "en": "interested",
-    "pos": "",
-    "zh": "感兴趣的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 898
-  },
-  {
-    "id": 899,
-    "en": "kejia",
-    "pos": "",
-    "zh": "客家（方言）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 899
-  },
-  {
-    "id": 900,
-    "en": "kristin",
-    "pos": "",
-    "zh": "克里斯汀（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 900
-  },
-  {
-    "id": 901,
-    "en": "language",
-    "pos": "",
-    "zh": "语言",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 901
-  },
-  {
-    "id": 902,
-    "en": "laughed",
-    "pos": "",
-    "zh": "笑了（laugh的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 902
-  },
-  {
-    "id": 903,
-    "en": "legs",
-    "pos": "",
-    "zh": "腿（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 903
-  },
-  {
-    "id": 904,
-    "en": "lifestyle",
-    "pos": "",
-    "zh": "生活方式，生活风格",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 904
-  },
-  {
-    "id": 905,
-    "en": "liheng",
-    "pos": "",
-    "zh": "力恒（中国人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 905
-  },
-  {
-    "id": 906,
-    "en": "looks",
-    "pos": "",
-    "zh": "看，查找（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 906
-  },
-  {
-    "id": 907,
-    "en": "lots",
-    "pos": "",
-    "zh": "许多",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 907
-  },
-  {
-    "id": 908,
-    "en": "loved",
-    "pos": "",
-    "zh": "爱，热爱（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 908
-  },
-  {
-    "id": 909,
-    "en": "loves",
-    "pos": "",
-    "zh": "爱，热爱（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 909
-  },
-  {
-    "id": 910,
-    "en": "loving",
-    "pos": "",
-    "zh": "爱，热爱（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 910
-  },
-  {
-    "id": 911,
-    "en": "lower",
-    "pos": "",
-    "zh": "更低的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 911
-  },
-  {
-    "id": 912,
-    "en": "macao",
-    "pos": "",
-    "zh": "澳门",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 912
-  },
-  {
-    "id": 913,
-    "en": "mainly",
-    "pos": "",
-    "zh": "主要的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 913
-  },
-  {
-    "id": 914,
-    "en": "making",
-    "pos": "",
-    "zh": "制造，做",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 914
-  },
-  {
-    "id": 915,
-    "en": "march",
-    "pos": "",
-    "zh": "三月，行进，游行",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 915
-  },
-  {
-    "id": 916,
-    "en": "meaning",
-    "pos": "",
-    "zh": "意思是，残忍的（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 916
-  },
-  {
-    "id": 917,
-    "en": "means",
-    "pos": "",
-    "zh": "意思是，残忍的（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 917
-  },
-  {
-    "id": 918,
-    "en": "minds",
-    "pos": "",
-    "zh": "思想，心智，介意（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 918
-  },
-  {
-    "id": 919,
-    "en": "minute",
-    "pos": "",
-    "zh": "分钟，稍后",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 919
-  },
-  {
-    "id": 920,
-    "en": "mistake",
-    "pos": "",
-    "zh": "错误，失误",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 920
-  },
-  {
-    "id": 921,
-    "en": "month",
-    "pos": "",
-    "zh": "月份",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 921
-  },
-  {
-    "id": 922,
-    "en": "moon",
-    "pos": "",
-    "zh": "月亮",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 922
-  },
-  {
-    "id": 923,
-    "en": "mornings",
-    "pos": "",
-    "zh": "早晨（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 923
-  },
-  {
-    "id": 924,
-    "en": "musical",
-    "pos": "",
-    "zh": "音乐的，音乐剧",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 924
-  },
-  {
-    "id": 925,
-    "en": "name",
-    "pos": "",
-    "zh": "名字，命名",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 925
-  },
-  {
-    "id": 926,
-    "en": "necessary",
-    "pos": "",
-    "zh": "必要的，必需的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 926
-  },
-  {
-    "id": 927,
-    "en": "neighbor",
-    "pos": "",
-    "zh": "邻居（美式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 927
-  },
-  {
-    "id": 928,
-    "en": "neighbour",
-    "pos": "",
-    "zh": "邻居（英式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 928
-  },
-  {
-    "id": 929,
-    "en": "northern",
-    "pos": "",
-    "zh": "北方的，北部的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 929
-  },
-  {
-    "id": 930,
-    "en": "notice",
-    "pos": "",
-    "zh": "注意，注意到",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 930
-  },
-  {
-    "id": 931,
-    "en": "noticed",
-    "pos": "",
-    "zh": "注意，注意到（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 931
-  },
-  {
-    "id": 932,
-    "en": "novel",
-    "pos": "",
-    "zh": "小说，新奇的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 932
-  },
-  {
-    "id": 933,
-    "en": "obeying",
-    "pos": "",
-    "zh": "遵从（obey的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 933
-  },
-  {
-    "id": 934,
-    "en": "offer",
-    "pos": "",
-    "zh": "提供，出价",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 934
-  },
-  {
-    "id": 935,
-    "en": "older",
-    "pos": "",
-    "zh": "更老的，旧的，岁",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 935
-  },
-  {
-    "id": 936,
-    "en": "opinions",
-    "pos": "",
-    "zh": "意见，观点（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 936
-  },
-  {
-    "id": 937,
-    "en": "organized",
-    "pos": "",
-    "zh": "组织，整理（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 937
-  },
-  {
-    "id": 938,
-    "en": "packaging",
-    "pos": "",
-    "zh": "包装，包装材料",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 938
-  },
-  {
-    "id": 939,
-    "en": "passed",
-    "pos": "",
-    "zh": "经过，传递，通过（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 939
-  },
-  {
-    "id": 940,
-    "en": "pay",
-    "pos": "",
-    "zh": "支付，薪水",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 940
-  },
-  {
-    "id": 941,
-    "en": "percent",
-    "pos": "",
-    "zh": "百分之……",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 941
-  },
-  {
-    "id": 942,
-    "en": "permafrost",
-    "pos": "",
-    "zh": "永久冻土",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 942
-  },
-  {
-    "id": 943,
-    "en": "personalities",
-    "pos": "",
-    "zh": "性格，个性（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 943
-  },
-  {
-    "id": 944,
-    "en": "photographer",
-    "pos": "",
-    "zh": "摄影师",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 944
-  },
-  {
-    "id": 945,
-    "en": "pieces",
-    "pos": "",
-    "zh": "一块，一片，一件（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 945
-  },
-  {
-    "id": 946,
-    "en": "playlist",
-    "pos": "",
-    "zh": "播放列表",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 946
-  },
-  {
-    "id": 947,
-    "en": "points",
-    "pos": "",
-    "zh": "要点，指向，分（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 947
-  },
-  {
-    "id": 948,
-    "en": "polluted",
-    "pos": "",
-    "zh": "被污染的（pollute的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 948
-  },
-  {
-    "id": 949,
-    "en": "population",
-    "pos": "",
-    "zh": "人口，种群",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 949
-  },
-  {
-    "id": 950,
-    "en": "praise",
-    "pos": "",
-    "zh": "称赞，表扬",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 950
-  },
-  {
-    "id": 951,
-    "en": "professor",
-    "pos": "",
-    "zh": "教授",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 951
-  },
-  {
-    "id": 952,
-    "en": "protected",
-    "pos": "",
-    "zh": "保护（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 952
-  },
-  {
-    "id": 953,
-    "en": "question",
-    "pos": "",
-    "zh": "问题，疑问",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 953
-  },
-  {
-    "id": 954,
-    "en": "quick",
-    "pos": "",
-    "zh": "快速的，迅速的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 954
-  },
-  {
-    "id": 955,
-    "en": "reasons",
-    "pos": "",
-    "zh": "原因，理由（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 955
-  },
-  {
-    "id": 956,
-    "en": "relaxed",
-    "pos": "",
-    "zh": "放松的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 956
-  },
-  {
-    "id": 957,
-    "en": "remained",
-    "pos": "",
-    "zh": "保持（remain的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 957
-  },
-  {
-    "id": 958,
-    "en": "return",
-    "pos": "",
-    "zh": "返回，归还",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 958
-  },
-  {
-    "id": 959,
-    "en": "richard",
-    "pos": "",
-    "zh": "理查德（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 959
-  },
-  {
-    "id": 960,
-    "en": "risk",
-    "pos": "",
-    "zh": "风险，危险",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 960
-  },
-  {
-    "id": 961,
-    "en": "rivers",
-    "pos": "",
-    "zh": "河流（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 961
-  },
-  {
-    "id": 962,
-    "en": "road",
-    "pos": "",
-    "zh": "道路，公路",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 962
-  },
-  {
-    "id": 963,
-    "en": "ruined",
-    "pos": "",
-    "zh": "毁坏的（ruin的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 963
-  },
-  {
-    "id": 964,
-    "en": "safe",
-    "pos": "",
-    "zh": "安全的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 964
-  },
-  {
-    "id": 965,
-    "en": "saved",
-    "pos": "",
-    "zh": "拯救，储存（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 965
-  },
-  {
-    "id": 966,
-    "en": "saying",
-    "pos": "",
-    "zh": "说话，讲",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 966
-  },
-  {
-    "id": 967,
-    "en": "schools",
-    "pos": "",
-    "zh": "学校（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 967
-  },
-  {
-    "id": 968,
-    "en": "seats",
-    "pos": "",
-    "zh": "座位（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 968
-  },
-  {
-    "id": 969,
-    "en": "shared",
-    "pos": "",
-    "zh": "分享，份额（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 969
-  },
-  {
-    "id": 970,
-    "en": "shell",
-    "pos": "",
-    "zh": "贝壳，外壳",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 970
-  },
-  {
-    "id": 971,
-    "en": "shells",
-    "pos": "",
-    "zh": "贝壳（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 971
-  },
-  {
-    "id": 972,
-    "en": "ship",
-    "pos": "",
-    "zh": "船，运输",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 972
-  },
-  {
-    "id": 973,
-    "en": "similar",
-    "pos": "",
-    "zh": "相似的，类似的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 973
-  },
-  {
-    "id": 974,
-    "en": "sincere",
-    "pos": "",
-    "zh": "真诚的，诚恳的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 974
-  },
-  {
-    "id": 975,
-    "en": "sincerely",
-    "pos": "",
-    "zh": "真诚地，诚心诚意地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 975
-  },
-  {
-    "id": 976,
-    "en": "singer",
-    "pos": "",
-    "zh": "更唱歌",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 976
-  },
-  {
-    "id": 977,
-    "en": "smarter",
-    "pos": "",
-    "zh": "更聪明的，时髦的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 977
-  },
-  {
-    "id": 978,
-    "en": "smile",
-    "pos": "",
-    "zh": "微笑",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 978
-  },
-  {
-    "id": 979,
-    "en": "south",
-    "pos": "",
-    "zh": "南方，南部",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 979
-  },
-  {
-    "id": 980,
-    "en": "speaking",
-    "pos": "",
-    "zh": "说话，演讲",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 980
-  },
-  {
-    "id": 981,
-    "en": "spent",
-    "pos": "",
-    "zh": "花费（spend的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 981
-  },
-  {
-    "id": 982,
-    "en": "stand",
-    "pos": "",
-    "zh": "站，忍受",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 982
-  },
-  {
-    "id": 983,
-    "en": "stayed",
-    "pos": "",
-    "zh": "停留，保持（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 983
-  },
-  {
-    "id": 984,
-    "en": "stones",
-    "pos": "",
-    "zh": "石头（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 984
-  },
-  {
-    "id": 985,
-    "en": "store",
-    "pos": "",
-    "zh": "商店，储存",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 985
-  },
-  {
-    "id": 986,
-    "en": "strict",
-    "pos": "",
-    "zh": "严格的，严厉的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 986
-  },
-  {
-    "id": 987,
-    "en": "suddenly",
-    "pos": "",
-    "zh": "突然地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 987
-  },
-  {
-    "id": 988,
-    "en": "sugar",
-    "pos": "",
-    "zh": "糖",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 988
-  },
-  {
-    "id": 989,
-    "en": "suggested",
-    "pos": "",
-    "zh": "建议，暗示（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 989
-  },
-  {
-    "id": 990,
-    "en": "sunday",
-    "pos": "",
-    "zh": "星期日",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 990
-  },
-  {
-    "id": 991,
-    "en": "survey",
-    "pos": "",
-    "zh": "调查，测量",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 991
-  },
-  {
-    "id": 992,
-    "en": "sweet",
-    "pos": "",
-    "zh": "甜的，可爱的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 992
-  },
-  {
-    "id": 993,
-    "en": "talked",
-    "pos": "",
-    "zh": "谈话（talk的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 993
-  },
-  {
-    "id": 994,
-    "en": "talking",
-    "pos": "",
-    "zh": "说话，交谈",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 994
-  },
-  {
-    "id": 995,
-    "en": "tank",
-    "pos": "",
-    "zh": "水箱，坦克",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 995
-  },
-  {
-    "id": 996,
-    "en": "thinner",
-    "pos": "",
-    "zh": "更薄的（thin的比较级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 996
-  },
-  {
-    "id": 997,
-    "en": "throw",
-    "pos": "",
-    "zh": "投，扔",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 997
-  },
-  {
-    "id": 998,
-    "en": "traffic",
-    "pos": "",
-    "zh": "交通，交通量",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 998
-  },
-  {
-    "id": 999,
-    "en": "trained",
-    "pos": "",
-    "zh": "训练，火车（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 999
-  },
-  {
-    "id": 1000,
-    "en": "trick",
-    "pos": "",
-    "zh": "技巧，把戏，欺骗",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1000
-  },
-  {
-    "id": 1001,
-    "en": "tunnel",
-    "pos": "",
-    "zh": "隧道，地道",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1001
-  },
-  {
-    "id": 1002,
-    "en": "twice",
-    "pos": "",
-    "zh": "两次，两倍",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1002
-  },
-  {
-    "id": 1003,
-    "en": "types",
-    "pos": "",
-    "zh": "类型，打字（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1003
-  },
-  {
-    "id": 1004,
-    "en": "unique",
-    "pos": "",
-    "zh": "独特的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1004
-  },
-  {
-    "id": 1005,
-    "en": "university",
-    "pos": "",
-    "zh": "大学",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1005
-  },
-  {
-    "id": 1006,
-    "en": "unprepared",
-    "pos": "",
-    "zh": "没有准备的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1006
-  },
-  {
-    "id": 1007,
-    "en": "virtues",
-    "pos": "",
-    "zh": "美德（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1007
-  },
-  {
-    "id": 1008,
-    "en": "waiting",
-    "pos": "",
-    "zh": "等待，等候（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1008
-  },
-  {
-    "id": 1009,
-    "en": "warm",
-    "pos": "",
-    "zh": "温暖的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1009
-  },
-  {
-    "id": 1010,
-    "en": "weeds",
-    "pos": "",
-    "zh": "杂草（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1010
-  },
-  {
-    "id": 1011,
-    "en": "welcome",
-    "pos": "",
-    "zh": "欢迎",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1011
-  },
-  {
-    "id": 1012,
-    "en": "wenxiu",
-    "pos": "",
-    "zh": "文秀（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1012
-  },
-  {
-    "id": 1013,
-    "en": "winning",
-    "pos": "",
-    "zh": "赢，获胜（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1013
-  },
-  {
-    "id": 1014,
-    "en": "winter",
-    "pos": "",
-    "zh": "冬天",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1014
-  },
-  {
-    "id": 1015,
-    "en": "wise",
-    "pos": "",
-    "zh": "明智的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1015
-  },
-  {
-    "id": 1016,
-    "en": "wrong",
-    "pos": "",
-    "zh": "错误",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1016
-  },
-  {
-    "id": 1017,
-    "en": "xin",
-    "pos": "",
-    "zh": "新/心（中国名字）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1017
-  },
-  {
-    "id": 1018,
-    "en": "xinjiang",
-    "pos": "",
-    "zh": "新疆（中国自治区）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1018
-  },
-  {
-    "id": 1019,
-    "en": "york",
-    "pos": "",
-    "zh": "约克（英国城市）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1019
-  },
-  {
-    "id": 1020,
-    "en": "yue",
-    "pos": "",
-    "zh": "粤/悦（中国字）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1020
-  },
-  {
-    "id": 1021,
-    "en": "zambia",
-    "pos": "",
-    "zh": "赞比亚（非洲国家）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1021
-  },
-  {
-    "id": 1022,
-    "en": "zhi",
-    "pos": "",
-    "zh": "志（中国名字）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1022
-  },
-  {
-    "id": 1023,
-    "en": "zull",
-    "pos": "",
-    "zh": "祖尔（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1023
-  },
-  {
-    "id": 1024,
-    "en": "accept",
-    "pos": "",
-    "zh": "接受，承认",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1024
-  },
-  {
-    "id": 1025,
-    "en": "achievement",
-    "pos": "",
-    "zh": "成就，成绩",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1025
-  },
-  {
-    "id": 1026,
-    "en": "activity",
-    "pos": "",
-    "zh": "活动",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1026
-  },
-  {
-    "id": 1027,
-    "en": "add",
-    "pos": "",
-    "zh": "增加，添加",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1027
-  },
-  {
-    "id": 1028,
-    "en": "adolescence",
-    "pos": "",
-    "zh": "青春期，青少年时期",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1028
-  },
-  {
-    "id": 1029,
-    "en": "altitude",
-    "pos": "",
-    "zh": "海拔，高度",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1029
-  },
-  {
-    "id": 1030,
-    "en": "amazed",
-    "pos": "",
-    "zh": "惊讶的，惊奇的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1030
-  },
-  {
-    "id": 1031,
-    "en": "ancestors",
-    "pos": "",
-    "zh": "祖先，先辈（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1031
-  },
-  {
-    "id": 1032,
-    "en": "ancient",
-    "pos": "",
-    "zh": "古老的，古代的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1032
-  },
-  {
-    "id": 1033,
-    "en": "apartment",
-    "pos": "",
-    "zh": "公寓",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1033
-  },
-  {
-    "id": 1034,
-    "en": "appeared",
-    "pos": "",
-    "zh": "出现，显现（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1034
-  },
-  {
-    "id": 1035,
-    "en": "appears",
-    "pos": "",
-    "zh": "出现，显现（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1035
-  },
-  {
-    "id": 1036,
-    "en": "applause",
-    "pos": "",
-    "zh": "掌声，鼓掌",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1036
-  },
-  {
-    "id": 1037,
-    "en": "backs",
-    "pos": "",
-    "zh": "向后，返回（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1037
-  },
-  {
-    "id": 1038,
-    "en": "bedroom",
-    "pos": "",
-    "zh": "卧室",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1038
-  },
-  {
-    "id": 1039,
-    "en": "behaving",
-    "pos": "",
-    "zh": "表现，行为（behave的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1039
-  },
-  {
-    "id": 1040,
-    "en": "bicycle",
-    "pos": "",
-    "zh": "自行车",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1040
-  },
-  {
-    "id": 1041,
-    "en": "blooms",
-    "pos": "",
-    "zh": "开花，花朵（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1041
-  },
-  {
-    "id": 1042,
-    "en": "blue",
-    "pos": "",
-    "zh": "蓝色的，忧郁的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1042
-  },
-  {
-    "id": 1043,
-    "en": "bold",
-    "pos": "",
-    "zh": "大胆的，粗体的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1043
-  },
-  {
-    "id": 1044,
-    "en": "bought",
-    "pos": "",
-    "zh": "买了（buy的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1044
-  },
-  {
-    "id": 1045,
-    "en": "breaking",
-    "pos": "",
-    "zh": "打破，休息（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1045
-  },
-  {
-    "id": 1046,
-    "en": "breakout",
-    "pos": "",
-    "zh": "突破，爆发",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1046
-  },
-  {
-    "id": 1047,
-    "en": "brother",
-    "pos": "",
-    "zh": "兄弟",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1047
-  },
-  {
-    "id": 1048,
-    "en": "busier",
-    "pos": "",
-    "zh": "更忙碌的（busy的比较级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1048
-  },
-  {
-    "id": 1049,
-    "en": "carry",
-    "pos": "",
-    "zh": "携带",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1049
-  },
-  {
-    "id": 1050,
-    "en": "chairs",
-    "pos": "",
-    "zh": "椅子（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1050
-  },
-  {
-    "id": 1051,
-    "en": "channel",
-    "pos": "",
-    "zh": "频道，渠道",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1051
-  },
-  {
-    "id": 1052,
-    "en": "checks",
-    "pos": "",
-    "zh": "检查，核对（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1052
-  },
-  {
-    "id": 1053,
-    "en": "cleaning",
-    "pos": "",
-    "zh": "打扫，清洁的（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1053
-  },
-  {
-    "id": 1054,
-    "en": "clear",
-    "pos": "",
-    "zh": "清晰的，明确的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1054
-  },
-  {
-    "id": 1055,
-    "en": "clearly",
-    "pos": "",
-    "zh": "清楚地，清晰地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1055
-  },
-  {
-    "id": 1056,
-    "en": "click",
-    "pos": "",
-    "zh": "点击，咔嗒声",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1056
-  },
-  {
-    "id": 1057,
-    "en": "climb",
-    "pos": "",
-    "zh": "爬，攀登",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1057
-  },
-  {
-    "id": 1058,
-    "en": "college",
-    "pos": "",
-    "zh": "学院",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1058
-  },
-  {
-    "id": 1059,
-    "en": "communicating",
-    "pos": "",
-    "zh": "交流，通讯（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1059
-  },
-  {
-    "id": 1060,
-    "en": "compare",
-    "pos": "",
-    "zh": "比较",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1060
-  },
-  {
-    "id": 1061,
-    "en": "comparing",
-    "pos": "",
-    "zh": "比较（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1061
-  },
-  {
-    "id": 1062,
-    "en": "complete",
-    "pos": "",
-    "zh": "完成，完整的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1062
-  },
-  {
-    "id": 1063,
-    "en": "conflicts",
-    "pos": "",
-    "zh": "冲突，矛盾（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1063
-  },
-  {
-    "id": 1064,
-    "en": "confuse",
-    "pos": "",
-    "zh": "混淆，使困惑",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1064
-  },
-  {
-    "id": 1065,
-    "en": "connection",
-    "pos": "",
-    "zh": "联系，连接",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1065
-  },
-  {
-    "id": 1066,
-    "en": "consider",
-    "pos": "",
-    "zh": "考虑",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1066
-  },
-  {
-    "id": 1067,
-    "en": "continued",
-    "pos": "",
-    "zh": "继续（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1067
-  },
-  {
-    "id": 1068,
-    "en": "correct",
-    "pos": "",
-    "zh": "正确的，纠正",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1068
-  },
-  {
-    "id": 1069,
-    "en": "cost",
-    "pos": "",
-    "zh": "花费，成本",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1069
-  },
-  {
-    "id": 1070,
-    "en": "crab",
-    "pos": "",
-    "zh": "螃蟹",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1070
-  },
-  {
-    "id": 1071,
-    "en": "crazier",
-    "pos": "",
-    "zh": "更疯狂的（crazy的比较级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1071
-  },
-  {
-    "id": 1072,
-    "en": "creating",
-    "pos": "",
-    "zh": "创造，创建（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1072
-  },
-  {
-    "id": 1073,
-    "en": "crowded",
-    "pos": "",
-    "zh": "拥挤的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1073
-  },
-  {
-    "id": 1074,
-    "en": "cultural",
-    "pos": "",
-    "zh": "文化的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1074
-  },
-  {
-    "id": 1075,
-    "en": "dad",
-    "pos": "",
-    "zh": "爸爸（口语）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1075
-  },
-  {
-    "id": 1076,
-    "en": "daily",
-    "pos": "",
-    "zh": "每天的，日常的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1076
-  },
-  {
-    "id": 1077,
-    "en": "dangers",
-    "pos": "",
-    "zh": "危险（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1077
-  },
-  {
-    "id": 1078,
-    "en": "dealt",
-    "pos": "",
-    "zh": "处理了（deal的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1078
-  },
-  {
-    "id": 1079,
-    "en": "delicious",
-    "pos": "",
-    "zh": "美味的，可口的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1079
-  },
-  {
-    "id": 1080,
-    "en": "designers",
-    "pos": "",
-    "zh": "设计师们（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1080
-  },
-  {
-    "id": 1081,
-    "en": "detailed",
-    "pos": "",
-    "zh": "详细的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1081
-  },
-  {
-    "id": 1082,
-    "en": "die",
-    "pos": "",
-    "zh": "死亡，枯萎",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1082
-  },
-  {
-    "id": 1083,
-    "en": "dies",
-    "pos": "",
-    "zh": "死亡，枯萎（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1083
-  },
-  {
-    "id": 1084,
-    "en": "discussions",
-    "pos": "",
-    "zh": "讨论（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1084
-  },
-  {
-    "id": 1085,
-    "en": "disease",
-    "pos": "",
-    "zh": "疾病",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1085
-  },
-  {
-    "id": 1086,
-    "en": "dish",
-    "pos": "",
-    "zh": "菜肴，盘子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1086
-  },
-  {
-    "id": 1087,
-    "en": "doctors",
-    "pos": "",
-    "zh": "医生们（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1087
-  },
-  {
-    "id": 1088,
-    "en": "dog",
-    "pos": "",
-    "zh": "狗",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1088
-  },
-  {
-    "id": 1089,
-    "en": "doubted",
-    "pos": "",
-    "zh": "怀疑（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1089
-  },
-  {
-    "id": 1090,
-    "en": "drawn",
-    "pos": "",
-    "zh": "画的（draw的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1090
-  },
-  {
-    "id": 1091,
-    "en": "dreamed",
-    "pos": "",
-    "zh": "梦想，梦（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1091
-  },
-  {
-    "id": 1092,
-    "en": "dreams",
-    "pos": "",
-    "zh": "梦想，梦（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1092
-  },
-  {
-    "id": 1093,
-    "en": "dress",
-    "pos": "",
-    "zh": "连衣裙，穿衣",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1093
-  },
-  {
-    "id": 1094,
-    "en": "dropping",
-    "pos": "",
-    "zh": "降落，丢落（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1094
-  },
-  {
-    "id": 1095,
-    "en": "easiest",
-    "pos": "",
-    "zh": "最容易的（easy的最高级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1095
-  },
-  {
-    "id": 1096,
-    "en": "educational",
-    "pos": "",
-    "zh": "教育性的，有教育意义的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1096
-  },
-  {
-    "id": 1097,
-    "en": "effort",
-    "pos": "",
-    "zh": "努力，尽力",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1097
-  },
-  {
-    "id": 1098,
-    "en": "eleven",
-    "pos": "",
-    "zh": "十一",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1098
-  },
-  {
-    "id": 1099,
-    "en": "everyday",
-    "pos": "",
-    "zh": "日常的，每天的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1099
-  },
-  {
-    "id": 1100,
-    "en": "exaggerate",
-    "pos": "",
-    "zh": "夸大，夸张",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1100
-  },
-  {
-    "id": 1101,
-    "en": "exercises",
-    "pos": "",
-    "zh": "锻炼，运动（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1101
-  },
-  {
-    "id": 1102,
-    "en": "explained",
-    "pos": "",
-    "zh": "解释，说明（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1102
-  },
-  {
-    "id": 1103,
-    "en": "exported",
-    "pos": "",
-    "zh": "出口的（export的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1103
-  },
-  {
-    "id": 1104,
-    "en": "faced",
-    "pos": "",
-    "zh": "面对，脸（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1104
-  },
-  {
-    "id": 1105,
-    "en": "faces",
-    "pos": "",
-    "zh": "面对，脸（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1105
-  },
-  {
-    "id": 1106,
-    "en": "far",
-    "pos": "",
-    "zh": "远的，遥远",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1106
-  },
-  {
-    "id": 1107,
-    "en": "faster",
-    "pos": "",
-    "zh": "更快速的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1107
-  },
-  {
-    "id": 1108,
-    "en": "feet",
-    "pos": "",
-    "zh": "脚（foot的复数），英尺",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1108
-  },
-  {
-    "id": 1109,
-    "en": "floating",
-    "pos": "",
-    "zh": "漂浮的（float的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1109
-  },
-  {
-    "id": 1110,
-    "en": "forests",
-    "pos": "",
-    "zh": "森林（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1110
-  },
-  {
-    "id": 1111,
-    "en": "forever",
-    "pos": "",
-    "zh": "永远",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1111
-  },
-  {
-    "id": 1112,
-    "en": "forget",
-    "pos": "",
-    "zh": "忘记",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1112
-  },
-  {
-    "id": 1113,
-    "en": "forgets",
-    "pos": "",
-    "zh": "忘记（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1113
-  },
-  {
-    "id": 1114,
-    "en": "fought",
-    "pos": "",
-    "zh": "战斗了（fight的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1114
-  },
-  {
-    "id": 1115,
-    "en": "freely",
-    "pos": "",
-    "zh": "自由的，免费的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1115
-  },
-  {
-    "id": 1116,
-    "en": "gate",
-    "pos": "",
-    "zh": "大门，入口",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1116
-  },
-  {
-    "id": 1117,
-    "en": "gently",
-    "pos": "",
-    "zh": "轻柔地，温和地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1117
-  },
-  {
-    "id": 1118,
-    "en": "getting",
-    "pos": "",
-    "zh": "得到，变得",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1118
-  },
-  {
-    "id": 1119,
-    "en": "grandkids",
-    "pos": "",
-    "zh": "孙辈们，小孙子们（口语）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1119
-  },
-  {
-    "id": 1120,
-    "en": "grasshoppers",
-    "pos": "",
-    "zh": "蚂蚱，蝗虫（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1120
-  },
-  {
-    "id": 1121,
-    "en": "gravity",
-    "pos": "",
-    "zh": "重力，引力",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1121
-  },
-  {
-    "id": 1122,
-    "en": "greatly",
-    "pos": "",
-    "zh": "伟大的，极好的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1122
-  },
-  {
-    "id": 1123,
-    "en": "grown",
-    "pos": "",
-    "zh": "长大的（grow的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1123
-  },
-  {
-    "id": 1124,
-    "en": "happiest",
-    "pos": "",
-    "zh": "最快乐的（happy的最高级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1124
-  },
-  {
-    "id": 1125,
-    "en": "happily",
-    "pos": "",
-    "zh": "高兴的，幸福的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1125
-  },
-  {
-    "id": 1126,
-    "en": "harmonious",
-    "pos": "",
-    "zh": "和谐的，融洽的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1126
-  },
-  {
-    "id": 1127,
-    "en": "health",
-    "pos": "",
-    "zh": "健康",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1127
-  },
-  {
-    "id": 1128,
-    "en": "heaviest",
-    "pos": "",
-    "zh": "最重的（heavy的最高级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1128
-  },
-  {
-    "id": 1129,
-    "en": "heroes",
-    "pos": "",
-    "zh": "英雄（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1129
-  },
-  {
-    "id": 1130,
-    "en": "hide",
-    "pos": "",
-    "zh": "隐藏，躲避",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1130
-  },
-  {
-    "id": 1131,
-    "en": "hippos",
-    "pos": "",
-    "zh": "河马（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1131
-  },
-  {
-    "id": 1132,
-    "en": "hit",
-    "pos": "",
-    "zh": "击中（hit的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1132
-  },
-  {
-    "id": 1133,
-    "en": "holiday",
-    "pos": "",
-    "zh": "假期，节日",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1133
-  },
-  {
-    "id": 1134,
-    "en": "hunger",
-    "pos": "",
-    "zh": "饥饿",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1134
-  },
-  {
-    "id": 1135,
-    "en": "hurts",
-    "pos": "",
-    "zh": "伤害（hurt的过去式）（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1135
-  },
-  {
-    "id": 1136,
-    "en": "hybrid",
-    "pos": "",
-    "zh": "混合动力的，杂交的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1136
-  },
-  {
-    "id": 1137,
-    "en": "ideas",
-    "pos": "",
-    "zh": "想法，主意（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1137
-  },
-  {
-    "id": 1138,
-    "en": "imagination",
-    "pos": "",
-    "zh": "想象力",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1138
-  },
-  {
-    "id": 1139,
-    "en": "instructions",
-    "pos": "",
-    "zh": "说明，指示（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1139
-  },
-  {
-    "id": 1140,
-    "en": "interview",
-    "pos": "",
-    "zh": "采访，面试",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1140
-  },
-  {
-    "id": 1141,
-    "en": "isf",
-    "pos": "",
-    "zh": "ISF（缩写）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1141
-  },
-  {
-    "id": 1142,
-    "en": "jiangsu",
-    "pos": "",
-    "zh": "江苏（中国省份）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1142
-  },
-  {
-    "id": 1143,
-    "en": "july",
-    "pos": "",
-    "zh": "七月",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1143
-  },
-  {
-    "id": 1144,
-    "en": "junlong",
-    "pos": "",
-    "zh": "俊龙（中国人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1144
-  },
-  {
-    "id": 1145,
-    "en": "keeping",
-    "pos": "",
-    "zh": "保持，继续（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1145
-  },
-  {
-    "id": 1146,
-    "en": "kilometre",
-    "pos": "",
-    "zh": "千米，公里",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1146
-  },
-  {
-    "id": 1147,
-    "en": "kindly",
-    "pos": "",
-    "zh": "种类，友善的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1147
-  },
-  {
-    "id": 1148,
-    "en": "kindness",
-    "pos": "",
-    "zh": "善良，友善",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1148
-  },
-  {
-    "id": 1149,
-    "en": "lantern",
-    "pos": "",
-    "zh": "灯笼",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1149
-  },
-  {
-    "id": 1150,
-    "en": "lighted",
-    "pos": "",
-    "zh": "光，灯，轻的（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1150
-  },
-  {
-    "id": 1151,
-    "en": "line",
-    "pos": "",
-    "zh": "线条，排队，台词",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1151
-  },
-  {
-    "id": 1152,
-    "en": "listen",
-    "pos": "",
-    "zh": "听，倾听",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1152
-  },
-  {
-    "id": 1153,
-    "en": "lived",
-    "pos": "",
-    "zh": "生活（live的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1153
-  },
-  {
-    "id": 1154,
-    "en": "lively",
-    "pos": "",
-    "zh": "生活，居住（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1154
-  },
-  {
-    "id": 1155,
-    "en": "lives",
-    "pos": "",
-    "zh": "生活，居住（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1155
-  },
-  {
-    "id": 1156,
-    "en": "location",
-    "pos": "",
-    "zh": "位置，地点",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1156
-  },
-  {
-    "id": 1157,
-    "en": "longping",
-    "pos": "",
-    "zh": "隆平（袁隆平）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1157
-  },
-  {
-    "id": 1158,
-    "en": "man",
-    "pos": "",
-    "zh": "男人",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1158
-  },
-  {
-    "id": 1159,
-    "en": "manager",
-    "pos": "",
-    "zh": "更管理，设法",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1159
-  },
-  {
-    "id": 1160,
-    "en": "marks",
-    "pos": "",
-    "zh": "标记，分数（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1160
-  },
-  {
-    "id": 1161,
-    "en": "matched",
-    "pos": "",
-    "zh": "比赛，匹配（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1161
-  },
-  {
-    "id": 1162,
-    "en": "meaningful",
-    "pos": "",
-    "zh": "有意义的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1162
-  },
-  {
-    "id": 1163,
-    "en": "medicine",
-    "pos": "",
-    "zh": "医学，药",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1163
-  },
-  {
-    "id": 1164,
-    "en": "member",
-    "pos": "",
-    "zh": "成员",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1164
-  },
-  {
-    "id": 1165,
-    "en": "mentioned",
-    "pos": "",
-    "zh": "提到的（mention的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1165
-  },
-  {
-    "id": 1166,
-    "en": "methods",
-    "pos": "",
-    "zh": "方法（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1166
-  },
-  {
-    "id": 1167,
-    "en": "minded",
-    "pos": "",
-    "zh": "思想，心智，介意（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1167
-  },
-  {
-    "id": 1168,
-    "en": "mine",
-    "pos": "",
-    "zh": "我的，矿山",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1168
-  },
-  {
-    "id": 1169,
-    "en": "models",
-    "pos": "",
-    "zh": "模型，模特，榜样（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1169
-  },
-  {
-    "id": 1170,
-    "en": "modern",
-    "pos": "",
-    "zh": "现代的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1170
-  },
-  {
-    "id": 1171,
-    "en": "museum",
-    "pos": "",
-    "zh": "博物馆",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1171
-  },
-  {
-    "id": 1172,
-    "en": "names",
-    "pos": "",
-    "zh": "名字，命名（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1172
-  },
-  {
-    "id": 1173,
-    "en": "nearby",
-    "pos": "",
-    "zh": "附近的，就近的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1173
-  },
-  {
-    "id": 1174,
-    "en": "nets",
-    "pos": "",
-    "zh": "网（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1174
-  },
-  {
-    "id": 1175,
-    "en": "network",
-    "pos": "",
-    "zh": "网络",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1175
-  },
-  {
-    "id": 1176,
-    "en": "nodded",
-    "pos": "",
-    "zh": "点头（nod的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1176
-  },
-  {
-    "id": 1177,
-    "en": "noise",
-    "pos": "",
-    "zh": "噪音，杂音",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1177
-  },
-  {
-    "id": 1178,
-    "en": "novels",
-    "pos": "",
-    "zh": "小说，新奇的（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1178
-  },
-  {
-    "id": 1179,
-    "en": "offered",
-    "pos": "",
-    "zh": "提供，出价（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1179
-  },
-  {
-    "id": 1180,
-    "en": "office",
-    "pos": "",
-    "zh": "办公室，职务",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1180
-  },
-  {
-    "id": 1181,
-    "en": "ones",
-    "pos": "",
-    "zh": "……的人/物（泛指复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1181
-  },
-  {
-    "id": 1182,
-    "en": "opening",
-    "pos": "",
-    "zh": "打开，开放的（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1182
-  },
-  {
-    "id": 1183,
-    "en": "operations",
-    "pos": "",
-    "zh": "手术，操作，运转（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1183
-  },
-  {
-    "id": 1184,
-    "en": "order",
-    "pos": "",
-    "zh": "命令，顺序",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1184
-  },
-  {
-    "id": 1185,
-    "en": "paid",
-    "pos": "",
-    "zh": "支付了（pay的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1185
-  },
-  {
-    "id": 1186,
-    "en": "pain",
-    "pos": "",
-    "zh": "疼痛，痛苦",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1186
-  },
-  {
-    "id": 1187,
-    "en": "park",
-    "pos": "",
-    "zh": "公园，停车",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1187
-  },
-  {
-    "id": 1188,
-    "en": "pass",
-    "pos": "",
-    "zh": "经过，传递，通过",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1188
-  },
-  {
-    "id": 1189,
-    "en": "paul",
-    "pos": "",
-    "zh": "保罗（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1189
-  },
-  {
-    "id": 1190,
-    "en": "paying",
-    "pos": "",
-    "zh": "支付，薪水（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1190
-  },
-  {
-    "id": 1191,
-    "en": "performance",
-    "pos": "",
-    "zh": "表演，表现，绩效",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1191
-  },
-  {
-    "id": 1192,
-    "en": "performing",
-    "pos": "",
-    "zh": "表演中（perform的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1192
-  },
-  {
-    "id": 1193,
-    "en": "personal",
-    "pos": "",
-    "zh": "个人的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1193
-  },
-  {
-    "id": 1194,
-    "en": "physical",
-    "pos": "",
-    "zh": "身体的，物理的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1194
-  },
-  {
-    "id": 1195,
-    "en": "placed",
-    "pos": "",
-    "zh": "地方，放置（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1195
-  },
-  {
-    "id": 1196,
-    "en": "played",
-    "pos": "",
-    "zh": "玩（play的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1196
-  },
-  {
-    "id": 1197,
-    "en": "player",
-    "pos": "",
-    "zh": "运动员，玩家",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1197
-  },
-  {
-    "id": 1198,
-    "en": "plays",
-    "pos": "",
-    "zh": "玩，演奏，戏剧（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1198
-  },
-  {
-    "id": 1199,
-    "en": "pleasant",
-    "pos": "",
-    "zh": "令人愉快的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1199
-  },
-  {
-    "id": 1200,
-    "en": "polite",
-    "pos": "",
-    "zh": "礼貌的，有礼貌的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1200
-  },
-  {
-    "id": 1201,
-    "en": "pollute",
-    "pos": "",
-    "zh": "污染",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1201
-  },
-  {
-    "id": 1202,
-    "en": "potato",
-    "pos": "",
-    "zh": "土豆，马铃薯",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1202
-  },
-  {
-    "id": 1203,
-    "en": "pounds",
-    "pos": "",
-    "zh": "英镑，磅（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1203
-  },
-  {
-    "id": 1204,
-    "en": "power",
-    "pos": "",
-    "zh": "力量，权力，电力",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1204
-  },
-  {
-    "id": 1205,
-    "en": "powerful",
-    "pos": "",
-    "zh": "强大的，有力量的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1205
-  },
-  {
-    "id": 1206,
-    "en": "practise",
-    "pos": "",
-    "zh": "练习，实践（英式拼法）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1206
-  },
-  {
-    "id": 1207,
-    "en": "pressure",
-    "pos": "",
-    "zh": "压力，压强",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1207
-  },
-  {
-    "id": 1208,
-    "en": "pride",
-    "pos": "",
-    "zh": "骄傲，自豪",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1208
-  },
-  {
-    "id": 1209,
-    "en": "printed",
-    "pos": "",
-    "zh": "印刷的（print的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1209
-  },
-  {
-    "id": 1210,
-    "en": "printing",
-    "pos": "",
-    "zh": "印刷（print的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1210
-  },
-  {
-    "id": 1211,
-    "en": "produced",
-    "pos": "",
-    "zh": "生产，制作（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1211
-  },
-  {
-    "id": 1212,
-    "en": "proper",
-    "pos": "",
-    "zh": "适当的，合适的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1212
-  },
-  {
-    "id": 1213,
-    "en": "qingming",
-    "pos": "",
-    "zh": "清明（中国传统节日）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1213
-  },
-  {
-    "id": 1214,
-    "en": "quieter",
-    "pos": "",
-    "zh": "更安静的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1214
-  },
-  {
-    "id": 1215,
-    "en": "raising",
-    "pos": "",
-    "zh": "提高（raise的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1215
-  },
-  {
-    "id": 1216,
-    "en": "reach",
-    "pos": "",
-    "zh": "到达，达到",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1216
-  },
-  {
-    "id": 1217,
-    "en": "received",
-    "pos": "",
-    "zh": "收到（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1217
-  },
-  {
-    "id": 1218,
-    "en": "recently",
-    "pos": "",
-    "zh": "最近，近来",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1218
-  },
-  {
-    "id": 1219,
-    "en": "recycling",
-    "pos": "",
-    "zh": "回收利用（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1219
-  },
-  {
-    "id": 1220,
-    "en": "refused",
-    "pos": "",
-    "zh": "拒绝了（refuse的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1220
-  },
-  {
-    "id": 1221,
-    "en": "regretted",
-    "pos": "",
-    "zh": "后悔了（regret的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1221
-  },
-  {
-    "id": 1222,
-    "en": "remind",
-    "pos": "",
-    "zh": "提醒",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1222
-  },
-  {
-    "id": 1223,
-    "en": "replied",
-    "pos": "",
-    "zh": "回复了（reply的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1223
-  },
-  {
-    "id": 1224,
-    "en": "rest",
-    "pos": "",
-    "zh": "休息，其余",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1224
-  },
-  {
-    "id": 1225,
-    "en": "reward",
-    "pos": "",
-    "zh": "奖励，报酬",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1225
-  },
-  {
-    "id": 1226,
-    "en": "rice",
-    "pos": "",
-    "zh": "米，水稻，米饭",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1226
-  },
-  {
-    "id": 1227,
-    "en": "rising",
-    "pos": "",
-    "zh": "上升，升起（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1227
-  },
-  {
-    "id": 1228,
-    "en": "role",
-    "pos": "",
-    "zh": "角色，作用",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1228
-  },
-  {
-    "id": 1229,
-    "en": "rule",
-    "pos": "",
-    "zh": "规则，统治",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1229
-  },
-  {
-    "id": 1230,
-    "en": "runs",
-    "pos": "",
-    "zh": "跑，运行（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1230
-  },
-  {
-    "id": 1231,
-    "en": "safely",
-    "pos": "",
-    "zh": "安全的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1231
-  },
-  {
-    "id": 1232,
-    "en": "sales",
-    "pos": "",
-    "zh": "销售额（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1232
-  },
-  {
-    "id": 1233,
-    "en": "scenery",
-    "pos": "",
-    "zh": "风景，景色",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1233
-  },
-  {
-    "id": 1234,
-    "en": "season",
-    "pos": "",
-    "zh": "季节",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1234
-  },
-  {
-    "id": 1235,
-    "en": "seems",
-    "pos": "",
-    "zh": "好像，似乎（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1235
-  },
-  {
-    "id": 1236,
-    "en": "seen",
-    "pos": "",
-    "zh": "看到（see的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1236
-  },
-  {
-    "id": 1237,
-    "en": "self",
-    "pos": "",
-    "zh": "自我，自身",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1237
-  },
-  {
-    "id": 1238,
-    "en": "sent",
-    "pos": "",
-    "zh": "发送（send的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1238
-  },
-  {
-    "id": 1239,
-    "en": "sentence",
-    "pos": "",
-    "zh": "句子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1239
-  },
-  {
-    "id": 1240,
-    "en": "separate",
-    "pos": "",
-    "zh": "分开的，分离",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1240
-  },
-  {
-    "id": 1241,
-    "en": "shame",
-    "pos": "",
-    "zh": "羞耻，遗憾",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1241
-  },
-  {
-    "id": 1242,
-    "en": "shelves",
-    "pos": "",
-    "zh": "架子（shelf的复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1242
-  },
-  {
-    "id": 1243,
-    "en": "shenzhou",
-    "pos": "",
-    "zh": "神舟（飞船名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1243
-  },
-  {
-    "id": 1244,
-    "en": "shock",
-    "pos": "",
-    "zh": "震惊，冲击",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1244
-  },
-  {
-    "id": 1245,
-    "en": "shyness",
-    "pos": "",
-    "zh": "害羞，腼腆",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1245
-  },
-  {
-    "id": 1246,
-    "en": "silence",
-    "pos": "",
-    "zh": "沉默，安静",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1246
-  },
-  {
-    "id": 1247,
-    "en": "situation",
-    "pos": "",
-    "zh": "情况，处境",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1247
-  },
-  {
-    "id": 1248,
-    "en": "soft",
-    "pos": "",
-    "zh": "软的，柔和的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1248
-  },
-  {
-    "id": 1249,
-    "en": "solved",
-    "pos": "",
-    "zh": "解决（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1249
-  },
-  {
-    "id": 1250,
-    "en": "spending",
-    "pos": "",
-    "zh": "花费（时间/钱）（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1250
-  },
-  {
-    "id": 1251,
-    "en": "spinal",
-    "pos": "",
-    "zh": "脊柱的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1251
-  },
-  {
-    "id": 1252,
-    "en": "square",
-    "pos": "",
-    "zh": "广场，正方形，平方",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1252
-  },
-  {
-    "id": 1253,
-    "en": "staying",
-    "pos": "",
-    "zh": "停留，保持（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1253
-  },
-  {
-    "id": 1254,
-    "en": "stone",
-    "pos": "",
-    "zh": "石头",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1254
-  },
-  {
-    "id": 1255,
-    "en": "storm",
-    "pos": "",
-    "zh": "暴风雨，风暴",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1255
-  },
-  {
-    "id": 1256,
-    "en": "street",
-    "pos": "",
-    "zh": "街道",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1256
-  },
-  {
-    "id": 1257,
-    "en": "stressed",
-    "pos": "",
-    "zh": "压力，强调（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1257
-  },
-  {
-    "id": 1258,
-    "en": "styles",
-    "pos": "",
-    "zh": "风格，方式（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1258
-  },
-  {
-    "id": 1259,
-    "en": "successfully",
-    "pos": "",
-    "zh": "成功的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1259
-  },
-  {
-    "id": 1260,
-    "en": "suitable",
-    "pos": "",
-    "zh": "合适的，适当的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1260
-  },
-  {
-    "id": 1261,
-    "en": "summer",
-    "pos": "",
-    "zh": "夏天，夏季",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1261
-  },
-  {
-    "id": 1262,
-    "en": "survive",
-    "pos": "",
-    "zh": "幸存，生存",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1262
-  },
-  {
-    "id": 1263,
-    "en": "swallow",
-    "pos": "",
-    "zh": "吞咽，燕子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1263
-  },
-  {
-    "id": 1264,
-    "en": "taste",
-    "pos": "",
-    "zh": "味道，品尝",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1264
-  },
-  {
-    "id": 1265,
-    "en": "tasted",
-    "pos": "",
-    "zh": "尝了（taste的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1265
-  },
-  {
-    "id": 1266,
-    "en": "temperature",
-    "pos": "",
-    "zh": "温度，体温",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1266
-  },
-  {
-    "id": 1267,
-    "en": "thunderous",
-    "pos": "",
-    "zh": "雷鸣般的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1267
-  },
-  {
-    "id": 1268,
-    "en": "tomorrow",
-    "pos": "",
-    "zh": "明天",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1268
-  },
-  {
-    "id": 1269,
-    "en": "tonight",
-    "pos": "",
-    "zh": "今晚，今夜",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1269
-  },
-  {
-    "id": 1270,
-    "en": "tradition",
-    "pos": "",
-    "zh": "传统",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1270
-  },
-  {
-    "id": 1271,
-    "en": "traditionally",
-    "pos": "",
-    "zh": "传统的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1271
-  },
-  {
-    "id": 1272,
-    "en": "treat",
-    "pos": "",
-    "zh": "对待，治疗，招待",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1272
-  },
-  {
-    "id": 1273,
-    "en": "treated",
-    "pos": "",
-    "zh": "被对待的，治疗了",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1273
-  },
-  {
-    "id": 1274,
-    "en": "tries",
-    "pos": "",
-    "zh": "尝试，努力（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1274
-  },
-  {
-    "id": 1275,
-    "en": "trouble",
-    "pos": "",
-    "zh": "麻烦，困难",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1275
-  },
-  {
-    "id": 1276,
-    "en": "ups",
-    "pos": "",
-    "zh": "好处，起伏（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1276
-  },
-  {
-    "id": 1277,
-    "en": "users",
-    "pos": "",
-    "zh": "用户（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1277
-  },
-  {
-    "id": 1278,
-    "en": "vacation",
-    "pos": "",
-    "zh": "假期，假日",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1278
-  },
-  {
-    "id": 1279,
-    "en": "value",
-    "pos": "",
-    "zh": "价值，重视",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1279
-  },
-  {
-    "id": 1280,
-    "en": "victory",
-    "pos": "",
-    "zh": "胜利，战胜",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1280
-  },
-  {
-    "id": 1281,
-    "en": "visit",
-    "pos": "",
-    "zh": "参观，拜访",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1281
-  },
-  {
-    "id": 1282,
-    "en": "volunteer",
-    "pos": "",
-    "zh": "志愿者，自愿",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1282
-  },
-  {
-    "id": 1283,
-    "en": "waited",
-    "pos": "",
-    "zh": "等待（wait的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1283
-  },
-  {
-    "id": 1284,
-    "en": "weak",
-    "pos": "",
-    "zh": "弱的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1284
-  },
-  {
-    "id": 1285,
-    "en": "wear",
-    "pos": "",
-    "zh": "穿，戴",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1285
-  },
-  {
-    "id": 1286,
-    "en": "weekend",
-    "pos": "",
-    "zh": "周末",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1286
-  },
-  {
-    "id": 1287,
-    "en": "weeks",
-    "pos": "",
-    "zh": "星期，周（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1287
-  },
-  {
-    "id": 1288,
-    "en": "weight",
-    "pos": "",
-    "zh": "重量，体重",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1288
-  },
-  {
-    "id": 1289,
-    "en": "wen",
-    "pos": "",
-    "zh": "文/温（中国人名/姓氏）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1289
-  },
-  {
-    "id": 1290,
-    "en": "wetlands",
-    "pos": "",
-    "zh": "湿地（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1290
-  },
-  {
-    "id": 1291,
-    "en": "wildest",
-    "pos": "",
-    "zh": "最野生的，狂野的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1291
-  },
-  {
-    "id": 1292,
-    "en": "wildlife",
-    "pos": "",
-    "zh": "野生动植物",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1292
-  },
-  {
-    "id": 1293,
-    "en": "wonderland",
-    "pos": "",
-    "zh": "奇境，仙境",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1293
-  },
-  {
-    "id": 1294,
-    "en": "wonders",
-    "pos": "",
-    "zh": "奇迹，想知道（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1294
-  },
-  {
-    "id": 1295,
-    "en": "worksheets",
-    "pos": "",
-    "zh": "工作表，练习题（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1295
-  },
-  {
-    "id": 1296,
-    "en": "worth",
-    "pos": "",
-    "zh": "值得，价值",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1296
-  },
-  {
-    "id": 1297,
-    "en": "yeah",
-    "pos": "",
-    "zh": "是的（口语）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1297
-  },
-  {
-    "id": 1298,
-    "en": "zhejiang",
-    "pos": "",
-    "zh": "浙江（中国省份）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1298
-  },
-  {
-    "id": 1299,
-    "en": "accepted",
-    "pos": "",
-    "zh": "被接受的，接受了",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1299
-  },
-  {
-    "id": 1300,
-    "en": "actually",
-    "pos": "",
-    "zh": "实际上，事实上",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1300
-  },
-  {
-    "id": 1301,
-    "en": "advise",
-    "pos": "",
-    "zh": "建议，忠告",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1301
-  },
-  {
-    "id": 1302,
-    "en": "africa",
-    "pos": "",
-    "zh": "非洲",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1302
-  },
-  {
-    "id": 1303,
-    "en": "african",
-    "pos": "",
-    "zh": "非洲的，非洲人",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1303
-  },
-  {
-    "id": 1304,
-    "en": "age",
-    "pos": "",
-    "zh": "年龄，时代",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1304
-  },
-  {
-    "id": 1305,
-    "en": "ages",
-    "pos": "",
-    "zh": "年龄，时代（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1305
-  },
-  {
-    "id": 1306,
-    "en": "agree",
-    "pos": "",
-    "zh": "同意",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1306
-  },
-  {
-    "id": 1307,
-    "en": "agreement",
-    "pos": "",
-    "zh": "同意，协议",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1307
-  },
-  {
-    "id": 1308,
-    "en": "alive",
-    "pos": "",
-    "zh": "活着的，有活力的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1308
-  },
-  {
-    "id": 1309,
-    "en": "amaze",
-    "pos": "",
-    "zh": "使惊奇，使惊叹",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1309
-  },
-  {
-    "id": 1310,
-    "en": "amy",
-    "pos": "",
-    "zh": "艾米（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1310
-  },
-  {
-    "id": 1311,
-    "en": "animal",
-    "pos": "",
-    "zh": "动物",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1311
-  },
-  {
-    "id": 1312,
-    "en": "ann",
-    "pos": "",
-    "zh": "安（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1312
-  },
-  {
-    "id": 1313,
-    "en": "answer",
-    "pos": "",
-    "zh": "回答，答案",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1313
-  },
-  {
-    "id": 1314,
-    "en": "antelope",
-    "pos": "",
-    "zh": "羚羊",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1314
-  },
-  {
-    "id": 1315,
-    "en": "anyone",
-    "pos": "",
-    "zh": "任何人",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1315
-  },
-  {
-    "id": 1316,
-    "en": "arm",
-    "pos": "",
-    "zh": "手臂，武装",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1316
-  },
-  {
-    "id": 1317,
-    "en": "article",
-    "pos": "",
-    "zh": "文章，条款，冠词",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1317
-  },
-  {
-    "id": 1318,
-    "en": "artwork",
-    "pos": "",
-    "zh": "艺术品，作品",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1318
-  },
-  {
-    "id": 1319,
-    "en": "ask",
-    "pos": "",
-    "zh": "问，请求",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1319
-  },
-  {
-    "id": 1320,
-    "en": "asks",
-    "pos": "",
-    "zh": "问，请求（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1320
-  },
-  {
-    "id": 1321,
-    "en": "athlete",
-    "pos": "",
-    "zh": "运动员，体育选手",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1321
-  },
-  {
-    "id": 1322,
-    "en": "attend",
-    "pos": "",
-    "zh": "出席，参加",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1322
-  },
-  {
-    "id": 1323,
-    "en": "attending",
-    "pos": "",
-    "zh": "参加（attend的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1323
-  },
-  {
-    "id": 1324,
-    "en": "attitude",
-    "pos": "",
-    "zh": "态度",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1324
-  },
-  {
-    "id": 1325,
-    "en": "attractive",
-    "pos": "",
-    "zh": "有吸引力的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1325
-  },
-  {
-    "id": 1326,
-    "en": "average",
-    "pos": "",
-    "zh": "平均的，普通的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1326
-  },
-  {
-    "id": 1327,
-    "en": "award",
-    "pos": "",
-    "zh": "奖项，授予",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1327
-  },
-  {
-    "id": 1328,
-    "en": "aware",
-    "pos": "",
-    "zh": "意识到的，知道的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1328
-  },
-  {
-    "id": 1329,
-    "en": "awful",
-    "pos": "",
-    "zh": "可怕的，糟糕的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1329
-  },
-  {
-    "id": 1330,
-    "en": "bags",
-    "pos": "",
-    "zh": "袋子，包（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1330
-  },
-  {
-    "id": 1331,
-    "en": "balanced",
-    "pos": "",
-    "zh": "均衡的（balance的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1331
-  },
-  {
-    "id": 1332,
-    "en": "bank",
-    "pos": "",
-    "zh": "银行，河岸",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1332
-  },
-  {
-    "id": 1333,
-    "en": "batteries",
-    "pos": "",
-    "zh": "电池（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1333
-  },
-  {
-    "id": 1334,
-    "en": "beach",
-    "pos": "",
-    "zh": "海滩",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1334
-  },
-  {
-    "id": 1335,
-    "en": "beatrice",
-    "pos": "",
-    "zh": "贝阿特丽斯（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1335
-  },
-  {
-    "id": 1336,
-    "en": "bedtime",
-    "pos": "",
-    "zh": "就寝时间，睡觉时间",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1336
-  },
-  {
-    "id": 1337,
-    "en": "beginners",
-    "pos": "",
-    "zh": "初学者（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1337
-  },
-  {
-    "id": 1338,
-    "en": "begun",
-    "pos": "",
-    "zh": "已开始（begin的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1338
-  },
-  {
-    "id": 1339,
-    "en": "behave",
-    "pos": "",
-    "zh": "表现，举止",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1339
-  },
-  {
-    "id": 1340,
-    "en": "behaved",
-    "pos": "",
-    "zh": "举止良好（behave的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1340
-  },
-  {
-    "id": 1341,
-    "en": "behavioral",
-    "pos": "",
-    "zh": "行为的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1341
-  },
-  {
-    "id": 1342,
-    "en": "beijing",
-    "pos": "",
-    "zh": "北京（中国首都）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1342
-  },
-  {
-    "id": 1343,
-    "en": "belonged",
-    "pos": "",
-    "zh": "属于（belong的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1343
-  },
-  {
-    "id": 1344,
-    "en": "besides",
-    "pos": "",
-    "zh": "除此之外，另外",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1344
-  },
-  {
-    "id": 1345,
-    "en": "bike",
-    "pos": "",
-    "zh": "自行车，摩托车",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1345
-  },
-  {
-    "id": 1346,
-    "en": "blair",
-    "pos": "",
-    "zh": "布莱尔（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1346
-  },
-  {
-    "id": 1347,
-    "en": "blowing",
-    "pos": "",
-    "zh": "吹，打击（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1347
-  },
-  {
-    "id": 1348,
-    "en": "bored",
-    "pos": "",
-    "zh": "无聊的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1348
-  },
-  {
-    "id": 1349,
-    "en": "born",
-    "pos": "",
-    "zh": "出生（be born）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1349
-  },
-  {
-    "id": 1350,
-    "en": "borrow",
-    "pos": "",
-    "zh": "借，借用",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1350
-  },
-  {
-    "id": 1351,
-    "en": "bottom",
-    "pos": "",
-    "zh": "底部，底端",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1351
-  },
-  {
-    "id": 1352,
-    "en": "box",
-    "pos": "",
-    "zh": "箱子，盒子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1352
-  },
-  {
-    "id": 1353,
-    "en": "boy",
-    "pos": "",
-    "zh": "男孩",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1353
-  },
-  {
-    "id": 1354,
-    "en": "brazil",
-    "pos": "",
-    "zh": "巴西",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1354
-  },
-  {
-    "id": 1355,
-    "en": "breath",
-    "pos": "",
-    "zh": "呼吸，气息",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1355
-  },
-  {
-    "id": 1356,
-    "en": "brew",
-    "pos": "",
-    "zh": "酿造，泡（茶）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1356
-  },
-  {
-    "id": 1357,
-    "en": "brings",
-    "pos": "",
-    "zh": "带来（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1357
-  },
-  {
-    "id": 1358,
-    "en": "brown",
-    "pos": "",
-    "zh": "棕色的，布朗（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1358
-  },
-  {
-    "id": 1359,
-    "en": "burns",
-    "pos": "",
-    "zh": "燃烧（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1359
-  },
-  {
-    "id": 1360,
-    "en": "business",
-    "pos": "",
-    "zh": "商业，公司",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1360
-  },
-  {
-    "id": 1361,
-    "en": "buy",
-    "pos": "",
-    "zh": "购买，买",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1361
-  },
-  {
-    "id": 1362,
-    "en": "buyers",
-    "pos": "",
-    "zh": "买家（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1362
-  },
-  {
-    "id": 1363,
-    "en": "cake",
-    "pos": "",
-    "zh": "蛋糕",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1363
-  },
-  {
-    "id": 1364,
-    "en": "calmer",
-    "pos": "",
-    "zh": "更平静的，冷静的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1364
-  },
-  {
-    "id": 1365,
-    "en": "calmly",
-    "pos": "",
-    "zh": "平静的，冷静的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1365
-  },
-  {
-    "id": 1366,
-    "en": "cane",
-    "pos": "",
-    "zh": "拐杖，甘蔗，藤条",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1366
-  },
-  {
-    "id": 1367,
-    "en": "capital",
-    "pos": "",
-    "zh": "首都，资本",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1367
-  },
-  {
-    "id": 1368,
-    "en": "carl",
-    "pos": "",
-    "zh": "卡尔（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1368
-  },
-  {
-    "id": 1369,
-    "en": "carried",
-    "pos": "",
-    "zh": "携带（carry的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1369
-  },
-  {
-    "id": 1370,
-    "en": "cartoonists",
-    "pos": "",
-    "zh": "漫画家（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1370
-  },
-  {
-    "id": 1371,
-    "en": "case",
-    "pos": "",
-    "zh": "情况，事例，箱",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1371
-  },
-  {
-    "id": 1372,
-    "en": "cats",
-    "pos": "",
-    "zh": "猫（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1372
-  },
-  {
-    "id": 1373,
-    "en": "caught",
-    "pos": "",
-    "zh": "抓住（catch的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1373
-  },
-  {
-    "id": 1374,
-    "en": "caused",
-    "pos": "",
-    "zh": "原因，导致（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1374
-  },
-  {
-    "id": 1375,
-    "en": "cctv",
-    "pos": "",
-    "zh": "中央电视台（CCTV）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1375
-  },
-  {
-    "id": 1376,
-    "en": "center",
-    "pos": "",
-    "zh": "中心（美式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1376
-  },
-  {
-    "id": 1377,
-    "en": "central",
-    "pos": "",
-    "zh": "中心的，中央的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1377
-  },
-  {
-    "id": 1378,
-    "en": "centre",
-    "pos": "",
-    "zh": "中心（英式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1378
-  },
-  {
-    "id": 1379,
-    "en": "century",
-    "pos": "",
-    "zh": "世纪，百年",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1379
-  },
-  {
-    "id": 1380,
-    "en": "ceremony",
-    "pos": "",
-    "zh": "典礼，仪式",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1380
-  },
-  {
-    "id": 1381,
-    "en": "chair",
-    "pos": "",
-    "zh": "椅子，主席",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1381
-  },
-  {
-    "id": 1382,
-    "en": "cheerful",
-    "pos": "",
-    "zh": "开朗的，快乐的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1382
-  },
-  {
-    "id": 1383,
-    "en": "chooses",
-    "pos": "",
-    "zh": "选择（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1383
-  },
-  {
-    "id": 1384,
-    "en": "choosing",
-    "pos": "",
-    "zh": "选择（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1384
-  },
-  {
-    "id": 1385,
-    "en": "chose",
-    "pos": "",
-    "zh": "选择了（choose的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1385
-  },
-  {
-    "id": 1386,
-    "en": "chosen",
-    "pos": "",
-    "zh": "被选择的（choose的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1386
-  },
-  {
-    "id": 1387,
-    "en": "cities",
-    "pos": "",
-    "zh": "城市（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1387
-  },
-  {
-    "id": 1388,
-    "en": "classmates",
-    "pos": "",
-    "zh": "同班同学（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1388
-  },
-  {
-    "id": 1389,
-    "en": "classroom",
-    "pos": "",
-    "zh": "教室",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1389
-  },
-  {
-    "id": 1390,
-    "en": "cleveland",
-    "pos": "",
-    "zh": "克利夫兰（美国城市）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1390
-  },
-  {
-    "id": 1391,
-    "en": "closest",
-    "pos": "",
-    "zh": "最近的（close的最高级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1391
-  },
-  {
-    "id": 1392,
-    "en": "clothes",
-    "pos": "",
-    "zh": "衣服，服装",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1392
-  },
-  {
-    "id": 1393,
-    "en": "clothing",
-    "pos": "",
-    "zh": "服装，衣物（总称）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1393
-  },
-  {
-    "id": 1394,
-    "en": "clouds",
-    "pos": "",
-    "zh": "云（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1394
-  },
-  {
-    "id": 1395,
-    "en": "coast",
-    "pos": "",
-    "zh": "海岸，沿海",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1395
-  },
-  {
-    "id": 1396,
-    "en": "cocoa",
-    "pos": "",
-    "zh": "可可，热巧克力",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1396
-  },
-  {
-    "id": 1397,
-    "en": "colour",
-    "pos": "",
-    "zh": "颜色（英式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1397
-  },
-  {
-    "id": 1398,
-    "en": "colours",
-    "pos": "",
-    "zh": "颜色（英式复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1398
-  },
-  {
-    "id": 1399,
-    "en": "comes",
-    "pos": "",
-    "zh": "来，到来（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1399
-  },
-  {
-    "id": 1400,
-    "en": "commodities",
-    "pos": "",
-    "zh": "商品，日用品（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1400
-  },
-  {
-    "id": 1401,
-    "en": "communicates",
-    "pos": "",
-    "zh": "交流，通讯（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1401
-  },
-  {
-    "id": 1402,
-    "en": "communist",
-    "pos": "",
-    "zh": "共产主义的，共产党员",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1402
-  },
-  {
-    "id": 1403,
-    "en": "compromise",
-    "pos": "",
-    "zh": "妥协，折中",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1403
-  },
-  {
-    "id": 1404,
-    "en": "conclusions",
-    "pos": "",
-    "zh": "结论（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1404
-  },
-  {
-    "id": 1405,
-    "en": "condition",
-    "pos": "",
-    "zh": "条件，状况",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1405
-  },
-  {
-    "id": 1406,
-    "en": "conditions",
-    "pos": "",
-    "zh": "条件，状况（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1406
-  },
-  {
-    "id": 1407,
-    "en": "confidence",
-    "pos": "",
-    "zh": "信心，自信",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1407
-  },
-  {
-    "id": 1408,
-    "en": "confucius",
-    "pos": "",
-    "zh": "孔子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1408
-  },
-  {
-    "id": 1409,
-    "en": "continue",
-    "pos": "",
-    "zh": "继续",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1409
-  },
-  {
-    "id": 1410,
-    "en": "contributions",
-    "pos": "",
-    "zh": "贡献，捐款（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1410
-  },
-  {
-    "id": 1411,
-    "en": "controls",
-    "pos": "",
-    "zh": "控制（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1411
-  },
-  {
-    "id": 1412,
-    "en": "cooling",
-    "pos": "",
-    "zh": "凉爽的，酷的（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1412
-  },
-  {
-    "id": 1413,
-    "en": "cools",
-    "pos": "",
-    "zh": "凉爽的，酷的（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1413
-  },
-  {
-    "id": 1414,
-    "en": "cord",
-    "pos": "",
-    "zh": "绳子，电线",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1414
-  },
-  {
-    "id": 1415,
-    "en": "counting",
-    "pos": "",
-    "zh": "数数，重要（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1415
-  },
-  {
-    "id": 1416,
-    "en": "cover",
-    "pos": "",
-    "zh": "覆盖，封面",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1416
-  },
-  {
-    "id": 1417,
-    "en": "covering",
-    "pos": "",
-    "zh": "覆盖（cover的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1417
-  },
-  {
-    "id": 1418,
-    "en": "crash",
-    "pos": "",
-    "zh": "碰撞，坠毁",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1418
-  },
-  {
-    "id": 1419,
-    "en": "crashing",
-    "pos": "",
-    "zh": "崩溃（crash的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1419
-  },
-  {
-    "id": 1420,
-    "en": "crazy",
-    "pos": "",
-    "zh": "疯狂的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1420
-  },
-  {
-    "id": 1421,
-    "en": "creates",
-    "pos": "",
-    "zh": "创造，创建（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1421
-  },
-  {
-    "id": 1422,
-    "en": "crossed",
-    "pos": "",
-    "zh": "穿过（cross的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1422
-  },
-  {
-    "id": 1423,
-    "en": "crying",
-    "pos": "",
-    "zh": "哭泣（cry的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1423
-  },
-  {
-    "id": 1424,
-    "en": "cullis",
-    "pos": "",
-    "zh": "卡利斯（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1424
-  },
-  {
-    "id": 1425,
-    "en": "cups",
-    "pos": "",
-    "zh": "杯子（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1425
-  },
-  {
-    "id": 1426,
-    "en": "curiosity",
-    "pos": "",
-    "zh": "好奇心",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1426
-  },
-  {
-    "id": 1427,
-    "en": "customs",
-    "pos": "",
-    "zh": "习俗，风俗（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1427
-  },
-  {
-    "id": 1428,
-    "en": "dancing",
-    "pos": "",
-    "zh": "跳舞",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1428
-  },
-  {
-    "id": 1429,
-    "en": "dangerous",
-    "pos": "",
-    "zh": "危险的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1429
-  },
-  {
-    "id": 1430,
-    "en": "darkest",
-    "pos": "",
-    "zh": "最黑暗的，深色的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1430
-  },
-  {
-    "id": 1431,
-    "en": "date",
-    "pos": "",
-    "zh": "日期，约会",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1431
-  },
-  {
-    "id": 1432,
-    "en": "dealing",
-    "pos": "",
-    "zh": "处理，交易（deal的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1432
-  },
-  {
-    "id": 1433,
-    "en": "decibels",
-    "pos": "",
-    "zh": "分贝（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1433
-  },
-  {
-    "id": 1434,
-    "en": "decision",
-    "pos": "",
-    "zh": "决定，决策",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1434
-  },
-  {
-    "id": 1435,
-    "en": "decisions",
-    "pos": "",
-    "zh": "决定，决策（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1435
-  },
-  {
-    "id": 1436,
-    "en": "design",
-    "pos": "",
-    "zh": "设计",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1436
-  },
-  {
-    "id": 1437,
-    "en": "desk",
-    "pos": "",
-    "zh": "书桌，办公桌",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1437
-  },
-  {
-    "id": 1438,
-    "en": "dig",
-    "pos": "",
-    "zh": "挖掘，挖",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1438
-  },
-  {
-    "id": 1439,
-    "en": "dining",
-    "pos": "",
-    "zh": "用餐（dine的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1439
-  },
-  {
-    "id": 1440,
-    "en": "dinner",
-    "pos": "",
-    "zh": "晚餐",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1440
-  },
-  {
-    "id": 1441,
-    "en": "directed",
-    "pos": "",
-    "zh": "指导了（direct的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1441
-  },
-  {
-    "id": 1442,
-    "en": "director",
-    "pos": "",
-    "zh": "导演，主任，总监",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1442
-  },
-  {
-    "id": 1443,
-    "en": "disagree",
-    "pos": "",
-    "zh": "不同意，有异议",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1443
-  },
-  {
-    "id": 1444,
-    "en": "discuss",
-    "pos": "",
-    "zh": "讨论",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1444
-  },
-  {
-    "id": 1445,
-    "en": "discussion",
-    "pos": "",
-    "zh": "讨论",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1445
-  },
-  {
-    "id": 1446,
-    "en": "dishes",
-    "pos": "",
-    "zh": "菜肴（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1446
-  },
-  {
-    "id": 1447,
-    "en": "dishonest",
-    "pos": "",
-    "zh": "不诚实的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1447
-  },
-  {
-    "id": 1448,
-    "en": "display",
-    "pos": "",
-    "zh": "展示，显示",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1448
-  },
-  {
-    "id": 1449,
-    "en": "displayed",
-    "pos": "",
-    "zh": "展示了（display的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1449
-  },
-  {
-    "id": 1450,
-    "en": "diverse",
-    "pos": "",
-    "zh": "多种多样的，不同的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1450
-  },
-  {
-    "id": 1451,
-    "en": "documentary",
-    "pos": "",
-    "zh": "纪录片",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1451
-  },
-  {
-    "id": 1452,
-    "en": "dogs",
-    "pos": "",
-    "zh": "狗（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1452
-  },
-  {
-    "id": 1453,
-    "en": "door",
-    "pos": "",
-    "zh": "门",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1453
-  },
-  {
-    "id": 1454,
-    "en": "doubled",
-    "pos": "",
-    "zh": "加倍（double的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1454
-  },
-  {
-    "id": 1455,
-    "en": "doubtful",
-    "pos": "",
-    "zh": "怀疑的，不确定的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1455
-  },
-  {
-    "id": 1456,
-    "en": "drew",
-    "pos": "",
-    "zh": "画了（draw的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1456
-  },
-  {
-    "id": 1457,
-    "en": "driven",
-    "pos": "",
-    "zh": "被驱动的（drive的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1457
-  },
-  {
-    "id": 1458,
-    "en": "drop",
-    "pos": "",
-    "zh": "降落，丢落",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1458
-  },
-  {
-    "id": 1459,
-    "en": "drops",
-    "pos": "",
-    "zh": "降落，丢落（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1459
-  },
-  {
-    "id": 1460,
-    "en": "drum",
-    "pos": "",
-    "zh": "鼓",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1460
-  },
-  {
-    "id": 1461,
-    "en": "drumming",
-    "pos": "",
-    "zh": "打鼓（drum的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1461
-  },
-  {
-    "id": 1462,
-    "en": "earlier",
-    "pos": "",
-    "zh": "更早的，先前",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1462
-  },
-  {
-    "id": 1463,
-    "en": "easier",
-    "pos": "",
-    "zh": "更容易的（easy的比较级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1463
-  },
-  {
-    "id": 1464,
-    "en": "east",
-    "pos": "",
-    "zh": "东方，东部",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1464
-  },
-  {
-    "id": 1465,
-    "en": "ecology",
-    "pos": "",
-    "zh": "生态学，生态环境",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1465
-  },
-  {
-    "id": 1466,
-    "en": "efforts",
-    "pos": "",
-    "zh": "努力，尽力（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1466
-  },
-  {
-    "id": 1467,
-    "en": "eighths",
-    "pos": "",
-    "zh": "八分之一（eighth的复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1467
-  },
-  {
-    "id": 1468,
-    "en": "energetic",
-    "pos": "",
-    "zh": "精力充沛的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1468
-  },
-  {
-    "id": 1469,
-    "en": "engineering",
-    "pos": "",
-    "zh": "工程（学）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1469
-  },
-  {
-    "id": 1470,
-    "en": "enjoys",
-    "pos": "",
-    "zh": "享受，喜欢（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1470
-  },
-  {
-    "id": 1471,
-    "en": "etc",
-    "pos": "",
-    "zh": "等等（拉丁语et cetera缩写）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1471
-  },
-  {
-    "id": 1472,
-    "en": "europeans",
-    "pos": "",
-    "zh": "欧洲人（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1472
-  },
-  {
-    "id": 1473,
-    "en": "excellent",
-    "pos": "",
-    "zh": "优秀的，出色的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1473
-  },
-  {
-    "id": 1474,
-    "en": "excite",
-    "pos": "",
-    "zh": "使兴奋，激动",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1474
-  },
-  {
-    "id": 1475,
-    "en": "exercise",
-    "pos": "",
-    "zh": "锻炼，运动",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1475
-  },
-  {
-    "id": 1476,
-    "en": "expensive",
-    "pos": "",
-    "zh": "昂贵的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1476
-  },
-  {
-    "id": 1477,
-    "en": "eyes",
-    "pos": "",
-    "zh": "眼睛（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1477
-  },
-  {
-    "id": 1478,
-    "en": "eyre",
-    "pos": "",
-    "zh": "简·爱（小说人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1478
-  },
-  {
-    "id": 1479,
-    "en": "facing",
-    "pos": "",
-    "zh": "面对，脸（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1479
-  },
-  {
-    "id": 1480,
-    "en": "failed",
-    "pos": "",
-    "zh": "失败（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1480
-  },
-  {
-    "id": 1481,
-    "en": "failing",
-    "pos": "",
-    "zh": "失败（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1481
-  },
-  {
-    "id": 1482,
-    "en": "fashion",
-    "pos": "",
-    "zh": "时尚，流行趋势",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1482
-  },
-  {
-    "id": 1483,
-    "en": "fashionable",
-    "pos": "",
-    "zh": "时髦的，流行的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1483
-  },
-  {
-    "id": 1484,
-    "en": "feeding",
-    "pos": "",
-    "zh": "喂食，喂养（feed的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1484
-  },
-  {
-    "id": 1485,
-    "en": "fell",
-    "pos": "",
-    "zh": "落下（fall的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1485
-  },
-  {
-    "id": 1486,
-    "en": "fengxia",
-    "pos": "",
-    "zh": "凤霞（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1486
-  },
-  {
-    "id": 1487,
-    "en": "fewer",
-    "pos": "",
-    "zh": "更很少的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1487
-  },
-  {
-    "id": 1488,
-    "en": "fiction",
-    "pos": "",
-    "zh": "小说，虚构作品",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1488
-  },
-  {
-    "id": 1489,
-    "en": "fifteen",
-    "pos": "",
-    "zh": "十五",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1489
-  },
-  {
-    "id": 1490,
-    "en": "fighting",
-    "pos": "",
-    "zh": "战斗，打架（fight的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1490
-  },
-  {
-    "id": 1491,
-    "en": "files",
-    "pos": "",
-    "zh": "文件（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1491
-  },
-  {
-    "id": 1492,
-    "en": "fingers",
-    "pos": "",
-    "zh": "手指（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1492
-  },
-  {
-    "id": 1493,
-    "en": "finland",
-    "pos": "",
-    "zh": "芬兰",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1493
-  },
-  {
-    "id": 1494,
-    "en": "finnish",
-    "pos": "",
-    "zh": "芬兰的，芬兰语",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1494
-  },
-  {
-    "id": 1495,
-    "en": "fitted",
-    "pos": "",
-    "zh": "合身的（fit的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1495
-  },
-  {
-    "id": 1496,
-    "en": "flag",
-    "pos": "",
-    "zh": "旗帜，国旗",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1496
-  },
-  {
-    "id": 1497,
-    "en": "flood",
-    "pos": "",
-    "zh": "洪水，涌入",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1497
-  },
-  {
-    "id": 1498,
-    "en": "floods",
-    "pos": "",
-    "zh": "洪水（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1498
-  },
-  {
-    "id": 1499,
-    "en": "floodwater",
-    "pos": "",
-    "zh": "洪水",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1499
-  },
-  {
-    "id": 1500,
-    "en": "flowed",
-    "pos": "",
-    "zh": "流动了（flow的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1500
-  },
-  {
-    "id": 1501,
-    "en": "flying",
-    "pos": "",
-    "zh": "飞",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1501
-  },
-  {
-    "id": 1502,
-    "en": "fog",
-    "pos": "",
-    "zh": "雾",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1502
-  },
-  {
-    "id": 1503,
-    "en": "foggy",
-    "pos": "",
-    "zh": "多雾的，模糊的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1503
-  },
-  {
-    "id": 1504,
-    "en": "folk",
-    "pos": "",
-    "zh": "民俗的，人们",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1504
-  },
-  {
-    "id": 1505,
-    "en": "follows",
-    "pos": "",
-    "zh": "跟随，遵循（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1505
-  },
-  {
-    "id": 1506,
-    "en": "footsteps",
-    "pos": "",
-    "zh": "脚步声（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1506
-  },
-  {
-    "id": 1507,
-    "en": "forced",
-    "pos": "",
-    "zh": "被迫的（force的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1507
-  },
-  {
-    "id": 1508,
-    "en": "foreign",
-    "pos": "",
-    "zh": "外国的，异国的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1508
-  },
-  {
-    "id": 1509,
-    "en": "forest",
-    "pos": "",
-    "zh": "森林",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1509
-  },
-  {
-    "id": 1510,
-    "en": "forty",
-    "pos": "",
-    "zh": "四十",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1510
-  },
-  {
-    "id": 1511,
-    "en": "founding",
-    "pos": "",
-    "zh": "找到（find的过去式），创立（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1511
-  },
-  {
-    "id": 1512,
-    "en": "fridays",
-    "pos": "",
-    "zh": "星期五（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1512
-  },
-  {
-    "id": 1513,
-    "en": "fruit",
-    "pos": "",
-    "zh": "水果",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1513
-  },
-  {
-    "id": 1514,
-    "en": "further",
-    "pos": "",
-    "zh": "更远的，进一步地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1514
-  },
-  {
-    "id": 1515,
-    "en": "gain",
-    "pos": "",
-    "zh": "获得，得到",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1515
-  },
-  {
-    "id": 1516,
-    "en": "gardening",
-    "pos": "",
-    "zh": "花园，园子（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1516
-  },
-  {
-    "id": 1517,
-    "en": "gathered",
-    "pos": "",
-    "zh": "聚集了（gather的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1517
-  },
-  {
-    "id": 1518,
-    "en": "geely",
-    "pos": "",
-    "zh": "吉利（中国汽车品牌）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1518
-  },
-  {
-    "id": 1519,
-    "en": "generous",
-    "pos": "",
-    "zh": "慷慨的，大方的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1519
-  },
-  {
-    "id": 1520,
-    "en": "giants",
-    "pos": "",
-    "zh": "巨人（复数），大公司",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1520
-  },
-  {
-    "id": 1521,
-    "en": "giving",
-    "pos": "",
-    "zh": "给，给予（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1521
-  },
-  {
-    "id": 1522,
-    "en": "gone",
-    "pos": "",
-    "zh": "已走（go的过去分词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1522
-  },
-  {
-    "id": 1523,
-    "en": "goodness",
-    "pos": "",
-    "zh": "善良，天啊",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1523
-  },
-  {
-    "id": 1524,
-    "en": "grade",
-    "pos": "",
-    "zh": "年级，等级",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1524
-  },
-  {
-    "id": 1525,
-    "en": "grandaddy",
-    "pos": "",
-    "zh": "老爷爷（口语）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1525
-  },
-  {
-    "id": 1526,
-    "en": "grandchildren",
-    "pos": "",
-    "zh": "孙子女（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1526
-  },
-  {
-    "id": 1527,
-    "en": "grandson",
-    "pos": "",
-    "zh": "孙子，外孙",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1527
-  },
-  {
-    "id": 1528,
-    "en": "grassland",
-    "pos": "",
-    "zh": "草原，草地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1528
-  },
-  {
-    "id": 1529,
-    "en": "grateful",
-    "pos": "",
-    "zh": "感激的，感谢的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1529
-  },
-  {
-    "id": 1530,
-    "en": "greater",
-    "pos": "",
-    "zh": "更伟大的，极好的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1530
-  },
-  {
-    "id": 1531,
-    "en": "greatest",
-    "pos": "",
-    "zh": "最伟大的，极好的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1531
-  },
-  {
-    "id": 1532,
-    "en": "growth",
-    "pos": "",
-    "zh": "增长，成长",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1532
-  },
-  {
-    "id": 1533,
-    "en": "guangdong",
-    "pos": "",
-    "zh": "广东（中国省份）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1533
-  },
-  {
-    "id": 1534,
-    "en": "guess",
-    "pos": "",
-    "zh": "猜测",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1534
-  },
-  {
-    "id": 1535,
-    "en": "guessed",
-    "pos": "",
-    "zh": "猜测（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1535
-  },
-  {
-    "id": 1536,
-    "en": "guinea",
-    "pos": "",
-    "zh": "几内亚（非洲国家）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1536
-  },
-  {
-    "id": 1537,
-    "en": "guitars",
-    "pos": "",
-    "zh": "吉他（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1537
-  },
-  {
-    "id": 1538,
-    "en": "guoyu",
-    "pos": "",
-    "zh": "国语",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1538
-  },
-  {
-    "id": 1539,
-    "en": "hall",
-    "pos": "",
-    "zh": "大厅，门厅，走廊",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1539
-  },
-  {
-    "id": 1540,
-    "en": "happiness",
-    "pos": "",
-    "zh": "幸福，快乐",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1540
-  },
-  {
-    "id": 1541,
-    "en": "hardworking",
-    "pos": "",
-    "zh": "勤劳的，刻苦的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1541
-  },
-  {
-    "id": 1542,
-    "en": "hat",
-    "pos": "",
-    "zh": "帽子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1542
-  },
-  {
-    "id": 1543,
-    "en": "heating",
-    "pos": "",
-    "zh": "热量，加热（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1543
-  },
-  {
-    "id": 1544,
-    "en": "helmet",
-    "pos": "",
-    "zh": "头盔",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1544
-  },
-  {
-    "id": 1545,
-    "en": "higher",
-    "pos": "",
-    "zh": "更高的，高度",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1545
-  },
-  {
-    "id": 1546,
-    "en": "hill",
-    "pos": "",
-    "zh": "小山，山丘",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1546
-  },
-  {
-    "id": 1547,
-    "en": "holidays",
-    "pos": "",
-    "zh": "假期，节日（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1547
-  },
-  {
-    "id": 1548,
-    "en": "hopeful",
-    "pos": "",
-    "zh": "有希望的，充满希望的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1548
-  },
-  {
-    "id": 1549,
-    "en": "hospitalized",
-    "pos": "",
-    "zh": "住院的，入院的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1549
-  },
-  {
-    "id": 1550,
-    "en": "hospitals",
-    "pos": "",
-    "zh": "医院（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1550
-  },
-  {
-    "id": 1551,
-    "en": "host",
-    "pos": "",
-    "zh": "主人，主持",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1551
-  },
-  {
-    "id": 1552,
-    "en": "hundreds",
-    "pos": "",
-    "zh": "百（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1552
-  },
-  {
-    "id": 1553,
-    "en": "hunting",
-    "pos": "",
-    "zh": "狩猎（hunt的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1553
-  },
-  {
-    "id": 1554,
-    "en": "hurricanes",
-    "pos": "",
-    "zh": "飓风（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1554
-  },
-  {
-    "id": 1555,
-    "en": "hurry",
-    "pos": "",
-    "zh": "匆忙，催促",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1555
-  },
-  {
-    "id": 1556,
-    "en": "husband",
-    "pos": "",
-    "zh": "丈夫",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1556
-  },
-  {
-    "id": 1557,
-    "en": "imagining",
-    "pos": "",
-    "zh": "想象（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1557
-  },
-  {
-    "id": 1558,
-    "en": "impatient",
-    "pos": "",
-    "zh": "不耐烦的，急躁的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1558
-  },
-  {
-    "id": 1559,
-    "en": "imply",
-    "pos": "",
-    "zh": "暗示，意味",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1559
-  },
-  {
-    "id": 1560,
-    "en": "impressive",
-    "pos": "",
-    "zh": "令人印象深刻的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1560
-  },
-  {
-    "id": 1561,
-    "en": "improved",
-    "pos": "",
-    "zh": "改善，提高（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1561
-  },
-  {
-    "id": 1562,
-    "en": "improving",
-    "pos": "",
-    "zh": "改善，提高（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1562
-  },
-  {
-    "id": 1563,
-    "en": "inch",
-    "pos": "",
-    "zh": "英寸",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1563
-  },
-  {
-    "id": 1564,
-    "en": "included",
-    "pos": "",
-    "zh": "包括（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1564
-  },
-  {
-    "id": 1565,
-    "en": "includes",
-    "pos": "",
-    "zh": "包括（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1565
-  },
-  {
-    "id": 1566,
-    "en": "increased",
-    "pos": "",
-    "zh": "增加，增长（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1566
-  },
-  {
-    "id": 1567,
-    "en": "infer",
-    "pos": "",
-    "zh": "推断，推理",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1567
-  },
-  {
-    "id": 1568,
-    "en": "inspired",
-    "pos": "",
-    "zh": "受激励的（inspire的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1568
-  },
-  {
-    "id": 1569,
-    "en": "interesting",
-    "pos": "",
-    "zh": "有趣的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1569
-  },
-  {
-    "id": 1570,
-    "en": "interviewed",
-    "pos": "",
-    "zh": "接受了采访",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1570
-  },
-  {
-    "id": 1571,
-    "en": "introducing",
-    "pos": "",
-    "zh": "介绍（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1571
-  },
-  {
-    "id": 1572,
-    "en": "invite",
-    "pos": "",
-    "zh": "邀请",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1572
-  },
-  {
-    "id": 1573,
-    "en": "invited",
-    "pos": "",
-    "zh": "邀请（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1573
-  },
-  {
-    "id": 1574,
-    "en": "island",
-    "pos": "",
-    "zh": "岛屿",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1574
-  },
-  {
-    "id": 1575,
-    "en": "items",
-    "pos": "",
-    "zh": "项目，条目（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1575
-  },
-  {
-    "id": 1576,
-    "en": "james",
-    "pos": "",
-    "zh": "詹姆斯（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1576
-  },
-  {
-    "id": 1577,
-    "en": "juan",
-    "pos": "",
-    "zh": "胡安（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1577
-  },
-  {
-    "id": 1578,
-    "en": "juice",
-    "pos": "",
-    "zh": "果汁",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1578
-  },
-  {
-    "id": 1579,
-    "en": "jump",
-    "pos": "",
-    "zh": "跳",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1579
-  },
-  {
-    "id": 1580,
-    "en": "jumped",
-    "pos": "",
-    "zh": "跳（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1580
-  },
-  {
-    "id": 1581,
-    "en": "keeps",
-    "pos": "",
-    "zh": "保持，继续（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1581
-  },
-  {
-    "id": 1582,
-    "en": "killed",
-    "pos": "",
-    "zh": "杀死（kill的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1582
-  },
-  {
-    "id": 1583,
-    "en": "kilometres",
-    "pos": "",
-    "zh": "千米（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1583
-  },
-  {
-    "id": 1584,
-    "en": "kitchen",
-    "pos": "",
-    "zh": "厨房",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1584
-  },
-  {
-    "id": 1585,
-    "en": "klaus",
-    "pos": "",
-    "zh": "克劳斯（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1585
-  },
-  {
-    "id": 1586,
-    "en": "knock",
-    "pos": "",
-    "zh": "敲，敲击",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1586
-  },
-  {
-    "id": 1587,
-    "en": "knows",
-    "pos": "",
-    "zh": "知道，了解（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1587
-  },
-  {
-    "id": 1588,
-    "en": "lake",
-    "pos": "",
-    "zh": "湖泊",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1588
-  },
-  {
-    "id": 1589,
-    "en": "landscape",
-    "pos": "",
-    "zh": "风景，景色，地形",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1589
-  },
-  {
-    "id": 1590,
-    "en": "largest",
-    "pos": "",
-    "zh": "最大的（large的最高级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1590
-  },
-  {
-    "id": 1591,
-    "en": "lasted",
-    "pos": "",
-    "zh": "最后的，持续（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1591
-  },
-  {
-    "id": 1592,
-    "en": "latest",
-    "pos": "",
-    "zh": "最新的（late的最高级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1592
-  },
-  {
-    "id": 1593,
-    "en": "law",
-    "pos": "",
-    "zh": "法律",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1593
-  },
-  {
-    "id": 1594,
-    "en": "ldpe",
-    "pos": "",
-    "zh": "LDPE（低密度聚乙烯，塑料类型）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1594
-  },
-  {
-    "id": 1595,
-    "en": "leaders",
-    "pos": "",
-    "zh": "领袖，领导者（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1595
-  },
-  {
-    "id": 1596,
-    "en": "leaflets",
-    "pos": "",
-    "zh": "传单，小册子（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1596
-  },
-  {
-    "id": 1597,
-    "en": "league",
-    "pos": "",
-    "zh": "联盟，联赛",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1597
-  },
-  {
-    "id": 1598,
-    "en": "learner",
-    "pos": "",
-    "zh": "更学习，学会",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1598
-  },
-  {
-    "id": 1599,
-    "en": "learnt",
-    "pos": "",
-    "zh": "学了（learn的过去式，英式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1599
-  },
-  {
-    "id": 1600,
-    "en": "letter",
-    "pos": "",
-    "zh": "信，字母",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1600
-  },
-  {
-    "id": 1601,
-    "en": "letters",
-    "pos": "",
-    "zh": "信，字母（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1601
-  },
-  {
-    "id": 1602,
-    "en": "lifetime",
-    "pos": "",
-    "zh": "一生，终生",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1602
-  },
-  {
-    "id": 1603,
-    "en": "lift",
-    "pos": "",
-    "zh": "举起",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1603
-  },
-  {
-    "id": 1604,
-    "en": "lion",
-    "pos": "",
-    "zh": "狮子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1604
-  },
-  {
-    "id": 1605,
-    "en": "listening",
-    "pos": "",
-    "zh": "聆听",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1605
-  },
-  {
-    "id": 1606,
-    "en": "lists",
-    "pos": "",
-    "zh": "名单（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1606
-  },
-  {
-    "id": 1607,
-    "en": "literate",
-    "pos": "",
-    "zh": "有读写能力的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1607
-  },
-  {
-    "id": 1608,
-    "en": "longest",
-    "pos": "",
-    "zh": "最长的，渴望",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1608
-  },
-  {
-    "id": 1609,
-    "en": "losing",
-    "pos": "",
-    "zh": "失去，输（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1609
-  },
-  {
-    "id": 1610,
-    "en": "lovers",
-    "pos": "",
-    "zh": "爱人（复数），爱好者",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1610
-  },
-  {
-    "id": 1611,
-    "en": "mad",
-    "pos": "",
-    "zh": "疯狂的，愤怒的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1611
-  },
-  {
-    "id": 1612,
-    "en": "mainland",
-    "pos": "",
-    "zh": "大陆",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1612
-  },
-  {
-    "id": 1613,
-    "en": "major",
-    "pos": "",
-    "zh": "主要的，专业，少校",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1613
-  },
-  {
-    "id": 1614,
-    "en": "manage",
-    "pos": "",
-    "zh": "管理，设法",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1614
-  },
-  {
-    "id": 1615,
-    "en": "market",
-    "pos": "",
-    "zh": "市场，集市",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1615
-  },
-  {
-    "id": 1616,
-    "en": "mars",
-    "pos": "",
-    "zh": "火星",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1616
-  },
-  {
-    "id": 1617,
-    "en": "mask",
-    "pos": "",
-    "zh": "面具，口罩",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1617
-  },
-  {
-    "id": 1618,
-    "en": "maths",
-    "pos": "",
-    "zh": "数学（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1618
-  },
-  {
-    "id": 1619,
-    "en": "meant",
-    "pos": "",
-    "zh": "意思是（mean的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1619
-  },
-  {
-    "id": 1620,
-    "en": "measured",
-    "pos": "",
-    "zh": "测量了（measure的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1620
-  },
-  {
-    "id": 1621,
-    "en": "meeting",
-    "pos": "",
-    "zh": "见面，满足（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1621
-  },
-  {
-    "id": 1622,
-    "en": "memories",
-    "pos": "",
-    "zh": "记忆，回忆（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1622
-  },
-  {
-    "id": 1623,
-    "en": "mess",
-    "pos": "",
-    "zh": "混乱，脏乱",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1623
-  },
-  {
-    "id": 1624,
-    "en": "meters",
-    "pos": "",
-    "zh": "米（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1624
-  },
-  {
-    "id": 1625,
-    "en": "microphone",
-    "pos": "",
-    "zh": "麦克风，话筒",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1625
-  },
-  {
-    "id": 1626,
-    "en": "middle",
-    "pos": "",
-    "zh": "中间，中部",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1626
-  },
-  {
-    "id": 1627,
-    "en": "millions",
-    "pos": "",
-    "zh": "百万（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1627
-  },
-  {
-    "id": 1628,
-    "en": "moods",
-    "pos": "",
-    "zh": "心情（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1628
-  },
-  {
-    "id": 1629,
-    "en": "mountains",
-    "pos": "",
-    "zh": "山（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1629
-  },
-  {
-    "id": 1630,
-    "en": "mouse",
-    "pos": "",
-    "zh": "鼠标，老鼠",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1630
-  },
-  {
-    "id": 1631,
-    "en": "moves",
-    "pos": "",
-    "zh": "移动，感动（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1631
-  },
-  {
-    "id": 1632,
-    "en": "muscles",
-    "pos": "",
-    "zh": "肌肉（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1632
-  },
-  {
-    "id": 1633,
-    "en": "mysteries",
-    "pos": "",
-    "zh": "神秘，谜（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1633
-  },
-  {
-    "id": 1634,
-    "en": "naturally",
-    "pos": "",
-    "zh": "自然的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1634
-  },
-  {
-    "id": 1635,
-    "en": "neighbouring",
-    "pos": "",
-    "zh": "邻近的（英式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1635
-  },
-  {
-    "id": 1636,
-    "en": "neighbours",
-    "pos": "",
-    "zh": "邻居们（英式复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1636
-  },
-  {
-    "id": 1637,
-    "en": "neocortex",
-    "pos": "",
-    "zh": "新大脑皮层",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1637
-  },
-  {
-    "id": 1638,
-    "en": "neurons",
-    "pos": "",
-    "zh": "神经元（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1638
-  },
-  {
-    "id": 1639,
-    "en": "news",
-    "pos": "",
-    "zh": "新闻",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1639
-  },
-  {
-    "id": 1640,
-    "en": "nights",
-    "pos": "",
-    "zh": "夜晚，夜间（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1640
-  },
-  {
-    "id": 1641,
-    "en": "nio",
-    "pos": "",
-    "zh": "蔚来（中国汽车品牌）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1641
-  },
-  {
-    "id": 1642,
-    "en": "noisy",
-    "pos": "",
-    "zh": "吵闹的，嘈杂的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1642
-  },
-  {
-    "id": 1643,
-    "en": "north",
-    "pos": "",
-    "zh": "北方，北部",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1643
-  },
-  {
-    "id": 1644,
-    "en": "note",
-    "pos": "",
-    "zh": "笔记，注意",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1644
-  },
-  {
-    "id": 1645,
-    "en": "notebook",
-    "pos": "",
-    "zh": "笔记本",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1645
-  },
-  {
-    "id": 1646,
-    "en": "objects",
-    "pos": "",
-    "zh": "物体，目标（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1646
-  },
-  {
-    "id": 1647,
-    "en": "ohio",
-    "pos": "",
-    "zh": "俄亥俄州（美国）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1647
-  },
-  {
-    "id": 1648,
-    "en": "okay",
-    "pos": "",
-    "zh": "好的，可以（=OK）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1648
-  },
-  {
-    "id": 1649,
-    "en": "opened",
-    "pos": "",
-    "zh": "打开（open的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1649
-  },
-  {
-    "id": 1650,
-    "en": "opinion",
-    "pos": "",
-    "zh": "意见，观点",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1650
-  },
-  {
-    "id": 1651,
-    "en": "organize",
-    "pos": "",
-    "zh": "组织，整理",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1651
-  },
-  {
-    "id": 1652,
-    "en": "outdoors",
-    "pos": "",
-    "zh": "户外，野外",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1652
-  },
-  {
-    "id": 1653,
-    "en": "outer",
-    "pos": "",
-    "zh": "外部的，外层的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1653
-  },
-  {
-    "id": 1654,
-    "en": "oversleeping",
-    "pos": "",
-    "zh": "睡过头",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1654
-  },
-  {
-    "id": 1655,
-    "en": "owls",
-    "pos": "",
-    "zh": "猫头鹰（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1655
-  },
-  {
-    "id": 1656,
-    "en": "owned",
-    "pos": "",
-    "zh": "自己的，拥有（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1656
-  },
-  {
-    "id": 1657,
-    "en": "paintings",
-    "pos": "",
-    "zh": "绘画，涂漆（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1657
-  },
-  {
-    "id": 1658,
-    "en": "pancake",
-    "pos": "",
-    "zh": "薄煎饼，烙饼",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1658
-  },
-  {
-    "id": 1659,
-    "en": "partner",
-    "pos": "",
-    "zh": "伙伴，搭档",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1659
-  },
-  {
-    "id": 1660,
-    "en": "passenger",
-    "pos": "",
-    "zh": "乘客",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1660
-  },
-  {
-    "id": 1661,
-    "en": "passengers",
-    "pos": "",
-    "zh": "乘客们（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1661
-  },
-  {
-    "id": 1662,
-    "en": "passing",
-    "pos": "",
-    "zh": "经过，传递，通过（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1662
-  },
-  {
-    "id": 1663,
-    "en": "paths",
-    "pos": "",
-    "zh": "路径，小路（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1663
-  },
-  {
-    "id": 1664,
-    "en": "patiently",
-    "pos": "",
-    "zh": "有耐心地，耐心地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1664
-  },
-  {
-    "id": 1665,
-    "en": "peace",
-    "pos": "",
-    "zh": "和平，宁静",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1665
-  },
-  {
-    "id": 1666,
-    "en": "pen",
-    "pos": "",
-    "zh": "钢笔",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1666
-  },
-  {
-    "id": 1667,
-    "en": "period",
-    "pos": "",
-    "zh": "时期，期间，句号，课",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1667
-  },
-  {
-    "id": 1668,
-    "en": "periods",
-    "pos": "",
-    "zh": "时期（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1668
-  },
-  {
-    "id": 1669,
-    "en": "personality",
-    "pos": "",
-    "zh": "性格，个性",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1669
-  },
-  {
-    "id": 1670,
-    "en": "peter",
-    "pos": "",
-    "zh": "彼得（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1670
-  },
-  {
-    "id": 1671,
-    "en": "phone",
-    "pos": "",
-    "zh": "电话，手机",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1671
-  },
-  {
-    "id": 1672,
-    "en": "photographers",
-    "pos": "",
-    "zh": "摄影师们（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1672
-  },
-  {
-    "id": 1673,
-    "en": "photographing",
-    "pos": "",
-    "zh": "拍摄，摄影",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1673
-  },
-  {
-    "id": 1674,
-    "en": "photographs",
-    "pos": "",
-    "zh": "照片（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1674
-  },
-  {
-    "id": 1675,
-    "en": "picked",
-    "pos": "",
-    "zh": "挑选，摘取（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1675
-  },
-  {
-    "id": 1676,
-    "en": "picks",
-    "pos": "",
-    "zh": "挑选，摘取（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1676
-  },
-  {
-    "id": 1677,
-    "en": "plan",
-    "pos": "",
-    "zh": "计划",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1677
-  },
-  {
-    "id": 1678,
-    "en": "plane",
-    "pos": "",
-    "zh": "飞机",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1678
-  },
-  {
-    "id": 1679,
-    "en": "planes",
-    "pos": "",
-    "zh": "计划（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1679
-  },
-  {
-    "id": 1680,
-    "en": "plans",
-    "pos": "",
-    "zh": "计划（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1680
-  },
-  {
-    "id": 1681,
-    "en": "playground",
-    "pos": "",
-    "zh": "操场，游乐场",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1681
-  },
-  {
-    "id": 1682,
-    "en": "playing",
-    "pos": "",
-    "zh": "玩，演奏",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1682
-  },
-  {
-    "id": 1683,
-    "en": "pockets",
-    "pos": "",
-    "zh": "口袋（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1683
-  },
-  {
-    "id": 1684,
-    "en": "poem",
-    "pos": "",
-    "zh": "诗",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1684
-  },
-  {
-    "id": 1685,
-    "en": "poetic",
-    "pos": "",
-    "zh": "诗意的，富有诗情的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1685
-  },
-  {
-    "id": 1686,
-    "en": "potatoes",
-    "pos": "",
-    "zh": "土豆（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1686
-  },
-  {
-    "id": 1687,
-    "en": "practising",
-    "pos": "",
-    "zh": "练习中（英式拼法）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1687
-  },
-  {
-    "id": 1688,
-    "en": "preferred",
-    "pos": "",
-    "zh": "更喜欢，偏爱（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1688
-  },
-  {
-    "id": 1689,
-    "en": "prevent",
-    "pos": "",
-    "zh": "防止，阻止",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1689
-  },
-  {
-    "id": 1690,
-    "en": "price",
-    "pos": "",
-    "zh": "价格",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1690
-  },
-  {
-    "id": 1691,
-    "en": "prices",
-    "pos": "",
-    "zh": "价格（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1691
-  },
-  {
-    "id": 1692,
-    "en": "prison",
-    "pos": "",
-    "zh": "监狱",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1692
-  },
-  {
-    "id": 1693,
-    "en": "produce",
-    "pos": "",
-    "zh": "生产，制作",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1693
-  },
-  {
-    "id": 1694,
-    "en": "producer",
-    "pos": "",
-    "zh": "更生产，制作",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1694
-  },
-  {
-    "id": 1695,
-    "en": "producing",
-    "pos": "",
-    "zh": "生产，制作（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1695
-  },
-  {
-    "id": 1696,
-    "en": "promised",
-    "pos": "",
-    "zh": "承诺了（promise的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1696
-  },
-  {
-    "id": 1697,
-    "en": "province",
-    "pos": "",
-    "zh": "省份",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1697
-  },
-  {
-    "id": 1698,
-    "en": "punish",
-    "pos": "",
-    "zh": "惩罚，处罚",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1698
-  },
-  {
-    "id": 1699,
-    "en": "pupils",
-    "pos": "",
-    "zh": "学生，瞳孔（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1699
-  },
-  {
-    "id": 1700,
-    "en": "qualities",
-    "pos": "",
-    "zh": "品质，特性（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1700
-  },
-  {
-    "id": 1701,
-    "en": "quality",
-    "pos": "",
-    "zh": "质量，品质",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1701
-  },
-  {
-    "id": 1702,
-    "en": "quietly",
-    "pos": "",
-    "zh": "安静地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1702
-  },
-  {
-    "id": 1703,
-    "en": "race",
-    "pos": "",
-    "zh": "比赛，种族",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1703
-  },
-  {
-    "id": 1704,
-    "en": "radio",
-    "pos": "",
-    "zh": "收音机，无线电",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1704
-  },
-  {
-    "id": 1705,
-    "en": "rainy",
-    "pos": "",
-    "zh": "多雨的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1705
-  },
-  {
-    "id": 1706,
-    "en": "rare",
-    "pos": "",
-    "zh": "罕见的，稀有的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1706
-  },
-  {
-    "id": 1707,
-    "en": "reaches",
-    "pos": "",
-    "zh": "到达，达到（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1707
-  },
-  {
-    "id": 1708,
-    "en": "realize",
-    "pos": "",
-    "zh": "意识到",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1708
-  },
-  {
-    "id": 1709,
-    "en": "receiving",
-    "pos": "",
-    "zh": "收到（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1709
-  },
-  {
-    "id": 1710,
-    "en": "recipe",
-    "pos": "",
-    "zh": "食谱，配方",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1710
-  },
-  {
-    "id": 1711,
-    "en": "refer",
-    "pos": "",
-    "zh": "参考，提及",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1711
-  },
-  {
-    "id": 1712,
-    "en": "remains",
-    "pos": "",
-    "zh": "遗迹，仍然",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1712
-  },
-  {
-    "id": 1713,
-    "en": "remembers",
-    "pos": "",
-    "zh": "记得，记住（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1713
-  },
-  {
-    "id": 1714,
-    "en": "reported",
-    "pos": "",
-    "zh": "报告，汇报（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1714
-  },
-  {
-    "id": 1715,
-    "en": "reporters",
-    "pos": "",
-    "zh": "记者，报道者（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1715
-  },
-  {
-    "id": 1716,
-    "en": "represent",
-    "pos": "",
-    "zh": "代表，象征",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1716
-  },
-  {
-    "id": 1717,
-    "en": "republic",
-    "pos": "",
-    "zh": "共和国",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1717
-  },
-  {
-    "id": 1718,
-    "en": "research",
-    "pos": "",
-    "zh": "研究，调查",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1718
-  },
-  {
-    "id": 1719,
-    "en": "researched",
-    "pos": "",
-    "zh": "研究，调查（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1719
-  },
-  {
-    "id": 1720,
-    "en": "respecting",
-    "pos": "",
-    "zh": "尊重（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1720
-  },
-  {
-    "id": 1721,
-    "en": "responsibility",
-    "pos": "",
-    "zh": "责任",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1721
-  },
-  {
-    "id": 1722,
-    "en": "rested",
-    "pos": "",
-    "zh": "休息，其余（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1722
-  },
-  {
-    "id": 1723,
-    "en": "resting",
-    "pos": "",
-    "zh": "休息，其余（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1723
-  },
-  {
-    "id": 1724,
-    "en": "results",
-    "pos": "",
-    "zh": "结果，后果（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1724
-  },
-  {
-    "id": 1725,
-    "en": "returning",
-    "pos": "",
-    "zh": "返回，归还（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1725
-  },
-  {
-    "id": 1726,
-    "en": "reusable",
-    "pos": "",
-    "zh": "可重复使用的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1726
-  },
-  {
-    "id": 1727,
-    "en": "review",
-    "pos": "",
-    "zh": "复习，回顾，评论",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1727
-  },
-  {
-    "id": 1728,
-    "en": "rewards",
-    "pos": "",
-    "zh": "奖励，报酬（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1728
-  },
-  {
-    "id": 1729,
-    "en": "richer",
-    "pos": "",
-    "zh": "更富有的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1729
-  },
-  {
-    "id": 1730,
-    "en": "riding",
-    "pos": "",
-    "zh": "骑，旅行（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1730
-  },
-  {
-    "id": 1731,
-    "en": "ring",
-    "pos": "",
-    "zh": "环，圆圈，戒指，电话铃",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1731
-  },
-  {
-    "id": 1732,
-    "en": "rose",
-    "pos": "",
-    "zh": "上升（rise的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1732
-  },
-  {
-    "id": 1733,
-    "en": "round",
-    "pos": "",
-    "zh": "圆的，周围",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1733
-  },
-  {
-    "id": 1734,
-    "en": "rubbing",
-    "pos": "",
-    "zh": "摩擦，擦（rub的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1734
-  },
-  {
-    "id": 1735,
-    "en": "sadly",
-    "pos": "",
-    "zh": "悲伤的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1735
-  },
-  {
-    "id": 1736,
-    "en": "sadness",
-    "pos": "",
-    "zh": "悲伤，难过",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1736
-  },
-  {
-    "id": 1737,
-    "en": "saic",
-    "pos": "",
-    "zh": "上汽（中国汽车品牌）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1737
-  },
-  {
-    "id": 1738,
-    "en": "sale",
-    "pos": "",
-    "zh": "销售，出售，特卖",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1738
-  },
-  {
-    "id": 1739,
-    "en": "san",
-    "pos": "",
-    "zh": "圣（地名前缀），三（日语）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1739
-  },
-  {
-    "id": 1740,
-    "en": "satisfy",
-    "pos": "",
-    "zh": "满足，使满意",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1740
-  },
-  {
-    "id": 1741,
-    "en": "saves",
-    "pos": "",
-    "zh": "拯救，储存（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1741
-  },
-  {
-    "id": 1742,
-    "en": "scared",
-    "pos": "",
-    "zh": "害怕的，受到惊吓的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1742
-  },
-  {
-    "id": 1743,
-    "en": "scenes",
-    "pos": "",
-    "zh": "场景，景色（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1743
-  },
-  {
-    "id": 1744,
-    "en": "schoolwork",
-    "pos": "",
-    "zh": "学习功课",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1744
-  },
-  {
-    "id": 1745,
-    "en": "sea",
-    "pos": "",
-    "zh": "海洋",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1745
-  },
-  {
-    "id": 1746,
-    "en": "seated",
-    "pos": "",
-    "zh": "就座的（seat的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1746
-  },
-  {
-    "id": 1747,
-    "en": "secret",
-    "pos": "",
-    "zh": "秘密",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1747
-  },
-  {
-    "id": 1748,
-    "en": "secrets",
-    "pos": "",
-    "zh": "秘密（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1748
-  },
-  {
-    "id": 1749,
-    "en": "seem",
-    "pos": "",
-    "zh": "好像，似乎",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1749
-  },
-  {
-    "id": 1750,
-    "en": "sending",
-    "pos": "",
-    "zh": "发送，寄（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1750
-  },
-  {
-    "id": 1751,
-    "en": "sends",
-    "pos": "",
-    "zh": "发送，寄（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1751
-  },
-  {
-    "id": 1752,
-    "en": "senses",
-    "pos": "",
-    "zh": "感觉，意义（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1752
-  },
-  {
-    "id": 1753,
-    "en": "sensitive",
-    "pos": "",
-    "zh": "敏感的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1753
-  },
-  {
-    "id": 1754,
-    "en": "separated",
-    "pos": "",
-    "zh": "分离的（separate的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1754
-  },
-  {
-    "id": 1755,
-    "en": "serve",
-    "pos": "",
-    "zh": "服务，供应",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1755
-  },
-  {
-    "id": 1756,
-    "en": "shade",
-    "pos": "",
-    "zh": "阴凉处，遮蔽",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1756
-  },
-  {
-    "id": 1757,
-    "en": "shadows",
-    "pos": "",
-    "zh": "阴影（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1757
-  },
-  {
-    "id": 1758,
-    "en": "shaking",
-    "pos": "",
-    "zh": "颤抖（shake的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1758
-  },
-  {
-    "id": 1759,
-    "en": "shares",
-    "pos": "",
-    "zh": "分享，份额（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1759
-  },
-  {
-    "id": 1760,
-    "en": "shone",
-    "pos": "",
-    "zh": "照耀（shine的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1760
-  },
-  {
-    "id": 1761,
-    "en": "shopping",
-    "pos": "",
-    "zh": "商店，购物（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1761
-  },
-  {
-    "id": 1762,
-    "en": "short",
-    "pos": "",
-    "zh": "短的，矮的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1762
-  },
-  {
-    "id": 1763,
-    "en": "shorter",
-    "pos": "",
-    "zh": "更短的，矮的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1763
-  },
-  {
-    "id": 1764,
-    "en": "shoulder",
-    "pos": "",
-    "zh": "肩膀",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1764
-  },
-  {
-    "id": 1765,
-    "en": "shower",
-    "pos": "",
-    "zh": "更显示，展示",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1765
-  },
-  {
-    "id": 1766,
-    "en": "shows",
-    "pos": "",
-    "zh": "显示，展示（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1766
-  },
-  {
-    "id": 1767,
-    "en": "sichuan",
-    "pos": "",
-    "zh": "四川（中国省份）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1767
-  },
-  {
-    "id": 1768,
-    "en": "sides",
-    "pos": "",
-    "zh": "旁边，侧面（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1768
-  },
-  {
-    "id": 1769,
-    "en": "sight",
-    "pos": "",
-    "zh": "视力，景象",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1769
-  },
-  {
-    "id": 1770,
-    "en": "signs",
-    "pos": "",
-    "zh": "标志，符号，签名（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1770
-  },
-  {
-    "id": 1771,
-    "en": "sing",
-    "pos": "",
-    "zh": "唱歌",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1771
-  },
-  {
-    "id": 1772,
-    "en": "sissy",
-    "pos": "",
-    "zh": "西西（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1772
-  },
-  {
-    "id": 1773,
-    "en": "sit",
-    "pos": "",
-    "zh": "坐",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1773
-  },
-  {
-    "id": 1774,
-    "en": "situations",
-    "pos": "",
-    "zh": "情况，处境（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1774
-  },
-  {
-    "id": 1775,
-    "en": "sixty",
-    "pos": "",
-    "zh": "六十",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1775
-  },
-  {
-    "id": 1776,
-    "en": "skill",
-    "pos": "",
-    "zh": "技能，技巧",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1776
-  },
-  {
-    "id": 1777,
-    "en": "skills",
-    "pos": "",
-    "zh": "技能，技巧（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1777
-  },
-  {
-    "id": 1778,
-    "en": "sleepy",
-    "pos": "",
-    "zh": "困倦的，瞌睡的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1778
-  },
-  {
-    "id": 1779,
-    "en": "slowly",
-    "pos": "",
-    "zh": "缓慢地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1779
-  },
-  {
-    "id": 1780,
-    "en": "smallest",
-    "pos": "",
-    "zh": "最小的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1780
-  },
-  {
-    "id": 1781,
-    "en": "smart",
-    "pos": "",
-    "zh": "聪明的，时髦的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1781
-  },
-  {
-    "id": 1782,
-    "en": "smiled",
-    "pos": "",
-    "zh": "微笑了（smile的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1782
-  },
-  {
-    "id": 1783,
-    "en": "snakes",
-    "pos": "",
-    "zh": "蛇（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1783
-  },
-  {
-    "id": 1784,
-    "en": "soil",
-    "pos": "",
-    "zh": "土壤，土地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1784
-  },
-  {
-    "id": 1785,
-    "en": "someday",
-    "pos": "",
-    "zh": "某天，将来某时",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1785
-  },
-  {
-    "id": 1786,
-    "en": "song",
-    "pos": "",
-    "zh": "歌曲，歌",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1786
-  },
-  {
-    "id": 1787,
-    "en": "sooner",
-    "pos": "",
-    "zh": "更很快，不久",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1787
-  },
-  {
-    "id": 1788,
-    "en": "speaks",
-    "pos": "",
-    "zh": "说话，讲（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1788
-  },
-  {
-    "id": 1789,
-    "en": "speeds",
-    "pos": "",
-    "zh": "速度，加速（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1789
-  },
-  {
-    "id": 1790,
-    "en": "spicy",
-    "pos": "",
-    "zh": "辣的，有辛辣味的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1790
-  },
-  {
-    "id": 1791,
-    "en": "spirit",
-    "pos": "",
-    "zh": "精神，灵魂，勇气",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1791
-  },
-  {
-    "id": 1792,
-    "en": "spoke",
-    "pos": "",
-    "zh": "说话了（speak的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1792
-  },
-  {
-    "id": 1793,
-    "en": "sport",
-    "pos": "",
-    "zh": "运动，体育",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1793
-  },
-  {
-    "id": 1794,
-    "en": "sporting",
-    "pos": "",
-    "zh": "运动，体育（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1794
-  },
-  {
-    "id": 1795,
-    "en": "sports",
-    "pos": "",
-    "zh": "运动，体育（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1795
-  },
-  {
-    "id": 1796,
-    "en": "spreads",
-    "pos": "",
-    "zh": "传播（spread的第三人称）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1796
-  },
-  {
-    "id": 1797,
-    "en": "standard",
-    "pos": "",
-    "zh": "标准，水平",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1797
-  },
-  {
-    "id": 1798,
-    "en": "stars",
-    "pos": "",
-    "zh": "星星，明星（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1798
-  },
-  {
-    "id": 1799,
-    "en": "starts",
-    "pos": "",
-    "zh": "开始，出发（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1799
-  },
-  {
-    "id": 1800,
-    "en": "stepped",
-    "pos": "",
-    "zh": "步骤，步，步伐（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1800
-  },
-  {
-    "id": 1801,
-    "en": "steve",
-    "pos": "",
-    "zh": "史蒂夫（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1801
-  },
-  {
-    "id": 1802,
-    "en": "stomach",
-    "pos": "",
-    "zh": "胃，肚子",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1802
-  },
-  {
-    "id": 1803,
-    "en": "stomachs",
-    "pos": "",
-    "zh": "胃（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1803
-  },
-  {
-    "id": 1804,
-    "en": "stores",
-    "pos": "",
-    "zh": "商店（复数），存储",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1804
-  },
-  {
-    "id": 1805,
-    "en": "strength",
-    "pos": "",
-    "zh": "力量，优势",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1805
-  },
-  {
-    "id": 1806,
-    "en": "strongly",
-    "pos": "",
-    "zh": "强壮的，强烈的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1806
-  },
-  {
-    "id": 1807,
-    "en": "structures",
-    "pos": "",
-    "zh": "结构（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1807
-  },
-  {
-    "id": 1808,
-    "en": "sunshine",
-    "pos": "",
-    "zh": "阳光，晴朗",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1808
-  },
-  {
-    "id": 1809,
-    "en": "supper",
-    "pos": "",
-    "zh": "晚餐，夜宵",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1809
-  },
-  {
-    "id": 1810,
-    "en": "supposed",
-    "pos": "",
-    "zh": "应该的，被认为的（suppose的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1810
-  },
-  {
-    "id": 1811,
-    "en": "surely",
-    "pos": "",
-    "zh": "确定的，当然（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1811
-  },
-  {
-    "id": 1812,
-    "en": "suzuki",
-    "pos": "",
-    "zh": "铃木（日本品牌/人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1812
-  },
-  {
-    "id": 1813,
-    "en": "sweetie",
-    "pos": "",
-    "zh": "亲爱的（昵称）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1813
-  },
-  {
-    "id": 1814,
-    "en": "swept",
-    "pos": "",
-    "zh": "打扫了（sweep的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1814
-  },
-  {
-    "id": 1815,
-    "en": "swim",
-    "pos": "",
-    "zh": "游泳",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1815
-  },
-  {
-    "id": 1816,
-    "en": "swimming",
-    "pos": "",
-    "zh": "游泳",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1816
-  },
-  {
-    "id": 1817,
-    "en": "symbols",
-    "pos": "",
-    "zh": "符号，象征（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1817
-  },
-  {
-    "id": 1818,
-    "en": "takeaway",
-    "pos": "",
-    "zh": "外卖，要点",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1818
-  },
-  {
-    "id": 1819,
-    "en": "talks",
-    "pos": "",
-    "zh": "谈话，说（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1819
-  },
-  {
-    "id": 1820,
-    "en": "teaches",
-    "pos": "",
-    "zh": "教，教授（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1820
-  },
-  {
-    "id": 1821,
-    "en": "teams",
-    "pos": "",
-    "zh": "团队，队（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1821
-  },
-  {
-    "id": 1822,
-    "en": "technologies",
-    "pos": "",
-    "zh": "技术，科技（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1822
-  },
-  {
-    "id": 1823,
-    "en": "telling",
-    "pos": "",
-    "zh": "告诉，讲述",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1823
-  },
-  {
-    "id": 1824,
-    "en": "tells",
-    "pos": "",
-    "zh": "告诉，讲述（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1824
-  },
-  {
-    "id": 1825,
-    "en": "tens",
-    "pos": "",
-    "zh": "几十",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1825
-  },
-  {
-    "id": 1826,
-    "en": "teri",
-    "pos": "",
-    "zh": "特里（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1826
-  },
-  {
-    "id": 1827,
-    "en": "texts",
-    "pos": "",
-    "zh": "文本（复数），发短信（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1827
-  },
-  {
-    "id": 1828,
-    "en": "thirteenth",
-    "pos": "",
-    "zh": "第十三",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1828
-  },
-  {
-    "id": 1829,
-    "en": "thousands",
-    "pos": "",
-    "zh": "千（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1829
-  },
-  {
-    "id": 1830,
-    "en": "threw",
-    "pos": "",
-    "zh": "投（throw的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1830
-  },
-  {
-    "id": 1831,
-    "en": "tiangong",
-    "pos": "",
-    "zh": "天宫（空间站名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1831
-  },
-  {
-    "id": 1832,
-    "en": "tibetan",
-    "pos": "",
-    "zh": "西藏的，藏族人",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1832
-  },
-  {
-    "id": 1833,
-    "en": "tiger",
-    "pos": "",
-    "zh": "老虎",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1833
-  },
-  {
-    "id": 1834,
-    "en": "tiny",
-    "pos": "",
-    "zh": "极小的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1834
-  },
-  {
-    "id": 1835,
-    "en": "tolans",
-    "pos": "",
-    "zh": "托兰（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1835
-  },
-  {
-    "id": 1836,
-    "en": "topic",
-    "pos": "",
-    "zh": "话题，主题",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1836
-  },
-  {
-    "id": 1837,
-    "en": "touch",
-    "pos": "",
-    "zh": "触摸，感动",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1837
-  },
-  {
-    "id": 1838,
-    "en": "touched",
-    "pos": "",
-    "zh": "触摸，感动（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1838
-  },
-  {
-    "id": 1839,
-    "en": "town",
-    "pos": "",
-    "zh": "城镇，小镇",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1839
-  },
-  {
-    "id": 1840,
-    "en": "traded",
-    "pos": "",
-    "zh": "交易了（trade的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1840
-  },
-  {
-    "id": 1841,
-    "en": "traders",
-    "pos": "",
-    "zh": "贸易商（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1841
-  },
-  {
-    "id": 1842,
-    "en": "trading",
-    "pos": "",
-    "zh": "贸易（trade的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1842
-  },
-  {
-    "id": 1843,
-    "en": "transport",
-    "pos": "",
-    "zh": "交通运输",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1843
-  },
-  {
-    "id": 1844,
-    "en": "traveled",
-    "pos": "",
-    "zh": "旅行（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1844
-  },
-  {
-    "id": 1845,
-    "en": "travelling",
-    "pos": "",
-    "zh": "旅行（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1845
-  },
-  {
-    "id": 1846,
-    "en": "treatments",
-    "pos": "",
-    "zh": "治疗（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1846
-  },
-  {
-    "id": 1847,
-    "en": "triangle",
-    "pos": "",
-    "zh": "三角形",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1847
-  },
-  {
-    "id": 1848,
-    "en": "truly",
-    "pos": "",
-    "zh": "真正地，真实地",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1848
-  },
-  {
-    "id": 1849,
-    "en": "understanding",
-    "pos": "",
-    "zh": "理解，理解力",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1849
-  },
-  {
-    "id": 1850,
-    "en": "understood",
-    "pos": "",
-    "zh": "理解（understand的过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1850
-  },
-  {
-    "id": 1851,
-    "en": "unhappiness",
-    "pos": "",
-    "zh": "不快乐，悲伤",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1851
-  },
-  {
-    "id": 1852,
-    "en": "unhealthy",
-    "pos": "",
-    "zh": "不健康的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1852
-  },
-  {
-    "id": 1853,
-    "en": "usa",
-    "pos": "",
-    "zh": "美国",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1853
-  },
-  {
-    "id": 1854,
-    "en": "useful",
-    "pos": "",
-    "zh": "有用的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1854
-  },
-  {
-    "id": 1855,
-    "en": "uses",
-    "pos": "",
-    "zh": "使用，用途（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1855
-  },
-  {
-    "id": 1856,
-    "en": "valuable",
-    "pos": "",
-    "zh": "宝贵的，有价值的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1856
-  },
-  {
-    "id": 1857,
-    "en": "videos",
-    "pos": "",
-    "zh": "视频（复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1857
-  },
-  {
-    "id": 1858,
-    "en": "violin",
-    "pos": "",
-    "zh": "小提琴",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1858
-  },
-  {
-    "id": 1859,
-    "en": "virtue",
-    "pos": "",
-    "zh": "美德，品德",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1859
-  },
-  {
-    "id": 1860,
-    "en": "visited",
-    "pos": "",
-    "zh": "参观，拜访（过去式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1860
-  },
-  {
-    "id": 1861,
-    "en": "voice",
-    "pos": "",
-    "zh": "声音，嗓音",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1861
-  },
-  {
-    "id": 1862,
-    "en": "voluntary",
-    "pos": "",
-    "zh": "自愿的，义务的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1862
-  },
-  {
-    "id": 1863,
-    "en": "waist",
-    "pos": "",
-    "zh": "腰部",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1863
-  },
-  {
-    "id": 1864,
-    "en": "warms",
-    "pos": "",
-    "zh": "温暖的（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1864
-  },
-  {
-    "id": 1865,
-    "en": "warn",
-    "pos": "",
-    "zh": "警告",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1865
-  },
-  {
-    "id": 1866,
-    "en": "warning",
-    "pos": "",
-    "zh": "警告（进行式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1866
-  },
-  {
-    "id": 1867,
-    "en": "waving",
-    "pos": "",
-    "zh": "挥手，挥舞（wave的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1867
-  },
-  {
-    "id": 1868,
-    "en": "wealthier",
-    "pos": "",
-    "zh": "更富有的（wealthy的比较级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1868
-  },
-  {
-    "id": 1869,
-    "en": "wealthy",
-    "pos": "",
-    "zh": "富有的，富裕的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1869
-  },
-  {
-    "id": 1870,
-    "en": "wearing",
-    "pos": "",
-    "zh": "穿着（wear的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1870
-  },
-  {
-    "id": 1871,
-    "en": "website",
-    "pos": "",
-    "zh": "网站，网页",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1871
-  },
-  {
-    "id": 1872,
-    "en": "western",
-    "pos": "",
-    "zh": "西方的，西部的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1872
-  },
-  {
-    "id": 1873,
-    "en": "wet",
-    "pos": "",
-    "zh": "湿的，潮湿的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1873
-  },
-  {
-    "id": 1874,
-    "en": "widely",
-    "pos": "",
-    "zh": "宽广的，广泛的（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1874
-  },
-  {
-    "id": 1875,
-    "en": "wider",
-    "pos": "",
-    "zh": "更宽广的，广泛的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1875
-  },
-  {
-    "id": 1876,
-    "en": "wilke",
-    "pos": "",
-    "zh": "威尔克（人名）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1876
-  },
-  {
-    "id": 1877,
-    "en": "willing",
-    "pos": "",
-    "zh": "愿意的，乐意的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1877
-  },
-  {
-    "id": 1878,
-    "en": "wooden",
-    "pos": "",
-    "zh": "木制的，木头的",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1878
-  },
-  {
-    "id": 1879,
-    "en": "worries",
-    "pos": "",
-    "zh": "担忧（worry的复数）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1879
-  },
-  {
-    "id": 1880,
-    "en": "worrying",
-    "pos": "",
-    "zh": "令人担忧的（worry的-ing形式）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1880
-  },
-  {
-    "id": 1881,
-    "en": "worst",
-    "pos": "",
-    "zh": "最坏的（bad的最高级）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1881
-  },
-  {
-    "id": 1882,
-    "en": "writes",
-    "pos": "",
-    "zh": "写，书写（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1882
-  },
-  {
-    "id": 1883,
-    "en": "writings",
-    "pos": "",
-    "zh": "写作，书写（复数/三单）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1883
-  },
-  {
-    "id": 1884,
-    "en": "wrongly",
-    "pos": "",
-    "zh": "错误（副词）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1884
-  },
-  {
-    "id": 1885,
-    "en": "xpeng",
-    "pos": "",
-    "zh": "小鹏（中国汽车品牌）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1885
-  },
-  {
-    "id": 1886,
-    "en": "yinchuan",
-    "pos": "",
-    "zh": "银川（中国城市）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1886
-  },
-  {
-    "id": 1887,
-    "en": "zambezi",
-    "pos": "",
-    "zh": "赞比西河（非洲）",
-    "notes": "",
-    "frequency": 0,
-    "sourceRow": 1887
   }
-];
+]
