@@ -11,7 +11,12 @@ assert(!sessionSelect.includes('value="50"'), "training size should not offer 50
 assert(sessionSelect.includes('value="200" selected>200 词'), "training size should default to 200 words");
 assert(sessionSelect.includes('value="all">全部单词'), "training size should still offer all words");
 
-assert(app.includes("const SLOW_PICK_LIMIT = 4000;"), "slow word threshold should be 4 seconds");
+assert(app.includes("function updateSessionSizeOptions"), "session size options should be dynamic");
+assert(app.includes('els.stageSelect.value === "初三"'), "400/600 options should be limited to 初三");
+assert(app.includes('["400", "400 词"]'), "初三 should offer 400 words");
+assert(app.includes('["600", "600 词"]'), "初三 should offer 600 words");
+
+assert(app.includes("const SLOW_PICK_LIMIT = 3500;"), "slow word threshold should be 3.5 seconds");
 assert(app.includes("const isSlow = isCorrect && elapsed > SLOW_PICK_LIMIT;"), "slow words should use the 4 second threshold");
 assert(!app.includes("mastery < 60"), "weak words should not be triggered by low mastery alone");
 assert(app.includes("record.slow += isSlow ? 1 : 0;"), "records should store slow picks based on isSlow");

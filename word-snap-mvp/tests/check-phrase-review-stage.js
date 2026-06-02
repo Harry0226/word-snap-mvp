@@ -5,6 +5,7 @@ const assert = require("assert");
 const index = fs.readFileSync("index.html", "utf8");
 const app = fs.readFileSync("app.js", "utf8");
 const juniorSource = fs.readFileSync("word-data/junior-exam-words.js", "utf8");
+const juniorJson = JSON.parse(fs.readFileSync("word-data/junior-exam-words.json", "utf8"));
 assert(fs.existsSync("word-data/phrase-review-words.js"), "phrase review word data file should exist");
 const phraseSource = fs.readFileSync("word-data/phrase-review-words.js", "utf8");
 
@@ -13,7 +14,7 @@ vm.createContext(sandbox);
 vm.runInContext(juniorSource, sandbox);
 vm.runInContext(phraseSource, sandbox);
 
-const juniorMeta = sandbox.window.WORD_SNAP_WORDS_META || {};
+const juniorMeta = juniorJson.meta || {};
 const phraseWords = sandbox.window.WORD_SNAP_PHRASE_REVIEW_WORDS || [];
 const phraseMeta = sandbox.window.WORD_SNAP_PHRASE_REVIEW_META || {};
 const allText = `${index}\n${app}\n${juniorSource}\n${phraseSource}`;
@@ -29,6 +30,6 @@ assert(phraseWords.some((word) => word.en === "pay attention to (doing) sth."), 
 assert(phraseWords.some((word) => word.en === "would rather do sth. than do sth."), "phrase deck should split the first expression in item 3");
 assert(phraseWords.some((word) => word.en === "prefer (doing) sth. to (doing) sth."), "phrase deck should split the second expression in item 3");
 assert(phraseWords.some((word) => word.en === "remind sb. of sth."), "phrase deck should include the final phrase");
-assert(app.includes("BUILTIN_SEED_VERSION = 6"), "builtin seed version should be bumped for existing browsers");
+assert(app.includes("BUILTIN_SEED_VERSION = 13"), "builtin seed version should be bumped for existing browsers");
 
 console.log("phrase review stage checks passed");

@@ -11,6 +11,12 @@ assert(!sessionSelect.includes('value="100"'), "training size should no longer o
 assert(sessionSelect.includes('value="200" selected>200 词'), "training size should default to 200 words");
 assert(sessionSelect.includes('value="all">全部单词'), "training size should still offer all words");
 
+assert(app.includes("function updateSessionSizeOptions"), "training size options should update when stage changes");
+assert(app.includes('els.stageSelect.value === "初三"'), "400/600 training sizes should be scoped to 初三");
+assert(app.includes('["400", "400 词"]'), "初三 training size should offer 400 words");
+assert(app.includes('["600", "600 词"]'), "初三 training size should offer 600 words");
+assert(app.includes('options.some(([value]) => value === previous) ? previous : "200"'), "training size should keep valid previous values and default to 200");
+
 assert(app.includes("queueCursor"), "session state should track a queue cursor snapshot");
 assert(app.includes("buildRotationKey"), "training queues should use a scoped rotation key");
 assert(app.includes("stableShuffleWords"), "training queues should use stable shuffled order");
