@@ -47,6 +47,6 @@ assert(app.includes('if (grade === "高一") return window.WORD_SNAP_GRADE10_QUI
 assert(app.includes('if (grade === "高二") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];'), "高二 quiz should read the dedicated quiz bank");
 assert(app.includes("GRADE10_QUIZ_COUNT = 153"), "高一 quiz should have a load guard");
 assert(app.includes("GRADE11_QUIZ_COUNT = 129"), "高二 quiz should have a load guard");
-assert(app.includes("BUILTIN_SEED_VERSION = 13"), "builtin seed version should be bumped for 高一/高二 replacement");
+assert(app.includes("BUILTIN_SEED_VERSION = 14"), "builtin seed version should be bumped for 高一/高二 replacement");
 
 console.log("senior vocab and quiz update checks passed");

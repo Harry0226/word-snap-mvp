@@ -12,7 +12,7 @@
   <script defer src="./word-data/junior-exam-words.js?v=20260601-0109-junior775"></script>
   <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
   <script defer src="./word-data/builtin-word-lists.js?v=20260601-0109-grade71002"></script>
-  <script defer src="./app.js?v=20260601-quiz-lazy"></script>
+  <script defer src="./app.js?v=20260602-quiz-stats"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -80,6 +80,8 @@
         <div class="controls-panel">
           <label>训练量
             <select id="sessionSize">
+              <option value="60">60 词</option>
+              <option value="100">100 词</option>
               <option value="200" selected>200 词</option>
               <option value="all">全部单词</option>
             </select>
@@ -284,6 +286,14 @@
     </section>
 
     <section id="view-quiz" class="view">
+      <div class="stats quiz-stats" aria-label="刷题统计">
+        <div><strong id="quizBankTotal">0</strong><span>当前题库</span></div>
+        <div><strong id="quizDoneCount">0</strong><span>累计刷题</span></div>
+        <div><strong id="quizAccuracy">0%</strong><span>正确率</span></div>
+        <div><strong id="quizFastRate">0%</strong><span>快速率</span></div>
+        <div><strong id="quizWrongCount">0</strong><span>错题</span></div>
+      </div>
+
       <div class="panel quiz-controls">
         <div class="quiz-controls-row">
           <label>刷题年级
