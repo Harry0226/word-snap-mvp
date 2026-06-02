@@ -1,7 +1,7 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考常考词组总复习", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 2;
-const BUILTIN_SEED_VERSION = 13;
+const BUILTIN_SEED_VERSION = 14;
 const FAST_PICK_LIMIT = 1500;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
@@ -28,6 +28,7 @@ const state = {
   quiz: null,
   quizBankLoads: new Map(),
   quizWrongRecords: new Map(),
+  quizStats: new Map(),
   reviewRows: [],
   lastReport: null,
   weakFilter: "wrong",
@@ -109,6 +110,11 @@ Object.assign(els, {
   quizArea: document.querySelector("#quizArea"),
   quizProgressText: document.querySelector("#quizProgressText"),
   quizProgressBar: document.querySelector("#quizProgressBar"),
+  quizBankTotal: document.querySelector("#quizBankTotal"),
+  quizDoneCount: document.querySelector("#quizDoneCount"),
+  quizAccuracy: document.querySelector("#quizAccuracy"),
+  quizFastRate: document.querySelector("#quizFastRate"),
+  quizWrongCount: document.querySelector("#quizWrongCount"),
   quizTag: document.querySelector("#quizTag"),
   quizSentence: document.querySelector("#quizSentence"),
   quizHint: document.querySelector("#quizHint"),
@@ -292,6 +298,11 @@ async function seedBuiltinWords() {
       { grade: "初一", source: "初一内置词库" }
     ]);
   }
+  if (Number(seedMeta?.value || 0) < 14) {
+    await deleteBuiltinDecks([
+      { grade: "初二", source: "初二内置词库" }
+    ]);
+  }
   if (Number(seedMeta?.value || 0) < 12) {
     await deleteBuiltinDecks([
       { grade: "初一", source: "初一内置词库" }
@@ -342,6 +353,9 @@ async function loadState() {
   const quizWrong = await getAll("quizWrongAnswers");
   state.records = new Map(records.map((record) => [record.wordId, record]));
   state.quizWrongRecords = new Map(quizWrong.map((r) => [r.questionId, r]));
+  state.quizStats = new Map(meta
+    .filter((entry) => entry.key?.startsWith("quizStats:"))
+    .map((entry) => [entry.key.replace("quizStats:", ""), entry.value || { attempted: 0, correct: 0, fast: 0 }]));
   state.rotationCursors = new Map(meta
     .filter((entry) => entry.key?.startsWith("queueCursor:"))
     .map((entry) => [entry.key, Number(entry.value || 0)]));
@@ -512,18 +526,12 @@ function updateTrainingEstimate() {
 
 function updateSessionSizeOptions() {
   const previous = els.sessionSize.value || "200";
-  const isJuniorThree = els.stageSelect.value === "初三";
-  const options = isJuniorThree
-    ? [
-        ["200", "200 词"],
-        ["400", "400 词"],
-        ["600", "600 词"],
-        ["all", "全部单词"]
-      ]
-    : [
-        ["200", "200 词"],
-        ["all", "全部单词"]
-      ];
+  const options = [
+    ["60", "60 词"],
+    ["100", "100 词"],
+    ["200", "200 词"],
+    ["all", "全部单词"]
+  ];
   els.sessionSize.innerHTML = options
     .map(([value, label], index) => `<option value="${value}"${index === 0 ? " selected" : ""}>${label}</option>`)
     .join("");
@@ -617,9 +625,56 @@ function startTimer() {
   }, 100);
 }
 
+function getTrainingChoiceCount(answer) {
+  return answer.grade === "初二" ? 5 : 4;
+}
+
+function getGradeWordPool(grade) {
+  return state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh);
+}
+
+function isSimilarWordShape(a, b) {
+  const left = String(a || "").toLowerCase();
+  const right = String(b || "").toLowerCase();
+  const samePhraseShape = left.includes(" ") === right.includes(" ");
+  const sameHyphenShape = left.includes("-") === right.includes("-");
+  const closeLength = Math.abs(left.length - right.length) <= 3;
+  return (samePhraseShape && closeLength) || (sameHyphenShape && closeLength);
+}
+
+function getStructuredDistractors(answer, count) {
+  const gradePool = getGradeWordPool(answer.grade);
+  const fallbackPool = getEligibleWords();
+  const used = new Set([answer.id]);
+  const distractors = [];
+  const firstLetter = answer.en[0]?.toLowerCase() || "";
+  const sameFirstLimit = Math.min(2, Math.max(1, count - 2));
+
+  function addFrom(pool, predicate, limit = count) {
+    shuffle(pool).forEach((word) => {
+      if (distractors.length >= count || distractors.length >= limit) return;
+      if (used.has(word.id) || !word.zh || !predicate(word)) return;
+      used.add(word.id);
+      distractors.push(word);
+    });
+  }
+
+  addFrom(gradePool, (word) => word.en[0]?.toLowerCase() === firstLetter, sameFirstLimit);
+  addFrom(gradePool, (word) => word.en[0]?.toLowerCase() !== firstLetter && isSimilarWordShape(answer.en, word.en));
+  addFrom(gradePool, (word) => word.en[0]?.toLowerCase() !== firstLetter);
+  addFrom(gradePool, () => true);
+  addFrom(fallbackPool, () => true);
+
+  return distractors.slice(0, count);
+}
+
 function makeChoices(answer) {
+  const distractorCount = getTrainingChoiceCount(answer) - 1;
+  if (answer.grade === "初二") {
+    return shuffle([answer, ...getStructuredDistractors(answer, distractorCount)]);
+  }
   const pool = getEligibleWords().filter((word) => word.id !== answer.id && word.zh);
-  return shuffle([answer, ...shuffle(pool).slice(0, 3)]);
+  return shuffle([answer, ...shuffle(pool).slice(0, distractorCount)]);
 }
 
 async function answer(value, button) {
@@ -924,6 +979,44 @@ function getExpectedQuizCount(grade) {
   return 0;
 }
 
+function getQuizBankTotal(grade) {
+  const sentenceTotal = getQuizSentenceData(grade).length;
+  if (sentenceTotal) return sentenceTotal;
+  const expectedTotal = getExpectedQuizCount(grade);
+  if (expectedTotal) return expectedTotal;
+  return generateWordQuiz(grade).length;
+}
+
+function getQuizWrongCount(grade) {
+  return [...state.quizWrongRecords.values()].filter((record) => {
+    if (record.grade) return record.grade === grade;
+    if (grade === "初一") return String(record.questionId || "").startsWith("g7-");
+    if (grade === "初二") return String(record.questionId || "").startsWith("g8-");
+    return !String(record.questionId || "").startsWith("g7-") && !String(record.questionId || "").startsWith("g8-");
+  }).length;
+}
+
+function renderQuizStats() {
+  const grade = els.quizStage.value;
+  const stats = state.quizStats.get(grade) || { attempted: 0, correct: 0, fast: 0 };
+  els.quizBankTotal.textContent = getQuizBankTotal(grade);
+  els.quizDoneCount.textContent = stats.attempted || 0;
+  els.quizAccuracy.textContent = percent(stats.correct || 0, stats.attempted || 0);
+  els.quizFastRate.textContent = percent(stats.fast || 0, stats.attempted || 0);
+  els.quizWrongCount.textContent = getQuizWrongCount(grade);
+}
+
+async function recordQuizAnswer(q, isCorrect, isFast) {
+  const grade = state.quiz?.grade || q.grade || els.quizStage.value;
+  const stats = state.quizStats.get(grade) || { attempted: 0, correct: 0, fast: 0 };
+  stats.attempted += 1;
+  stats.correct += isCorrect ? 1 : 0;
+  stats.fast += isCorrect && isFast ? 1 : 0;
+  state.quizStats.set(grade, stats);
+  await put("meta", { key: `quizStats:${grade}`, value: stats, at: Date.now() });
+  renderQuizStats();
+}
+
 function generateWordQuiz(grade) {
   const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
   const entry = lists.find((l) => l.grade === grade);
@@ -961,6 +1054,7 @@ async function updateQuizSizeOptions() {
     opts.push(`<option value="all">全部 ${total} 词</option>`);
     sel.innerHTML = opts.join("");
   }
+  renderQuizStats();
 }
 
 function getQuizDistractorsForSentence(answer, vocabPool) {
@@ -1109,7 +1203,7 @@ function startQuizTimer() {
   }, 100);
 }
 
-function answerQuizChoice(isCorrect, button) {
+async function answerQuizChoice(isCorrect, button) {
   const quiz = state.quiz;
   if (!quiz || quiz.answered || !quiz.currentQ) return;
   quiz.answered = true;
@@ -1124,6 +1218,7 @@ function answerQuizChoice(isCorrect, button) {
   quiz.correct += isCorrect ? 1 : 0;
   if (isCorrect && isFast) quiz.fast += 1;
   if (isCorrect && isSlow) quiz.slow += 1;
+  await recordQuizAnswer(q, isCorrect, isFast);
 
   els.quizTimer.textContent = `用时 ${(elapsed / 1000).toFixed(2)} 秒`;
   els.quizTimer.classList.toggle("fast", isCorrect && isFast);
@@ -1137,9 +1232,9 @@ function answerQuizChoice(isCorrect, button) {
 
   if (!isCorrect) {
     quiz.wrongList.push(q);
-    saveQuizWrongAnswer(q, button.querySelector(".choice-text").textContent);
+    await saveQuizWrongAnswer(q, button.querySelector(".choice-text").textContent);
   } else if (quiz.isReview) {
-    removeQuizWrongAnswer(q.id);
+    await removeQuizWrongAnswer(q.id);
   }
 
   if (isCorrect && isFast) {
@@ -1182,6 +1277,7 @@ async function saveQuizWrongAnswer(q, userAnswer) {
   const existing = state.quizWrongRecords.get(q.id);
   const record = {
     questionId: q.id,
+    grade: state.quiz?.grade || q.grade || els.quizStage.value,
     sentence: q.sentence,
     answer: q.answer,
     wrongCount: (existing?.wrongCount || 0) + 1,
@@ -1190,6 +1286,7 @@ async function saveQuizWrongAnswer(q, userAnswer) {
   };
   state.quizWrongRecords.set(q.id, record);
   await put("quizWrongAnswers", record);
+  renderQuizStats();
 }
 
 async function removeQuizWrongAnswer(qId) {
@@ -1199,6 +1296,7 @@ async function removeQuizWrongAnswer(qId) {
     request.onsuccess = () => resolve();
     request.onerror = () => reject(request.error);
   });
+  renderQuizStats();
 }
 
 function finishQuiz() {
@@ -1389,6 +1487,7 @@ async function saveReviewDeck() {
 function renderAll() {
   updateSessionSizeOptions();
   renderStats();
+  renderQuizStats();
   renderDecks();
   renderWeakList();
   renderReport();
@@ -1591,6 +1690,7 @@ function bindEvents() {
     if (!confirm("确定清空所有刷题错题记录吗？")) return;
     await clearStore("quizWrongAnswers");
     state.quizWrongRecords.clear();
+    renderQuizStats();
     renderQuizWrongList();
   });
   document.addEventListener("keydown", (event) => {

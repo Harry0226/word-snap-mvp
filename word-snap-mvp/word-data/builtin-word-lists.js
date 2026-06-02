@@ -841,7021 +841,7021 @@ window.WORD_SNAP_BUILTIN_LISTS = [
         ],
         "source": "初一内置词库",
         "words": [
-    {
-        "en": "Arctic",
-        "zh": "char 北极红点鲑",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "BBQ",
-        "zh": "户外烧烤，烤架",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "British",
-        "zh": "英国（人）的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "Chinese",
-        "zh": "knot 中国结",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "Olympic",
-        "zh": "奥林匹克运动会的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "T-shirt",
-        "zh": "T恤",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "a",
-        "zh": "few 有些，几个",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "able",
-        "zh": "能够",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "above",
-        "zh": "在（或向）…上面",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "actress",
-        "zh": "女演员",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "add",
-        "zh": "补充说，添加",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "adult",
-        "zh": "成年人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "adventure",
-        "zh": "历险，奇遇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "advice",
-        "zh": "建议",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "afraid",
-        "zh": "担心，害怕，恐惧",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "age",
-        "zh": "年龄，时代",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ago",
-        "zh": "以前",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ahlan",
-        "zh": "你好（阿拉伯语问候语）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "air",
-        "zh": "空气",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "alive",
-        "zh": "活着，有活力",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "alliance",
-        "zh": "联盟",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "allow",
-        "zh": "使可能，允许",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "alone",
-        "zh": "独自，单独",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "along",
-        "zh": "沿着",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "amaze",
-        "zh": "使惊奇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "among",
-        "zh": "在…中，…之一",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ancient",
-        "zh": "古代的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "angry",
-        "zh": "生气的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "animal",
-        "zh": "动物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ant",
-        "zh": "蚂蚁",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "any",
-        "zh": "time 在任何时候",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "anyone",
-        "zh": "任何人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "anything",
-        "zh": "任何事物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "app",
-        "zh": "应用软件",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "appliance",
-        "zh": "电器",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "arch",
-        "zh": "拱门",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "architectural",
-        "zh": "建筑的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "arm",
-        "zh": "手臂",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "arrive",
-        "zh": "到达",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "art",
-        "zh": "艺术",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "artifact",
-        "zh": "文物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ask",
-        "zh": "请求",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "asleep",
-        "zh": "睡着",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "at",
-        "zh": "first 起初",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "attack",
-        "zh": "进攻",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "attract",
-        "zh": "招引，吸引",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "audience",
-        "zh": "观众",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "audio",
-        "zh": "音频",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "authentically",
-        "zh": "真实地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "author",
-        "zh": "作者",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "autumn",
-        "zh": "秋天",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "awake",
-        "zh": "醒着",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "baby",
-        "zh": "婴儿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "badminton",
-        "zh": "羽毛球",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bag",
-        "zh": "袋，包",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "balance",
-        "zh": "平衡能力，平衡",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "balcony",
-        "zh": "阳台",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bamboo",
-        "zh": "竹，竹子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "banana",
-        "zh": "香蕉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "basic",
-        "zh": "基本的，初级的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bat",
-        "zh": "蝙蝠",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bath",
-        "zh": "浴缸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bathroom",
-        "zh": "浴室，（美）卫生间",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "be",
-        "zh": "born 出生，出现",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "beach",
-        "zh": "海滩",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bear",
-        "zh": "熊",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "beat",
-        "zh": "击败",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "beauty",
-        "zh": "美丽",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "because",
-        "zh": "of 因为",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bed",
-        "zh": "床",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bedroom",
-        "zh": "卧室",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bee",
-        "zh": "蜜蜂",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "beef",
-        "zh": "牛肉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "beehive",
-        "zh": "蜂巢",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "begin",
-        "zh": "开始",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "behavior",
-        "zh": "行为",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "below",
-        "zh": "在（或到）下面",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "belt",
-        "zh": "腰带",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bench",
-        "zh": "长椅",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "big",
-        "zh": "大的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bill",
-        "zh": "账单，纸币",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "binoculars",
-        "zh": "双筒望远镜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "birdwatching",
-        "zh": "观鸟",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bite",
-        "zh": "咬",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bitter",
-        "zh": "苦的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "black",
-        "zh": "黑色的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "blackboard",
-        "zh": "黑板",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "blanket",
-        "zh": "毯子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "blood",
-        "zh": "血液",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "blue",
-        "zh": "蓝色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "body",
-        "zh": "身体",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bone",
-        "zh": "骨头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "boots",
-        "zh": "靴子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bored",
-        "zh": "无聊的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "born",
-        "zh": "出生",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bottle",
-        "zh": "瓶子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "boy",
-        "zh": "男孩",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bread",
-        "zh": "面包",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "break",
-        "zh": "间断，暂停；休息",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "breakfast",
-        "zh": "早餐",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "breathe",
-        "zh": "呼吸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bridge",
-        "zh": "桥",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bright",
-        "zh": "明亮的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "broken",
-        "zh": "出了毛病的，破损的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "brown",
-        "zh": "棕色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "brush",
-        "zh": "毛笔",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "build",
-        "zh": "建筑，建造",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "building",
-        "zh": "建筑物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bulb",
-        "zh": "灯泡",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "burn",
-        "zh": "燃烧",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "bus",
-        "zh": "公交车",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "butter",
-        "zh": "黄油",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "butterfly",
-        "zh": "蝴蝶",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "buy",
-        "zh": "买",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cabbage",
-        "zh": "卷心菜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cabinet",
-        "zh": "柜子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cable",
-        "zh": "car 缆车",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cactus",
-        "zh": "仙人掌",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cage",
-        "zh": "笼子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cake",
-        "zh": "蛋糕",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "calendar",
-        "zh": "历法，日历",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "camera",
-        "zh": "照相机",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "camp",
-        "zh": "露营",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "camper",
-        "zh": "露营者",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "campfire",
-        "zh": "篝火，营火",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "camping",
-        "zh": "露营（活动）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "campsite",
-        "zh": "野营地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "candy",
-        "zh": "糖果",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cap",
-        "zh": "帽子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "capital",
-        "zh": "首都，首府",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "car",
-        "zh": "汽车",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "care",
-        "zh": "for 照料",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "carpet",
-        "zh": "地毯",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "carrot",
-        "zh": "胡萝卜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "carve",
-        "zh": "雕刻",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cash",
-        "zh": "现金",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cat",
-        "zh": "猫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ceiling",
-        "zh": "天花板",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "celebrate",
-        "zh": "庆祝",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "centre",
-        "zh": "中心区，中心",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "chance",
-        "zh": "机会，可能性",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "character",
-        "zh": "人物，角色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cheap",
-        "zh": "便宜的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "check",
-        "zh": "检查，核查",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cheer",
-        "zh": "(sb) up （使）变得高兴，振奋起来",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cheese",
-        "zh": "奶酪",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "chemical",
-        "zh": "化学物质",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "chicken",
-        "zh": "鸡肉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "child",
-        "zh": "孩子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "childhood",
-        "zh": "童年，幼年",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "children",
-        "zh": "孩子们",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "china",
-        "zh": "瓷器",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "chocolate",
-        "zh": "巧克力",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "chopsticks",
-        "zh": "筷子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cinema",
-        "zh": "电影院",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "city",
-        "zh": "城市",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clap",
-        "zh": "拍手",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "classmate",
-        "zh": "同学",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "classroom",
-        "zh": "教室",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clay",
-        "zh": "黏土，陶土",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clean",
-        "zh": "打扫，干净的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clear",
-        "zh": "清晰的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clearly",
-        "zh": "清楚地，明显地，明白地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clerk",
-        "zh": "店员",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "climate",
-        "zh": "气候",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "climb",
-        "zh": "爬，攀爬",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clinic",
-        "zh": "诊所",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "close",
-        "zh": "近的，关闭",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "clothes",
-        "zh": "衣服",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cloud",
-        "zh": "云，云彩",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cloudless",
-        "zh": "晴朗的，无云的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cloudy",
-        "zh": "多云的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "coat",
-        "zh": "外套",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "coffee",
-        "zh": "咖啡",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "coin",
-        "zh": "硬币",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cold",
-        "zh": "冷的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "collect",
-        "zh": "收集，采集",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "collection",
-        "zh": "作品集，收集物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "college",
-        "zh": "学院，（美）大学",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "color",
-        "zh": "颜色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "colorful",
-        "zh": "五彩缤纷的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "comb",
-        "zh": "梳子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "come",
-        "zh": "来",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "communicate",
-        "zh": "交流",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "community",
-        "zh": "社区",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "company",
-        "zh": "公司",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "conditions",
-        "zh": "环境，条件",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cookie",
-        "zh": "曲奇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cool",
-        "zh": "凉爽的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "corn",
-        "zh": "谷物，（美）玉米",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "corner",
-        "zh": "角落，墙角，街角",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "correct",
-        "zh": "正确的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cost",
-        "zh": "花费，成本",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cottage",
-        "zh": "（尤指）村舍，小别墅",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "count",
-        "zh": "数数",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "countryside",
-        "zh": "农村，乡村",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "couple",
-        "zh": "夫妇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "courtyard",
-        "zh": "庭院，天井",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cover",
-        "zh": "占（一片面积）；覆盖，遮盖",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cow",
-        "zh": "牛",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "craft",
-        "zh": "手艺，工艺",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "craftsperson",
-        "zh": "工匠，手艺人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "crazy",
-        "zh": "疯狂的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "creative",
-        "zh": "有创造力的，创造性的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "crop",
-        "zh": "庄稼",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "crowded",
-        "zh": "拥挤的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cry",
-        "zh": "哭泣",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cultural",
-        "zh": "文化的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cure",
-        "zh": "治愈",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "curtain",
-        "zh": "窗帘",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "custom",
-        "zh": "习俗",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "customer",
-        "zh": "顾客",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cut",
-        "zh": "剪，切",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cute",
-        "zh": "可爱的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cycle",
-        "zh": "骑自行车",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "cycling",
-        "zh": "骑自行车运动（或活动）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dance",
-        "zh": "跳舞",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "danger",
-        "zh": "危险",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dangerous",
-        "zh": "危险的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dark",
-        "zh": "黑暗的，深色的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "date",
-        "zh": "from 追溯到，始于",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "deal",
-        "zh": "with 处理，应付",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "death",
-        "zh": "死亡",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "decide",
-        "zh": "决定",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "defend",
-        "zh": "保卫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "degree",
-        "zh": "度数",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "describe",
-        "zh": "描述",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "desert",
-        "zh": "沙漠，荒漠",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "design",
-        "zh": "设计",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "destroy",
-        "zh": "破坏，摧毁",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "detail",
-        "zh": "具体情况，细节",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "die",
-        "zh": "死亡，消失",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "different",
-        "zh": "不同的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dining",
-        "zh": "room 餐厅",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dirty",
-        "zh": "脏的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dish",
-        "zh": "菜肴",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dog",
-        "zh": "狗",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "domestic",
-        "zh": "驯养的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "door",
-        "zh": "门",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "down",
-        "zh": "沮丧，情绪低落",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dragon",
-        "zh": "龙",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "draw",
-        "zh": "绘画，拉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dream",
-        "zh": "梦想",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dress",
-        "zh": "连衣裙",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "drive",
-        "zh": "驾驶，驱使",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "driver",
-        "zh": "司机",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dry",
-        "zh": "干燥的，干的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "duck",
-        "zh": "鸭",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dust",
-        "zh": "除尘",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "dynasty",
-        "zh": "朝代",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "early",
-        "zh": "早的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "easily",
-        "zh": "容易地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "east",
-        "zh": "东部，东方的，向东",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "eat",
-        "zh": "吃",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "echo",
-        "zh": "回声",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "egg",
-        "zh": "鸡蛋",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "elephant",
-        "zh": "大象",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "elevator",
-        "zh": "电梯",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "emperor",
-        "zh": "皇帝",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "end",
-        "zh": "终止，结尾，尽头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "enemy",
-        "zh": "敌人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "engineer",
-        "zh": "工程师",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "enjoy",
-        "zh": "享受，喜爱",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "enjoyable",
-        "zh": "令人愉快的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "enter",
-        "zh": "进入",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "entry",
-        "zh": "进入",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "eraser",
-        "zh": "橡皮擦",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "even",
-        "zh": "甚至，即使",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ever",
-        "zh": "在任何时候，曾经",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "everyday",
-        "zh": "日常的，每天的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "everything",
-        "zh": "一切，每件事",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "exam",
-        "zh": "考试",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "exchange",
-        "zh": "student 交换生",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "exercise",
-        "zh": "锻炼，练习",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "expensive",
-        "zh": "昂贵的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "experience",
-        "zh": "一次）经历，经验",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "express",
-        "zh": "表达，表示",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "eye",
-        "zh": "眼睛",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "face",
-        "zh": "脸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "factory",
-        "zh": "工厂，制造厂",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fail",
-        "zh": "失败，未能（做到），不及格",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fairy",
-        "zh": "小精灵，仙子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fall",
-        "zh": "进入（某状态），落下，掉落，倒下",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "famous",
-        "zh": "著名的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fantastic",
-        "zh": "极好的，了不起的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fantasy",
-        "zh": "奇幻小说，幻想，想象",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "far",
-        "zh": "远的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "farm",
-        "zh": "农场",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "farmer",
-        "zh": "农民",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "farmhouse",
-        "zh": "农场住宅，农舍",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "farming",
-        "zh": "耕种，务农",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fascinate",
-        "zh": "使迷恋",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "feel",
-        "zh": "感觉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fence",
-        "zh": "篱笆",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "festival",
-        "zh": "节日",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fever",
-        "zh": "发烧，狂热",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "field",
-        "zh": "田地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fight",
-        "zh": "打架",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "figure",
-        "zh": "（人或动物的）雕像，塑像",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fill",
-        "zh": "（使）充满，填满",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "finally",
-        "zh": "最终",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "find",
-        "zh": "out 查明，弄清（情况）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "finger",
-        "zh": "手指",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "finish",
-        "zh": "完成",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fire",
-        "zh": "火",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "firework",
-        "zh": "烟火，烟花",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "first-time",
-        "zh": "首次的，第一次的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fish",
-        "zh": "and chips 炸鱼薯条",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fisherman",
-        "zh": "渔民，钓鱼爱好者",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fishing",
-        "zh": "钓鱼，捕鱼业（或活动）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fit",
-        "zh": "适合",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fix",
-        "zh": "修理",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "flag",
-        "zh": "旗",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "flat",
-        "zh": "平坦的，平的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "flood",
-        "zh": "（河水等）泛滥，淹没；洪水",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "floor",
-        "zh": "楼层，地面",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "flower",
-        "zh": "花",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "flute",
-        "zh": "笛子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fly",
-        "zh": "飞，苍蝇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "focus",
-        "zh": "集中（注意力、精力等于）；聚焦（于）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "folk",
-        "zh": "传统民间的，民俗的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "follow",
-        "zh": "遵循；跟随",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "foot",
-        "zh": "脚",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "forest",
-        "zh": "森林",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "forever",
-        "zh": "永远",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "forget",
-        "zh": "忘记，遗忘",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "form",
-        "zh": "（使）出现，产生",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fox",
-        "zh": "狐狸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "free",
-        "zh": "自由的，有空的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "freezer",
-        "zh": "冷冻柜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fresh",
-        "zh": "淡的，无盐的，新鲜的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fridge",
-        "zh": "冰箱",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "friend",
-        "zh": "朋友",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "frog",
-        "zh": "青蛙",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "from",
-        "zh": "time to time 偶尔，不时",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "funny",
-        "zh": "滑稽的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "fur",
-        "zh": "（动物的）软毛，毛皮",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "furniture",
-        "zh": "家具",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "future",
-        "zh": "未来",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "gallery",
-        "zh": "画廊",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "garbage",
-        "zh": "垃圾",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "garden",
-        "zh": "花园",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "gate",
-        "zh": "大门",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "gathering",
-        "zh": "聚会",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "geography",
-        "zh": "地理",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "get",
-        "zh": "up 起床",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "gift",
-        "zh": "礼物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "giraffe",
-        "zh": "长颈鹿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "girl",
-        "zh": "女孩",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "give",
-        "zh": "up 放弃",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "glad",
-        "zh": "高兴的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "glasses",
-        "zh": "眼镜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "gloves",
-        "zh": "手套",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "goal",
-        "zh": "目标",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "god",
-        "zh": "神",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "golden",
-        "zh": "金色的，美好的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "goldfish",
-        "zh": "金鱼",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "good",
-        "zh": "好的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "grade",
-        "zh": "成绩，年级",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "grain",
-        "zh": "谷物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "gram",
-        "zh": "克",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "grape",
-        "zh": "葡萄",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "grassland",
-        "zh": "草原，草地，草场",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "gray",
-        "zh": "灰色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "great",
-        "zh": "棒的，伟大的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "green",
-        "zh": "绿色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ground",
-        "zh": "地面",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "group",
-        "zh": "组，群",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "grow",
-        "zh": "长大，种植",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "grows",
-        "zh": "增长，生长",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "guest",
-        "zh": "客人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "guide",
-        "zh": "指南，导游",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "guinea",
-        "zh": "pig 天竺鼠",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "had",
-        "zh": "better 应该，最好",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hair",
-        "zh": "头发",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hall",
-        "zh": "大厅",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hand",
-        "zh": "交，递，给",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "handicraft",
-        "zh": "手工艺品，手工艺",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hang",
-        "zh": "悬挂",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "happen",
-        "zh": "发生，出现",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "happily",
-        "zh": "高兴地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "happiness",
-        "zh": "幸福，快乐",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "happy",
-        "zh": "高兴的，幸福的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hard",
-        "zh": "艰难的，努力地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hard-working",
-        "zh": "辛勤的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hat",
-        "zh": "帽子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "head",
-        "zh": "头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "healthy",
-        "zh": "健康的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hear",
-        "zh": "听说，听见",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "heavy",
-        "zh": "沉重的，重大的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "helper",
-        "zh": "帮助者",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "helpless",
-        "zh": "无助的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hen",
-        "zh": "母鸡",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hero",
-        "zh": "英雄",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hers",
-        "zh": "她的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "herself",
-        "zh": "她自己",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "high",
-        "zh": "有某高度的，高的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hiker",
-        "zh": "徒步旅行者",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hiking",
-        "zh": "远足，徒步旅行",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hill",
-        "zh": "山丘",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "his",
-        "zh": "他的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "history",
-        "zh": "历史",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hit",
-        "zh": "碰撞；击，打；打击",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hobby",
-        "zh": "爱好",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hold",
-        "zh": "up 支撑得住",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hole",
-        "zh": "孔，洞",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "holiday",
-        "zh": "假期",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "home",
-        "zh": "家",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "honey",
-        "zh": "蜂蜜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "honeybee",
-        "zh": "蜜蜂",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "horse",
-        "zh": "riding 骑马",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hospital",
-        "zh": "医院",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "host",
-        "zh": "主人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hotel",
-        "zh": "旅馆",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "house",
-        "zh": "房子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "huge",
-        "zh": "巨大的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "human",
-        "zh": "人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hundred",
-        "zh": "许多，大量，一百",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hungry",
-        "zh": "饥饿的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hurry",
-        "zh": "匆忙",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "hutong",
-        "zh": "胡同",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "idea",
-        "zh": "想法",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "if",
-        "zh": "是否",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ill",
-        "zh": "生病的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "imagined",
-        "zh": "想象的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "in",
-        "zh": "the face of 面对（困难等）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "information",
-        "zh": "信息，消息",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "inkstick",
-        "zh": "墨（条）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "innocent",
-        "zh": "天真无邪的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "insect",
-        "zh": "昆虫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "interest",
-        "zh": "吸引力，趣味，兴趣",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "interesting",
-        "zh": "有趣的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "interruption",
-        "zh": "干扰",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "introduce",
-        "zh": "介绍",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "invade",
-        "zh": "侵略",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "invite",
-        "zh": "邀请",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "itself",
-        "zh": "它本身",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "jacket",
-        "zh": "夹克",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "jeans",
-        "zh": "牛仔裤",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "joke",
-        "zh": "笑话",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "juice",
-        "zh": "果汁",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "jungle",
-        "zh": "丛林",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "just",
-        "zh": "刚才，方才",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "kangaroo",
-        "zh": "袋鼠",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "keep",
-        "zh": "保持，饲养",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "kettle",
-        "zh": "水壶",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "keyboard",
-        "zh": "键盘",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "kid",
-        "zh": "小孩",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "kilometre",
-        "zh": "千米",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "kitchen",
-        "zh": "厨房",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "knife",
-        "zh": "刀",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "land",
-        "zh": "陆地，土地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "landform",
-        "zh": "地貌，地形",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "landscape",
-        "zh": "景色，风景画",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lantern",
-        "zh": "灯笼",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "laptop",
-        "zh": "笔记本电脑",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "largely",
-        "zh": "主要地，在很大程度上",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "largest",
-        "zh": "最大的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "last",
-        "zh": "最后的，持续",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "later",
-        "zh": "后来，随后",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "laugh",
-        "zh": "笑",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "law",
-        "zh": "法律，法规",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lawyer",
-        "zh": "律师",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "leaf",
-        "zh": "叶子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lean",
-        "zh": "倾斜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "leg",
-        "zh": "腿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lend",
-        "zh": "借给，借出",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "letters",
-        "zh": "信，字母",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lie",
-        "zh": "躺，平卧，位于",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "life",
-        "zh": "生活，生命",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lifestyle",
-        "zh": "生活方式",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lift",
-        "zh": "举起",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "light",
-        "zh": "轻的，浅色的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lighthouse",
-        "zh": "灯塔",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lightning",
-        "zh": "闪电",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lion",
-        "zh": "狮子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "listen",
-        "zh": "听",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "little",
-        "zh": "by little 缓慢地，逐渐地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "live",
-        "zh": "居住，生活",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "living",
-        "zh": "room 客厅，起居室",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "local",
-        "zh": "当地的，地方的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lock",
-        "zh": "锁",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "locked",
-        "zh": "锁住的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lonely",
-        "zh": "孤独的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "long",
-        "zh": "长的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "look",
-        "zh": "after 照料",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lose",
-        "zh": "失去，丧失",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lost",
-        "zh": "迷路的，丢失的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "loud",
-        "zh": "大声的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "love",
-        "zh": "爱",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "low",
-        "zh": "低的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "luck",
-        "zh": "运气",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "luckily",
-        "zh": "幸好，幸运地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lunar",
-        "zh": "农历，阴历",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "lunch",
-        "zh": "午餐",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "machine",
-        "zh": "机器，机械装置",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "magazine",
-        "zh": "杂志",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "magic",
-        "zh": "魔法，魔术，魔力",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "magical",
-        "zh": "有魔力的，奇妙的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "magnificent",
-        "zh": "宏伟的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "main",
-        "zh": "主要的，最重要的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mall",
-        "zh": "购物中心",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "man",
-        "zh": "男人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "map",
-        "zh": "地图",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "market",
-        "zh": "市场",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "match",
-        "zh": "比赛",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "matter",
-        "zh": "要紧，事情",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mattress",
-        "zh": "床垫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "meal",
-        "zh": "膳食",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mean",
-        "zh": "表示…的意思，意味着",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "meat",
-        "zh": "肉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "medicine",
-        "zh": "药物，医学",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "meeting",
-        "zh": "会议",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mend",
-        "zh": "修理",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "menu",
-        "zh": "菜单",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "metre",
-        "zh": "米",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "microwave",
-        "zh": "微波炉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "might",
-        "zh": "可能",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mile",
-        "zh": "英里",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "milk",
-        "zh": "牛奶",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "million",
-        "zh": "一百万",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mind",
-        "zh": "头脑，思考能力，聪明人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mine",
-        "zh": "我的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "minus",
-        "zh": "减去",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mistake",
-        "zh": "错误",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mobile",
-        "zh": "home 活动住房",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "modern",
-        "zh": "现代的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "monkey",
-        "zh": "猴子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "month",
-        "zh": "月，月份",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "moon",
-        "zh": "月亮",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mop",
-        "zh": "拖",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mosquito",
-        "zh": "蚊子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mostly",
-        "zh": "主要地，通常",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mould",
-        "zh": "模具",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mountain",
-        "zh": "高山，山脉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mouse",
-        "zh": "老鼠",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mouth",
-        "zh": "嘴",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "mug",
-        "zh": "大杯子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "multiply",
-        "zh": "乘以",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "name",
-        "zh": "命名",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "narrow",
-        "zh": "狭窄的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "national",
-        "zh": "国家的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "natural",
-        "zh": "自然的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "neat",
-        "zh": "整洁的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "neck",
-        "zh": "颈，脖子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "need",
-        "zh": "需要",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "neighbor",
-        "zh": "邻居",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "neighborhood",
-        "zh": "社区",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "neighbour",
-        "zh": "邻居",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "neighbourhood",
-        "zh": "街区，邻近的地方",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "news",
-        "zh": "新闻",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "newspaper",
-        "zh": "报纸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "next",
-        "zh": "to 紧邻，在…近旁",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "no",
-        "zh": "problem 没什么，不客气；没问题",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "nobody",
-        "zh": "没有人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "noise",
-        "zh": "声音，噪声",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "noisy",
-        "zh": "吵闹的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "none",
-        "zh": "没有一个",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "noodle",
-        "zh": "面条",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "noon",
-        "zh": "正午，中午",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "north",
-        "zh": "北部，北方的，向北",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "north-west",
-        "zh": "西北的，西北部；向西北",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "northern",
-        "zh": "北方的，北部的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "nose",
-        "zh": "鼻子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "note",
-        "zh": "便条，笔记，音符",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "nothing",
-        "zh": "没有什么",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "notice",
-        "zh": "注意到；留意",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "number",
-        "zh": "号码，数字，数量",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "nurse",
-        "zh": "保姆，护士",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "object",
-        "zh": "物品，东西",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "observe",
-        "zh": "观察",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ocean",
-        "zh": "海洋",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "officer",
-        "zh": "高级职员，官员",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "often",
-        "zh": "经常",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "oil",
-        "zh": "油",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "older",
-        "zh": "年长的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "on",
-        "zh": "one’s own 独自，独立地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "once",
-        "zh": "曾经",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "onion",
-        "zh": "洋葱",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "opera",
-        "zh": "歌剧",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "orange",
-        "zh": "橙色的，橙子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "order",
-        "zh": "点菜，命令",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ordinary",
-        "zh": "普通的，平常的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "organize",
-        "zh": "组织，安排",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "organized",
-        "zh": "有组织的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ours",
-        "zh": "我们的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "outdoor",
-        "zh": "室外的，户外的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "overnight",
-        "zh": "在晚上，一夜之间",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "own",
-        "zh": "自己的，本人的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "owner",
-        "zh": "主人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "oxygen",
-        "zh": "氧，氧气",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "packet",
-        "zh": "小包，袋",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "paint",
-        "zh": "画画，油漆",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "paintbrush",
-        "zh": "画笔",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "painter",
-        "zh": "画家",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "painting",
-        "zh": "绘画",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pair",
-        "zh": "一双，一对",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "palace",
-        "zh": "宫殿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pan",
-        "zh": "平底锅",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "panda",
-        "zh": "熊猫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pants",
-        "zh": "裤子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "paper-cut",
-        "zh": "剪纸（作品）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "parent",
-        "zh": "父母",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "park",
-        "zh": "公园",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "parrot",
-        "zh": "鹦鹉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "part",
-        "zh": "部分",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "partner",
-        "zh": "搭档",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "party",
-        "zh": "派对",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pass",
-        "zh": "by 经过，通过",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "past",
-        "zh": "过去",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "path",
-        "zh": "小路，小径",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pay",
-        "zh": "付钱",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "peace",
-        "zh": "和平",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "peach",
-        "zh": "桃，桃子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pear",
-        "zh": "梨",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pen",
-        "zh": "钢笔",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "people",
-        "zh": "人，人们",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "perfect",
-        "zh": "完美的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "perseverance",
-        "zh": "毅力",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pet",
-        "zh": "宠物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "phone",
-        "zh": "电话",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "photo",
-        "zh": "照片",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "piano",
-        "zh": "钢琴",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pick",
-        "zh": "up 捡起，拾起",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "picnic",
-        "zh": "野餐",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "picture",
-        "zh": "图片，画面",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pie",
-        "zh": "派",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "piece",
-        "zh": "碎片，一块",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pig",
-        "zh": "猪",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pill",
-        "zh": "药丸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pillow",
-        "zh": "枕头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pine",
-        "zh": "松树",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ping-pong",
-        "zh": "乒乓球",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pink",
-        "zh": "粉红色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "place",
-        "zh": "of interest 名胜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "plain",
-        "zh": "平原",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "plan",
-        "zh": "计划",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "planet",
-        "zh": "行星",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "plant",
-        "zh": "植物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "plate",
-        "zh": "板块",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "play",
-        "zh": "玩，演奏",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "player",
-        "zh": "运动员",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "playful",
-        "zh": "活泼好动的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "plot",
-        "zh": "故事情节",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "plug",
-        "zh": "插头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "poem",
-        "zh": "诗歌",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "poet",
-        "zh": "诗人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "police",
-        "zh": "station 警察局，派出所",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "poor",
-        "zh": "贫穷的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pork",
-        "zh": "猪肉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "post",
-        "zh": "发布，邮寄",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "postcard",
-        "zh": "明信片",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "poster",
-        "zh": "海报",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "power",
-        "zh": "力量；电力供应",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "powerful",
-        "zh": "力量大的，有影响力的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "powerfully",
-        "zh": "强大地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "practical",
-        "zh": "实用的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "practice",
-        "zh": "练习，训练",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "present",
-        "zh": "现在",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "price",
-        "zh": "价格",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "printer",
-        "zh": "打印机",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "produce",
-        "zh": "生产",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "protect",
-        "zh": "保护",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "proud",
-        "zh": "自豪的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "public",
-        "zh": "公共的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "publish",
-        "zh": "出版；发表（作品）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "pure",
-        "zh": "纯净的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "purple",
-        "zh": "紫色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "purr",
-        "zh": "（猫）发出呼噜声",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "push",
-        "zh": "推",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "quality",
-        "zh": "品质，质量，人品，素质",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "quarter",
-        "zh": "四分之一",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "quickly",
-        "zh": "迅速地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "quietly",
-        "zh": "安静地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rabbit",
-        "zh": "兔子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "radar",
-        "zh": "雷达",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "radio",
-        "zh": "收音机",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rain",
-        "zh": "雨，下雨",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rainforest",
-        "zh": "（热带）雨林",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "raise",
-        "zh": "筹募",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "raising",
-        "zh": "升高，增加",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rapidly",
-        "zh": "迅速地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "reach",
-        "zh": "够得着；抵达，实现，达到",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "read",
-        "zh": "阅读",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ready",
-        "zh": "准备好的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "real",
-        "zh": "真实的，实际存在的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "recommend",
-        "zh": "推荐，建议",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "red",
-        "zh": "红色的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "relationship",
-        "zh": "关系",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "relax",
-        "zh": "放松，休息",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "relaxed",
-        "zh": "放松的，冷静的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "relaxing",
-        "zh": "令人放松的，轻松的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "repair",
-        "zh": "修理",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "respect",
-        "zh": "尊敬，尊重",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rest",
-        "zh": "休息",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "restaurant",
-        "zh": "餐厅，餐馆",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rice",
-        "zh": "米饭",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ride",
-        "zh": "骑，驾驶，搭乘",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ring",
-        "zh": "戒指",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rise",
-        "zh": "发源；上升，提高；上升，增强，提高",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "road",
-        "zh": "道路",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rock",
-        "zh": "岩石",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "roll",
-        "zh": "out 展开",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "roller",
-        "zh": "滑轮的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "roof",
-        "zh": "屋顶",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "room",
-        "zh": "房间",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rotten",
-        "zh": "腐烂的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "round",
-        "zh": "圆形的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "row",
-        "zh": "划（船）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "rubbish",
-        "zh": "垃圾，废弃物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ruler",
-        "zh": "尺子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "run",
-        "zh": "跑，奔跑",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "safely",
-        "zh": "安全地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "safety",
-        "zh": "安全，平安，安全处",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sale",
-        "zh": "特价，销售",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "salty",
-        "zh": "咸的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sand",
-        "zh": "沙，沙子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sandstone",
-        "zh": "砂岩",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sandwich",
-        "zh": "三明治",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sausage",
-        "zh": "香肠",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "save",
-        "zh": "拯救，救助",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "say",
-        "zh": "说，讲",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "scarf",
-        "zh": "围巾",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "scary",
-        "zh": "可怕的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "scene",
-        "zh": "场面，现场，（戏剧等的）场",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "school",
-        "zh": "学校",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "scientist",
-        "zh": "科学家",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "scissors",
-        "zh": "剪刀",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "score",
-        "zh": "得分",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "screen",
-        "zh": "屏幕",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "seagrass",
-        "zh": "海草",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "seaside",
-        "zh": "海边，海滨",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "season",
-        "zh": "季节",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "see",
-        "zh": "看见",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "seem",
-        "zh": "似乎，看起来",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sentence",
-        "zh": "句子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "series",
-        "zh": "连续剧；（书、文章等的）系列；一系列",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "set",
-        "zh": "为…设置背景于；创立",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "several",
-        "zh": "几个，一些",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shall",
-        "zh": "表示提出或征求意见，将要，将会",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shampoo",
-        "zh": "洗发水",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shape",
-        "zh": "形状",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "share",
-        "zh": "分享",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sheep",
-        "zh": "羊",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sheet",
-        "zh": "床单",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shelf",
-        "zh": "书架",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shining",
-        "zh": "闪耀的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shirt",
-        "zh": "衬衫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shoes",
-        "zh": "鞋子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shop",
-        "zh": "商店",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shopkeeper",
-        "zh": "店主",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shopping",
-        "zh": "购物",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shout",
-        "zh": "喊叫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "show",
-        "zh": "sb around 领某人参观",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "shut",
-        "zh": "关闭",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sick",
-        "zh": "生病的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "side",
-        "zh": "一侧，一边",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "siheyuan",
-        "zh": "四合院",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "silent",
-        "zh": "沉默的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "silk",
-        "zh": "丝绸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "silly",
-        "zh": "愚蠢的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "simple",
-        "zh": "简单的，简朴的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sing",
-        "zh": "唱歌",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sink",
-        "zh": "水槽",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "size",
-        "zh": "尺寸",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "skate",
-        "zh": "（早）冰鞋",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "skating",
-        "zh": "滑冰，溜冰",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "skiing",
-        "zh": "滑雪（运动）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "skirt",
-        "zh": "短裙",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sky",
-        "zh": "天空",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sleep",
-        "zh": "睡觉",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sleeping",
-        "zh": "bag 睡袋",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "slowly",
-        "zh": "缓慢地",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "small",
-        "zh": "小的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "smart",
-        "zh": "聪明的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "smell",
-        "zh": "闻，嗅（气味）",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "smile",
-        "zh": "微笑",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "smoke",
-        "zh": "抽烟，烟",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "snail",
-        "zh": "蜗牛",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "snake",
-        "zh": "蛇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "snow",
-        "zh": "雪",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "snowy",
-        "zh": "下雪的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "soap",
-        "zh": "肥皂",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "socket",
-        "zh": "插座",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "socks",
-        "zh": "袜子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "soda",
-        "zh": "苏打水",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sofa",
-        "zh": "沙发",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "soldier",
-        "zh": "士兵",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sombrero",
-        "zh": "宽边帽",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "someone",
-        "zh": "某人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "son",
-        "zh": "儿子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "song",
-        "zh": "歌曲",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "soon",
-        "zh": "很快",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sore",
-        "zh": "疼痛的，酸痛的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sound",
-        "zh": "声音",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "soup",
-        "zh": "汤",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sour",
-        "zh": "酸的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "south",
-        "zh": "南部，南方的，向南",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "south-west",
-        "zh": "西南，西南方的，向西南",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "space",
-        "zh": "空间",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "special",
-        "zh": "特别的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "spell",
-        "zh": "拼写",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "spider",
-        "zh": "蜘蛛",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "spirit",
-        "zh": "精神",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "spoil",
-        "zh": "变质",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "spoon",
-        "zh": "勺",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "spring",
-        "zh": "春天",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "square",
-        "zh": "正方形，广场",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stadium",
-        "zh": "体育场，运动场",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stage",
-        "zh": "舞台",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stairs",
-        "zh": "楼梯",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stand",
-        "zh": "站立，忍受",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "star",
-        "zh": "星星",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "station",
-        "zh": "站，所，局",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "step",
-        "zh": "台阶，梯级，脚步声，步骤",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stick",
-        "zh": "枝条",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "still",
-        "zh": "还是，仍然",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sting",
-        "zh": "叮咬",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stone",
-        "zh": "石头，石块",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "store",
-        "zh": "商店，储存",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stormy",
-        "zh": "暴风雨的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "story",
-        "zh": "故事",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "strange",
-        "zh": "奇怪的，陌生的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "strawberry",
-        "zh": "草莓",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stream",
-        "zh": "小溪",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stress",
-        "zh": "强调，压力",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "strong",
-        "zh": "强烈的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "structure",
-        "zh": "结构",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "stuck",
-        "zh": "困住",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "study",
-        "zh": "书房",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "such",
-        "zh": "如此，这样的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "suddenly",
-        "zh": "突然",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "suit",
-        "zh": "套装",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "summarize",
-        "zh": "总结",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sun",
-        "zh": "太阳，阳光",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sunny",
-        "zh": "晴朗的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sunrise",
-        "zh": "日出",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sunset",
-        "zh": "日落，傍晚",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "supermarket",
-        "zh": "超市",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "support",
-        "zh": "帮助，支持，支撑",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "surface",
-        "zh": "地面，表面",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "survive",
-        "zh": "生存，存活",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sweater",
-        "zh": "毛衣",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sweep",
-        "zh": "扫",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "sweet",
-        "zh": "甜的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "switch",
-        "zh": "开关",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "symbolize",
-        "zh": "象征",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "system",
-        "zh": "系统",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "table",
-        "zh": "桌子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "take",
-        "zh": "a break 休息一会儿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "talk",
-        "zh": "谈话，说话",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tall",
-        "zh": "高的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tap",
-        "zh": "水龙头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "task",
-        "zh": "任务，工作",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "taste",
-        "zh": "尝，品，吃，喝",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tea",
-        "zh": "茶，茶水",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "team",
-        "zh": "团队",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "teapot",
-        "zh": "茶壶",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "television",
-        "zh": "电视",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "temperature",
-        "zh": "温度",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tennis",
-        "zh": "网球",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tent",
-        "zh": "帐篷",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "test",
-        "zh": "考试",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "theatre",
-        "zh": "戏院，剧场",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "theirs",
-        "zh": "他们（她们，它们）的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "think",
-        "zh": "思考，认为",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "thirsty",
-        "zh": "口渴的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "throat",
-        "zh": "咽喉，喉咙",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "throw",
-        "zh": "扔",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "thunder",
-        "zh": "雷",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "ticket",
-        "zh": "票",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tidy",
-        "zh": "使整洁，整理",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tie",
-        "zh": "领带",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tiger",
-        "zh": "老虎",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "time",
-        "zh": "时间，时代",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "times",
-        "zh": "倍",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tip",
-        "zh": "实用的提示",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tired",
-        "zh": "疲惫的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "toaster",
-        "zh": "面包机",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "toe",
-        "zh": "脚趾",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "toilet",
-        "zh": "马桶",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tomato",
-        "zh": "西红柿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tongue",
-        "zh": "舌头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "too",
-        "zh": "… to 太…而不能",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tool",
-        "zh": "工具",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tooth",
-        "zh": "牙齿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "toothbrush",
-        "zh": "牙刷",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "toothpaste",
-        "zh": "牙膏",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "top",
-        "zh": "顶部，最高处",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "torch",
-        "zh": "手电筒",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "total",
-        "zh": "总计",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "touch",
-        "zh": "触摸，碰",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tour",
-        "zh": "观光",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "towards",
-        "zh": "向，朝",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "towel",
-        "zh": "毛巾",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tower",
-        "zh": "塔",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "town",
-        "zh": "house 联排式住宅",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "toy",
-        "zh": "玩具",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tradition",
-        "zh": "传统",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "trash",
-        "zh": "垃圾",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "treasure",
-        "zh": "珍宝，珍品，财富",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "treat",
-        "zh": "乐事，款待",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "tree",
-        "zh": "树，树木",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "trick",
-        "zh": "把戏",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "trip",
-        "zh": "旅行",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "trouble",
-        "zh": "问题，困难，麻烦",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "trumpet",
-        "zh": "喇叭",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "try",
-        "zh": "on 试穿",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "turn",
-        "zh": "on 打开",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "unusual",
-        "zh": "不寻常的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "up",
-        "zh": "to 达到（某数量、程度等），至多有",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "useful",
-        "zh": "有用的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "vacation",
-        "zh": "假期",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "valley",
-        "zh": "山谷",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "value",
-        "zh": "价值",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "vase",
-        "zh": "花瓶",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "vegetable",
-        "zh": "蔬菜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "view",
-        "zh": "风景，看法",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "village",
-        "zh": "村庄，村镇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "violin",
-        "zh": "小提琴",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "visit",
-        "zh": "拜访，参观",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "visitor",
-        "zh": "游客，来访者",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "voice",
-        "zh": "声音",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "volleyball",
-        "zh": "排球",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "volunteer",
-        "zh": "自愿做，义务做，无偿做",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "waggle",
-        "zh": "摆动",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wait",
-        "zh": "等待",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "waiter",
-        "zh": "服务员",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wake",
-        "zh": "up 醒来",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "walking",
-        "zh": "stick 手杖，拐棍",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "war",
-        "zh": "战争",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wardrobe",
-        "zh": "衣柜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "warm",
-        "zh": "温暖的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "warmth",
-        "zh": "温暖",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wash",
-        "zh": "洗，洗涤",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "washing",
-        "zh": "machine 洗衣机",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "waste",
-        "zh": "浪费，垃圾",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "watch",
-        "zh": "观看，手表",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "watchtower",
-        "zh": "瞭望台",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "water",
-        "zh": "水",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "waterfall",
-        "zh": "瀑布",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "watermelon",
-        "zh": "西瓜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wave",
-        "zh": "飘动，摇晃",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wear",
-        "zh": "穿，戴",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "weather",
-        "zh": "天气",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "website",
-        "zh": "网站",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "weekend",
-        "zh": "周末",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "weight",
-        "zh": "重量",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "welcome",
-        "zh": "欢迎",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "west",
-        "zh": "西部，西方的，向西",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wheat",
-        "zh": "小麦",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "while",
-        "zh": "在…期间，与…同时",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "whisper",
-        "zh": "低语",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "white",
-        "zh": "白色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wildflowers",
-        "zh": "野花",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "willing",
-        "zh": "愿意，乐意",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "win",
-        "zh": "赢得",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wind",
-        "zh": "风，气流",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "winding",
-        "zh": "蜿蜒的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "windy",
-        "zh": "有风的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wing",
-        "zh": "翅膀，翼",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wipe",
-        "zh": "擦",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wire",
-        "zh": "电线",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wolf",
-        "zh": "狼",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "woman",
-        "zh": "女人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wonder",
-        "zh": "奇迹，奇观，惊奇",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wonderful",
-        "zh": "奇妙的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wonderland",
-        "zh": "非常奇妙的地方；（童话中的）仙境，奇境",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wood",
-        "zh": "木，木头",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "woodcarving",
-        "zh": "木雕，木雕品",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wooden",
-        "zh": "木制的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "word",
-        "zh": "单词",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "work",
-        "zh": "工作，劳动",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "worker",
-        "zh": "工蜂；工人",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "worried",
-        "zh": "担心的，发愁的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "worth",
-        "zh": "值得，有价值，值…钱",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "would",
-        "zh": "将会，就会",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "writer",
-        "zh": "作者，作家",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "wrong",
-        "zh": "错误的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "yard",
-        "zh": "院子",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "year",
-        "zh": "年，年份",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "yellow",
-        "zh": "黄色",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "young",
-        "zh": "年年轻的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "yours",
-        "zh": "你的，您的，你们的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "zebra",
-        "zh": "斑马",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "zero",
-        "zh": "零",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "下午",
-        "zh": "下午",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "今天",
-        "zh": "今天",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "今晚",
-        "zh": "今晚",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "半夜",
-        "zh": "半夜",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "小时",
-        "zh": "小时",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "日程表",
-        "zh": "日程表",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "时钟",
-        "zh": "时钟",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "明天",
-        "zh": "明天",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "昨天",
-        "zh": "昨天",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "晚上",
-        "zh": "晚上",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "智慧",
-        "zh": "智慧",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "每周的",
-        "zh": "每周的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "每年的",
-        "zh": "每年的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "每日的",
-        "zh": "每日的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "每月的",
-        "zh": "每月的",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    },
-    {
-        "en": "秒",
-        "zh": "秒",
-        "pos": "",
-        "notes": "",
-        "frequency": 0
-    }
-]
+            {
+                "en": "Arctic",
+                "zh": "char 北极红点鲑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "BBQ",
+                "zh": "户外烧烤，烤架",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "British",
+                "zh": "英国（人）的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Chinese",
+                "zh": "knot 中国结",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "Olympic",
+                "zh": "奥林匹克运动会的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "T-shirt",
+                "zh": "T恤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "a",
+                "zh": "few 有些，几个",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "able",
+                "zh": "能够",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "above",
+                "zh": "在（或向）…上面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "actress",
+                "zh": "女演员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "add",
+                "zh": "补充说，添加",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "adult",
+                "zh": "成年人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "adventure",
+                "zh": "历险，奇遇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "advice",
+                "zh": "建议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "afraid",
+                "zh": "担心，害怕，恐惧",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "age",
+                "zh": "年龄，时代",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ago",
+                "zh": "以前",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ahlan",
+                "zh": "你好（阿拉伯语问候语）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "air",
+                "zh": "空气",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "alive",
+                "zh": "活着，有活力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "alliance",
+                "zh": "联盟",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "allow",
+                "zh": "使可能，允许",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "alone",
+                "zh": "独自，单独",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "along",
+                "zh": "沿着",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "amaze",
+                "zh": "使惊奇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "among",
+                "zh": "在…中，…之一",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ancient",
+                "zh": "古代的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "angry",
+                "zh": "生气的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "animal",
+                "zh": "动物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ant",
+                "zh": "蚂蚁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "any",
+                "zh": "time 在任何时候",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anyone",
+                "zh": "任何人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "anything",
+                "zh": "任何事物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "app",
+                "zh": "应用软件",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "appliance",
+                "zh": "电器",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arch",
+                "zh": "拱门",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "architectural",
+                "zh": "建筑的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arm",
+                "zh": "手臂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "arrive",
+                "zh": "到达",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "art",
+                "zh": "艺术",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "artifact",
+                "zh": "文物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ask",
+                "zh": "请求",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "asleep",
+                "zh": "睡着",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "at",
+                "zh": "first 起初",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "attack",
+                "zh": "进攻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "attract",
+                "zh": "招引，吸引",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "audience",
+                "zh": "观众",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "audio",
+                "zh": "音频",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "authentically",
+                "zh": "真实地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "author",
+                "zh": "作者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "autumn",
+                "zh": "秋天",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "awake",
+                "zh": "醒着",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "baby",
+                "zh": "婴儿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "badminton",
+                "zh": "羽毛球",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bag",
+                "zh": "袋，包",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "balance",
+                "zh": "平衡能力，平衡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "balcony",
+                "zh": "阳台",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bamboo",
+                "zh": "竹，竹子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "banana",
+                "zh": "香蕉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "basic",
+                "zh": "基本的，初级的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bat",
+                "zh": "蝙蝠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bath",
+                "zh": "浴缸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bathroom",
+                "zh": "浴室，（美）卫生间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "be",
+                "zh": "born 出生，出现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beach",
+                "zh": "海滩",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bear",
+                "zh": "熊",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beat",
+                "zh": "击败",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beauty",
+                "zh": "美丽",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "because",
+                "zh": "of 因为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bed",
+                "zh": "床",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bedroom",
+                "zh": "卧室",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bee",
+                "zh": "蜜蜂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beef",
+                "zh": "牛肉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "beehive",
+                "zh": "蜂巢",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "begin",
+                "zh": "开始",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "behavior",
+                "zh": "行为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "below",
+                "zh": "在（或到）下面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "belt",
+                "zh": "腰带",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bench",
+                "zh": "长椅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "big",
+                "zh": "大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bill",
+                "zh": "账单，纸币",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "binoculars",
+                "zh": "双筒望远镜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "birdwatching",
+                "zh": "观鸟",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bite",
+                "zh": "咬",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bitter",
+                "zh": "苦的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "black",
+                "zh": "黑色的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "blackboard",
+                "zh": "黑板",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "blanket",
+                "zh": "毯子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "blood",
+                "zh": "血液",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "blue",
+                "zh": "蓝色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "body",
+                "zh": "身体",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bone",
+                "zh": "骨头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "boots",
+                "zh": "靴子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bored",
+                "zh": "无聊的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "born",
+                "zh": "出生",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bottle",
+                "zh": "瓶子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "boy",
+                "zh": "男孩",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bread",
+                "zh": "面包",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "break",
+                "zh": "间断，暂停；休息",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "breakfast",
+                "zh": "早餐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "breathe",
+                "zh": "呼吸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bridge",
+                "zh": "桥",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bright",
+                "zh": "明亮的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "broken",
+                "zh": "出了毛病的，破损的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "brown",
+                "zh": "棕色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "brush",
+                "zh": "毛笔",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "build",
+                "zh": "建筑，建造",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "building",
+                "zh": "建筑物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bulb",
+                "zh": "灯泡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "burn",
+                "zh": "燃烧",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "bus",
+                "zh": "公交车",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "butter",
+                "zh": "黄油",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "butterfly",
+                "zh": "蝴蝶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "buy",
+                "zh": "买",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cabbage",
+                "zh": "卷心菜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cabinet",
+                "zh": "柜子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cable",
+                "zh": "car 缆车",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cactus",
+                "zh": "仙人掌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cage",
+                "zh": "笼子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cake",
+                "zh": "蛋糕",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "calendar",
+                "zh": "历法，日历",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "camera",
+                "zh": "照相机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "camp",
+                "zh": "露营",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "camper",
+                "zh": "露营者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "campfire",
+                "zh": "篝火，营火",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "camping",
+                "zh": "露营（活动）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "campsite",
+                "zh": "野营地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "candy",
+                "zh": "糖果",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cap",
+                "zh": "帽子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "capital",
+                "zh": "首都，首府",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "car",
+                "zh": "汽车",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "care",
+                "zh": "for 照料",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "carpet",
+                "zh": "地毯",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "carrot",
+                "zh": "胡萝卜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "carve",
+                "zh": "雕刻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cash",
+                "zh": "现金",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cat",
+                "zh": "猫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ceiling",
+                "zh": "天花板",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "celebrate",
+                "zh": "庆祝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "centre",
+                "zh": "中心区，中心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "chance",
+                "zh": "机会，可能性",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "character",
+                "zh": "人物，角色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cheap",
+                "zh": "便宜的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "check",
+                "zh": "检查，核查",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cheer",
+                "zh": "(sb) up （使）变得高兴，振奋起来",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cheese",
+                "zh": "奶酪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "chemical",
+                "zh": "化学物质",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "chicken",
+                "zh": "鸡肉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "child",
+                "zh": "孩子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "childhood",
+                "zh": "童年，幼年",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "children",
+                "zh": "孩子们",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "china",
+                "zh": "瓷器",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "chocolate",
+                "zh": "巧克力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "chopsticks",
+                "zh": "筷子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cinema",
+                "zh": "电影院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "city",
+                "zh": "城市",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clap",
+                "zh": "拍手",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "classmate",
+                "zh": "同学",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "classroom",
+                "zh": "教室",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clay",
+                "zh": "黏土，陶土",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clean",
+                "zh": "打扫，干净的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clear",
+                "zh": "清晰的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clearly",
+                "zh": "清楚地，明显地，明白地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clerk",
+                "zh": "店员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "climate",
+                "zh": "气候",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "climb",
+                "zh": "爬，攀爬",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clinic",
+                "zh": "诊所",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "close",
+                "zh": "近的，关闭",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "clothes",
+                "zh": "衣服",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cloud",
+                "zh": "云，云彩",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cloudless",
+                "zh": "晴朗的，无云的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cloudy",
+                "zh": "多云的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "coat",
+                "zh": "外套",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "coffee",
+                "zh": "咖啡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "coin",
+                "zh": "硬币",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cold",
+                "zh": "冷的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "collect",
+                "zh": "收集，采集",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "collection",
+                "zh": "作品集，收集物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "college",
+                "zh": "学院，（美）大学",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "color",
+                "zh": "颜色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "colorful",
+                "zh": "五彩缤纷的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "comb",
+                "zh": "梳子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "come",
+                "zh": "来",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "communicate",
+                "zh": "交流",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "community",
+                "zh": "社区",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "company",
+                "zh": "公司",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "conditions",
+                "zh": "环境，条件",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cookie",
+                "zh": "曲奇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cool",
+                "zh": "凉爽的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "corn",
+                "zh": "谷物，（美）玉米",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "corner",
+                "zh": "角落，墙角，街角",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "correct",
+                "zh": "正确的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cost",
+                "zh": "花费，成本",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cottage",
+                "zh": "（尤指）村舍，小别墅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "count",
+                "zh": "数数",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "countryside",
+                "zh": "农村，乡村",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "couple",
+                "zh": "夫妇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "courtyard",
+                "zh": "庭院，天井",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cover",
+                "zh": "占（一片面积）；覆盖，遮盖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cow",
+                "zh": "牛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "craft",
+                "zh": "手艺，工艺",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "craftsperson",
+                "zh": "工匠，手艺人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crazy",
+                "zh": "疯狂的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "creative",
+                "zh": "有创造力的，创造性的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crop",
+                "zh": "庄稼",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "crowded",
+                "zh": "拥挤的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cry",
+                "zh": "哭泣",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cultural",
+                "zh": "文化的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cure",
+                "zh": "治愈",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "curtain",
+                "zh": "窗帘",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "custom",
+                "zh": "习俗",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "customer",
+                "zh": "顾客",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cut",
+                "zh": "剪，切",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cute",
+                "zh": "可爱的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cycle",
+                "zh": "骑自行车",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "cycling",
+                "zh": "骑自行车运动（或活动）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dance",
+                "zh": "跳舞",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "danger",
+                "zh": "危险",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dangerous",
+                "zh": "危险的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dark",
+                "zh": "黑暗的，深色的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "date",
+                "zh": "from 追溯到，始于",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "deal",
+                "zh": "with 处理，应付",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "death",
+                "zh": "死亡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "decide",
+                "zh": "决定",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "defend",
+                "zh": "保卫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "degree",
+                "zh": "度数",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "describe",
+                "zh": "描述",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "desert",
+                "zh": "沙漠，荒漠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "design",
+                "zh": "设计",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "destroy",
+                "zh": "破坏，摧毁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "detail",
+                "zh": "具体情况，细节",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "die",
+                "zh": "死亡，消失",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "different",
+                "zh": "不同的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dining",
+                "zh": "room 餐厅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dirty",
+                "zh": "脏的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dish",
+                "zh": "菜肴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dog",
+                "zh": "狗",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "domestic",
+                "zh": "驯养的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "door",
+                "zh": "门",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "down",
+                "zh": "沮丧，情绪低落",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dragon",
+                "zh": "龙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "draw",
+                "zh": "绘画，拉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dream",
+                "zh": "梦想",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dress",
+                "zh": "连衣裙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "drive",
+                "zh": "驾驶，驱使",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "driver",
+                "zh": "司机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dry",
+                "zh": "干燥的，干的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "duck",
+                "zh": "鸭",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dust",
+                "zh": "除尘",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "dynasty",
+                "zh": "朝代",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "early",
+                "zh": "早的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "easily",
+                "zh": "容易地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "east",
+                "zh": "东部，东方的，向东",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "eat",
+                "zh": "吃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "echo",
+                "zh": "回声",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "egg",
+                "zh": "鸡蛋",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "elephant",
+                "zh": "大象",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "elevator",
+                "zh": "电梯",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "emperor",
+                "zh": "皇帝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "end",
+                "zh": "终止，结尾，尽头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enemy",
+                "zh": "敌人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "engineer",
+                "zh": "工程师",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enjoy",
+                "zh": "享受，喜爱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enjoyable",
+                "zh": "令人愉快的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "enter",
+                "zh": "进入",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "entry",
+                "zh": "进入",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "eraser",
+                "zh": "橡皮擦",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "even",
+                "zh": "甚至，即使",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ever",
+                "zh": "在任何时候，曾经",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "everyday",
+                "zh": "日常的，每天的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "everything",
+                "zh": "一切，每件事",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "exam",
+                "zh": "考试",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "exchange",
+                "zh": "student 交换生",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "exercise",
+                "zh": "锻炼，练习",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "expensive",
+                "zh": "昂贵的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "experience",
+                "zh": "一次）经历，经验",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "express",
+                "zh": "表达，表示",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "eye",
+                "zh": "眼睛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "face",
+                "zh": "脸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "factory",
+                "zh": "工厂，制造厂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fail",
+                "zh": "失败，未能（做到），不及格",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fairy",
+                "zh": "小精灵，仙子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fall",
+                "zh": "进入（某状态），落下，掉落，倒下",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "famous",
+                "zh": "著名的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fantastic",
+                "zh": "极好的，了不起的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fantasy",
+                "zh": "奇幻小说，幻想，想象",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "far",
+                "zh": "远的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "farm",
+                "zh": "农场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "farmer",
+                "zh": "农民",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "farmhouse",
+                "zh": "农场住宅，农舍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "farming",
+                "zh": "耕种，务农",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fascinate",
+                "zh": "使迷恋",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "feel",
+                "zh": "感觉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fence",
+                "zh": "篱笆",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "festival",
+                "zh": "节日",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fever",
+                "zh": "发烧，狂热",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "field",
+                "zh": "田地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fight",
+                "zh": "打架",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "figure",
+                "zh": "（人或动物的）雕像，塑像",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fill",
+                "zh": "（使）充满，填满",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finally",
+                "zh": "最终",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "find",
+                "zh": "out 查明，弄清（情况）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finger",
+                "zh": "手指",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "finish",
+                "zh": "完成",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fire",
+                "zh": "火",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "firework",
+                "zh": "烟火，烟花",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "first-time",
+                "zh": "首次的，第一次的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fish",
+                "zh": "and chips 炸鱼薯条",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fisherman",
+                "zh": "渔民，钓鱼爱好者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fishing",
+                "zh": "钓鱼，捕鱼业（或活动）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fit",
+                "zh": "适合",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fix",
+                "zh": "修理",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flag",
+                "zh": "旗",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flat",
+                "zh": "平坦的，平的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flood",
+                "zh": "（河水等）泛滥，淹没；洪水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "floor",
+                "zh": "楼层，地面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flower",
+                "zh": "花",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "flute",
+                "zh": "笛子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fly",
+                "zh": "飞，苍蝇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "focus",
+                "zh": "集中（注意力、精力等于）；聚焦（于）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "folk",
+                "zh": "传统民间的，民俗的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "follow",
+                "zh": "遵循；跟随",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "foot",
+                "zh": "脚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "forest",
+                "zh": "森林",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "forever",
+                "zh": "永远",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "forget",
+                "zh": "忘记，遗忘",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "form",
+                "zh": "（使）出现，产生",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fox",
+                "zh": "狐狸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "free",
+                "zh": "自由的，有空的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "freezer",
+                "zh": "冷冻柜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fresh",
+                "zh": "淡的，无盐的，新鲜的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fridge",
+                "zh": "冰箱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "friend",
+                "zh": "朋友",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "frog",
+                "zh": "青蛙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "from",
+                "zh": "time to time 偶尔，不时",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "funny",
+                "zh": "滑稽的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "fur",
+                "zh": "（动物的）软毛，毛皮",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "furniture",
+                "zh": "家具",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "future",
+                "zh": "未来",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gallery",
+                "zh": "画廊",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "garbage",
+                "zh": "垃圾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "garden",
+                "zh": "花园",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gate",
+                "zh": "大门",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gathering",
+                "zh": "聚会",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "geography",
+                "zh": "地理",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "get",
+                "zh": "up 起床",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gift",
+                "zh": "礼物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "giraffe",
+                "zh": "长颈鹿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "girl",
+                "zh": "女孩",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "give",
+                "zh": "up 放弃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "glad",
+                "zh": "高兴的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "glasses",
+                "zh": "眼镜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gloves",
+                "zh": "手套",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "goal",
+                "zh": "目标",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "god",
+                "zh": "神",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "golden",
+                "zh": "金色的，美好的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "goldfish",
+                "zh": "金鱼",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "good",
+                "zh": "好的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grade",
+                "zh": "成绩，年级",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grain",
+                "zh": "谷物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gram",
+                "zh": "克",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grape",
+                "zh": "葡萄",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grassland",
+                "zh": "草原，草地，草场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "gray",
+                "zh": "灰色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "great",
+                "zh": "棒的，伟大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "green",
+                "zh": "绿色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ground",
+                "zh": "地面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "group",
+                "zh": "组，群",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grow",
+                "zh": "长大，种植",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "grows",
+                "zh": "增长，生长",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guest",
+                "zh": "客人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guide",
+                "zh": "指南，导游",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "guinea",
+                "zh": "pig 天竺鼠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "had",
+                "zh": "better 应该，最好",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hair",
+                "zh": "头发",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hall",
+                "zh": "大厅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hand",
+                "zh": "交，递，给",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "handicraft",
+                "zh": "手工艺品，手工艺",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hang",
+                "zh": "悬挂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "happen",
+                "zh": "发生，出现",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "happily",
+                "zh": "高兴地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "happiness",
+                "zh": "幸福，快乐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "happy",
+                "zh": "高兴的，幸福的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hard",
+                "zh": "艰难的，努力地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hard-working",
+                "zh": "辛勤的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hat",
+                "zh": "帽子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "head",
+                "zh": "头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "healthy",
+                "zh": "健康的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hear",
+                "zh": "听说，听见",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "heavy",
+                "zh": "沉重的，重大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "helper",
+                "zh": "帮助者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "helpless",
+                "zh": "无助的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hen",
+                "zh": "母鸡",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hero",
+                "zh": "英雄",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hers",
+                "zh": "她的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "herself",
+                "zh": "她自己",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "high",
+                "zh": "有某高度的，高的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hiker",
+                "zh": "徒步旅行者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hiking",
+                "zh": "远足，徒步旅行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hill",
+                "zh": "山丘",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "his",
+                "zh": "他的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "history",
+                "zh": "历史",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hit",
+                "zh": "碰撞；击，打；打击",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hobby",
+                "zh": "爱好",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hold",
+                "zh": "up 支撑得住",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hole",
+                "zh": "孔，洞",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "holiday",
+                "zh": "假期",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "home",
+                "zh": "家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "honey",
+                "zh": "蜂蜜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "honeybee",
+                "zh": "蜜蜂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "horse",
+                "zh": "riding 骑马",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hospital",
+                "zh": "医院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "host",
+                "zh": "主人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hotel",
+                "zh": "旅馆",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "house",
+                "zh": "房子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "huge",
+                "zh": "巨大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "human",
+                "zh": "人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hundred",
+                "zh": "许多，大量，一百",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hungry",
+                "zh": "饥饿的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hurry",
+                "zh": "匆忙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "hutong",
+                "zh": "胡同",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "idea",
+                "zh": "想法",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "if",
+                "zh": "是否",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ill",
+                "zh": "生病的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "imagined",
+                "zh": "想象的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "in",
+                "zh": "the face of 面对（困难等）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "information",
+                "zh": "信息，消息",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "inkstick",
+                "zh": "墨（条）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "innocent",
+                "zh": "天真无邪的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "insect",
+                "zh": "昆虫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "interest",
+                "zh": "吸引力，趣味，兴趣",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "interesting",
+                "zh": "有趣的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "interruption",
+                "zh": "干扰",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "introduce",
+                "zh": "介绍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "invade",
+                "zh": "侵略",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "invite",
+                "zh": "邀请",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "itself",
+                "zh": "它本身",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "jacket",
+                "zh": "夹克",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "jeans",
+                "zh": "牛仔裤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "joke",
+                "zh": "笑话",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "juice",
+                "zh": "果汁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "jungle",
+                "zh": "丛林",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "just",
+                "zh": "刚才，方才",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kangaroo",
+                "zh": "袋鼠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "keep",
+                "zh": "保持，饲养",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kettle",
+                "zh": "水壶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "keyboard",
+                "zh": "键盘",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kid",
+                "zh": "小孩",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kilometre",
+                "zh": "千米",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "kitchen",
+                "zh": "厨房",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "knife",
+                "zh": "刀",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "land",
+                "zh": "陆地，土地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "landform",
+                "zh": "地貌，地形",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "landscape",
+                "zh": "景色，风景画",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lantern",
+                "zh": "灯笼",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "laptop",
+                "zh": "笔记本电脑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "largely",
+                "zh": "主要地，在很大程度上",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "largest",
+                "zh": "最大的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "last",
+                "zh": "最后的，持续",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "later",
+                "zh": "后来，随后",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "laugh",
+                "zh": "笑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "law",
+                "zh": "法律，法规",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lawyer",
+                "zh": "律师",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "leaf",
+                "zh": "叶子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lean",
+                "zh": "倾斜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "leg",
+                "zh": "腿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lend",
+                "zh": "借给，借出",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "letters",
+                "zh": "信，字母",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lie",
+                "zh": "躺，平卧，位于",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "life",
+                "zh": "生活，生命",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lifestyle",
+                "zh": "生活方式",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lift",
+                "zh": "举起",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "light",
+                "zh": "轻的，浅色的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lighthouse",
+                "zh": "灯塔",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lightning",
+                "zh": "闪电",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lion",
+                "zh": "狮子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "listen",
+                "zh": "听",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "little",
+                "zh": "by little 缓慢地，逐渐地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "live",
+                "zh": "居住，生活",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "living",
+                "zh": "room 客厅，起居室",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "local",
+                "zh": "当地的，地方的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lock",
+                "zh": "锁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "locked",
+                "zh": "锁住的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lonely",
+                "zh": "孤独的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "long",
+                "zh": "长的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "look",
+                "zh": "after 照料",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lose",
+                "zh": "失去，丧失",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lost",
+                "zh": "迷路的，丢失的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "loud",
+                "zh": "大声的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "love",
+                "zh": "爱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "low",
+                "zh": "低的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "luck",
+                "zh": "运气",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "luckily",
+                "zh": "幸好，幸运地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lunar",
+                "zh": "农历，阴历",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "lunch",
+                "zh": "午餐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "machine",
+                "zh": "机器，机械装置",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "magazine",
+                "zh": "杂志",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "magic",
+                "zh": "魔法，魔术，魔力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "magical",
+                "zh": "有魔力的，奇妙的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "magnificent",
+                "zh": "宏伟的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "main",
+                "zh": "主要的，最重要的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mall",
+                "zh": "购物中心",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "man",
+                "zh": "男人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "map",
+                "zh": "地图",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "market",
+                "zh": "市场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "match",
+                "zh": "比赛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "matter",
+                "zh": "要紧，事情",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mattress",
+                "zh": "床垫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meal",
+                "zh": "膳食",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mean",
+                "zh": "表示…的意思，意味着",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meat",
+                "zh": "肉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "medicine",
+                "zh": "药物，医学",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "meeting",
+                "zh": "会议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mend",
+                "zh": "修理",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "menu",
+                "zh": "菜单",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "metre",
+                "zh": "米",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "microwave",
+                "zh": "微波炉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "might",
+                "zh": "可能",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mile",
+                "zh": "英里",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "milk",
+                "zh": "牛奶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "million",
+                "zh": "一百万",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mind",
+                "zh": "头脑，思考能力，聪明人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mine",
+                "zh": "我的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "minus",
+                "zh": "减去",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mistake",
+                "zh": "错误",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mobile",
+                "zh": "home 活动住房",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "modern",
+                "zh": "现代的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "monkey",
+                "zh": "猴子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "month",
+                "zh": "月，月份",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "moon",
+                "zh": "月亮",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mop",
+                "zh": "拖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mosquito",
+                "zh": "蚊子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mostly",
+                "zh": "主要地，通常",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mould",
+                "zh": "模具",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mountain",
+                "zh": "高山，山脉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mouse",
+                "zh": "老鼠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mouth",
+                "zh": "嘴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "mug",
+                "zh": "大杯子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "multiply",
+                "zh": "乘以",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "name",
+                "zh": "命名",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "narrow",
+                "zh": "狭窄的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "national",
+                "zh": "国家的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "natural",
+                "zh": "自然的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neat",
+                "zh": "整洁的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neck",
+                "zh": "颈，脖子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "need",
+                "zh": "需要",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neighbor",
+                "zh": "邻居",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neighborhood",
+                "zh": "社区",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neighbour",
+                "zh": "邻居",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "neighbourhood",
+                "zh": "街区，邻近的地方",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "news",
+                "zh": "新闻",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "newspaper",
+                "zh": "报纸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "next",
+                "zh": "to 紧邻，在…近旁",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "no",
+                "zh": "problem 没什么，不客气；没问题",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nobody",
+                "zh": "没有人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "noise",
+                "zh": "声音，噪声",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "noisy",
+                "zh": "吵闹的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "none",
+                "zh": "没有一个",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "noodle",
+                "zh": "面条",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "noon",
+                "zh": "正午，中午",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "north",
+                "zh": "北部，北方的，向北",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "north-west",
+                "zh": "西北的，西北部；向西北",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "northern",
+                "zh": "北方的，北部的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nose",
+                "zh": "鼻子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "note",
+                "zh": "便条，笔记，音符",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nothing",
+                "zh": "没有什么",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "notice",
+                "zh": "注意到；留意",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "number",
+                "zh": "号码，数字，数量",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "nurse",
+                "zh": "保姆，护士",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "object",
+                "zh": "物品，东西",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "observe",
+                "zh": "观察",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ocean",
+                "zh": "海洋",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "officer",
+                "zh": "高级职员，官员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "often",
+                "zh": "经常",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "oil",
+                "zh": "油",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "older",
+                "zh": "年长的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "on",
+                "zh": "one’s own 独自，独立地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "once",
+                "zh": "曾经",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "onion",
+                "zh": "洋葱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "opera",
+                "zh": "歌剧",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "orange",
+                "zh": "橙色的，橙子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "order",
+                "zh": "点菜，命令",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ordinary",
+                "zh": "普通的，平常的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "organize",
+                "zh": "组织，安排",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "organized",
+                "zh": "有组织的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ours",
+                "zh": "我们的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "outdoor",
+                "zh": "室外的，户外的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "overnight",
+                "zh": "在晚上，一夜之间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "own",
+                "zh": "自己的，本人的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "owner",
+                "zh": "主人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "oxygen",
+                "zh": "氧，氧气",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "packet",
+                "zh": "小包，袋",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "paint",
+                "zh": "画画，油漆",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "paintbrush",
+                "zh": "画笔",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "painter",
+                "zh": "画家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "painting",
+                "zh": "绘画",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pair",
+                "zh": "一双，一对",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "palace",
+                "zh": "宫殿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pan",
+                "zh": "平底锅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "panda",
+                "zh": "熊猫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pants",
+                "zh": "裤子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "paper-cut",
+                "zh": "剪纸（作品）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "parent",
+                "zh": "父母",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "park",
+                "zh": "公园",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "parrot",
+                "zh": "鹦鹉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "part",
+                "zh": "部分",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "partner",
+                "zh": "搭档",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "party",
+                "zh": "派对",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pass",
+                "zh": "by 经过，通过",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "past",
+                "zh": "过去",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "path",
+                "zh": "小路，小径",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pay",
+                "zh": "付钱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "peace",
+                "zh": "和平",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "peach",
+                "zh": "桃，桃子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pear",
+                "zh": "梨",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pen",
+                "zh": "钢笔",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "people",
+                "zh": "人，人们",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perfect",
+                "zh": "完美的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "perseverance",
+                "zh": "毅力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pet",
+                "zh": "宠物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "phone",
+                "zh": "电话",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "photo",
+                "zh": "照片",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "piano",
+                "zh": "钢琴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pick",
+                "zh": "up 捡起，拾起",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "picnic",
+                "zh": "野餐",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "picture",
+                "zh": "图片，画面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pie",
+                "zh": "派",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "piece",
+                "zh": "碎片，一块",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pig",
+                "zh": "猪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pill",
+                "zh": "药丸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pillow",
+                "zh": "枕头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pine",
+                "zh": "松树",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ping-pong",
+                "zh": "乒乓球",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pink",
+                "zh": "粉红色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "place",
+                "zh": "of interest 名胜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plain",
+                "zh": "平原",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plan",
+                "zh": "计划",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "planet",
+                "zh": "行星",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plant",
+                "zh": "植物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plate",
+                "zh": "板块",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "play",
+                "zh": "玩，演奏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "player",
+                "zh": "运动员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "playful",
+                "zh": "活泼好动的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plot",
+                "zh": "故事情节",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "plug",
+                "zh": "插头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "poem",
+                "zh": "诗歌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "poet",
+                "zh": "诗人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "police",
+                "zh": "station 警察局，派出所",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "poor",
+                "zh": "贫穷的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pork",
+                "zh": "猪肉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "post",
+                "zh": "发布，邮寄",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "postcard",
+                "zh": "明信片",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "poster",
+                "zh": "海报",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "power",
+                "zh": "力量；电力供应",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "powerful",
+                "zh": "力量大的，有影响力的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "powerfully",
+                "zh": "强大地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "practical",
+                "zh": "实用的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "practice",
+                "zh": "练习，训练",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "present",
+                "zh": "现在",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "price",
+                "zh": "价格",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "printer",
+                "zh": "打印机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "produce",
+                "zh": "生产",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "protect",
+                "zh": "保护",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "proud",
+                "zh": "自豪的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "public",
+                "zh": "公共的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "publish",
+                "zh": "出版；发表（作品）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "pure",
+                "zh": "纯净的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "purple",
+                "zh": "紫色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "purr",
+                "zh": "（猫）发出呼噜声",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "push",
+                "zh": "推",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "quality",
+                "zh": "品质，质量，人品，素质",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "quarter",
+                "zh": "四分之一",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "quickly",
+                "zh": "迅速地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "quietly",
+                "zh": "安静地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rabbit",
+                "zh": "兔子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "radar",
+                "zh": "雷达",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "radio",
+                "zh": "收音机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rain",
+                "zh": "雨，下雨",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rainforest",
+                "zh": "（热带）雨林",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "raise",
+                "zh": "筹募",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "raising",
+                "zh": "升高，增加",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rapidly",
+                "zh": "迅速地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "reach",
+                "zh": "够得着；抵达，实现，达到",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "read",
+                "zh": "阅读",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ready",
+                "zh": "准备好的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "real",
+                "zh": "真实的，实际存在的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "recommend",
+                "zh": "推荐，建议",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "red",
+                "zh": "红色的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relationship",
+                "zh": "关系",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relax",
+                "zh": "放松，休息",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relaxed",
+                "zh": "放松的，冷静的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "relaxing",
+                "zh": "令人放松的，轻松的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "repair",
+                "zh": "修理",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "respect",
+                "zh": "尊敬，尊重",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rest",
+                "zh": "休息",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "restaurant",
+                "zh": "餐厅，餐馆",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rice",
+                "zh": "米饭",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ride",
+                "zh": "骑，驾驶，搭乘",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ring",
+                "zh": "戒指",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rise",
+                "zh": "发源；上升，提高；上升，增强，提高",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "road",
+                "zh": "道路",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rock",
+                "zh": "岩石",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "roll",
+                "zh": "out 展开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "roller",
+                "zh": "滑轮的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "roof",
+                "zh": "屋顶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "room",
+                "zh": "房间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rotten",
+                "zh": "腐烂的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "round",
+                "zh": "圆形的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "row",
+                "zh": "划（船）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "rubbish",
+                "zh": "垃圾，废弃物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ruler",
+                "zh": "尺子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "run",
+                "zh": "跑，奔跑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "safely",
+                "zh": "安全地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "safety",
+                "zh": "安全，平安，安全处",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sale",
+                "zh": "特价，销售",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "salty",
+                "zh": "咸的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sand",
+                "zh": "沙，沙子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sandstone",
+                "zh": "砂岩",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sandwich",
+                "zh": "三明治",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sausage",
+                "zh": "香肠",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "save",
+                "zh": "拯救，救助",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "say",
+                "zh": "说，讲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scarf",
+                "zh": "围巾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scary",
+                "zh": "可怕的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scene",
+                "zh": "场面，现场，（戏剧等的）场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "school",
+                "zh": "学校",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scientist",
+                "zh": "科学家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "scissors",
+                "zh": "剪刀",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "score",
+                "zh": "得分",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "screen",
+                "zh": "屏幕",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "seagrass",
+                "zh": "海草",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "seaside",
+                "zh": "海边，海滨",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "season",
+                "zh": "季节",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "see",
+                "zh": "看见",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "seem",
+                "zh": "似乎，看起来",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sentence",
+                "zh": "句子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "series",
+                "zh": "连续剧；（书、文章等的）系列；一系列",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "set",
+                "zh": "为…设置背景于；创立",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "several",
+                "zh": "几个，一些",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shall",
+                "zh": "表示提出或征求意见，将要，将会",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shampoo",
+                "zh": "洗发水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shape",
+                "zh": "形状",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "share",
+                "zh": "分享",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sheep",
+                "zh": "羊",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sheet",
+                "zh": "床单",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shelf",
+                "zh": "书架",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shining",
+                "zh": "闪耀的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shirt",
+                "zh": "衬衫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shoes",
+                "zh": "鞋子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shop",
+                "zh": "商店",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shopkeeper",
+                "zh": "店主",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shopping",
+                "zh": "购物",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shout",
+                "zh": "喊叫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "show",
+                "zh": "sb around 领某人参观",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "shut",
+                "zh": "关闭",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sick",
+                "zh": "生病的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "side",
+                "zh": "一侧，一边",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "siheyuan",
+                "zh": "四合院",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "silent",
+                "zh": "沉默的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "silk",
+                "zh": "丝绸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "silly",
+                "zh": "愚蠢的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "simple",
+                "zh": "简单的，简朴的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sing",
+                "zh": "唱歌",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sink",
+                "zh": "水槽",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "size",
+                "zh": "尺寸",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "skate",
+                "zh": "（早）冰鞋",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "skating",
+                "zh": "滑冰，溜冰",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "skiing",
+                "zh": "滑雪（运动）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "skirt",
+                "zh": "短裙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sky",
+                "zh": "天空",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sleep",
+                "zh": "睡觉",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sleeping",
+                "zh": "bag 睡袋",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "slowly",
+                "zh": "缓慢地",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "small",
+                "zh": "小的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smart",
+                "zh": "聪明的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smell",
+                "zh": "闻，嗅（气味）",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smile",
+                "zh": "微笑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "smoke",
+                "zh": "抽烟，烟",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "snail",
+                "zh": "蜗牛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "snake",
+                "zh": "蛇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "snow",
+                "zh": "雪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "snowy",
+                "zh": "下雪的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soap",
+                "zh": "肥皂",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "socket",
+                "zh": "插座",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "socks",
+                "zh": "袜子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soda",
+                "zh": "苏打水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sofa",
+                "zh": "沙发",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soldier",
+                "zh": "士兵",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sombrero",
+                "zh": "宽边帽",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "someone",
+                "zh": "某人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "son",
+                "zh": "儿子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "song",
+                "zh": "歌曲",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soon",
+                "zh": "很快",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sore",
+                "zh": "疼痛的，酸痛的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sound",
+                "zh": "声音",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "soup",
+                "zh": "汤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sour",
+                "zh": "酸的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "south",
+                "zh": "南部，南方的，向南",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "south-west",
+                "zh": "西南，西南方的，向西南",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "space",
+                "zh": "空间",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "special",
+                "zh": "特别的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spell",
+                "zh": "拼写",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spider",
+                "zh": "蜘蛛",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spirit",
+                "zh": "精神",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spoil",
+                "zh": "变质",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spoon",
+                "zh": "勺",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "spring",
+                "zh": "春天",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "square",
+                "zh": "正方形，广场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stadium",
+                "zh": "体育场，运动场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stage",
+                "zh": "舞台",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stairs",
+                "zh": "楼梯",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stand",
+                "zh": "站立，忍受",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "star",
+                "zh": "星星",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "station",
+                "zh": "站，所，局",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "step",
+                "zh": "台阶，梯级，脚步声，步骤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stick",
+                "zh": "枝条",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "still",
+                "zh": "还是，仍然",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sting",
+                "zh": "叮咬",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stone",
+                "zh": "石头，石块",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "store",
+                "zh": "商店，储存",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stormy",
+                "zh": "暴风雨的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "story",
+                "zh": "故事",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strange",
+                "zh": "奇怪的，陌生的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strawberry",
+                "zh": "草莓",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stream",
+                "zh": "小溪",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stress",
+                "zh": "强调，压力",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "strong",
+                "zh": "强烈的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "structure",
+                "zh": "结构",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "stuck",
+                "zh": "困住",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "study",
+                "zh": "书房",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "such",
+                "zh": "如此，这样的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suddenly",
+                "zh": "突然",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "suit",
+                "zh": "套装",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "summarize",
+                "zh": "总结",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sun",
+                "zh": "太阳，阳光",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sunny",
+                "zh": "晴朗的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sunrise",
+                "zh": "日出",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sunset",
+                "zh": "日落，傍晚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "supermarket",
+                "zh": "超市",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "support",
+                "zh": "帮助，支持，支撑",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "surface",
+                "zh": "地面，表面",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "survive",
+                "zh": "生存，存活",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sweater",
+                "zh": "毛衣",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sweep",
+                "zh": "扫",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "sweet",
+                "zh": "甜的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "switch",
+                "zh": "开关",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "symbolize",
+                "zh": "象征",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "system",
+                "zh": "系统",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "table",
+                "zh": "桌子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "take",
+                "zh": "a break 休息一会儿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "talk",
+                "zh": "谈话，说话",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tall",
+                "zh": "高的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tap",
+                "zh": "水龙头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "task",
+                "zh": "任务，工作",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "taste",
+                "zh": "尝，品，吃，喝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tea",
+                "zh": "茶，茶水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "team",
+                "zh": "团队",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "teapot",
+                "zh": "茶壶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "television",
+                "zh": "电视",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "temperature",
+                "zh": "温度",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tennis",
+                "zh": "网球",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tent",
+                "zh": "帐篷",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "test",
+                "zh": "考试",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "theatre",
+                "zh": "戏院，剧场",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "theirs",
+                "zh": "他们（她们，它们）的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "think",
+                "zh": "思考，认为",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thirsty",
+                "zh": "口渴的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "throat",
+                "zh": "咽喉，喉咙",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "throw",
+                "zh": "扔",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "thunder",
+                "zh": "雷",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "ticket",
+                "zh": "票",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tidy",
+                "zh": "使整洁，整理",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tie",
+                "zh": "领带",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tiger",
+                "zh": "老虎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "time",
+                "zh": "时间，时代",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "times",
+                "zh": "倍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tip",
+                "zh": "实用的提示",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tired",
+                "zh": "疲惫的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "toaster",
+                "zh": "面包机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "toe",
+                "zh": "脚趾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "toilet",
+                "zh": "马桶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tomato",
+                "zh": "西红柿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tongue",
+                "zh": "舌头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "too",
+                "zh": "… to 太…而不能",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tool",
+                "zh": "工具",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tooth",
+                "zh": "牙齿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "toothbrush",
+                "zh": "牙刷",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "toothpaste",
+                "zh": "牙膏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "top",
+                "zh": "顶部，最高处",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "torch",
+                "zh": "手电筒",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "total",
+                "zh": "总计",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "touch",
+                "zh": "触摸，碰",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tour",
+                "zh": "观光",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "towards",
+                "zh": "向，朝",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "towel",
+                "zh": "毛巾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tower",
+                "zh": "塔",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "town",
+                "zh": "house 联排式住宅",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "toy",
+                "zh": "玩具",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tradition",
+                "zh": "传统",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "trash",
+                "zh": "垃圾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "treasure",
+                "zh": "珍宝，珍品，财富",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "treat",
+                "zh": "乐事，款待",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "tree",
+                "zh": "树，树木",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "trick",
+                "zh": "把戏",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "trip",
+                "zh": "旅行",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "trouble",
+                "zh": "问题，困难，麻烦",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "trumpet",
+                "zh": "喇叭",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "try",
+                "zh": "on 试穿",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "turn",
+                "zh": "on 打开",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "unusual",
+                "zh": "不寻常的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "up",
+                "zh": "to 达到（某数量、程度等），至多有",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "useful",
+                "zh": "有用的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vacation",
+                "zh": "假期",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "valley",
+                "zh": "山谷",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "value",
+                "zh": "价值",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vase",
+                "zh": "花瓶",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "vegetable",
+                "zh": "蔬菜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "view",
+                "zh": "风景，看法",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "village",
+                "zh": "村庄，村镇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "violin",
+                "zh": "小提琴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "visit",
+                "zh": "拜访，参观",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "visitor",
+                "zh": "游客，来访者",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "voice",
+                "zh": "声音",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "volleyball",
+                "zh": "排球",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "volunteer",
+                "zh": "自愿做，义务做，无偿做",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "waggle",
+                "zh": "摆动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wait",
+                "zh": "等待",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "waiter",
+                "zh": "服务员",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wake",
+                "zh": "up 醒来",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "walking",
+                "zh": "stick 手杖，拐棍",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "war",
+                "zh": "战争",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wardrobe",
+                "zh": "衣柜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "warm",
+                "zh": "温暖的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "warmth",
+                "zh": "温暖",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wash",
+                "zh": "洗，洗涤",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "washing",
+                "zh": "machine 洗衣机",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "waste",
+                "zh": "浪费，垃圾",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "watch",
+                "zh": "观看，手表",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "watchtower",
+                "zh": "瞭望台",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "water",
+                "zh": "水",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "waterfall",
+                "zh": "瀑布",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "watermelon",
+                "zh": "西瓜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wave",
+                "zh": "飘动，摇晃",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wear",
+                "zh": "穿，戴",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "weather",
+                "zh": "天气",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "website",
+                "zh": "网站",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "weekend",
+                "zh": "周末",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "weight",
+                "zh": "重量",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "welcome",
+                "zh": "欢迎",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "west",
+                "zh": "西部，西方的，向西",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wheat",
+                "zh": "小麦",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "while",
+                "zh": "在…期间，与…同时",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "whisper",
+                "zh": "低语",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "white",
+                "zh": "白色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wildflowers",
+                "zh": "野花",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "willing",
+                "zh": "愿意，乐意",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "win",
+                "zh": "赢得",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wind",
+                "zh": "风，气流",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "winding",
+                "zh": "蜿蜒的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "windy",
+                "zh": "有风的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wing",
+                "zh": "翅膀，翼",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wipe",
+                "zh": "擦",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wire",
+                "zh": "电线",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wolf",
+                "zh": "狼",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "woman",
+                "zh": "女人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wonder",
+                "zh": "奇迹，奇观，惊奇",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wonderful",
+                "zh": "奇妙的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wonderland",
+                "zh": "非常奇妙的地方；（童话中的）仙境，奇境",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wood",
+                "zh": "木，木头",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "woodcarving",
+                "zh": "木雕，木雕品",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wooden",
+                "zh": "木制的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "word",
+                "zh": "单词",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "work",
+                "zh": "工作，劳动",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worker",
+                "zh": "工蜂；工人",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worried",
+                "zh": "担心的，发愁的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "worth",
+                "zh": "值得，有价值，值…钱",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "would",
+                "zh": "将会，就会",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "writer",
+                "zh": "作者，作家",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "wrong",
+                "zh": "错误的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "yard",
+                "zh": "院子",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "year",
+                "zh": "年，年份",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "yellow",
+                "zh": "黄色",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "young",
+                "zh": "年年轻的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "yours",
+                "zh": "你的，您的，你们的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "zebra",
+                "zh": "斑马",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "zero",
+                "zh": "零",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "下午",
+                "zh": "下午",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "今天",
+                "zh": "今天",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "今晚",
+                "zh": "今晚",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "半夜",
+                "zh": "半夜",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "小时",
+                "zh": "小时",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "日程表",
+                "zh": "日程表",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "时钟",
+                "zh": "时钟",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "明天",
+                "zh": "明天",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "昨天",
+                "zh": "昨天",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "晚上",
+                "zh": "晚上",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "智慧",
+                "zh": "智慧",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "每周的",
+                "zh": "每周的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "每年的",
+                "zh": "每年的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "每日的",
+                "zh": "每日的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "每月的",
+                "zh": "每月的",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "秒",
+                "zh": "秒",
+                "pos": "",
+                "notes": "",
+                "frequency": 0
+            }
+        ]
     },
     {
         "grade": "初二",
@@ -8222,13 +8222,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "guest",
-                "zh": "house 小旅馆",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "tourism",
                 "zh": "旅游业，观光业",
                 "pos": "",
@@ -8238,13 +8231,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "empty",
                 "zh": "空的",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "public",
-                "zh": "公共的;公众的",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -8418,13 +8404,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "make",
-                "zh": "one’s way (to) 前往",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "dreamlike",
                 "zh": "梦幻（般）的",
                 "pos": "",
@@ -8518,13 +8497,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "theme",
                 "zh": "主题",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "theme",
-                "zh": "park 主题乐园",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -8635,13 +8607,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "as",
-                "zh": "for 至于，关于",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "slice",
                 "zh": "部分;薄片，块",
                 "pos": "",
@@ -8670,29 +8635,8 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "no",
-                "zh": "doubt 无疑",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "a",
-                "zh": "bit of everything 什么都有点儿",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "count",
                 "zh": "数数",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "count",
-                "zh": "down 倒计时",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -8756,13 +8700,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "sign",
                 "zh": "签（名）;和…签约",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "sign",
-                "zh": "up (for sth) 报名（参加课程）",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -8929,13 +8866,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "a",
-                "zh": "good read 好读物，好书（或文章等）",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "fiction",
                 "zh": "小说",
                 "pos": "",
@@ -8950,13 +8880,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "make",
-                "zh": "up 创作，编写;编造",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "novel",
                 "zh": "（长篇）小说",
                 "pos": "",
@@ -8966,13 +8889,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "crash",
                 "zh": "撞击，碰撞",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "be",
-                "zh": "tired out 累极了",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -9237,13 +9153,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "excuse",
-                "zh": "me 劳驾，请原谅",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "within",
                 "zh": "在…之内",
                 "pos": "",
@@ -9358,13 +9267,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "on",
                 "zh": "time 准时",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "feel",
-                "zh": "at home 舒适自在，不拘束",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -9538,13 +9440,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "in",
-                "zh": "case 以防万一",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "run",
                 "zh": "into sb/sth 撞上",
                 "pos": "",
@@ -9561,13 +9456,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "past",
                 "zh": "在另一边，到另一侧",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "in",
-                "zh": "one’s way 挡着…的路",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -9624,13 +9512,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "respectfully",
                 "zh": "尊敬地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "move",
-                "zh": "使感动，打动",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -9722,13 +9603,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "unless",
                 "zh": "除非",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "be",
-                "zh": "about to do sth 即将，正要（做某事）",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -9841,20 +9715,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "remind",
                 "zh": "提醒",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "remind",
-                "zh": "sb to do sth 提醒某人做某事",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "seat",
-                "zh": "belt （汽车或飞机上的）安全带",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -10014,13 +9874,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "suffer",
-                "zh": "from 患…病，遭受",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "blood",
                 "zh": "血，血液",
                 "pos": "",
@@ -10133,13 +9986,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "on",
-                "zh": "board 在飞机上（或船上、火车上）",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "train",
                 "zh": "培训，训练",
                 "pos": "",
@@ -10163,13 +10009,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "operate",
                 "zh": "动手术",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "operate",
-                "zh": "on (给…)做手术",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -10210,22 +10049,8 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "blind",
-                "zh": "使失明",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "addition",
                 "zh": "增加;增加物",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "in",
-                "zh": "addition (to) 除…以外（还）",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -10240,27 +10065,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
             {
                 "en": "leaflet",
                 "zh": "传单，小册子",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "hand",
-                "zh": "out 分发",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "aim",
-                "zh": "力争做到;瞄准",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "benefit",
-                "zh": "优势，益处，成效",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -10406,13 +10210,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "separate",
-                "zh": "... into 把…分成",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "recycle",
                 "zh": "回收利用",
                 "pos": "",
@@ -10455,13 +10252,6 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "break",
-                "zh": "违犯，违背;（使）破，裂，碎",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "punish",
                 "zh": "惩罚",
                 "pos": "",
@@ -10490,22 +10280,8 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "frequency": 0
             },
             {
-                "en": "run",
-                "zh": "out 用完，耗尽",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
                 "en": "widely",
                 "zh": "广泛地，普遍地",
-                "pos": "",
-                "notes": "",
-                "frequency": 0
-            },
-            {
-                "en": "make",
-                "zh": "a difference 有作用，有影响",
                 "pos": "",
                 "notes": "",
                 "frequency": 0
@@ -10634,6 +10410,4171 @@ window.WORD_SNAP_BUILTIN_LISTS = [
                 "zh": "电，电能",
                 "pos": "",
                 "notes": "",
+                "frequency": 0
+            },
+            {
+                "en": "passage",
+                "zh": "文章",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "trip",
+                "zh": "旅行",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "pleasant",
+                "zh": "令人愉快的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "polite",
+                "zh": "有礼貌的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "share",
+                "zh": "分享",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "snack",
+                "zh": "零食",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "family",
+                "zh": "家族，家庭",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "friendly",
+                "zh": "友好的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "beautiful",
+                "zh": "美丽的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "attract",
+                "zh": "吸引",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "visitor",
+                "zh": "游客",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "mistake",
+                "zh": "错误",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "accident",
+                "zh": "事故",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hospital",
+                "zh": "医院",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "life",
+                "zh": "生命，生活",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "call on",
+                "zh": "号召",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "volunteer",
+                "zh": "志愿者",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "pay attention to",
+                "zh": "注意",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "look forward to",
+                "zh": "期待",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "take care of",
+                "zh": "照顾",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sign up for",
+                "zh": "报名参加",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "serious",
+                "zh": "严肃的，严重的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "illness",
+                "zh": "疾病",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "medicine",
+                "zh": "药",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "encouragement",
+                "zh": "鼓励",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "suffer from",
+                "zh": "遭受……折磨",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "learn from",
+                "zh": "向……学习",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "daily",
+                "zh": "日常的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "important",
+                "zh": "重要的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "quiet",
+                "zh": "安静的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "loud",
+                "zh": "大声的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "busy",
+                "zh": "忙碌的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "smooth",
+                "zh": "顺利的，光滑的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "meet the needs",
+                "zh": "满足需求",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "space",
+                "zh": "空间",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "voice",
+                "zh": "声音",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "grow",
+                "zh": "变得，生长",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "louder",
+                "zh": "更大声的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stop",
+                "zh": "停止",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "simply",
+                "zh": "仅仅，简单地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "nearly",
+                "zh": "几乎",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "detail",
+                "zh": "细节",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "film",
+                "zh": "电影",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "enjoy",
+                "zh": "享受，喜爱",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "experience",
+                "zh": "经验，经历",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "saving",
+                "zh": "储蓄，存款",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "government",
+                "zh": "政府",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "provide",
+                "zh": "提供",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "special",
+                "zh": "专门的，特别的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sidewalk",
+                "zh": "人行道",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "enough",
+                "zh": "足够的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "according to",
+                "zh": "根据",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "preparation",
+                "zh": "准备",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "screen",
+                "zh": "银幕，屏幕，放映",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "speak",
+                "zh": "说话",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "happen",
+                "zh": "发生",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "thanks to",
+                "zh": "多亏了，由于",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "chance",
+                "zh": "机会",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "communicate",
+                "zh": "交流",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "connect",
+                "zh": "连接",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "homeless",
+                "zh": "无家可归的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "rare",
+                "zh": "罕见的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "easily",
+                "zh": "容易地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "advice",
+                "zh": "建议",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "touch",
+                "zh": "触摸",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sight",
+                "zh": "视力，看见",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "taste",
+                "zh": "尝，味道",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "short",
+                "zh": "短的，矮的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "long",
+                "zh": "长的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fast",
+                "zh": "快的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "slow",
+                "zh": "慢的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "water",
+                "zh": "水",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "flow",
+                "zh": "流动",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "river",
+                "zh": "河流",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "located",
+                "zh": "位于",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "continent",
+                "zh": "大陆，洲",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "country",
+                "zh": "国家",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "north",
+                "zh": "向北，北方",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "south",
+                "zh": "向南，南方",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "system",
+                "zh": "系统",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ocean",
+                "zh": "海洋",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "start",
+                "zh": "开始",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "over",
+                "zh": "超过",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "think",
+                "zh": "认为",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "always",
+                "zh": "总是",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "direction",
+                "zh": "方向",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "point",
+                "zh": "地点，分数",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "longer",
+                "zh": "更长的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "second",
+                "zh": "第二的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "mainly",
+                "zh": "主要地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fact",
+                "zh": "事实",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "world",
+                "zh": "世界",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "wooden",
+                "zh": "木制的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "pole",
+                "zh": "杆子，柱子",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "gate",
+                "zh": "大门",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "capital",
+                "zh": "首都",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "front",
+                "zh": "前面",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "take",
+                "zh": "拿，带走",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "piece",
+                "zh": "块，片",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "simple",
+                "zh": "简单的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "job",
+                "zh": "工作",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "reward",
+                "zh": "奖励",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "large",
+                "zh": "巨大的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "pass",
+                "zh": "通过，经过",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "step forward",
+                "zh": "向前迈步",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "make a joke",
+                "zh": "开玩笑",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hearing",
+                "zh": "听到",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "answer",
+                "zh": "回答",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "unbelievably",
+                "zh": "难以置信地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "finally",
+                "zh": "最后",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "shoulder",
+                "zh": "肩膀",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "walk",
+                "zh": "步行",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "true",
+                "zh": "真实的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "word",
+                "zh": "话语，单词",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "believe",
+                "zh": "相信",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "carry out",
+                "zh": "执行",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "follow",
+                "zh": "跟随",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stronger",
+                "zh": "更强壮的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "empire",
+                "zh": "帝国",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cutting",
+                "zh": "切，割",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "praised",
+                "zh": "被赞扬的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "increase",
+                "zh": "增加",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "history",
+                "zh": "历史",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "emperor",
+                "zh": "皇帝",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "appear",
+                "zh": "出现",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fall down",
+                "zh": "倒塌",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "weaker",
+                "zh": "更虚弱的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "happy",
+                "zh": "高兴的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "satisfy",
+                "zh": "使满意",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stranger",
+                "zh": "陌生人",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "closest",
+                "zh": "最亲密的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "nice",
+                "zh": "美好的，善良的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "kindness",
+                "zh": "善良",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "however",
+                "zh": "然而",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "find",
+                "zh": "发现，觉得",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "difficult",
+                "zh": "困难的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "topic",
+                "zh": "话题",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "feel ashamed",
+                "zh": "感到羞耻",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "social media",
+                "zh": "社交媒体",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "personal",
+                "zh": "个人的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "feel shy",
+                "zh": "感到害羞",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "express",
+                "zh": "表达",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "worry",
+                "zh": "担心",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "flattery",
+                "zh": "阿谀奉承",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "care",
+                "zh": "关怀",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "deep inside",
+                "zh": "内心深处",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "change",
+                "zh": "改变",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "relationship",
+                "zh": "关系",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "reduce",
+                "zh": "减少",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sense",
+                "zh": "感觉",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "happiness",
+                "zh": "幸福",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "result",
+                "zh": "结果",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "distant",
+                "zh": "疏远的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "mean",
+                "zh": "意味着",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "try",
+                "zh": "尝试",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "please",
+                "zh": "讨好，使高兴",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "wish",
+                "zh": "愿望",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "strength",
+                "zh": "优势，长处",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "effort",
+                "zh": "努力",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "around",
+                "zh": "周围",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "value",
+                "zh": "重视，价值",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "respect",
+                "zh": "尊重",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sincere",
+                "zh": "真诚的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "warm",
+                "zh": "温暖",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "misunderstanding",
+                "zh": "误解",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "clothing",
+                "zh": "服装",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "perfect",
+                "zh": "完美的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "detailed",
+                "zh": "详细的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "build",
+                "zh": "建立",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "appearance",
+                "zh": "外表",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "best",
+                "zh": "最佳的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "secret",
+                "zh": "秘密",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "avoid",
+                "zh": "避免",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "main",
+                "zh": "主要的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "purpose",
+                "zh": "目的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "encourage",
+                "zh": "鼓励",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "bow",
+                "zh": "鞠躬",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "greet",
+                "zh": "问候",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "later",
+                "zh": "后来",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "elders",
+                "zh": "长辈",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "local",
+                "zh": "当地的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "make friends",
+                "zh": "交朋友",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "remember",
+                "zh": "记住",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "friendliness",
+                "zh": "友好",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "interest",
+                "zh": "兴趣",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "understanding",
+                "zh": "理解",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "eye contact",
+                "zh": "眼神接触",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "direct",
+                "zh": "直接的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "interested",
+                "zh": "感兴趣的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "look down",
+                "zh": "向下看",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "listen",
+                "zh": "听",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "difference",
+                "zh": "差异",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "problem",
+                "zh": "问题",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "suppose",
+                "zh": "假设",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "behaviour",
+                "zh": "行为",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "strange",
+                "zh": "奇怪的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "likely",
+                "zh": "很有可能的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "too much",
+                "zh": "太多",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "uncomfortable",
+                "zh": "不舒服的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "body language",
+                "zh": "肢体语言",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "opposite",
+                "zh": "相反的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "meaning",
+                "zh": "意思",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "lying",
+                "zh": "撒谎",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "confident",
+                "zh": "自信的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "painting",
+                "zh": "绘画",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "art",
+                "zh": "艺术",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "story",
+                "zh": "故事",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "tradition",
+                "zh": "传统",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "deeply",
+                "zh": "深深地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "belief",
+                "zh": "信仰",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "scientist",
+                "zh": "科学家",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ancient",
+                "zh": "古老的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "artist",
+                "zh": "艺术家",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "music",
+                "zh": "音乐",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hold",
+                "zh": "占据，容纳",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "place",
+                "zh": "地方，位置",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "culture",
+                "zh": "文化",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "create",
+                "zh": "创造",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "traditional",
+                "zh": "传统的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "musical instrument",
+                "zh": "乐器",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ancient times",
+                "zh": "古代",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "famous",
+                "zh": "有名的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fighting",
+                "zh": "格斗，战斗",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "movement",
+                "zh": "动作",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "animal",
+                "zh": "动物",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "practise",
+                "zh": "练习",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sport",
+                "zh": "运动",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "health",
+                "zh": "健康",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "outdoor",
+                "zh": "户外的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "activity",
+                "zh": "活动",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "weekend",
+                "zh": "周末",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "supermarket",
+                "zh": "超市",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "close",
+                "zh": "关闭",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "shoes",
+                "zh": "鞋子",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "get back",
+                "zh": "返回",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "late",
+                "zh": "迟的，晚的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "bed",
+                "zh": "床",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "clock",
+                "zh": "时钟",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "get up",
+                "zh": "起床",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "afternoon",
+                "zh": "下午",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "party",
+                "zh": "派对",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "visit",
+                "zh": "拜访",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "shopping",
+                "zh": "购物",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "tomorrow",
+                "zh": "明天",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "bus",
+                "zh": "公交车",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "uncle",
+                "zh": "叔叔，伯伯",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "way",
+                "zh": "路途",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "funny",
+                "zh": "滑稽的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "dog",
+                "zh": "狗",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "tree",
+                "zh": "树",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "run after",
+                "zh": "追赶",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "flat",
+                "zh": "公寓",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stand",
+                "zh": "站立",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "beside",
+                "zh": "在……旁边",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "door",
+                "zh": "门",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "room",
+                "zh": "房间",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hole",
+                "zh": "洞",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "clean",
+                "zh": "打扫，清洁",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "helpful",
+                "zh": "有帮助的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ring",
+                "zh": "鸣响，戒指",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "night",
+                "zh": "夜晚",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "keep time",
+                "zh": "走时准确",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "biggest",
+                "zh": "最大的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sleeping",
+                "zh": "正在睡觉",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "umbrella",
+                "zh": "雨伞",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "beach",
+                "zh": "沙滩",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "useful",
+                "zh": "有用的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "tool",
+                "zh": "工具",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "field",
+                "zh": "田野，场地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "rain",
+                "zh": "下雨",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ship",
+                "zh": "船",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "rhyme",
+                "zh": "押韵",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ground",
+                "zh": "地面",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sea",
+                "zh": "海洋",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "write down",
+                "zh": "写下",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fresh",
+                "zh": "新鲜的，清新的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "mind",
+                "zh": "大脑，心智",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "money",
+                "zh": "钱",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "neighbour",
+                "zh": "邻居",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "seem",
+                "zh": "似乎",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "lonely",
+                "zh": "孤独的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "neighbourhood",
+                "zh": "社区",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ear",
+                "zh": "耳朵",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "test",
+                "zh": "测试",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "protect",
+                "zh": "保护",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "catch",
+                "zh": "抓住，赶上",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cover",
+                "zh": "覆盖",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "noise",
+                "zh": "噪音",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sound",
+                "zh": "声音",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "shout",
+                "zh": "喊叫",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "outside",
+                "zh": "外面",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sleep",
+                "zh": "睡觉",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sweets",
+                "zh": "糖果",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hobby",
+                "zh": "嗜好",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "drink",
+                "zh": "饮料",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "bad",
+                "zh": "坏的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "luck",
+                "zh": "运气",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "poor",
+                "zh": "差的，贫穷的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "exam",
+                "zh": "考试",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "work hard",
+                "zh": "努力工作",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "better",
+                "zh": "更好的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "careful",
+                "zh": "小心的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cheer up",
+                "zh": "振作起来",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "idea",
+                "zh": "主意",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "welcome",
+                "zh": "欢迎",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "put down",
+                "zh": "放下",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "exciting",
+                "zh": "令人兴奋的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "magic",
+                "zh": "魔法",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "magical",
+                "zh": "有模力的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "town",
+                "zh": "城镇",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "grandparents",
+                "zh": "祖父母",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "food",
+                "zh": "食物",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "watery",
+                "zh": "多水的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cabbage",
+                "zh": "卷心菜",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "soup",
+                "zh": "汤",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "dinner",
+                "zh": "晚餐",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "winter",
+                "zh": "冬天",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cold",
+                "zh": "冷的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "wind",
+                "zh": "风",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sweep",
+                "zh": "扫过",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "floor",
+                "zh": "地板",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "night long",
+                "zh": "整夜",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "surprise",
+                "zh": "惊讶",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "together",
+                "zh": "一起",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "parents",
+                "zh": "父母",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "join in",
+                "zh": "加入",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "joy",
+                "zh": "欢乐",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "whole",
+                "zh": "整个的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "forget",
+                "zh": "忘记",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hungry",
+                "zh": "饥饿的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "choose",
+                "zh": "选择",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "heir",
+                "zh": "继承人",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "take away",
+                "zh": "带走",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "glass",
+                "zh": "玻璃",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "elevator",
+                "zh": "电梯",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "factory",
+                "zh": "工厂",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "turn out",
+                "zh": "结果是",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "candy",
+                "zh": "糖果",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "heart",
+                "zh": "心",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "home",
+                "zh": "家",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "suitable",
+                "zh": "适合的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "blank",
+                "zh": "空格",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "noon",
+                "zh": "中午",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "poem",
+                "zh": "诗歌",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hard-working",
+                "zh": "勤劳的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "different",
+                "zh": "不同种类的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "earth",
+                "zh": "地球",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "third",
+                "zh": "第三的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "largest",
+                "zh": "最大的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "area",
+                "zh": "面积",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "square",
+                "zh": "平方",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "kilometre",
+                "zh": "千米",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "landform",
+                "zh": "地貌",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "low",
+                "zh": "低的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "depression",
+                "zh": "盆地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "mountain",
+                "zh": "山脉",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "west",
+                "zh": "西方",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "highest",
+                "zh": "最高的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "snow",
+                "zh": "雪",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "source",
+                "zh": "源头",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "civilization",
+                "zh": "文明",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "desert",
+                "zh": "沙漠",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "rainforest",
+                "zh": "雨林",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "diverse",
+                "zh": "丰富的，不同的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "landscape",
+                "zh": "景观",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "relaxing",
+                "zh": "令人放松的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "prison",
+                "zh": "监狱",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "woke up",
+                "zh": "醒来",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "police station",
+                "zh": "警察局",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "afraid",
+                "zh": "害怕的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "excited",
+                "zh": "兴奋的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "angry",
+                "zh": "生气的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "correct",
+                "zh": "正确的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "order",
+                "zh": "顺序",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "event",
+                "zh": "事件",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "wear",
+                "zh": "穿",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "infer",
+                "zh": "推断",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "killed",
+                "zh": "杀死",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "husband",
+                "zh": "丈夫",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "police",
+                "zh": "警察",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "wonder",
+                "zh": "奇迹",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "grassland",
+                "zh": "草原",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "amazing",
+                "zh": "惊人的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "valley",
+                "zh": "山谷",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "spring",
+                "zh": "春天",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "summer",
+                "zh": "夏天",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "green",
+                "zh": "绿色的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "leaves",
+                "zh": "树叶",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "autumn",
+                "zh": "秋天",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ice",
+                "zh": "冰",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "group",
+                "zh": "组，群",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "tent",
+                "zh": "帐篷",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ethnic",
+                "zh": "民族的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "language",
+                "zh": "语言",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "traveller",
+                "zh": "游客",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "colourful",
+                "zh": "丰富的，色彩斑斓的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "lovely",
+                "zh": "可爱的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hike",
+                "zh": "远足",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "camp",
+                "zh": "露营",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "ski",
+                "zh": "滑雪",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "must-visit",
+                "zh": "必访的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "number",
+                "zh": "数量",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "growing",
+                "zh": "增长的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "season",
+                "zh": "季节",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "branch",
+                "zh": "树枝",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "surface",
+                "zh": "表面",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "deep",
+                "zh": "深的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "produce",
+                "zh": "生产",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "rice",
+                "zh": "大米",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "weather",
+                "zh": "天气",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "grade",
+                "zh": "成绩",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fur",
+                "zh": "毛皮",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "soft",
+                "zh": "柔软的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cute",
+                "zh": "可爱的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "butterfly",
+                "zh": "蝴蝶",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "yard",
+                "zh": "院子",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "climb",
+                "zh": "爬",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "safely",
+                "zh": "安全地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "laugh",
+                "zh": "笑",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "friend",
+                "zh": "朋友",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "allow",
+                "zh": "允许",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stay out late",
+                "zh": "在外呆到很晚",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "plain",
+                "zh": "平原",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "winding",
+                "zh": "蜿蜒的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "clever",
+                "zh": "聪明的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "synonym",
+                "zh": "同义词",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "exclamatory",
+                "zh": "感叹的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "draw",
+                "zh": "画",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "beauty",
+                "zh": "美丽",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "give life",
+                "zh": "赋予生机",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "speech",
+                "zh": "发言稿",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "action",
+                "zh": "行动",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "organized",
+                "zh": "有条理的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "decision",
+                "zh": "决定",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "risk",
+                "zh": "风险",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "moreover",
+                "zh": "此外",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "otherwise",
+                "zh": "否则",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "therefore",
+                "zh": "因此",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "in general",
+                "zh": "总的来说",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "as usual",
+                "zh": "像往常一样",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "above all",
+                "zh": "最重要的是",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "as a result",
+                "zh": "结果",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "compared",
+                "zh": "比较",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "biologist",
+                "zh": "生物学家",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "clone",
+                "zh": "克隆",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cross-species",
+                "zh": "跨物种",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "process",
+                "zh": "过程",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "prevent",
+                "zh": "阻碍，防止",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "research",
+                "zh": "研究",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "aquaculture",
+                "zh": "水产养殖",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "path",
+                "zh": "路径",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "challenge",
+                "zh": "挑战",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "beat",
+                "zh": "击败，打败",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stress",
+                "zh": "压力",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "actually",
+                "zh": "实际上",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "better themselves",
+                "zh": "提升他们自己",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "hang down",
+                "zh": "垂下",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "crystal",
+                "zh": "结晶，水晶",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "disappear",
+                "zh": "消失",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "structure",
+                "zh": "结构",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "mentally",
+                "zh": "精神上，心理上",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "breathe",
+                "zh": "呼吸",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "unluckily",
+                "zh": "不幸地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "overall",
+                "zh": "全面的，总体的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "success",
+                "zh": "成功",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "blockage",
+                "zh": "阻碍，堵塞",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "improve",
+                "zh": "改善",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "discover",
+                "zh": "发现",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "enjoyable",
+                "zh": "令人愉快的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fall deeply in love",
+                "zh": "深深爱上",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "set rules",
+                "zh": "固定规则",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "decide",
+                "zh": "决定",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "move on",
+                "zh": "继续，前进",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "free time",
+                "zh": "空闲时间",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "alone",
+                "zh": "独自",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fit in",
+                "zh": "融入",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "community",
+                "zh": "社区",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "gardening",
+                "zh": "园艺",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "type",
+                "zh": "类型，种类",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "offer",
+                "zh": "提供",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "professional",
+                "zh": "专业的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "co-worker",
+                "zh": "同事",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "get along",
+                "zh": "相处",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "seemingly",
+                "zh": "表面上，看似",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "non-work-related",
+                "zh": "与工作无关的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "common ground",
+                "zh": "共同点",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "act",
+                "zh": "行为",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "active",
+                "zh": "积极的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "environment",
+                "zh": "环境",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "advantage",
+                "zh": "优势，好处",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "positively",
+                "zh": "积极地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "heavy",
+                "zh": "重的，沉重的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "muscle",
+                "zh": "肌肉",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "thick",
+                "zh": "厚的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "coat",
+                "zh": "外衣，皮毛",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stable",
+                "zh": "马厩",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "grape",
+                "zh": "葡萄",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "rule over",
+                "zh": "统治",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "kingdom",
+                "zh": "王国",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "born",
+                "zh": "出生",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "midnight",
+                "zh": "半夜",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "early",
+                "zh": "早的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "feet",
+                "zh": "脚（复数）",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "accept",
+                "zh": "接受",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "trust",
+                "zh": "信任",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "bark",
+                "zh": "狗叫",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "tighten",
+                "zh": "变紧，绷紧",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "painfully",
+                "zh": "痛苦地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "tongue",
+                "zh": "舌头",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "mouth",
+                "zh": "嘴",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "dim",
+                "zh": "昏暗的，模糊的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "metal",
+                "zh": "金属",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "shipping",
+                "zh": "航运",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "transportation",
+                "zh": "运输",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "company",
+                "zh": "公司",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "advertise",
+                "zh": "登广告",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "statement",
+                "zh": "陈述，声明",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "arrived",
+                "zh": "到达",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "baggage car",
+                "zh": "行李车",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "doomed",
+                "zh": "注定的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "gambling",
+                "zh": "赌博",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "description",
+                "zh": "描写，描述",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "habit",
+                "zh": "习惯",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "open up",
+                "zh": "敞开心扉",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "trusted",
+                "zh": "值得信赖的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "support",
+                "zh": "支持",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "worse",
+                "zh": "更糟",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "allowed",
+                "zh": "被允许",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "honest",
+                "zh": "诚实的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "similar",
+                "zh": "相似的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "proud",
+                "zh": "自豪的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "achieved",
+                "zh": "取得，实现",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "so far",
+                "zh": "到目前为止",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "exercises",
+                "zh": "练习，锻炼",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "relax",
+                "zh": "放松",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "nose",
+                "zh": "鼻子",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "blow",
+                "zh": "吹",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "pressure",
+                "zh": "压力",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "proving",
+                "zh": "证明",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "actions",
+                "zh": "行动",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "deal with",
+                "zh": "处理，应对",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "role",
+                "zh": "角色，作用",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "early stages",
+                "zh": "早期阶段",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "married",
+                "zh": "结婚",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "kids",
+                "zh": "孩子",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "peace",
+                "zh": "和平",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "sadness",
+                "zh": "悲伤",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "death",
+                "zh": "死亡",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "failure",
+                "zh": "失败",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "pass away",
+                "zh": "消逝",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "alive",
+                "zh": "活着的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "extra",
+                "zh": "额外的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fame",
+                "zh": "名声",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "pride",
+                "zh": "骄傲，自豪",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "self-respect",
+                "zh": "自尊",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "regret",
+                "zh": "后悔",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "carbon dioxide",
+                "zh": "二氧化碳",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "react",
+                "zh": "反应",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "slightly",
+                "zh": "稍微",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "lower",
+                "zh": "降低",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "brainstorming",
+                "zh": "集思广益，头脑风暴",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "smart",
+                "zh": "聪明的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "solve",
+                "zh": "解决",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "view",
+                "zh": "观点，看法",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "freely",
+                "zh": "自由地",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "topic at hand",
+                "zh": "眼下的课题",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "members",
+                "zh": "成员",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "quality",
+                "zh": "质量",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "consider",
+                "zh": "考虑",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "beneficial",
+                "zh": "有益的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "focus on",
+                "zh": "专注于",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "shared",
+                "zh": "共同的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fit",
+                "zh": "符合，适合",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "recognize",
+                "zh": "承认，意识到",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "outside the box",
+                "zh": "跳出框框，跳出传统思维",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "get stuck",
+                "zh": "陷入，被卡住",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "powerful",
+                "zh": "强有力的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "future",
+                "zh": "未来",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "high school",
+                "zh": "高中",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "academic",
+                "zh": "学业的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "performance",
+                "zh": "表现",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "dropping out",
+                "zh": "退学",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "due to",
+                "zh": "因为，由于",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "manage",
+                "zh": "设法做到",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "take the lead",
+                "zh": "领先",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "classmates",
+                "zh": "同学",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "graduated",
+                "zh": "毕业",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "outstanding",
+                "zh": "杰出的",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "achievement",
+                "zh": "成就",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "stepping stone",
+                "zh": "踏脚石",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "fear",
+                "zh": "害怕",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "suggest",
+                "zh": "建议",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "cool down",
+                "zh": "冷却",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "crystals",
+                "zh": "结晶",
+                "pos": "",
+                "notes": "6.2 update",
+                "frequency": 0
+            },
+            {
+                "en": "disappeared",
+                "zh": "消失",
+                "pos": "",
+                "notes": "6.2 update",
                 "frequency": 0
             }
         ]
