@@ -18,12 +18,12 @@ const seniorTwo = lists.find((list) => list.grade === "高二");
 
 assert(seniorOne, "高一 builtin list should exist");
 assert(seniorTwo, "高二 builtin list should exist");
-assert.strictEqual(seniorOne.words.length, 982, "高一 should be replaced by the deduped final-term vocabulary");
-assert.strictEqual(seniorTwo.words.length, 779, "高二 should be replaced by the deduped final-term vocabulary");
-assert.strictEqual(seniorOne.words[0].en, "adventurous", "高一 first word should come from the new markdown file");
-assert.strictEqual(seniorOne.words.at(-1).en, "trend", "高一 last unique word should come from the new markdown file");
-assert.strictEqual(seniorTwo.words[0].en, "Southeast", "高二 first word should come from the new markdown file");
-assert.strictEqual(seniorTwo.words.at(-1).en, "years later", "高二 last unique word should come from the new markdown file");
+assert.strictEqual(seniorOne.words.length, 2140, "高一 should merge and dedupe the final-term vocabulary");
+assert.strictEqual(seniorTwo.words.length, 1019, "高二 should merge and dedupe the final-term vocabulary");
+assert(seniorOne.words.some((word) => word.en === "available"), "高一 should include the new final-term vocabulary");
+assert(seniorOne.words.some((word) => word.en === "adventurous"), "高一 should keep existing unique vocabulary");
+assert(seniorTwo.words.some((word) => word.en === "produce"), "高二 should include the new final-term vocabulary");
+assert(seniorTwo.words.some((word) => word.en === "Southeast"), "高二 should keep existing unique vocabulary");
 assert.strictEqual(new Set(seniorOne.words.map((word) => word.en.toLowerCase())).size, seniorOne.words.length, "高一 words should be deduped by English text");
 assert.strictEqual(new Set(seniorTwo.words.map((word) => word.en.toLowerCase())).size, seniorTwo.words.length, "高二 words should be deduped by English text");
 

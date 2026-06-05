@@ -242,7 +242,8 @@ async function seedBuiltinWords() {
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => resolve(null);
   });
-  if (Number(seedMeta?.value || 0) >= BUILTIN_SEED_VERSION) return;
+  const hasBuiltinWords = (await getAll("words")).some((word) => word.sourceType === "builtin");
+  if (Number(seedMeta?.value || 0) >= BUILTIN_SEED_VERSION && hasBuiltinWords) return;
 
   const builtinLists = [
     {
@@ -288,6 +289,12 @@ async function seedBuiltinWords() {
     ]);
   }
   if (Number(seedMeta?.value || 0) < 10) {
+    await deleteBuiltinDecks([
+      { grade: "高一", source: "高一内置词库" },
+      { grade: "高二", source: "高二内置词库" }
+    ]);
+  }
+  if (Number(seedMeta?.value || 0) < 14) {
     await deleteBuiltinDecks([
       { grade: "高一", source: "高一内置词库" },
       { grade: "高二", source: "高二内置词库" }
@@ -674,7 +681,45 @@ function makeChoices(answer) {
     return shuffle([answer, ...getStructuredDistractors(answer, distractorCount)]);
   }
   const pool = getEligibleWords().filter((word) => word.id !== answer.id && word.zh);
-  return shuffle([answer, ...shuffle(pool).slice(0, distractorCount)]);
+  const ranked = pool
+    .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer) }))
+    .sort((a, b) => b.score - a.score || hashString(`${answer.id}:${a.candidate.id}`) - hashString(`${answer.id}:${b.candidate.id}`));
+  const preferred = ranked.filter((item) => item.score > 0).slice(0, 16).map((item) => item.candidate);
+  const fallback = ranked.map((item) => item.candidate);
+  const distractors = uniqueById([...shuffle(preferred), ...fallback]).slice(0, distractorCount);
+  return shuffle([answer, ...distractors]);
+}
+
+function sameInitial(candidate, answer) {
+  return normalizeChoiceText(candidate.en)[0] === normalizeChoiceText(answer.en)[0];
+}
+
+function similarWordShape(candidate, answer) {
+  const candidateText = normalizeChoiceText(candidate.en);
+  const answerText = normalizeChoiceText(answer.en);
+  if (!candidateText || !answerText) return false;
+  const lengthClose = Math.abs(candidateText.length - answerText.length) <= 2;
+  const prefixClose = candidateText.slice(0, 3) === answerText.slice(0, 3) || candidateText.slice(0, 2) === answerText.slice(0, 2);
+  const suffixClose = candidateText.slice(-4) === answerText.slice(-4) || candidateText.slice(-3) === answerText.slice(-3);
+  const familyClose = ["ing", "ed", "er", "ly", "tion", "sion", "ment", "able", "ible", "ive", "al", "ous"].some((ending) => {
+    return candidateText.endsWith(ending) && answerText.endsWith(ending);
+  });
+  return (lengthClose && (prefixClose || suffixClose)) || familyClose;
+}
+
+function scoreDistractorChoice(candidate, answer) {
+  if (!candidate?.en || !answer?.en) return 0;
+  let score = 0;
+  if (sameInitial(candidate, answer)) score += 6;
+  if (similarWordShape(candidate, answer)) score += 5;
+  const lengthGap = Math.abs(normalizeChoiceText(candidate.en).length - normalizeChoiceText(answer.en).length);
+  if (lengthGap <= 1) score += 2;
+  if (candidate.pos && answer.pos && candidate.pos === answer.pos) score += 1;
+  return score;
+}
+
+function normalizeChoiceText(value) {
+  return String(value || "").toLowerCase().replace(/[^a-z]/g, "");
 }
 
 async function answer(value, button) {
@@ -1502,16 +1547,11 @@ function renderStats() {
   const seen = records.reduce((sum, record) => sum + record.seen, 0);
   const correct = records.reduce((sum, record) => sum + record.correct, 0);
   const fast = records.reduce((sum, record) => sum + record.fast, 0);
-  els.totalWords.textContent = getDisplayedTotalWords(els.stageSelect.value, realTotal);
+  els.totalWords.textContent = realTotal;
   els.doneCount.textContent = seen;
   els.accuracy.textContent = percent(correct, seen);
   els.fastRate.textContent = percent(fast, seen);
   els.weakCount.textContent = state.words.filter(isWeak).length;
-}
-
-function getDisplayedTotalWords(stage, realTotal) {
-  if (stage === "高一" || stage === "高二") return 10000;
-  return realTotal;
 }
 
 function renderDecks() {
