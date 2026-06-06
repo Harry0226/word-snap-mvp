@@ -7,6 +7,8 @@ const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
 const QUIZ_FAST = 5000;
 const QUIZ_SLOW = 12000;
+const ROTATION_META_PREFIX = "rotation:v2:";
+const { prepareRotationBatch, completeRotationItem } = window.WordSnapRotation;
 const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
 const GRADE11_QUIZ_COUNT = 129;
@@ -22,7 +24,7 @@ const state = {
   db: null,
   words: [],
   records: new Map(),
-  rotationCursors: new Map(),
+  rotationQueues: new Map(),
   session: null,
   battle: null,
   quiz: null,
@@ -121,6 +123,7 @@ Object.assign(els, {
   quizTimer: document.querySelector("#quizTimer"),
   quizChoices: document.querySelector("#quizChoices"),
   quizFeedback: document.querySelector("#quizFeedback"),
+  quizContinueBtn: document.querySelector("#quizContinueBtn"),
   quizReport: document.querySelector("#quizReport"),
   quizWrongList: document.querySelector("#quizWrongList")
 });
@@ -363,9 +366,9 @@ async function loadState() {
   state.quizStats = new Map(meta
     .filter((entry) => entry.key?.startsWith("quizStats:"))
     .map((entry) => [entry.key.replace("quizStats:", ""), entry.value || { attempted: 0, correct: 0, fast: 0 }]));
-  state.rotationCursors = new Map(meta
-    .filter((entry) => entry.key?.startsWith("queueCursor:"))
-    .map((entry) => [entry.key, Number(entry.value || 0)]));
+  state.rotationQueues = new Map(meta
+    .filter((entry) => entry.key?.startsWith(ROTATION_META_PREFIX))
+    .map((entry) => [entry.key, entry.value]));
   renderAll();
 }
 
@@ -457,14 +460,6 @@ function hashString(value) {
   return hash >>> 0;
 }
 
-function stableShuffleWords(words, key) {
-  return [...words].sort((a, b) => {
-    const scoreA = hashString(`${key}:${a.id}`);
-    const scoreB = hashString(`${key}:${b.id}`);
-    return scoreA - scoreB || String(a.id).localeCompare(String(b.id));
-  });
-}
-
 function getTrainingCandidates(words, scope) {
   if (scope === "wrong" || scope === "weak") return words.filter(isWrongWord);
   if (scope === "slow") return words.filter(isSlowWord);
@@ -472,24 +467,29 @@ function getTrainingCandidates(words, scope) {
   return words;
 }
 
-function buildRotationKey() {
-  return `queueCursor:${els.stageSelect.value}|${els.deckFilter.value}|${els.trainingScope.value}`;
+function usesPersistentTrainingRotation(scope) {
+  return scope !== "wrong" && scope !== "weak" && scope !== "slow";
 }
 
-function peekRotatingQueue(candidates, sizeValue, key) {
-  const ordered = stableShuffleWords(candidates, key);
-  if (!ordered.length) return { queue: [], key, nextIndex: 0, shouldCommit: false };
-  if (sizeValue === "all") return { queue: ordered, key, nextIndex: 0, shouldCommit: false };
-  const size = Math.min(Number(sizeValue), ordered.length);
-  const start = (state.rotationCursors.get(key) || 0) % ordered.length;
-  const queue = Array.from({ length: size }, (_, index) => ordered[(start + index) % ordered.length]);
-  return { queue, key, nextIndex: (start + size) % ordered.length, shouldCommit: true };
+function buildTrainingRotationKey(scope = els.trainingScope.value) {
+  const poolType = scope === "new" ? "new" : "regular";
+  return `${ROTATION_META_PREFIX}train:${encodeURIComponent(els.stageSelect.value)}:${els.deckFilter.value}:${poolType}`;
 }
 
-async function commitQueueCursor(queueCursor) {
-  if (!queueCursor?.shouldCommit) return;
-  state.rotationCursors.set(queueCursor.key, queueCursor.nextIndex);
-  await put("meta", { key: queueCursor.key, value: queueCursor.nextIndex, at: Date.now() });
+function buildQuizRotationKey(grade) {
+  return `${ROTATION_META_PREFIX}quiz:${encodeURIComponent(grade)}`;
+}
+
+async function persistRotationState(key, rotationState) {
+  if (!key || !rotationState) return;
+  state.rotationQueues.set(key, rotationState);
+  await put("meta", { key, value: rotationState, at: Date.now() });
+}
+
+async function completePersistentRotationItem(key, itemId) {
+  if (!key) return;
+  const rotationState = completeRotationItem(state.rotationQueues.get(key), itemId);
+  await persistRotationState(key, rotationState);
 }
 
 function buildQueue() {
@@ -498,26 +498,40 @@ function buildQueue() {
   const sizeValue = els.sessionSize.value;
   const scope = els.trainingScope.value;
   const candidates = getTrainingCandidates(words, scope);
-  const rotationKey = buildRotationKey();
 
   if (!words.length) {
     state.queueNotice = "当前阶段没有可训练词。请切换阶段，或先在词库页上传词表。";
-    return { queue: [], queueCursor: null };
+    return { queue: [], rotationKey: null, rotationState: null };
   }
 
   if (!candidates.length) {
     if (scope === "wrong" || scope === "weak") state.queueNotice = "还没有错词。请先完成一轮训练，或把训练范围切回智能混合。";
     if (scope === "slow") state.queueNotice = "还没有慢词。请先完成一轮训练，或把训练范围切回智能混合。";
     if (scope === "new") state.queueNotice = "当前阶段没有新词了。可以改练错词、慢词或全部单词。";
-    return { queue: [], queueCursor: null };
+    return { queue: [], rotationKey: null, rotationState: null };
   }
 
   if (sizeValue !== "all" && candidates.length < Number(sizeValue)) {
     state.queueNotice = `当前筛选只有 ${candidates.length} 个词，本轮会练完这些词。`;
   }
 
-  const result = peekRotatingQueue(candidates, sizeValue, rotationKey);
-  return { queue: result.queue, queueCursor: result };
+  if (!usesPersistentTrainingRotation(scope)) {
+    const size = sizeValue === "all" ? candidates.length : Math.min(Number(sizeValue), candidates.length);
+    return { queue: shuffle(candidates).slice(0, size), rotationKey: null, rotationState: null };
+  }
+
+  const rotationKey = buildTrainingRotationKey();
+  const prepared = prepareRotationBatch(
+    state.rotationQueues.get(rotationKey),
+    candidates.map((word) => word.id),
+    sizeValue
+  );
+  const candidatesById = new Map(candidates.map((word) => [word.id, word]));
+  return {
+    queue: prepared.batch.map((id) => candidatesById.get(id)).filter(Boolean),
+    rotationKey,
+    rotationState: prepared.state
+  };
 }
 
 function updateTrainingEstimate() {
@@ -551,13 +565,15 @@ function resolvePracticeMode() {
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
 }
 
-function startSession() {
-  const { queue, queueCursor } = buildQueue();
+async function startSession() {
+  if (state.session) clearInterval(state.session.timerId);
+  const { queue, rotationKey, rotationState } = buildQueue();
   if (!queue.length) {
     els.feedback.textContent = state.queueNotice || "当前设置下暂无可练单词。";
     els.progressText.textContent = els.feedback.textContent;
     return;
   }
+  await persistRotationState(rotationKey, rotationState);
   state.session = {
     queue,
     total: queue.length,
@@ -566,7 +582,7 @@ function startSession() {
     sessionStartedAt: performance.now(),
     startedAt: 0,
     timerId: 0,
-    queueCursor,
+    rotationKey,
     answered: false,
     done: 0,
     correct: 0,
@@ -742,6 +758,7 @@ async function answer(value, button) {
   paintChoices(value, button);
   els.feedback.textContent = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
   await recordAnswer(word, isCorrect, isFast, isSlow);
+  await completePersistentRotationItem(session.rotationKey, word.id);
   renderAll();
   updateProgress();
   setTimeout(nextWord, isCorrect ? 750 : 1350);
@@ -804,7 +821,6 @@ function finishSession() {
     tomorrow,
     totalSeconds
   };
-  commitQueueCursor(session.queueCursor);
   els.word.textContent = "Done";
   els.tag.textContent = "本轮完成";
   els.hint.textContent = "建议明天优先复习本轮错词和慢词。";
@@ -1126,6 +1142,11 @@ async function startQuiz(isReview) {
   const grade = els.quizStage.value;
   let allData;
   let vocabPool;
+  if (state.quiz) {
+    clearInterval(state.quiz.timerId);
+    clearTimeout(state.quiz.advanceTimerId);
+  }
+  hideQuizContinueButton();
 
   await ensureQuizBankLoaded(grade);
   const sentenceQuizData = getQuizSentenceData(grade);
@@ -1161,13 +1182,17 @@ async function startQuiz(isReview) {
       els.quizStatusText.textContent = "没有错题，无需复盘。";
       return;
     }
+    queue = shuffle(queue);
   } else {
-    queue = shuffle([...allData]);
-  }
-
-  const sizeOpt = els.quizSize.value;
-  if (!isReview && sizeOpt !== "all") {
-    queue = queue.slice(0, Number(sizeOpt));
+    const rotationKey = buildQuizRotationKey(grade);
+    const prepared = prepareRotationBatch(
+      state.rotationQueues.get(rotationKey),
+      allData.map((question) => question.id),
+      els.quizSize.value
+    );
+    await persistRotationState(rotationKey, prepared.state);
+    const questionsById = new Map(allData.map((question) => [question.id, question]));
+    queue = prepared.batch.map((id) => questionsById.get(id)).filter(Boolean);
   }
 
   state.quiz = {
@@ -1181,11 +1206,13 @@ async function startQuiz(isReview) {
     slow: 0,
     wrongList: [],
     isReview,
+    rotationKey: isReview ? null : buildQuizRotationKey(grade),
     sessionStartedAt: performance.now(),
     currentQ: null,
     currentIndex: 0,
     startedAt: 0,
     timerId: 0,
+    advanceTimerId: 0,
     answered: false
   };
 
@@ -1198,6 +1225,9 @@ async function startQuiz(isReview) {
 
 function nextQuizQuestion() {
   const quiz = state.quiz;
+  if (!quiz) return;
+  clearTimeout(quiz.advanceTimerId);
+  hideQuizContinueButton();
   quiz.answered = false;
   quiz.currentQ = quiz.queue.shift();
 
@@ -1234,6 +1264,17 @@ function nextQuizQuestion() {
   quiz.startedAt = performance.now();
   startQuizTimer();
   updateQuizProgress();
+}
+
+function hideQuizContinueButton() {
+  els.quizContinueBtn.hidden = true;
+}
+
+function showQuizContinueButton() {
+  const quiz = state.quiz;
+  els.quizContinueBtn.textContent = quiz?.queue.length ? "继续做题" : "查看结果";
+  els.quizContinueBtn.hidden = false;
+  els.quizContinueBtn.focus();
 }
 
 function startQuizTimer() {
@@ -1281,6 +1322,7 @@ async function answerQuizChoice(isCorrect, button) {
   } else if (quiz.isReview) {
     await removeQuizWrongAnswer(q.id);
   }
+  await completePersistentRotationItem(quiz.rotationKey, q.id);
 
   if (isCorrect && isFast) {
     els.quizFeedback.textContent = "秒选！";
@@ -1294,7 +1336,11 @@ async function answerQuizChoice(isCorrect, button) {
 
   updateQuizProgress();
   pulseQuizProgress();
-  setTimeout(nextQuizQuestion, isCorrect ? 800 : 1500);
+  if (isCorrect) {
+    quiz.advanceTimerId = setTimeout(nextQuizQuestion, 800);
+  } else {
+    showQuizContinueButton();
+  }
 }
 
 function updateQuizProgress() {
@@ -1347,6 +1393,8 @@ async function removeQuizWrongAnswer(qId) {
 function finishQuiz() {
   const quiz = state.quiz;
   clearInterval(quiz.timerId);
+  clearTimeout(quiz.advanceTimerId);
+  hideQuizContinueButton();
   const totalSeconds = Math.max(1, Math.round((performance.now() - quiz.sessionStartedAt) / 1000));
 
   els.quizArea.hidden = true;
@@ -1725,6 +1773,7 @@ function bindEvents() {
   });
   els.startQuizBtn.addEventListener("click", () => startQuiz(false));
   els.reviewQuizWrongBtn.addEventListener("click", () => startQuiz(true));
+  els.quizContinueBtn.addEventListener("click", nextQuizQuestion);
   els.quizStage.addEventListener("change", () => updateQuizSizeOptions());
   els.clearQuizWrongBtn.addEventListener("click", async () => {
     if (!confirm("确定清空所有刷题错题记录吗？")) return;
@@ -1753,6 +1802,14 @@ function bindEvents() {
         event.preventDefault();
         button.click();
       }
+    } else if (
+      els.views.quiz.classList.contains("active")
+      && state.quiz?.answered
+      && !els.quizContinueBtn.hidden
+      && (event.key === "Enter" || event.key === " ")
+    ) {
+      event.preventDefault();
+      els.quizContinueBtn.click();
     }
   });
 }

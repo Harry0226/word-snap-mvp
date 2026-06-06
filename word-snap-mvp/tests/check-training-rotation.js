@@ -17,12 +17,13 @@ assert(!app.includes('["400", "400 词"]'), "all grades should use the same trai
 assert(!app.includes('["600", "600 词"]'), "all grades should use the same training size options without 600 words");
 assert(app.includes('options.some(([value]) => value === previous) ? previous : "200"'), "training size should keep valid previous values and default to 200");
 
-assert(app.includes("queueCursor"), "session state should track a queue cursor snapshot");
-assert(app.includes("buildRotationKey"), "training queues should use a scoped rotation key");
-assert(app.includes("stableShuffleWords"), "training queues should use stable shuffled order");
-assert(app.includes("peekRotatingQueue"), "estimate rendering should not advance rotation");
-assert(app.includes("commitQueueCursor"), "rotation should only advance when a session completes");
-assert(app.includes('put("meta", { key: queueCursor.key'), "rotation cursor should be saved to IndexedDB meta");
+assert(index.includes('src="./rotation-queue.js?v='), "the persistent rotation module should load before app.js");
+assert(app.includes("rotationQueues"), "app state should load persistent rotation queues");
+assert(app.includes("buildTrainingRotationKey"), "training rotation should be scoped by stage and deck source");
+assert(app.includes("prepareRotationBatch"), "training should allocate batches through the shared rotation module");
+assert(app.includes("completePersistentRotationItem"), "each answered item should persist rotation progress");
+assert(app.includes('put("meta", { key, value: rotationState'), "rotation state should be saved to IndexedDB meta");
+assert(!app.includes("queueCursor:"), "the old completion-only cursor should no longer be used");
 assert(app.includes("formatDuration"), "session report should format total training time");
 assert(app.includes("totalSeconds"), "session report should include total training seconds");
 

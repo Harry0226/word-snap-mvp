@@ -8,11 +8,12 @@
   <meta name="theme-color" content="#f6f7f9">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260522-mobile">
+  <link rel="stylesheet" href="./styles.css?v=20260607-rotation">
   <script defer src="./word-data/junior-exam-words.js?v=20260601-0109-junior775"></script>
   <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
   <script defer src="./word-data/builtin-word-lists.js?v=20260601-0109-grade71002"></script>
-  <script defer src="./app.js?v=20260602-quiz-stats"></script>
+  <script defer src="./rotation-queue.js?v=20260607-rotation"></script>
+  <script defer src="./app.js?v=20260607-rotation"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -335,6 +336,7 @@
         <div id="quizChoices" class="choices"></div>
         <div class="feedback-row">
           <p id="quizFeedback">计时中。</p>
+          <button id="quizContinueBtn" type="button" hidden>继续做题</button>
         </div>
       </div>
 

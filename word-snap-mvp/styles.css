@@ -591,6 +591,11 @@ button, .choice, .battle-choice, .file-button, .file-picker, .tab, select {
 
 .quiz-area .progress { margin-bottom: 16px; }
 
+#quizContinueBtn {
+  min-width: 132px;
+  flex: 0 0 auto;
+}
+
 .quiz-wrong-panel .word-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
