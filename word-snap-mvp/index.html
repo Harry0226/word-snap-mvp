@@ -12,7 +12,8 @@
   <script defer src="./word-data/junior-exam-words.js?v=20260601-0109-junior775"></script>
   <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
   <script defer src="./word-data/builtin-word-lists.js?v=20260601-0109-grade71002"></script>
-  <script defer src="./app.js?v=20260602-quiz-stats"></script>
+  <script defer src="./rotation-queue.js?v=20260608-rotation"></script>
+  <script defer src="./app.js?v=20260608-checkin"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -28,6 +29,7 @@
         <button class="tab" type="button" data-view="wrong">错词</button>
         <button class="tab" type="button" data-view="report">报告</button>
         <button class="tab" type="button" data-view="quiz">刷题</button>
+        <button class="tab" type="button" data-view="achievements">成就</button>
       </nav>
     </header>
 
@@ -48,6 +50,14 @@
       <div><strong id="accuracy">0%</strong><span>正确率</span></div>
       <div><strong id="fastRate">0%</strong><span>快速率</span></div>
       <div><strong id="weakCount">0</strong><span>弱词</span></div>
+      <div class="checkin-mini">
+        <div class="checkin-mini-left">
+          <span class="streak-icon">🔥</span>
+          <strong id="currentStreak">0</strong>
+          <span>连续</span>
+        </div>
+        <button id="checkinBtn" type="button" class="checkin-btn-mini">打卡</button>
+      </div>
     </section>
 
     <section id="view-train" class="view active">
@@ -350,6 +360,20 @@
           </div>
         </div>
         <div id="quizWrongList" class="word-list"></div>
+      </div>
+    </section>
+
+    <section id="view-achievements" class="view">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2>🏆 成就墙</h2>
+            <p>完成挑战解锁成就，记录你的学习里程碑。</p>
+          </div>
+        </div>
+        <div class="achievement-grid" id="achievementGrid">
+          <!-- 成就卡片 -->
+        </div>
       </div>
     </section>
   </main>
