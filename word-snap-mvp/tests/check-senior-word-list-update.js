@@ -38,7 +38,7 @@ for (const list of [seniorOne, seniorTwo]) {
   assert.notStrictEqual(firstLetters, [...firstLetters].sort().join(""), `${list.grade} should be shuffled rather than alphabetized by first letter`);
 }
 
-assert(app.includes("BUILTIN_SEED_VERSION = 14"), "builtin seed version should be bumped for 2026 final-term senior deck update");
+assert(app.includes("BUILTIN_SEED_VERSION = 15"), "builtin seed version should be bumped for 2026 final-term senior deck update");
 assert(app.includes("hasBuiltinWords"), "seed logic should recover when local builtin words are unexpectedly empty");
 assert(app.includes("Number(seedMeta?.value || 0) < 14"), "existing browsers should reseed the 2026 final-term senior deck update");
 assert(app.includes("Number(seedMeta?.value || 0) < 11"), "existing browsers should reseed the senior deck update");

@@ -23,7 +23,7 @@ assert(grade8English.has("body language"), "\u521d\u4e8c update should include b
 assert.strictEqual(grade8English.size, grade8Words.length, "\u521d\u4e8c word bank should not duplicate English entries");
 assert(grade7.words.length > 0, "other grade word banks should still load");
 
-assert(app.includes("BUILTIN_SEED_VERSION = 14"), "seed version should bump so existing browsers receive the updated \u521d\u4e8c bank");
+assert(app.includes("BUILTIN_SEED_VERSION = 15"), "seed version should bump so existing browsers receive the updated \u521d\u4e8c bank");
 assert(app.includes('{ grade: "\u521d\u4e8c", source: "\u521d\u4e8c\u5185\u7f6e\u8bcd\u5e93" }'), "old \u521d\u4e8c builtin deck should be removed before reseeding");
 assert(app.includes("function getTrainingChoiceCount"), "training choice count should be grade-aware");
 assert(app.includes('return answer.grade === "\u521d\u4e8c" ? 5 : 4'), "\u521d\u4e8c training should use 5 choices while other grades stay at 4");

@@ -495,6 +495,17 @@ async function saveStreak(streak) {
   await put("streaks", streak);
 }
 
+async function resetStreak(kind, grade) {
+  const key = makeProgressKey(kind, grade);
+  await new Promise((resolve, reject) => {
+    const request = tx("streaks", "readwrite").delete(key);
+    request.onsuccess = () => resolve();
+    request.onerror = () => reject(request.error);
+  });
+  state.streaks.delete(key);
+  renderDailyProgress();
+}
+
 function getTodayStr() {
   const now = new Date();
   const year = now.getFullYear();
@@ -763,7 +774,7 @@ function updateSessionSizeOptions() {
 }
 
 function resolvePracticeMode(word) {
-  if (word?.fixedMode) return word.fixedMode;
+  if (word?.fixedMode === "customChoice") return "customChoice";
   const selected = els.practiceMode.value;
   if (selected === "zhToEnChoice" || selected === "enToZhChoice") return selected;
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
@@ -884,7 +895,6 @@ function isSimilarWordShape(a, b) {
 
 function getStructuredDistractors(answer, count) {
   const gradePool = getGradeWordPool(answer.grade);
-  const fallbackPool = getEligibleWords();
   const used = new Set([answer.id]);
   const distractors = [];
   const firstLetter = answer.en[0]?.toLowerCase() || "";
@@ -903,17 +913,16 @@ function getStructuredDistractors(answer, count) {
   addFrom(gradePool, (word) => word.en[0]?.toLowerCase() !== firstLetter && isSimilarWordShape(answer.en, word.en));
   addFrom(gradePool, (word) => word.en[0]?.toLowerCase() !== firstLetter);
   addFrom(gradePool, () => true);
-  addFrom(fallbackPool, () => true);
 
   return distractors.slice(0, count);
 }
 
 function makeChoices(answer) {
-  if (Array.isArray(answer.choiceOptions) && answer.choiceOptions.length) {
+  if (state.session?.mode === "customChoice" && Array.isArray(answer.choiceOptions) && answer.choiceOptions.length) {
     return shuffle(answer.choiceOptions).slice(0, getTrainingChoiceCount(answer));
   }
   const distractorCount = getTrainingChoiceCount(answer) - 1;
-  if (answer.grade === "初二") {
+  if (answer.grade === "初二" || answer.grade === "高二") {
     return shuffle([answer, ...getStructuredDistractors(answer, distractorCount)]);
   }
   const pool = getEligibleWords().filter((word) => word.id !== answer.id && word.zh);
@@ -1006,14 +1015,13 @@ function showTrainContinueButton() {
 
 function isCorrectAnswer(value, word, mode) {
   if (mode === "customChoice") return Boolean(value?.isAnswer);
-  if (Array.isArray(word.choiceOptions) && word.choiceOptions.length) return Boolean(value?.isAnswer);
   return value?.id === word.id;
 }
 
 function paintChoices(answerWord, clickedButton) {
   [...els.choices.children].forEach((button) => {
     const current = state.session.current;
-    const isCorrectChoice = Array.isArray(current.choiceOptions) && current.choiceOptions.length
+    const isCorrectChoice = state.session.mode === "customChoice" && Array.isArray(current.choiceOptions) && current.choiceOptions.length
       ? current.choiceOptions.some((choice) => choice.isAnswer && choice.id === button.dataset.choiceId)
       : button.dataset.choiceId === current.id;
     button.classList.toggle("correct", isCorrectChoice);
@@ -2016,8 +2024,9 @@ function bindEvents() {
     await loadState();
   });
   els.resetRecordsBtn.addEventListener("click", async () => {
-    if (!confirm("确定清空所有练习记录吗？词库会保留。")) return;
+    if (!confirm(`确定清空所有练习记录吗？词库会保留，${els.stageSelect.value}的刷词火花将从 0 开始。`)) return;
     await clearStore("records");
+    await resetStreak("train", els.stageSelect.value);
     await loadState();
   });
   els.exportBtn.addEventListener("click", exportData);
@@ -2051,8 +2060,9 @@ function bindEvents() {
     renderAll();
   });
   els.clearQuizWrongBtn.addEventListener("click", async () => {
-    if (!confirm("确定清空所有刷题错题记录吗？")) return;
+    if (!confirm(`确定清空所有刷题错题记录吗？${els.quizStage.value}的刷题火花将从 0 开始。`)) return;
     await clearStore("quizWrongAnswers");
+    await resetStreak("quiz", els.quizStage.value);
     state.quizWrongRecords.clear();
     renderQuizStats();
     renderQuizWrongList();
