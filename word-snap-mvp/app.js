@@ -11,6 +11,8 @@ const GRADE7_QUIZ_COUNT = 186;
 const ROTATION_META_PREFIX = "rotation:v2:";
 const { prepareRotationBatch, completeRotationItem } = window.WordSnapRotation;
 const { getCheckinThreshold, makeProgressKey, advanceDailyProgress } = window.WordSnapDailyStreaks;
+const { loadScriptWithRetry } = window.WordSnapAssetLoader;
+const BACKUP_SITE_URL = "https://word-snap-mvp.pages.dev/";
 
 const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
@@ -38,7 +40,8 @@ const state = {
   lastReport: null,
   weakFilter: "wrong",
   queueNotice: "",
-  streaks: new Map()
+  streaks: new Map(),
+  stageLoads: new Map()
 };
 
 const els = {
@@ -187,6 +190,14 @@ function getAllKeys(storeName) {
   });
 }
 
+function getWordsByStage(stage) {
+  return new Promise((resolve, reject) => {
+    const request = tx("words").index("stage").getAll(stage);
+    request.onsuccess = () => resolve(request.result || []);
+    request.onerror = () => reject(request.error);
+  });
+}
+
 function put(storeName, value) {
   return new Promise((resolve, reject) => {
     const request = tx(storeName, "readwrite").put(value);
@@ -257,6 +268,89 @@ function normalizeBuiltinWord(word, index, list) {
     createdAt: 0,
     order: index + 1
   };
+}
+
+function replaceBuiltinStageWords(stage, words) {
+  return new Promise((resolve, reject) => {
+    const transaction = state.db.transaction("words", "readwrite");
+    const store = transaction.objectStore("words");
+    const request = store.openCursor();
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (cursor) {
+        if (cursor.value.sourceType === "builtin" && cursor.value.grade === stage) cursor.delete();
+        cursor.continue();
+        return;
+      }
+      words.forEach((word) => store.put(word));
+    };
+    request.onerror = () => reject(request.error);
+    transaction.oncomplete = () => resolve();
+    transaction.onerror = () => reject(transaction.error);
+  });
+}
+
+function stageLoadMessage(stage, failed = false) {
+  if (failed) return `${stage}词库加载失败。请刷新重试，或使用备用入口：${BACKUP_SITE_URL}`;
+  return `正在加载${stage}词库，请稍候...`;
+}
+
+async function seedStageWords(stage, list, version) {
+  const metaKey = `builtinStageVersion:${stage}`;
+  const seedMeta = await new Promise((resolve) => {
+    const request = tx("meta").get(metaKey);
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => resolve(null);
+  });
+  const existing = await getWordsByStage(stage);
+  const hasBuiltinWords = existing.some((word) => word.sourceType === "builtin");
+  if (seedMeta?.value === version && hasBuiltinWords) return;
+  const words = (list.words || [])
+    .map((word, index) => normalizeBuiltinWord(word, index, list))
+    .filter((word) => word.en && word.zh);
+  await replaceBuiltinStageWords(stage, words);
+  await put("meta", { key: metaKey, value: version, at: Date.now() });
+}
+
+async function isStageSeeded(stage, version) {
+  const metaKey = `builtinStageVersion:${stage}`;
+  const seedMeta = await new Promise((resolve) => {
+    const request = tx("meta").get(metaKey);
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => resolve(null);
+  });
+  if (seedMeta?.value !== version) return false;
+  return (await getWordsByStage(stage)).some((word) => word.sourceType === "builtin");
+}
+
+async function ensureStageLoaded(stage) {
+  if (state.stageLoads.has(stage)) return state.stageLoads.get(stage);
+  const entry = window.WORD_SNAP_BUILTIN_MANIFEST?.stages?.[stage];
+  if (!entry) return false;
+  const promise = (async () => {
+    if (await isStageSeeded(stage, entry.version)) return true;
+    els.feedback.textContent = stageLoadMessage(stage);
+    try {
+      await loadScriptWithRetry(entry.src);
+      const list = window.WORD_SNAP_STAGE_LISTS?.[stage];
+      if (!list?.words?.length) throw new Error(`${stage}词库数据为空`);
+      await seedStageWords(stage, list, entry.version);
+      if (!state.session && els.feedback.textContent === stageLoadMessage(stage)) {
+        els.feedback.textContent = "练习记录只保存在本机浏览器，不会上传。";
+      }
+      return true;
+    } catch (error) {
+      els.feedback.textContent = stageLoadMessage(stage, true);
+      throw error;
+    }
+  })();
+  state.stageLoads.set(stage, promise);
+  try {
+    return await promise;
+  } catch (error) {
+    state.stageLoads.delete(stage);
+    throw error;
+  }
 }
 
 async function seedBuiltinWords() {
@@ -664,6 +758,14 @@ function resolvePracticeMode() {
 async function startSession() {
   if (state.session) clearInterval(state.session.timerId);
   hideTrainContinueButton();
+  const stage = els.stageSelect.value;
+  try {
+    await ensureStageLoaded(stage);
+    await loadState();
+  } catch (error) {
+    els.progressText.textContent = stageLoadMessage(stage, true);
+    return;
+  }
   const { queue, rotationKey, rotationState } = buildQueue();
   if (!queue.length) {
     els.feedback.textContent = state.queueNotice || "当前设置下暂无可练单词。";
@@ -964,7 +1066,16 @@ function buildBattleQueue() {
   return shuffle(words).slice(0, size);
 }
 
-function startBattle() {
+async function startBattle() {
+  const stage = els.battleStage.value;
+  try {
+    els.battleStatus.textContent = stageLoadMessage(stage);
+    await ensureStageLoaded(stage);
+    await loadState();
+  } catch (error) {
+    els.battleStatus.textContent = stageLoadMessage(stage, true);
+    return;
+  }
   const queue = buildBattleQueue();
   if (!queue.length) {
     els.battleStatus.textContent = "当前年级没有可对战单词，请换一个年级或先导入词库。";
@@ -1115,23 +1226,7 @@ function getQuizSentenceData(grade) {
 
 function loadScriptOnce(src) {
   if (state.quizBankLoads.has(src)) return state.quizBankLoads.get(src);
-  const promise = new Promise((resolve, reject) => {
-    const existing = document.querySelector(`script[data-dynamic-src="${src}"]`);
-    if (existing?.dataset.loaded === "true") {
-      resolve();
-      return;
-    }
-    const script = existing || document.createElement("script");
-    script.src = src;
-    script.async = true;
-    script.dataset.dynamicSrc = src;
-    script.onload = () => {
-      script.dataset.loaded = "true";
-      resolve();
-    };
-    script.onerror = () => reject(new Error(`加载失败：${src}`));
-    if (!existing) document.head.append(script);
-  });
+  const promise = loadScriptWithRetry(src);
   state.quizBankLoads.set(src, promise);
   return promise;
 }
@@ -1145,7 +1240,7 @@ async function ensureQuizBankLoaded(grade) {
     await loadScriptOnce(src);
     return true;
   } catch (error) {
-    els.quizStatusText.textContent = `${grade}刷题题库加载失败，请换个网络或刷新重试。`;
+    els.quizStatusText.textContent = `${grade}刷题题库加载失败，请刷新重试，或使用备用入口：${BACKUP_SITE_URL}`;
     return false;
   }
 }
@@ -1210,10 +1305,9 @@ async function recordQuizAnswer(q, isCorrect, isFast) {
 }
 
 function generateWordQuiz(grade) {
-  const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
-  const entry = lists.find((l) => l.grade === grade);
-  if (!entry || !entry.words || !entry.words.length) return [];
-  return entry.words
+  const words = state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh);
+  if (!words.length) return [];
+  return words
     .filter((w) => w.en && w.zh)
     .map((w, i) => ({ id: `w-${grade}-${i}`, sentence: w.zh, answer: w.en, type: "word" }));
 }
@@ -1236,9 +1330,7 @@ async function updateQuizSizeOptions() {
     opts.push(`<option value="all">全部 ${sentenceQuizTotal} 题</option>`);
     sel.innerHTML = opts.join("");
   } else {
-    const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
-    const entry = lists.find((l) => l.grade === grade);
-    const total = entry?.words?.filter((w) => w.en && w.zh).length || 0;
+    const total = state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh).length;
     const opts = [];
     if (total > 50) opts.push('<option value="50" selected>50 词</option>');
     if (total > 100) opts.push('<option value="100">100 词</option>');
@@ -1294,10 +1386,15 @@ async function startQuiz(isReview) {
       .filter(Boolean)
       .map((en, index) => ({ id: `quiz-${grade}-${index}`, en, zh: "" }));
   } else {
+    try {
+      await ensureStageLoaded(grade);
+      await loadState();
+    } catch (error) {
+      els.quizStatusText.textContent = stageLoadMessage(grade, true);
+      return;
+    }
     allData = generateWordQuiz(grade);
-    const lists = window.WORD_SNAP_BUILTIN_LISTS || [];
-    const entry = lists.find((l) => l.grade === grade);
-    vocabPool = (entry?.words || []).filter((w) => w.en && w.zh);
+    vocabPool = state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh);
   }
 
   if (!allData.length) {
@@ -1849,7 +1946,16 @@ function escapeAttr(value) {
 
 function bindEvents() {
   els.tabs.forEach((tab) => tab.addEventListener("click", () => switchView(tab.dataset.view)));
-  [els.stageSelect, els.deckFilter, els.sessionSize, els.trainingScope].forEach((el) => el.addEventListener("change", renderAll));
+  [els.deckFilter, els.sessionSize, els.trainingScope].forEach((el) => el.addEventListener("change", renderAll));
+  els.stageSelect.addEventListener("change", async () => {
+    const stage = els.stageSelect.value;
+    try {
+      await ensureStageLoaded(stage);
+      await loadState();
+    } catch (error) {
+      els.progressText.textContent = stageLoadMessage(stage, true);
+    }
+  });
   els.startBtn.addEventListener("click", startSession);
   els.skipBtn.addEventListener("click", skipWord);
   els.trainContinueBtn.addEventListener("click", nextWord);
@@ -1965,9 +2071,8 @@ async function init() {
   bindEvents();
   try {
     state.db = await openDb();
-    await seedBuiltinWords();
+    await ensureStageLoaded(els.stageSelect.value);
     await loadState();
-    await updateQuizSizeOptions();
   } catch (error) {
     els.feedback.textContent = `初始化失败：${error.message || error}`;
   }
