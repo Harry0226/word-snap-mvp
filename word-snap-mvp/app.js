@@ -1,7 +1,7 @@
-const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考常考词组总复习", "高考冲刺"];
+const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考作文高级动词替换", "中考常考词组总复习", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
-const BUILTIN_SEED_VERSION = 14;
+const BUILTIN_SEED_VERSION = 15;
 const FAST_PICK_LIMIT = 1500;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
@@ -266,7 +266,14 @@ function normalizeBuiltinWord(word, index, list) {
     sourceType: "builtin",
     frequency: Number(word.frequency || 0),
     createdAt: 0,
-    order: index + 1
+    order: index + 1,
+    fixedMode: word.fixedMode || "",
+    choiceCount: Number(word.choiceCount || 0),
+    promptText: word.promptText || "",
+    promptLabel: word.promptLabel || "",
+    answerText: word.answerText || "",
+    answerFeedback: word.answerFeedback || "",
+    choiceOptions: Array.isArray(word.choiceOptions) ? word.choiceOptions : null
   };
 }
 
@@ -425,6 +432,12 @@ async function seedBuiltinWords() {
   if (Number(seedMeta?.value || 0) < 14) {
     await deleteBuiltinDecks([
       { grade: "初二", source: "初二内置词库" }
+    ]);
+  }
+  if (Number(seedMeta?.value || 0) < 15) {
+    await deleteBuiltinDecks([
+      { grade: "高二", source: "高二内置词库" },
+      { grade: "中考作文高级动词替换", source: "中考作文高级动词替换" }
     ]);
   }
   if (Number(seedMeta?.value || 0) < 12) {
@@ -749,7 +762,8 @@ function updateSessionSizeOptions() {
   els.sessionSize.value = options.some(([value]) => value === previous) ? previous : "200";
 }
 
-function resolvePracticeMode() {
+function resolvePracticeMode(word) {
+  if (word?.fixedMode) return word.fixedMode;
   const selected = els.practiceMode.value;
   if (selected === "zhToEnChoice" || selected === "enToZhChoice") return selected;
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
@@ -804,11 +818,11 @@ function nextWord() {
   session.current = session.queue.shift();
   if (!session.current) return finishSession();
 
-  session.mode = resolvePracticeMode();
+  session.mode = resolvePracticeMode(session.current);
   const word = session.current;
   const isPromptChinese = session.mode === "zhToEnChoice";
-  els.word.textContent = isPromptChinese ? word.zh : word.en;
-  els.tag.textContent = `${word.grade} · ${word.sourceType === "builtin" ? "内置" : "自定义"}`;
+  els.word.textContent = word.promptText || (isPromptChinese ? word.zh : word.en);
+  els.tag.textContent = `${word.grade} · ${word.promptLabel || (word.sourceType === "builtin" ? "内置" : "自定义")}`;
   els.hint.textContent = hintForMode(session.mode, word);
   els.feedback.textContent = "计时中。";
   els.choices.innerHTML = "";
@@ -817,13 +831,13 @@ function nextWord() {
     const button = document.createElement("button");
     button.className = "choice";
     button.type = "button";
-    button.dataset.wordId = choice.id;
+    button.dataset.choiceId = choice.id;
     const key = document.createElement("span");
     key.className = "choice-key";
     key.textContent = CHOICE_KEYS[index];
     const text = document.createElement("span");
     text.className = "choice-text";
-    text.textContent = session.mode === "zhToEnChoice" ? choice.en : choice.zh;
+    text.textContent = choiceText(choice, session.mode);
     button.append(key, text);
     button.addEventListener("click", () => answer(choice, button));
     els.choices.append(button);
@@ -834,6 +848,7 @@ function nextWord() {
 }
 
 function hintForMode(mode, word) {
+  if (mode === "customChoice") return word.notes || "根据题干选择最匹配的答案。1.5 秒内算秒选，超过 3.5 秒记慢词。";
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
   if (mode === "enToZhChoice") return detail || "看英文选中文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
   return "看中文选英文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
@@ -850,6 +865,7 @@ function startTimer() {
 }
 
 function getTrainingChoiceCount(answer) {
+  if (answer.choiceCount) return answer.choiceCount;
   return answer.grade === "初二" ? 5 : 4;
 }
 
@@ -893,6 +909,9 @@ function getStructuredDistractors(answer, count) {
 }
 
 function makeChoices(answer) {
+  if (Array.isArray(answer.choiceOptions) && answer.choiceOptions.length) {
+    return shuffle(answer.choiceOptions).slice(0, getTrainingChoiceCount(answer));
+  }
   const distractorCount = getTrainingChoiceCount(answer) - 1;
   if (answer.grade === "初二") {
     return shuffle([answer, ...getStructuredDistractors(answer, distractorCount)]);
@@ -905,6 +924,11 @@ function makeChoices(answer) {
   const fallback = ranked.map((item) => item.candidate);
   const distractors = uniqueById([...shuffle(preferred), ...fallback]).slice(0, distractorCount);
   return shuffle([answer, ...distractors]);
+}
+
+function choiceText(choice, mode) {
+  if (choice?.text !== undefined) return choice.text;
+  return mode === "zhToEnChoice" ? choice.en : choice.zh;
 }
 
 function sameInitial(candidate, answer) {
@@ -981,22 +1005,28 @@ function showTrainContinueButton() {
 }
 
 function isCorrectAnswer(value, word, mode) {
+  if (mode === "customChoice") return Boolean(value?.isAnswer);
+  if (Array.isArray(word.choiceOptions) && word.choiceOptions.length) return Boolean(value?.isAnswer);
   return value?.id === word.id;
 }
 
 function paintChoices(answerWord, clickedButton) {
   [...els.choices.children].forEach((button) => {
-    const isCorrectChoice = button.dataset.wordId === state.session.current.id;
+    const current = state.session.current;
+    const isCorrectChoice = Array.isArray(current.choiceOptions) && current.choiceOptions.length
+      ? current.choiceOptions.some((choice) => choice.isAnswer && choice.id === button.dataset.choiceId)
+      : button.dataset.choiceId === current.id;
     button.classList.toggle("correct", isCorrectChoice);
     button.disabled = true;
   });
-  if (answerWord?.id !== state.session.current.id && clickedButton) clickedButton.classList.add("wrong");
+  if (!isCorrectAnswer(answerWord, state.session.current, state.session.mode) && clickedButton) clickedButton.classList.add("wrong");
 }
 
 function feedbackText(word, isCorrect, isFast, isSlow, elapsed) {
   const seconds = (elapsed / 1000).toFixed(2);
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  if (!isCorrect) return `错词：${word.en} = ${word.zh}${detail ? `｜${detail}` : ""}`;
+  const answer = word.answerFeedback || `${word.en} = ${word.zh}${detail ? `｜${detail}` : ""}`;
+  if (!isCorrect) return `错题：${answer}`;
   if (isFast) return `秒选成功：${seconds} 秒`;
   if (isSlow) return `答对了，用时 ${seconds} 秒，已记为慢词。`;
   return `答对了，用时 ${seconds} 秒，未记为慢词。`;
@@ -2029,7 +2059,7 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (event) => {
     if (els.views.train.classList.contains("active") && state.session && !state.session.answered) {
-      if (state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice") {
+      if (state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice" || state.session.mode === "customChoice") {
         const key = event.key.toUpperCase();
         const choiceIndex = /^[1-5]$/.test(key) ? Number(key) - 1 : CHOICE_KEYS.indexOf(key);
         const button = choiceIndex >= 0 ? els.choices.children[choiceIndex] : null;

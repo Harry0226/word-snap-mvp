@@ -1,5 +1,5 @@
 window.WORD_SNAP_BUILTIN_MANIFEST = {
-  "version": "20260608-lazy-stages",
+  "version": "20260608-writing-grade2-sync",
   "stages": {
     "初三": {
       "src": "./word-data/stages/grade9.js?v=20260608-lazy-stages",
@@ -38,10 +38,16 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
       "source": "高一内置词库"
     },
     "高二": {
-      "src": "./word-data/stages/grade11.js?v=20260608-lazy-stages",
-      "version": "20260608-lazy-stages",
-      "count": 1019,
+      "src": "./word-data/stages/grade11.js?v=20260608-writing-grade2-sync",
+      "version": "20260608-writing-grade2-sync",
+      "count": 1000,
       "source": "高二内置词库"
+    },
+    "中考作文高级动词替换": {
+      "src": "./word-data/stages/junior-writing-verbs.js?v=20260608-writing-grade2-sync",
+      "version": "20260608-writing-grade2-sync",
+      "count": 100,
+      "source": "中考作文高级动词替换"
     },
     "高三": {
       "src": "./word-data/stages/grade12.js?v=20260608-lazy-stages",
