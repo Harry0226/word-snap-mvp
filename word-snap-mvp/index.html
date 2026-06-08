@@ -8,12 +8,13 @@
   <meta name="theme-color" content="#f6f7f9">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260608-checkin">
+  <link rel="stylesheet" href="./styles.css?v=20260608-daily-streaks">
   <script defer src="./word-data/junior-exam-words.js?v=20260601-0109-junior775"></script>
   <script defer src="./word-data/phrase-review-words.js?v=20260521-phrases"></script>
   <script defer src="./word-data/builtin-word-lists.js?v=20260601-0109-grade71002"></script>
   <script defer src="./rotation-queue.js?v=20260608-rotation"></script>
-  <script defer src="./app.js?v=20260608-checkin"></script>
+  <script defer src="./daily-streaks.js?v=20260608-daily-streaks"></script>
+  <script defer src="./app.js?v=20260608-daily-streaks"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -29,14 +30,13 @@
         <button class="tab" type="button" data-view="wrong">错词</button>
         <button class="tab" type="button" data-view="report">报告</button>
         <button class="tab" type="button" data-view="quiz">刷题</button>
-        <button class="tab" type="button" data-view="achievements">成就</button>
       </nav>
     </header>
 
     <section class="notice-board" aria-label="学习通知">
       <strong>学习通知</strong>
       <div class="notice-lines">
-        <p><b>每日任务：</b>同学们对应自己的年级每天至少刷200单词和刷题150道题目。</p>
+        <p><b>每日任务：</b>小学六年级和初中每天刷词200个，高中每天刷词300个；初一至初三每天刷题100道。</p>
         <p><b>训练模式：</b>看英文选中文、看中文选英文。</p>
         <p><b>通过标准：</b>对应截图 2 张，正确率达到 95% 才算通过。</p>
         <p><b>提交方式：</b>截图当天微信发给代老师。</p>
@@ -45,23 +45,28 @@
       </div>
     </section>
 
-    <section class="stats" aria-label="学习统计">
-      <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
-      <div><strong id="doneCount">0</strong><span>累计练习</span></div>
-      <div><strong id="accuracy">0%</strong><span>正确率</span></div>
-      <div><strong id="fastRate">0%</strong><span>快速率</span></div>
-      <div><strong id="weakCount">0</strong><span>弱词</span></div>
-      <div class="checkin-mini">
-        <div class="checkin-mini-left">
-          <span class="streak-icon">🔥</span>
-          <strong id="currentStreak">0</strong>
-          <span>连续</span>
-        </div>
-        <button id="checkinBtn" type="button" class="checkin-btn-mini">打卡</button>
-      </div>
-    </section>
-
     <section id="view-train" class="view active">
+      <div id="trainWordStats" class="stats" aria-label="刷词统计">
+        <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
+        <div><strong id="doneCount">0</strong><span>累计练习</span></div>
+        <div><strong id="accuracy">0%</strong><span>正确率</span></div>
+        <div><strong id="fastRate">0%</strong><span>快速率</span></div>
+        <div><strong id="weakCount">0</strong><span>弱词</span></div>
+        <div id="trainStreakCard" class="checkin-mini">
+          <div class="checkin-mini-left"><span class="streak-icon">🔥</span><strong id="trainStreak">0</strong><span>连续</span></div>
+          <span id="trainTodayProgress" class="checkin-progress">今日 0/200</span>
+          <span id="trainCheckinStatus" class="checkin-status">未达标</span>
+        </div>
+      </div>
+
+      <div id="trainQuizStats" class="stats stats-secondary" aria-label="对应年级刷题统计">
+        <div><strong id="trainQuizBankTotal">0</strong><span>当前题库</span></div>
+        <div><strong id="trainQuizDoneCount">0</strong><span>累计刷题</span></div>
+        <div><strong id="trainQuizAccuracy">0%</strong><span>正确率</span></div>
+        <div><strong id="trainQuizFastRate">0%</strong><span>快速率</span></div>
+        <div><strong id="trainQuizWrongCount">0</strong><span>错题</span></div>
+      </div>
+
       <div class="panel controls-panel primary-controls">
         <label>学习阶段
           <select id="stageSelect">
@@ -130,6 +135,7 @@
         <div id="choices" class="choices"></div>
         <div class="feedback-row">
           <p id="feedback">练习记录只保存在本机浏览器，不会上传。</p>
+          <button id="trainContinueBtn" type="button" hidden>继续刷词</button>
           <button id="skipBtn" type="button" disabled>不会</button>
         </div>
       </div>
@@ -303,6 +309,11 @@
         <div><strong id="quizAccuracy">0%</strong><span>正确率</span></div>
         <div><strong id="quizFastRate">0%</strong><span>快速率</span></div>
         <div><strong id="quizWrongCount">0</strong><span>错题</span></div>
+        <div id="quizStreakCard" class="checkin-mini">
+          <div class="checkin-mini-left"><span class="streak-icon">🔥</span><strong id="quizStreak">0</strong><span>连续</span></div>
+          <span id="quizTodayProgress" class="checkin-progress">今日 0/100</span>
+          <span id="quizCheckinStatus" class="checkin-status">未达标</span>
+        </div>
       </div>
 
       <div class="panel quiz-controls">
@@ -365,19 +376,6 @@
       </div>
     </section>
 
-    <section id="view-achievements" class="view">
-      <div class="panel">
-        <div class="section-head">
-          <div>
-            <h2>🏆 成就墙</h2>
-            <p>完成挑战解锁成就，记录你的学习里程碑。</p>
-          </div>
-        </div>
-        <div class="achievement-grid" id="achievementGrid">
-          <!-- 成就卡片 -->
-        </div>
-      </div>
-    </section>
   </main>
 </body>
 </html>

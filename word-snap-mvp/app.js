@@ -1,37 +1,16 @@
 const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考常考词组总复习", "高考冲刺"];
 const DB_NAME = "word-snap-v2";
-const DB_VERSION = 3;
+const DB_VERSION = 4;
 const BUILTIN_SEED_VERSION = 14;
 const FAST_PICK_LIMIT = 1500;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
 const QUIZ_FAST = 5000;
 const QUIZ_SLOW = 12000;
-// 成就定义
-const ACHIEVEMENTS = [
-  { id: "first_word", name: "初学者", desc: "完成第一个单词", icon: "📚", condition: (s) => s.totalSeen >= 1 },
-  { id: "streak_3", name: "三天坚持", desc: "连续打卡3天", icon: "🔥", condition: (s) => s.currentStreak >= 3 },
-  { id: "streak_7", name: "一周达人", desc: "连续打卡7天", icon: "⭐", condition: (s) => s.currentStreak >= 7 },
-  { id: "streak_14", name: "两周勇士", desc: "连续打卡14天", icon: "💪", condition: (s) => s.currentStreak >= 14 },
-  { id: "streak_30", name: "月度冠军", desc: "连续打卡30天", icon: "🏆", condition: (s) => s.currentStreak >= 30 },
-  { id: "streak_100", name: "百日传奇", desc: "连续打卡100天", icon: "👑", condition: (s) => s.currentStreak >= 100 },
-  { id: "words_50", name: "半百起步", desc: "累计学习50词", icon: "📖", condition: (s) => s.totalSeen >= 50 },
-  { id: "words_100", name: "百词斩", desc: "累计学习100词", icon: "💯", condition: (s) => s.totalSeen >= 100 },
-  { id: "words_500", name: "词汇达人", desc: "累计学习500词", icon: "📖", condition: (s) => s.totalSeen >= 500 },
-  { id: "words_1000", name: "千词王者", desc: "累计学习1000词", icon: "👑", condition: (s) => s.totalSeen >= 1000 },
-  { id: "accuracy_90", name: "精准记忆", desc: "单轮正确率达90%", icon: "🎯", condition: (s) => s.bestAccuracy >= 90 },
-  { id: "accuracy_100", name: "满分通过", desc: "单轮正确率100%", icon: "🌟", condition: (s) => s.bestAccuracy >= 100 },
-  { id: "speed_50", name: "闪电侠", desc: "单轮秒选率达50%", icon: "⚡", condition: (s) => s.bestFastRate >= 50 },
-  { id: "speed_80", name: "秒选之王", desc: "单轮秒选率达80%", icon: "⚡", condition: (s) => s.bestFastRate >= 80 },
-  { id: "battle_win", name: "对战之王", desc: "赢得一场对战", icon: "🎮", condition: (s) => s.battleWins >= 1 },
-  { id: "quiz_100", name: "刷题达人", desc: "累计刷题100道", icon: "📝", condition: (s) => s.totalQuiz >= 100 },
-  { id: "night_owl", name: "夜猫子", desc: "在晚上10点后学习", icon: "🦉", condition: (s) => s.isNightOwl },
-  { id: "early_bird", name: "早起鸟", desc: "在早上6点前学习", icon: "🐦", condition: (s) => s.isEarlyBird },
-];
-
-// 轮转队列系统
+const GRADE7_QUIZ_COUNT = 186;
 const ROTATION_META_PREFIX = "rotation:v2:";
 const { prepareRotationBatch, completeRotationItem } = window.WordSnapRotation;
+const { getCheckinThreshold, makeProgressKey, advanceDailyProgress } = window.WordSnapDailyStreaks;
 
 const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
@@ -59,25 +38,7 @@ const state = {
   lastReport: null,
   weakFilter: "wrong",
   queueNotice: "",
-  // 打卡和成就系统
-  streak: {
-    key: "daily",
-    currentStreak: 0,
-    longestStreak: 0,
-    lastCheckIn: "",
-    totalDays: 0,
-    checkInDates: []
-  },
-  achievements: new Map(),
-  stats: {
-    totalSeen: 0,
-    bestAccuracy: 0,
-    bestFastRate: 0,
-    battleWins: 0,
-    totalQuiz: 0,
-    isNightOwl: false,
-    isEarlyBird: false
-  }
+  streaks: new Map()
 };
 
 const els = {
@@ -88,8 +49,7 @@ const els = {
     decks: document.querySelector("#view-decks"),
     wrong: document.querySelector("#view-wrong"),
     report: document.querySelector("#view-report"),
-    quiz: document.querySelector("#view-quiz"),
-    achievements: document.querySelector("#view-achievements")
+    quiz: document.querySelector("#view-quiz")
   },
   totalWords: document.querySelector("#totalWords"),
   doneCount: document.querySelector("#doneCount"),
@@ -110,6 +70,7 @@ const els = {
   timer: document.querySelector("#timer"),
   choices: document.querySelector("#choices"),
   feedback: document.querySelector("#feedback"),
+  trainContinueBtn: document.querySelector("#trainContinueBtn"),
   skipBtn: document.querySelector("#skipBtn"),
   sessionReport: document.querySelector("#sessionReport"),
   uploadStage: document.querySelector("#uploadStage"),
@@ -161,6 +122,19 @@ Object.assign(els, {
   quizAccuracy: document.querySelector("#quizAccuracy"),
   quizFastRate: document.querySelector("#quizFastRate"),
   quizWrongCount: document.querySelector("#quizWrongCount"),
+  trainQuizBankTotal: document.querySelector("#trainQuizBankTotal"),
+  trainQuizDoneCount: document.querySelector("#trainQuizDoneCount"),
+  trainQuizAccuracy: document.querySelector("#trainQuizAccuracy"),
+  trainQuizFastRate: document.querySelector("#trainQuizFastRate"),
+  trainQuizWrongCount: document.querySelector("#trainQuizWrongCount"),
+  trainStreakCard: document.querySelector("#trainStreakCard"),
+  trainStreak: document.querySelector("#trainStreak"),
+  trainTodayProgress: document.querySelector("#trainTodayProgress"),
+  trainCheckinStatus: document.querySelector("#trainCheckinStatus"),
+  quizStreakCard: document.querySelector("#quizStreakCard"),
+  quizStreak: document.querySelector("#quizStreak"),
+  quizTodayProgress: document.querySelector("#quizTodayProgress"),
+  quizCheckinStatus: document.querySelector("#quizCheckinStatus"),
   quizTag: document.querySelector("#quizTag"),
   quizSentence: document.querySelector("#quizSentence"),
   quizHint: document.querySelector("#quizHint"),
@@ -185,9 +159,8 @@ function openDb() {
       if (!db.objectStoreNames.contains("records")) db.createObjectStore("records", { keyPath: "wordId" });
       if (!db.objectStoreNames.contains("meta")) db.createObjectStore("meta", { keyPath: "key" });
       if (!db.objectStoreNames.contains("quizWrongAnswers")) db.createObjectStore("quizWrongAnswers", { keyPath: "questionId" });
-      // 打卡和成就系统
       if (!db.objectStoreNames.contains("streaks")) db.createObjectStore("streaks", { keyPath: "key" });
-      if (!db.objectStoreNames.contains("achievements")) db.createObjectStore("achievements", { keyPath: "id" });
+      if (db.objectStoreNames.contains("achievements")) db.deleteObjectStore("achievements");
     };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => reject(request.error);
@@ -405,19 +378,14 @@ function deleteBuiltinDecks(decks) {
 
 // ============ 打卡系统 ============
 
-async function loadStreak() {
-  const streak = await new Promise((resolve) => {
-    const request = tx("streaks").get("daily");
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => resolve(null);
-  });
-  if (streak) {
-    state.streak = streak;
-  }
+async function loadStreaks() {
+  const streaks = await getAll("streaks");
+  state.streaks = new Map(streaks.map((streak) => [streak.key, streak]));
 }
 
-async function saveStreak() {
-  await put("streaks", state.streak);
+async function saveStreak(streak) {
+  state.streaks.set(streak.key, streak);
+  await put("streaks", streak);
 }
 
 function getTodayStr() {
@@ -436,37 +404,19 @@ function getYesterdayStr() {
   return `${year}-${month}-${day}`;
 }
 
-async function checkIn() {
-  const today = getTodayStr();
-  if (state.streak.lastCheckIn === today) return false; // 今日已打卡
-
-  const yesterday = getYesterdayStr();
-  const isConsecutive = state.streak.lastCheckIn === yesterday;
-
-  state.streak.currentStreak = isConsecutive ? state.streak.currentStreak + 1 : 1;
-  state.streak.longestStreak = Math.max(state.streak.longestStreak, state.streak.currentStreak);
-  state.streak.totalDays += 1;
-  state.streak.lastCheckIn = today;
-  state.streak.checkInDates.unshift(today);
-  state.streak.checkInDates = state.streak.checkInDates.slice(0, 365);
-
-  await saveStreak();
-  showCheckInAnimation();
-  await checkAchievements();
-  renderCheckinStats();
-  return true;
+function getStreak(kind, grade) {
+  return state.streaks.get(makeProgressKey(kind, grade)) || null;
 }
 
-function showCheckInAnimation() {
-  const btn = document.querySelector("#checkinBtn");
-  if (btn) {
-    btn.classList.add("checkin-success");
-    btn.textContent = "✓ 已打卡";
-    btn.disabled = true;
-    setTimeout(() => btn.classList.remove("checkin-success"), 1000);
-  }
-  // 显示 toast 提示
-  showToast("🔥 打卡成功！继续保持！");
+async function recordDailyActivity(kind, grade) {
+  const threshold = getCheckinThreshold(kind, grade);
+  if (!threshold) return;
+  const key = makeProgressKey(kind, grade);
+  const next = advanceDailyProgress(getStreak(kind, grade), 1, threshold, getTodayStr(), getYesterdayStr());
+  next.key = key;
+  await saveStreak(next);
+  if (next.justCheckedIn) showToast(`🔥 ${kind === "train" ? "刷词" : "刷题"}达标，自动打卡成功！`);
+  renderDailyProgress();
 }
 
 function showToast(message) {
@@ -481,157 +431,23 @@ function showToast(message) {
   }, 2500);
 }
 
-function renderCheckinStats() {
-  const streakEl = document.querySelector("#currentStreak");
-  const checkinBtn = document.querySelector("#checkinBtn");
-
-  if (streakEl) streakEl.textContent = state.streak.currentStreak;
-
-  // 更新打卡按钮状态
-  if (checkinBtn) {
-    const today = getTodayStr();
-    const isCheckedToday = state.streak.lastCheckIn === today;
-    checkinBtn.textContent = isCheckedToday ? "✓" : "打卡";
-    checkinBtn.disabled = isCheckedToday;
-  }
+function renderStreakCard(card, streakEl, progressEl, statusEl, kind, grade) {
+  const threshold = getCheckinThreshold(kind, grade);
+  card.hidden = !threshold;
+  card.parentElement?.classList.toggle("without-streak", !threshold);
+  if (!threshold) return;
+  const streak = getStreak(kind, grade) || {};
+  const todayCount = streak.progressDate === getTodayStr() ? Number(streak.todayCount || 0) : 0;
+  const checked = streak.lastCheckIn === getTodayStr();
+  streakEl.textContent = Number(streak.currentStreak || 0);
+  progressEl.textContent = `今日 ${Math.min(todayCount, threshold)}/${threshold}`;
+  statusEl.textContent = checked ? "已打卡" : "未达标";
+  card.classList.toggle("checked-in", checked);
 }
 
-// ============ 成就系统 ============
-
-async function loadAchievements() {
-  const achievements = await getAll("achievements");
-  state.achievements = new Map(achievements.map((a) => [a.id, a]));
-}
-
-async function saveAchievement(achievement) {
-  await put("achievements", achievement);
-  state.achievements.set(achievement.id, achievement);
-}
-
-async function checkAchievements() {
-  const stats = calculateStats();
-  const newAchievements = [];
-
-  for (const def of ACHIEVEMENTS) {
-    if (state.achievements.has(def.id)) continue;
-    if (def.condition(stats)) {
-      const achievement = {
-        id: def.id,
-        unlockedAt: Date.now(),
-        name: def.name,
-        desc: def.desc,
-        icon: def.icon
-      };
-      await saveAchievement(achievement);
-      newAchievements.push(achievement);
-    }
-  }
-
-  // 显示新成就解锁动画
-  if (newAchievements.length > 0) {
-    showAchievementUnlock(newAchievements);
-  }
-}
-
-function calculateStats() {
-  const records = [...state.records.values()];
-  const totalSeen = records.reduce((sum, r) => sum + r.seen, 0);
-  const totalCorrect = records.reduce((sum, r) => sum + r.correct, 0);
-  const totalFast = records.reduce((sum, r) => sum + r.fast, 0);
-
-  // 计算最佳单轮成绩
-  let bestAccuracy = 0;
-  let bestFastRate = 0;
-
-  if (state.lastReport) {
-    const accuracy = Math.round((state.lastReport.correct / state.lastReport.total) * 100);
-    const fastRate = Math.round((state.lastReport.fast / state.lastReport.total) * 100);
-    bestAccuracy = Math.max(bestAccuracy, accuracy);
-    bestFastRate = Math.max(bestFastRate, fastRate);
-  }
-
-  // 检查时间特殊成就
-  const hour = new Date().getHours();
-  const isNightOwl = hour >= 22 || hour < 4;
-  const isEarlyBird = hour >= 4 && hour < 6;
-
-  return {
-    totalSeen,
-    bestAccuracy: Math.max(bestAccuracy, state.stats.bestAccuracy),
-    bestFastRate: Math.max(bestFastRate, state.stats.bestFastRate),
-    battleWins: state.stats.battleWins,
-    totalQuiz: state.stats.totalQuiz,
-    currentStreak: state.streak.currentStreak,
-    isNightOwl,
-    isEarlyBird
-  };
-}
-
-function showAchievementUnlock(achievements) {
-  achievements.forEach((achievement, index) => {
-    setTimeout(() => {
-      const modal = document.createElement("div");
-      modal.className = "achievement-modal";
-      modal.innerHTML = `
-        <div class="achievement-modal-content">
-          <div class="achievement-icon">${achievement.icon}</div>
-          <h3>🎉 成就解锁！</h3>
-          <p class="achievement-name">${achievement.name}</p>
-          <p class="achievement-desc">${achievement.desc}</p>
-        </div>
-      `;
-      document.body.appendChild(modal);
-      requestAnimationFrame(() => modal.classList.add("show"));
-
-      setTimeout(() => {
-        modal.classList.remove("show");
-        setTimeout(() => modal.remove(), 300);
-      }, 3000);
-    }, index * 500);
-  });
-}
-
-function renderAchievements() {
-  const grid = document.querySelector("#achievementGrid");
-  if (!grid) return;
-
-  const stats = calculateStats();
-  let html = "";
-
-  for (const def of ACHIEVEMENTS) {
-    const unlocked = state.achievements.get(def.id);
-    const isUnlocked = !!unlocked;
-    const progress = getAchievementProgress(def, stats);
-
-    html += `<div class="achievement-card ${isUnlocked ? "unlocked" : "locked"}">
-      <div class="achievement-icon">${isUnlocked ? def.icon : "🔒"}</div>
-      <div class="achievement-info">
-        <strong>${def.name}</strong>
-        <span>${def.desc}</span>
-        ${!isUnlocked && progress > 0 ? `<div class="achievement-progress"><div class="achievement-progress-bar" style="width: ${progress}%"></div></div>` : ""}
-      </div>
-      ${isUnlocked ? `<span class="achievement-date">${new Date(unlocked.unlockedAt).toLocaleDateString()}</span>` : ""}
-    </div>`;
-  }
-
-  grid.innerHTML = html;
-}
-
-function getAchievementProgress(def, stats) {
-  // 计算成就进度百分比
-  if (def.id.startsWith("streak_")) {
-    const target = parseInt(def.id.split("_")[1]);
-    return Math.min(100, Math.round((stats.currentStreak / target) * 100));
-  }
-  if (def.id.startsWith("words_")) {
-    const target = parseInt(def.id.split("_")[1]);
-    return Math.min(100, Math.round((stats.totalSeen / target) * 100));
-  }
-  if (def.id.startsWith("quiz_")) {
-    const target = parseInt(def.id.split("_")[1]);
-    return Math.min(100, Math.round((stats.totalQuiz / target) * 100));
-  }
-  return 0;
+function renderDailyProgress() {
+  renderStreakCard(els.trainStreakCard, els.trainStreak, els.trainTodayProgress, els.trainCheckinStatus, "train", els.stageSelect.value);
+  renderStreakCard(els.quizStreakCard, els.quizStreak, els.quizTodayProgress, els.quizCheckinStatus, "quiz", els.quizStage.value);
 }
 
 async function loadState() {
@@ -647,9 +463,7 @@ async function loadState() {
   state.rotationQueues = new Map(meta
     .filter((entry) => entry.key?.startsWith(ROTATION_META_PREFIX))
     .map((entry) => [entry.key, entry.value]));
-  // 加载打卡和成就数据
-  await loadStreak();
-  await loadAchievements();
+  await loadStreaks();
 
   renderAll();
 }
@@ -849,6 +663,7 @@ function resolvePracticeMode() {
 
 async function startSession() {
   if (state.session) clearInterval(state.session.timerId);
+  hideTrainContinueButton();
   const { queue, rotationKey, rotationState } = buildQueue();
   if (!queue.length) {
     els.feedback.textContent = state.queueNotice || "当前设置下暂无可练单词。";
@@ -859,6 +674,7 @@ async function startSession() {
   state.session = {
     queue,
     total: queue.length,
+    grade: els.stageSelect.value,
     current: null,
     mode: "enToZhChoice",
     sessionStartedAt: performance.now(),
@@ -881,6 +697,7 @@ async function startSession() {
 
 function nextWord() {
   const session = state.session;
+  hideTrainContinueButton();
   session.answered = false;
   session.current = session.queue.shift();
   if (!session.current) return finishSession();
@@ -1040,10 +857,25 @@ async function answer(value, button) {
   paintChoices(value, button);
   els.feedback.textContent = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
   await recordAnswer(word, isCorrect, isFast, isSlow);
+  await recordDailyActivity("train", session.grade);
   await completePersistentRotationItem(session.rotationKey, word.id);
   renderAll();
   updateProgress();
-  setTimeout(nextWord, isCorrect ? 750 : 1350);
+  if (isCorrect) {
+    setTimeout(nextWord, 500);
+  } else {
+    showTrainContinueButton();
+  }
+}
+
+function hideTrainContinueButton() {
+  els.trainContinueBtn.hidden = true;
+}
+
+function showTrainContinueButton() {
+  els.trainContinueBtn.textContent = state.session?.queue.length ? "继续刷词" : "查看结果";
+  els.trainContinueBtn.hidden = false;
+  els.trainContinueBtn.focus();
 }
 
 function isCorrectAnswer(value, word, mode) {
@@ -1103,12 +935,6 @@ async function finishSession() {
     tomorrow,
     totalSeconds
   };
-  // 更新统计成就数据
-  const accuracy = Math.round((session.correct / session.total) * 100);
-  const fastRate = Math.round((session.fast / session.total) * 100);
-  state.stats.bestAccuracy = Math.max(state.stats.bestAccuracy, accuracy);
-  state.stats.bestFastRate = Math.max(state.stats.bestFastRate, fastRate);
-
   els.word.textContent = "Done";
   els.tag.textContent = "本轮完成";
   els.hint.textContent = "建议明天优先复习本轮错词和慢词。";
@@ -1120,12 +946,9 @@ async function finishSession() {
   els.feedback.textContent = `完成 ${session.total} 词，正确率 ${percent(session.correct, session.total)}，秒选率 ${percent(session.fast, session.total)}。`;
   els.progressText.textContent = "本轮已完成";
   els.progressBar.style.width = "100%";
+  hideTrainContinueButton();
   renderSessionReport();
   renderAll();
-
-  // 自动打卡并检查成就
-  await checkIn();
-  await checkAchievements();
 
   state.session = null;
 }
@@ -1265,16 +1088,7 @@ async function finishBattle() {
   els.rightBattleChoices.innerHTML = "";
   els.skipBattleBtn.disabled = true;
 
-  // 更新对战胜利统计
-  if (left !== right) {
-    state.stats.battleWins += 1;
-  }
-
   state.battle = null;
-
-  // 打卡并检查成就
-  await checkIn();
-  await checkAchievements();
 }
 
 function resetBattle() {
@@ -1337,7 +1151,9 @@ async function ensureQuizBankLoaded(grade) {
 }
 
 function getExpectedQuizCount(grade) {
+  if (grade === "初一") return GRADE7_QUIZ_COUNT;
   if (grade === "初二") return GRADE8_QUIZ_COUNT;
+  if (grade === "初三") return 340;
   if (grade === "高一") return GRADE10_QUIZ_COUNT;
   if (grade === "高二") return GRADE11_QUIZ_COUNT;
   return 0;
@@ -1370,6 +1186,16 @@ function renderQuizStats() {
   els.quizWrongCount.textContent = getQuizWrongCount(grade);
 }
 
+function renderTrainQuizStats() {
+  const grade = els.stageSelect.value;
+  const stats = state.quizStats.get(grade) || { attempted: 0, correct: 0, fast: 0 };
+  els.trainQuizBankTotal.textContent = getQuizBankTotal(grade);
+  els.trainQuizDoneCount.textContent = stats.attempted || 0;
+  els.trainQuizAccuracy.textContent = percent(stats.correct || 0, stats.attempted || 0);
+  els.trainQuizFastRate.textContent = percent(stats.fast || 0, stats.attempted || 0);
+  els.trainQuizWrongCount.textContent = getQuizWrongCount(grade);
+}
+
 async function recordQuizAnswer(q, isCorrect, isFast) {
   const grade = state.quiz?.grade || q.grade || els.quizStage.value;
   const stats = state.quizStats.get(grade) || { attempted: 0, correct: 0, fast: 0 };
@@ -1378,7 +1204,9 @@ async function recordQuizAnswer(q, isCorrect, isFast) {
   stats.fast += isCorrect && isFast ? 1 : 0;
   state.quizStats.set(grade, stats);
   await put("meta", { key: `quizStats:${grade}`, value: stats, at: Date.now() });
+  await recordDailyActivity("quiz", grade);
   renderQuizStats();
+  renderTrainQuizStats();
 }
 
 function generateWordQuiz(grade) {
@@ -1640,7 +1468,7 @@ async function answerQuizChoice(isCorrect, button) {
   updateQuizProgress();
   pulseQuizProgress();
   if (isCorrect) {
-    quiz.advanceTimerId = setTimeout(nextQuizQuestion, 800);
+    quiz.advanceTimerId = setTimeout(nextQuizQuestion, 500);
   } else {
     showQuizContinueButton();
   }
@@ -1726,15 +1554,8 @@ async function finishQuiz() {
     ? `复盘完成！正确率 ${percent(quiz.correct, quiz.total)}。`
     : `刷题完成！正确率 ${percent(quiz.correct, quiz.total)}，错题 ${quiz.wrongList.length} 道。`;
 
-  // 更新刷题统计
-  state.stats.totalQuiz += quiz.total;
-
   state.quiz = null;
   renderQuizWrongList();
-
-  // 自动打卡并检查成就
-  await checkIn();
-  await checkAchievements();
 }
 
 function renderQuizWrongList() {
@@ -1891,19 +1712,20 @@ function renderAll() {
   updateSessionSizeOptions();
   renderStats();
   renderQuizStats();
+  renderTrainQuizStats();
   renderDecks();
   renderWeakList();
   renderReport();
   renderQuizWrongList();
   updateTrainingEstimate();
-  renderCheckinStats();
-  renderAchievements();
+  renderDailyProgress();
 }
 
 function renderStats() {
   const eligible = getEligibleWords();
   const realTotal = eligible.length;
-  const records = [...state.records.values()];
+  const eligibleIds = new Set(eligible.map((word) => word.id));
+  const records = [...state.records.values()].filter((record) => eligibleIds.has(record.wordId));
   const seen = records.reduce((sum, record) => sum + record.seen, 0);
   const correct = records.reduce((sum, record) => sum + record.correct, 0);
   const fast = records.reduce((sum, record) => sum + record.fast, 0);
@@ -1911,7 +1733,7 @@ function renderStats() {
   els.doneCount.textContent = seen;
   els.accuracy.textContent = percent(correct, seen);
   els.fastRate.textContent = percent(fast, seen);
-  els.weakCount.textContent = state.words.filter(isWeak).length;
+  els.weakCount.textContent = eligible.filter(isWeak).length;
 }
 
 function renderDecks() {
@@ -2030,17 +1852,7 @@ function bindEvents() {
   [els.stageSelect, els.deckFilter, els.sessionSize, els.trainingScope].forEach((el) => el.addEventListener("change", renderAll));
   els.startBtn.addEventListener("click", startSession);
   els.skipBtn.addEventListener("click", skipWord);
-
-  // 打卡按钮事件
-  const checkinBtn = document.querySelector("#checkinBtn");
-  if (checkinBtn) {
-    checkinBtn.addEventListener("click", async () => {
-      const success = await checkIn();
-      if (!success) {
-        showToast("今日已打卡，明天继续加油！");
-      }
-    });
-  }
+  els.trainContinueBtn.addEventListener("click", nextWord);
 
   els.parseTextBtn.addEventListener("click", () => {
     state.reviewRows = parseWordsFromText(els.textImport.value);
@@ -2098,7 +1910,10 @@ function bindEvents() {
   els.startQuizBtn.addEventListener("click", () => startQuiz(false));
   els.reviewQuizWrongBtn.addEventListener("click", () => startQuiz(true));
   els.quizContinueBtn.addEventListener("click", nextQuizQuestion);
-  els.quizStage.addEventListener("change", () => updateQuizSizeOptions());
+  els.quizStage.addEventListener("change", async () => {
+    await updateQuizSizeOptions();
+    renderAll();
+  });
   els.clearQuizWrongBtn.addEventListener("click", async () => {
     if (!confirm("确定清空所有刷题错题记录吗？")) return;
     await clearStore("quizWrongAnswers");
@@ -2117,6 +1932,14 @@ function bindEvents() {
           button.click();
         }
       }
+    } else if (
+      els.views.train.classList.contains("active")
+      && state.session?.answered
+      && !els.trainContinueBtn.hidden
+      && (event.key === "Enter" || event.key === " ")
+    ) {
+      event.preventDefault();
+      els.trainContinueBtn.click();
     }
     if (els.views.quiz.classList.contains("active") && state.quiz && !state.quiz.answered) {
       const key = event.key.toUpperCase();

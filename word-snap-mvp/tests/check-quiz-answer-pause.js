@@ -12,7 +12,7 @@ assert(
   "wrong answers must no longer automatically advance"
 );
 assert(
-  /if \(isCorrect\)[\s\S]*setTimeout\(nextQuizQuestion,\s*800\)[\s\S]*else[\s\S]*showQuizContinueButton/.test(app),
+  /if \(isCorrect\)[\s\S]*setTimeout\(nextQuizQuestion,\s*500\)[\s\S]*else[\s\S]*showQuizContinueButton/.test(app),
   "correct answers should auto advance while wrong answers wait for confirmation"
 );
 assert(
