@@ -1,5 +1,5 @@
 window.WORD_SNAP_STAGE_LISTS = window.WORD_SNAP_STAGE_LISTS || {};
-window.WORD_SNAP_STAGE_LISTS["高三课内词汇"] = {"grade":"高三课内词汇","goals":["高三课内词汇"],"source":"高三课内词汇","words":[
+window.WORD_SNAP_STAGE_LISTS["高三考试词汇"] = {"grade":"高三考试词汇","goals":["高三考试词汇"],"source":"高三考试词汇","words":[
     {"en":"acquire","zh":"获得，学到","pos":"","notes":"","frequency":0},
     {"en":"act","zh":"行动","pos":"","notes":"","frequency":0},
     {"en":"advance","zh":"推进，促进，前进","pos":"","notes":"","frequency":0},

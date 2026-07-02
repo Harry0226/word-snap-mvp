@@ -61,11 +61,11 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
         "count": 575,
         "source": "高二考试词汇"
     },
-    "高三课内词汇": {
+    "高三考试词汇": {
         "src": "./word-data/stages/grade12-inclass.js",
-        "version": "20260702",
+        "version": "20260703",
         "count": 956,
-        "source": "高三课内词汇"
+        "source": "高三考试词汇"
     }
 }
 };
