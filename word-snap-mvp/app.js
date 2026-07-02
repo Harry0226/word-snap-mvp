@@ -1,4 +1,4 @@
-const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "高一课内词汇", "高一考试词汇", "高二课内词汇", "高二考试词汇", "高三课内词汇"];
+const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "高一课内词汇", "高一考试词汇", "高二课内词汇", "高二考试词汇", "高三课内词汇"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
 const BUILTIN_SEED_VERSION = 16;
@@ -23,6 +23,7 @@ const QUIZ_BANK_SCRIPTS = {
   "初二课内词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
   "初二考试词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
   "初三课内词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
+  "初三考试词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
   "高一课内词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
   "高一考试词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
   "高二课内词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz",
@@ -1331,7 +1332,7 @@ function resetBattle() {
 function getQuizSentenceData(grade) {
   if (grade === "初一课内词汇" || grade === "初一考试词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
   if (grade === "初二课内词汇" || grade === "初二考试词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
-  if (grade === "初三课内词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
+  if (grade === "初三课内词汇" || grade === "初三考试词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
   if (grade === "高一课内词汇" || grade === "高一考试词汇") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
   if (grade === "高二课内词汇" || grade === "高二考试词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
   return [];
@@ -1358,7 +1359,7 @@ async function ensureQuizBankLoaded(grade) {
 function getExpectedQuizCount(grade) {
   if (grade === "初一课内词汇" || grade === "初一考试词汇") return GRADE7_QUIZ_COUNT;
   if (grade === "初二课内词汇" || grade === "初二考试词汇") return GRADE8_QUIZ_COUNT;
-  if (grade === "初三课内词汇") return 340;
+  if (grade === "初三课内词汇" || grade === "初三考试词汇") return 340;
   if (grade === "高一课内词汇" || grade === "高一考试词汇") return GRADE10_QUIZ_COUNT;
   if (grade === "高二课内词汇" || grade === "高二考试词汇") return GRADE11_QUIZ_COUNT;
   return 0;
@@ -1377,7 +1378,7 @@ function getQuizWrongCount(grade) {
     if (record.grade) return record.grade === grade;
     if (grade === "初一课内词汇" || grade === "初一考试词汇") return String(record.questionId || "").startsWith("g7-");
     if (grade === "初二课内词汇" || grade === "初二考试词汇") return String(record.questionId || "").startsWith("g8-");
-    if (grade === "初三课内词汇") return String(record.questionId || "").startsWith("g9-") || (!String(record.questionId || "").startsWith("g7-") && !String(record.questionId || "").startsWith("g8-") && !String(record.questionId || "").startsWith("g10-") && !String(record.questionId || "").startsWith("g11-"));
+    if (grade === "初三课内词汇" || grade === "初三考试词汇") return String(record.questionId || "").startsWith("g9-") || (!String(record.questionId || "").startsWith("g7-") && !String(record.questionId || "").startsWith("g8-") && !String(record.questionId || "").startsWith("g10-") && !String(record.questionId || "").startsWith("g11-"));
     if (grade === "高一课内词汇" || grade === "高一考试词汇") return String(record.questionId || "").startsWith("g10-");
     if (grade === "高二课内词汇" || grade === "高二考试词汇") return String(record.questionId || "").startsWith("g11-");
     return false;

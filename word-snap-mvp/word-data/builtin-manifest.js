@@ -31,6 +31,12 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
         "count": 261,
         "source": "初三课内词汇"
     },
+    "初三考试词汇": {
+        "src": "./word-data/stages/grade9-exam.js",
+        "version": "20260703",
+        "count": 797,
+        "source": "初三考试词汇"
+    },
     "高一课内词汇": {
         "src": "./word-data/stages/grade10-inclass.js",
         "version": "20260702",
