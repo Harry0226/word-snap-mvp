@@ -16,8 +16,8 @@ assert(
 assert(!resolveMode.includes("return word.fixedMode"), "ordinary vocabulary fixedMode must not override the selected mode");
 
 const makeChoices = app.slice(app.indexOf("function makeChoices"), app.indexOf("function choiceText"));
-assert(makeChoices.includes('state.session?.mode === "customChoice"'), "preset choiceOptions should only be used for custom questions");
-assert(makeChoices.includes('answer.grade === "高二"'), "高二 should use structured vocabulary-bank distractors");
+assert(makeChoices.includes('mode === "customChoice"'), "preset choiceOptions should only be used for custom questions");
+assert(makeChoices.includes('answer.grade === "高二课内词汇"') && makeChoices.includes('answer.grade === "高二考试词汇"'), "高二 should use structured vocabulary-bank distractors");
 
 const correctness = app.slice(app.indexOf("function isCorrectAnswer"), app.indexOf("function feedbackText"));
 assert(correctness.includes('mode === "customChoice"'), "only custom questions should use preset answer flags");

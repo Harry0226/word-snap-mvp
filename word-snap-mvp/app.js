@@ -891,46 +891,100 @@ function isSimilarWordShape(a, b) {
   return (samePhraseShape && closeLength) || (sameHyphenShape && closeLength);
 }
 
-function getStructuredDistractors(answer, count) {
-  const gradePool = getGradeWordPool(answer.grade);
-  const used = new Set([answer.id]);
-  const distractors = [];
-  const firstLetter = answer.en[0]?.toLowerCase() || "";
-  const sameFirstLimit = Math.min(2, Math.max(1, count - 2));
+function normalizeDisplayedChoiceText(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
 
-  function addFrom(pool, predicate, limit = count) {
-    shuffle(pool).forEach((word) => {
-      if (distractors.length >= count || distractors.length >= limit) return;
-      if (used.has(word.id) || !word.zh || !predicate(word)) return;
-      used.add(word.id);
-      distractors.push(word);
+function choiceDisplayKey(choice, mode) {
+  return normalizeDisplayedChoiceText(choiceText(choice, mode));
+}
+
+function isUsableDistractor(candidate, answer, mode, usedDisplayKeys) {
+  if (!candidate || candidate.id === answer.id || !candidate.en || !candidate.zh) return false;
+  const candidateDisplayKey = choiceDisplayKey(candidate, mode);
+  const answerDisplayKey = choiceDisplayKey(answer, mode);
+  if (!candidateDisplayKey || candidateDisplayKey === answerDisplayKey || usedDisplayKeys.has(candidateDisplayKey)) return false;
+  return true;
+}
+
+function buildChoiceSet(answer, distractors, mode) {
+  const choices = [answer];
+  const usedDisplayKeys = new Set([choiceDisplayKey(answer, mode)]);
+  distractors.forEach((candidate) => {
+    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+    usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
+    choices.push(candidate);
+  });
+  return choices;
+}
+
+function selectRankedDistractors(answer, count, mode, pool) {
+  const usedDisplayKeys = new Set([choiceDisplayKey(answer, mode)]);
+  const ranked = pool
+    .filter((candidate) => candidate?.id !== answer.id && candidate?.zh)
+    .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer) }))
+    .sort((a, b) => {
+      return b.score - a.score || hashString(`${answer.id}:${a.candidate.id}`) - hashString(`${answer.id}:${b.candidate.id}`);
     });
-  }
+  const preferred = ranked.filter((item) => item.score > 0).map((item) => item.candidate);
+  const fallback = ranked.map((item) => item.candidate);
+  const distractors = [];
 
-  addFrom(gradePool, (word) => word.en[0]?.toLowerCase() === firstLetter, sameFirstLimit);
-  addFrom(gradePool, (word) => word.en[0]?.toLowerCase() !== firstLetter && isSimilarWordShape(answer.en, word.en));
-  addFrom(gradePool, (word) => word.en[0]?.toLowerCase() !== firstLetter);
-  addFrom(gradePool, () => true);
+  uniqueById([...shuffle(preferred.slice(0, 24)), ...fallback]).forEach((candidate) => {
+    if (distractors.length >= count) return;
+    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+    usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
+    distractors.push(candidate);
+  });
 
-  return distractors.slice(0, count);
+  return distractors;
+}
+
+function getStructuredDistractors(answer, count, mode) {
+  const gradePool = getGradeWordPool(answer.grade);
+  const fallbackPool = getEligibleWords();
+  const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool);
+  if (primary.length >= count) return primary;
+  const currentKeys = new Set([choiceDisplayKey(answer, mode), ...primary.map((candidate) => choiceDisplayKey(candidate, mode))]);
+  const extra = selectRankedDistractors(answer, count, mode, fallbackPool).filter((candidate) => {
+    const key = choiceDisplayKey(candidate, mode);
+    if (!key || currentKeys.has(key)) return false;
+    currentKeys.add(key);
+    return true;
+  });
+  return [...primary, ...extra].slice(0, count);
+}
+
+function getCustomChoices(answer, mode) {
+  const choices = [];
+  const usedDisplayKeys = new Set();
+  let hasAnswer = false;
+  const ordered = [...answer.choiceOptions].sort((left, right) => Number(Boolean(right.isAnswer)) - Number(Boolean(left.isAnswer)));
+  ordered.forEach((choice) => {
+    const key = choiceDisplayKey(choice, mode);
+    if (!key || usedDisplayKeys.has(key)) return;
+    if (choice.isAnswer && hasAnswer) return;
+    if (choice.isAnswer) hasAnswer = true;
+    usedDisplayKeys.add(key);
+    choices.push(choice);
+  });
+  const choiceCount = getTrainingChoiceCount(answer);
+  const correctChoice = choices.find((choice) => choice.isAnswer);
+  if (!correctChoice) return shuffle(choices).slice(0, choiceCount);
+  const distractors = choices.filter((choice) => !choice.isAnswer);
+  return shuffle([correctChoice, ...shuffle(distractors).slice(0, choiceCount - 1)]);
 }
 
 function makeChoices(answer) {
-  if (state.session?.mode === "customChoice" && Array.isArray(answer.choiceOptions) && answer.choiceOptions.length) {
-    return shuffle(answer.choiceOptions).slice(0, getTrainingChoiceCount(answer));
+  const mode = state.session?.mode || els.practiceMode?.value || "enToZhChoice";
+  if (mode === "customChoice" && Array.isArray(answer.choiceOptions) && answer.choiceOptions.length) {
+    return getCustomChoices(answer, mode);
   }
   const distractorCount = getTrainingChoiceCount(answer) - 1;
   if (answer.grade === "初二课内词汇" || answer.grade === "初二考试词汇" || answer.grade === "高二课内词汇" || answer.grade === "高二考试词汇") {
-    return shuffle([answer, ...getStructuredDistractors(answer, distractorCount)]);
+    return shuffle(buildChoiceSet(answer, getStructuredDistractors(answer, distractorCount, mode), mode));
   }
-  const pool = getEligibleWords().filter((word) => word.id !== answer.id && word.zh);
-  const ranked = pool
-    .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer) }))
-    .sort((a, b) => b.score - a.score || hashString(`${answer.id}:${a.candidate.id}`) - hashString(`${answer.id}:${b.candidate.id}`));
-  const preferred = ranked.filter((item) => item.score > 0).slice(0, 16).map((item) => item.candidate);
-  const fallback = ranked.map((item) => item.candidate);
-  const distractors = uniqueById([...shuffle(preferred), ...fallback]).slice(0, distractorCount);
-  return shuffle([answer, ...distractors]);
+  return shuffle(buildChoiceSet(answer, getStructuredDistractors(answer, distractorCount, mode), mode));
 }
 
 function choiceText(choice, mode) {
@@ -1227,10 +1281,11 @@ function nextBattleWord() {
 }
 
 function makeBattleChoices(answer) {
+  const mode = state.battle?.mode || "enToZhChoice";
   const stagePool = getBattleWords(els.battleStage.value).filter((word) => word.id !== answer.id);
   const fallbackPool = state.words.filter((word) => word.id !== answer.id && word.en && word.zh);
-  const distractors = uniqueById([...shuffle(stagePool), ...shuffle(fallbackPool)]).slice(0, 3);
-  return shuffle([answer, ...distractors]);
+  const distractors = selectRankedDistractors(answer, 3, mode, uniqueById([...stagePool, ...fallbackPool]));
+  return shuffle(buildChoiceSet(answer, distractors, mode));
 }
 
 function renderBattleChoices(player) {
