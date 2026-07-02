@@ -1,7 +1,7 @@
-const STAGES = ["小学六年级", "初一", "初二", "初三", "高一", "高二", "高三", "中考作文高级动词替换", "中考常考词组总复习", "高考冲刺"];
+const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "高一课内词汇", "高一考试词汇", "高二课内词汇", "高二考试词汇", "高三课内词汇"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
-const BUILTIN_SEED_VERSION = 15;
+const BUILTIN_SEED_VERSION = 16;
 const FAST_PICK_LIMIT = 1500;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
@@ -18,11 +18,15 @@ const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
 const GRADE11_QUIZ_COUNT = 129;
 const QUIZ_BANK_SCRIPTS = {
-  "初一": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
-  "初二": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
-  "初三": "./word-data/quiz-sentences.js?v=20260601-quiz340",
-  "高一": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
-  "高二": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
+  "初一课内词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
+  "初一考试词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
+  "初二课内词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
+  "初二考试词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
+  "初三课内词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
+  "高一课内词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
+  "高一考试词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
+  "高二课内词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz",
+  "高二考试词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
 };
 
 const state = {
@@ -33,7 +37,6 @@ const state = {
   session: null,
   battle: null,
   quiz: null,
-  quizBankLoads: new Map(),
   quizWrongRecords: new Map(),
   quizStats: new Map(),
   reviewRows: [],
@@ -45,6 +48,7 @@ const state = {
 };
 
 const els = {
+  // Nav & views
   tabs: [...document.querySelectorAll(".tab")],
   views: {
     train: document.querySelector("#view-train"),
@@ -54,6 +58,7 @@ const els = {
     report: document.querySelector("#view-report"),
     quiz: document.querySelector("#view-quiz")
   },
+  // Training
   totalWords: document.querySelector("#totalWords"),
   doneCount: document.querySelector("#doneCount"),
   accuracy: document.querySelector("#accuracy"),
@@ -76,6 +81,7 @@ const els = {
   trainContinueBtn: document.querySelector("#trainContinueBtn"),
   skipBtn: document.querySelector("#skipBtn"),
   sessionReport: document.querySelector("#sessionReport"),
+  // Decks
   uploadStage: document.querySelector("#uploadStage"),
   sourceName: document.querySelector("#sourceName"),
   importStatus: document.querySelector("#importStatus"),
@@ -89,14 +95,14 @@ const els = {
   clearCustomDecksBtn: document.querySelector("#clearCustomDecksBtn"),
   exportBtn: document.querySelector("#exportBtn"),
   importJson: document.querySelector("#importJson"),
+  // Wrong words
   weakList: document.querySelector("#weakList"),
   weakFilterBtns: [...document.querySelectorAll("[data-weak-filter]")],
   trainWeakBtn: document.querySelector("#trainWeakBtn"),
   resetRecordsBtn: document.querySelector("#resetRecordsBtn"),
-  reportContent: document.querySelector("#reportContent")
-};
-
-Object.assign(els, {
+  // Report
+  reportContent: document.querySelector("#reportContent"),
+  // Battle
   battleStage: document.querySelector("#battleStage"),
   battleSize: document.querySelector("#battleSize"),
   battleMode: document.querySelector("#battleMode"),
@@ -111,6 +117,7 @@ Object.assign(els, {
   rightBattleScore: document.querySelector("#rightBattleScore"),
   leftBattleChoices: document.querySelector("#leftBattleChoices"),
   rightBattleChoices: document.querySelector("#rightBattleChoices"),
+  // Quiz
   quizStage: document.querySelector("#quizStage"),
   quizSize: document.querySelector("#quizSize"),
   startQuizBtn: document.querySelector("#startQuizBtn"),
@@ -130,14 +137,19 @@ Object.assign(els, {
   trainQuizAccuracy: document.querySelector("#trainQuizAccuracy"),
   trainQuizFastRate: document.querySelector("#trainQuizFastRate"),
   trainQuizWrongCount: document.querySelector("#trainQuizWrongCount"),
+  // Streaks
   trainStreakCard: document.querySelector("#trainStreakCard"),
   trainStreak: document.querySelector("#trainStreak"),
   trainTodayProgress: document.querySelector("#trainTodayProgress"),
   trainCheckinStatus: document.querySelector("#trainCheckinStatus"),
+  weeklyFireCount: document.querySelector("#weeklyFireCount"),
+  streakIcon: document.querySelector("#streakIcon"),
+  flameWrap: document.querySelector("#flameWrap"),
   quizStreakCard: document.querySelector("#quizStreakCard"),
   quizStreak: document.querySelector("#quizStreak"),
   quizTodayProgress: document.querySelector("#quizTodayProgress"),
   quizCheckinStatus: document.querySelector("#quizCheckinStatus"),
+  // Quiz game
   quizTag: document.querySelector("#quizTag"),
   quizSentence: document.querySelector("#quizSentence"),
   quizHint: document.querySelector("#quizHint"),
@@ -147,7 +159,7 @@ Object.assign(els, {
   quizContinueBtn: document.querySelector("#quizContinueBtn"),
   quizReport: document.querySelector("#quizReport"),
   quizWrongList: document.querySelector("#quizWrongList")
-});
+};
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -206,6 +218,17 @@ function put(storeName, value) {
   });
 }
 
+function putBatch(storeName, values) {
+  if (!values.length) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const transaction = state.db.transaction(storeName, "readwrite");
+    const store = transaction.objectStore(storeName);
+    values.forEach((value) => store.put(value));
+    transaction.oncomplete = () => resolve();
+    transaction.onerror = () => reject(transaction.error);
+  });
+}
+
 function clearStore(storeName) {
   return new Promise((resolve, reject) => {
     const request = tx(storeName, "readwrite").clear();
@@ -248,8 +271,8 @@ function slugWord(value) {
 }
 
 function normalizeBuiltinWord(word, index, list) {
-  const grade = list.grade || "初三";
-  const source = list.source || "初三核心词库";
+  const grade = list.grade || "初三课内词汇";
+  const source = list.source || "初三课内词汇";
   const stageKey = encodeURIComponent(grade).replace(/%/g, "").toLowerCase();
   const id = list.legacyIds
     ? `builtin-${word.en.toLowerCase()}`
@@ -298,7 +321,7 @@ function replaceBuiltinStageWords(stage, words) {
 }
 
 function stageLoadMessage(stage, failed = false) {
-  if (failed) return `${stage}词库加载失败。请刷新重试，或使用备用入口：${BACKUP_SITE_URL}`;
+  if (failed) return `${stage}词库加载失败。请点击"开始训练"重试，或使用备用入口：${BACKUP_SITE_URL}`;
   return `正在加载${stage}词库，请稍候...`;
 }
 
@@ -369,93 +392,56 @@ async function seedBuiltinWords() {
   const hasBuiltinWords = (await getAll("words")).some((word) => word.sourceType === "builtin");
   if (Number(seedMeta?.value || 0) >= BUILTIN_SEED_VERSION && hasBuiltinWords) return;
 
+  // Load all stage scripts first to populate WORD_SNAP_STAGE_LISTS
+  const manifest = window.WORD_SNAP_BUILTIN_MANIFEST?.stages || {};
+  for (const stage of Object.keys(manifest)) {
+    const entry = manifest[stage];
+    if (entry?.src) {
+      try {
+        await loadScriptWithRetry(entry.src);
+      } catch (e) {
+        console.warn(`Failed to load ${stage} script:`, e);
+      }
+    }
+  }
+
+  // Get lists from both WORD_SNAP_BUILTIN_LISTS and WORD_SNAP_STAGE_LISTS
   const builtinLists = [
-    {
-      grade: "初三",
-      goals: ["初三"],
-      source: "初三核心词库",
-      words: window.WORD_SNAP_WORDS || []
-    },
-    {
-      grade: "中考常考词组总复习",
-      goals: ["中考常考词组总复习"],
-      source: "中考常考词组总复习",
-      words: window.WORD_SNAP_PHRASE_REVIEW_WORDS || []
-    },
-    ...(window.WORD_SNAP_BUILTIN_LISTS || [])
+    ...(window.WORD_SNAP_BUILTIN_LISTS || []),
+    ...Object.values(window.WORD_SNAP_STAGE_LISTS || {})
   ];
   const words = builtinLists.flatMap((list) => (list.words || [])
     .map((word, index) => normalizeBuiltinWord(word, index, list))
     .filter((word) => word.en && word.zh));
-  if (Number(seedMeta?.value || 0) < 5) {
-    await deleteBuiltinDecks([
-      { grade: "初三", source: "近五年中考结合最新一模" },
-      { grade: "初三", source: "初三核心词库" },
-      { grade: "初三", source: "初三刷题词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 6) {
-    await deleteBuiltinDecks([
-      { grade: "初三", source: "初三核心词库" },
-      { grade: "中考常考词组总复习", source: "中考常考词组总复习" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 8) {
-    await deleteBuiltinDecks([
-      { grade: "初三", source: "初三核心词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 9) {
-    await deleteBuiltinDecks([
-      { grade: "高一", source: "高一内置词库" },
-      { grade: "高二", source: "高二内置词库" },
-      { grade: "高三", source: "高三高频词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 10) {
-    await deleteBuiltinDecks([
-      { grade: "高一", source: "高一内置词库" },
-      { grade: "高二", source: "高二内置词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 14) {
-    await deleteBuiltinDecks([
-      { grade: "高一", source: "高一内置词库" },
-      { grade: "高二", source: "高二内置词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 13) {
-    await deleteBuiltinDecks([
-      { grade: "初一", source: "初一内置词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 14) {
-    await deleteBuiltinDecks([
-      { grade: "初二", source: "初二内置词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 15) {
-    await deleteBuiltinDecks([
-      { grade: "高二", source: "高二内置词库" },
-      { grade: "中考作文高级动词替换", source: "中考作文高级动词替换" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 12) {
-    await deleteBuiltinDecks([
-      { grade: "初一", source: "初一内置词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 11) {
-    await deleteBuiltinDecks([
-      { grade: "初三", source: "初三核心词库" }
-    ]);
-  }
-  if (Number(seedMeta?.value || 0) < 3) {
-    await deleteBuiltinDecks([
-      { grade: "高一", source: "高一内置词库" },
-      { grade: "高二", source: "高二内置词库" },
-      { grade: "高三", source: "高三高频词库" }
-    ]);
+  const currentVersion = Number(seedMeta?.value || 0);
+  if (currentVersion < 15) {
+    const decksToDelete = [];
+    if (currentVersion < 3) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "高三", source: "高三高频词库" });
+    if (currentVersion < 5) decksToDelete.push({ grade: "初三", source: "近五年中考结合最新一模" }, { grade: "初三", source: "初三核心词库" }, { grade: "初三", source: "初三刷题词库" });
+    if (currentVersion < 6) decksToDelete.push({ grade: "初三", source: "初三核心词库" }, { grade: "中考常考词组总复习", source: "中考常考词组总复习" });
+    if (currentVersion < 8) decksToDelete.push({ grade: "初三", source: "初三核心词库" });
+    if (currentVersion < 9) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "高三", source: "高三高频词库" });
+    if (currentVersion < 10) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" });
+    if (currentVersion < 11) decksToDelete.push({ grade: "初三", source: "初三核心词库" });
+    if (currentVersion < 12) decksToDelete.push({ grade: "初一", source: "初一内置词库" });
+    if (currentVersion < 13) decksToDelete.push({ grade: "初一", source: "初一内置词库" });
+    if (currentVersion < 14) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "初二", source: "初二内置词库" });
+    if (currentVersion < 15) decksToDelete.push({ grade: "高二", source: "高二内置词库" }, { grade: "中考作文高级动词替换", source: "中考作文高级动词替换" });
+    if (currentVersion < 16) {
+      // Delete all old builtin words since we changed stage names
+      const allWords = await getAll("words");
+      const oldBuiltinWords = allWords.filter(w => w.sourceType === "builtin");
+      if (oldBuiltinWords.length) {
+        await new Promise((resolve, reject) => {
+          const transaction = state.db.transaction("words", "readwrite");
+          const store = transaction.objectStore("words");
+          oldBuiltinWords.forEach(w => store.delete(w.id));
+          transaction.oncomplete = () => resolve();
+          transaction.onerror = () => reject(transaction.error);
+        });
+      }
+    }
+    if (decksToDelete.length) await deleteBuiltinDecks(decksToDelete);
   }
   const store = tx("words", "readwrite");
   await Promise.all(words.map((word) => new Promise((resolve, reject) => {
@@ -549,7 +535,19 @@ function showToast(message) {
   }, 2500);
 }
 
-function renderStreakCard(card, streakEl, progressEl, statusEl, kind, grade) {
+function getWeekFireCount(streak) {
+  if (!streak?.checkInDates?.length) return 0;
+  const now = new Date();
+  const dayOfWeek = now.getDay(); // 0=Sun, 1=Mon, ...
+  const mondayOffset = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+  const monday = new Date(now);
+  monday.setDate(now.getDate() - mondayOffset);
+  monday.setHours(0, 0, 0, 0);
+  const mondayStr = `${monday.getFullYear()}-${String(monday.getMonth() + 1).padStart(2, "0")}-${String(monday.getDate()).padStart(2, "0")}`;
+  return streak.checkInDates.filter((d) => d >= mondayStr).length;
+}
+
+function renderStreakCard(card, progressEl, kind, grade) {
   const threshold = getCheckinThreshold(kind, grade);
   card.hidden = !threshold;
   card.parentElement?.classList.toggle("without-streak", !threshold);
@@ -557,15 +555,13 @@ function renderStreakCard(card, streakEl, progressEl, statusEl, kind, grade) {
   const streak = getStreak(kind, grade) || {};
   const todayCount = streak.progressDate === getTodayStr() ? Number(streak.todayCount || 0) : 0;
   const checked = streak.lastCheckIn === getTodayStr();
-  streakEl.textContent = Number(streak.currentStreak || 0);
   progressEl.textContent = `今日 ${Math.min(todayCount, threshold)}/${threshold}`;
-  statusEl.textContent = checked ? "已打卡" : "未达标";
   card.classList.toggle("checked-in", checked);
 }
 
 function renderDailyProgress() {
-  renderStreakCard(els.trainStreakCard, els.trainStreak, els.trainTodayProgress, els.trainCheckinStatus, "train", els.stageSelect.value);
-  renderStreakCard(els.quizStreakCard, els.quizStreak, els.quizTodayProgress, els.quizCheckinStatus, "quiz", els.quizStage.value);
+  renderStreakCard(els.trainStreakCard, els.trainTodayProgress, "train", els.stageSelect.value);
+  renderStreakCard(els.quizStreakCard, els.quizTodayProgress, "quiz", els.quizStage.value);
 }
 
 async function loadState() {
@@ -762,9 +758,10 @@ function updateTrainingEstimate() {
 function updateSessionSizeOptions() {
   const previous = els.sessionSize.value || "200";
   const options = [
-    ["60", "60 词"],
+    ["50", "50 词"],
     ["100", "100 词"],
     ["200", "200 词"],
+    ["300", "300 词"],
     ["all", "全部单词"]
   ];
   els.sessionSize.innerHTML = options
@@ -877,7 +874,7 @@ function startTimer() {
 
 function getTrainingChoiceCount(answer) {
   if (answer.choiceCount) return answer.choiceCount;
-  return answer.grade === "初二" ? 5 : 4;
+  return (answer.grade === "初二课内词汇" || answer.grade === "初二考试词汇") ? 5 : 4;
 }
 
 function getGradeWordPool(grade) {
@@ -922,7 +919,7 @@ function makeChoices(answer) {
     return shuffle(answer.choiceOptions).slice(0, getTrainingChoiceCount(answer));
   }
   const distractorCount = getTrainingChoiceCount(answer) - 1;
-  if (answer.grade === "初二" || answer.grade === "高二") {
+  if (answer.grade === "初二课内词汇" || answer.grade === "初二考试词汇" || answer.grade === "高二课内词汇" || answer.grade === "高二考试词汇") {
     return shuffle([answer, ...getStructuredDistractors(answer, distractorCount)]);
   }
   const pool = getEligibleWords().filter((word) => word.id !== answer.id && word.zh);
@@ -994,7 +991,7 @@ async function answer(value, button) {
   await recordAnswer(word, isCorrect, isFast, isSlow);
   await recordDailyActivity("train", session.grade);
   await completePersistentRotationItem(session.rotationKey, word.id);
-  renderAll();
+  renderAllDebounced();
   updateProgress();
   if (isCorrect) {
     setTimeout(nextWord, 500);
@@ -1027,7 +1024,9 @@ function paintChoices(answerWord, clickedButton) {
     button.classList.toggle("correct", isCorrectChoice);
     button.disabled = true;
   });
-  if (!isCorrectAnswer(answerWord, state.session.current, state.session.mode) && clickedButton) clickedButton.classList.add("wrong");
+  if (answerWord !== null && clickedButton && !isCorrectAnswer(answerWord, state.session.current, state.session.mode)) {
+    clickedButton.classList.add("wrong");
+  }
 }
 
 function feedbackText(word, isCorrect, isFast, isSlow, elapsed) {
@@ -1056,9 +1055,20 @@ async function recordAnswer(word, isCorrect, isFast, isSlow) {
   await put("records", record);
 }
 
-function skipWord() {
-  if (!state.session?.current) return;
-  answer("", null);
+async function skipWord() {
+  const session = state.session;
+  if (!session || session.answered || !session.current) return;
+  session.answered = true;
+  clearInterval(session.timerId);
+  const word = session.current;
+  els.timer.textContent = "已跳过，不计入错误。";
+  els.timer.classList.remove("fast");
+  paintChoices(null, null);
+  els.feedback.textContent = `跳过：${word.en} = ${word.zh}`;
+  await completePersistentRotationItem(session.rotationKey, word.id);
+  renderAll();
+  updateProgress();
+  showTrainContinueButton();
 }
 
 async function finishSession() {
@@ -1090,7 +1100,69 @@ async function finishSession() {
   renderSessionReport();
   renderAll();
 
+  showSessionCompleteModal(state.lastReport);
   state.session = null;
+}
+
+function showSessionCompleteModal(report) {
+  const modal = document.getElementById("sessionCompleteModal");
+  const header = document.getElementById("modalHeader");
+  const icon = document.getElementById("modalIcon");
+  const title = document.getElementById("modalTitle");
+  const datetimeEl = document.getElementById("modalDatetime");
+  const totalEl = document.getElementById("modalTotal");
+  const accuracyEl = document.getElementById("modalAccuracy");
+  const fastRateEl = document.getElementById("modalFastRate");
+  const resultEl = document.getElementById("modalResult");
+  const againBtn = document.getElementById("modalAgainBtn");
+  const nextBtn = document.getElementById("modalNextBtn");
+  const closeBtn = document.getElementById("modalCloseBtn");
+
+  const accuracyNum = report.total ? Math.round((report.correct / report.total) * 100) : 0;
+  const fastNum = report.total ? Math.round((report.fast / report.total) * 100) : 0;
+  const passed = accuracyNum >= 90;
+
+  // 设置日期和时间
+  const now = new Date();
+  const weekdays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+  const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${weekdays[now.getDay()]}`;
+  const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+  datetimeEl.textContent = `${dateStr} ${timeStr}`;
+
+  totalEl.textContent = report.total;
+  accuracyEl.textContent = `${accuracyNum}%`;
+  fastRateEl.textContent = `${fastNum}%`;
+
+  // 设置正确率颜色
+  if (accuracyNum >= 90) {
+    accuracyEl.style.color = "#075f3c";
+  } else if (accuracyNum >= 80) {
+    accuracyEl.style.color = "#d97706";
+  } else {
+    accuracyEl.style.color = "#dc2626";
+  }
+
+  // 设置头部样式
+  header.className = "modal-header " + (passed ? "pass" : "fail");
+  icon.textContent = passed ? "🎉" : "💪";
+  title.textContent = passed ? "恭喜，已通过！" : "继续加油！";
+
+  // 设置结果提示
+  if (passed) {
+    resultEl.className = "modal-result pass";
+    resultEl.innerHTML = "✅ 正确率 90% 以上，已通过！<br>📸 请截图发给代老师或学长学姐";
+  } else {
+    resultEl.className = "modal-result fail";
+    resultEl.innerHTML = "❌ 正确率未达 90%，请再来一遍！<br>🎯 达到 90% 后再截图发给代老师或学长学姐";
+  }
+
+  // 按钮事件
+  const closeModal = () => { modal.hidden = true; };
+  closeBtn.onclick = closeModal;
+  againBtn.onclick = () => { closeModal(); els.trainingScope.value = "wrong"; els.sessionSize.value = "all"; startSession(); };
+  nextBtn.onclick = () => { closeModal(); els.trainingScope.value = "smart"; startSession(); };
+
+  modal.hidden = false;
 }
 
 function getBattleWords(stage) {
@@ -1124,6 +1196,7 @@ async function startBattle() {
     total: queue.length,
     current: null,
     done: 0,
+    skipped: 0,
     mode: els.battleMode.value,
     scores: { left: 0, right: 0 },
     playerLocked: { left: false, right: false },
@@ -1213,6 +1286,7 @@ function markBattleResolved(winner) {
 function skipBattleWord() {
   if (!state.battle?.current) return;
   state.battle.done += 1;
+  state.battle.skipped += 1;
   els.battleStatus.textContent = "已跳过本题。";
   nextBattleWord();
 }
@@ -1232,7 +1306,8 @@ async function finishBattle() {
   els.battlePrompt.textContent = result;
   els.battleHint.textContent = `最终比分 左方 ${left} : ${right} 右方`;
   els.battleStatus.textContent = `对战结束：${result}。本模式不会写入个人练习记录。`;
-  els.battleProgress.textContent = `完成 ${battle.total} 题`;
+  const skipText = battle.skipped > 0 ? `（跳过 ${battle.skipped} 题）` : "";
+  els.battleProgress.textContent = `完成 ${battle.total} 题${skipText}`;
   els.leftBattleChoices.innerHTML = "";
   els.rightBattleChoices.innerHTML = "";
   els.skipBattleBtn.disabled = true;
@@ -1254,19 +1329,16 @@ function resetBattle() {
 }
 
 function getQuizSentenceData(grade) {
-  if (grade === "初一") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
-  if (grade === "初二") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
-  if (grade === "初三") return window.WORD_SNAP_QUIZ_SENTENCES || [];
-  if (grade === "高一") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
-  if (grade === "高二") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
+  if (grade === "初一课内词汇" || grade === "初一考试词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
+  if (grade === "初二课内词汇" || grade === "初二考试词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
+  if (grade === "初三课内词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
+  if (grade === "高一课内词汇" || grade === "高一考试词汇") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
+  if (grade === "高二课内词汇" || grade === "高二考试词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
   return [];
 }
 
 function loadScriptOnce(src) {
-  if (state.quizBankLoads.has(src)) return state.quizBankLoads.get(src);
-  const promise = loadScriptWithRetry(src);
-  state.quizBankLoads.set(src, promise);
-  return promise;
+  return loadScriptWithRetry(src);
 }
 
 async function ensureQuizBankLoaded(grade) {
@@ -1284,11 +1356,11 @@ async function ensureQuizBankLoaded(grade) {
 }
 
 function getExpectedQuizCount(grade) {
-  if (grade === "初一") return GRADE7_QUIZ_COUNT;
-  if (grade === "初二") return GRADE8_QUIZ_COUNT;
-  if (grade === "初三") return 340;
-  if (grade === "高一") return GRADE10_QUIZ_COUNT;
-  if (grade === "高二") return GRADE11_QUIZ_COUNT;
+  if (grade === "初一课内词汇" || grade === "初一考试词汇") return GRADE7_QUIZ_COUNT;
+  if (grade === "初二课内词汇" || grade === "初二考试词汇") return GRADE8_QUIZ_COUNT;
+  if (grade === "初三课内词汇") return 340;
+  if (grade === "高一课内词汇" || grade === "高一考试词汇") return GRADE10_QUIZ_COUNT;
+  if (grade === "高二课内词汇" || grade === "高二考试词汇") return GRADE11_QUIZ_COUNT;
   return 0;
 }
 
@@ -1303,9 +1375,12 @@ function getQuizBankTotal(grade) {
 function getQuizWrongCount(grade) {
   return [...state.quizWrongRecords.values()].filter((record) => {
     if (record.grade) return record.grade === grade;
-    if (grade === "初一") return String(record.questionId || "").startsWith("g7-");
-    if (grade === "初二") return String(record.questionId || "").startsWith("g8-");
-    return !String(record.questionId || "").startsWith("g7-") && !String(record.questionId || "").startsWith("g8-");
+    if (grade === "初一课内词汇" || grade === "初一考试词汇") return String(record.questionId || "").startsWith("g7-");
+    if (grade === "初二课内词汇" || grade === "初二考试词汇") return String(record.questionId || "").startsWith("g8-");
+    if (grade === "初三课内词汇") return String(record.questionId || "").startsWith("g9-") || (!String(record.questionId || "").startsWith("g7-") && !String(record.questionId || "").startsWith("g8-") && !String(record.questionId || "").startsWith("g10-") && !String(record.questionId || "").startsWith("g11-"));
+    if (grade === "高一课内词汇" || grade === "高一考试词汇") return String(record.questionId || "").startsWith("g10-");
+    if (grade === "高二课内词汇" || grade === "高二考试词汇") return String(record.questionId || "").startsWith("g11-");
+    return false;
   }).length;
 }
 
@@ -1320,13 +1395,7 @@ function renderQuizStats() {
 }
 
 function renderTrainQuizStats() {
-  const grade = els.stageSelect.value;
-  const stats = state.quizStats.get(grade) || { attempted: 0, correct: 0, fast: 0 };
-  els.trainQuizBankTotal.textContent = getQuizBankTotal(grade);
-  els.trainQuizDoneCount.textContent = stats.attempted || 0;
-  els.trainQuizAccuracy.textContent = percent(stats.correct || 0, stats.attempted || 0);
-  els.trainQuizFastRate.textContent = percent(stats.fast || 0, stats.attempted || 0);
-  els.trainQuizWrongCount.textContent = getQuizWrongCount(grade);
+  // Quiz stats display removed from home page - function kept for compatibility
 }
 
 async function recordQuizAnswer(q, isCorrect, isFast) {
@@ -1493,6 +1562,9 @@ function nextQuizQuestion() {
   const quiz = state.quiz;
   if (!quiz) return;
   clearTimeout(quiz.advanceTimerId);
+  clearInterval(quiz.timerId);
+  quiz.advanceTimerId = 0;
+  quiz.timerId = 0;
   hideQuizContinueButton();
   quiz.answered = false;
   quiz.currentQ = quiz.queue.shift();
@@ -1589,6 +1661,7 @@ async function answerQuizChoice(isCorrect, button) {
     await removeQuizWrongAnswer(q.id);
   }
   await completePersistentRotationItem(quiz.rotationKey, q.id);
+  renderAllDebounced();
 
   if (isCorrect && isFast) {
     els.quizFeedback.textContent = "秒选！";
@@ -1701,7 +1774,10 @@ function renderQuizWrongList() {
   }
   els.quizWrongList.innerHTML = wrongs.map((r) => `
     <div class="quiz-wrong-item">
-      <span>错 ${r.wrongCount} 次 · 正确答案: <strong>${escapeHtml(r.answer)}</strong></span>
+      <div class="quiz-wrong-header">
+        <span>错 ${r.wrongCount} 次 · 正确答案: <strong>${escapeHtml(r.answer)}</strong></span>
+        <button type="button" class="secondary danger quiz-wrong-delete" data-delete-wrong="${escapeAttr(r.questionId)}">删除</button>
+      </div>
       <span class="quiz-wrong-sentence">${escapeHtml(r.sentence)}</span>
     </div>
   `).join("");
@@ -1835,7 +1911,7 @@ async function saveReviewDeck() {
     els.importStatus.textContent = "没有可保存的英文词条。";
     return;
   }
-  for (const row of rows) await put("words", row);
+  await putBatch("words", rows);
   state.reviewRows = [];
   els.reviewPanel.hidden = true;
   els.textImport.value = "";
@@ -1843,32 +1919,60 @@ async function saveReviewDeck() {
   await loadState();
 }
 
+let renderAllTimer = 0;
+function renderAllDebounced() {
+  clearTimeout(renderAllTimer);
+  renderAllTimer = setTimeout(renderAll, 50);
+}
+
+function getActiveView() {
+  for (const [name, el] of Object.entries(els.views)) {
+    if (el.classList.contains("active")) return name;
+  }
+  return "train";
+}
+
 function renderAll() {
-  updateSessionSizeOptions();
+  const active = getActiveView();
   renderStats();
-  renderQuizStats();
-  renderTrainQuizStats();
-  renderDecks();
-  renderWeakList();
-  renderReport();
-  renderQuizWrongList();
-  updateTrainingEstimate();
   renderDailyProgress();
+  if (active === "train") {
+    updateSessionSizeOptions();
+    renderTrainQuizStats();
+    updateTrainingEstimate();
+  }
+  if (active === "quiz") {
+    renderQuizStats();
+  }
+  if (active === "decks") {
+    renderDecks();
+  }
+  if (active === "wrong") {
+    renderWeakList();
+  }
+  if (active === "report") {
+    renderReport();
+  }
 }
 
 function renderStats() {
   const eligible = getEligibleWords();
   const realTotal = eligible.length;
-  const eligibleIds = new Set(eligible.map((word) => word.id));
-  const records = [...state.records.values()].filter((record) => eligibleIds.has(record.wordId));
-  const seen = records.reduce((sum, record) => sum + record.seen, 0);
-  const correct = records.reduce((sum, record) => sum + record.correct, 0);
-  const fast = records.reduce((sum, record) => sum + record.fast, 0);
+  let seen = 0, correct = 0, fast = 0, weakCount = 0;
+  for (const word of eligible) {
+    const record = state.records.get(word.id);
+    if (record) {
+      seen += record.seen;
+      correct += record.correct;
+      fast += record.fast;
+      if (record.wrong > 0 || record.slow > 0) weakCount += 1;
+    }
+  }
   els.totalWords.textContent = realTotal;
   els.doneCount.textContent = seen;
   els.accuracy.textContent = percent(correct, seen);
   els.fastRate.textContent = percent(fast, seen);
-  els.weakCount.textContent = eligible.filter(isWeak).length;
+  els.weakCount.textContent = weakCount;
 }
 
 function renderDecks() {
@@ -1913,15 +2017,43 @@ function renderWeakList() {
 }
 
 function renderReport() {
-  const byStage = STAGES.map((stage) => {
-    const words = state.words.filter((word) => stageMatches(word, stage));
-    const practiced = words.filter((word) => getRecord(word.id).seen > 0).length;
-    const mastered = words.filter((word) => getRecord(word.id).mastery >= 80).length;
-    return { stage, total: words.length, practiced, mastered };
-  }).filter((item) => item.total > 0);
-  const due = state.words.filter((word) => getRecord(word.id).nextReviewAt <= Date.now() && getRecord(word.id).seen > 0).length;
-  const topReview = state.words.filter((word) => getRecord(word.id).seen > 0).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, 10);
+  const now = Date.now();
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+  const todayTs = todayStart.getTime();
+  const stageStats = new Map();
+  STAGES.forEach((stage) => stageStats.set(stage, { stage, total: 0, practiced: 0, mastered: 0 }));
+  let due = 0;
+  let todaySeen = 0;
+  let todayCorrect = 0;
+  const seenWords = [];
+  for (const word of state.words) {
+    const record = state.records.get(word.id);
+    if (!record) continue;
+    for (const stage of STAGES) {
+      if (stageMatches(word, stage)) {
+        const stat = stageStats.get(stage);
+        stat.total += 1;
+        if (record.seen > 0) stat.practiced += 1;
+        if (record.mastery >= 80) stat.mastered += 1;
+      }
+    }
+    if (record.seen > 0) {
+      if (record.nextReviewAt <= now) due += 1;
+      seenWords.push(word);
+    }
+    if (record.lastSeenAt >= todayTs) {
+      todaySeen += record.seen;
+      todayCorrect += record.correct;
+    }
+  }
+  const byStage = [...stageStats.values()].filter((item) => item.total > 0);
+  seenWords.sort((a, b) => priorityScore(b) - priorityScore(a));
+  const topReview = seenWords.slice(0, 10);
+  const todayAccuracy = todaySeen > 0 ? percent(todayCorrect, todaySeen) : "—";
   els.reportContent.innerHTML = [
+    `<div class="report-card"><strong>${todaySeen}</strong><span>今日练习次数</span></div>`,
+    `<div class="report-card"><strong>${todayAccuracy}</strong><span>今日正确率</span></div>`,
     `<div class="report-card"><strong>${due}</strong><span>今日到期复习词</span></div>`,
     `<div class="report-card"><strong>今日最该复习</strong><span>${topReview.length ? topReview.map((word) => `${escapeHtml(word.en)}(${escapeHtml(word.zh)})`).join("、") : "完成一轮训练后生成"}</span></div>`,
     ...byStage.map((item) => `<div class="report-card"><strong>${item.stage}</strong><span>${item.practiced}/${item.total} 已练 · ${item.mastered} 已掌握</span></div>`)
@@ -1969,9 +2101,13 @@ async function importData(file) {
   const data = JSON.parse(await file.text());
   const words = Array.isArray(data.words) ? data.words : [];
   const records = Array.isArray(data.records) ? data.records : [];
-  for (const word of words) await put("words", word);
-  for (const record of records) await put("records", record);
+  const existingIds = new Set(state.words.map((w) => w.id));
+  const conflictCount = words.filter((w) => existingIds.has(w.id)).length;
+  if (conflictCount > 0 && !confirm(`导入的词库中有 ${conflictCount} 个词与已有词库 ID 重复，将被覆盖。确定继续？`)) return;
+  await putBatch("words", words);
+  await putBatch("records", records);
   await loadState();
+  els.importStatus.textContent = `已导入 ${words.length} 个词、${records.length} 条记录。${conflictCount > 0 ? `（覆盖 ${conflictCount} 条）` : ""}`;
 }
 
 function escapeHtml(value) {
@@ -2067,6 +2203,13 @@ function bindEvents() {
     renderQuizStats();
     renderQuizWrongList();
   });
+  els.quizWrongList.addEventListener("click", async (event) => {
+    const btn = event.target.closest("[data-delete-wrong]");
+    if (!btn) return;
+    const qId = btn.dataset.deleteWrong;
+    await removeQuizWrongAnswer(qId);
+    renderQuizWrongList();
+  });
   document.addEventListener("keydown", (event) => {
     if (els.views.train.classList.contains("active") && state.session && !state.session.answered) {
       if (state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice" || state.session.mode === "customChoice") {
@@ -2107,8 +2250,17 @@ function bindEvents() {
   });
 }
 
+function clearAllTimers() {
+  if (state.session?.timerId) { clearInterval(state.session.timerId); state.session.timerId = 0; }
+  if (state.quiz?.timerId) { clearInterval(state.quiz.timerId); state.quiz.timerId = 0; }
+  if (state.quiz?.advanceTimerId) { clearTimeout(state.quiz.advanceTimerId); state.quiz.advanceTimerId = 0; }
+}
+
 async function init() {
   bindEvents();
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) clearAllTimers();
+  });
   try {
     state.db = await openDb();
     await ensureStageLoaded(els.stageSelect.value);

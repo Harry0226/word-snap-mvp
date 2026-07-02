@@ -40,8 +40,8 @@ for (const list of [seniorOne, seniorTwo]) {
 
 assert(app.includes("BUILTIN_SEED_VERSION = 15"), "builtin seed version should be bumped for 2026 final-term senior deck update");
 assert(app.includes("hasBuiltinWords"), "seed logic should recover when local builtin words are unexpectedly empty");
-assert(app.includes("Number(seedMeta?.value || 0) < 14"), "existing browsers should reseed the 2026 final-term senior deck update");
-assert(app.includes("Number(seedMeta?.value || 0) < 11"), "existing browsers should reseed the senior deck update");
+assert(app.includes("currentVersion < 14"), "existing browsers should reseed the 2026 final-term senior deck update");
+assert(app.includes("currentVersion < 11"), "existing browsers should reseed the senior deck update");
 assert(app.includes('{ grade: "高一", source: "高一内置词库" }'), "old 高一 builtin words should be cleared before reseeding");
 assert(app.includes('{ grade: "高二", source: "高二内置词库" }'), "old 高二 builtin words should be cleared before reseeding");
 assert(app.includes('{ grade: "高三", source: "高三高频词库" }'), "old 高三 builtin words should be cleared before reseeding");
