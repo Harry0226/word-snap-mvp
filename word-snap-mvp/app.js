@@ -918,8 +918,11 @@ function buildChoiceSet(answer, distractors, mode) {
   return choices;
 }
 
-function selectRankedDistractors(answer, count, mode, pool) {
-  const usedDisplayKeys = new Set([choiceDisplayKey(answer, mode)]);
+function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = null) {
+  const usedDisplayKeys = externalUsedKeys || new Set([choiceDisplayKey(answer, mode)]);
+  if (!externalUsedKeys) {
+    usedDisplayKeys.add(choiceDisplayKey(answer, mode));
+  }
   const ranked = pool
     .filter((candidate) => candidate?.id !== answer.id && candidate?.zh)
     .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer) }))
@@ -943,15 +946,10 @@ function selectRankedDistractors(answer, count, mode, pool) {
 function getStructuredDistractors(answer, count, mode) {
   const gradePool = getGradeWordPool(answer.grade);
   const fallbackPool = getEligibleWords();
-  const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool);
+  const sharedUsedKeys = new Set([choiceDisplayKey(answer, mode)]);
+  const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool, sharedUsedKeys);
   if (primary.length >= count) return primary;
-  const currentKeys = new Set([choiceDisplayKey(answer, mode), ...primary.map((candidate) => choiceDisplayKey(candidate, mode))]);
-  const extra = selectRankedDistractors(answer, count, mode, fallbackPool).filter((candidate) => {
-    const key = choiceDisplayKey(candidate, mode);
-    if (!key || currentKeys.has(key)) return false;
-    currentKeys.add(key);
-    return true;
-  });
+  const extra = selectRankedDistractors(answer, count, mode, fallbackPool, sharedUsedKeys);
   return [...primary, ...extra].slice(0, count);
 }
 
