@@ -1,8 +1,8 @@
-const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "高一课内词汇", "高一考试词汇", "高二课内词汇", "高二考试词汇", "高三考试词汇"];
+const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "高一课内词汇", "高一考试词汇", "高一课改词库", "高二课内词汇", "高二考试词汇", "高三考试词汇"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
 const BUILTIN_SEED_VERSION = 16;
-const FAST_PICK_LIMIT = 1500;
+const FAST_PICK_LIMIT = 2000;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
 const QUIZ_FAST = 5000;
@@ -444,12 +444,15 @@ async function seedBuiltinWords() {
     }
     if (decksToDelete.length) await deleteBuiltinDecks(decksToDelete);
   }
+  // 串行执行 put 操作，避免 IndexedDB 事务竞争
   const store = tx("words", "readwrite");
-  await Promise.all(words.map((word) => new Promise((resolve, reject) => {
-    const request = store.put(word);
-    request.onsuccess = () => resolve();
-    request.onerror = () => reject(request.error);
-  })));
+  for (const word of words) {
+    await new Promise((resolve, reject) => {
+      const request = store.put(word);
+      request.onsuccess = () => resolve();
+      request.onerror = () => reject(request.error);
+    });
+  }
   await deleteRecordsForMissingWords(new Set(await getAllKeys("words")));
   await put("meta", { key: "builtinSeedVersion", value: BUILTIN_SEED_VERSION, at: Date.now() });
   await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
@@ -478,8 +481,9 @@ async function loadStreaks() {
 }
 
 async function saveStreak(streak) {
-  state.streaks.set(streak.key, streak);
+  // 先写入 IndexedDB，再更新内存，避免竞争条件
   await put("streaks", streak);
+  state.streaks.set(streak.key, streak);
 }
 
 async function resetStreak(kind, grade) {
@@ -590,8 +594,26 @@ function switchView(view) {
   if (view === "quiz") updateQuizSizeOptions();
 }
 
+// 兼容性映射：单文件版简短年级名 -> 主版本完整阶段名
+const GRADE_COMPAT_MAP = {
+  "初一": ["初一课内词汇", "初一考试词汇"],
+  "初二": ["初二课内词汇", "初二考试词汇"],
+  "初三": ["初三课内词汇", "初三考试词汇"],
+  "高一": ["高一课内词汇", "高一考试词汇", "高一课改词库"],
+  "高二": ["高二课内词汇", "高二考试词汇"],
+  "高三": ["高三考试词汇"]
+};
+
+function normalizeGrade(grade) {
+  return GRADE_COMPAT_MAP[grade] || [grade];
+}
+
 function stageMatches(word, stage) {
-  return word.grade === stage || (word.goals || []).includes(stage);
+  // 直接匹配
+  if (word.grade === stage || (word.goals || []).includes(stage)) return true;
+  // 兼容性匹配：检查 word.grade 是否是 stage 的简写形式
+  const compatibleGrades = GRADE_COMPAT_MAP[word.grade] || [];
+  return compatibleGrades.includes(stage);
 }
 
 function getEligibleWords() {
@@ -732,14 +754,17 @@ function buildQueue() {
   }
 
   const rotationKey = buildTrainingRotationKey();
+  const candidateIds = candidates.map((word) => word.id);
   const prepared = prepareRotationBatch(
     state.rotationQueues.get(rotationKey),
-    candidates.map((word) => word.id),
+    candidateIds,
     sizeValue
   );
   const candidatesById = new Map(candidates.map((word) => [word.id, word]));
+  const queue = prepared.batch.map((id) => candidatesById.get(id)).filter(Boolean);
+
   return {
-    queue: prepared.batch.map((id) => candidatesById.get(id)).filter(Boolean),
+    queue,
     rotationKey,
     rotationState: prepared.state
   };
@@ -904,6 +929,21 @@ function isUsableDistractor(candidate, answer, mode, usedDisplayKeys) {
   const candidateDisplayKey = choiceDisplayKey(candidate, mode);
   const answerDisplayKey = choiceDisplayKey(answer, mode);
   if (!candidateDisplayKey || candidateDisplayKey === answerDisplayKey || usedDisplayKeys.has(candidateDisplayKey)) return false;
+
+  // 排除中文释义完全相同的选项（如 attend/attendance 都是"出席；参加"）
+  if (mode === "enToZhChoice" || mode === "auto") {
+    const candidateZh = normalizeDisplayedChoiceText(candidate.zh);
+    const answerZh = normalizeDisplayedChoiceText(answer.zh);
+    if (candidateZh && answerZh && candidateZh === answerZh) return false;
+  }
+
+  // 排除英文单词完全相同的选项
+  if (mode === "zhToEnChoice" || mode === "auto") {
+    const candidateEn = normalizeDisplayedChoiceText(candidate.en);
+    const answerEn = normalizeDisplayedChoiceText(answer.en);
+    if (candidateEn && answerEn && candidateEn === answerEn) return false;
+  }
+
   return true;
 }
 
@@ -1130,6 +1170,7 @@ async function finishSession() {
   const totalSeconds = Math.max(1, Math.round((performance.now() - session.sessionStartedAt) / 1000));
   const tomorrow = uniqueById([...session.wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
   state.lastReport = {
+    grade: session.grade,
     total: session.total,
     correct: session.correct,
     fast: session.fast,
@@ -1163,6 +1204,7 @@ function showSessionCompleteModal(report) {
   const icon = document.getElementById("modalIcon");
   const title = document.getElementById("modalTitle");
   const datetimeEl = document.getElementById("modalDatetime");
+  const sessionInfoEl = document.getElementById("modalSessionInfo");
   const totalEl = document.getElementById("modalTotal");
   const accuracyEl = document.getElementById("modalAccuracy");
   const fastRateEl = document.getElementById("modalFastRate");
@@ -1181,6 +1223,14 @@ function showSessionCompleteModal(report) {
   const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${weekdays[now.getDay()]}`;
   const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
   datetimeEl.textContent = `${dateStr} ${timeStr}`;
+
+  // 设置年级段和用时信息
+  const grade = state.lastReport?.grade || els.stageSelect?.value || "未知年级";
+  const totalSeconds = report.totalSeconds || 0;
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  const timeText = minutes > 0 ? `${minutes}分${seconds}秒` : `${seconds}秒`;
+  sessionInfoEl.textContent = `本次${grade}刷词共用时${timeText}`;
 
   totalEl.textContent = report.total;
   accuracyEl.textContent = `${accuracyNum}%`;
@@ -1386,7 +1436,7 @@ function getQuizSentenceData(grade) {
   if (grade === "初一课内词汇" || grade === "初一考试词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
   if (grade === "初二课内词汇" || grade === "初二考试词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
   if (grade === "初三课内词汇" || grade === "初三考试词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
-  if (grade === "高一课内词汇" || grade === "高一考试词汇") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
+  if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
   if (grade === "高二课内词汇" || grade === "高二考试词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
   return [];
 }
@@ -1413,7 +1463,7 @@ function getExpectedQuizCount(grade) {
   if (grade === "初一课内词汇" || grade === "初一考试词汇") return GRADE7_QUIZ_COUNT;
   if (grade === "初二课内词汇" || grade === "初二考试词汇") return GRADE8_QUIZ_COUNT;
   if (grade === "初三课内词汇" || grade === "初三考试词汇") return 340;
-  if (grade === "高一课内词汇" || grade === "高一考试词汇") return GRADE10_QUIZ_COUNT;
+  if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return GRADE10_QUIZ_COUNT;
   if (grade === "高二课内词汇" || grade === "高二考试词汇") return GRADE11_QUIZ_COUNT;
   return 0;
 }
@@ -1431,9 +1481,10 @@ function getQuizWrongCount(grade) {
     if (record.grade) return record.grade === grade;
     if (grade === "初一课内词汇" || grade === "初一考试词汇") return String(record.questionId || "").startsWith("g7-");
     if (grade === "初二课内词汇" || grade === "初二考试词汇") return String(record.questionId || "").startsWith("g8-");
-    if (grade === "初三课内词汇" || grade === "初三考试词汇") return String(record.questionId || "").startsWith("g9-") || (!String(record.questionId || "").startsWith("g7-") && !String(record.questionId || "").startsWith("g8-") && !String(record.questionId || "").startsWith("g10-") && !String(record.questionId || "").startsWith("g11-"));
-    if (grade === "高一课内词汇" || grade === "高一考试词汇") return String(record.questionId || "").startsWith("g10-");
+    if (grade === "初三课内词汇" || grade === "初三考试词汇") return String(record.questionId || "").startsWith("g9-");
+    if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return String(record.questionId || "").startsWith("g10-");
     if (grade === "高二课内词汇" || grade === "高二考试词汇") return String(record.questionId || "").startsWith("g11-");
+    if (grade === "高三考试词汇") return String(record.questionId || "").startsWith("g12-");
     return false;
   }).length;
 }

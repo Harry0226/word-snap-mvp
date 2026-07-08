@@ -874,6 +874,26 @@ button, .choice, .battle-choice, .file-button, .file-picker, .tab, select {
   color: #b91c1c;
 }
 
+.modal-session-info {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header.pass + .modal-session-info {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  color: #166534;
+}
+
+.modal-header.fail + .modal-session-info {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+}
+
 .modal-body {
   padding: 20px 24px;
 }

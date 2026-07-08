@@ -66,6 +66,7 @@
             <option value="初三考试词汇">初三考试词汇</option>
             <option value="高一课内词汇">高一课内词汇</option>
             <option value="高一考试词汇">高一考试词汇</option>
+            <option value="高一课改词库">高一课改词库</option>
             <option value="高二课内词汇">高二课内词汇</option>
             <option value="高二考试词汇">高二考试词汇</option>
             <option value="高三考试词汇">高三考试词汇</option>
@@ -96,11 +97,16 @@
           <label>训练范围
             <select id="trainingScope">
               <option value="all" selected>全部单词</option>
+              <option value="wrong">错词优先</option>
+              <option value="slow">慢词优先</option>
+              <option value="smart">智能混合</option>
             </select>
           </label>
           <label>词库来源
             <select id="deckFilter">
               <option value="builtin" selected>代老师内置词库</option>
+              <option value="all">全部词库</option>
+              <option value="custom">自定义词库</option>
             </select>
           </label>
         </div>
@@ -140,6 +146,7 @@
             <option value="初三考试词汇">初三考试词汇</option>
             <option value="高一课内词汇">高一课内词汇</option>
             <option value="高一考试词汇">高一考试词汇</option>
+            <option value="高一课改词库">高一课改词库</option>
             <option value="高二课内词汇">高二课内词汇</option>
             <option value="高二考试词汇">高二考试词汇</option>
             <option value="高三考试词汇">高三考试词汇</option>
@@ -222,6 +229,7 @@
               <option value="初三课内词汇" selected>初三课内词汇</option>
               <option value="高一课内词汇">高一课内词汇</option>
               <option value="高一考试词汇">高一考试词汇</option>
+              <option value="高一课改词库">高一课改词库</option>
               <option value="高二课内词汇">高二课内词汇</option>
               <option value="高二考试词汇">高二考试词汇</option>
               <option value="高三考试词汇">高三考试词汇</option>
@@ -315,6 +323,7 @@
               <option value="初三课内词汇" selected>初三课内词汇</option>
               <option value="高一课内词汇">高一课内词汇</option>
               <option value="高一考试词汇">高一考试词汇</option>
+              <option value="高一课改词库">高一课改词库</option>
               <option value="高二课内词汇">高二课内词汇</option>
               <option value="高二考试词汇">高二考试词汇</option>
               <option value="高三考试词汇">高三考试词汇</option>
@@ -377,6 +386,7 @@
         <h2 id="modalTitle">本轮训练完成</h2>
         <span class="modal-datetime" id="modalDatetime"></span>
       </div>
+      <div class="modal-session-info" id="modalSessionInfo"></div>
       <div class="modal-body">
         <div class="modal-stats">
           <div class="modal-stat-item">

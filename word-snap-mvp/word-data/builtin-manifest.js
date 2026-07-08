@@ -49,6 +49,12 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
         "count": 450,
         "source": "高一考试词汇"
     },
+    "高一课改词库": {
+        "src": "./word-data/stages/grade10-curriculum.js",
+        "version": "20260708",
+        "count": 298,
+        "source": "高一课改词库"
+    },
     "高二课内词汇": {
         "src": "./word-data/stages/grade11-inclass.js",
         "version": "20260702",
