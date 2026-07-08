@@ -1,0 +1,1 @@
+window.WORD_SNAP_BUILTIN_LISTS = [];
