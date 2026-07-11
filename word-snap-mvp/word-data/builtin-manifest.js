@@ -1,5 +1,5 @@
 window.WORD_SNAP_BUILTIN_MANIFEST = {
-  "version": "20260702",
+  "version": "20260711",
   "stages": {
     "初一课内词汇": {
         "src": "./word-data/stages/grade7-inclass.js",

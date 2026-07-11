@@ -1,7 +1,7 @@
 const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "高一课内词汇", "高一考试词汇", "高一课改词库", "高二课内词汇", "高二考试词汇", "高三考试词汇"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
-const BUILTIN_SEED_VERSION = 16;
+const BUILTIN_SEED_VERSION = 18;
 const FAST_PICK_LIMIT = 2000;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
@@ -264,6 +264,20 @@ function deleteRecordsForMissingWords(validWordIds) {
   });
 }
 
+function deleteRecordsByWordIds(wordIds) {
+  if (!wordIds.size) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const request = tx("records", "readwrite").openCursor();
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (!cursor) return resolve();
+      if (wordIds.has(cursor.value.wordId)) cursor.delete();
+      cursor.continue();
+    };
+    request.onerror = () => reject(request.error);
+  });
+}
+
 function slugWord(value) {
   return String(value || "")
     .toLowerCase()
@@ -385,75 +399,20 @@ async function ensureStageLoaded(stage) {
 }
 
 async function seedBuiltinWords() {
-  const seedMeta = await new Promise((resolve) => {
-    const request = tx("meta").get("builtinSeedVersion");
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => resolve(null);
-  });
-  const hasBuiltinWords = (await getAll("words")).some((word) => word.sourceType === "builtin");
-  if (Number(seedMeta?.value || 0) >= BUILTIN_SEED_VERSION && hasBuiltinWords) return;
-
-  // Load all stage scripts first to populate WORD_SNAP_STAGE_LISTS
-  const manifest = window.WORD_SNAP_BUILTIN_MANIFEST?.stages || {};
-  for (const stage of Object.keys(manifest)) {
-    const entry = manifest[stage];
-    if (entry?.src) {
-      try {
-        await loadScriptWithRetry(entry.src);
-      } catch (e) {
-        console.warn(`Failed to load ${stage} script:`, e);
-      }
-    }
-  }
-
-  // Get lists from both WORD_SNAP_BUILTIN_LISTS and WORD_SNAP_STAGE_LISTS
-  const builtinLists = [
-    ...(window.WORD_SNAP_BUILTIN_LISTS || []),
-    ...Object.values(window.WORD_SNAP_STAGE_LISTS || {})
-  ];
-  const words = builtinLists.flatMap((list) => (list.words || [])
-    .map((word, index) => normalizeBuiltinWord(word, index, list))
-    .filter((word) => word.en && word.zh));
-  const currentVersion = Number(seedMeta?.value || 0);
-  if (currentVersion < 15) {
-    const decksToDelete = [];
-    if (currentVersion < 3) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "高三", source: "高三高频词库" });
-    if (currentVersion < 5) decksToDelete.push({ grade: "初三", source: "近五年中考结合最新一模" }, { grade: "初三", source: "初三核心词库" }, { grade: "初三", source: "初三刷题词库" });
-    if (currentVersion < 6) decksToDelete.push({ grade: "初三", source: "初三核心词库" }, { grade: "中考常考词组总复习", source: "中考常考词组总复习" });
-    if (currentVersion < 8) decksToDelete.push({ grade: "初三", source: "初三核心词库" });
-    if (currentVersion < 9) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "高三", source: "高三高频词库" });
-    if (currentVersion < 10) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" });
-    if (currentVersion < 11) decksToDelete.push({ grade: "初三", source: "初三核心词库" });
-    if (currentVersion < 12) decksToDelete.push({ grade: "初一", source: "初一内置词库" });
-    if (currentVersion < 13) decksToDelete.push({ grade: "初一", source: "初一内置词库" });
-    if (currentVersion < 14) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "初二", source: "初二内置词库" });
-    if (currentVersion < 15) decksToDelete.push({ grade: "高二", source: "高二内置词库" }, { grade: "中考作文高级动词替换", source: "中考作文高级动词替换" });
-    if (currentVersion < 16) {
-      // Delete all old builtin words since we changed stage names
-      const allWords = await getAll("words");
-      const oldBuiltinWords = allWords.filter(w => w.sourceType === "builtin");
-      if (oldBuiltinWords.length) {
-        await new Promise((resolve, reject) => {
-          const transaction = state.db.transaction("words", "readwrite");
-          const store = transaction.objectStore("words");
-          oldBuiltinWords.forEach(w => store.delete(w.id));
-          transaction.oncomplete = () => resolve();
-          transaction.onerror = () => reject(transaction.error);
-        });
-      }
-    }
-    if (decksToDelete.length) await deleteBuiltinDecks(decksToDelete);
-  }
-  // 串行执行 put 操作，避免 IndexedDB 事务竞争
-  const store = tx("words", "readwrite");
-  for (const word of words) {
+  const allWords = await getAll("words");
+  const canonicalStages = new Set(STAGES);
+  const legacyBuiltinWords = allWords.filter((word) => word.sourceType === "builtin" && !canonicalStages.has(word.grade));
+  if (legacyBuiltinWords.length) {
+    const legacyIds = new Set(legacyBuiltinWords.map((word) => word.id));
     await new Promise((resolve, reject) => {
-      const request = store.put(word);
-      request.onsuccess = () => resolve();
-      request.onerror = () => reject(request.error);
+      const transaction = state.db.transaction("words", "readwrite");
+      const store = transaction.objectStore("words");
+      legacyBuiltinWords.forEach((word) => store.delete(word.id));
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error);
     });
+    await deleteRecordsByWordIds(legacyIds);
   }
-  await deleteRecordsForMissingWords(new Set(await getAllKeys("words")));
   await put("meta", { key: "builtinSeedVersion", value: BUILTIN_SEED_VERSION, at: Date.now() });
   await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
 }
@@ -594,26 +553,8 @@ function switchView(view) {
   if (view === "quiz") updateQuizSizeOptions();
 }
 
-// 兼容性映射：单文件版简短年级名 -> 主版本完整阶段名
-const GRADE_COMPAT_MAP = {
-  "初一": ["初一课内词汇", "初一考试词汇"],
-  "初二": ["初二课内词汇", "初二考试词汇"],
-  "初三": ["初三课内词汇", "初三考试词汇"],
-  "高一": ["高一课内词汇", "高一考试词汇", "高一课改词库"],
-  "高二": ["高二课内词汇", "高二考试词汇"],
-  "高三": ["高三考试词汇"]
-};
-
-function normalizeGrade(grade) {
-  return GRADE_COMPAT_MAP[grade] || [grade];
-}
-
 function stageMatches(word, stage) {
-  // 直接匹配
-  if (word.grade === stage || (word.goals || []).includes(stage)) return true;
-  // 兼容性匹配：检查 word.grade 是否是 stage 的简写形式
-  const compatibleGrades = GRADE_COMPAT_MAP[word.grade] || [];
-  return compatibleGrades.includes(stage);
+  return word.grade === stage || (word.goals || []).includes(stage);
 }
 
 function getEligibleWords() {
@@ -882,19 +823,19 @@ function nextWord() {
 }
 
 function hintForMode(mode, word) {
-  if (mode === "customChoice") return word.notes || "根据题干选择最匹配的答案。1.5 秒内算秒选，超过 3.5 秒记慢词。";
+  if (mode === "customChoice") return word.notes || "根据题干选择最匹配的答案。2 秒内算秒选，超过 3.5 秒为慢词。";
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  if (mode === "enToZhChoice") return detail || "看英文选中文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
-  return "看中文选英文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
+  if (mode === "enToZhChoice") return detail || "看英文选中文。2 秒内算秒选，超过 3.5 秒为慢词。";
+  return "看中文选英文。2 秒内算秒选，超过 3.5 秒为慢词。";
 }
 
 function startTimer() {
   clearInterval(state.session.timerId);
   els.timer.classList.remove("fast");
-  els.timer.textContent = "用时 0.0 秒 · 1.5 秒内算秒选，超过 3.5 秒记慢词";
+  els.timer.textContent = "用时 0.0 秒 · 2 秒内算秒选，超过 3.5 秒为慢词";
   state.session.timerId = setInterval(() => {
     const elapsed = performance.now() - state.session.startedAt;
-    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.5 秒内算秒选，超过 3.5 秒记慢词`;
+    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 2 秒内算秒选，超过 3.5 秒为慢词`;
   }, 100);
 }
 
@@ -1573,6 +1514,38 @@ function getQuizDistractorsForSentence(answer, vocabPool) {
   return shuffle(pool).slice(0, 4);
 }
 
+function normalizeQuizChoiceKey(value) {
+  return String(value || "").replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+function isQuizAnswerChoice(value, question) {
+  return normalizeQuizChoiceKey(value) === normalizeQuizChoiceKey(question.answer);
+}
+
+function buildQuizChoices(question, vocabPool) {
+  const choices = [];
+  const used = new Set();
+  const addChoice = (value) => {
+    const text = String(value || "").trim();
+    const key = normalizeQuizChoiceKey(text);
+    if (!key || used.has(key)) return;
+    used.add(key);
+    choices.push(text);
+  };
+
+  (question.options?.length ? question.options : [question.answer, ...getQuizDistractorsForSentence(question.answer, vocabPool)])
+    .forEach(addChoice);
+
+  // 固定题库若存在重复选项，先去重，再从同阶段候选词中补足选项数量。
+  if (choices.length < 5) {
+    getQuizDistractorsForSentence(question.answer, vocabPool).forEach(addChoice);
+  }
+  if (!choices.some((choice) => isQuizAnswerChoice(choice, question))) addChoice(question.answer);
+  const correctChoice = choices.find((choice) => isQuizAnswerChoice(choice, question));
+  const distractors = choices.filter((choice) => !isQuizAnswerChoice(choice, question));
+  return shuffle([correctChoice, ...distractors]).slice(0, 5);
+}
+
 async function startQuiz(isReview) {
   const grade = els.quizStage.value;
   let allData;
@@ -1678,9 +1651,7 @@ function nextQuizQuestion() {
   quiz.currentIndex = quiz.done + 1;
 
   const q = quiz.currentQ;
-  const allChoices = q.options?.length
-    ? shuffle([...q.options])
-    : shuffle([q.answer, ...getQuizDistractorsForSentence(q.answer, quiz.vocabPool)]);
+  const allChoices = buildQuizChoices(q, quiz.vocabPool);
 
   els.quizTag.textContent = `第 ${quiz.done + 1}/${quiz.total} 题`;
   els.quizSentence.textContent = q.sentence;
@@ -1692,7 +1663,7 @@ function nextQuizQuestion() {
     const button = document.createElement("button");
     button.className = "choice";
     button.type = "button";
-    button.dataset.isCorrect = word === q.answer ? "1" : "0";
+    button.dataset.isCorrect = isQuizAnswerChoice(word, q) ? "1" : "0";
     const key = document.createElement("span");
     key.className = "choice-key";
     key.textContent = CHOICE_KEYS[index];
@@ -1700,7 +1671,7 @@ function nextQuizQuestion() {
     text.className = "choice-text";
     text.textContent = word;
     button.append(key, text);
-    button.addEventListener("click", () => answerQuizChoice(word === q.answer, button));
+    button.addEventListener("click", () => answerQuizChoice(isQuizAnswerChoice(word, q), button));
     els.quizChoices.append(button);
   });
 
@@ -2368,6 +2339,7 @@ async function init() {
   });
   try {
     state.db = await openDb();
+    await seedBuiltinWords();
     await ensureStageLoaded(els.stageSelect.value);
     await loadState();
   } catch (error) {
