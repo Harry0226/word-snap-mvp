@@ -12,6 +12,9 @@ assert(sessionSelect.includes('value="300"'), "training size should offer 300 wo
 assert(sessionSelect.includes('value="all">全部单词'), "training size should still offer all words");
 
 assert(app.includes("function updateSessionSizeOptions"), "session size options should be dynamic");
+assert(app.includes("function buildExactTrainingQueue"), "result retry should support an exact session-only queue");
+assert(app.includes("wrongWordIds: wrongWords.map((word) => word.id)"), "the report should retain only this session's wrong word ids");
+assert(app.includes('startSession({ wordIds: report.wrongWordIds, grade: report.grade, notice: "仅练本轮新增错词。" })'), "retry should use this session's wrong word ids and grade instead of the historical wrong-word scope");
 
 assert(app.includes("const SLOW_PICK_LIMIT = 3500;"), "slow word threshold should be 3.5 seconds");
 assert(app.includes("const isSlow = isCorrect && elapsed > SLOW_PICK_LIMIT;"), "slow words should use the 3.5 second threshold");

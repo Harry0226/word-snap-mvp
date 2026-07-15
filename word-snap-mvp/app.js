@@ -10,6 +10,12 @@ const QUIZ_SLOW = 12000;
 const GRADE7_QUIZ_COUNT = 186;
 const ROTATION_META_PREFIX = "rotation:v2:";
 const { prepareRotationBatch, completeRotationItem } = window.WordSnapRotation;
+const {
+  normalizeDisplayedChoiceText: normalizeChoiceDisplayText,
+  normalizeEnglishWord,
+  splitChineseSenses,
+  hasMeaningConflict
+} = window.WordSnapChoiceUtils;
 const { getCheckinThreshold, makeProgressKey, advanceDailyProgress } = window.WordSnapDailyStreaks;
 const { loadScriptWithRetry } = window.WordSnapAssetLoader;
 const BACKUP_SITE_URL = "https://word-snap-mvp.pages.dev/";
@@ -711,6 +717,20 @@ function buildQueue() {
   };
 }
 
+function buildExactTrainingQueue(wordIds, notice) {
+  const wordsById = new Map(state.words.map((word) => [word.id, word]));
+  const seenIds = new Set();
+  const queue = (Array.isArray(wordIds) ? wordIds : [])
+    .map((id) => wordsById.get(id))
+    .filter((word) => {
+      if (!word || seenIds.has(word.id)) return false;
+      seenIds.add(word.id);
+      return true;
+    });
+  state.queueNotice = notice || "仅练本轮新增错词。";
+  return { queue: shuffle(queue), rotationKey: null, rotationState: null };
+}
+
 function updateTrainingEstimate() {
   if (state.session) return;
   const { queue } = buildQueue();
@@ -744,10 +764,11 @@ function resolvePracticeMode(word) {
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
 }
 
-async function startSession() {
+async function startSession(options = {}) {
   if (state.session) clearInterval(state.session.timerId);
   hideTrainContinueButton();
-  const stage = els.stageSelect.value;
+  const stage = Array.isArray(options?.wordIds) && options.grade ? options.grade : els.stageSelect.value;
+  if (els.stageSelect.value !== stage) els.stageSelect.value = stage;
   try {
     await ensureStageLoaded(stage);
     await loadState();
@@ -755,7 +776,10 @@ async function startSession() {
     els.progressText.textContent = stageLoadMessage(stage, true);
     return;
   }
-  const { queue, rotationKey, rotationState } = buildQueue();
+  const queueResult = Array.isArray(options?.wordIds)
+    ? buildExactTrainingQueue(options.wordIds, options.notice)
+    : buildQueue();
+  const { queue, rotationKey, rotationState } = queueResult;
   if (!queue.length) {
     els.feedback.textContent = state.queueNotice || "当前设置下暂无可练单词。";
     els.progressText.textContent = els.feedback.textContent;
@@ -840,8 +864,7 @@ function startTimer() {
 }
 
 function getTrainingChoiceCount(answer) {
-  if (answer.choiceCount) return answer.choiceCount;
-  return (answer.grade === "初二课内词汇" || answer.grade === "初二考试词汇") ? 5 : 4;
+  return 4;
 }
 
 function getGradeWordPool(grade) {
@@ -858,32 +881,22 @@ function isSimilarWordShape(a, b) {
 }
 
 function normalizeDisplayedChoiceText(value) {
-  return String(value || "").replace(/\s+/g, " ").trim();
+  return normalizeChoiceDisplayText(value);
 }
 
 function choiceDisplayKey(choice, mode) {
   return normalizeDisplayedChoiceText(choiceText(choice, mode));
 }
 
-function isUsableDistractor(candidate, answer, mode, usedDisplayKeys) {
+function isUsableDistractor(candidate, answer, mode, usedDisplayKeys, usedChoices = []) {
   if (!candidate || candidate.id === answer.id || !candidate.en || !candidate.zh) return false;
   const candidateDisplayKey = choiceDisplayKey(candidate, mode);
   const answerDisplayKey = choiceDisplayKey(answer, mode);
   if (!candidateDisplayKey || candidateDisplayKey === answerDisplayKey || usedDisplayKeys.has(candidateDisplayKey)) return false;
 
-  // 排除中文释义完全相同的选项（如 attend/attendance 都是"出席；参加"）
-  if (mode === "enToZhChoice" || mode === "auto") {
-    const candidateZh = normalizeDisplayedChoiceText(candidate.zh);
-    const answerZh = normalizeDisplayedChoiceText(answer.zh);
-    if (candidateZh && answerZh && candidateZh === answerZh) return false;
-  }
-
-  // 排除英文单词完全相同的选项
-  if (mode === "zhToEnChoice" || mode === "auto") {
-    const candidateEn = normalizeDisplayedChoiceText(candidate.en);
-    const answerEn = normalizeDisplayedChoiceText(answer.en);
-    if (candidateEn && answerEn && candidateEn === answerEn) return false;
-  }
+  // 中文释义按义项去重，避免“种类，善良的 / 种类 / 善良”同时成为可选答案。
+  if (hasMeaningConflict(candidate, answer)) return false;
+  if (usedChoices.some((choice) => choice?.id !== answer.id && hasMeaningConflict(candidate, choice))) return false;
 
   return true;
 }
@@ -892,32 +905,37 @@ function buildChoiceSet(answer, distractors, mode) {
   const choices = [answer];
   const usedDisplayKeys = new Set([choiceDisplayKey(answer, mode)]);
   distractors.forEach((candidate) => {
-    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys, choices)) return;
     usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
     choices.push(candidate);
   });
   return choices;
 }
 
-function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = null) {
+function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = null, externalUsedChoices = null) {
   const usedDisplayKeys = externalUsedKeys || new Set([choiceDisplayKey(answer, mode)]);
+  const usedChoices = externalUsedChoices || [answer];
   if (!externalUsedKeys) {
     usedDisplayKeys.add(choiceDisplayKey(answer, mode));
   }
   const ranked = pool
     .filter((candidate) => candidate?.id !== answer.id && candidate?.zh)
-    .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer) }))
+    .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer, mode) }))
     .sort((a, b) => {
       return b.score - a.score || hashString(`${answer.id}:${a.candidate.id}`) - hashString(`${answer.id}:${b.candidate.id}`);
     });
-  const preferred = ranked.filter((item) => item.score > 0).map((item) => item.candidate);
+  const bestScore = ranked[0]?.score || 0;
+  const preferred = ranked
+    .filter((item) => item.score >= Math.max(1, bestScore - 3))
+    .map((item) => item.candidate);
   const fallback = ranked.map((item) => item.candidate);
   const distractors = [];
 
-  uniqueById([...shuffle(preferred.slice(0, 24)), ...fallback]).forEach((candidate) => {
+  uniqueById([...shuffle(preferred), ...fallback]).forEach((candidate) => {
     if (distractors.length >= count) return;
-    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys, usedChoices)) return;
     usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
+    usedChoices.push(candidate);
     distractors.push(candidate);
   });
 
@@ -926,11 +944,12 @@ function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = n
 
 function getStructuredDistractors(answer, count, mode) {
   const gradePool = getGradeWordPool(answer.grade);
-  const fallbackPool = getEligibleWords();
+  const fallbackPool = uniqueById([...getEligibleWords(), ...state.words]);
   const sharedUsedKeys = new Set([choiceDisplayKey(answer, mode)]);
-  const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool, sharedUsedKeys);
+  const sharedUsedChoices = [answer];
+  const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool, sharedUsedKeys, sharedUsedChoices);
   if (primary.length >= count) return primary;
-  const extra = selectRankedDistractors(answer, count, mode, fallbackPool, sharedUsedKeys);
+  const extra = selectRankedDistractors(answer, count - primary.length, mode, fallbackPool, sharedUsedKeys, sharedUsedChoices);
   return [...primary, ...extra].slice(0, count);
 }
 
@@ -960,9 +979,6 @@ function makeChoices(answer) {
     return getCustomChoices(answer, mode);
   }
   const distractorCount = getTrainingChoiceCount(answer) - 1;
-  if (answer.grade === "初二课内词汇" || answer.grade === "初二考试词汇" || answer.grade === "高二课内词汇" || answer.grade === "高二考试词汇") {
-    return shuffle(buildChoiceSet(answer, getStructuredDistractors(answer, distractorCount, mode), mode));
-  }
   return shuffle(buildChoiceSet(answer, getStructuredDistractors(answer, distractorCount, mode), mode));
 }
 
@@ -988,19 +1004,23 @@ function similarWordShape(candidate, answer) {
   return (lengthClose && (prefixClose || suffixClose)) || familyClose;
 }
 
-function scoreDistractorChoice(candidate, answer) {
+function scoreDistractorChoice(candidate, answer, mode) {
   if (!candidate?.en || !answer?.en) return 0;
   let score = 0;
   if (sameInitial(candidate, answer)) score += 6;
   if (similarWordShape(candidate, answer)) score += 5;
   const lengthGap = Math.abs(normalizeChoiceText(candidate.en).length - normalizeChoiceText(answer.en).length);
   if (lengthGap <= 1) score += 2;
-  if (candidate.pos && answer.pos && candidate.pos === answer.pos) score += 1;
+  if (candidate.pos && answer.pos && candidate.pos === answer.pos) score += 3;
+  const displayLengthGap = Math.abs(choiceDisplayKey(candidate, mode).length - choiceDisplayKey(answer, mode).length);
+  if (displayLengthGap <= 2) score += 3;
+  else if (displayLengthGap <= 5) score += 1;
+  if (splitChineseSenses(candidate.zh).length === splitChineseSenses(answer.zh).length) score += 1;
   return score;
 }
 
 function normalizeChoiceText(value) {
-  return String(value || "").toLowerCase().replace(/[^a-z]/g, "");
+  return normalizeEnglishWord(value);
 }
 
 async function answer(value, button) {
@@ -1109,13 +1129,15 @@ async function finishSession() {
   const session = state.session;
   clearInterval(session.timerId);
   const totalSeconds = Math.max(1, Math.round((performance.now() - session.sessionStartedAt) / 1000));
-  const tomorrow = uniqueById([...session.wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
+  const wrongWords = uniqueById(session.wrongWords);
+  const tomorrow = uniqueById([...wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
   state.lastReport = {
     grade: session.grade,
     total: session.total,
     correct: session.correct,
     fast: session.fast,
-    wrong: session.wrongWords.length,
+    wrong: wrongWords.length,
+    wrongWordIds: wrongWords.map((word) => word.id),
     slow: session.slowWords.length,
     tomorrow,
     totalSeconds
@@ -1203,7 +1225,13 @@ function showSessionCompleteModal(report) {
   // 按钮事件
   const closeModal = () => { modal.hidden = true; };
   closeBtn.onclick = closeModal;
-  againBtn.onclick = () => { closeModal(); els.trainingScope.value = "wrong"; els.sessionSize.value = "all"; startSession(); };
+  againBtn.disabled = !report.wrongWordIds?.length;
+  againBtn.textContent = report.wrongWordIds?.length ? "再练一遍" : "本轮没有错词";
+  againBtn.onclick = () => {
+    if (!report.wrongWordIds?.length) return;
+    closeModal();
+    startSession({ wordIds: report.wrongWordIds, grade: report.grade, notice: "仅练本轮新增错词。" });
+  };
   nextBtn.onclick = () => { closeModal(); els.trainingScope.value = "smart"; startSession(); };
 
   modal.hidden = false;
@@ -2148,13 +2176,12 @@ function renderSessionReport() {
     <div class="session-report-card"><strong>${report.wrong}</strong><span>错词</span></div>
     <div class="session-report-card"><strong>${report.slow}</strong><span>慢词</span></div>
     <div class="session-report-card"><strong>${report.tomorrow}</strong><span>建议明天复习</span></div>
-    <button id="againWeakBtn" type="button">再练错词</button>
+    <button id="againWeakBtn" type="button"${report.wrongWordIds?.length ? "" : " disabled"}>${report.wrongWordIds?.length ? "再练本轮错词" : "本轮没有错词"}</button>
     <button id="nextSessionBtn" type="button" class="secondary">继续下一组</button>
   `;
   document.querySelector("#againWeakBtn").addEventListener("click", () => {
-    els.trainingScope.value = "wrong";
-    els.sessionSize.value = "all";
-    startSession();
+    if (!report.wrongWordIds?.length) return;
+    startSession({ wordIds: report.wrongWordIds, grade: report.grade, notice: "仅练本轮新增错词。" });
   });
   document.querySelector("#nextSessionBtn").addEventListener("click", () => {
     els.trainingScope.value = "smart";

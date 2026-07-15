@@ -17,7 +17,8 @@ assert(!resolveMode.includes("return word.fixedMode"), "ordinary vocabulary fixe
 
 const makeChoices = app.slice(app.indexOf("function makeChoices"), app.indexOf("function choiceText"));
 assert(makeChoices.includes('mode === "customChoice"'), "preset choiceOptions should only be used for custom questions");
-assert(makeChoices.includes('answer.grade === "高二课内词汇"') && makeChoices.includes('answer.grade === "高二考试词汇"'), "高二 should use structured vocabulary-bank distractors");
+assert(makeChoices.includes("getStructuredDistractors(answer, distractorCount, mode)"), "every grade should use structured vocabulary-bank distractors");
+assert(!makeChoices.includes("answer.grade ==="), "choice generation should not vary its option count or quality by grade");
 
 const correctness = app.slice(app.indexOf("function isCorrectAnswer"), app.indexOf("function feedbackText"));
 assert(correctness.includes('mode === "customChoice"'), "only custom questions should use preset answer flags");
