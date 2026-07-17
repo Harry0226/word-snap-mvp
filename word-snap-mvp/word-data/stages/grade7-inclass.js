@@ -243,7 +243,7 @@ window.WORD_SNAP_STAGE_LISTS["初一课内词汇"] = {"grade":"初一课内词�
     {"en":"jeans","zh":"牛仔裤","pos":"","notes":"","frequency":0},
     {"en":"scarf","zh":"围巾","pos":"","notes":"","frequency":0},
     {"en":"tie","zh":"领带","pos":"","notes":"","frequency":0},
-    {"en":"T-shirt  T","zh":"恤衫","pos":"","notes":"","frequency":0},
+    {"en":"T-shirt","zh":"T恤衫","pos":"","notes":"","frequency":0},
     {"en":"calm","zh":"镇静的，沉着的","pos":"","notes":"","frequency":0},
     {"en":"fashion","zh":"时装业，流行","pos":"","notes":"","frequency":0},
     {"en":"choose","zh":"选择","pos":"","notes":"","frequency":0},

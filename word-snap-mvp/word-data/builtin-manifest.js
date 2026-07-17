@@ -1,27 +1,28 @@
 window.WORD_SNAP_BUILTIN_MANIFEST = {
-  "version": "20260711",
+  "version": "20260717",
   "stages": {
     "初一课内词汇": {
         "src": "./word-data/stages/grade7-inclass.js",
-        "version": "20260702",
+        "version": "20260717",
         "count": 292,
         "source": "初一课内词汇"
     },
     "初一考试词汇": {
         "src": "./word-data/stages/grade7-exam.js",
-        "version": "20260702",
+        "version": "20260717",
         "count": 323,
         "source": "初一考试词汇"
     },
     "初二课内词汇": {
         "src": "./word-data/stages/grade8-inclass.js",
-        "version": "20260702",
+        "version": "20260717",
         "count": 1005,
+        "uniqueCount": 335,
         "source": "初二课内词汇"
     },
     "初二考试词汇": {
         "src": "./word-data/stages/grade8-exam.js",
-        "version": "20260702",
+        "version": "20260717",
         "count": 573,
         "source": "初二考试词汇"
     },
@@ -33,19 +34,19 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
     },
     "初三考试词汇": {
         "src": "./word-data/stages/grade9-exam.js",
-        "version": "20260703",
+        "version": "20260717",
         "count": 797,
         "source": "初三考试词汇"
     },
     "高一课内词汇": {
         "src": "./word-data/stages/grade10-inclass.js",
-        "version": "20260702",
-        "count": 221,
+        "version": "20260717",
+        "count": 225,
         "source": "高一课内词汇"
     },
     "高一考试词汇": {
         "src": "./word-data/stages/grade10-exam.js",
-        "version": "20260702",
+        "version": "20260717",
         "count": 450,
         "source": "高一考试词汇"
     },
@@ -69,8 +70,9 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
     },
     "高三考试词汇": {
         "src": "./word-data/stages/grade12-inclass.js",
-        "version": "20260703",
+        "version": "20260717",
         "count": 956,
+        "uniqueCount": 565,
         "source": "高三考试词汇"
     }
 }

@@ -176,7 +176,7 @@ difficulty 困难
 dinner 晚餐
 disagreement 分歧
 disaster 灾难
-disciplin 纪律
+discipline 纪律
 discussion 讨论
 dislike 不喜欢
 doctor 医生
@@ -187,7 +187,7 @@ down 向下
 draw 画
 drawing 绘图
 dream 梦想
-dres 连衣裙
+dress 连衣裙
 drink 喝
 drop 掉落
 dur 杜尔
@@ -361,7 +361,7 @@ imagine 想象
 impatient 不耐烦的
 important 重要的
 improv 即兴表演
-includ 包括
+include 包括
 infer 推断
 information 信息
 inside 里面
@@ -373,7 +373,7 @@ itself 本身
 janina 贾尼娜
 job 工作
 join 加入
-jok 笑话
+joke 笑话
 joyful 快乐的
 jump 跳
 keep 保持
@@ -384,7 +384,7 @@ kill 杀
 kilometer 公里
 kind 友善的
 kindly 友善地
-kindnes 善良
+kindness 善良
 king 国王
 kite 风筝
 know 知道
@@ -644,7 +644,7 @@ snake 蛇
 snow 雪
 snowstorm 暴风雪
 solve 解决
-sometim 某个时候
+sometime 某个时候
 son 儿子
 song 歌曲
 soon 很快
@@ -725,7 +725,7 @@ traveler 旅行者
 treat 对待
 trip 旅行
 trouble 麻烦
-trouser 裤子
+trousers 裤子
 true 真的
 trust 信任
 try 尝试

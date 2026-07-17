@@ -14,6 +14,30 @@
     return String(value || "").toLowerCase().replace(/[^a-z]/g, "");
   }
 
+  function vocabularyEntryKey(word) {
+    return `${normalizeDisplayedChoiceText(word?.en)}\u0000${normalizeDisplayedChoiceText(word?.zh)}`;
+  }
+
+  function dedupeVocabularyEntries(entries) {
+    const seen = new Set();
+    return (Array.isArray(entries) ? entries : []).filter((entry) => {
+      const key = vocabularyEntryKey(entry);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function sameEnglishWord(leftValue, rightValue) {
+    const left = normalizeEnglishWord(leftValue);
+    return Boolean(left) && left === normalizeEnglishWord(rightValue);
+  }
+
+  function isEquivalentVocabularyAnswer(selected, answer) {
+    return Boolean(selected && answer)
+      && (selected.id === answer.id || sameEnglishWord(selected.en, answer.en));
+  }
+
   function normalizeChineseSense(value) {
     return String(value || "")
       .replace(/\b(?:n|v|vt|vi|adj|adv|prep|pron|conj|num|art)\.?\b/gi, "")
@@ -72,6 +96,8 @@
 
   function hasMeaningConflict(candidate, answer) {
     if (!candidate || !answer) return false;
+    // 同一个英文词的不同中文义项都可能是正确答案，绝不能互相充当干扰项。
+    if (sameEnglishWord(candidate.en, answer.en)) return true;
     if (sensesOverlap(candidate.zh, answer.zh)) return true;
     return sameEnglishFamily(candidate.en, answer.en)
       && hasSharedMeaningfulChineseCharacter(candidate.zh, answer.zh);
@@ -80,6 +106,10 @@
   return {
     normalizeDisplayedChoiceText,
     normalizeEnglishWord,
+    vocabularyEntryKey,
+    dedupeVocabularyEntries,
+    sameEnglishWord,
+    isEquivalentVocabularyAnswer,
     splitChineseSenses,
     sensesOverlap,
     sameEnglishFamily,

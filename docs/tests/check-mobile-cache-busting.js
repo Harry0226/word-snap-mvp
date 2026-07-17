@@ -19,6 +19,7 @@ assert(app.includes("QUIZ_BANK_SCRIPTS"), "quiz banks should be loaded lazily wi
 assert(app.includes("./word-data/quiz-grade8-sentences.js?v="), "lazy grade 8 quiz data should use a versioned URL");
 assert(app.includes("loadScriptOnce"), "lazy quiz loader should avoid repeated downloads");
 assert(app.includes("loadScriptWithRetry"), "lazy assets should retry weak-network failures");
+assert(app.includes("versionedAssetSrc(entry.src, entry.version)"), "lazy vocabulary assets should change URL whenever their data version changes");
 
 const wordDataHeader = headers.match(/\/word-data\/\*[\s\S]*?(?=\n\/|\n$)/)?.[0] || "";
 assert(wordDataHeader.includes("immutable"), "versioned word data should remain cached on mobile");

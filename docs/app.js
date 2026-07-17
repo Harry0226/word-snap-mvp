@@ -13,6 +13,8 @@ const { prepareRotationBatch, completeRotationItem } = window.WordSnapRotation;
 const {
   normalizeDisplayedChoiceText: normalizeChoiceDisplayText,
   normalizeEnglishWord,
+  dedupeVocabularyEntries,
+  isEquivalentVocabularyAnswer,
   splitChineseSenses,
   hasMeaningConflict
 } = window.WordSnapChoiceUtils;
@@ -346,6 +348,11 @@ function stageLoadMessage(stage, failed = false) {
   return `正在加载${stage}词库，请稍候...`;
 }
 
+function versionedAssetSrc(src, version) {
+  const separator = src.includes("?") ? "&" : "?";
+  return `${src}${separator}v=${encodeURIComponent(version)}`;
+}
+
 async function seedStageWords(stage, list, version) {
   const metaKey = `builtinStageVersion:${stage}`;
   const seedMeta = await new Promise((resolve) => {
@@ -356,9 +363,10 @@ async function seedStageWords(stage, list, version) {
   const existing = await getWordsByStage(stage);
   const hasBuiltinWords = existing.some((word) => word.sourceType === "builtin");
   if (seedMeta?.value === version && hasBuiltinWords) return;
-  const words = (list.words || [])
+  // 先按原始位置生成 ID，再去重，避免清理重复数据时让已有学习记录串到别的单词。
+  const words = dedupeVocabularyEntries((list.words || [])
     .map((word, index) => normalizeBuiltinWord(word, index, list))
-    .filter((word) => word.en && word.zh);
+    .filter((word) => word.en && word.zh));
   await replaceBuiltinStageWords(stage, words);
   await put("meta", { key: metaKey, value: version, at: Date.now() });
 }
@@ -382,7 +390,7 @@ async function ensureStageLoaded(stage) {
     if (await isStageSeeded(stage, entry.version)) return true;
     els.feedback.textContent = stageLoadMessage(stage);
     try {
-      await loadScriptWithRetry(entry.src);
+      await loadScriptWithRetry(versionedAssetSrc(entry.src, entry.version));
       const list = window.WORD_SNAP_STAGE_LISTS?.[stage];
       if (!list?.words?.length) throw new Error(`${stage}词库数据为空`);
       await seedStageWords(stage, list, entry.version);
@@ -831,6 +839,7 @@ function nextWord() {
     button.className = "choice";
     button.type = "button";
     button.dataset.choiceId = choice.id;
+    button.dataset.choiceEnglish = normalizeEnglishWord(choice.en);
     const key = document.createElement("span");
     key.className = "choice-key";
     key.textContent = CHOICE_KEYS[index];
@@ -1066,7 +1075,7 @@ function showTrainContinueButton() {
 
 function isCorrectAnswer(value, word, mode) {
   if (mode === "customChoice") return Boolean(value?.isAnswer);
-  return value?.id === word.id;
+  return isEquivalentVocabularyAnswer(value, word);
 }
 
 function paintChoices(answerWord, clickedButton) {
@@ -1074,7 +1083,7 @@ function paintChoices(answerWord, clickedButton) {
     const current = state.session.current;
     const isCorrectChoice = state.session.mode === "customChoice" && Array.isArray(current.choiceOptions) && current.choiceOptions.length
       ? current.choiceOptions.some((choice) => choice.isAnswer && choice.id === button.dataset.choiceId)
-      : button.dataset.choiceId === current.id;
+      : button.dataset.choiceId === current.id || button.dataset.choiceEnglish === normalizeEnglishWord(current.en);
     button.classList.toggle("correct", isCorrectChoice);
     button.disabled = true;
   });
