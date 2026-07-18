@@ -7,6 +7,7 @@ const {
 
 assert.strictEqual(getCheckinThreshold("train", "小学六年级"), 200);
 assert.strictEqual(getCheckinThreshold("train", "初三"), 200);
+assert.strictEqual(getCheckinThreshold("train", "初中688高频词"), 200);
 assert.strictEqual(getCheckinThreshold("train", "高二"), 300);
 assert.strictEqual(getCheckinThreshold("quiz", "初一"), 100);
 assert.strictEqual(getCheckinThreshold("quiz", "高一"), null);

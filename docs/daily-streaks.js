@@ -3,7 +3,7 @@
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.WordSnapDailyStreaks = api;
 })(typeof window !== "undefined" ? window : globalThis, function createDailyStreaks() {
-  const JUNIOR_KEYWORDS = ["初一", "初二", "初三"];
+  const JUNIOR_KEYWORDS = ["初一", "初二", "初三", "初中"];
   const SENIOR_KEYWORDS = ["高一", "高二", "高三"];
 
   function matchesAny(grade, keywords) {

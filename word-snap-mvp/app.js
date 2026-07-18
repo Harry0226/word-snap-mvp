@@ -1,7 +1,7 @@
-const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "高一课内词汇", "高一考试词汇", "高一课改词库", "高二课内词汇", "高二考试词汇", "高三考试词汇"];
+const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "初中688高频词", "高一课内词汇", "高一考试词汇", "高一课改词库", "高二课内词汇", "高二考试词汇", "高三考试词汇"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
-const BUILTIN_SEED_VERSION = 18;
+const BUILTIN_SEED_VERSION = 19;
 const FAST_PICK_LIMIT = 2000;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
@@ -753,11 +753,11 @@ function updateTrainingEstimate() {
 function updateSessionSizeOptions() {
   const previous = els.sessionSize.value || "200";
   const options = [
-    ["50", "50 词"],
     ["100", "100 词"],
     ["200", "200 词"],
     ["300", "300 词"],
-    ["all", "全部单词"]
+    ["400", "400 词"],
+    ["all", "全部词"]
   ];
   els.sessionSize.innerHTML = options
     .map(([value, label], index) => `<option value="${value}"${index === 0 ? " selected" : ""}>${label}</option>`)

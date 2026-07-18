@@ -1,5 +1,5 @@
 window.WORD_SNAP_BUILTIN_MANIFEST = {
-  "version": "20260717",
+  "version": "20260719",
   "stages": {
     "初一课内词汇": {
         "src": "./word-data/stages/grade7-inclass.js",
@@ -37,6 +37,12 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
         "version": "20260717",
         "count": 797,
         "source": "初三考试词汇"
+    },
+    "初中688高频词": {
+        "src": "./word-data/stages/junior-high-frequency-688.js",
+        "version": "20260719",
+        "count": 688,
+        "source": "初中688高频词（PDF）"
     },
     "高一课内词汇": {
         "src": "./word-data/stages/grade10-inclass.js",
