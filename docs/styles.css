@@ -182,6 +182,80 @@ h2 { font-size: 21px; }
   justify-content: start;
 }
 
+.daily-task-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.35fr) minmax(300px, 1fr);
+  gap: 16px;
+  align-items: center;
+  border: 1px solid #bfdbfe;
+  background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 62%, #ecfdf5 100%);
+}
+
+.daily-task-panel.completed {
+  border-color: #bbf7d0;
+  background: linear-gradient(135deg, #ecfdf5, #f8fafc);
+}
+
+.daily-task-copy {
+  display: grid;
+  gap: 8px;
+  grid-row: 1 / span 2;
+}
+
+.daily-task-kicker {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.daily-task-copy h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.daily-task-summary {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.daily-task-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.daily-task-metric {
+  padding: 10px 8px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  text-align: center;
+}
+
+.daily-task-metric strong,
+.daily-task-metric span {
+  display: block;
+}
+
+.daily-task-metric strong {
+  font-size: 20px;
+}
+
+.daily-task-metric span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.daily-task-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .advanced-settings summary {
   cursor: pointer;
   font-weight: 700;
@@ -547,6 +621,8 @@ button, .choice, .battle-choice, .file-button, .file-picker, .tab, select {
   .stats { grid-template-columns: repeat(3, 1fr); }
   .checkin-mini { padding: 8px; }
   .checkin-mini strong { font-size: 18px; }
+  .daily-task-panel { grid-template-columns: 1fr; }
+  .daily-task-copy { grid-row: auto; }
   .controls-panel, .upload-grid, .battle-controls, .battle-scoreboard, .battle-arena { grid-template-columns: 1fr; }
   .choices, .typing-panel { grid-template-columns: 1fr; }
   .battle-actions { align-items: stretch; flex-direction: column; }
@@ -573,6 +649,8 @@ button, .choice, .battle-choice, .file-button, .file-picker, .tab, select {
   .stats div { padding: 8px; }
   .stats strong { font-size: 18px; }
   .checkin-mini { padding: 8px 6px; gap: 3px; }
+  .daily-task-metrics { grid-template-columns: repeat(2, 1fr); }
+  .daily-task-actions { grid-template-columns: 1fr; }
   .streak-icon { font-size: 26px; }
   .checkin-progress { font-size: 11px; }
   .panel { padding: 14px; }

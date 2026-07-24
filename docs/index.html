@@ -8,13 +8,14 @@
   <meta name="theme-color" content="#f6f7f9">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260715-session-choice-fix">
+  <link rel="stylesheet" href="./styles.css?v=20260724-daily300-v2">
   <script defer src="./word-data/builtin-manifest.js?v=20260724-688-in-junior"></script>
   <script defer src="./asset-loader.js?v=20260715-session-choice-fix"></script>
   <script defer src="./rotation-queue.js?v=20260715-session-choice-fix"></script>
   <script defer src="./choice-distractors.js?v=20260724-summer-merge"></script>
-  <script defer src="./daily-streaks.js?v=20260719-junior688"></script>
-  <script defer src="./app.js?v=20260724-summer-merge"></script>
+  <script defer src="./daily-streaks.js?v=20260724-daily300-v2"></script>
+  <script defer src="./daily-learning.js?v=20260724-daily300-v2"></script>
+  <script defer src="./app.js?v=20260724-daily300-v2"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -36,10 +37,10 @@
     <section class="notice-board" aria-label="学习通知">
       <strong>📢 学习通知</strong>
       <div class="notice-lines">
-        <p><b>每日任务：</b>每天刷词至少200个，正确率达到90%以上截图提交。</p>
+        <p><b>每日任务：</b>先完成系统安排的今日任务和到期复习；需要强化时可继续使用自由训练。</p>
         <p><b>提交方式：</b>截图当天微信发给代老师或者学长学姐。</p>
         <p><b>奖励机制：</b>每周完成12张截图（包括中译英和英译中）来找代老师兑换学习用品或者奶茶一杯。周日定期会有单词默写比赛，奖品丰厚！</p>
-        <p><b>惩罚机制：</b>当天未完成的同学下节课前需要抄写200个未刷单词。</p>
+        <p><b>惩罚机制：</b>当天未完成的同学下节课前需要抄写300个未刷单词。</p>
       </div>
     </section>
 
@@ -52,9 +53,27 @@
         <div><strong id="weakCount">0</strong><span>弱词</span></div>
         <div id="trainStreakCard" class="checkin-mini">
           <span class="streak-icon" id="streakIcon">🔥</span>
-          <span id="trainTodayProgress" class="checkin-progress">今日 0/200</span>
+          <span id="trainTodayProgress" class="checkin-progress">今日 0/300</span>
         </div>
       </div>
+
+      <section id="dailyTaskPanel" class="panel daily-task-panel" aria-label="今日学习任务">
+        <div class="daily-task-copy">
+          <span class="daily-task-kicker">今日学习闭环</span>
+          <h2>今日任务</h2>
+          <p id="dailyTaskSummary" class="daily-task-summary">正在根据到期词和新词生成任务...</p>
+        </div>
+        <div class="daily-task-metrics">
+          <div class="daily-task-metric"><strong id="dailyDueCount">0</strong><span>到期复习</span></div>
+          <div class="daily-task-metric"><strong id="dailyNewCount">0</strong><span>今日新词</span></div>
+          <div class="daily-task-metric"><strong id="sevenDayRetention">—</strong><span>七日记忆率</span></div>
+          <div class="daily-task-metric"><strong id="sevenDayPending">0</strong><span>七日待测</span></div>
+        </div>
+        <div class="daily-task-actions">
+          <button id="startDailyTaskBtn" type="button">开始今日任务</button>
+          <button id="startDueReviewBtn" type="button" class="secondary">只复习到期词</button>
+        </div>
+      </section>
 
       <div class="panel controls-panel primary-controls">
         <label>学习阶段
@@ -75,7 +94,7 @@
             <option value="auto">智能双选</option>
           </select>
         </label>
-        <button id="startBtn" type="button">开始训练</button>
+        <button id="startBtn" type="button">自由训练</button>
       </div>
 
       <details class="panel advanced-settings">

@@ -19,8 +19,20 @@ const {
   hasMeaningConflict
 } = window.WordSnapChoiceUtils;
 const { getCheckinThreshold, makeProgressKey, advanceDailyProgress } = window.WordSnapDailyStreaks;
+const {
+  DAILY_TASK_LIMIT,
+  DUE_REVIEW_LIMIT,
+  dateKey: getDailyDateKey,
+  isSevenDayEligible,
+  planDailyTask,
+  getDueReviewWordIds,
+  creditDailyTask,
+  applyLearningResult,
+  getSevenDayRetentionStats
+} = window.WordSnapDailyLearning;
 const { loadScriptWithRetry } = window.WordSnapAssetLoader;
 const BACKUP_SITE_URL = "https://word-snap-mvp.pages.dev/";
+const DAILY_TASK_META_PREFIX = "dailyTask:v2:";
 
 const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
@@ -48,7 +60,8 @@ const state = {
   weakFilter: "wrong",
   queueNotice: "",
   streaks: new Map(),
-  stageLoads: new Map()
+  stageLoads: new Map(),
+  dailyTasks: new Map()
 };
 
 const els = {
@@ -68,6 +81,14 @@ const els = {
   accuracy: document.querySelector("#accuracy"),
   fastRate: document.querySelector("#fastRate"),
   weakCount: document.querySelector("#weakCount"),
+  dailyTaskPanel: document.querySelector("#dailyTaskPanel"),
+  dailyTaskSummary: document.querySelector("#dailyTaskSummary"),
+  dailyDueCount: document.querySelector("#dailyDueCount"),
+  dailyNewCount: document.querySelector("#dailyNewCount"),
+  sevenDayRetention: document.querySelector("#sevenDayRetention"),
+  sevenDayPending: document.querySelector("#sevenDayPending"),
+  startDailyTaskBtn: document.querySelector("#startDailyTaskBtn"),
+  startDueReviewBtn: document.querySelector("#startDueReviewBtn"),
   stageSelect: document.querySelector("#stageSelect"),
   sessionSize: document.querySelector("#sessionSize"),
   trainingScope: document.querySelector("#trainingScope"),
@@ -550,6 +571,9 @@ async function loadState() {
   state.rotationQueues = new Map(meta
     .filter((entry) => entry.key?.startsWith(ROTATION_META_PREFIX))
     .map((entry) => [entry.key, entry.value]));
+  state.dailyTasks = new Map(meta
+    .filter((entry) => entry.key?.startsWith(DAILY_TASK_META_PREFIX))
+    .map((entry) => [entry.key, entry.value]));
   await loadStreaks();
 
   renderAll();
@@ -585,8 +609,154 @@ function getRecord(wordId) {
     slow: 0,
     mastery: 0,
     lastSeenAt: 0,
-    nextReviewAt: 0
+    nextReviewAt: 0,
+    firstLearnedAt: 0,
+    reviewStep: -1,
+    sevenDayTestedAt: 0,
+    sevenDayCorrect: false,
+    sevenDayTestMode: ""
   };
+}
+
+function buildDailyTaskKey(
+  stage = els.stageSelect.value,
+  filter = els.deckFilter.value,
+  today = getDailyDateKey()
+) {
+  return `${DAILY_TASK_META_PREFIX}${today}:${encodeURIComponent(stage)}:${filter}`;
+}
+
+function getDailyTaskPreview() {
+  return planDailyTask(getEligibleWords(), state.records, {
+    limit: DAILY_TASK_LIMIT
+  });
+}
+
+function getPendingDailyTaskIds(task) {
+  const existingIds = new Set(state.words.map((word) => word.id));
+  const completedIds = new Set(task?.completedIds || []);
+  return (task?.wordIds || []).filter((id) => existingIds.has(id) && !completedIds.has(id));
+}
+
+async function ensureDailyTask() {
+  const key = buildDailyTaskKey();
+  const existing = state.dailyTasks.get(key);
+  if (existing) return { key, task: existing };
+
+  const preview = getDailyTaskPreview();
+  const task = {
+    date: getDailyDateKey(),
+    stage: els.stageSelect.value,
+    filter: els.deckFilter.value,
+    wordIds: preview.wordIds,
+    dueWordIds: preview.dueWordIds,
+    newWordIds: preview.newWordIds,
+    dueCount: preview.dueCount,
+    newCount: preview.newCount,
+    completedIds: [],
+    createdAt: Date.now(),
+    completedAt: 0
+  };
+  state.dailyTasks.set(key, task);
+  await put("meta", { key, value: task, at: Date.now() });
+  return { key, task };
+}
+
+async function completeDailyTaskItem(key, wordId, options = {}) {
+  if (!key) return;
+  const task = state.dailyTasks.get(key);
+  if (!task) return;
+  const { task: updated, changed } = creditDailyTask(task, wordId, options);
+  if (!changed) return;
+  state.dailyTasks.set(key, updated);
+  await put("meta", { key, value: updated, at: Date.now() });
+}
+
+async function syncDailyTaskFromTraining(word, isCorrect, session) {
+  if (!isCorrect || !word || !session) return;
+  if (session.dailyTaskKey) {
+    await completeDailyTaskItem(session.dailyTaskKey, word.id);
+    return;
+  }
+  const { key } = await ensureDailyTask();
+  await completeDailyTaskItem(key, word.id, { allowExternal: true });
+}
+
+function renderDailyTask() {
+  if (!els.dailyTaskPanel) return;
+  const preview = getDailyTaskPreview();
+  const key = buildDailyTaskKey();
+  const task = state.dailyTasks.get(key);
+  const pendingIds = task ? getPendingDailyTaskIds(task) : preview.wordIds;
+  const pendingSet = new Set(pendingIds);
+  const dueIds = task?.dueWordIds || (task?.wordIds || []).slice(0, task?.dueCount || 0);
+  const newIds = task?.newWordIds || (task?.wordIds || []).slice(task?.dueCount || 0);
+  const pendingDue = task ? dueIds.filter((id) => pendingSet.has(id)).length : preview.dueCount;
+  const pendingNew = task ? newIds.filter((id) => pendingSet.has(id)).length : preview.newCount;
+  const retention = getSevenDayRetentionStats(getEligibleWords(), state.records);
+  const dueReviewIds = getDueReviewWordIds(getEligibleWords(), state.records, {
+    limit: DUE_REVIEW_LIMIT
+  });
+
+  els.dailyDueCount.textContent = pendingDue;
+  els.dailyNewCount.textContent = pendingNew;
+  els.sevenDayRetention.textContent = retention.rate === null ? "—" : `${retention.rate}%`;
+  els.sevenDayPending.textContent = retention.pending;
+
+  if (task && pendingIds.length === 0) {
+    els.dailyTaskSummary.textContent = `今日任务已完成，共 ${task.wordIds.length} 词。明天会自动生成新任务。`;
+  } else if (task) {
+    els.dailyTaskSummary.textContent = `还剩 ${pendingIds.length} 词：到期复习 ${pendingDue} + 新词 ${pendingNew}。进度会自动保存。`;
+  } else if (preview.total > 0) {
+    els.dailyTaskSummary.textContent = `今天安排 ${preview.total} 词：先完成到期复习，再学习新词。`;
+  } else {
+    els.dailyTaskSummary.textContent = "今天没有到期词或新词，可以继续自由训练巩固。";
+  }
+
+  const completed = Boolean(task && pendingIds.length === 0);
+  els.dailyTaskPanel.classList.toggle("completed", completed);
+  els.startDailyTaskBtn.disabled = pendingIds.length === 0;
+  els.startDailyTaskBtn.textContent = completed
+    ? "今日任务已完成"
+    : task
+      ? `继续今日任务（${pendingIds.length}）`
+      : `开始今日任务（${preview.total}）`;
+  els.startDueReviewBtn.disabled = dueReviewIds.length === 0;
+  els.startDueReviewBtn.textContent = `复习到期词（${dueReviewIds.length}）`;
+}
+
+async function startDailyTask() {
+  const { key, task } = await ensureDailyTask();
+  const wordIds = getPendingDailyTaskIds(task);
+  if (!wordIds.length) {
+    renderDailyTask();
+    return;
+  }
+  await startSession({
+    wordIds,
+    grade: task.stage,
+    notice: "今日任务：先复习到期词，再学习新词。",
+    preserveOrder: true,
+    sessionKind: "daily",
+    dailyTaskKey: key
+  });
+}
+
+async function startDueReview() {
+  const wordIds = getDueReviewWordIds(getEligibleWords(), state.records, {
+    limit: DUE_REVIEW_LIMIT
+  });
+  if (!wordIds.length) {
+    renderDailyTask();
+    return;
+  }
+  await startSession({
+    wordIds,
+    grade: els.stageSelect.value,
+    notice: "到期复习：优先处理七日检测和逾期较久的单词。",
+    preserveOrder: true,
+    sessionKind: "due"
+  });
 }
 
 function isWeak(word) {
@@ -720,7 +890,7 @@ function buildQueue() {
   };
 }
 
-function buildExactTrainingQueue(wordIds, notice) {
+function buildExactTrainingQueue(wordIds, notice, preserveOrder = false) {
   const wordsById = new Map(state.words.map((word) => [word.id, word]));
   const seenIds = new Set();
   const queue = (Array.isArray(wordIds) ? wordIds : [])
@@ -731,7 +901,7 @@ function buildExactTrainingQueue(wordIds, notice) {
       return true;
     });
   state.queueNotice = notice || "仅练本轮新增错词。";
-  return { queue: shuffle(queue), rotationKey: null, rotationState: null };
+  return { queue: preserveOrder ? queue : shuffle(queue), rotationKey: null, rotationState: null };
 }
 
 function updateTrainingEstimate() {
@@ -780,7 +950,7 @@ async function startSession(options = {}) {
     return;
   }
   const queueResult = Array.isArray(options?.wordIds)
-    ? buildExactTrainingQueue(options.wordIds, options.notice)
+    ? buildExactTrainingQueue(options.wordIds, options.notice, options.preserveOrder)
     : buildQueue();
   const { queue, rotationKey, rotationState } = queueResult;
   if (!queue.length) {
@@ -799,6 +969,8 @@ async function startSession(options = {}) {
     startedAt: 0,
     timerId: 0,
     rotationKey,
+    kind: options.sessionKind || "free",
+    dailyTaskKey: options.dailyTaskKey || null,
     answered: false,
     done: 0,
     correct: 0,
@@ -820,11 +992,16 @@ function nextWord() {
   session.current = session.queue.shift();
   if (!session.current) return finishSession();
 
-  session.mode = resolvePracticeMode(session.current);
+  const isSevenDayCheck = session.current.fixedMode !== "customChoice"
+    && isSevenDayEligible(getRecord(session.current.id));
+  session.mode = isSevenDayCheck
+    ? "zhToEnChoice"
+    : resolvePracticeMode(session.current);
   const word = session.current;
   const isPromptChinese = session.mode === "zhToEnChoice";
   els.word.textContent = word.promptText || (isPromptChinese ? word.zh : word.en);
-  els.tag.textContent = `${word.grade} · ${word.promptLabel || (word.sourceType === "builtin" ? "内置" : "自定义")}`;
+  const taskLabel = isSevenDayCheck ? "七日检测" : word.promptLabel;
+  els.tag.textContent = `${word.grade} · ${taskLabel || (word.sourceType === "builtin" ? "内置" : "自定义")}`;
   els.hint.textContent = hintForMode(session.mode, word);
   els.feedback.textContent = "计时中。";
   els.choices.innerHTML = "";
@@ -1076,6 +1253,7 @@ async function answer(value, button) {
   paintChoices(value, button);
   els.feedback.textContent = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
   await recordAnswer(word, isCorrect, isFast, isSlow);
+  await syncDailyTaskFromTraining(word, isCorrect, session);
   await recordDailyActivity("train", session.grade);
   await completePersistentRotationItem(session.rotationKey, word.id);
   renderAllDebounced();
@@ -1128,16 +1306,20 @@ function feedbackText(word, isCorrect, isFast, isSlow, elapsed) {
 
 async function recordAnswer(word, isCorrect, isFast, isSlow) {
   const record = getRecord(word.id);
+  const now = Date.now();
+  const learningResult = applyLearningResult(record, {
+    isCorrect,
+    mode: state.session?.mode || ""
+  }, now);
   record.seen += 1;
   record.correct += isCorrect ? 1 : 0;
   record.wrong += isCorrect ? 0 : 1;
   record.fast += isFast ? 1 : 0;
   record.slow += isSlow ? 1 : 0;
-  record.lastSeenAt = Date.now();
+  record.lastSeenAt = now;
   const delta = isCorrect ? (isFast ? 18 : 8) : -24;
   record.mastery = Math.max(0, Math.min(100, Math.round((record.mastery || 0) + delta)));
-  const intervalHours = isCorrect ? (isFast ? 48 : 24) : 4;
-  record.nextReviewAt = Date.now() + intervalHours * 60 * 60 * 1000;
+  Object.assign(record, learningResult);
   state.records.set(word.id, record);
   await put("records", record);
 }
@@ -1164,6 +1346,9 @@ async function finishSession() {
   const totalSeconds = Math.max(1, Math.round((performance.now() - session.sessionStartedAt) / 1000));
   const wrongWords = uniqueById(session.wrongWords);
   const tomorrow = uniqueById([...wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
+  const dailyTask = session.dailyTaskKey ? state.dailyTasks.get(session.dailyTaskKey) : null;
+  const dailyRemaining = dailyTask ? getPendingDailyTaskIds(dailyTask).length : 0;
+  const dailyCompleted = session.kind === "daily" && dailyRemaining === 0;
   state.lastReport = {
     grade: session.grade,
     total: session.total,
@@ -1173,18 +1358,27 @@ async function finishSession() {
     wrongWordIds: wrongWords.map((word) => word.id),
     slow: session.slowWords.length,
     tomorrow,
-    totalSeconds
+    totalSeconds,
+    kind: session.kind,
+    dailyCompleted,
+    dailyRemaining
   };
   els.word.textContent = "Done";
   els.tag.textContent = "本轮完成";
-  els.hint.textContent = "建议明天优先复习本轮错词和慢词。";
+  els.hint.textContent = dailyCompleted
+    ? "今日任务已经完成，系统会按记忆节奏安排下一次复习。"
+    : session.kind === "daily"
+      ? `本轮已结束，今日任务还有 ${dailyRemaining} 词未完成，可以稍后继续。`
+      : "建议明天优先复习本轮错词和慢词。";
   els.timer.textContent = "本轮已完成";
   els.timer.classList.remove("fast");
   els.choices.innerHTML = "";
   els.choices.hidden = false;
   els.skipBtn.disabled = true;
-  els.feedback.textContent = `完成 ${session.total} 词，正确率 ${percent(session.correct, session.total)}，秒选率 ${percent(session.fast, session.total)}。`;
-  els.progressText.textContent = "本轮已完成";
+  els.feedback.textContent = session.kind === "daily" && !dailyCompleted
+    ? `本轮已结束，今日任务还剩 ${dailyRemaining} 词；已作答 ${session.done} 词。`
+    : `完成 ${session.total} 词，正确率 ${percent(session.correct, session.total)}，秒选率 ${percent(session.fast, session.total)}。`;
+  els.progressText.textContent = session.kind === "daily" && !dailyCompleted ? "今日任务尚未完成" : "本轮已完成";
   els.progressBar.style.width = "100%";
   hideTrainContinueButton();
   renderSessionReport();
@@ -2074,6 +2268,7 @@ function renderAll() {
   renderStats();
   renderDailyProgress();
   if (active === "train") {
+    renderDailyTask();
     updateSessionSizeOptions();
     renderTrainQuizStats();
     updateTrainingEstimate();
@@ -2267,6 +2462,8 @@ function bindEvents() {
     }
   });
   els.startBtn.addEventListener("click", startSession);
+  els.startDailyTaskBtn.addEventListener("click", startDailyTask);
+  els.startDueReviewBtn.addEventListener("click", startDueReview);
   els.skipBtn.addEventListener("click", skipWord);
   els.trainContinueBtn.addEventListener("click", nextWord);
 

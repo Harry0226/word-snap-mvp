@@ -13,8 +13,7 @@
   function getCheckinThreshold(kind, grade) {
     if (kind === "quiz") return matchesAny(grade, JUNIOR_KEYWORDS) ? 100 : null;
     if (kind !== "train") return null;
-    if (grade === "小学六年级" || matchesAny(grade, JUNIOR_KEYWORDS)) return 200;
-    if (matchesAny(grade, SENIOR_KEYWORDS)) return 300;
+    if (grade === "小学六年级" || matchesAny(grade, JUNIOR_KEYWORDS) || matchesAny(grade, SENIOR_KEYWORDS)) return 300;
     return null;
   }
 
