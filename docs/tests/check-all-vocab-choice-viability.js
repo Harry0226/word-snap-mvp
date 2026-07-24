@@ -6,9 +6,10 @@ const { normalizeDisplayedChoiceText, hasMeaningConflict } = require("../choice-
 
 const context = { window: {} };
 vm.createContext(context);
+vm.runInContext(fs.readFileSync(path.join(__dirname, "../word-data/builtin-manifest.js"), "utf8"), context);
 const stageDir = path.join(__dirname, "../word-data/stages");
-fs.readdirSync(stageDir)
-  .filter((name) => name.endsWith(".js"))
+Object.values(context.window.WORD_SNAP_BUILTIN_MANIFEST.stages)
+  .map((entry) => entry.src.match(/stages\/([^?]+)/)[1])
   .forEach((name) => vm.runInContext(fs.readFileSync(path.join(stageDir, name), "utf8"), context, { filename: name }));
 
 let checked = 0;
@@ -31,5 +32,5 @@ Object.values(context.window.WORD_SNAP_STAGE_LISTS || {}).forEach((list) => {
   });
 });
 
-assert(checked > 12000, "the full built-in vocabulary should be covered");
+assert(checked > 13000, "the full built-in vocabulary should be covered");
 console.log(`all-vocabulary choice viability checks passed (${checked} questions)`);

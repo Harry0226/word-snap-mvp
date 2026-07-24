@@ -1,7 +1,7 @@
-const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "初中688高频词", "高一课内词汇", "高一考试词汇", "高一课改词库", "高二课内词汇", "高二考试词汇", "高三考试词汇"];
+const STAGES = ["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇", "初中688高频词", "高一暑期必背词汇", "高二暑期必背词汇", "高三暑假必背词汇"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
-const BUILTIN_SEED_VERSION = 19;
+const BUILTIN_SEED_VERSION = 20;
 const FAST_PICK_LIMIT = 2000;
 const SLOW_PICK_LIMIT = 3500;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
@@ -26,16 +26,11 @@ const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
 const GRADE11_QUIZ_COUNT = 129;
 const QUIZ_BANK_SCRIPTS = {
-  "初一课内词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
-  "初一考试词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
-  "初二课内词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
-  "初二考试词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
-  "初三课内词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
-  "初三考试词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
-  "高一课内词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
-  "高一考试词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
-  "高二课内词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz",
-  "高二考试词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
+  "初一暑期必背词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
+  "初二暑期必背词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
+  "初三暑期必背词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
+  "高一暑期必背词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
+  "高二暑期必背词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
 };
 
 const state = {
@@ -294,8 +289,8 @@ function slugWord(value) {
 }
 
 function normalizeBuiltinWord(word, index, list) {
-  const grade = list.grade || "初三课内词汇";
-  const source = list.source || "初三课内词汇";
+  const grade = list.grade || "初三暑期必背词汇";
+  const source = list.source || "初三暑期必背词汇";
   const stageKey = encodeURIComponent(grade).replace(/%/g, "").toLowerCase();
   const id = list.legacyIds
     ? `builtin-${word.en.toLowerCase()}`
@@ -899,6 +894,7 @@ function choiceDisplayKey(choice, mode) {
 
 function isUsableDistractor(candidate, answer, mode, usedDisplayKeys, usedChoices = []) {
   if (!candidate || candidate.id === answer.id || !candidate.en || !candidate.zh) return false;
+  if (isEquivalentVocabularyAnswer(candidate, answer)) return false;
   const candidateDisplayKey = choiceDisplayKey(candidate, mode);
   const answerDisplayKey = choiceDisplayKey(answer, mode);
   if (!candidateDisplayKey || candidateDisplayKey === answerDisplayKey || usedDisplayKeys.has(candidateDisplayKey)) return false;
@@ -928,7 +924,11 @@ function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = n
     usedDisplayKeys.add(choiceDisplayKey(answer, mode));
   }
   const ranked = pool
-    .filter((candidate) => candidate?.id !== answer.id && candidate?.zh)
+    .filter((candidate) => {
+      if (!candidate?.en || !candidate?.zh || candidate.id === answer.id) return false;
+      if (isEquivalentVocabularyAnswer(candidate, answer) || hasMeaningConflict(candidate, answer)) return false;
+      return choiceDisplayKey(candidate, mode) !== choiceDisplayKey(answer, mode);
+    })
     .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer, mode) }))
     .sort((a, b) => {
       return b.score - a.score || hashString(`${answer.id}:${a.candidate.id}`) - hashString(`${answer.id}:${b.candidate.id}`);
@@ -1013,6 +1013,26 @@ function similarWordShape(candidate, answer) {
   return (lengthClose && (prefixClose || suffixClose)) || familyClose;
 }
 
+function englishEditDistance(leftValue, rightValue) {
+  const left = normalizeChoiceText(leftValue);
+  const right = normalizeChoiceText(rightValue);
+  if (!left) return right.length;
+  if (!right) return left.length;
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let i = 1; i <= left.length; i += 1) {
+    const current = [i];
+    for (let j = 1; j <= right.length; j += 1) {
+      current[j] = Math.min(
+        current[j - 1] + 1,
+        previous[j] + 1,
+        previous[j - 1] + (left[i - 1] === right[j - 1] ? 0 : 1)
+      );
+    }
+    previous.splice(0, previous.length, ...current);
+  }
+  return previous[right.length];
+}
+
 function scoreDistractorChoice(candidate, answer, mode) {
   if (!candidate?.en || !answer?.en) return 0;
   let score = 0;
@@ -1020,6 +1040,10 @@ function scoreDistractorChoice(candidate, answer, mode) {
   if (similarWordShape(candidate, answer)) score += 5;
   const lengthGap = Math.abs(normalizeChoiceText(candidate.en).length - normalizeChoiceText(answer.en).length);
   if (lengthGap <= 1) score += 2;
+  const editDistance = englishEditDistance(candidate.en, answer.en);
+  if (editDistance === 1) score += 5;
+  else if (editDistance === 2) score += 3;
+  else if (editDistance === 3) score += 1;
   if (candidate.pos && answer.pos && candidate.pos === answer.pos) score += 3;
   const displayLengthGap = Math.abs(choiceDisplayKey(candidate, mode).length - choiceDisplayKey(answer, mode).length);
   if (displayLengthGap <= 2) score += 3;
@@ -1411,11 +1435,11 @@ function resetBattle() {
 }
 
 function getQuizSentenceData(grade) {
-  if (grade === "初一课内词汇" || grade === "初一考试词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
-  if (grade === "初二课内词汇" || grade === "初二考试词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
-  if (grade === "初三课内词汇" || grade === "初三考试词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
-  if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
-  if (grade === "高二课内词汇" || grade === "高二考试词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
+  if (grade === "初一暑期必背词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
+  if (grade === "初二暑期必背词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
+  if (grade === "初三暑期必背词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
+  if (grade === "高一暑期必背词汇") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
+  if (grade === "高二暑期必背词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
   return [];
 }
 
@@ -1438,11 +1462,11 @@ async function ensureQuizBankLoaded(grade) {
 }
 
 function getExpectedQuizCount(grade) {
-  if (grade === "初一课内词汇" || grade === "初一考试词汇") return GRADE7_QUIZ_COUNT;
-  if (grade === "初二课内词汇" || grade === "初二考试词汇") return GRADE8_QUIZ_COUNT;
-  if (grade === "初三课内词汇" || grade === "初三考试词汇") return 340;
-  if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return GRADE10_QUIZ_COUNT;
-  if (grade === "高二课内词汇" || grade === "高二考试词汇") return GRADE11_QUIZ_COUNT;
+  if (grade === "初一暑期必背词汇") return GRADE7_QUIZ_COUNT;
+  if (grade === "初二暑期必背词汇") return GRADE8_QUIZ_COUNT;
+  if (grade === "初三暑期必背词汇") return 340;
+  if (grade === "高一暑期必背词汇") return GRADE10_QUIZ_COUNT;
+  if (grade === "高二暑期必背词汇") return GRADE11_QUIZ_COUNT;
   return 0;
 }
 
@@ -1457,12 +1481,12 @@ function getQuizBankTotal(grade) {
 function getQuizWrongCount(grade) {
   return [...state.quizWrongRecords.values()].filter((record) => {
     if (record.grade) return record.grade === grade;
-    if (grade === "初一课内词汇" || grade === "初一考试词汇") return String(record.questionId || "").startsWith("g7-");
-    if (grade === "初二课内词汇" || grade === "初二考试词汇") return String(record.questionId || "").startsWith("g8-");
-    if (grade === "初三课内词汇" || grade === "初三考试词汇") return String(record.questionId || "").startsWith("g9-");
-    if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return String(record.questionId || "").startsWith("g10-");
-    if (grade === "高二课内词汇" || grade === "高二考试词汇") return String(record.questionId || "").startsWith("g11-");
-    if (grade === "高三考试词汇") return String(record.questionId || "").startsWith("g12-");
+    if (grade === "初一暑期必背词汇") return String(record.questionId || "").startsWith("g7-");
+    if (grade === "初二暑期必背词汇") return String(record.questionId || "").startsWith("g8-");
+    if (grade === "初三暑期必背词汇") return String(record.questionId || "").startsWith("g9-");
+    if (grade === "高一暑期必背词汇") return String(record.questionId || "").startsWith("g10-");
+    if (grade === "高二暑期必背词汇") return String(record.questionId || "").startsWith("g11-");
+    if (grade === "高三暑假必背词汇") return String(record.questionId || "").startsWith("g12-");
     return false;
   }).length;
 }

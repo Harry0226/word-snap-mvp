@@ -3,3 +3,5 @@ node_modules/
 npm-debug.log*
 word-data-backup/
 test-artifacts/
+__pycache__/
+*.pyc
