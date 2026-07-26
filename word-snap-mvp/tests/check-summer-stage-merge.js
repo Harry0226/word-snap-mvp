@@ -43,6 +43,12 @@ const plans = {
   ]
 };
 const canonicalStages = [...Object.keys(plans).slice(0, 3), "初中688高频词", ...Object.keys(plans).slice(3)];
+const appStagesExpected = [
+  ...canonicalStages.slice(0, 5),
+  "高一课改词库",
+  ...canonicalStages.slice(5),
+  "高中3500刷词专栏"
+];
 
 function normalizeEnglish(value) {
   return String(value || "").trim().replace(/\s+/g, " ").toLocaleLowerCase("en-US");
@@ -80,12 +86,12 @@ for (const stage of ["初一暑期必背词汇", "初二暑期必背词汇", "�
 }
 assert(!plans["高三暑假必背词汇"].includes("初中688高频词"), "high school cumulative vocabulary must not absorb the junior 688 stage");
 const appStages = JSON.parse(app.match(/^const STAGES = (\[[^\n]+\]);/m)?.[1] || "[]");
-assert.deepStrictEqual(appStages, canonicalStages, "app should expose only the merged summer stages plus junior 688");
+assert.deepStrictEqual(appStages, appStagesExpected, "app should expose merged summer stages and standalone study columns");
 
 for (const selectId of ["stageSelect", "battleStage", "uploadStage"]) {
   const select = index.match(new RegExp(`<select id="${selectId}">[\\s\\S]*?<\\/select>`))?.[0] || "";
-  canonicalStages.forEach((stage) => assert(select.includes(`value="${stage}"`), `${selectId} should expose ${stage}`));
-  assert.strictEqual((select.match(/<option /g) || []).length, canonicalStages.length, `${selectId} should not retain split legacy stages`);
+  appStagesExpected.forEach((stage) => assert(select.includes(`value="${stage}"`), `${selectId} should expose ${stage}`));
+  assert.strictEqual((select.match(/<option /g) || []).length, appStagesExpected.length, `${selectId} should expose the complete stage registry`);
 }
 
 console.log("summer stage merge checks passed");

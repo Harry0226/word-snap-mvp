@@ -1,4 +1,4 @@
-const STAGES = ["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇", "初中688高频词", "高一暑期必背词汇", "高二暑期必背词汇", "高三暑假必背词汇"];
+const STAGES = ["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇", "初中688高频词", "高一暑期必背词汇", "高一课改词库", "高二暑期必背词汇", "高三暑假必背词汇", "高中3500刷词专栏"];
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
 const BUILTIN_SEED_VERSION = 20;
@@ -42,6 +42,7 @@ const QUIZ_BANK_SCRIPTS = {
   "初二暑期必背词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
   "初三暑期必背词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
   "高一暑期必背词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
+  "高一课改词库": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
   "高二暑期必背词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
 };
 
@@ -1633,6 +1634,7 @@ function getQuizSentenceData(grade) {
   if (grade === "初二暑期必背词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
   if (grade === "初三暑期必背词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
   if (grade === "高一暑期必背词汇") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
+  if (grade === "高一课改词库") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
   if (grade === "高二暑期必背词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
   return [];
 }
@@ -1660,6 +1662,7 @@ function getExpectedQuizCount(grade) {
   if (grade === "初二暑期必背词汇") return GRADE8_QUIZ_COUNT;
   if (grade === "初三暑期必背词汇") return 340;
   if (grade === "高一暑期必背词汇") return GRADE10_QUIZ_COUNT;
+  if (grade === "高一课改词库") return GRADE10_QUIZ_COUNT;
   if (grade === "高二暑期必背词汇") return GRADE11_QUIZ_COUNT;
   return 0;
 }
@@ -1679,6 +1682,7 @@ function getQuizWrongCount(grade) {
     if (grade === "初二暑期必背词汇") return String(record.questionId || "").startsWith("g8-");
     if (grade === "初三暑期必背词汇") return String(record.questionId || "").startsWith("g9-");
     if (grade === "高一暑期必背词汇") return String(record.questionId || "").startsWith("g10-");
+    if (grade === "高一课改词库") return String(record.questionId || "").startsWith("g10-");
     if (grade === "高二暑期必背词汇") return String(record.questionId || "").startsWith("g11-");
     if (grade === "高三暑假必背词汇") return String(record.questionId || "").startsWith("g12-");
     return false;

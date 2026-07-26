@@ -31,6 +31,12 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
       "count": 871,
       "source": "高一暑期必背词汇（课内外整合）"
     },
+    "高一课改词库": {
+      "src": "./word-data/stages/grade10-curriculum.js",
+      "version": "20260727-restored",
+      "count": 298,
+      "source": "高一课改词库"
+    },
     "高二暑期必背词汇": {
       "src": "./word-data/stages/grade11-summer-required.js",
       "version": "20260724",
@@ -42,6 +48,13 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
       "version": "20260724",
       "count": 2012,
       "source": "高三暑假必背词汇（高一至高三整合）"
+    },
+    "高中3500刷词专栏": {
+      "src": "./word-data/stages/high-school-3500.js",
+      "version": "20260727-list1-48",
+      "count": 3515,
+      "uniqueCount": 3510,
+      "source": "Wing English Summer Bootcamp 高中3500词（List 1-48，原表3515条）"
     }
   }
 };
