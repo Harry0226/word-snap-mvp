@@ -179,6 +179,22 @@
     };
   }
 
+  function getTodayStageCompletion(words, records, now = Date.now()) {
+    const dayStart = new Date(now);
+    dayStart.setHours(0, 0, 0, 0);
+    const totalWords = uniqueWords(words);
+    const completed = totalWords.reduce((count, word) => {
+      const record = recordFor(records, word.id);
+      return count + (Number(record?.lastSeenAt || 0) >= dayStart.getTime() ? 1 : 0);
+    }, 0);
+    return {
+      total: totalWords.length,
+      completed,
+      remaining: Math.max(0, totalWords.length - completed),
+      isComplete: totalWords.length > 0 && completed === totalWords.length
+    };
+  }
+
   return {
     HOUR_MS,
     DAY_MS,
@@ -192,6 +208,7 @@
     getDueReviewWordIds,
     creditDailyTask,
     applyLearningResult,
-    getSevenDayRetentionStats
+    getSevenDayRetentionStats,
+    getTodayStageCompletion
   };
 });

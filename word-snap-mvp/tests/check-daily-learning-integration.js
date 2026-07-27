@@ -5,6 +5,7 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const app = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const styles = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 
 [
   "dailyTaskPanel",
@@ -34,5 +35,13 @@ assert(app.includes('? "zhToEnChoice"'), "seven-day checks must use active recal
 assert(app.includes('session.current.fixedMode !== "customChoice"'), "seven-day checks must preserve custom-choice questions");
 assert(app.includes("preserveOrder ? queue : shuffle(queue)"), "daily queue must preserve due-first order");
 assert(app.includes('els.startBtn.addEventListener("click", startSession)'), "free training entry must remain available");
+assert(app.includes('const FULL_STAGE_CELEBRATION_META_PREFIX = "fullStageCelebration:v1:"'), "full-stage celebration persistence must be versioned");
+assert(app.includes("getTodayStageCompletion(getBuiltinStageWords(stage), state.records)"), "full-stage completion must use today's distinct built-in words");
+assert(app.includes("await maybeCelebrateFullStage(session.grade)"), "every recorded training answer should check the full-stage milestone");
+assert(app.includes("太棒了，一天完成所有单词！"), "the short full-stage celebration copy is missing");
+assert(app.includes('variant: "achievement"'), "the celebration should use the achievement toast");
+assert(app.includes("duration: 1800"), "the celebration toast should disappear quickly");
+assert(styles.includes(".daily-task-panel.all-words-complete"), "the completed daily-task panel needs its red achievement state");
+assert(styles.includes("@media (prefers-reduced-motion: reduce)"), "achievement motion must respect reduced-motion preferences");
 
 console.log("daily learning integration checks passed");

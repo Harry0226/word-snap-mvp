@@ -28,11 +28,13 @@ const {
   getDueReviewWordIds,
   creditDailyTask,
   applyLearningResult,
-  getSevenDayRetentionStats
+  getSevenDayRetentionStats,
+  getTodayStageCompletion
 } = window.WordSnapDailyLearning;
 const { loadScriptWithRetry } = window.WordSnapAssetLoader;
 const BACKUP_SITE_URL = "https://word-snap-mvp.pages.dev/";
 const DAILY_TASK_META_PREFIX = "dailyTask:v2:";
+const FULL_STAGE_CELEBRATION_META_PREFIX = "fullStageCelebration:v1:";
 
 const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
@@ -62,7 +64,8 @@ const state = {
   queueNotice: "",
   streaks: new Map(),
   stageLoads: new Map(),
-  dailyTasks: new Map()
+  dailyTasks: new Map(),
+  fullStageCelebrations: new Set()
 };
 
 const els = {
@@ -83,6 +86,7 @@ const els = {
   fastRate: document.querySelector("#fastRate"),
   weakCount: document.querySelector("#weakCount"),
   dailyTaskPanel: document.querySelector("#dailyTaskPanel"),
+  dailyTaskKicker: document.querySelector(".daily-task-kicker"),
   dailyTaskSummary: document.querySelector("#dailyTaskSummary"),
   dailyDueCount: document.querySelector("#dailyDueCount"),
   dailyNewCount: document.querySelector("#dailyNewCount"),
@@ -518,16 +522,20 @@ async function recordDailyActivity(kind, grade) {
   renderDailyProgress();
 }
 
-function showToast(message) {
+function showToast(message, options = {}) {
   const toast = document.createElement("div");
-  toast.className = "toast-notification";
+  const variant = String(options.variant || "").trim();
+  const duration = Math.max(800, Number(options.duration || 2500));
+  toast.className = `toast-notification${variant ? ` ${variant}` : ""}`;
   toast.textContent = message;
+  toast.setAttribute("role", variant === "achievement" ? "alert" : "status");
+  toast.setAttribute("aria-live", "polite");
   document.body.appendChild(toast);
   requestAnimationFrame(() => toast.classList.add("show"));
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.remove(), 300);
-  }, 2500);
+  }, duration);
 }
 
 function getWeekFireCount(streak) {
@@ -575,6 +583,9 @@ async function loadState() {
   state.dailyTasks = new Map(meta
     .filter((entry) => entry.key?.startsWith(DAILY_TASK_META_PREFIX))
     .map((entry) => [entry.key, entry.value]));
+  state.fullStageCelebrations = new Set(meta
+    .filter((entry) => entry.key?.startsWith(FULL_STAGE_CELEBRATION_META_PREFIX))
+    .map((entry) => entry.key));
   await loadStreaks();
 
   renderAll();
@@ -639,6 +650,50 @@ function getPendingDailyTaskIds(task) {
   return (task?.wordIds || []).filter((id) => existingIds.has(id) && !completedIds.has(id));
 }
 
+function getBuiltinStageWords(stage = els.stageSelect.value) {
+  return state.words.filter((word) => {
+    return word.sourceType === "builtin" && stageMatches(word, stage) && word.en && word.zh;
+  });
+}
+
+function getFullStageCompletion(stage = els.stageSelect.value) {
+  return getTodayStageCompletion(getBuiltinStageWords(stage), state.records);
+}
+
+function buildFullStageCelebrationKey(stage, today = getDailyDateKey()) {
+  return `${FULL_STAGE_CELEBRATION_META_PREFIX}${today}:${encodeURIComponent(stage)}`;
+}
+
+function showFullStageCelebration() {
+  els.dailyTaskPanel?.classList.add("achievement-unlocked");
+  setTimeout(() => els.dailyTaskPanel?.classList.remove("achievement-unlocked"), 900);
+  showToast("太棒了，一天完成所有单词！", {
+    variant: "achievement",
+    duration: 1800
+  });
+}
+
+async function maybeCelebrateFullStage(stage) {
+  const completion = getFullStageCompletion(stage);
+  if (!completion.isComplete) return false;
+  const key = buildFullStageCelebrationKey(stage);
+  if (state.fullStageCelebrations.has(key)) return false;
+  state.fullStageCelebrations.add(key);
+  await put("meta", {
+    key,
+    value: {
+      stage,
+      date: getDailyDateKey(),
+      total: completion.total,
+      completedAt: Date.now()
+    },
+    at: Date.now()
+  });
+  renderDailyTask();
+  showFullStageCelebration();
+  return true;
+}
+
 async function ensureDailyTask() {
   const key = buildDailyTaskKey();
   const existing = state.dailyTasks.get(key);
@@ -698,13 +753,16 @@ function renderDailyTask() {
   const dueReviewIds = getDueReviewWordIds(getEligibleWords(), state.records, {
     limit: DUE_REVIEW_LIMIT
   });
+  const fullStageCompletion = getFullStageCompletion();
 
   els.dailyDueCount.textContent = pendingDue;
   els.dailyNewCount.textContent = pendingNew;
   els.sevenDayRetention.textContent = retention.rate === null ? "—" : `${retention.rate}%`;
   els.sevenDayPending.textContent = retention.pending;
 
-  if (task && pendingIds.length === 0) {
+  if (fullStageCompletion.isComplete) {
+    els.dailyTaskSummary.textContent = `太棒了，今天已完成本年级全部 ${fullStageCompletion.total} 个单词！`;
+  } else if (task && pendingIds.length === 0) {
     els.dailyTaskSummary.textContent = `今日任务已完成，共 ${task.wordIds.length} 词。明天会自动生成新任务。`;
   } else if (task) {
     els.dailyTaskSummary.textContent = `还剩 ${pendingIds.length} 词：到期复习 ${pendingDue} + 新词 ${pendingNew}。进度会自动保存。`;
@@ -715,10 +773,14 @@ function renderDailyTask() {
   }
 
   const completed = Boolean(task && pendingIds.length === 0);
-  els.dailyTaskPanel.classList.toggle("completed", completed);
-  els.startDailyTaskBtn.disabled = pendingIds.length === 0;
-  els.startDailyTaskBtn.textContent = completed
-    ? "今日任务已完成"
+  els.dailyTaskKicker.textContent = fullStageCompletion.isComplete ? "今日全库通关" : "今日学习闭环";
+  els.dailyTaskPanel.classList.toggle("completed", completed && !fullStageCompletion.isComplete);
+  els.dailyTaskPanel.classList.toggle("all-words-complete", fullStageCompletion.isComplete);
+  els.startDailyTaskBtn.disabled = fullStageCompletion.isComplete || pendingIds.length === 0;
+  els.startDailyTaskBtn.textContent = fullStageCompletion.isComplete
+    ? "本年级词库已完成"
+    : completed
+      ? "今日任务已完成"
     : task
       ? `继续今日任务（${pendingIds.length}）`
       : `开始今日任务（${preview.total}）`;
@@ -1257,6 +1319,7 @@ async function answer(value, button) {
   await syncDailyTaskFromTraining(word, isCorrect, session);
   await recordDailyActivity("train", session.grade);
   await completePersistentRotationItem(session.rotationKey, word.id);
+  await maybeCelebrateFullStage(session.grade);
   renderAllDebounced();
   updateProgress();
   if (isCorrect) {

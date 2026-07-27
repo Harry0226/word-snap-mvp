@@ -196,6 +196,48 @@ h2 { font-size: 21px; }
   background: linear-gradient(135deg, #ecfdf5, #f8fafc);
 }
 
+.daily-task-panel.all-words-complete {
+  border-color: #7f1d1d;
+  background: #991b1b;
+  color: #fff;
+}
+
+.daily-task-panel.all-words-complete .daily-task-kicker,
+.daily-task-panel.all-words-complete .daily-task-summary,
+.daily-task-panel.all-words-complete .daily-task-metric span {
+  color: #fee2e2;
+}
+
+.daily-task-panel.all-words-complete .daily-task-copy h2,
+.daily-task-panel.all-words-complete .daily-task-metric strong {
+  color: #fff;
+}
+
+.daily-task-panel.all-words-complete .daily-task-metric {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(127, 29, 29, 0.62);
+}
+
+.daily-task-panel.all-words-complete .daily-task-actions button {
+  background: #fff;
+  color: #7f1d1d;
+}
+
+.daily-task-panel.all-words-complete .daily-task-actions .secondary {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+.daily-task-panel.achievement-unlocked {
+  animation: full-stage-unlock 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes full-stage-unlock {
+  0% { transform: scale(0.985); }
+  48% { transform: scale(1.012); }
+  100% { transform: scale(1); }
+}
+
 .daily-task-copy {
   display: grid;
   gap: 8px;
@@ -833,6 +875,23 @@ button, .choice, .battle-choice, .file-button, .file-picker, .tab, select {
   opacity: 1;
 }
 
+.toast-notification.achievement {
+  top: 18px;
+  bottom: auto;
+  width: min(440px, calc(100vw - 32px));
+  padding: 15px 22px;
+  background: #991b1b;
+  box-shadow: 0 4px 8px rgba(69, 10, 10, 0.3);
+  text-align: center;
+  pointer-events: none;
+  z-index: 10010;
+  transform: translateX(-50%) translateY(-24px);
+}
+
+.toast-notification.achievement.show {
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ============ 答题动画增强 ============ */
 
 @keyframes correct-pulse {
@@ -970,6 +1029,19 @@ button, .choice, .battle-choice, .file-button, .file-picker, .tab, select {
 .modal-header.fail + .modal-session-info {
   background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
   color: #991b1b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .daily-task-panel.achievement-unlocked,
+  .toast-notification,
+  .choice.correct,
+  .choice.wrong,
+  #progressBar.animated,
+  #quizProgressBar.animated,
+  .modal-card {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
 }
 
 .modal-body {

@@ -6,7 +6,8 @@ const {
   planDailyTask,
   creditDailyTask,
   applyLearningResult,
-  getSevenDayRetentionStats
+  getSevenDayRetentionStats,
+  getTodayStageCompletion
 } = require("../daily-learning.js");
 
 const now = new Date(2026, 6, 24, 12, 0, 0).getTime();
@@ -121,5 +122,31 @@ assert.deepStrictEqual(retention, {
   pending: 1,
   rate: 50
 });
+
+const dayStart = new Date(now);
+dayStart.setHours(0, 0, 0, 0);
+const completionWords = [
+  { id: "stage-1" },
+  { id: "stage-2" },
+  { id: "stage-3" },
+  { id: "stage-3" }
+];
+const partialCompletion = getTodayStageCompletion(completionWords, new Map([
+  ["stage-1", { lastSeenAt: now - HOUR_MS }],
+  ["stage-2", { lastSeenAt: dayStart.getTime() - 1 }],
+  ["stage-3", { lastSeenAt: now }]
+]), now);
+assert.deepStrictEqual(partialCompletion, {
+  total: 3,
+  completed: 2,
+  remaining: 1,
+  isComplete: false
+});
+const fullCompletion = getTodayStageCompletion(completionWords, new Map([
+  ["stage-1", { lastSeenAt: now }],
+  ["stage-2", { lastSeenAt: now }],
+  ["stage-3", { lastSeenAt: now }]
+]), now);
+assert.strictEqual(fullCompletion.isComplete, true, "all distinct stage words seen today should unlock the easter egg");
 
 console.log("daily learning unit checks passed");
