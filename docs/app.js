@@ -4,6 +4,7 @@ const DB_VERSION = 4;
 const BUILTIN_SEED_VERSION = 20;
 const FAST_PICK_LIMIT = 2000;
 const SLOW_PICK_LIMIT = 3500;
+const CORRECT_ADVANCE_DELAY_MS = 180;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
 const QUIZ_FAST = 5000;
 const QUIZ_SLOW = 12000;
@@ -35,7 +36,6 @@ const { loadScriptWithRetry } = window.WordSnapAssetLoader;
 const BACKUP_SITE_URL = "https://word-snap-mvp.pages.dev/";
 const DAILY_TASK_META_PREFIX = "dailyTask:v2:";
 const FULL_STAGE_CELEBRATION_META_PREFIX = "fullStageCelebration:v1:";
-
 const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
 const GRADE11_QUIZ_COUNT = 129;
@@ -71,6 +71,9 @@ const state = {
 const els = {
   // Nav & views
   tabs: [...document.querySelectorAll(".tab")],
+  mobileViewButtons: [...document.querySelectorAll("[data-mobile-view]")],
+  mobileMoreButton: document.querySelector("[data-mobile-more]"),
+  mobileMoreMenu: document.querySelector("#mobileMoreMenu"),
   views: {
     train: document.querySelector("#view-train"),
     battle: document.querySelector("#view-battle"),
@@ -104,7 +107,9 @@ const els = {
   progressBar: document.querySelector("#progressBar"),
   tag: document.querySelector("#tag"),
   word: document.querySelector("#word"),
+  audioPromptBtn: document.querySelector("#audioPromptBtn"),
   hint: document.querySelector("#hint"),
+  contextSentence: document.querySelector("#contextSentence"),
   timer: document.querySelector("#timer"),
   choices: document.querySelector("#choices"),
   feedback: document.querySelector("#feedback"),
@@ -340,6 +345,7 @@ function normalizeBuiltinWord(word, index, list) {
     promptLabel: word.promptLabel || "",
     answerText: word.answerText || "",
     answerFeedback: word.answerFeedback || "",
+    contextSentence: word.contextSentence || "",
     choiceOptions: Array.isArray(word.choiceOptions) ? word.choiceOptions : null
   };
 }
@@ -593,9 +599,15 @@ async function loadState() {
 
 function switchView(view) {
   els.tabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.view === view));
+  els.mobileViewButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.mobileView === view);
+  });
+  els.mobileMoreButton?.classList.toggle("active", ["battle", "decks", "quiz"].includes(view));
   Object.entries(els.views).forEach(([name, el]) => el.classList.toggle("active", name === view));
+  if (els.mobileMoreMenu?.matches(":popover-open")) els.mobileMoreMenu.hidePopover();
   renderAll();
   if (view === "quiz") updateQuizSizeOptions();
+  window.scrollTo({ top: 0, behavior: "auto" });
 }
 
 function stageMatches(word, stage) {
@@ -624,6 +636,7 @@ function getRecord(wordId) {
     nextReviewAt: 0,
     firstLearnedAt: 0,
     reviewStep: -1,
+    fsrsCard: null,
     sevenDayTestedAt: 0,
     sevenDayCorrect: false,
     sevenDayTestMode: ""
@@ -996,7 +1009,7 @@ function updateSessionSizeOptions() {
 function resolvePracticeMode(word) {
   if (word?.fixedMode === "customChoice") return "customChoice";
   const selected = els.practiceMode.value;
-  if (selected === "zhToEnChoice" || selected === "enToZhChoice") return selected;
+  if (["zhToEnChoice", "enToZhChoice", "audioToZhChoice"].includes(selected)) return selected;
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
 }
 
@@ -1031,6 +1044,9 @@ async function startSession(options = {}) {
     sessionStartedAt: performance.now(),
     startedAt: 0,
     timerId: 0,
+    advanceTimerId: 0,
+    timingReady: false,
+    promptToken: 0,
     rotationKey,
     kind: options.sessionKind || "free",
     dailyTaskKey: options.dailyTaskKey || null,
@@ -1050,8 +1066,13 @@ async function startSession(options = {}) {
 
 function nextWord() {
   const session = state.session;
+  clearInterval(session.timerId);
+  clearTimeout(session.advanceTimerId);
+  window.speechSynthesis?.cancel();
   hideTrainContinueButton();
   session.answered = false;
+  session.timingReady = false;
+  session.promptToken += 1;
   session.current = session.queue.shift();
   if (!session.current) return finishSession();
 
@@ -1062,11 +1083,17 @@ function nextWord() {
     : resolvePracticeMode(session.current);
   const word = session.current;
   const isPromptChinese = session.mode === "zhToEnChoice";
-  els.word.textContent = word.promptText || (isPromptChinese ? word.zh : word.en);
+  const isAudioPrompt = session.mode === "audioToZhChoice";
+  els.word.textContent = isAudioPrompt ? "听发音" : (word.promptText || (isPromptChinese ? word.zh : word.en));
   const taskLabel = isSevenDayCheck ? "七日检测" : word.promptLabel;
   els.tag.textContent = `${word.grade} · ${taskLabel || (word.sourceType === "builtin" ? "内置" : "自定义")}`;
   els.hint.textContent = hintForMode(session.mode, word);
-  els.feedback.textContent = "计时中。";
+  els.audioPromptBtn.hidden = !isAudioPrompt;
+  els.audioPromptBtn.disabled = isAudioPrompt;
+  els.audioPromptBtn.textContent = "播放发音";
+  els.contextSentence.hidden = true;
+  els.contextSentence.textContent = "";
+  els.feedback.textContent = isAudioPrompt ? "准备播放发音，播放结束后开始计时。" : "题目就位后开始计时。";
   els.choices.innerHTML = "";
   els.choices.hidden = false;
   makeChoices(word).forEach((choice, index) => {
@@ -1082,19 +1109,100 @@ function nextWord() {
     text.className = "choice-text";
     text.textContent = choiceText(choice, session.mode);
     button.append(key, text);
+    button.disabled = true;
     button.addEventListener("click", () => answer(choice, button));
     els.choices.append(button);
   });
-  session.startedAt = performance.now();
-  startTimer();
+  els.timer.classList.remove("fast", "slow");
+  els.timer.textContent = isAudioPrompt ? "发音结束后开始计时" : "题目定位中，暂未计时";
   updateProgress();
+  prepareTrainingPrompt(session.promptToken);
 }
 
 function hintForMode(mode, word) {
   if (mode === "customChoice") return word.notes || "根据题干选择最匹配的答案。2 秒内算秒选，超过 3.5 秒为慢词。";
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
   if (mode === "enToZhChoice") return detail || "看英文选中文。2 秒内算秒选，超过 3.5 秒为慢词。";
+  if (mode === "audioToZhChoice") return "听清发音后选中文。发音结束后开始计时。";
   return "看中文选英文。2 秒内算秒选，超过 3.5 秒为慢词。";
+}
+
+function waitForPaint() {
+  return new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+}
+
+function setTrainingChoicesEnabled(enabled) {
+  [...els.choices.children].forEach((button) => {
+    button.disabled = !enabled;
+  });
+}
+
+function speakTrainingWord(word) {
+  return new Promise((resolve) => {
+    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+      resolve(false);
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(String(word.en || ""));
+    const voices = window.speechSynthesis.getVoices();
+    utterance.voice = voices.find((voice) => /^en-(US|GB)/i.test(voice.lang))
+      || voices.find((voice) => /^en/i.test(voice.lang))
+      || null;
+    utterance.lang = utterance.voice?.lang || "en-US";
+    utterance.rate = String(word.grade || "").includes("初") ? 0.82 : 0.92;
+    utterance.pitch = 1;
+    let finished = false;
+    const finish = (played) => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(fallbackTimer);
+      resolve(played);
+    };
+    utterance.onend = () => finish(true);
+    utterance.onerror = () => finish(false);
+    const fallbackTimer = setTimeout(() => finish(false), 6000);
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  });
+}
+
+async function prepareTrainingPrompt(promptToken) {
+  const session = state.session;
+  const card = els.word.closest(".word-card");
+  card?.scrollIntoView({ block: "start", behavior: "auto" });
+  await waitForPaint();
+  if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
+
+  if (session.mode === "audioToZhChoice") {
+    els.feedback.textContent = "正在播放发音，结束后可作答。";
+    const played = await speakTrainingWord(session.current);
+    if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
+    if (!played) {
+      els.word.textContent = session.current.en;
+      els.feedback.textContent = "当前浏览器无法播放发音，已显示英文题目。";
+    } else {
+      els.feedback.textContent = "发音播放完毕，请选择中文意思。";
+    }
+    els.audioPromptBtn.disabled = false;
+    els.audioPromptBtn.textContent = "再听一次";
+  } else {
+    els.feedback.textContent = "计时中。";
+  }
+
+  session.startedAt = performance.now();
+  session.timingReady = true;
+  setTrainingChoicesEnabled(true);
+  startTimer();
+}
+
+async function replayAudioPrompt() {
+  const session = state.session;
+  if (!session?.current || session.mode !== "audioToZhChoice" || session.answered) return;
+  els.audioPromptBtn.disabled = true;
+  const played = await speakTrainingWord(session.current);
+  if (!state.session || state.session !== session || session.answered) return;
+  els.audioPromptBtn.disabled = false;
+  els.audioPromptBtn.textContent = played ? "再听一次" : "发音不可用";
 }
 
 function startTimer() {
@@ -1296,10 +1404,36 @@ function normalizeChoiceText(value) {
   return normalizeEnglishWord(value);
 }
 
+function buildContextSentence(word) {
+  const builtInContext = String(word.contextSentence || "").trim();
+  if (builtInContext) return builtInContext;
+
+  const english = String(word.en || "").trim();
+  const normalized = normalizeEnglishWord(english);
+  const notes = String(word.notes || "").trim();
+  const noteSentences = notes.match(/[A-Z][^.!?]{5,90}[.!?]/g) || [];
+  const fromNotes = noteSentences.find((sentence) => {
+    const lowerSentence = sentence.toLowerCase();
+    return lowerSentence.includes(normalized) && sentence.split(/\s+/).length <= 16;
+  });
+  if (fromNotes) return fromNotes;
+
+  if (String(word.pos || "").includes("v.")) return `They decided to ${english} before the lesson ended.`;
+  if (String(word.pos || "").includes("adj.")) return `The students found the idea ${english}.`;
+  return `We noticed the ${english} during our class project.`;
+}
+
+function revealContextSentence(word) {
+  els.contextSentence.textContent = buildContextSentence(word);
+  els.contextSentence.hidden = false;
+}
+
 async function answer(value, button) {
   const session = state.session;
-  if (!session || session.answered || !session.current) return;
+  if (!session || session.answered || !session.current || !session.timingReady) return;
   session.answered = true;
+  session.timingReady = false;
+  window.speechSynthesis?.cancel();
   clearInterval(session.timerId);
   const elapsed = performance.now() - session.startedAt;
   const word = session.current;
@@ -1315,6 +1449,7 @@ async function answer(value, button) {
   if (isSlow) session.slowWords.push(word);
   paintChoices(value, button);
   els.feedback.textContent = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
+  revealContextSentence(word);
   await recordAnswer(word, isCorrect, isFast, isSlow);
   await syncDailyTaskFromTraining(word, isCorrect, session);
   await recordDailyActivity("train", session.grade);
@@ -1323,7 +1458,7 @@ async function answer(value, button) {
   renderAllDebounced();
   updateProgress();
   if (isCorrect) {
-    setTimeout(nextWord, 500);
+    session.advanceTimerId = setTimeout(nextWord, CORRECT_ADVANCE_DELAY_MS);
   } else {
     showTrainContinueButton();
   }
@@ -1373,6 +1508,8 @@ async function recordAnswer(word, isCorrect, isFast, isSlow) {
   const now = Date.now();
   const learningResult = applyLearningResult(record, {
     isCorrect,
+    isFast,
+    isSlow,
     mode: state.session?.mode || ""
   }, now);
   record.seen += 1;
@@ -1392,12 +1529,15 @@ async function skipWord() {
   const session = state.session;
   if (!session || session.answered || !session.current) return;
   session.answered = true;
+  session.timingReady = false;
+  window.speechSynthesis?.cancel();
   clearInterval(session.timerId);
   const word = session.current;
   els.timer.textContent = "已跳过，不计入错误。";
   els.timer.classList.remove("fast");
   paintChoices(null, null);
   els.feedback.textContent = `跳过：${word.en} = ${word.zh}`;
+  revealContextSentence(word);
   await completePersistentRotationItem(session.rotationKey, word.id);
   renderAll();
   updateProgress();
@@ -2518,6 +2658,9 @@ function escapeAttr(value) {
 
 function bindEvents() {
   els.tabs.forEach((tab) => tab.addEventListener("click", () => switchView(tab.dataset.view)));
+  els.mobileViewButtons.forEach((button) => {
+    button.addEventListener("click", () => switchView(button.dataset.mobileView));
+  });
   [els.deckFilter, els.sessionSize, els.trainingScope].forEach((el) => el.addEventListener("change", renderAll));
   els.stageSelect.addEventListener("change", async () => {
     const stage = els.stageSelect.value;
@@ -2533,6 +2676,7 @@ function bindEvents() {
   els.startDueReviewBtn.addEventListener("click", startDueReview);
   els.skipBtn.addEventListener("click", skipWord);
   els.trainContinueBtn.addEventListener("click", nextWord);
+  els.audioPromptBtn.addEventListener("click", replayAudioPrompt);
 
   els.parseTextBtn.addEventListener("click", () => {
     state.reviewRows = parseWordsFromText(els.textImport.value);
@@ -2612,7 +2756,7 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (event) => {
     if (els.views.train.classList.contains("active") && state.session && !state.session.answered) {
-      if (state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice" || state.session.mode === "customChoice") {
+      if (["enToZhChoice", "zhToEnChoice", "audioToZhChoice", "customChoice"].includes(state.session.mode)) {
         const key = event.key.toUpperCase();
         const choiceIndex = /^[1-5]$/.test(key) ? Number(key) - 1 : CHOICE_KEYS.indexOf(key);
         const button = choiceIndex >= 0 ? els.choices.children[choiceIndex] : null;
@@ -2652,8 +2796,10 @@ function bindEvents() {
 
 function clearAllTimers() {
   if (state.session?.timerId) { clearInterval(state.session.timerId); state.session.timerId = 0; }
+  if (state.session?.advanceTimerId) { clearTimeout(state.session.advanceTimerId); state.session.advanceTimerId = 0; }
   if (state.quiz?.timerId) { clearInterval(state.quiz.timerId); state.quiz.timerId = 0; }
   if (state.quiz?.advanceTimerId) { clearTimeout(state.quiz.advanceTimerId); state.quiz.advanceTimerId = 0; }
+  window.speechSynthesis?.cancel();
 }
 
 async function init() {

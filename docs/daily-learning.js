@@ -1,13 +1,26 @@
 (function initDailyLearning(root, factory) {
-  const api = factory();
+  const api = factory(root);
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.WordSnapDailyLearning = api;
-})(typeof window !== "undefined" ? window : globalThis, function createDailyLearning() {
+})(typeof window !== "undefined" ? window : globalThis, function createDailyLearning(root) {
   const HOUR_MS = 60 * 60 * 1000;
   const DAY_MS = 24 * HOUR_MS;
   const DAILY_TASK_LIMIT = 300;
   const DUE_REVIEW_LIMIT = 100;
   const REVIEW_INTERVAL_DAYS = [1, 3, 7, 14, 30];
+  const FsrsLib = root?.FSRS || (
+    typeof require === "function"
+      ? require("./vendor/ts-fsrs.cjs")
+      : null
+  );
+  const adaptiveScheduler = FsrsLib?.fsrs({
+    request_retention: 0.9,
+    maximum_interval: 3650,
+    enable_fuzz: false,
+    enable_short_term: true,
+    learning_steps: ["4h", "1d"],
+    relearning_steps: ["4h"]
+  });
 
   function recordFor(records, wordId) {
     if (records instanceof Map) return records.get(wordId) || null;
@@ -131,26 +144,107 @@
     };
   }
 
-  function applyLearningResult(savedRecord, result = {}, now = Date.now()) {
-    const previous = savedRecord || {};
+  function clamp(value, minimum, maximum) {
+    return Math.min(maximum, Math.max(minimum, value));
+  }
+
+  function toDate(value, fallback) {
+    const date = value instanceof Date ? value : new Date(Number(value));
+    return Number.isNaN(date.getTime()) ? new Date(fallback) : date;
+  }
+
+  function serializeFsrsCard(card) {
+    return {
+      ...card,
+      due: card.due.getTime(),
+      last_review: card.last_review ? card.last_review.getTime() : 0
+    };
+  }
+
+  function hydrateFsrsCard(savedCard, now) {
+    if (!savedCard) return null;
+    return {
+      ...savedCard,
+      due: toDate(savedCard.due, now),
+      last_review: Number(savedCard.last_review || 0)
+        ? toDate(savedCard.last_review, now)
+        : undefined
+    };
+  }
+
+  function bootstrapFsrsCard(previous, now) {
     const seenBefore = Number(previous.seen || 0);
-    const firstLearnedAt = Number(previous.firstLearnedAt || 0) || now;
-    const sevenDayDue = now >= firstLearnedAt + 7 * DAY_MS && !Number(previous.sevenDayTestedAt || 0);
-    const correct = Boolean(result.isCorrect);
+    if (!seenBefore) return FsrsLib.createEmptyCard(new Date(now));
+
+    const oldStep = clamp(Number(previous.reviewStep || 0), 0, REVIEW_INTERVAL_DAYS.length - 1);
+    const priorInterval = REVIEW_INTERVAL_DAYS[oldStep] || 1;
+    const attempts = Math.max(1, seenBefore);
+    const weakRatio = (Number(previous.wrong || 0) + Number(previous.slow || 0) * 0.5) / attempts;
+    const lastReview = Number(previous.lastSeenAt || 0) || now;
+    const due = Number(previous.nextReviewAt || 0) || (lastReview + priorInterval * DAY_MS);
+    return {
+      due: new Date(due),
+      stability: priorInterval,
+      difficulty: clamp(5 + weakRatio * 3, 1, 10),
+      elapsed_days: Math.max(0, Math.round((now - lastReview) / DAY_MS)),
+      scheduled_days: priorInterval,
+      reps: seenBefore,
+      lapses: Number(previous.wrong || 0),
+      learning_steps: 0,
+      state: FsrsLib.State.Review,
+      last_review: new Date(lastReview)
+    };
+  }
+
+  function ratingForResult(result) {
+    if (!result.isCorrect) return FsrsLib?.Rating.Again || 1;
+    if (result.isFast) return FsrsLib?.Rating.Easy || 4;
+    if (result.isSlow) return FsrsLib?.Rating.Hard || 2;
+    return FsrsLib?.Rating.Good || 3;
+  }
+
+  function applyLegacyLearningResult(previous, result, now) {
+    const seenBefore = Number(previous.seen || 0);
     const priorStep = Number.isFinite(Number(previous.reviewStep))
       ? Math.max(-1, Number(previous.reviewStep))
       : (seenBefore > 0 ? 0 : -1);
-    const reviewStep = correct
+    const reviewStep = result.isCorrect
       ? Math.min(REVIEW_INTERVAL_DAYS.length - 1, priorStep + 1)
       : Math.max(0, priorStep - 1);
-    const nextReviewAt = correct
-      ? now + REVIEW_INTERVAL_DAYS[reviewStep] * DAY_MS
-      : now + 4 * HOUR_MS;
+    return {
+      reviewStep,
+      nextReviewAt: result.isCorrect
+        ? now + REVIEW_INTERVAL_DAYS[reviewStep] * DAY_MS
+        : now + 4 * HOUR_MS,
+      fsrsCard: null
+    };
+  }
+
+  function applyLearningResult(savedRecord, result = {}, now = Date.now()) {
+    const previous = savedRecord || {};
+    const firstLearnedAt = Number(previous.firstLearnedAt || 0) || now;
+    const sevenDayDue = now >= firstLearnedAt + 7 * DAY_MS && !Number(previous.sevenDayTestedAt || 0);
+    const correct = Boolean(result.isCorrect);
+    let schedule;
+    if (adaptiveScheduler && FsrsLib) {
+      const card = hydrateFsrsCard(previous.fsrsCard, now) || bootstrapFsrsCard(previous, now);
+      const scheduled = adaptiveScheduler.next(card, new Date(now), ratingForResult(result)).card;
+      if (!correct) {
+        scheduled.due = new Date(now + 4 * HOUR_MS);
+        scheduled.scheduled_days = 0;
+      }
+      schedule = {
+        reviewStep: Math.max(0, Number(scheduled.reps || 1) - 1),
+        nextReviewAt: scheduled.due.getTime(),
+        fsrsCard: serializeFsrsCard(scheduled)
+      };
+    } else {
+      schedule = applyLegacyLearningResult(previous, result, now);
+    }
 
     return {
       firstLearnedAt,
-      reviewStep,
-      nextReviewAt,
+      ...schedule,
       sevenDayTestedAt: sevenDayDue ? now : Number(previous.sevenDayTestedAt || 0),
       sevenDayCorrect: sevenDayDue ? correct : Boolean(previous.sevenDayCorrect),
       sevenDayTestMode: sevenDayDue ? String(result.mode || "") : String(previous.sevenDayTestMode || "")
@@ -201,6 +295,7 @@
     DAILY_TASK_LIMIT,
     DUE_REVIEW_LIMIT,
     REVIEW_INTERVAL_DAYS,
+    ratingForResult,
     dateKey,
     isDueRecord,
     isSevenDayEligible,

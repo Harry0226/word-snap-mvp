@@ -8,14 +8,15 @@
   <meta name="theme-color" content="#f6f7f9">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260727-full-stage-easter-egg">
-  <script defer src="./word-data/builtin-manifest.js?v=20260727-high3500"></script>
+  <link rel="stylesheet" href="./styles.css?v=20260728-learning-upgrade">
+  <script defer src="./word-data/builtin-manifest.js?v=20260728-context-v1"></script>
   <script defer src="./asset-loader.js?v=20260715-session-choice-fix"></script>
   <script defer src="./rotation-queue.js?v=20260715-session-choice-fix"></script>
   <script defer src="./choice-distractors.js?v=20260724-summer-merge"></script>
   <script defer src="./daily-streaks.js?v=20260724-daily300-v2"></script>
-  <script defer src="./daily-learning.js?v=20260727-full-stage-easter-egg"></script>
-  <script defer src="./app.js?v=20260727-full-stage-easter-egg"></script>
+  <script defer src="./vendor/ts-fsrs.umd.js?v=5.4.1"></script>
+  <script defer src="./daily-learning.js?v=20260728-adaptive"></script>
+  <script defer src="./app.js?v=20260728-context-v1"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -34,29 +35,7 @@
       </nav>
     </header>
 
-    <section class="notice-board" aria-label="学习通知">
-      <strong>📢 学习通知</strong>
-      <div class="notice-lines">
-        <p><b>每日任务：</b>先完成系统安排的今日任务和到期复习；需要强化时可继续使用自由训练。</p>
-        <p><b>提交方式：</b>截图当天微信发给代老师或者学长学姐。</p>
-        <p><b>奖励机制：</b>每周完成12张截图（包括中译英和英译中）来找代老师兑换学习用品或者奶茶一杯。周日定期会有单词默写比赛，奖品丰厚！</p>
-        <p><b>惩罚机制：</b>当天未完成的同学下节课前需要抄写300个未刷单词。</p>
-      </div>
-    </section>
-
     <section id="view-train" class="view active">
-      <div id="trainWordStats" class="stats" aria-label="刷词统计">
-        <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
-        <div><strong id="doneCount">0</strong><span>累计练习</span></div>
-        <div><strong id="accuracy">0%</strong><span>正确率</span></div>
-        <div><strong id="fastRate">0%</strong><span>快速率</span></div>
-        <div><strong id="weakCount">0</strong><span>弱词</span></div>
-        <div id="trainStreakCard" class="checkin-mini">
-          <span class="streak-icon" id="streakIcon">🔥</span>
-          <span id="trainTodayProgress" class="checkin-progress">今日 0/300</span>
-        </div>
-      </div>
-
       <section id="dailyTaskPanel" class="panel daily-task-panel" aria-label="今日学习任务">
         <div class="daily-task-copy">
           <span class="daily-task-kicker">今日学习闭环</span>
@@ -74,6 +53,28 @@
           <button id="startDueReviewBtn" type="button" class="secondary">只复习到期词</button>
         </div>
       </section>
+
+      <details class="notice-board">
+        <summary>学习通知与奖励规则</summary>
+        <div class="notice-lines">
+          <p><b>每日任务：</b>先完成系统安排的今日任务和到期复习；需要强化时可继续使用自由训练。</p>
+          <p><b>提交方式：</b>截图当天微信发给代老师或者学长学姐。</p>
+          <p><b>奖励机制：</b>每周完成12张截图（包括中译英和英译中）来找代老师兑换学习用品或者奶茶一杯。周日定期会有单词默写比赛，奖品丰厚！</p>
+          <p><b>惩罚机制：</b>当天未完成的同学下节课前需要抄写300个未刷单词。</p>
+        </div>
+      </details>
+
+      <div id="trainWordStats" class="stats" aria-label="刷词统计">
+        <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
+        <div><strong id="doneCount">0</strong><span>累计练习</span></div>
+        <div><strong id="accuracy">0%</strong><span>正确率</span></div>
+        <div><strong id="fastRate">0%</strong><span>快速率</span></div>
+        <div><strong id="weakCount">0</strong><span>弱词</span></div>
+        <div id="trainStreakCard" class="checkin-mini">
+          <span class="streak-icon" id="streakIcon">🔥</span>
+          <span id="trainTodayProgress" class="checkin-progress">今日 0/300</span>
+        </div>
+      </div>
 
       <div class="panel controls-panel primary-controls">
         <label>学习阶段
@@ -93,6 +94,7 @@
           <select id="practiceMode">
             <option value="enToZhChoice" selected>看英文选中文</option>
             <option value="zhToEnChoice">看中文选英文</option>
+            <option value="audioToZhChoice">听发音选中文</option>
             <option value="auto">智能双选</option>
           </select>
         </label>
@@ -137,7 +139,9 @@
         <article class="word-card">
           <span id="tag">分层训练</span>
           <h2 id="word">Ready?</h2>
+          <button id="audioPromptBtn" class="audio-prompt-button secondary" type="button" hidden>播放发音</button>
           <p id="hint">系统会按新词、弱词、到期复习词自动组一轮。</p>
+          <p id="contextSentence" class="context-sentence" hidden></p>
         </article>
         <div id="timer" class="timer">用时 0.0 秒 · 2 秒内算秒选，超过 3.5 秒为慢词</div>
         <div id="choices" class="choices"></div>
@@ -384,8 +388,19 @@
         <div id="quizWrongList" class="word-list"></div>
       </div>
     </section>
-
   </main>
+
+  <nav class="mobile-nav" aria-label="移动端主导航">
+    <button class="mobile-nav-item active" type="button" data-mobile-view="train">训练</button>
+    <button class="mobile-nav-item" type="button" data-mobile-view="wrong">错词</button>
+    <button class="mobile-nav-item" type="button" data-mobile-view="report">报告</button>
+    <button class="mobile-nav-item" type="button" data-mobile-more popovertarget="mobileMoreMenu">更多</button>
+  </nav>
+  <div id="mobileMoreMenu" class="mobile-more-menu" popover>
+    <button type="button" data-mobile-view="battle">对战</button>
+    <button type="button" data-mobile-view="decks">词库</button>
+    <button type="button" data-mobile-view="quiz">刷题</button>
+  </div>
 
   <!-- 刷词完成弹窗 -->
   <div id="sessionCompleteModal" class="modal-overlay" hidden>

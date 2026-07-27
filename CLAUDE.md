@@ -1,8 +1,14 @@
 # 秒懂词 (Word Snap) 项目
 
 ## 项目结构
-- `word-snap-mvp/` - 网页版 (vanilla JS + IndexedDB)
+- `docs/` - 网页版唯一源码 (vanilla JS + IndexedDB)
+- `word-snap-mvp/` - 由脚本生成的 Cloudflare 部署镜像，不直接编辑
 - `word-snap-miniapp/` - 微信小程序版 (wx.setStorage)
+
+## 网页开发流程
+- 所有网页代码只修改 `docs/`
+- 修改完成后运行 `npm run sync` 自动同步部署镜像
+- 提交前运行 `npm test` 和 `npm run check:sync`
 
 ## 核心功能
 6个Tab：训练、刷题、对战、词库、错词、报告

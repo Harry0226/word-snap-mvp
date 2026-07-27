@@ -67,26 +67,48 @@ const firstCorrect = applyLearningResult({ seen: 0, reviewStep: -1 }, {
 assert.strictEqual(firstCorrect.firstLearnedAt, now);
 assert.strictEqual(firstCorrect.reviewStep, 0);
 assert.strictEqual(firstCorrect.nextReviewAt, now + DAY_MS);
+assert.ok(firstCorrect.fsrsCard, "adaptive scheduler card should be persisted");
 
 const secondCorrectAt = now + DAY_MS;
 const secondCorrect = applyLearningResult({
+  ...firstCorrect,
   seen: 1,
+  correct: 1,
+  wrong: 0,
+  slow: 0,
+  lastSeenAt: now,
   firstLearnedAt: now,
   reviewStep: 0
 }, { isCorrect: true }, secondCorrectAt);
 assert.strictEqual(secondCorrect.reviewStep, 1);
-assert.strictEqual(secondCorrect.nextReviewAt, secondCorrectAt + 3 * DAY_MS);
+assert.ok(secondCorrect.nextReviewAt > secondCorrectAt + 3 * DAY_MS, "successful recall should expand the interval");
+
+const secondFast = applyLearningResult({
+  ...firstCorrect,
+  seen: 1,
+  correct: 1,
+  lastSeenAt: now
+}, { isCorrect: true, isFast: true }, secondCorrectAt);
+const secondSlow = applyLearningResult({
+  ...firstCorrect,
+  seen: 1,
+  correct: 1,
+  lastSeenAt: now
+}, { isCorrect: true, isSlow: true }, secondCorrectAt);
+assert.ok(secondFast.nextReviewAt > secondCorrect.nextReviewAt, "fast recall should schedule later than normal recall");
+assert.ok(secondSlow.nextReviewAt < secondCorrect.nextReviewAt, "slow recall should schedule sooner than normal recall");
 
 const wrong = applyLearningResult({
+  ...secondCorrect,
   seen: 2,
   firstLearnedAt: now,
   reviewStep: 1
 }, { isCorrect: false }, secondCorrectAt);
-assert.strictEqual(wrong.reviewStep, 0);
 assert.strictEqual(wrong.nextReviewAt, secondCorrectAt + 4 * HOUR_MS);
 
 const sevenDayAt = now + 7 * DAY_MS;
 const sevenDayResult = applyLearningResult({
+  ...secondCorrect,
   seen: 4,
   firstLearnedAt: now,
   reviewStep: 2,
