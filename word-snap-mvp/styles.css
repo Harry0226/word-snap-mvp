@@ -378,7 +378,20 @@ label {
 .audio-prompt-button {
   justify-self: center;
   min-width: 132px;
+  min-height: 46px;
   box-shadow: none;
+}
+
+.audio-prompt-button.needs-gesture {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+  color: #fff;
+}
+
+.audio-prompt-button.audio-error {
+  border-color: #b91c1c;
+  background: #fff;
+  color: #991b1b;
 }
 
 .context-sentence {

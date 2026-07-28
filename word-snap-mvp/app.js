@@ -108,6 +108,7 @@ const els = {
   tag: document.querySelector("#tag"),
   word: document.querySelector("#word"),
   audioPromptBtn: document.querySelector("#audioPromptBtn"),
+  pronunciationAudio: document.querySelector("#pronunciationAudio"),
   hint: document.querySelector("#hint"),
   contextSentence: document.querySelector("#contextSentence"),
   timer: document.querySelector("#timer"),
@@ -195,6 +196,10 @@ const els = {
   quizReport: document.querySelector("#quizReport"),
   quizWrongList: document.querySelector("#quizWrongList")
 };
+
+const pronunciationPlayer = new window.WordSnapPronunciationAudio.PronunciationAudioPlayer(
+  els.pronunciationAudio
+);
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -802,6 +807,7 @@ function renderDailyTask() {
 }
 
 async function startDailyTask() {
+  primePronunciationAudio();
   const { key, task } = await ensureDailyTask();
   const wordIds = getPendingDailyTaskIds(task);
   if (!wordIds.length) {
@@ -819,6 +825,7 @@ async function startDailyTask() {
 }
 
 async function startDueReview() {
+  primePronunciationAudio();
   const wordIds = getDueReviewWordIds(getEligibleWords(), state.records, {
     limit: DUE_REVIEW_LIMIT
   });
@@ -1009,11 +1016,17 @@ function updateSessionSizeOptions() {
 function resolvePracticeMode(word) {
   if (word?.fixedMode === "customChoice") return "customChoice";
   const selected = els.practiceMode.value;
+  if (selected === "audioToZhChoice" && word?.sourceType !== "builtin") return "enToZhChoice";
   if (["zhToEnChoice", "enToZhChoice", "audioToZhChoice"].includes(selected)) return selected;
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
 }
 
+function primePronunciationAudio() {
+  if (els.practiceMode.value === "audioToZhChoice") pronunciationPlayer.prime();
+}
+
 async function startSession(options = {}) {
+  primePronunciationAudio();
   if (state.session) clearInterval(state.session.timerId);
   hideTrainContinueButton();
   const stage = Array.isArray(options?.wordIds) && options.grade ? options.grade : els.stageSelect.value;
@@ -1068,7 +1081,7 @@ function nextWord() {
   const session = state.session;
   clearInterval(session.timerId);
   clearTimeout(session.advanceTimerId);
-  window.speechSynthesis?.cancel();
+  pronunciationPlayer.stop();
   hideTrainContinueButton();
   session.answered = false;
   session.timingReady = false;
@@ -1090,6 +1103,7 @@ function nextWord() {
   els.hint.textContent = hintForMode(session.mode, word);
   els.audioPromptBtn.hidden = !isAudioPrompt;
   els.audioPromptBtn.disabled = isAudioPrompt;
+  els.audioPromptBtn.classList.remove("needs-gesture", "audio-error");
   els.audioPromptBtn.textContent = "播放发音";
   els.contextSentence.hidden = true;
   els.contextSentence.textContent = "";
@@ -1116,6 +1130,7 @@ function nextWord() {
   els.timer.classList.remove("fast", "slow");
   els.timer.textContent = isAudioPrompt ? "发音结束后开始计时" : "题目定位中，暂未计时";
   updateProgress();
+  pronunciationPlayer.prefetch([word, ...session.queue.slice(0, 4)]);
   prepareTrainingPrompt(session.promptToken);
 }
 
@@ -1123,7 +1138,7 @@ function hintForMode(mode, word) {
   if (mode === "customChoice") return word.notes || "根据题干选择最匹配的答案。2 秒内算秒选，超过 3.5 秒为慢词。";
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
   if (mode === "enToZhChoice") return detail || "看英文选中文。2 秒内算秒选，超过 3.5 秒为慢词。";
-  if (mode === "audioToZhChoice") return "听清发音后选中文。发音结束后开始计时。";
+  if (mode === "audioToZhChoice") return "听统一美式发音后选中文。发音结束后开始计时。";
   return "看中文选英文。2 秒内算秒选，超过 3.5 秒为慢词。";
 }
 
@@ -1137,33 +1152,33 @@ function setTrainingChoicesEnabled(enabled) {
   });
 }
 
-function speakTrainingWord(word) {
-  return new Promise((resolve) => {
-    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
-      resolve(false);
-      return;
-    }
-    const utterance = new SpeechSynthesisUtterance(String(word.en || ""));
-    const voices = window.speechSynthesis.getVoices();
-    utterance.voice = voices.find((voice) => /^en-(US|GB)/i.test(voice.lang))
-      || voices.find((voice) => /^en/i.test(voice.lang))
-      || null;
-    utterance.lang = utterance.voice?.lang || "en-US";
-    utterance.rate = String(word.grade || "").includes("初") ? 0.82 : 0.92;
-    utterance.pitch = 1;
-    let finished = false;
-    const finish = (played) => {
-      if (finished) return;
-      finished = true;
-      clearTimeout(fallbackTimer);
-      resolve(played);
-    };
-    utterance.onend = () => finish(true);
-    utterance.onerror = () => finish(false);
-    const fallbackTimer = setTimeout(() => finish(false), 6000);
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-  });
+function startTrainingTimerAfterAudio(session) {
+  if (session.timingReady) return;
+  session.startedAt = performance.now();
+  session.timingReady = true;
+  setTrainingChoicesEnabled(true);
+  startTimer();
+}
+
+function showAudioRecovery(result) {
+  els.audioPromptBtn.disabled = false;
+  els.audioPromptBtn.setAttribute("aria-busy", "false");
+  if (result.status === "blocked") {
+    els.audioPromptBtn.classList.add("needs-gesture");
+    els.audioPromptBtn.textContent = "点一下听发音";
+    els.feedback.textContent = "微信或当前浏览器需要你点一下，点击后会播放本题发音。";
+    return;
+  }
+  if (result.status === "missing") {
+    els.audioPromptBtn.classList.add("audio-error");
+    els.audioPromptBtn.textContent = "此词暂无统一发音";
+    els.audioPromptBtn.disabled = true;
+    els.feedback.textContent = "自定义词暂未生成统一发音，可点击“不会”跳过本题。";
+    return;
+  }
+  els.audioPromptBtn.classList.add("audio-error");
+  els.audioPromptBtn.textContent = "重试发音";
+  els.feedback.textContent = "音频没有加载成功，请检查网络后点击重试。";
 }
 
 async function prepareTrainingPrompt(promptToken) {
@@ -1174,35 +1189,44 @@ async function prepareTrainingPrompt(promptToken) {
   if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
 
   if (session.mode === "audioToZhChoice") {
-    els.feedback.textContent = "正在播放发音，结束后可作答。";
-    const played = await speakTrainingWord(session.current);
+    els.feedback.textContent = "正在播放统一美式发音，结束后可作答。";
+    els.audioPromptBtn.setAttribute("aria-busy", "true");
+    const result = await pronunciationPlayer.playWord(session.current);
     if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
-    if (!played) {
-      els.word.textContent = session.current.en;
-      els.feedback.textContent = "当前浏览器无法播放发音，已显示英文题目。";
-    } else {
-      els.feedback.textContent = "发音播放完毕，请选择中文意思。";
+    if (result.status !== "played") {
+      showAudioRecovery(result);
+      return;
     }
     els.audioPromptBtn.disabled = false;
+    els.audioPromptBtn.setAttribute("aria-busy", "false");
     els.audioPromptBtn.textContent = "再听一次";
+    els.feedback.textContent = "发音播放完毕，请选择中文意思。";
+    startTrainingTimerAfterAudio(session);
   } else {
     els.feedback.textContent = "计时中。";
+    startTrainingTimerAfterAudio(session);
   }
-
-  session.startedAt = performance.now();
-  session.timingReady = true;
-  setTrainingChoicesEnabled(true);
-  startTimer();
 }
 
 async function replayAudioPrompt() {
   const session = state.session;
   if (!session?.current || session.mode !== "audioToZhChoice" || session.answered) return;
+  els.audioPromptBtn.classList.remove("needs-gesture", "audio-error");
   els.audioPromptBtn.disabled = true;
-  const played = await speakTrainingWord(session.current);
+  els.audioPromptBtn.setAttribute("aria-busy", "true");
+  els.audioPromptBtn.textContent = "正在播放";
+  els.feedback.textContent = "正在播放统一美式发音。";
+  const result = await pronunciationPlayer.playWord(session.current);
   if (!state.session || state.session !== session || session.answered) return;
+  if (result.status !== "played") {
+    showAudioRecovery(result);
+    return;
+  }
   els.audioPromptBtn.disabled = false;
-  els.audioPromptBtn.textContent = played ? "再听一次" : "发音不可用";
+  els.audioPromptBtn.setAttribute("aria-busy", "false");
+  els.audioPromptBtn.textContent = "再听一次";
+  els.feedback.textContent = "发音播放完毕，请选择中文意思。";
+  startTrainingTimerAfterAudio(session);
 }
 
 function startTimer() {
@@ -2799,13 +2823,22 @@ function clearAllTimers() {
   if (state.session?.advanceTimerId) { clearTimeout(state.session.advanceTimerId); state.session.advanceTimerId = 0; }
   if (state.quiz?.timerId) { clearInterval(state.quiz.timerId); state.quiz.timerId = 0; }
   if (state.quiz?.advanceTimerId) { clearTimeout(state.quiz.advanceTimerId); state.quiz.advanceTimerId = 0; }
-  window.speechSynthesis?.cancel();
+  pronunciationPlayer.stop();
 }
 
 async function init() {
   bindEvents();
+  document.addEventListener("WeixinJSBridgeReady", () => {
+    if (els.practiceMode.value === "audioToZhChoice") pronunciationPlayer.prime();
+  }, { once: true });
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) clearAllTimers();
+    if (document.hidden) {
+      clearAllTimers();
+      return;
+    }
+    if (state.session?.mode === "audioToZhChoice" && !state.session.answered && !state.session.timingReady) {
+      showAudioRecovery({ status: "blocked" });
+    }
   });
   try {
     state.db = await openDb();

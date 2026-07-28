@@ -14,9 +14,15 @@ assert.ok(html.includes('class="mobile-nav"'), "mobile bottom navigation should 
 
 const promptPreparation = app.indexOf("async function prepareTrainingPrompt");
 const painted = app.indexOf("await waitForPaint()", promptPreparation);
-const timerStart = app.indexOf("session.startedAt = performance.now()", promptPreparation);
-assert.ok(promptPreparation >= 0 && painted > promptPreparation && timerStart > painted, "timer must start after prompt rendering");
+const timerStart = app.indexOf("startTrainingTimerAfterAudio(session)", painted);
+assert.ok(promptPreparation >= 0 && painted > promptPreparation && timerStart > painted, "timer must start after prompt rendering and audio");
 assert.ok(app.includes('session.mode === "audioToZhChoice"'), "audio prompt behavior should be implemented");
+assert.ok(app.includes('result.status === "blocked"'), "blocked autoplay should offer a direct-tap recovery");
+assert.ok(app.includes("pronunciationPlayer.playWord"), "audio training should use static pronunciation assets");
+assert.ok(
+  app.includes('selected === "audioToZhChoice" && word?.sourceType !== "builtin"'),
+  "custom imports should fall back to a visible prompt instead of a missing audio file"
+);
 assert.ok(app.includes("revealContextSentence(word)"), "context sentence should reveal after answering");
 const transitionDelay = app.match(/const CORRECT_ADVANCE_DELAY_MS = (\d+);/);
 assert.ok(transitionDelay, "correct-answer transition delay should be explicit");

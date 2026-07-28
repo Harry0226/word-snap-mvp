@@ -2,6 +2,7 @@
   "name": "word-snap-workspace",
   "private": true,
   "scripts": {
+    "build:audio": "python tools/build_pronunciation_audio.py --prune",
     "sync": "node tools/sync_web_bundle.js",
     "check:sync": "node tools/sync_web_bundle.js --check",
     "test": "node tools/run_web_checks.js"

@@ -8,15 +8,18 @@
   <meta name="theme-color" content="#f6f7f9">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260728-learning-upgrade">
+  <link rel="stylesheet" href="./styles.css?v=20260729-static-audio-v1">
+  <link rel="preload" href="./audio/unlock.mp3" as="audio" type="audio/mpeg">
   <script defer src="./word-data/builtin-manifest.js?v=20260728-context-v1"></script>
+  <script defer src="./pronunciation-audio-config.js?v=20260729-static-audio-v1"></script>
+  <script defer src="./pronunciation-audio.js?v=20260729-static-audio-v1"></script>
   <script defer src="./asset-loader.js?v=20260715-session-choice-fix"></script>
   <script defer src="./rotation-queue.js?v=20260715-session-choice-fix"></script>
   <script defer src="./choice-distractors.js?v=20260724-summer-merge"></script>
   <script defer src="./daily-streaks.js?v=20260724-daily300-v2"></script>
   <script defer src="./vendor/ts-fsrs.umd.js?v=5.4.1"></script>
   <script defer src="./daily-learning.js?v=20260728-adaptive"></script>
-  <script defer src="./app.js?v=20260728-context-v1"></script>
+  <script defer src="./app.js?v=20260729-static-audio-v1"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -92,9 +95,9 @@
         </label>
         <label>训练模式
           <select id="practiceMode">
-            <option value="enToZhChoice" selected>看英文选中文</option>
+            <option value="audioToZhChoice" selected>听发音选中文（统一美式）</option>
+            <option value="enToZhChoice">看英文选中文</option>
             <option value="zhToEnChoice">看中文选英文</option>
-            <option value="audioToZhChoice">听发音选中文</option>
             <option value="auto">智能双选</option>
           </select>
         </label>
@@ -140,6 +143,7 @@
           <span id="tag">分层训练</span>
           <h2 id="word">Ready?</h2>
           <button id="audioPromptBtn" class="audio-prompt-button secondary" type="button" hidden>播放发音</button>
+          <audio id="pronunciationAudio" preload="auto" playsinline webkit-playsinline hidden></audio>
           <p id="hint">系统会按新词、弱词、到期复习词自动组一轮。</p>
           <p id="contextSentence" class="context-sentence" hidden></p>
         </article>

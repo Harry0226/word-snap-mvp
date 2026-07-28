@@ -1,4 +1,5 @@
 const fs = require("fs");
+const http = require("http");
 const os = require("os");
 const path = require("path");
 const { spawn } = require("child_process");
@@ -8,8 +9,58 @@ const siteUrl = process.env.WORD_SNAP_URL || "http://127.0.0.1:8765/";
 const outputRoot = process.env.WORD_SNAP_SCREENSHOTS || path.join(os.tmpdir(), "word-snap-browser-check");
 const profileRoot = fs.mkdtempSync(path.join(os.tmpdir(), "word-snap-edge-"));
 const debugPort = 9337;
+let localServer;
+let localServerReady;
 
 fs.mkdirSync(outputRoot, { recursive: true });
+
+if (!process.env.WORD_SNAP_URL) {
+  const siteRoot = path.resolve(__dirname, "..", "docs");
+  const contentTypes = {
+    ".css": "text/css; charset=utf-8",
+    ".html": "text/html; charset=utf-8",
+    ".js": "text/javascript; charset=utf-8",
+    ".json": "application/json; charset=utf-8",
+    ".mp3": "audio/mpeg"
+  };
+  localServer = http.createServer((request, response) => {
+    const pathname = decodeURIComponent(new URL(request.url, siteUrl).pathname);
+    const requestedPath = pathname === "/" ? "/index.html" : pathname;
+    const filePath = path.resolve(siteRoot, `.${requestedPath}`);
+    if (!filePath.startsWith(`${siteRoot}${path.sep}`) || !fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+      response.writeHead(404).end("Not found");
+      return;
+    }
+    const fileSize = fs.statSync(filePath).size;
+    const headers = {
+      "Accept-Ranges": "bytes",
+      "Content-Type": contentTypes[path.extname(filePath).toLowerCase()] || "application/octet-stream"
+    };
+    const range = request.headers.range;
+    if (range) {
+      const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+      const start = match && match[1] ? Number(match[1]) : 0;
+      const end = match && match[2] ? Math.min(Number(match[2]), fileSize - 1) : fileSize - 1;
+      if (!match || start > end || start >= fileSize) {
+        response.writeHead(416, { "Content-Range": `bytes */${fileSize}` }).end();
+        return;
+      }
+      response.writeHead(206, {
+        ...headers,
+        "Content-Length": end - start + 1,
+        "Content-Range": `bytes ${start}-${end}/${fileSize}`
+      });
+      fs.createReadStream(filePath, { start, end }).pipe(response);
+      return;
+    }
+    response.writeHead(200, { ...headers, "Content-Length": fileSize });
+    fs.createReadStream(filePath).pipe(response);
+  });
+  localServerReady = new Promise((resolve, reject) => {
+    localServer.once("error", reject);
+    localServer.listen(8765, "127.0.0.1", resolve);
+  });
+}
 
 const edge = spawn(edgePath, [
   "--headless=new",
@@ -37,7 +88,26 @@ async function waitForJson(url, options) {
   throw lastError || new Error(`Timed out waiting for ${url}`);
 }
 
+async function waitForOk(url) {
+  let lastError;
+  for (let attempt = 0; attempt < 40; attempt += 1) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) return;
+      lastError = new Error(`HTTP ${response.status}`);
+    } catch (error) {
+      lastError = error;
+    }
+    await delay(250);
+  }
+  throw lastError || new Error(`Timed out waiting for ${url}`);
+}
+
 async function run() {
+  if (localServer) {
+    await localServerReady;
+    await waitForOk(siteUrl);
+  }
   await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
   const target = await waitForJson(
     `http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent(`${siteUrl}?browser-check=${Date.now()}`)}`,
@@ -69,11 +139,12 @@ async function run() {
     pending.set(id, { resolve, reject });
     socket.send(JSON.stringify({ id, method, params }));
   });
-  const evaluate = async (expression) => {
+  const evaluate = async (expression, userGesture = false) => {
     const result = await command("Runtime.evaluate", {
       expression,
       awaitPromise: true,
-      returnByValue: true
+      returnByValue: true,
+      userGesture
     });
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.text);
     return result.result.value;
@@ -131,12 +202,26 @@ async function run() {
     const mode = document.querySelector("#practiceMode");
     mode.value = "audioToZhChoice";
     mode.dispatchEvent(new Event("change", { bubbles: true }));
+    window.__originalPronunciationPlayWord = pronunciationPlayer.playWord.bind(pronunciationPlayer);
+    pronunciationPlayer.playWord = async () => ({ status: "blocked" });
     document.querySelector("#startDailyTaskBtn").click();
-  })()`);
+  })()`, true);
   await waitFor(
     `document.querySelector("#word")?.textContent === "听发音" && document.querySelectorAll("#choices button").length === 4`,
     "audio question"
   );
+  await waitFor(
+    `document.querySelector("#audioPromptBtn")?.textContent.includes("点一下") && [...document.querySelectorAll("#choices button")].every((button) => button.disabled)`,
+    "blocked autoplay recovery"
+  );
+  const recovery = await evaluate(`(() => ({
+    button: document.querySelector("#audioPromptBtn").textContent,
+    feedback: document.querySelector("#feedback").textContent
+  }))()`);
+  await evaluate(`(() => {
+    pronunciationPlayer.playWord = window.__originalPronunciationPlayWord;
+    document.querySelector("#audioPromptBtn").click();
+  })()`, true);
   await waitFor(
     `[...document.querySelectorAll("#choices button")].every((button) => !button.disabled)`,
     "audio prompt completion",
@@ -180,7 +265,7 @@ async function run() {
   const answerShot = await screenshot("mobile-next-word.png");
 
   if (browserErrors.length) throw new Error(`Browser exceptions: ${browserErrors.join("; ")}`);
-  console.log(JSON.stringify({ initial, training, answered, screenshots: [initialShot, answerShot] }, null, 2));
+  console.log(JSON.stringify({ initial, recovery, training, answered, screenshots: [initialShot, answerShot] }, null, 2));
   socket.close();
 }
 
@@ -191,6 +276,7 @@ run()
   })
   .finally(async () => {
     edge.kill();
+    if (localServer) localServer.close();
     await delay(500);
     fs.rmSync(profileRoot, { recursive: true, force: true });
   });
