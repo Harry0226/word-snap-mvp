@@ -17,8 +17,9 @@ import numpy as np
 from build_context_sentences import load_manifest_files, load_stage_rows
 
 
-AUDIO_VERSION = "20260729-kokoro-af-heart-v1"
-VOICE = "af_heart"
+AUDIO_VERSION = "20260729-kokoro-bf-emma-en-gb-v1"
+VOICE = "bf_emma"
+VOICE_LABEL = "统一英式女声"
 SAMPLE_RATE = 24_000
 MP3_BITRATE_KBPS = 48
 LEADING_SILENCE_MS = 80
@@ -130,7 +131,7 @@ def write_config(path: Path, term_count: int, base_url: str) -> None:
     payload = {
         "version": AUDIO_VERSION,
         "voice": VOICE,
-        "voiceLabel": "统一美式女声",
+        "voiceLabel": VOICE_LABEL,
         "format": "audio/mpeg",
         "termCount": term_count,
         "baseUrl": base_url,
@@ -170,10 +171,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage-root", type=Path, default=Path("docs/word-data/stages"))
     parser.add_argument("--manifest", type=Path, default=Path("docs/word-data/builtin-manifest.js"))
-    parser.add_argument("--output-root", type=Path, default=Path("docs/audio/en-v1"))
+    parser.add_argument("--output-root", type=Path, default=Path("docs/audio/en-gb-v1"))
     parser.add_argument("--config", type=Path, default=Path("docs/pronunciation-audio-config.js"))
     parser.add_argument("--model", type=Path, default=model_root / "kokoro-quantized-v1.onnx")
-    parser.add_argument("--voice", type=Path, default=model_root / "af_heart.bin")
+    parser.add_argument("--voice", type=Path, default=model_root / "bf_emma.bin")
     parser.add_argument("--provider", choices=("cpu", "cuda", "dml"), default="cpu")
     parser.add_argument("--intra-threads", type=int, default=2)
     parser.add_argument("--limit", type=int, default=0)
@@ -278,7 +279,7 @@ def main() -> None:
                 spoken_text(term),
                 voice=VOICE,
                 speed=0.92,
-                lang="en-us",
+                lang="en-gb",
             )
             output.write_bytes(encode_mp3(samples, sample_rate))
             generated += 1

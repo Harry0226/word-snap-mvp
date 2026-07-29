@@ -20,6 +20,14 @@ assert.ok(app.includes('session.mode === "audioToZhChoice"'), "audio prompt beha
 assert.ok(app.includes('result.status === "blocked"'), "blocked autoplay should offer a direct-tap recovery");
 assert.ok(app.includes("pronunciationPlayer.playWord"), "audio training should use static pronunciation assets");
 assert.ok(
+  app.includes("session?.answered && session.lastAnswerCorrect === false"),
+  "a wrong audio answer should keep the replay control available"
+);
+assert.ok(
+  app.includes("if (isWrongReview)"),
+  "wrong-answer replay should not restart the timer or unlock answered choices"
+);
+assert.ok(
   app.includes('selected === "audioToZhChoice" && word?.sourceType !== "builtin"'),
   "custom imports should fall back to a visible prompt instead of a missing audio file"
 );

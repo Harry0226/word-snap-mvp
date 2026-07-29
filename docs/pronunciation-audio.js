@@ -42,7 +42,7 @@
     if (!word || word.sourceType !== "builtin") return "";
     const config = global.WORD_SNAP_AUDIO_CONFIG || {};
     const filename = audioFileNameForTerm(word.en);
-    return filename ? `${config.baseUrl || "./audio/en-v1/"}${filename}` : "";
+    return filename ? `${config.baseUrl || "./audio/en-gb-v1/"}${filename}` : "";
   }
 
   class PronunciationAudioPlayer {

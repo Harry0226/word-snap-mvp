@@ -1085,6 +1085,8 @@ function nextWord() {
   hideTrainContinueButton();
   session.answered = false;
   session.timingReady = false;
+  session.lastAnswerCorrect = null;
+  session.lastAnswerFeedback = "";
   session.promptToken += 1;
   session.current = session.queue.shift();
   if (!session.current) return finishSession();
@@ -1138,7 +1140,7 @@ function hintForMode(mode, word) {
   if (mode === "customChoice") return word.notes || "根据题干选择最匹配的答案。2 秒内算秒选，超过 3.5 秒为慢词。";
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
   if (mode === "enToZhChoice") return detail || "看英文选中文。2 秒内算秒选，超过 3.5 秒为慢词。";
-  if (mode === "audioToZhChoice") return "听统一美式发音后选中文。发音结束后开始计时。";
+  if (mode === "audioToZhChoice") return "听符合教材的英式发音后选中文。发音结束后开始计时。";
   return "看中文选英文。2 秒内算秒选，超过 3.5 秒为慢词。";
 }
 
@@ -1189,7 +1191,7 @@ async function prepareTrainingPrompt(promptToken) {
   if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
 
   if (session.mode === "audioToZhChoice") {
-    els.feedback.textContent = "正在播放统一美式发音，结束后可作答。";
+    els.feedback.textContent = "正在播放统一英式发音，结束后可作答。";
     els.audioPromptBtn.setAttribute("aria-busy", "true");
     const result = await pronunciationPlayer.playWord(session.current);
     if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
@@ -1210,14 +1212,16 @@ async function prepareTrainingPrompt(promptToken) {
 
 async function replayAudioPrompt() {
   const session = state.session;
-  if (!session?.current || session.mode !== "audioToZhChoice" || session.answered) return;
+  const isWrongReview = session?.answered && session.lastAnswerCorrect === false;
+  if (!session?.current || session.mode !== "audioToZhChoice" || (session.answered && !isWrongReview)) return;
+  const feedbackBeforeReplay = session.lastAnswerFeedback || els.feedback.textContent;
   els.audioPromptBtn.classList.remove("needs-gesture", "audio-error");
   els.audioPromptBtn.disabled = true;
   els.audioPromptBtn.setAttribute("aria-busy", "true");
   els.audioPromptBtn.textContent = "正在播放";
-  els.feedback.textContent = "正在播放统一美式发音。";
+  if (!isWrongReview) els.feedback.textContent = "正在播放统一英式发音。";
   const result = await pronunciationPlayer.playWord(session.current);
-  if (!state.session || state.session !== session || session.answered) return;
+  if (!state.session || state.session !== session || (session.answered && !isWrongReview)) return;
   if (result.status !== "played") {
     showAudioRecovery(result);
     return;
@@ -1225,8 +1229,12 @@ async function replayAudioPrompt() {
   els.audioPromptBtn.disabled = false;
   els.audioPromptBtn.setAttribute("aria-busy", "false");
   els.audioPromptBtn.textContent = "再听一次";
-  els.feedback.textContent = "发音播放完毕，请选择中文意思。";
-  startTrainingTimerAfterAudio(session);
+  if (isWrongReview) {
+    els.feedback.textContent = feedbackBeforeReplay;
+  } else {
+    els.feedback.textContent = "发音播放完毕，请选择中文意思。";
+    startTrainingTimerAfterAudio(session);
+  }
 }
 
 function startTimer() {
@@ -1457,11 +1465,12 @@ async function answer(value, button) {
   if (!session || session.answered || !session.current || !session.timingReady) return;
   session.answered = true;
   session.timingReady = false;
-  window.speechSynthesis?.cancel();
+  pronunciationPlayer.stop();
   clearInterval(session.timerId);
   const elapsed = performance.now() - session.startedAt;
   const word = session.current;
   const isCorrect = isCorrectAnswer(value, word, session.mode);
+  session.lastAnswerCorrect = isCorrect;
   const isFast = isCorrect && elapsed <= FAST_PICK_LIMIT;
   const isSlow = isCorrect && elapsed > SLOW_PICK_LIMIT;
   els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(2)} 秒 · ${isFast ? "秒选成功" : isSlow ? "已记慢词" : "答对未秒选"}`;
@@ -1472,7 +1481,8 @@ async function answer(value, button) {
   if (!isCorrect) session.wrongWords.push(word);
   if (isSlow) session.slowWords.push(word);
   paintChoices(value, button);
-  els.feedback.textContent = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
+  session.lastAnswerFeedback = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
+  els.feedback.textContent = session.lastAnswerFeedback;
   revealContextSentence(word);
   await recordAnswer(word, isCorrect, isFast, isSlow);
   await syncDailyTaskFromTraining(word, isCorrect, session);

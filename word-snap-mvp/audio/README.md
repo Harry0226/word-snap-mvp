@@ -4,7 +4,9 @@ The built-in vocabulary uses pre-generated, same-origin MP3 files so playback do
 not depend on each device's `speechSynthesis` implementation.
 
 - Model: Kokoro-82M v1.0
-- Voice: `af_heart` (American English, female)
+- Voice: `bf_emma` (British English, female)
+- Pronunciation language: `en-gb`, matching the British-English standard used by
+  the Oxford Yilin school materials
 - Model license: Apache-2.0
 - Runtime: `kokoro-onnx` (MIT)
 - Output: mono MP3, 24 kHz source, 48 kbps

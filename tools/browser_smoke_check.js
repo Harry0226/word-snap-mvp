@@ -242,6 +242,41 @@ async function run() {
   }
 
   await evaluate(`(() => {
+    window.__wordSnapWrongWordId = state.session.current.id;
+    const wrongChoice = [...document.querySelectorAll("#choices button")].find((button) => (
+      button.dataset.choiceId !== state.session.current.id
+      && button.dataset.choiceEnglish !== normalizeEnglishWord(state.session.current.en)
+    ));
+    wrongChoice.click();
+  })()`);
+  await waitFor(
+    `state.session.answered && state.session.lastAnswerCorrect === false && !document.querySelector("#trainContinueBtn").hidden`,
+    "wrong answer review state"
+  );
+  await evaluate(`document.querySelector("#audioPromptBtn").click()`, true);
+  await waitFor(
+    `document.querySelector("#audioPromptBtn").textContent === "再听一次" && !document.querySelector("#audioPromptBtn").disabled`,
+    "wrong answer audio replay",
+    10000
+  );
+  const wrongReplay = await evaluate(`(() => ({
+    feedback: document.querySelector("#feedback").textContent,
+    choicesLocked: [...document.querySelectorAll("#choices button")].every((button) => button.disabled),
+    continueVisible: !document.querySelector("#trainContinueBtn").hidden,
+    answered: state.session.answered
+  }))()`);
+  if (!wrongReplay.feedback.includes("错题") || !wrongReplay.choicesLocked || !wrongReplay.continueVisible || !wrongReplay.answered) {
+    throw new Error(`Wrong-answer replay changed the completed answer state: ${JSON.stringify(wrongReplay)}`);
+  }
+  const wrongReplayShot = await screenshot("mobile-wrong-replay.png");
+  await evaluate(`document.querySelector("#trainContinueBtn").click()`, true);
+  await waitFor(
+    `state.session.current?.id !== window.__wordSnapWrongWordId && [...document.querySelectorAll("#choices button")].every((button) => !button.disabled)`,
+    "next audio word after wrong-answer replay",
+    10000
+  );
+
+  await evaluate(`(() => {
     window.__wordSnapAnswerId = state.session.current.id;
     window.__wordSnapClickedAt = performance.now();
     document.querySelector(\`#choices button[data-choice-id="\${window.__wordSnapAnswerId}"]\`).click();
@@ -265,7 +300,14 @@ async function run() {
   const answerShot = await screenshot("mobile-next-word.png");
 
   if (browserErrors.length) throw new Error(`Browser exceptions: ${browserErrors.join("; ")}`);
-  console.log(JSON.stringify({ initial, recovery, training, answered, screenshots: [initialShot, answerShot] }, null, 2));
+  console.log(JSON.stringify({
+    initial,
+    recovery,
+    training,
+    wrongReplay,
+    answered,
+    screenshots: [initialShot, wrongReplayShot, answerShot]
+  }, null, 2));
   socket.close();
 }
 

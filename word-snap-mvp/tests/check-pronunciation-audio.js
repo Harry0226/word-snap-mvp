@@ -19,7 +19,7 @@ const context = {
   fetch: () => Promise.resolve(),
 };
 context.window.WORD_SNAP_AUDIO_CONFIG = {
-  baseUrl: "./audio/en-v1/",
+  baseUrl: "./audio/en-gb-v1/",
   unlockSrc: "./audio/unlock.mp3"
 };
 vm.createContext(context);
@@ -53,7 +53,8 @@ const configContext = { window: {} };
 vm.createContext(configContext);
 vm.runInContext(fs.readFileSync("pronunciation-audio-config.js", "utf8"), configContext);
 const config = configContext.window.WORD_SNAP_AUDIO_CONFIG;
-assert.strictEqual(config.voice, "af_heart");
+assert.strictEqual(config.voice, "bf_emma");
+assert.match(config.voiceLabel, /英式/, "the built-in audio should be labelled as British English");
 
 const dataContext = { window: {} };
 vm.createContext(dataContext);
@@ -74,7 +75,8 @@ for (const [stageName, entry] of Object.entries(manifest.stages)) {
     rows += 1;
     const term = audio.normalizeAudioTerm(word.en);
     const filename = audio.audioFileNameForTerm(term);
-    if (!filename || !fs.existsSync(path.join("audio", "en-v1", filename))) missing.add(term || word.en);
+    const audioRoot = config.baseUrl.replace(/^\.\//, "").replace(/\/$/, "");
+    if (!filename || !fs.existsSync(path.join(audioRoot, filename))) missing.add(term || word.en);
     const previous = names.get(filename);
     assert.ok(!previous || previous === term, `audio hash collision: ${previous} / ${term}`);
     names.set(filename, term);
@@ -86,7 +88,8 @@ assert.strictEqual(config.termCount, names.size, "audio config should report eve
 assert.ok(fs.statSync("audio/unlock.mp3").size > 500, "audio unlock file should be a real MP3");
 
 for (const filename of [...names.keys()].slice(0, 20)) {
-  const bytes = fs.readFileSync(path.join("audio", "en-v1", filename));
+  const audioRoot = config.baseUrl.replace(/^\.\//, "").replace(/\/$/, "");
+  const bytes = fs.readFileSync(path.join(audioRoot, filename));
   assert.ok(bytes.length > 900, `${filename} should contain playable audio`);
   assert.ok(
     bytes.subarray(0, 3).toString("ascii") === "ID3" || (bytes[0] === 0xff && (bytes[1] & 0xe0) === 0xe0),

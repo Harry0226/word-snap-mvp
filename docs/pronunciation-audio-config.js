@@ -1,9 +1,9 @@
 window.WORD_SNAP_AUDIO_CONFIG = {
-  "version": "20260729-kokoro-af-heart-v1",
-  "voice": "af_heart",
-  "voiceLabel": "统一美式女声",
+  "version": "20260729-kokoro-bf-emma-en-gb-v1",
+  "voice": "bf_emma",
+  "voiceLabel": "统一英式女声",
   "format": "audio/mpeg",
   "termCount": 4719,
-  "baseUrl": "./audio/en-v1/",
+  "baseUrl": "./audio/en-gb-v1/",
   "unlockSrc": "./audio/unlock.mp3"
 };
