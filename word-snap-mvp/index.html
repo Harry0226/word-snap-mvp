@@ -10,16 +10,16 @@
   <title>代老师带你秒懂词 - 分层刷词训练</title>
   <link rel="stylesheet" href="./styles.css?v=20260729-british-audio-v1">
   <link rel="preload" href="./audio/unlock.mp3" as="audio" type="audio/mpeg">
-  <script defer src="./word-data/builtin-manifest.js?v=20260728-context-v1"></script>
-  <script defer src="./pronunciation-audio-config.js?v=20260729-british-audio-v1"></script>
-  <script defer src="./pronunciation-audio.js?v=20260729-british-audio-v1"></script>
+  <script defer src="./word-data/builtin-manifest.js?v=20260731-curriculum-only-v1"></script>
+  <script defer src="./pronunciation-audio-config.js?v=20260731-clean-british-audio-v2"></script>
+  <script defer src="./pronunciation-audio.js?v=20260731-clean-british-audio-v2"></script>
   <script defer src="./asset-loader.js?v=20260715-session-choice-fix"></script>
   <script defer src="./rotation-queue.js?v=20260715-session-choice-fix"></script>
   <script defer src="./choice-distractors.js?v=20260724-summer-merge"></script>
   <script defer src="./daily-streaks.js?v=20260724-daily300-v2"></script>
   <script defer src="./vendor/ts-fsrs.umd.js?v=5.4.1"></script>
   <script defer src="./daily-learning.js?v=20260728-adaptive"></script>
-  <script defer src="./app.js?v=20260729-british-audio-v1"></script>
+  <script defer src="./app.js?v=20260731-curriculum-audio-v2"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -82,14 +82,13 @@
       <div class="panel controls-panel primary-controls">
         <label>学习阶段
           <select id="stageSelect">
-            <option value="初一暑期必背词汇">初一暑期必背词汇</option>
-            <option value="初二暑期必背词汇">初二暑期必背词汇</option>
-            <option value="初三暑期必背词汇" selected>初三暑期必背词汇</option>
+            <option value="初一课本单元词汇">初一课本单元词汇</option>
+            <option value="初二课本单元词汇">初二课本单元词汇</option>
+            <option value="初三课本单元词汇" selected>初三课本单元词汇</option>
             <option value="初中688高频词">初中688高频词</option>
-            <option value="高一暑期必背词汇">高一暑期必背词汇</option>
+            <option value="高一课本单元词汇">高一课本单元词汇</option>
             <option value="高一课改词库">高一课改词库</option>
-            <option value="高二暑期必背词汇">高二暑期必背词汇</option>
-            <option value="高三暑假必背词汇">高三暑假必背词汇</option>
+            <option value="高二课本单元词汇">高二课本单元词汇</option>
             <option value="高中3500刷词专栏">高中3500刷词专栏</option>
           </select>
         </label>
@@ -109,6 +108,7 @@
         <div class="controls-panel">
           <label>训练量
             <select id="sessionSize">
+              <option value="50">50 词</option>
               <option value="100">100 词</option>
               <option value="200" selected>200 词</option>
               <option value="300">300 词</option>
@@ -163,14 +163,13 @@
       <div class="panel battle-controls">
         <label>对战年级
           <select id="battleStage">
-            <option value="初一暑期必背词汇">初一暑期必背词汇</option>
-            <option value="初二暑期必背词汇">初二暑期必背词汇</option>
-            <option value="初三暑期必背词汇" selected>初三暑期必背词汇</option>
+            <option value="初一课本单元词汇">初一课本单元词汇</option>
+            <option value="初二课本单元词汇">初二课本单元词汇</option>
+            <option value="初三课本单元词汇" selected>初三课本单元词汇</option>
             <option value="初中688高频词">初中688高频词</option>
-            <option value="高一暑期必背词汇">高一暑期必背词汇</option>
+            <option value="高一课本单元词汇">高一课本单元词汇</option>
             <option value="高一课改词库">高一课改词库</option>
-            <option value="高二暑期必背词汇">高二暑期必背词汇</option>
-            <option value="高三暑假必背词汇">高三暑假必背词汇</option>
+            <option value="高二课本单元词汇">高二课本单元词汇</option>
             <option value="高中3500刷词专栏">高中3500刷词专栏</option>
           </select>
         </label>
@@ -244,14 +243,13 @@
         <div class="upload-grid">
           <label>保存到阶段
             <select id="uploadStage">
-              <option value="初一暑期必背词汇">初一暑期必背词汇</option>
-              <option value="初二暑期必背词汇">初二暑期必背词汇</option>
-              <option value="初三暑期必背词汇" selected>初三暑期必背词汇</option>
+              <option value="初一课本单元词汇">初一课本单元词汇</option>
+              <option value="初二课本单元词汇">初二课本单元词汇</option>
+              <option value="初三课本单元词汇" selected>初三课本单元词汇</option>
               <option value="初中688高频词">初中688高频词</option>
-              <option value="高一暑期必背词汇">高一暑期必背词汇</option>
+              <option value="高一课本单元词汇">高一课本单元词汇</option>
               <option value="高一课改词库">高一课改词库</option>
-              <option value="高二暑期必背词汇">高二暑期必背词汇</option>
-              <option value="高三暑假必背词汇">高三暑假必背词汇</option>
+              <option value="高二课本单元词汇">高二课本单元词汇</option>
               <option value="高中3500刷词专栏">高中3500刷词专栏</option>
             </select>
           </label>
@@ -336,13 +334,12 @@
         <div class="quiz-controls-row">
           <label>刷题年级
             <select id="quizStage">
-              <option value="初一暑期必背词汇">初一暑期必背词汇</option>
-              <option value="初二暑期必背词汇">初二暑期必背词汇</option>
-              <option value="初三暑期必背词汇" selected>初三暑期必背词汇</option>
-              <option value="高一暑期必背词汇">高一暑期必背词汇</option>
+              <option value="初一课本单元词汇">初一课本单元词汇</option>
+              <option value="初二课本单元词汇">初二课本单元词汇</option>
+              <option value="初三课本单元词汇" selected>初三课本单元词汇</option>
+              <option value="高一课本单元词汇">高一课本单元词汇</option>
               <option value="高一课改词库">高一课改词库</option>
-              <option value="高二暑期必背词汇">高二暑期必背词汇</option>
-              <option value="高三暑假必背词汇">高三暑假必背词汇</option>
+              <option value="高二课本单元词汇">高二课本单元词汇</option>
               <option value="高中3500刷词专栏">高中3500刷词专栏</option>
             </select>
           </label>

@@ -32,15 +32,18 @@ Object.values(manifest.stages).forEach((entry) => {
 });
 
 const plans = {
-  "初一暑期必背词汇": ["初一课内词汇", "初一考试词汇", "初中688高频词"],
-  "初二暑期必背词汇": ["初二课内词汇", "初二考试词汇", "初中688高频词"],
-  "初三暑期必背词汇": ["初三课内词汇", "初三考试词汇", "初中688高频词"],
-  "高一暑期必背词汇": ["高一课内词汇", "高一考试词汇", "高一课改词库"],
-  "高二暑期必背词汇": ["高二课内词汇", "高二考试词汇"],
-  "高三暑假必背词汇": [
-    "高一课内词汇", "高一考试词汇", "高一课改词库",
-    "高二课内词汇", "高二考试词汇", "高三考试词汇"
-  ]
+  "初一课本单元词汇": ["初一课内词汇"],
+  "初二课本单元词汇": ["初二课内词汇"],
+  "初三课本单元词汇": ["初三课内词汇"],
+  "高一课本单元词汇": ["高一课内词汇"],
+  "高二课本单元词汇": ["高二课内词汇"]
+};
+const legacyStageNames = {
+  "初一课本单元词汇": "初一暑期必背词汇",
+  "初二课本单元词汇": "初二暑期必背词汇",
+  "初三课本单元词汇": "初三暑期必背词汇",
+  "高一课本单元词汇": "高一暑期必背词汇",
+  "高二课本单元词汇": "高二暑期必背词汇"
 };
 const canonicalStages = [...Object.keys(plans).slice(0, 3), "初中688高频词", ...Object.keys(plans).slice(3)];
 const appStagesExpected = [
@@ -57,6 +60,7 @@ function normalizeEnglish(value) {
 for (const [target, sources] of Object.entries(plans)) {
   const list = context.window.WORD_SNAP_STAGE_LISTS[target];
   assert(list, `${target} should have a generated stage asset`);
+  assert.strictEqual(list.idGrade, legacyStageNames[target], `${target} should preserve compatible learning-record IDs`);
   assert.deepStrictEqual(Array.from(list.sources), sources, `${target} should record all merged source stages`);
 
   const expected = new Map();
@@ -81,17 +85,22 @@ for (const [target, sources] of Object.entries(plans)) {
 }
 
 assert.strictEqual(manifest.stages["初中688高频词"].count, 688, "the standalone junior 688 stage should remain unchanged");
-for (const stage of ["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇"]) {
-  assert(plans[stage].includes("初中688高频词"), `${stage} should include all junior 688 words`);
+assert.strictEqual(manifest.stages["高一课改词库"].count, 298, "the standalone grade 10 curriculum-reform stage should remain unchanged");
+assert.strictEqual(manifest.stages["高中3500刷词专栏"].count, 3515, "the high-school 3500 stage should remain unchanged");
+assert(!manifest.stages["高三暑假必背词汇"], "the grade 12 summer stage should be removed");
+for (const stage of Object.keys(plans)) {
+  assert.strictEqual(plans[stage].length, 1, `${stage} should contain only its original in-class source`);
+  assert.match(plans[stage][0], /课内词汇$/, `${stage} should not include exam or supplemental vocabulary`);
 }
-assert(!plans["高三暑假必背词汇"].includes("初中688高频词"), "high school cumulative vocabulary must not absorb the junior 688 stage");
 const appStages = JSON.parse(app.match(/^const STAGES = (\[[^\n]+\]);/m)?.[1] || "[]");
 assert.deepStrictEqual(appStages, appStagesExpected, "app should expose merged summer stages and standalone study columns");
+assert(app.includes("RENAMED_STAGE_LEGACY_NAMES"), "renamed stages should retain progress for surviving in-class words");
 
 for (const selectId of ["stageSelect", "battleStage", "uploadStage"]) {
   const select = index.match(new RegExp(`<select id="${selectId}">[\\s\\S]*?<\\/select>`))?.[0] || "";
   appStagesExpected.forEach((stage) => assert(select.includes(`value="${stage}"`), `${selectId} should expose ${stage}`));
   assert.strictEqual((select.match(/<option /g) || []).length, appStagesExpected.length, `${selectId} should expose the complete stage registry`);
+  assert(!select.includes("暑期必背词汇") && !select.includes("暑假必背词汇"), `${selectId} should not expose legacy summer stages`);
 }
 
-console.log("summer stage merge checks passed");
+console.log("curriculum-only stage checks passed");

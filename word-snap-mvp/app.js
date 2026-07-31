@@ -1,7 +1,8 @@
-const STAGES = ["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇", "初中688高频词", "高一暑期必背词汇", "高一课改词库", "高二暑期必背词汇", "高三暑假必背词汇", "高中3500刷词专栏"];
+const STAGES = ["初一课本单元词汇", "初二课本单元词汇", "初三课本单元词汇", "初中688高频词", "高一课本单元词汇", "高一课改词库", "高二课本单元词汇", "高中3500刷词专栏"];
+const RENAMED_STAGE_LEGACY_NAMES = new Set(["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇", "高一暑期必背词汇", "高二暑期必背词汇"]);
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
-const BUILTIN_SEED_VERSION = 20;
+const BUILTIN_SEED_VERSION = 21;
 const FAST_PICK_LIMIT = 2000;
 const SLOW_PICK_LIMIT = 3500;
 const CORRECT_ADVANCE_DELAY_MS = 180;
@@ -40,12 +41,12 @@ const GRADE8_QUIZ_COUNT = 239;
 const GRADE10_QUIZ_COUNT = 153;
 const GRADE11_QUIZ_COUNT = 129;
 const QUIZ_BANK_SCRIPTS = {
-  "初一暑期必背词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
-  "初二暑期必背词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
-  "初三暑期必背词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
-  "高一暑期必背词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
+  "初一课本单元词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
+  "初二课本单元词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
+  "初三课本单元词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
+  "高一课本单元词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
   "高一课改词库": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
-  "高二暑期必背词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
+  "高二课本单元词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
 };
 
 const state = {
@@ -325,9 +326,10 @@ function slugWord(value) {
 }
 
 function normalizeBuiltinWord(word, index, list) {
-  const grade = list.grade || "初三暑期必背词汇";
-  const source = list.source || "初三暑期必背词汇";
-  const stageKey = encodeURIComponent(grade).replace(/%/g, "").toLowerCase();
+  const grade = list.grade || "初三课本单元词汇";
+  const source = list.source || "初三课本单元词汇";
+  const idGrade = list.idGrade || grade;
+  const stageKey = encodeURIComponent(idGrade).replace(/%/g, "").toLowerCase();
   const id = list.legacyIds
     ? `builtin-${word.en.toLowerCase()}`
     : `builtin-${stageKey}-${String(index + 1).padStart(4, "0")}-${slugWord(word.en)}`;
@@ -449,7 +451,9 @@ async function seedBuiltinWords() {
   const canonicalStages = new Set(STAGES);
   const legacyBuiltinWords = allWords.filter((word) => word.sourceType === "builtin" && !canonicalStages.has(word.grade));
   if (legacyBuiltinWords.length) {
-    const legacyIds = new Set(legacyBuiltinWords.map((word) => word.id));
+    const staleLegacyIds = new Set(legacyBuiltinWords
+      .filter((word) => !RENAMED_STAGE_LEGACY_NAMES.has(word.grade))
+      .map((word) => word.id));
     await new Promise((resolve, reject) => {
       const transaction = state.db.transaction("words", "readwrite");
       const store = transaction.objectStore("words");
@@ -457,7 +461,9 @@ async function seedBuiltinWords() {
       transaction.oncomplete = resolve;
       transaction.onerror = () => reject(transaction.error);
     });
-    await deleteRecordsByWordIds(legacyIds);
+    // Renamed curriculum stages deliberately reuse their old IDs, preserving progress
+    // for the in-class words that remain. Removed stages such as grade 12 are cleared.
+    await deleteRecordsByWordIds(staleLegacyIds);
   }
   await put("meta", { key: "builtinSeedVersion", value: BUILTIN_SEED_VERSION, at: Date.now() });
   await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
@@ -1001,6 +1007,7 @@ function updateTrainingEstimate() {
 function updateSessionSizeOptions() {
   const previous = els.sessionSize.value || "200";
   const options = [
+    ["50", "50 词"],
     ["100", "100 词"],
     ["200", "200 词"],
     ["300", "300 词"],
@@ -1867,12 +1874,12 @@ function resetBattle() {
 }
 
 function getQuizSentenceData(grade) {
-  if (grade === "初一暑期必背词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
-  if (grade === "初二暑期必背词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
-  if (grade === "初三暑期必背词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
-  if (grade === "高一暑期必背词汇") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
+  if (grade === "初一课本单元词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
+  if (grade === "初二课本单元词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
+  if (grade === "初三课本单元词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
+  if (grade === "高一课本单元词汇") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
   if (grade === "高一课改词库") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
-  if (grade === "高二暑期必背词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
+  if (grade === "高二课本单元词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
   return [];
 }
 
@@ -1895,12 +1902,12 @@ async function ensureQuizBankLoaded(grade) {
 }
 
 function getExpectedQuizCount(grade) {
-  if (grade === "初一暑期必背词汇") return GRADE7_QUIZ_COUNT;
-  if (grade === "初二暑期必背词汇") return GRADE8_QUIZ_COUNT;
-  if (grade === "初三暑期必背词汇") return 340;
-  if (grade === "高一暑期必背词汇") return GRADE10_QUIZ_COUNT;
+  if (grade === "初一课本单元词汇") return GRADE7_QUIZ_COUNT;
+  if (grade === "初二课本单元词汇") return GRADE8_QUIZ_COUNT;
+  if (grade === "初三课本单元词汇") return 340;
+  if (grade === "高一课本单元词汇") return GRADE10_QUIZ_COUNT;
   if (grade === "高一课改词库") return GRADE10_QUIZ_COUNT;
-  if (grade === "高二暑期必背词汇") return GRADE11_QUIZ_COUNT;
+  if (grade === "高二课本单元词汇") return GRADE11_QUIZ_COUNT;
   return 0;
 }
 
@@ -1915,13 +1922,12 @@ function getQuizBankTotal(grade) {
 function getQuizWrongCount(grade) {
   return [...state.quizWrongRecords.values()].filter((record) => {
     if (record.grade) return record.grade === grade;
-    if (grade === "初一暑期必背词汇") return String(record.questionId || "").startsWith("g7-");
-    if (grade === "初二暑期必背词汇") return String(record.questionId || "").startsWith("g8-");
-    if (grade === "初三暑期必背词汇") return String(record.questionId || "").startsWith("g9-");
-    if (grade === "高一暑期必背词汇") return String(record.questionId || "").startsWith("g10-");
+    if (grade === "初一课本单元词汇") return String(record.questionId || "").startsWith("g7-");
+    if (grade === "初二课本单元词汇") return String(record.questionId || "").startsWith("g8-");
+    if (grade === "初三课本单元词汇") return String(record.questionId || "").startsWith("g9-");
+    if (grade === "高一课本单元词汇") return String(record.questionId || "").startsWith("g10-");
     if (grade === "高一课改词库") return String(record.questionId || "").startsWith("g10-");
-    if (grade === "高二暑期必背词汇") return String(record.questionId || "").startsWith("g11-");
-    if (grade === "高三暑假必背词汇") return String(record.questionId || "").startsWith("g12-");
+    if (grade === "高二课本单元词汇") return String(record.questionId || "").startsWith("g11-");
     return false;
   }).length;
 }

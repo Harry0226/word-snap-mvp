@@ -9,44 +9,39 @@ const outputRoots = [appRoot, path.join(repositoryRoot, "docs")];
 
 const stagePlans = [
   {
-    grade: "初一暑期必背词汇",
+    grade: "初一课本单元词汇",
+    idGrade: "初一暑期必背词汇",
     filename: "grade7-summer-required.js",
-    source: "初一暑期必背词汇（课内外 + 初中688高频词）",
-    sources: ["初一课内词汇", "初一考试词汇", "初中688高频词"]
+    source: "初一课本单元词汇（原课内词汇）",
+    sources: ["初一课内词汇"]
   },
   {
-    grade: "初二暑期必背词汇",
+    grade: "初二课本单元词汇",
+    idGrade: "初二暑期必背词汇",
     filename: "grade8-summer-required.js",
-    source: "初二暑期必背词汇（课内外 + 初中688高频词）",
-    sources: ["初二课内词汇", "初二考试词汇", "初中688高频词"]
+    source: "初二课本单元词汇（原课内词汇）",
+    sources: ["初二课内词汇"]
   },
   {
-    grade: "初三暑期必背词汇",
+    grade: "初三课本单元词汇",
+    idGrade: "初三暑期必背词汇",
     filename: "grade9-summer-required.js",
-    source: "初三暑期必背词汇（课内外 + 初中688高频词）",
-    sources: ["初三课内词汇", "初三考试词汇", "初中688高频词"]
+    source: "初三课本单元词汇（原课内词汇）",
+    sources: ["初三课内词汇"]
   },
   {
-    grade: "高一暑期必背词汇",
+    grade: "高一课本单元词汇",
+    idGrade: "高一暑期必背词汇",
     filename: "grade10-summer-required.js",
-    sources: ["高一课内词汇", "高一考试词汇", "高一课改词库"]
+    source: "高一课本单元词汇（原课内词汇）",
+    sources: ["高一课内词汇"]
   },
   {
-    grade: "高二暑期必背词汇",
+    grade: "高二课本单元词汇",
+    idGrade: "高二暑期必背词汇",
     filename: "grade11-summer-required.js",
-    sources: ["高二课内词汇", "高二考试词汇"]
-  },
-  {
-    grade: "高三暑假必背词汇",
-    filename: "grade12-summer-required.js",
-    sources: [
-      "高一课内词汇",
-      "高一考试词汇",
-      "高一课改词库",
-      "高二课内词汇",
-      "高二考试词汇",
-      "高三考试词汇"
-    ]
+    source: "高二课本单元词汇（原课内词汇）",
+    sources: ["高二课内词汇"]
   }
 ];
 
@@ -116,6 +111,7 @@ function mergeWords(sourceNames, lists) {
 function renderStage(plan, words) {
   const list = {
     grade: plan.grade,
+    idGrade: plan.idGrade,
     goals: [plan.grade],
     source: plan.source || `${plan.grade}（课内外整合）`,
     sources: plan.sources,

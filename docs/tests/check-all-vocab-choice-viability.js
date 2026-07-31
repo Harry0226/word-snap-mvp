@@ -32,5 +32,5 @@ Object.values(context.window.WORD_SNAP_STAGE_LISTS || {}).forEach((list) => {
   });
 });
 
-assert(checked > 13000, "the full built-in vocabulary should be covered");
+assert(checked > 11800, "the full built-in vocabulary should be covered");
 console.log(`all-vocabulary choice viability checks passed (${checked} questions)`);

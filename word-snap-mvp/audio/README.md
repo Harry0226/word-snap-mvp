@@ -3,13 +3,12 @@
 The built-in vocabulary uses pre-generated, same-origin MP3 files so playback does
 not depend on each device's `speechSynthesis` implementation.
 
-- Model: Kokoro-82M v1.0
-- Voice: `bf_emma` (British English, female)
+- Service: Microsoft Edge neural text-to-speech (build time only)
+- Voice: `en-GB-SoniaNeural` (British English, female)
 - Pronunciation language: `en-gb`, matching the British-English standard used by
   the Oxford Yilin school materials
-- Model license: Apache-2.0
-- Runtime: `kokoro-onnx` (MIT)
-- Output: mono MP3, 24 kHz source, 48 kbps
+- Generator: `edge-tts` (LGPL-3.0)
+- Output: static mono MP3
 
-The model weights are build-time dependencies and are not shipped to students.
-Only the generated pronunciation clips are deployed.
+Only the generated pronunciation clips are deployed. Terms are synthesized without
+sentence punctuation so short-word audio does not gain a stray sentence-start sound.

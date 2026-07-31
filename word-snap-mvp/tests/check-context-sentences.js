@@ -19,7 +19,7 @@ const rows = Object.entries(manifest.stages).flatMap(([stage, entry]) => {
   return list.words.map((word) => ({ ...word, grade: stage }));
 });
 
-assert.strictEqual(rows.length, 12137, "all active built-in rows should be checked");
+assert.strictEqual(rows.length, 5931, "all active built-in rows should be checked");
 
 const unsafe = /\b(?:rape|porn|naked|nude|sexy|cocaine|heroin|meth|whore|prostitute|slut|fuck|fucking|shit|condom|penis|vagina)\b/i;
 const meta = /\b(?:used to mean|means? the same as|here,\s*[“"'])/i;
@@ -60,10 +60,8 @@ const brand = highSchool.find((word) => word.en === "brand");
 assert.ok(brand.contextSentence.includes("brand"), "brand context should use the target word naturally");
 assert.ok(!/used to mean/i.test(brand.contextSentence), "brand should not use the old definition template");
 
-const feedNoun = stageLists["初三暑期必背词汇"].words.find(
-  (word) => word.en === "feed" && word.zh === "饲料"
-);
-assert.match(feedNoun.contextSentence, /farmer|chickens|feed/i, "feed noun context should match 饲料");
+const feedVerb = stageLists["初二课本单元词汇"].words.find((word) => word.en === "feed");
+assert.match(feedVerb.contextSentence, /feed/i, "feed context should use the target word naturally");
 
 const license = fs.readFileSync("word-data/CONTEXT_SENTENCES_LICENSE.md", "utf8");
 assert.match(license, /Tatoeba/i, "context corpus attribution should ship with the site");

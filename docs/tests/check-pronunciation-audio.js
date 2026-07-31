@@ -53,7 +53,7 @@ const configContext = { window: {} };
 vm.createContext(configContext);
 vm.runInContext(fs.readFileSync("pronunciation-audio-config.js", "utf8"), configContext);
 const config = configContext.window.WORD_SNAP_AUDIO_CONFIG;
-assert.strictEqual(config.voice, "bf_emma");
+assert.strictEqual(config.voice, "en-GB-SoniaNeural");
 assert.match(config.voiceLabel, /英式/, "the built-in audio should be labelled as British English");
 
 const dataContext = { window: {} };
@@ -82,13 +82,22 @@ for (const [stageName, entry] of Object.entries(manifest.stages)) {
     names.set(filename, term);
   }
 }
-assert.strictEqual(rows, 12137);
+assert.strictEqual(rows, 5931);
 assert.deepStrictEqual([...missing], [], `missing built-in audio: ${[...missing].slice(0, 10).join(", ")}`);
 assert.strictEqual(config.termCount, names.size, "audio config should report every unique built-in term");
 assert.ok(fs.statSync("audio/unlock.mp3").size > 500, "audio unlock file should be a real MP3");
+const audioRoot = config.baseUrl.replace(/^\.\//, "").replace(/\/$/, "");
+assert.strictEqual(
+  fs.readdirSync(audioRoot).filter((filename) => filename.endsWith(".mp3")).length,
+  names.size,
+  "the audio folder should contain only active built-in terms"
+);
+
+const buildScript = fs.readFileSync(path.join("..", "tools", "build_pronunciation_audio.py"), "utf8");
+assert.ok(buildScript.includes('return expanded.strip()'), "terms should be synthesized without sentence wrappers");
+assert.ok(!buildScript.includes('expanded.strip().capitalize() + "."'), "short terms should not gain a synthetic sentence-start sound");
 
 for (const filename of [...names.keys()].slice(0, 20)) {
-  const audioRoot = config.baseUrl.replace(/^\.\//, "").replace(/\/$/, "");
   const bytes = fs.readFileSync(path.join(audioRoot, filename));
   assert.ok(bytes.length > 900, `${filename} should contain playable audio`);
   assert.ok(

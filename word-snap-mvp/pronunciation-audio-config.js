@@ -1,9 +1,9 @@
 window.WORD_SNAP_AUDIO_CONFIG = {
-  "version": "20260729-kokoro-bf-emma-en-gb-v1",
-  "voice": "bf_emma",
-  "voiceLabel": "统一英式女声",
+  "version": "20260731-edge-sonia-en-gb-v2",
+  "voice": "en-GB-SoniaNeural",
+  "voiceLabel": "微软 Sonia 标准英式女声",
   "format": "audio/mpeg",
-  "termCount": 4719,
+  "termCount": 3934,
   "baseUrl": "./audio/en-gb-v1/",
   "unlockSrc": "./audio/unlock.mp3"
 };
