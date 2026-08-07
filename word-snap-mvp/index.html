@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#f6f7f9">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260729-british-audio-v1">
+  <link rel="stylesheet" href="./styles.css?v=20260807-encouraging-results-v1">
   <link rel="preload" href="./audio/unlock.mp3" as="audio" type="audio/mpeg">
   <script defer src="./word-data/builtin-manifest.js?v=20260731-curriculum-only-v1"></script>
   <script defer src="./pronunciation-audio-config.js?v=20260731-clean-british-audio-v2"></script>
@@ -19,7 +19,7 @@
   <script defer src="./daily-streaks.js?v=20260724-daily300-v2"></script>
   <script defer src="./vendor/ts-fsrs.umd.js?v=5.4.1"></script>
   <script defer src="./daily-learning.js?v=20260728-adaptive"></script>
-  <script defer src="./app.js?v=20260731-curriculum-audio-v2"></script>
+  <script defer src="./app.js?v=20260807-encouraging-results-v1"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -404,14 +404,24 @@
   </div>
 
   <!-- 刷词完成弹窗 -->
-  <div id="sessionCompleteModal" class="modal-overlay" hidden>
+  <div id="sessionCompleteModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
     <div class="modal-card">
       <div class="modal-header" id="modalHeader">
         <span id="modalIcon">🎉</span>
         <h2 id="modalTitle">本轮训练完成</h2>
         <span class="modal-datetime" id="modalDatetime"></span>
       </div>
-      <div class="modal-session-info" id="modalSessionInfo"></div>
+      <div class="modal-session-info" id="modalSessionInfo">
+        <div class="modal-practice-mode">
+          <span>本次模式</span>
+          <strong id="modalPracticeMode">听英文选中文</strong>
+        </div>
+        <div class="modal-session-meta">
+          <span id="modalSessionGrade">当前词库</span>
+          <span aria-hidden="true">·</span>
+          <span id="modalSessionDuration">用时 0 秒</span>
+        </div>
+      </div>
       <div class="modal-body">
         <div class="modal-stats">
           <div class="modal-stat-item">
@@ -428,7 +438,7 @@
           </div>
         </div>
         <div class="modal-result" id="modalResult"></div>
-        <p class="modal-tip">📝 错词和弱词已整理在右上方「错词」中，代老师提醒务必把错词抄写在笔记本上！</p>
+        <p class="modal-tip">📝 错词和弱词已整理在右上方「错词」中。把它们抄在笔记本上再练一次，记忆会更牢。</p>
       </div>
       <div class="modal-actions">
         <div class="modal-btn-group">

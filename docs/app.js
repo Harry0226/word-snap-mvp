@@ -1028,6 +1028,17 @@ function resolvePracticeMode(word) {
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
 }
 
+function practiceModeLabel(mode) {
+  const labels = {
+    audioToZhChoice: "听英文选中文",
+    enToZhChoice: "看英文选中文",
+    zhToEnChoice: "看中文选英文",
+    auto: "智能双选",
+    customChoice: "专项选择题"
+  };
+  return labels[mode] || "看英文选中文";
+}
+
 function primePronunciationAudio() {
   if (els.practiceMode.value === "audioToZhChoice") pronunciationPlayer.prime();
 }
@@ -1059,6 +1070,7 @@ async function startSession(options = {}) {
     queue,
     total: queue.length,
     grade: els.stageSelect.value,
+    practiceMode: els.practiceMode.value,
     current: null,
     mode: "enToZhChoice",
     sessionStartedAt: performance.now(),
@@ -1606,7 +1618,8 @@ async function finishSession() {
     totalSeconds,
     kind: session.kind,
     dailyCompleted,
-    dailyRemaining
+    dailyRemaining,
+    practiceMode: session.practiceMode
   };
   els.word.textContent = "Done";
   els.tag.textContent = "本轮完成";
@@ -1639,7 +1652,9 @@ function showSessionCompleteModal(report) {
   const icon = document.getElementById("modalIcon");
   const title = document.getElementById("modalTitle");
   const datetimeEl = document.getElementById("modalDatetime");
-  const sessionInfoEl = document.getElementById("modalSessionInfo");
+  const practiceModeEl = document.getElementById("modalPracticeMode");
+  const sessionGradeEl = document.getElementById("modalSessionGrade");
+  const sessionDurationEl = document.getElementById("modalSessionDuration");
   const totalEl = document.getElementById("modalTotal");
   const accuracyEl = document.getElementById("modalAccuracy");
   const fastRateEl = document.getElementById("modalFastRate");
@@ -1650,7 +1665,7 @@ function showSessionCompleteModal(report) {
 
   const accuracyNum = report.total ? Math.round((report.correct / report.total) * 100) : 0;
   const fastNum = report.total ? Math.round((report.fast / report.total) * 100) : 0;
-  const passed = accuracyNum >= 90;
+  const passed = accuracyNum >= 80;
 
   // 设置日期和时间
   const now = new Date();
@@ -1659,39 +1674,35 @@ function showSessionCompleteModal(report) {
   const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
   datetimeEl.textContent = `${dateStr} ${timeStr}`;
 
-  // 设置年级段和用时信息
-  const grade = state.lastReport?.grade || els.stageSelect?.value || "未知年级";
+  // 设置训练模式、年级段和用时信息
+  const grade = report.grade || els.stageSelect?.value || "未知年级";
   const totalSeconds = report.totalSeconds || 0;
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
   const timeText = minutes > 0 ? `${minutes}分${seconds}秒` : `${seconds}秒`;
-  sessionInfoEl.textContent = `本次${grade}刷词共用时${timeText}`;
+  practiceModeEl.textContent = practiceModeLabel(report.practiceMode || els.practiceMode?.value);
+  sessionGradeEl.textContent = grade;
+  sessionDurationEl.textContent = `用时 ${timeText}`;
 
   totalEl.textContent = report.total;
   accuracyEl.textContent = `${accuracyNum}%`;
   fastRateEl.textContent = `${fastNum}%`;
 
-  // 设置正确率颜色
-  if (accuracyNum >= 90) {
-    accuracyEl.style.color = "#075f3c";
-  } else if (accuracyNum >= 80) {
-    accuracyEl.style.color = "#d97706";
-  } else {
-    accuracyEl.style.color = "#dc2626";
-  }
+  // 正确率只使用通过绿和鼓励橙，不用红色制造挫败感
+  accuracyEl.className = `modal-stat-value ${passed ? "pass" : "encourage"}`;
 
   // 设置头部样式
-  header.className = "modal-header " + (passed ? "pass" : "fail");
-  icon.textContent = passed ? "🎉" : "💪";
-  title.textContent = passed ? "恭喜，已通过！" : "继续加油！";
+  header.className = "modal-header " + (passed ? "pass" : "encourage");
+  icon.textContent = passed ? "🎉" : "🌟";
+  title.textContent = passed ? "太棒了，顺利过关！" : "继续加油呀！";
 
   // 设置结果提示
   if (passed) {
     resultEl.className = "modal-result pass";
-    resultEl.innerHTML = "✅ 正确率 90% 以上，已通过！<br>📸 请截图发给代老师或学长学姐";
+    resultEl.innerHTML = "✅ 正确率已达到 80%，顺利过关！<br>📸 记得截图发给代老师或学长学姐";
   } else {
-    resultEl.className = "modal-result fail";
-    resultEl.innerHTML = "❌ 正确率未达 90%，请再来一遍！<br>🎯 达到 90% 后再截图发给代老师或学长学姐";
+    resultEl.className = "modal-result encourage";
+    resultEl.innerHTML = "这次的积累也很有价值，再巩固一下就能过关啦！<br>🎯 正确率达到 80% 后，记得截图分享学习成果";
   }
 
   // 按钮事件
