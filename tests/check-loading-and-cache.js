@@ -9,7 +9,7 @@ assert(!index.includes("cdnjs.cloudflare.com/ajax/libs/pdf.js"), "index.html mus
 assert(!index.includes("cdn.jsdelivr.net/npm/tesseract.js"), "index.html must not load Tesseract on first paint");
 assert(!app.includes("cdnjs.cloudflare.com/ajax/libs/pdf.js"), "app.js should not depend on PDF.js after deck import simplification");
 assert(!app.includes("cdn.jsdelivr.net/npm/tesseract.js"), "app.js should not depend on Tesseract after deck import simplification");
-assert(headers.includes("/\n  Cache-Control: public, max-age=60"), "_headers should define root cache behavior");
+assert(/^\/\r?\n\s+Cache-Control: public, max-age=60/m.test(headers), "_headers should define root cache behavior");
 assert(headers.includes("/index.html"), "_headers should define index.html cache behavior");
 assert(headers.includes("/word-data/*"), "_headers should define word-data cache behavior");
 assert(headers.includes("Cache-Control"), "_headers should configure Cache-Control");

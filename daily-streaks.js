@@ -3,7 +3,7 @@
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.WordSnapDailyStreaks = api;
 })(typeof window !== "undefined" ? window : globalThis, function createDailyStreaks() {
-  const JUNIOR_KEYWORDS = ["初一", "初二", "初三"];
+  const JUNIOR_KEYWORDS = ["初一", "初二", "初三", "初中"];
   const SENIOR_KEYWORDS = ["高一", "高二", "高三"];
 
   function matchesAny(grade, keywords) {
@@ -13,8 +13,7 @@
   function getCheckinThreshold(kind, grade) {
     if (kind === "quiz") return matchesAny(grade, JUNIOR_KEYWORDS) ? 100 : null;
     if (kind !== "train") return null;
-    if (grade === "小学六年级" || matchesAny(grade, JUNIOR_KEYWORDS)) return 200;
-    if (matchesAny(grade, SENIOR_KEYWORDS)) return 300;
+    if (grade === "小学六年级" || matchesAny(grade, JUNIOR_KEYWORDS) || matchesAny(grade, SENIOR_KEYWORDS)) return 300;
     return null;
   }
 

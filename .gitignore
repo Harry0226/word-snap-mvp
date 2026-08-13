@@ -1,5 +1,7 @@
 .wrangler/
 node_modules/
 npm-debug.log*
-.DS_Store
-**/.DS_Store
+word-data-backup/
+test-artifacts/
+__pycache__/
+*.pyc

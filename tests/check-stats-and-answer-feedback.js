@@ -14,10 +14,8 @@ assert(!app.includes("checkAchievements"), "achievement checks should be removed
 assert(!styles.includes(".achievement-card"), "achievement styles should be removed");
 
 assert(trainView.includes('id="trainWordStats"'), "training view should contain word statistics");
-assert(trainView.includes('id="trainQuizStats"'), "training view should contain matching-grade quiz statistics");
 assert(trainView.includes('id="trainStreakCard"'), "training view should contain the word streak card");
 assert(quizView.includes('id="quizStreakCard"'), "quiz view should contain the quiz streak card");
-assert(app.includes("function renderTrainQuizStats"), "training view should render matching-grade quiz stats");
 
 assert(index.includes('id="trainContinueBtn"'), "training feedback should include a continue button");
 assert(

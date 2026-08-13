@@ -1,5 +1,6 @@
 /
   Cache-Control: public, max-age=60, must-revalidate
+  Permissions-Policy: autoplay=(self)
 
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
@@ -15,6 +16,10 @@
 
 /word-data/*
   Cache-Control: public, max-age=31536000, immutable
+
+/audio/*.mp3
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: audio/mpeg
 
 /*.js
   Cache-Control: public, max-age=31536000, immutable

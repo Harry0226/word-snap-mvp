@@ -9,5 +9,8 @@ assert(app.includes("candidateDisplayKey === answerDisplayKey"), "distractors mu
 assert(app.includes("usedDisplayKeys.has(candidateDisplayKey)"), "distractors must be unique by visible text, not only by id");
 assert(app.includes("function buildChoiceSet"), "final choice set should be assembled with display-level de-duplication");
 assert(app.includes("const correctChoice = choices.find((choice) => choice.isAnswer);"), "custom choices should keep exactly one visible correct option before trimming");
+assert(app.includes("button.dataset.choiceEnglish = normalizeEnglishWord(choice.en)"), "rendered choices should retain a normalized English answer key");
+assert(app.includes("return isEquivalentVocabularyAnswer(value, word)"), "another valid sense of the same English word should still count as correct");
+assert(app.includes("dedupeVocabularyEntries((list.words || [])"), "built-in vocabulary should remove fully duplicated rows before seeding");
 
 console.log("training choice display de-dupe checks passed");
