@@ -1020,11 +1020,10 @@ function updateSessionSizeOptions() {
   els.sessionSize.value = options.some(([value]) => value === previous) ? previous : "200";
 }
 
-function resolvePracticeMode(word) {
+function resolvePracticeMode(word, selectedMode = state.session?.practiceMode || els.practiceMode.value) {
   if (word?.fixedMode === "customChoice") return "customChoice";
-  const selected = els.practiceMode.value;
-  if (selected === "audioToZhChoice" && word?.sourceType !== "builtin") return "enToZhChoice";
-  if (["zhToEnChoice", "enToZhChoice", "audioToZhChoice"].includes(selected)) return selected;
+  if (selectedMode === "audioToZhChoice" && word?.sourceType !== "builtin") return "enToZhChoice";
+  if (["zhToEnChoice", "enToZhChoice", "audioToZhChoice"].includes(selectedMode)) return selectedMode;
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
 }
 
@@ -1039,12 +1038,13 @@ function practiceModeLabel(mode) {
   return labels[mode] || "看英文选中文";
 }
 
-function primePronunciationAudio() {
-  if (els.practiceMode.value === "audioToZhChoice") pronunciationPlayer.prime();
+function primePronunciationAudio(practiceMode = els.practiceMode.value) {
+  if (practiceMode === "audioToZhChoice") pronunciationPlayer.prime();
 }
 
 async function startSession(options = {}) {
-  primePronunciationAudio();
+  const practiceMode = els.practiceMode.value;
+  primePronunciationAudio(practiceMode);
   if (state.session) clearInterval(state.session.timerId);
   hideTrainContinueButton();
   const stage = Array.isArray(options?.wordIds) && options.grade ? options.grade : els.stageSelect.value;
@@ -1070,7 +1070,7 @@ async function startSession(options = {}) {
     queue,
     total: queue.length,
     grade: els.stageSelect.value,
-    practiceMode: els.practiceMode.value,
+    practiceMode,
     current: null,
     mode: "enToZhChoice",
     sessionStartedAt: performance.now(),
@@ -1112,9 +1112,7 @@ function nextWord() {
 
   const isSevenDayCheck = session.current.fixedMode !== "customChoice"
     && isSevenDayEligible(getRecord(session.current.id));
-  session.mode = isSevenDayCheck
-    ? "zhToEnChoice"
-    : resolvePracticeMode(session.current);
+  session.mode = resolvePracticeMode(session.current, session.practiceMode);
   const word = session.current;
   const isPromptChinese = session.mode === "zhToEnChoice";
   const isAudioPrompt = session.mode === "audioToZhChoice";

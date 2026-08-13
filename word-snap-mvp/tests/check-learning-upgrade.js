@@ -28,7 +28,7 @@ assert.ok(
   "wrong-answer replay should not restart the timer or unlock answered choices"
 );
 assert.ok(
-  app.includes('selected === "audioToZhChoice" && word?.sourceType !== "builtin"'),
+  app.includes('selectedMode === "audioToZhChoice" && word?.sourceType !== "builtin"'),
   "custom imports should fall back to a visible prompt instead of a missing audio file"
 );
 assert.ok(app.includes("revealContextSentence(word)"), "context sentence should reveal after answering");

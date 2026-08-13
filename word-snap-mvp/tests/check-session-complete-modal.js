@@ -19,7 +19,8 @@ assert(!styles.includes(".modal-result.fail"), "completion modal should not reta
   assert(app.includes(`${value}: "${label}"`), `completion modal should label ${label}`);
 });
 
-assert(app.includes("practiceMode: els.practiceMode.value"), "session should capture the student's selected practice mode");
+assert(app.includes("const practiceMode = els.practiceMode.value;"), "session should capture the student's selected practice mode before loading begins");
+assert(app.includes("practiceMode,"), "session should retain the captured practice mode");
 assert(app.includes("practiceMode: session.practiceMode"), "session report should retain the selected practice mode");
 assert(index.includes('id="modalPracticeMode"'), "completion modal should render the selected practice mode");
 assert(index.includes('id="modalDatetime"'), "completion modal should retain its timestamp");
