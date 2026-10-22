@@ -1,4 +1,4 @@
-const STAGES = ["初一课本单元词汇", "初二课本单元词汇", "初三课本单元词汇", "初中688高频词", "高一课本单元词汇", "高一课改词库", "高二课本单元词汇", "高中3500刷词专栏"];
+const STAGES = ["初一课本单元词汇", "初二课本单元词汇", "初三课本单元词汇", "初中688高频词", "初中1600", "高一课本单元词汇", "高一课改词库", "高二课本单元词汇", "高中3500刷词专栏"];
 const RENAMED_STAGE_LEGACY_NAMES = new Set(["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇", "高一暑期必背词汇", "高二暑期必背词汇"]);
 const DB_NAME = "word-snap-v2";
 const DB_VERSION = 4;
@@ -20,7 +20,7 @@ const {
   splitChineseSenses,
   hasMeaningConflict
 } = window.WordSnapChoiceUtils;
-const { getCheckinThreshold, makeProgressKey, advanceDailyProgress } = window.WordSnapDailyStreaks;
+const { getCheckinThreshold, makeProgressKey, advanceDailyProgress, reconcileTrainingStreak } = window.WordSnapDailyStreaks;
 const {
   DAILY_TASK_LIMIT,
   DUE_REVIEW_LIMIT,
@@ -66,7 +66,10 @@ const state = {
   streaks: new Map(),
   stageLoads: new Map(),
   dailyTasks: new Map(),
-  fullStageCelebrations: new Set()
+  fullStageCelebrations: new Set(),
+  wordbookSaved: new Map(),
+  learningFlow: null,
+  learningDays: new Set()
 };
 
 const els = {
@@ -115,6 +118,8 @@ const els = {
   timer: document.querySelector("#timer"),
   choices: document.querySelector("#choices"),
   feedback: document.querySelector("#feedback"),
+  wordbookExplanation: document.querySelector("#wordbookExplanation"),
+  resumeFlowBtn: document.querySelector("#resumeFlowBtn"),
   trainContinueBtn: document.querySelector("#trainContinueBtn"),
   skipBtn: document.querySelector("#skipBtn"),
   sessionReport: document.querySelector("#sessionReport"),
@@ -132,6 +137,8 @@ const els = {
   clearCustomDecksBtn: document.querySelector("#clearCustomDecksBtn"),
   exportBtn: document.querySelector("#exportBtn"),
   importJson: document.querySelector("#importJson"),
+  wordbookSearch: document.querySelector("#wordbookSearch"),
+  wordbookResults: document.querySelector("#wordbookResults"),
   // Wrong words
   weakList: document.querySelector("#weakList"),
   weakFilterBtns: [...document.querySelectorAll("[data-weak-filter]")],
@@ -489,6 +496,11 @@ function deleteBuiltinDecks(decks) {
 async function loadStreaks() {
   const streaks = await getAll("streaks");
   state.streaks = new Map(streaks.map((streak) => [streak.key, streak]));
+  // Apply the lower target to today's existing progress without rewriting past days.
+  for (const streak of streaks) {
+    const updated = reconcileTrainingStreak(streak, getTodayStr(), getYesterdayStr());
+    if (updated !== streak) await saveStreak(updated);
+  }
 }
 
 async function saveStreak(streak) {
@@ -577,6 +589,8 @@ function renderStreakCard(card, progressEl, kind, grade) {
   const checked = streak.lastCheckIn === getTodayStr();
   progressEl.textContent = `今日 ${Math.min(todayCount, threshold)}/${threshold}`;
   card.classList.toggle("checked-in", checked);
+  card.title = checked ? "今日火花已点亮" : `每日完成 ${threshold} ${kind === "train" ? "词" : "题"}点亮火花`;
+  card.setAttribute("aria-label", `${card.title}，${progressEl.textContent}`);
 }
 
 function renderDailyProgress() {
@@ -603,6 +617,12 @@ async function loadState() {
   state.fullStageCelebrations = new Set(meta
     .filter((entry) => entry.key?.startsWith(FULL_STAGE_CELEBRATION_META_PREFIX))
     .map((entry) => entry.key));
+  state.wordbookSaved = new Map(meta.filter((entry) => entry.key?.startsWith("wordbook:v1:") && entry.value)
+    .map((entry) => [entry.key.slice("wordbook:v1:".length), entry.value]));
+  state.learningDays = new Set(meta.filter((entry) => entry.key?.startsWith("learningDay:v1:"))
+    .map((entry) => entry.key.slice("learningDay:v1:".length)));
+  state.learningFlow = meta.find((entry) => entry.key === "learningFlow:v1")?.value || null;
+  els.resumeFlowBtn.hidden = !state.learningFlow || state.learningFlow.phase === "done";
   await loadStreaks();
 
   renderAll();
@@ -618,6 +638,7 @@ function switchView(view) {
   if (els.mobileMoreMenu?.matches(":popover-open")) els.mobileMoreMenu.hidePopover();
   renderAll();
   if (view === "quiz") updateQuizSizeOptions();
+  if (view === "decks") prepareWordbookStages();
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
@@ -1043,6 +1064,16 @@ function primePronunciationAudio(practiceMode = els.practiceMode.value) {
 }
 
 async function startSession(options = {}) {
+  if (state.learningFlow && state.learningFlow.phase !== "done") {
+    if (!confirm("还有未完成的巩固练习。开始新一轮训练会替换它，确定继续吗？")) {
+      renderLearningFlow(true);
+      return;
+    }
+    clearTimeout(flowAdvanceTimer);
+    document.querySelector("#learningFlow").hidden = true;
+    state.learningFlow = null;
+    await saveLearningFlow();
+  }
   const practiceMode = els.practiceMode.value;
   primePronunciationAudio(practiceMode);
   if (state.session) clearInterval(state.session.timerId);
@@ -1068,6 +1099,7 @@ async function startSession(options = {}) {
   await persistRotationState(rotationKey, rotationState);
   state.session = {
     queue,
+    sourceWords: [...queue],
     total: queue.length,
     grade: els.stageSelect.value,
     practiceMode,
@@ -1102,6 +1134,8 @@ function nextWord() {
   clearTimeout(session.advanceTimerId);
   pronunciationPlayer.stop();
   hideTrainContinueButton();
+  els.wordbookExplanation.hidden = true;
+  els.wordbookExplanation.textContent = "";
   session.answered = false;
   session.timingReady = false;
   session.lastAnswerCorrect = null;
@@ -1501,6 +1535,7 @@ async function answer(value, button) {
   session.lastAnswerFeedback = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
   els.feedback.textContent = session.lastAnswerFeedback;
   revealContextSentence(word);
+  if (!isCorrect) showWordbookExplanation(word);
   await recordAnswer(word, isCorrect, isFast, isSlow);
   await syncDailyTaskFromTraining(word, isCorrect, session);
   await recordDailyActivity("train", session.grade);
@@ -1640,7 +1675,7 @@ async function finishSession() {
   renderSessionReport();
   renderAll();
 
-  showSessionCompleteModal(state.lastReport);
+  await startLearningFlow(state.lastReport, session.sourceWords, wrongWords, uniqueById(session.slowWords));
   state.session = null;
 }
 
@@ -2534,6 +2569,7 @@ function renderAll() {
   }
   if (active === "decks") {
     renderDecks();
+    renderWordbook();
   }
   if (active === "wrong") {
     renderWeakList();
@@ -2706,6 +2742,15 @@ function escapeAttr(value) {
 }
 
 function bindEvents() {
+  els.resumeFlowBtn.addEventListener("click", () => renderLearningFlow(true));
+  els.wordbookSearch.addEventListener("input", renderWordbook);
+  els.wordbookResults.addEventListener("click", handleWordbookClick);
+  document.querySelector("#flowClose").addEventListener("click", () => {
+    clearTimeout(flowAdvanceTimer);
+    document.querySelector("#flowAudio")?.pause();
+    document.querySelector("#learningFlow").hidden = true;
+    els.resumeFlowBtn.hidden = !state.learningFlow || state.learningFlow.phase === "done";
+  });
   els.tabs.forEach((tab) => tab.addEventListener("click", () => switchView(tab.dataset.view)));
   els.mobileViewButtons.forEach((button) => {
     button.addEventListener("click", () => switchView(button.dataset.mobileView));
@@ -2870,6 +2915,7 @@ async function init() {
     await seedBuiltinWords();
     await ensureStageLoaded(els.stageSelect.value);
     await loadState();
+    if (state.learningFlow && state.learningFlow.phase !== "done") renderLearningFlow(true);
   } catch (error) {
     els.feedback.textContent = `初始化失败：${error.message || error}`;
   }

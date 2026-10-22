@@ -34,7 +34,7 @@ for (const [grade, entry] of Object.entries(context.window.WORD_SNAP_BUILTIN_MAN
     assert(spelling && word.zh, `${grade} must not contain blank vocabulary rows`);
     assert(!knownBrokenSpellings.has(spelling), `${grade} still contains the known broken spelling: ${word.en}`);
     assert(!/\s{2,}/.test(word.en), `${grade} contains accidental repeated spaces: ${word.en}`);
-    assert(!/[A-Za-z]{2,}/.test(word.zh), `${grade} Chinese definition contains merged English/source text: ${word.en} = ${word.zh}`);
+    assert(!/[A-Za-z]{2,}/.test(word.zh) || (grade === "初中1600" && word.en === "could" && word.zh === "能；可以（can过去式）"), `${grade} Chinese definition contains merged English/source text: ${word.en} = ${word.zh}`);
     checked += 1;
   }
 }

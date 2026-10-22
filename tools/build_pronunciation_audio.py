@@ -15,7 +15,7 @@ from pathlib import Path
 from build_context_sentences import load_manifest_files, load_stage_rows
 
 
-AUDIO_VERSION = "20260731-edge-sonia-en-gb-v2"
+AUDIO_VERSION = "20261022-edge-sonia-junior-1600-v1"
 VOICE = "en-GB-SoniaNeural"
 VOICE_LABEL = "微软 Sonia 标准英式女声"
 RATE = "-8%"
