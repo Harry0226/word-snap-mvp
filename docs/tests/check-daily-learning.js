@@ -4,6 +4,7 @@ const {
   DAY_MS,
   DAILY_TASK_LIMIT,
   planDailyTask,
+  resizeDailyTask,
   creditDailyTask,
   applyLearningResult,
   getSevenDayRetentionStats,
@@ -11,7 +12,27 @@ const {
 } = require("../daily-learning.js");
 
 const now = new Date(2026, 6, 24, 12, 0, 0).getTime();
-assert.strictEqual(DAILY_TASK_LIMIT, 300, "daily task target should be 300 words");
+assert.strictEqual(DAILY_TASK_LIMIT, 100, "daily task target should be 100 words");
+const longPlan = planDailyTask(Array.from({ length: 150 }, (_, index) => ({ id: `extra-${index}` })), new Map(), { now });
+assert.strictEqual(longPlan.total, 100, "default task must stop at 100 words");
+const oldTask = {
+  wordIds: Array.from({ length: 300 }, (_, index) => `old-${index}`),
+  dueWordIds: ["old-0", "old-1"],
+  newWordIds: Array.from({ length: 298 }, (_, index) => `old-${index + 2}`),
+  dueCount: 2,
+  newCount: 298,
+  completedIds: Array.from({ length: 80 }, (_, index) => `old-${index + 20}`),
+  completedAt: 0
+};
+const migratedTask = resizeDailyTask(oldTask, 100, now).task;
+assert.strictEqual(migratedTask.wordIds.length, 100);
+assert.strictEqual(migratedTask.completedIds.length, 80, "migration must preserve today's completed progress");
+assert.strictEqual(migratedTask.wordIds.filter((id) => !migratedTask.completedIds.includes(id)).length, 20);
+assert.strictEqual(oldTask.wordIds.length, 300, "migration must not mutate the saved task");
+assert.strictEqual(resizeDailyTask(migratedTask).changed, false, "migration must be idempotent");
+const overCompleted = resizeDailyTask({ ...oldTask, completedIds: oldTask.wordIds.slice(0, 125) }, 100, now).task;
+assert.strictEqual(overCompleted.completedIds.length, 100);
+assert.strictEqual(overCompleted.completedAt, now, "already completed tasks must stay complete");
 const words = Array.from({ length: 25 }, (_, index) => ({ id: `word-${index + 1}` }));
 const records = new Map([
   ["word-1", {

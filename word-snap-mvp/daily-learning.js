@@ -5,7 +5,7 @@
 })(typeof window !== "undefined" ? window : globalThis, function createDailyLearning(root) {
   const HOUR_MS = 60 * 60 * 1000;
   const DAY_MS = 24 * HOUR_MS;
-  const DAILY_TASK_LIMIT = 300;
+  const DAILY_TASK_LIMIT = 100;
   const DUE_REVIEW_LIMIT = 100;
   const REVIEW_INTERVAL_DAYS = [1, 3, 7, 14, 30];
   const FsrsLib = root?.FSRS || (
@@ -111,6 +111,34 @@
     const now = Number(options.now || Date.now());
     const limit = Math.max(1, Number(options.limit || DUE_REVIEW_LIMIT));
     return sortedDueWords(words, records, now).slice(0, limit).map((word) => word.id);
+  }
+
+  function resizeDailyTask(savedTask, limit = DAILY_TASK_LIMIT, now = Date.now()) {
+    if (!savedTask || (savedTask.wordIds || []).length <= limit) return { task: savedTask, changed: false };
+    const originalIds = savedTask.wordIds;
+    const completedSet = new Set(savedTask.completedIds || []);
+    const selectedIds = [
+      ...originalIds.filter((id) => completedSet.has(id)),
+      ...originalIds.filter((id) => !completedSet.has(id))
+    ].slice(0, limit);
+    const selectedSet = new Set(selectedIds);
+    const dueWordIds = (savedTask.dueWordIds || originalIds.slice(0, savedTask.dueCount || 0))
+      .filter((id) => selectedSet.has(id));
+    const newWordIds = selectedIds.filter((id) => !dueWordIds.includes(id));
+    const completedIds = selectedIds.filter((id) => completedSet.has(id));
+    return {
+      changed: true,
+      task: {
+        ...savedTask,
+        wordIds: [...dueWordIds, ...newWordIds],
+        dueWordIds,
+        newWordIds,
+        dueCount: dueWordIds.length,
+        newCount: newWordIds.length,
+        completedIds,
+        completedAt: completedIds.length === selectedIds.length ? (savedTask.completedAt || now) : 0
+      }
+    };
   }
 
   function creditDailyTask(savedTask, wordId, options = {}) {
@@ -300,6 +328,7 @@
     isDueRecord,
     isSevenDayEligible,
     planDailyTask,
+    resizeDailyTask,
     getDueReviewWordIds,
     creditDailyTask,
     applyLearningResult,

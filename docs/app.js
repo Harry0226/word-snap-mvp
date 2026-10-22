@@ -27,6 +27,7 @@ const {
   dateKey: getDailyDateKey,
   isSevenDayEligible,
   planDailyTask,
+  resizeDailyTask,
   getDueReviewWordIds,
   creditDailyTask,
   applyLearningResult,
@@ -591,7 +592,7 @@ function renderStreakCard(card, progressEl, kind, grade) {
   const streak = getStreak(kind, grade) || {};
   const todayCount = streak.progressDate === getTodayStr() ? Number(streak.todayCount || 0) : 0;
   const checked = streak.lastCheckIn === getTodayStr();
-  progressEl.textContent = `今日 ${Math.min(todayCount, threshold)}/${threshold}`;
+  progressEl.textContent = `今日 ${todayCount}/${threshold}`;
   card.classList.toggle("checked-in", checked);
   card.title = checked ? "今日火花已点亮" : `每日完成 ${threshold} ${kind === "train" ? "词" : "题"}点亮火花`;
   card.setAttribute("aria-label", `${card.title}，${progressEl.textContent}`);
@@ -618,6 +619,13 @@ async function loadState() {
   state.dailyTasks = new Map(meta
     .filter((entry) => entry.key?.startsWith(DAILY_TASK_META_PREFIX))
     .map((entry) => [entry.key, entry.value]));
+  for (const [key, task] of state.dailyTasks) {
+    if (!key.startsWith(`${DAILY_TASK_META_PREFIX}${getDailyDateKey()}:`)) continue;
+    const resized = resizeDailyTask(task);
+    if (!resized.changed) continue;
+    state.dailyTasks.set(key, resized.task);
+    await put("meta", { key, value: resized.task, at: Date.now() });
+  }
   state.fullStageCelebrations = new Set(meta
     .filter((entry) => entry.key?.startsWith(FULL_STAGE_CELEBRATION_META_PREFIX))
     .map((entry) => entry.key));
@@ -814,7 +822,7 @@ function renderDailyTask() {
   if (fullStageCompletion.isComplete) {
     els.dailyTaskSummary.textContent = `太棒了，今天已完成本年级全部 ${fullStageCompletion.total} 个单词！`;
   } else if (task && pendingIds.length === 0) {
-    els.dailyTaskSummary.textContent = `今日任务已完成，共 ${task.wordIds.length} 词。明天会自动生成新任务。`;
+    els.dailyTaskSummary.textContent = `今日任务已完成，共 ${task.wordIds.length} 词。仍可继续自由训练，额外练习会累计记录。`;
   } else if (task) {
     els.dailyTaskSummary.textContent = `还剩 ${pendingIds.length} 词：到期复习 ${pendingDue} + 新词 ${pendingNew}。进度会自动保存。`;
   } else if (preview.total > 0) {

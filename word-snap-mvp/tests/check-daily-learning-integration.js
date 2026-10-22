@@ -25,6 +25,8 @@ assert(dailyScriptIndex < appScriptIndex, "daily-learning.js must load before ap
 assert(html.includes("今日 0/100"), "daily training streak should use the 100-word target");
 assert(app.includes("reconcileTrainingStreak(streak, getTodayStr(), getYesterdayStr())"), "existing progress must be reconciled when loading");
 assert(app.includes('const DAILY_TASK_META_PREFIX = "dailyTask:v2:"'), "daily task persistence must be versioned");
+assert(app.includes("const resized = resizeDailyTask(task)"), "existing daily tasks must migrate to the new 100-word limit");
+assert(app.includes("`今日 ${todayCount}/${threshold}`"), "extra training must display the uncapped daily total");
 assert(app.includes("async function ensureDailyTask()"), "daily task creation is missing");
 assert(app.includes("async function completeDailyTaskItem(key, wordId, options = {})"), "daily task progress persistence is missing");
 assert(app.includes("async function syncDailyTaskFromTraining(word, isCorrect, session)"), "free training must sync into the daily task");
