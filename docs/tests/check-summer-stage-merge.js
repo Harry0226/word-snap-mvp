@@ -45,11 +45,11 @@ const legacyStageNames = {
   "高一课本单元词汇": "高一暑期必背词汇",
   "高二课本单元词汇": "高二暑期必背词汇"
 };
-const canonicalStages = [...Object.keys(plans).slice(0, 3), "初中688高频词", "初中1600", ...Object.keys(plans).slice(3)];
+const canonicalStages = [...Object.keys(plans).slice(0, 3), "初中688高频词", ...Object.keys(plans).slice(3)];
 const appStagesExpected = [
-  ...canonicalStages.slice(0, 6),
+  ...canonicalStages.slice(0, 5),
   "高一课改词库",
-  ...canonicalStages.slice(6),
+  ...canonicalStages.slice(5),
   "高中3500刷词专栏"
 ];
 
@@ -85,7 +85,6 @@ for (const [target, sources] of Object.entries(plans)) {
 }
 
 assert.strictEqual(manifest.stages["初中688高频词"].count, 688, "the standalone junior 688 stage should remain unchanged");
-assert.strictEqual(manifest.stages["初中1600"].count, 1601, "the junior 1600 stage should retain every numbered PDF entry");
 assert.strictEqual(manifest.stages["高一课改词库"].count, 298, "the standalone grade 10 curriculum-reform stage should remain unchanged");
 assert.strictEqual(manifest.stages["高中3500刷词专栏"].count, 3515, "the high-school 3500 stage should remain unchanged");
 assert(!manifest.stages["高三暑假必背词汇"], "the grade 12 summer stage should be removed");

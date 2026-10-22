@@ -1,5 +1,5 @@
 window.WORD_SNAP_BUILTIN_MANIFEST = {
-  "version": "20261022-junior-1600-v1",
+  "version": "20260731-curriculum-only-v1",
   "stages": {
     "初一课本单元词汇": {
       "src": "./word-data/stages/grade7-summer-required.js",
@@ -24,12 +24,6 @@ window.WORD_SNAP_BUILTIN_MANIFEST = {
       "version": "20260728-context-v1",
       "count": 688,
       "source": "初中688高频词（PDF）"
-    },
-    "初中1600": {
-      "src": "./word-data/stages/junior-1600.js",
-      "version": "20261022-junior-1600-v1",
-      "count": 1601,
-      "source": "初中必备单词1600（PDF 原表 1601 条）"
     },
     "高一课本单元词汇": {
       "src": "./word-data/stages/grade10-summer-required.js",
