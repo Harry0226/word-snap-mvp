@@ -69,7 +69,9 @@ const state = {
   fullStageCelebrations: new Set(),
   wordbookSaved: new Map(),
   learningFlow: null,
-  learningDays: new Set()
+  learningDays: new Set(),
+  learningCompletions: new Map(),
+  viewedCompletion: null
 };
 
 const els = {
@@ -120,6 +122,8 @@ const els = {
   feedback: document.querySelector("#feedback"),
   wordbookExplanation: document.querySelector("#wordbookExplanation"),
   resumeFlowBtn: document.querySelector("#resumeFlowBtn"),
+  todayRecordBtn: document.querySelector("#todayRecordBtn"),
+  todayRecordStatus: document.querySelector("#todayRecordStatus"),
   trainContinueBtn: document.querySelector("#trainContinueBtn"),
   skipBtn: document.querySelector("#skipBtn"),
   sessionReport: document.querySelector("#sessionReport"),
@@ -621,6 +625,8 @@ async function loadState() {
     .map((entry) => [entry.key.slice("wordbook:v1:".length), entry.value]));
   state.learningDays = new Set(meta.filter((entry) => entry.key?.startsWith("learningDay:v1:"))
     .map((entry) => entry.key.slice("learningDay:v1:".length)));
+  state.learningCompletions = new Map(meta.filter((entry) => entry.key?.startsWith("learningCompletion:v1:") && entry.value)
+    .map((entry) => [entry.key.slice("learningCompletion:v1:".length), entry.value]));
   state.learningFlow = meta.find((entry) => entry.key === "learningFlow:v1")?.value || null;
   els.resumeFlowBtn.hidden = !state.learningFlow || state.learningFlow.phase === "done";
   await loadStreaks();
@@ -2559,6 +2565,7 @@ function renderAll() {
   renderStats();
   renderDailyProgress();
   if (active === "train") {
+    renderTodayCompletion();
     renderDailyTask();
     updateSessionSizeOptions();
     renderTrainQuizStats();
@@ -2743,12 +2750,15 @@ function escapeAttr(value) {
 
 function bindEvents() {
   els.resumeFlowBtn.addEventListener("click", () => renderLearningFlow(true));
+  els.todayRecordBtn.addEventListener("click", openTodayCompletion);
   els.wordbookSearch.addEventListener("input", renderWordbook);
   els.wordbookResults.addEventListener("click", handleWordbookClick);
   document.querySelector("#flowClose").addEventListener("click", () => {
     clearTimeout(flowAdvanceTimer);
     document.querySelector("#flowAudio")?.pause();
+    if (!state.viewedCompletion) pauseLearningFlow();
     document.querySelector("#learningFlow").hidden = true;
+    state.viewedCompletion = null;
     els.resumeFlowBtn.hidden = !state.learningFlow || state.learningFlow.phase === "done";
   });
   els.tabs.forEach((tab) => tab.addEventListener("click", () => switchView(tab.dataset.view)));
@@ -2898,14 +2908,20 @@ function clearAllTimers() {
 
 async function init() {
   bindEvents();
+  window.addEventListener("pagehide", () => {
+    if (!document.querySelector("#learningFlow").hidden && !state.viewedCompletion) pauseLearningFlow();
+  });
   document.addEventListener("WeixinJSBridgeReady", () => {
     if (els.practiceMode.value === "audioToZhChoice") pronunciationPlayer.prime();
   }, { once: true });
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
+      if (!document.querySelector("#learningFlow").hidden && !state.viewedCompletion) pauseLearningFlow();
+      document.querySelector("#flowAudio")?.pause();
       clearAllTimers();
       return;
     }
+    if (!document.querySelector("#learningFlow").hidden && !state.viewedCompletion) resumeLearningFlow();
     if (state.session?.mode === "audioToZhChoice" && !state.session.answered && !state.session.timingReady) {
       showAudioRecovery({ status: "blocked" });
     }

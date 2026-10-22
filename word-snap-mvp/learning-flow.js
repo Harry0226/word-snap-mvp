@@ -4,6 +4,70 @@ const learningBook = new Map((window.WORD_SNAP_WORDBOOK || []).map((item) => [it
 let flowAdvanceTimer = 0;
 let wordbookLoadPromise = null;
 
+function renderTodayCompletion() {
+  const record = state.learningCompletions.get(learningDateKey());
+  els.todayRecordBtn.disabled = !record;
+  els.todayRecordStatus.textContent = record
+    ? `${record.report.grade} · ${formatClockTime(record.completedAt)} 完成`
+    : "完成整轮学习后可查看结算";
+}
+
+function openTodayCompletion() {
+  const record = state.learningCompletions.get(learningDateKey());
+  if (!record) return;
+  state.viewedCompletion = {...record, phase: "done"};
+  renderLearningFlow(true);
+}
+
+function formatClockTime(timestamp) {
+  const date = new Date(timestamp);
+  return `${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
+}
+
+function formatSessionDate(timestamp) {
+  const date = new Date(timestamp);
+  const weekday = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][date.getDay()];
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${weekday} ${formatClockTime(timestamp)}`;
+}
+
+function formatLearningDuration(seconds) {
+  const total = Math.max(0, Math.round(Number(seconds) || 0));
+  const hours = Math.floor(total / 3600);
+  const minutes = Math.floor((total % 3600) / 60);
+  const rest = total % 60;
+  return `${hours ? `${hours}小时` : ""}${minutes ? `${minutes}分` : ""}${rest}秒`;
+}
+
+function pauseLearningFlow() {
+  if (!state.learningFlow || state.learningFlow.phase === "done" || state.learningFlow.pausedAt) return;
+  state.learningFlow.pausedAt = Date.now();
+  saveLearningFlow();
+}
+
+function resumeLearningFlow() {
+  const flow = state.learningFlow;
+  if (!flow || flow.phase === "done" || !flow.pausedAt) return;
+  flow.pausedMs = (flow.pausedMs || 0) + Math.max(0, Date.now() - flow.pausedAt);
+  flow.pausedAt = null;
+  saveLearningFlow();
+}
+
+async function recordLearningCompletion(flow) {
+  flow.completedAt = Date.now();
+  flow.totalSeconds = Math.max(0, Number(flow.report.totalSeconds) || 0)
+    + Math.max(0, Math.round((flow.completedAt - flow.startedAt - (flow.pausedMs || 0)) / 1000));
+  const record = {
+    report: flow.report,
+    scores: {...flow.scores},
+    completedAt: flow.completedAt,
+    totalSeconds: flow.totalSeconds
+  };
+  const day = learningDateKey(new Date(flow.completedAt));
+  await put("meta", {key: `learningCompletion:v1:${day}`, value: record});
+  state.learningCompletions.set(day, record);
+  renderTodayCompletion();
+}
+
 function prepareWordbookStages() {
   if (wordbookLoadPromise) return wordbookLoadPromise;
   wordbookLoadPromise = (async () => {
@@ -204,7 +268,8 @@ async function startLearningFlow(report, sourceWords, wrongWords, slowWords) {
   try {
     state.learningFlow = {
       version: 1, phase: "spelling", index: 0, response: null,
-      report, startedAt: Date.now(), scores: {spelling: 0, fill: 0, listening: 0},
+      report, startedAt: Date.now(), pausedAt: null, pausedMs: 0,
+      scores: {spelling: 0, fill: 0, listening: 0},
       spelling: makeSpellingItems(words), fill: makeFillItems(words, bank),
       listening: makeListeningItems(report.grade, words)
     };
@@ -233,9 +298,33 @@ function flowExplanation(item) {
   return [entry.definition, entry.mnemonic || entry.note || entry.context].filter(Boolean).join(" · ").slice(0, 480);
 }
 
-function renderLearningFlow(show = false) {
+async function playFlowAudio(replay = false) {
   const flow = state.learningFlow;
+  if (!flow || flow.phase !== "listening" || state.viewedCompletion) return;
+  const audio = document.querySelector("#flowAudio");
+  const item = flowCurrent();
+  const source = new URL(item.audio, document.baseURI).href;
+  if (audio.src !== source) audio.src = source;
+  audio.pause();
+  try { audio.currentTime = 0; } catch (error) { /* The new source has not loaded yet. */ }
+  const status = document.querySelector("#flowAudioStatus");
+  if (replay && flow.response?.correct) {
+    clearTimeout(flowAdvanceTimer);
+    audio.onended = () => { flowAdvanceTimer = setTimeout(nextFlowQuestion, 2000); };
+  } else audio.onended = null;
+  try {
+    await audio.play();
+    if (status) status.textContent = "正在播放 · 可点击重听";
+  } catch (error) {
+    if (status) status.textContent = "请点播放按钮收听句子";
+    if (replay && flow.response?.correct) flowAdvanceTimer = setTimeout(nextFlowQuestion, 2000);
+  }
+}
+
+function renderLearningFlow(show = false) {
+  const flow = state.viewedCompletion || state.learningFlow;
   if (!flow) return;
+  if (show && !state.viewedCompletion) resumeLearningFlow();
   const overlay = document.querySelector("#learningFlow");
   if (show) overlay.hidden = false;
   if (overlay.hidden) return;
@@ -248,13 +337,25 @@ function renderLearningFlow(show = false) {
   const footer = document.querySelector("#flowFooter");
   const response = flow.response;
   if (flow.phase === "done") {
-    const count = weeklyLearningDays();
-    body.innerHTML = `<div class="flow-summary"><span class="learning-eyebrow">本轮全部完成</span><img src="./assets/teacher-approval.png" alt="来自代老师的肯定" width="254" height="230"><h3>得到代老师的肯定！</h3>
-      <p>要每天坚持，继续加油！你所有的努力我们都看得到！</p>
-      <div class="flow-summary-stats"><div><strong>${flow.report.correct}/${flow.report.total}</strong><span>刷词</span></div><div><strong>${flow.scores.spelling}/10</strong><span>拼写判断</span></div><div><strong>${flow.scores.fill}/3</strong><span>拼写填空</span></div><div><strong>${flow.scores.listening}/20</strong><span>听力</span></div></div>
-      <p class="flow-weekly">本周 ${Math.min(count, 5)}/5 天 · 今日的努力已加入每周结算</p><p class="flow-weekly-sub">完成 5 天完整打卡，就能获得丰富奖励。进度保存在当前浏览器。</p></div>`;
-    footer.innerHTML = '<button type="button" id="flowFinish">完成</button>';
-    footer.querySelector("#flowFinish").addEventListener("click", () => { overlay.hidden = true; state.learningFlow = null; saveLearningFlow(); });
+    const count = weeklyLearningDays(new Date(flow.completedAt || Date.now()));
+    const accuracy = flow.report.total ? Math.round(flow.report.correct / flow.report.total * 100) : 0;
+    const fastRate = flow.report.total ? Math.round((flow.report.fast || 0) / flow.report.total * 100) : 0;
+    const title = accuracy >= 80 ? "太棒了，顺利过关！" : "完成了今天的挑战！";
+    body.innerHTML = `<div class="flow-summary">
+      <div class="flow-summary-banner"><span>本轮学习已完成</span><h3>${title}</h3><p>${formatSessionDate(flow.completedAt || Date.now())}</p></div>
+      <div class="flow-summary-meta"><div><span>本次模式</span><strong>${escapeHtml(practiceModeLabel(flow.report.practiceMode))}</strong></div><div><span>所选词汇</span><strong>${escapeHtml(flow.report.grade)}</strong></div><div><span>总用时</span><strong>${formatLearningDuration(flow.totalSeconds ?? flow.report.totalSeconds)}</strong></div></div>
+      <div class="flow-summary-stats"><div><strong>${flow.report.total}</strong><span>刷词数</span></div><div><strong>${accuracy}%</strong><span>正确率</span></div><div><strong>${fastRate}%</strong><span>秒选率</span></div></div>
+      <div class="flow-summary-practice"><span>巩固练习</span><div><strong>${flow.scores.spelling}/10</strong><small>拼写判断</small></div><div><strong>${flow.scores.fill}/3</strong><small>拼写填空</small></div><div><strong>${flow.scores.listening}/20</strong><small>听力理解</small></div></div>
+      <div class="flow-summary-approval"><img src="./assets/teacher-approval.png" alt="来自代老师的肯定" width="254" height="230"><div><h4>得到代老师的肯定！</h4><p>要每天坚持，继续加油！你所有的努力我们都看得到！</p></div></div>
+      <div class="flow-summary-weekly"><strong>本周 ${Math.min(count, 5)}/5 天</strong><p>今日的努力已加入每周结算。完成 5 天完整打卡，就能获得丰富奖励。</p></div>
+      <p class="flow-summary-reminder">记得截图发给代老师或学长学姐。今日结算也可以从首页再次打开。</p></div>`;
+    footer.innerHTML = '<button type="button" id="flowFinish">返回训练</button>';
+    footer.querySelector("#flowFinish").addEventListener("click", async () => {
+      overlay.hidden = true;
+      if (state.viewedCompletion) state.viewedCompletion = null;
+      else { state.learningFlow = null; await saveLearningFlow(); }
+      renderTodayCompletion();
+    });
     return;
   }
   if (flow.phase === "spelling") {
@@ -273,21 +374,28 @@ function renderLearningFlow(show = false) {
   } else {
     const item = flowCurrent();
     body.innerHTML = `<div class="flow-question-head"><span>第 ${flow.index + 1} / 20 题</span><p>听句子，选择它的中文意思。</p></div>
-      <div class="flow-audio-control"><button type="button" id="flowPlayAudio" aria-label="播放或重播英式英语句子">▶</button><span>播放 / 重播句子</span><audio id="flowAudio" preload="none" src="${escapeAttr(item.audio)}"></audio></div>
+      <div class="flow-audio-control"><button type="button" id="flowPlayAudio" aria-label="播放或重播英式英语句子">▶</button><span id="flowAudioStatus">自动播放中 · 可点击重听</span></div>
       <div class="flow-listening-choices">${item.choices.map((choice, index) => `<button type="button" class="secondary" data-listening="${index}"><span>${"ABC"[index]}</span>${escapeHtml(choice)}</button>`).join("")}</div>
       <p class="flow-credit">句子来源：<a href="https://tatoeba.org/" target="_blank" rel="noopener noreferrer">Tatoeba</a> · 英式发音</p>`;
-    body.querySelector("#flowPlayAudio").addEventListener("click", async () => {
-      const audio = body.querySelector("#flowAudio");
-      audio.currentTime = 0;
-      try { await audio.play(); } catch (error) { showToast("暂时无法播放，请再点一次播放按钮。", {duration: 3000}); }
-    });
+    body.querySelector("#flowPlayAudio").addEventListener("click", () => playFlowAudio(true));
     body.querySelectorAll("[data-listening]").forEach((button) => button.addEventListener("click", () => submitFlowAnswer(Number(button.dataset.listening))));
+    if (!response) playFlowAudio();
   }
   if (flow.phase !== "fill") footer.innerHTML = "";
   if (response) {
     body.querySelectorAll("[data-spelling], [data-listening], [data-fill]").forEach((element) => element.disabled = true);
-    footer.innerHTML = `<div class="flow-feedback ${response.correct ? "is-correct" : "is-wrong"}"><strong>${response.correct ? "答对了" : "再记住这个要点"}</strong><p>${escapeHtml(response.explanation)}</p></div><button type="button" id="flowContinue">继续</button>`;
-    footer.querySelector("#flowContinue").addEventListener("click", nextFlowQuestion);
+    if (flow.phase === "listening") {
+      const item = flowCurrent();
+      body.querySelector(`[data-listening="${item.choices.indexOf(item.chinese)}"]`)?.classList.add("is-answer");
+      body.insertAdjacentHTML("beforeend", `<div class="flow-transcript"><strong>${escapeHtml(item.english)}</strong><p>${escapeHtml(item.chinese)}</p></div>`);
+    }
+    const autoNext = flow.phase === "listening" && response.correct;
+    footer.innerHTML = `<div class="flow-feedback ${response.correct ? "is-correct" : "is-wrong"}"><strong>${response.correct ? "答对了" : "再记住这个要点"}</strong><p>${escapeHtml(autoNext ? "完整句子已展示，2 秒后进入下一题。" : response.explanation)}</p></div>${autoNext ? "" : '<button type="button" id="flowContinue">继续</button>'}`;
+    footer.querySelector("#flowContinue")?.addEventListener("click", nextFlowQuestion);
+    if (show && autoNext) {
+      clearTimeout(flowAdvanceTimer);
+      flowAdvanceTimer = setTimeout(nextFlowQuestion, 2000);
+    }
   }
 }
 
@@ -307,6 +415,7 @@ async function submitFlowAnswer(value) {
     correct = points === 3;
     explanation = item.map((row, index) => `${index + 1}. ${row.word}（${row.zh}）${matches[index] ? " ✓" : ` · ${flowExplanation(row)}`}`).join("\n");
   } else {
+    document.querySelector("#flowAudio")?.pause();
     correct = item.choices[value] === item.chinese;
     points = correct ? 1 : 0;
     explanation = `${item.english}｜${item.chinese}。${item.word}：${flowExplanation(item)}`;
@@ -317,7 +426,7 @@ async function submitFlowAnswer(value) {
   renderLearningFlow();
   if (correct) {
     clearTimeout(flowAdvanceTimer);
-    flowAdvanceTimer = setTimeout(nextFlowQuestion, 650);
+    flowAdvanceTimer = setTimeout(nextFlowQuestion, flow.phase === "listening" ? 2000 : 650);
   }
 }
 
@@ -325,11 +434,13 @@ async function nextFlowQuestion() {
   clearTimeout(flowAdvanceTimer);
   const flow = state.learningFlow;
   if (!flow?.response) return;
+  document.querySelector("#flowAudio")?.pause();
   if (flow.phase === "spelling" && flow.index === 9) { flow.phase = "fill"; flow.index = 0; }
   else if (flow.phase === "fill") { flow.phase = "listening"; flow.index = 0; }
   else if (flow.phase === "listening" && flow.index === 19) {
     flow.phase = "done";
     await recordLearningDay();
+    await recordLearningCompletion(flow);
   } else flow.index += 1;
   flow.response = null;
   await saveLearningFlow();

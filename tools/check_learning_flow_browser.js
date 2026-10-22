@@ -83,9 +83,13 @@ async function run() {
     }
   });
   assert.equal(await page.locator('#flowTitle').textContent(), '今日结算');
-  assert.match(await page.locator('.flow-weekly').textContent(), /1\/5/);
+  assert.match(await page.locator('.flow-summary-weekly').textContent(), /1\/5/);
+  assert.match(await page.locator('.flow-summary-meta').textContent(), /本次模式.*所选词汇.*总用时/s);
+  assert.match(await page.locator('.flow-summary-meta').textContent(), /总用时.*秒/s);
+  assert.match(await page.locator('.flow-summary-banner').textContent(), /\d{4}年\d+月\d+日/);
   assert.equal(await page.locator('.flow-summary img').evaluate((img) => img.naturalWidth > 0), true);
   assert.equal(await page.evaluate(() => state.learningDays.size), 1);
+  assert.equal(await page.evaluate(() => state.learningCompletions.has(learningDateKey())), true);
   assert.equal(await page.evaluate(async () => {await recordLearningDay(); return state.learningDays.size;}), 1);
   const weekBoundary = await page.evaluate(() => {
     const existing = state.learningDays;
@@ -100,6 +104,18 @@ async function run() {
   await page.screenshot({path: '/tmp/word-snap-verification/learning-mobile.png'});
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
   await page.locator('#flowFinish').click();
+  await page.evaluate(() => switchView('train'));
+  assert.equal(await page.locator('#todayRecordBtn').isEnabled(), true);
+  await page.screenshot({path: '/tmp/word-snap-verification/learning-home-mobile.png'});
+  await page.locator('#todayRecordBtn').click();
+  assert.equal(await page.locator('#flowTitle').textContent(), '今日结算');
+  await page.locator('#flowFinish').click();
+  await page.reload({waitUntil: 'networkidle'});
+  await page.waitForFunction(() => Boolean(state.db && state.words.length));
+  assert.equal(await page.locator('#todayRecordBtn').isEnabled(), true);
+  await page.locator('#todayRecordBtn').click();
+  assert.equal(await page.locator('#flowTitle').textContent(), '今日结算');
+  await page.locator('#flowFinish').click();
   await page.evaluate(async () => {
     const word = state.words.find((item) => stageMatches(item, STAGES[0]) && /^[a-z]{4,}$/.test(item.en));
     await startSession({wordIds: [word.id], grade: STAGES[0]});
@@ -112,6 +128,12 @@ async function run() {
   await page.waitForSelector('#wordbookExplanation:not([hidden])');
   assert(await page.locator('#trainContinueBtn').isVisible());
   await page.evaluate(async () => {
+    window.flowPlayCount = 0;
+    const originalPlay = HTMLMediaElement.prototype.play;
+    HTMLMediaElement.prototype.play = function() {
+      if (this.id === 'flowAudio') window.flowPlayCount += 1;
+      return originalPlay.call(this);
+    };
     state.session = null;
     await startLearningFlow({grade: STAGES[0], total: 1, correct: 0}, state.words.filter((item) => stageMatches(item, STAGES[0])).slice(0, 8), [], []);
     state.learningFlow.phase = 'listening';
@@ -119,9 +141,32 @@ async function run() {
     await saveLearningFlow();
     renderLearningFlow(true);
   });
+  await page.waitForFunction(() => window.flowPlayCount >= 1);
   await page.locator('#flowPlayAudio').click();
   await page.waitForFunction(() => document.querySelector('#flowAudio')?.currentTime > 0, {timeout: 10000});
   await page.locator('#flowPlayAudio').click();
+  assert((await page.evaluate(() => window.flowPlayCount)) >= 3);
+  const correctListening = await page.evaluate(() => flowCurrent().choices.indexOf(flowCurrent().chinese));
+  await page.locator(`[data-listening="${correctListening}"]`).click();
+  await page.waitForSelector('.flow-transcript');
+  assert.equal(await page.locator('#flowContinue').count(), 0);
+  await page.locator('#flowClose').click();
+  await page.waitForTimeout(2300);
+  assert.equal(await page.evaluate(() => state.learningFlow.index), 0);
+  await page.locator('#resumeFlowBtn').click();
+  await page.waitForTimeout(1000);
+  assert.equal(await page.evaluate(() => state.learningFlow.index), 0);
+  await page.waitForFunction(() => state.learningFlow.index === 1, {timeout: 6000});
+  await page.waitForFunction(() => window.flowPlayCount >= 4);
+  const wrongListening = await page.evaluate(() => flowCurrent().choices.findIndex((choice) => choice !== flowCurrent().chinese));
+  await page.locator(`[data-listening="${wrongListening}"]`).click();
+  await page.waitForSelector('.flow-feedback.is-wrong');
+  await page.waitForTimeout(2300);
+  assert.equal(await page.evaluate(() => state.learningFlow.index), 1);
+  await page.locator('#flowPlayAudio').click();
+  await page.locator('#flowContinue').click();
+  await page.waitForFunction(() => state.learningFlow.index === 2);
+  await page.waitForFunction(() => window.flowPlayCount >= 6);
   await page.screenshot({path: '/tmp/word-snap-verification/learning-listening-mobile.png'});
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
   assert.deepEqual(errors, []);

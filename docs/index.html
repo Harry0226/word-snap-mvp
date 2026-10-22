@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#fafbfa">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20261022-learning-flow-v1">
+  <link rel="stylesheet" href="./styles.css?v=20261022-record-v3">
   <link rel="preload" href="./audio/unlock.mp3" as="audio" type="audio/mpeg">
   <script defer src="./word-data/builtin-manifest.js?v=20261022-junior-1600-v1"></script>
   <script defer src="./pronunciation-audio-config.js?v=20261022-junior-1600-v1"></script>
@@ -21,8 +21,8 @@
   <script defer src="./daily-learning.js?v=20260728-adaptive"></script>
   <script defer src="./word-data/wordbook.js?v=20261022-v1"></script>
   <script defer src="./word-data/listening-bank.js?v=20261022-v1"></script>
-  <script defer src="./learning-flow.js?v=20261022-v1"></script>
-  <script defer src="./app.js?v=20261022-learning-flow-v1"></script>
+  <script defer src="./learning-flow.js?v=20261022-record-v3"></script>
+  <script defer src="./app.js?v=20261022-record-v3"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -77,6 +77,10 @@
       </aside>
       <div class="study-workspace">
       <div class="workspace-heading"><h2>词汇训练</h2><span>每天一点，记得更牢。</span></div>
+      <div class="today-record" aria-label="今日完成记录">
+        <div><span>今日完成记录</span><strong id="todayRecordStatus">完成整轮学习后可查看结算</strong></div>
+        <button id="todayRecordBtn" type="button" class="secondary" disabled>查看结算</button>
+      </div>
       <div id="trainWordStats" class="stats" aria-label="刷词统计">
         <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
         <div><strong id="doneCount">0</strong><span>累计练习</span></div>
@@ -437,6 +441,7 @@
       <div class="learning-progress"><div id="flowProgress"></div></div>
       <main id="flowBody" class="learning-body"></main>
       <footer id="flowFooter" class="learning-footer"></footer>
+      <audio id="flowAudio" preload="none"></audio>
     </div>
   </div>
 
