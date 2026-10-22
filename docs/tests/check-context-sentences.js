@@ -19,7 +19,7 @@ const rows = Object.entries(manifest.stages).flatMap(([stage, entry]) => {
   return list.words.map((word) => ({ ...word, grade: stage }));
 });
 
-assert.strictEqual(rows.length, 5931, "all active built-in rows should be checked");
+assert.strictEqual(rows.length, 7532, "all active built-in rows should be checked");
 
 const unsafe = /\b(?:rape|porn|naked|nude|sexy|cocaine|heroin|meth|whore|prostitute|slut|fuck|fucking|shit|condom|penis|vagina)\b/i;
 const meta = /\b(?:used to mean|means? the same as|here,\s*[“"'])/i;

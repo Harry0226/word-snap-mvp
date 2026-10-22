@@ -5,43 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="theme-color" content="#f6f7f9">
+  <meta name="theme-color" content="#fafbfa">
   <meta name="description" content="代老师带你秒懂词 - 中小学英语词汇分层刷词训练">
   <title>代老师带你秒懂词 - 分层刷词训练</title>
-  <link rel="stylesheet" href="./styles.css?v=20260807-encouraging-results-v1">
+  <link rel="stylesheet" href="./styles.css?v=20261022-learning-flow-v1">
   <link rel="preload" href="./audio/unlock.mp3" as="audio" type="audio/mpeg">
-  <script defer src="./word-data/builtin-manifest.js?v=20260731-curriculum-only-v1"></script>
-  <script defer src="./pronunciation-audio-config.js?v=20260731-clean-british-audio-v2"></script>
+  <script defer src="./word-data/builtin-manifest.js?v=20261022-junior-1600-v1"></script>
+  <script defer src="./pronunciation-audio-config.js?v=20261022-junior-1600-v1"></script>
   <script defer src="./pronunciation-audio.js?v=20260731-clean-british-audio-v2"></script>
   <script defer src="./asset-loader.js?v=20260715-session-choice-fix"></script>
   <script defer src="./rotation-queue.js?v=20260715-session-choice-fix"></script>
   <script defer src="./choice-distractors.js?v=20260724-summer-merge"></script>
-  <script defer src="./daily-streaks.js?v=20260724-daily300-v2"></script>
+  <script defer src="./daily-streaks.js?v=20261022-daily100-v1"></script>
   <script defer src="./vendor/ts-fsrs.umd.js?v=5.4.1"></script>
   <script defer src="./daily-learning.js?v=20260728-adaptive"></script>
-  <script defer src="./app.js?v=20260814-practice-mode-fix-v1"></script>
+  <script defer src="./word-data/wordbook.js?v=20261022-v1"></script>
+  <script defer src="./word-data/listening-bank.js?v=20261022-v1"></script>
+  <script defer src="./learning-flow.js?v=20261022-v1"></script>
+  <script defer src="./app.js?v=20261022-learning-flow-v1"></script>
 </head>
 <body>
   <main class="app-shell">
     <header class="app-header">
-      <div>
-        <h1>代老师带你秒懂词</h1>
-        <p>从初一到高三，按阶段刷词，把错词和慢词优先练熟。</p>
+      <div class="brand">
+        <span class="brand-mark"><img src="./assets/icons/book-open.svg" width="24" height="24" alt=""></span>
+        <div>
+          <span class="brand-caption">WORD SNAP</span>
+          <h1>代老师带你秒懂词</h1>
+        </div>
       </div>
       <nav class="tabs" aria-label="主导航">
-        <button class="tab active" type="button" data-view="train">训练</button>
-        <button class="tab" type="button" data-view="battle">对战</button>
-        <button class="tab" type="button" data-view="decks">词库</button>
-        <button class="tab" type="button" data-view="wrong">错词</button>
-        <button class="tab" type="button" data-view="report">报告</button>
-        <button class="tab" type="button" data-view="quiz">刷题</button>
+        <button class="tab active" type="button" data-view="train"><img src="./assets/icons/book-open.svg" alt="" width="18" height="18">训练</button>
+        <button class="tab" type="button" data-view="battle"><img src="./assets/icons/swords.svg" alt="" width="18" height="18">对战</button>
+        <button class="tab" type="button" data-view="decks"><img src="./assets/icons/library.svg" alt="" width="18" height="18">单词书</button>
+        <button class="tab" type="button" data-view="wrong"><img src="./assets/icons/bookmark.svg" alt="" width="18" height="18">错词</button>
+        <button class="tab" type="button" data-view="report"><img src="./assets/icons/chart-no-axes-combined.svg" alt="" width="18" height="18">报告</button>
+        <button class="tab" type="button" data-view="quiz"><img src="./assets/icons/list-checks.svg" alt="" width="18" height="18">刷题</button>
       </nav>
     </header>
 
     <section id="view-train" class="view active">
+      <aside class="study-sidebar">
       <section id="dailyTaskPanel" class="panel daily-task-panel" aria-label="今日学习任务">
         <div class="daily-task-copy">
-          <span class="daily-task-kicker">今日学习闭环</span>
+          <span class="daily-task-kicker">DAILY PRACTICE</span>
           <h2>今日任务</h2>
           <p id="dailyTaskSummary" class="daily-task-summary">正在根据到期词和新词生成任务...</p>
         </div>
@@ -62,11 +69,14 @@
         <div class="notice-lines">
           <p><b>每日任务：</b>先完成系统安排的今日任务和到期复习；需要强化时可继续使用自由训练。</p>
           <p><b>提交方式：</b>截图当天微信发给代老师或者学长学姐。</p>
-          <p><b>奖励机制：</b>每周完成12张截图（包括中译英和英译中）来找代老师兑换学习用品或者奶茶一杯。周日定期会有单词默写比赛，奖品丰厚！</p>
+          <p><b>奖励机制：</b>每周完成 5 天完整打卡（刷词、拼写判断、填空和听力）即可获得丰富奖励。进度只保存在当前浏览器；每日 100 词火花独立计算。周日仍有单词默写比赛。</p>
           <p><b>惩罚机制：</b>当天未完成的同学下节课前需要抄写300个未刷单词。</p>
         </div>
       </details>
 
+      </aside>
+      <div class="study-workspace">
+      <div class="workspace-heading"><h2>词汇训练</h2><span>每天一点，记得更牢。</span></div>
       <div id="trainWordStats" class="stats" aria-label="刷词统计">
         <div><strong id="totalWords">0</strong><span>当前词汇</span></div>
         <div><strong id="doneCount">0</strong><span>累计练习</span></div>
@@ -74,8 +84,8 @@
         <div><strong id="fastRate">0%</strong><span>快速率</span></div>
         <div><strong id="weakCount">0</strong><span>弱词</span></div>
         <div id="trainStreakCard" class="checkin-mini">
-          <span class="streak-icon" id="streakIcon">🔥</span>
-          <span id="trainTodayProgress" class="checkin-progress">今日 0/300</span>
+          <span class="streak-icon" id="streakIcon"><img src="./assets/icons/flame.svg" width="24" height="24" alt="每日火花"></span>
+          <span id="trainTodayProgress" class="checkin-progress">今日 0/100</span>
         </div>
       </div>
 
@@ -86,6 +96,7 @@
             <option value="初二课本单元词汇">初二课本单元词汇</option>
             <option value="初三课本单元词汇" selected>初三课本单元词汇</option>
             <option value="初中688高频词">初中688高频词</option>
+            <option value="初中1600">初中1600</option>
             <option value="高一课本单元词汇">高一课本单元词汇</option>
             <option value="高一课改词库">高一课改词库</option>
             <option value="高二课本单元词汇">高二课本单元词汇</option>
@@ -102,6 +113,7 @@
         </label>
         <button id="startBtn" type="button">自由训练</button>
       </div>
+      <button id="resumeFlowBtn" type="button" class="secondary resume-flow" hidden>继续未完成的巩固练习</button>
 
       <details class="panel advanced-settings">
         <summary>更多训练设置</summary>
@@ -151,12 +163,14 @@
         <div id="choices" class="choices"></div>
         <div class="feedback-row">
           <p id="feedback">练习记录只保存在本机浏览器，不会上传。</p>
+          <div id="wordbookExplanation" class="wordbook-explanation" hidden></div>
           <button id="trainContinueBtn" type="button" hidden>继续刷词</button>
           <button id="skipBtn" type="button" disabled>不会</button>
         </div>
       </div>
 
       <div id="sessionReport" class="panel session-report" hidden></div>
+      </div>
     </section>
 
     <section id="view-battle" class="view">
@@ -167,6 +181,7 @@
             <option value="初二课本单元词汇">初二课本单元词汇</option>
             <option value="初三课本单元词汇" selected>初三课本单元词汇</option>
             <option value="初中688高频词">初中688高频词</option>
+            <option value="初中1600">初中1600</option>
             <option value="高一课本单元词汇">高一课本单元词汇</option>
             <option value="高一课改词库">高一课改词库</option>
             <option value="高二课本单元词汇">高二课本单元词汇</option>
@@ -219,6 +234,14 @@
     </section>
 
     <section id="view-decks" class="view">
+      <div class="panel wordbook-panel">
+        <div class="section-head"><div><h2>我的单词书</h2><p>查找释义和记忆方法，收藏那些总记不牢的词。</p></div></div>
+        <label class="wordbook-search-label" for="wordbookSearch">查找单词</label>
+        <input id="wordbookSearch" type="search" autocomplete="off" spellcheck="false" placeholder="输入英文单词，例如 achieve">
+        <div id="wordbookResults" class="wordbook-results" aria-live="polite"></div>
+      </div>
+      <details class="wordbook-management">
+        <summary>词库导入、导出与管理</summary>
       <div class="panel">
         <div class="section-head">
           <div>
@@ -247,6 +270,7 @@
               <option value="初二课本单元词汇">初二课本单元词汇</option>
               <option value="初三课本单元词汇" selected>初三课本单元词汇</option>
               <option value="初中688高频词">初中688高频词</option>
+              <option value="初中1600">初中1600</option>
               <option value="高一课本单元词汇">高一课本单元词汇</option>
               <option value="高一课改词库">高一课改词库</option>
               <option value="高二课本单元词汇">高二课本单元词汇</option>
@@ -287,6 +311,7 @@
         </div>
         <div id="deckList" class="deck-list"></div>
       </div>
+      </details>
     </section>
 
     <section id="view-wrong" class="view">
@@ -392,15 +417,27 @@
   </main>
 
   <nav class="mobile-nav" aria-label="移动端主导航">
-    <button class="mobile-nav-item active" type="button" data-mobile-view="train">训练</button>
-    <button class="mobile-nav-item" type="button" data-mobile-view="wrong">错词</button>
-    <button class="mobile-nav-item" type="button" data-mobile-view="report">报告</button>
-    <button class="mobile-nav-item" type="button" data-mobile-more popovertarget="mobileMoreMenu">更多</button>
+    <button class="mobile-nav-item active" type="button" data-mobile-view="train"><img src="./assets/icons/book-open.svg" alt="" width="20" height="20">训练</button>
+    <button class="mobile-nav-item" type="button" data-mobile-view="wrong"><img src="./assets/icons/bookmark.svg" alt="" width="20" height="20">错词</button>
+    <button class="mobile-nav-item" type="button" data-mobile-view="report"><img src="./assets/icons/chart-no-axes-combined.svg" alt="" width="20" height="20">报告</button>
+    <button class="mobile-nav-item" type="button" data-mobile-more popovertarget="mobileMoreMenu"><img src="./assets/icons/ellipsis.svg" alt="" width="20" height="20">更多</button>
   </nav>
   <div id="mobileMoreMenu" class="mobile-more-menu" popover>
     <button type="button" data-mobile-view="battle">对战</button>
-    <button type="button" data-mobile-view="decks">词库</button>
+    <button type="button" data-mobile-view="decks">单词书</button>
     <button type="button" data-mobile-view="quiz">刷题</button>
+  </div>
+
+  <div id="learningFlow" class="learning-flow" role="dialog" aria-modal="true" aria-labelledby="flowTitle" hidden>
+    <div class="learning-shell">
+      <header class="learning-header">
+        <div><span id="flowPhase" class="learning-eyebrow">巩固练习</span><h2 id="flowTitle">拼写判断</h2></div>
+        <button id="flowClose" type="button" class="learning-close" title="暂时离开，进度会保存" aria-label="暂时离开">×</button>
+      </header>
+      <div class="learning-progress"><div id="flowProgress"></div></div>
+      <main id="flowBody" class="learning-body"></main>
+      <footer id="flowFooter" class="learning-footer"></footer>
+    </div>
   </div>
 
   <!-- 刷词完成弹窗 -->
@@ -438,7 +475,7 @@
           </div>
         </div>
         <div class="modal-result" id="modalResult"></div>
-        <p class="modal-tip">📝 错词和弱词已整理在右上方「错词」中。把它们抄在笔记本上再练一次，记忆会更牢。</p>
+        <p class="modal-tip">错词和弱词已整理在「错词」中。把它们抄在笔记本上再练一次，记忆会更牢。</p>
       </div>
       <div class="modal-actions">
         <div class="modal-btn-group">

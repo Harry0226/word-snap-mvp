@@ -82,7 +82,7 @@ for (const [stageName, entry] of Object.entries(manifest.stages)) {
     names.set(filename, term);
   }
 }
-assert.strictEqual(rows, 5931);
+assert.strictEqual(rows, 7532);
 assert.deepStrictEqual([...missing], [], `missing built-in audio: ${[...missing].slice(0, 10).join(", ")}`);
 assert.strictEqual(config.termCount, names.size, "audio config should report every unique built-in term");
 assert.ok(fs.statSync("audio/unlock.mp3").size > 500, "audio unlock file should be a real MP3");
