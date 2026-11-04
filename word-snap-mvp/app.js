@@ -636,6 +636,21 @@ async function loadState() {
   state.learningCompletions = new Map(meta.filter((entry) => entry.key?.startsWith("learningCompletion:v1:") && entry.value)
     .map((entry) => [entry.key.slice("learningCompletion:v1:".length), entry.value]));
   state.learningFlow = meta.find((entry) => entry.key === "learningFlow:v1")?.value || null;
+  if (state.learningFlow && state.learningFlow.version !== 2 && state.learningFlow.phase !== "done") {
+    const flow = state.learningFlow;
+    const ids = new Set(flow.report?.wrongWordIds || []);
+    flow.spelling = makeSpellingItems(state.words.filter((word) => ids.has(word.id)));
+    flow.version = 2;
+    flow.index = 0;
+    flow.response = null;
+    flow.scores = {spelling: 0};
+    flow.phase = flow.spelling.length ? "spelling" : "done";
+    if (flow.phase === "done") {
+      await recordLearningDay();
+      await recordLearningCompletion(flow);
+    }
+    await saveLearningFlow();
+  }
   els.resumeFlowBtn.hidden = !state.learningFlow || state.learningFlow.phase === "done";
   await loadStreaks();
 

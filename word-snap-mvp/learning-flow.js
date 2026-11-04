@@ -59,6 +59,7 @@ async function recordLearningCompletion(flow) {
   const record = {
     report: flow.report,
     scores: {...flow.scores},
+    spellingTotal: flow.spelling?.length ?? flow.spellingTotal ?? 10,
     completedAt: flow.completedAt,
     totalSeconds: flow.totalSeconds
   };
@@ -202,14 +203,11 @@ function incorrectSpelling(word, known) {
 
 function makeSpellingItems(words) {
   const known = new Set([...learningBook.keys(), ...state.words.map((word) => bookKey(word.en))]);
-  const candidates = words.filter((word) => /^[a-z]{4,}$/.test(bookKey(word.en)));
-  const selected = candidates.slice(0, 10);
-  if (selected.length < 10) throw new Error("拼写题词量不足");
-  return shuffled(selected.map((word, index) => ({
-    word: word.en, zh: word.zh,
-    shown: index < 5 ? word.en : incorrectSpelling(bookKey(word.en), known) || word.en,
-    valid: index < 5
-  })));
+  return shuffled(words.map((word) => {
+    const key = bookKey(word.en);
+    const altered = /^[a-z]{3,}$/.test(key) && Math.random() < 0.5 ? incorrectSpelling(key, known) : null;
+    return {word: word.en, zh: word.zh, shown: altered || word.en, valid: !altered};
+  }));
 }
 
 function makeFillItems(words, bank) {
@@ -263,16 +261,18 @@ function makeListeningItems(stage, words) {
 }
 
 async function startLearningFlow(report, sourceWords, wrongWords, slowWords) {
-  const words = prioritizedWords(report.grade, sourceWords, wrongWords, slowWords);
-  const bank = window.WORD_SNAP_LISTENING_BANK?.[report.grade] || [];
+  const words = [...new Map(wrongWords.map((word) => [bookKey(word.en), word])).values()];
   try {
     state.learningFlow = {
-      version: 1, phase: "spelling", index: 0, response: null,
+      version: 2, phase: words.length ? "spelling" : "done", index: 0, response: null,
       report, startedAt: Date.now(), pausedAt: null, pausedMs: 0,
       scores: {spelling: 0, fill: 0, listening: 0},
-      spelling: makeSpellingItems(words), fill: makeFillItems(words, bank),
-      listening: makeListeningItems(report.grade, words)
+      spelling: makeSpellingItems(words)
     };
+    if (!words.length) {
+      await recordLearningDay();
+      await recordLearningCompletion(state.learningFlow);
+    }
     await saveLearningFlow();
     renderLearningFlow(true);
   } catch (error) {
@@ -331,8 +331,8 @@ function renderLearningFlow(show = false) {
   const phaseNames = {spelling: "拼写判断", fill: "拼写填空", listening: "听力理解", done: "今日结算"};
   document.querySelector("#flowPhase").textContent = flow.report.grade;
   document.querySelector("#flowTitle").textContent = phaseNames[flow.phase];
-  const completed = flow.phase === "spelling" ? flow.index : flow.phase === "fill" ? 10 : flow.phase === "listening" ? 11 + flow.index : 31;
-  document.querySelector("#flowProgress").style.width = `${completed / 31 * 100}%`;
+  const total = flow.spelling?.length ?? flow.spellingTotal ?? 10;
+  document.querySelector("#flowProgress").style.width = `${flow.phase === "done" ? 100 : (flow.index / Math.max(1, total) * 100)}%`;
   const body = document.querySelector("#flowBody");
   const footer = document.querySelector("#flowFooter");
   const response = flow.response;
@@ -345,7 +345,7 @@ function renderLearningFlow(show = false) {
       <div class="flow-summary-banner"><span>本轮学习已完成</span><h3>${title}</h3><p>${formatSessionDate(flow.completedAt || Date.now())}</p></div>
       <div class="flow-summary-meta"><div><span>本次模式</span><strong>${escapeHtml(practiceModeLabel(flow.report.practiceMode))}</strong></div><div><span>所选词汇</span><strong>${escapeHtml(flow.report.grade)}</strong></div><div><span>总用时</span><strong>${formatLearningDuration(flow.totalSeconds ?? flow.report.totalSeconds)}</strong></div></div>
       <div class="flow-summary-stats"><div><strong>${flow.report.total}</strong><span>刷词数</span></div><div><strong>${accuracy}%</strong><span>正确率</span></div><div><strong>${fastRate}%</strong><span>秒选率</span></div></div>
-      <div class="flow-summary-practice"><span>巩固练习</span><div><strong>${flow.scores.spelling}/10</strong><small>拼写判断</small></div><div><strong>${flow.scores.fill}/3</strong><small>拼写填空</small></div><div><strong>${flow.scores.listening}/20</strong><small>听力理解</small></div></div>
+      <div class="flow-summary-practice"><span>巩固练习</span><div><strong>${total ? `${flow.scores.spelling}/${total}` : "本轮全对"}</strong><small>错词拼写判断</small></div></div>
       <div class="flow-summary-approval"><img src="./assets/teacher-approval.png" alt="来自代老师的肯定" width="254" height="230"><div><h4>得到代老师的肯定！</h4><p>要每天坚持，继续加油！你所有的努力我们都看得到！</p></div></div>
       <div class="flow-summary-weekly"><strong>本周 ${Math.min(count, 5)}/5 天</strong><p>今日的努力已加入每周结算。完成 5 天完整打卡，就能获得丰富奖励。</p></div>
       <p class="flow-summary-reminder">记得截图发给代老师或学长学姐。今日结算也可以从首页再次打开。</p></div>`;
@@ -360,7 +360,7 @@ function renderLearningFlow(show = false) {
   }
   if (flow.phase === "spelling") {
     const item = flowCurrent();
-    body.innerHTML = `<div class="flow-question-head"><span>第 ${flow.index + 1} / 10 题</span><p>这个英文单词拼写正确吗？</p></div><strong class="flow-spelling-word">${escapeHtml(item.shown)}</strong>
+    body.innerHTML = `<div class="flow-question-head"><span>第 ${flow.index + 1} / ${total} 题</span><p>这个英文单词拼写正确吗？</p></div><strong class="flow-spelling-word">${escapeHtml(item.shown)}</strong>
       <div class="flow-binary"><button type="button" class="secondary" data-spelling="true">✓ <span>正确</span></button><button type="button" class="secondary" data-spelling="false">× <span>错误</span></button></div>`;
     body.querySelectorAll("[data-spelling]").forEach((button) => button.addEventListener("click", () => submitFlowAnswer(button.dataset.spelling === "true")));
   } else if (flow.phase === "fill") {
@@ -435,7 +435,11 @@ async function nextFlowQuestion() {
   const flow = state.learningFlow;
   if (!flow?.response) return;
   document.querySelector("#flowAudio")?.pause();
-  if (flow.phase === "spelling" && flow.index === 9) { flow.phase = "fill"; flow.index = 0; }
+  if (flow.phase === "spelling" && flow.index >= flow.spelling.length - 1) {
+    flow.phase = "done";
+    await recordLearningDay();
+    await recordLearningCompletion(flow);
+  }
   else if (flow.phase === "fill") { flow.phase = "listening"; flow.index = 0; }
   else if (flow.phase === "listening" && flow.index === 19) {
     flow.phase = "done";
