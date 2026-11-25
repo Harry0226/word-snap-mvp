@@ -2,10 +2,12 @@ const fs = require("fs");
 const assert = require("assert");
 
 const app = fs.readFileSync("app.js", "utf8");
+const decks = fs.readFileSync("decks.js", "utf8");
+const quiz = fs.readFileSync("quiz.js", "utf8");
 
 assert(app.includes("async function resetStreak(kind, grade)"), "app should reset a selected grade streak");
-assert(app.includes('await resetStreak("train", els.stageSelect.value)'), "clearing training records should reset the selected training streak");
-assert(app.includes('await resetStreak("quiz", els.quizStage.value)'), "clearing quiz wrong answers should reset the selected quiz streak");
+assert(decks.includes('await resetStreak("train", els.stageSelect.value)'), "clearing training records should reset the selected training streak");
+assert(quiz.includes('await resetStreak("quiz", els.quizStage.value)'), "clearing quiz wrong answers should reset the selected quiz streak");
 assert(app.includes('tx("streaks", "readwrite").delete(key)'), "streak reset should remove persisted streak data");
 
 const resolveMode = app.slice(app.indexOf("function resolvePracticeMode"), app.indexOf("async function startSession"));

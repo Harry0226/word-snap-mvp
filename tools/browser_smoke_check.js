@@ -4,7 +4,12 @@ const os = require("os");
 const path = require("path");
 const { spawn } = require("child_process");
 
-const edgePath = process.env.EDGE_PATH || "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
+const edgePath = process.env.EDGE_PATH || [
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+].find((candidate) => fs.existsSync(candidate)) || "google-chrome";
 const siteUrl = process.env.WORD_SNAP_URL || "http://127.0.0.1:8765/";
 const outputRoot = process.env.WORD_SNAP_SCREENSHOTS || path.join(os.tmpdir(), "word-snap-browser-check");
 const profileRoot = fs.mkdtempSync(path.join(os.tmpdir(), "word-snap-edge-"));
@@ -21,7 +26,9 @@ if (!process.env.WORD_SNAP_URL) {
     ".html": "text/html; charset=utf-8",
     ".js": "text/javascript; charset=utf-8",
     ".json": "application/json; charset=utf-8",
-    ".mp3": "audio/mpeg"
+    ".mp3": "audio/mpeg",
+    ".png": "image/png",
+    ".svg": "image/svg+xml"
   };
   localServer = http.createServer((request, response) => {
     const pathname = decodeURIComponent(new URL(request.url, siteUrl).pathname);
@@ -320,5 +327,5 @@ run()
     edge.kill();
     if (localServer) localServer.close();
     await delay(500);
-    fs.rmSync(profileRoot, { recursive: true, force: true });
+    try { fs.rmSync(profileRoot, { recursive: true, force: true }); } catch {}
   });

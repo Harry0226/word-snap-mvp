@@ -6,10 +6,11 @@ let wordbookLoadPromise = null;
 
 function renderTodayCompletion() {
   const record = state.learningCompletions.get(learningDateKey());
+  if (els.todayRecordBar) els.todayRecordBar.hidden = !record;
   els.todayRecordBtn.disabled = !record;
   els.todayRecordStatus.textContent = record
-    ? `${record.report.grade} · ${formatClockTime(record.completedAt)} 完成`
-    : "完成整轮学习后可查看结算";
+    ? `今日已完成 · ${record.report.grade} · ${formatClockTime(record.completedAt)}`
+    : "";
 }
 
 function openTodayCompletion() {
@@ -129,20 +130,20 @@ function renderWordbook() {
     keys = saved.reverse().slice(0, 12);
   }
   if (!keys.length) {
-    root.innerHTML = '<p class="wordbook-empty">搜索英文单词，或先收藏一个难词。</p>';
+    root.innerHTML = '<p class="empty-state">输入单词查释义，或先收藏难词</p>';
     return;
   }
   root.innerHTML = keys.map((key) => {
     const entry = bookEntry(key);
-    return `<article class="wordbook-entry" data-word="${escapeAttr(key)}">
-      <div class="wordbook-entry-head"><div><h3>${escapeHtml(entry.word)} <small>${escapeHtml(entry.phonetic)}</small></h3><p>${escapeHtml(entry.definition)}</p></div>
-      <button type="button" class="secondary" data-book-save="${escapeAttr(key)}" aria-pressed="${entry.saved}">${entry.saved ? "已收藏" : "收藏"}</button></div>
+    return `<article class="wordbook-entry" data-word="${WordSnapUtils.escapeAttr(key)}">
+      <div class="wordbook-entry-head"><div><h3>${WordSnapUtils.escapeHtml(entry.word)} <small>${WordSnapUtils.escapeHtml(entry.phonetic)}</small></h3><p>${WordSnapUtils.escapeHtml(entry.definition)}</p></div>
+      <button type="button" class="secondary" data-book-save="${WordSnapUtils.escapeAttr(key)}" aria-pressed="${entry.saved}">${entry.saved ? "已收藏" : "收藏"}</button></div>
       ${entry.mnemonic ? entry.mnemonic.length > 220
-        ? `<details class="wordbook-memory"><summary>记忆解析</summary><p>${escapeHtml(entry.mnemonic)}</p></details>`
-        : `<p class="wordbook-memory">${escapeHtml(entry.mnemonic)}</p>` : ""}
-      ${!entry.mnemonic && entry.context ? `<p class="wordbook-memory">${escapeHtml(entry.context)}</p>` : ""}
-      <label>我的记忆备注<textarea rows="2" data-book-note="${escapeAttr(key)}" placeholder="写下帮助自己记住这个词的提示">${escapeHtml(entry.note)}</textarea></label>
-      <button type="button" class="secondary wordbook-note-save" data-book-note-save="${escapeAttr(key)}">保存备注</button>
+        ? `<details class="wordbook-memory"><summary>记忆解析</summary><p>${WordSnapUtils.escapeHtml(entry.mnemonic)}</p></details>`
+        : `<p class="wordbook-memory">${WordSnapUtils.escapeHtml(entry.mnemonic)}</p>` : ""}
+      ${!entry.mnemonic && entry.context ? `<p class="wordbook-memory">${WordSnapUtils.escapeHtml(entry.context)}</p>` : ""}
+      <textarea rows="2" data-book-note="${WordSnapUtils.escapeAttr(key)}" aria-label="我的记忆备注" placeholder="添加记忆笔记...">${WordSnapUtils.escapeHtml(entry.note)}</textarea>
+      <button type="button" class="secondary wordbook-note-save" data-book-note-save="${WordSnapUtils.escapeAttr(key)}">保存笔记</button>
     </article>`;
   }).join("");
 }
@@ -167,18 +168,9 @@ async function handleWordbookClick(event) {
   renderWordbook();
 }
 
-function shuffled(items) {
-  const copy = [...items];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
 function prioritizedWords(stage, sourceWords, wrongWords, slowWords) {
   const all = state.words.filter((word) => stageMatches(word, stage));
-  const ordered = [...wrongWords, ...slowWords, ...sourceWords, ...shuffled(all)];
+  const ordered = [...wrongWords, ...slowWords, ...sourceWords, ...WordSnapUtils.shuffle(all)];
   const seen = new Set();
   return ordered.filter((word) => {
     const key = bookKey(word.en);
@@ -203,7 +195,7 @@ function incorrectSpelling(word, known) {
 
 function makeSpellingItems(words) {
   const known = new Set([...learningBook.keys(), ...state.words.map((word) => bookKey(word.en))]);
-  return shuffled(words.map((word) => {
+  return WordSnapUtils.shuffle(words.map((word) => {
     const key = bookKey(word.en);
     const altered = /^[a-z]{3,}$/.test(key) && Math.random() < 0.5 ? incorrectSpelling(key, known) : null;
     return {word: word.en, zh: word.zh, shown: altered || word.en, valid: !altered};
@@ -238,7 +230,7 @@ function makeListeningItems(stage, words) {
     }
     if (selected.length === 20) break;
   }
-  for (const item of shuffled(bank)) {
+  for (const item of WordSnapUtils.shuffle(bank)) {
     if (selected.length === 20) break;
     if (!seen.has(item.english)) {
       seen.add(item.english);
@@ -250,12 +242,12 @@ function makeListeningItems(stage, words) {
   return selected.map((item) => {
     const bigrams = (sentence) => new Set([...sentence].map((char, index) => sentence.slice(index, index + 2)).filter((part) => part.length === 2 && /[\u3400-\u9fff]{2}/.test(part)));
     const answerParts = bigrams(item.chinese);
-    const alternatives = shuffled(bank.filter((candidate) => candidate.chinese !== item.chinese
+    const alternatives = WordSnapUtils.shuffle(bank.filter((candidate) => candidate.chinese !== item.chinese
       && !candidate.chinese.includes(item.chinese) && !item.chinese.includes(candidate.chinese)
       && [...bigrams(candidate.chinese)].filter((part) => answerParts.has(part)).length <= 1));
     const distinctAlternatives = [...new Map(alternatives.map((candidate) => [candidate.chinese, candidate])).values()];
     if (distinctAlternatives.length < 2) throw new Error("听力选项不足");
-    const choices = shuffled([item.chinese, ...distinctAlternatives.slice(0, 2).map((candidate) => candidate.chinese)]);
+    const choices = WordSnapUtils.shuffle([item.chinese, ...distinctAlternatives.slice(0, 2).map((candidate) => candidate.chinese)]);
     return {word: item.word, english: item.english, chinese: item.chinese, audio: item.audio, choices};
   });
 }
@@ -326,6 +318,7 @@ function renderLearningFlow(show = false) {
   if (!flow) return;
   if (show && !state.viewedCompletion) resumeLearningFlow();
   const overlay = document.querySelector("#learningFlow");
+  overlay.dataset.flowPhase = flow.phase;
   if (show) overlay.hidden = false;
   if (overlay.hidden) return;
   const phaseNames = {spelling: "拼写判断", fill: "拼写填空", listening: "听力理解", done: "今日结算"};
@@ -340,15 +333,15 @@ function renderLearningFlow(show = false) {
     const count = weeklyLearningDays(new Date(flow.completedAt || Date.now()));
     const accuracy = flow.report.total ? Math.round(flow.report.correct / flow.report.total * 100) : 0;
     const fastRate = flow.report.total ? Math.round((flow.report.fast || 0) / flow.report.total * 100) : 0;
-    const title = accuracy >= 80 ? "太棒了，顺利过关！" : "完成了今天的挑战！";
+    const title = accuracy >= 80 ? "顺利过关" : "已完成本轮";
     body.innerHTML = `<div class="flow-summary">
-      <div class="flow-summary-banner"><span>本轮学习已完成</span><h3>${title}</h3><p>${formatSessionDate(flow.completedAt || Date.now())}</p></div>
-      <div class="flow-summary-meta"><div><span>本次模式</span><strong>${escapeHtml(practiceModeLabel(flow.report.practiceMode))}</strong></div><div><span>所选词汇</span><strong>${escapeHtml(flow.report.grade)}</strong></div><div><span>总用时</span><strong>${formatLearningDuration(flow.totalSeconds ?? flow.report.totalSeconds)}</strong></div></div>
+      <div class="flow-summary-banner"><h3>${title}</h3><p>${formatSessionDate(flow.completedAt || Date.now())}</p></div>
+      <div class="flow-summary-meta"><div><span>本次模式</span><strong>${WordSnapUtils.escapeHtml(practiceModeLabel(flow.report.practiceMode))}</strong></div><div><span>所选词汇</span><strong>${WordSnapUtils.escapeHtml(flow.report.grade)}</strong></div><div><span>总用时</span><strong>${formatLearningDuration(flow.totalSeconds ?? flow.report.totalSeconds)}</strong></div></div>
       <div class="flow-summary-stats"><div><strong>${flow.report.total}</strong><span>刷词数</span></div><div><strong>${accuracy}%</strong><span>正确率</span></div><div><strong>${fastRate}%</strong><span>秒选率</span></div></div>
       <div class="flow-summary-practice"><span>巩固练习</span><div><strong>${total ? `${flow.scores.spelling}/${total}` : "本轮全对"}</strong><small>错词拼写判断</small></div></div>
-      <div class="flow-summary-approval"><img src="./assets/teacher-approval.png" alt="来自代老师的肯定" width="254" height="230"><div><h4>得到代老师的肯定！</h4><p>要每天坚持，继续加油！你所有的努力我们都看得到！</p></div></div>
-      <div class="flow-summary-weekly"><strong>本周 ${Math.min(count, 5)}/5 天</strong><p>今日的努力已加入每周结算。完成 5 天完整打卡，就能获得丰富奖励。</p></div>
-      <p class="flow-summary-reminder">记得截图发给代老师或学长学姐。今日结算也可以从首页再次打开。</p></div>`;
+      <div class="flow-summary-approval"><img src="./assets/teacher-approval.png" alt="来自代老师的肯定" width="254" height="230"><div><h4>得到代老师的肯定</h4><p>每天坚持，你的每一次积累都算数。</p></div></div>
+      <div class="flow-summary-weekly"><strong>本周打卡 ${Math.min(count, 5)}/5 天</strong><p>完成 5 天完整打卡即可获得每周奖励</p></div>
+      <p class="flow-summary-reminder">可截图发给代老师或学长学姐</p></div>`;
     footer.innerHTML = '<button type="button" id="flowFinish">返回训练</button>';
     footer.querySelector("#flowFinish").addEventListener("click", async () => {
       overlay.hidden = true;
@@ -360,14 +353,14 @@ function renderLearningFlow(show = false) {
   }
   if (flow.phase === "spelling") {
     const item = flowCurrent();
-    body.innerHTML = `<div class="flow-question-head"><span>第 ${flow.index + 1} / ${total} 题</span><p>这个英文单词拼写正确吗？</p></div><strong class="flow-spelling-word">${escapeHtml(item.shown)}</strong>
+    body.innerHTML = `<div class="flow-question-head"><span>第 ${flow.index + 1} / ${total} 题</span><p>这个英文单词拼写正确吗？</p></div><strong class="flow-spelling-word">${WordSnapUtils.escapeHtml(item.shown)}</strong>
       <div class="flow-binary"><button type="button" class="secondary" data-spelling="true">✓ <span>正确</span></button><button type="button" class="secondary" data-spelling="false">× <span>错误</span></button></div>`;
     body.querySelectorAll("[data-spelling]").forEach((button) => button.addEventListener("click", () => submitFlowAnswer(button.dataset.spelling === "true")));
   } else if (flow.phase === "fill") {
     body.innerHTML = `<div class="flow-question-head"><span>第 1 / 1 组 · 共 3 空</span><p>根据首字母和句意，写出完整单词。</p></div>
       <div class="flow-fill-list">${flow.fill.map((item, index) => {
-        const markup = escapeHtml(item.sentence).replace(new RegExp(`\\b${item.word}\\b`, "i"), `<label class="flow-inline-input"><span>${escapeHtml(item.prefix)}</span><input data-fill="${index}" aria-label="第 ${index + 1} 空，${escapeAttr(item.zh)}" autocomplete="off" autocapitalize="off" spellcheck="false"></label>`);
-        return `<div class="flow-fill-sentence"><span class="flow-sentence-number">0${index + 1}</span><p>${markup}</p><small>${escapeHtml(item.zh)}</small></div>`;
+        const markup = WordSnapUtils.escapeHtml(item.sentence).replace(new RegExp(`\\b${item.word}\\b`, "i"), `<label class="flow-inline-input"><span>${WordSnapUtils.escapeHtml(item.prefix)}</span><input data-fill="${index}" aria-label="第 ${index + 1} 空，${WordSnapUtils.escapeAttr(item.zh)}" autocomplete="off" autocapitalize="off" spellcheck="false"></label>`);
+        return `<div class="flow-fill-sentence"><span class="flow-sentence-number">0${index + 1}</span><p>${markup}</p><small>${WordSnapUtils.escapeHtml(item.zh)}</small></div>`;
       }).join("")}</div>`;
     footer.innerHTML = '<button type="button" id="flowCheckFill">检查答案</button>';
     footer.querySelector("#flowCheckFill").addEventListener("click", () => submitFlowAnswer([...body.querySelectorAll("[data-fill]")].map((input) => input.value.trim())));
@@ -375,7 +368,7 @@ function renderLearningFlow(show = false) {
     const item = flowCurrent();
     body.innerHTML = `<div class="flow-question-head"><span>第 ${flow.index + 1} / 20 题</span><p>听句子，选择它的中文意思。</p></div>
       <div class="flow-audio-control"><button type="button" id="flowPlayAudio" aria-label="播放或重播英式英语句子">▶</button><span id="flowAudioStatus">自动播放中 · 可点击重听</span></div>
-      <div class="flow-listening-choices">${item.choices.map((choice, index) => `<button type="button" class="secondary" data-listening="${index}"><span>${"ABC"[index]}</span>${escapeHtml(choice)}</button>`).join("")}</div>
+      <div class="flow-listening-choices">${item.choices.map((choice, index) => `<button type="button" class="secondary" data-listening="${index}"><span>${"ABC"[index]}</span>${WordSnapUtils.escapeHtml(choice)}</button>`).join("")}</div>
       <p class="flow-credit">句子来源：<a href="https://tatoeba.org/" target="_blank" rel="noopener noreferrer">Tatoeba</a> · 英式发音</p>`;
     body.querySelector("#flowPlayAudio").addEventListener("click", () => playFlowAudio(true));
     body.querySelectorAll("[data-listening]").forEach((button) => button.addEventListener("click", () => submitFlowAnswer(Number(button.dataset.listening))));
@@ -387,10 +380,10 @@ function renderLearningFlow(show = false) {
     if (flow.phase === "listening") {
       const item = flowCurrent();
       body.querySelector(`[data-listening="${item.choices.indexOf(item.chinese)}"]`)?.classList.add("is-answer");
-      body.insertAdjacentHTML("beforeend", `<div class="flow-transcript"><strong>${escapeHtml(item.english)}</strong><p>${escapeHtml(item.chinese)}</p></div>`);
+      body.insertAdjacentHTML("beforeend", `<div class="flow-transcript"><strong>${WordSnapUtils.escapeHtml(item.english)}</strong><p>${WordSnapUtils.escapeHtml(item.chinese)}</p></div>`);
     }
     const autoNext = flow.phase === "listening" && response.correct;
-    footer.innerHTML = `<div class="flow-feedback ${response.correct ? "is-correct" : "is-wrong"}"><strong>${response.correct ? "答对了" : "再记住这个要点"}</strong><p>${escapeHtml(autoNext ? "完整句子已展示，2 秒后进入下一题。" : response.explanation)}</p></div>${autoNext ? "" : '<button type="button" id="flowContinue">继续</button>'}`;
+    footer.innerHTML = `<div class="flow-feedback ${response.correct ? "is-correct" : "is-wrong"}"><strong>${response.correct ? "答对了" : "再记住这个要点"}</strong><p>${WordSnapUtils.escapeHtml(autoNext ? "完整句子已展示，2 秒后进入下一题。" : response.explanation)}</p></div>${autoNext ? "" : '<button type="button" id="flowContinue">继续</button>'}`;
     footer.querySelector("#flowContinue")?.addEventListener("click", nextFlowQuestion);
     if (show && autoNext) {
       clearTimeout(flowAdvanceTimer);

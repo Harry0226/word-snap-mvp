@@ -4,6 +4,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const app = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const quiz = fs.readFileSync(path.join(root, "quiz.js"), "utf8");
 const headers = fs.readFileSync(path.join(root, "_headers"), "utf8");
 
 function assert(condition, message) {
@@ -20,7 +21,7 @@ assert(app.includes("ensureStageLoaded"), "app should load vocabulary by selecte
 assert(app.includes("await ensureStageLoaded(els.stageSelect.value)"), "startup should load only the selected stage");
 assert(app.includes("await ensureStageLoaded(stage)"), "stage-dependent actions should wait for stage data");
 assert(app.includes("isStageSeeded"), "repeat visits should use IndexedDB without downloading the stage again");
-const generateWordQuiz = app.slice(app.indexOf("function generateWordQuiz"), app.indexOf("async function updateQuizSizeOptions"));
+const generateWordQuiz = quiz.slice(quiz.indexOf("function generateWordQuiz"), quiz.indexOf("function getQuizBankTotal"));
 assert(generateWordQuiz.includes("state.words.filter"), "word-generated quizzes should use loaded stage words");
 const init = app.slice(app.indexOf("async function init()"), app.indexOf("\ninit();"));
 assert(!init.includes("updateQuizSizeOptions"), "startup must not download a quiz bank before the quiz view is opened");

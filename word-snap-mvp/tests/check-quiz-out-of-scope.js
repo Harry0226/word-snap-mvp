@@ -1,8 +1,8 @@
 const fs = require("fs");
 const assert = require("assert");
 
-const app = fs.readFileSync("app.js", "utf8");
-const quizSection = app.slice(app.indexOf("function getQuizDistractorsForSentence"), app.indexOf("async function startQuiz"));
+const quiz = fs.readFileSync("quiz.js", "utf8");
+const quizSection = quiz.slice(quiz.indexOf("function getQuizDistractorsForSentence"), quiz.indexOf("function hideQuizContinueButton"));
 
 assert(quizSection.includes("return shuffle(pool).slice(0, 4);"), "quiz should keep its existing four-distractor builder");
 assert(quizSection.includes("if (choices.length < 5)"), "quiz should keep filling its existing five-choice questions");
