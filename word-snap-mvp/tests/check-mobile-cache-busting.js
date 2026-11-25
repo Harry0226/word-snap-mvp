@@ -15,10 +15,12 @@ assert(index.includes('src="./app.js?v='), "app script should use a versioned UR
 assert(index.includes("defer"), "scripts should be deferred so mobile browsers can paint the shell sooner");
 
 const app = fs.readFileSync("app.js", "utf8");
-assert(app.includes("QUIZ_BANK_SCRIPTS"), "quiz banks should be loaded lazily with versioned URLs");
-assert(app.includes("./word-data/quiz-grade8-sentences.js?v="), "lazy grade 8 quiz data should use a versioned URL");
-assert(app.includes("loadScriptOnce"), "lazy quiz loader should avoid repeated downloads");
+const quiz = fs.readFileSync("quiz.js", "utf8");
+assert(quiz.includes("QUIZ_BANK_SCRIPTS"), "quiz banks should be loaded lazily with versioned URLs");
+assert(quiz.includes("./word-data/quiz-grade8-sentences.js?v="), "lazy grade 8 quiz data should use a versioned URL");
+assert(quiz.includes("loadScriptOnce"), "lazy quiz loader should avoid repeated downloads");
 assert(app.includes("loadScriptWithRetry"), "lazy assets should retry weak-network failures");
+assert(app.includes("versionedAssetSrc(entry.src, entry.version)"), "lazy vocabulary assets should change URL whenever their data version changes");
 
 const wordDataHeader = headers.match(/\/word-data\/\*[\s\S]*?(?=\n\/|\n$)/)?.[0] || "";
 assert(wordDataHeader.includes("immutable"), "versioned word data should remain cached on mobile");

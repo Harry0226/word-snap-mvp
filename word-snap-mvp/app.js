@@ -1,34 +1,44 @@
-const STAGES = ["初一课内词汇", "初一考试词汇", "初二课内词汇", "初二考试词汇", "初三课内词汇", "初三考试词汇", "高一课内词汇", "高一考试词汇", "高一课改词库", "高二课内词汇", "高二考试词汇", "高三考试词汇"];
-const DB_NAME = "word-snap-v2";
-const DB_VERSION = 4;
-const BUILTIN_SEED_VERSION = 16;
+const STAGES = ["初一课本单元词汇", "初二课本单元词汇", "初三课本单元词汇", "初中688高频词", "初中1600", "高一课本单元词汇", "高一课改词库", "高二课本单元词汇", "高中3500刷词专栏"];
+const RENAMED_STAGE_LEGACY_NAMES = new Set(["初一暑期必背词汇", "初二暑期必背词汇", "初三暑期必背词汇", "高一暑期必背词汇", "高二暑期必背词汇"]);
+const BUILTIN_SEED_VERSION = 21;
 const FAST_PICK_LIMIT = 2000;
 const SLOW_PICK_LIMIT = 3500;
+const CORRECT_ADVANCE_DELAY_MS = 180;
 const CHOICE_KEYS = ["A", "B", "C", "D", "E"];
-const QUIZ_FAST = 5000;
-const QUIZ_SLOW = 12000;
-const GRADE7_QUIZ_COUNT = 186;
 const ROTATION_META_PREFIX = "rotation:v2:";
-const { prepareRotationBatch, completeRotationItem } = window.WordSnapRotation;
-const { getCheckinThreshold, makeProgressKey, advanceDailyProgress } = window.WordSnapDailyStreaks;
-const { loadScriptWithRetry } = window.WordSnapAssetLoader;
 const BACKUP_SITE_URL = "https://word-snap-mvp.pages.dev/";
+const DAILY_TASK_META_PREFIX = "dailyTask:v2:";
+const FULL_STAGE_CELEBRATION_META_PREFIX = "fullStageCelebration:v1:";
 
-const GRADE8_QUIZ_COUNT = 239;
-const GRADE10_QUIZ_COUNT = 153;
-const GRADE11_QUIZ_COUNT = 129;
-const QUIZ_BANK_SCRIPTS = {
-  "初一课内词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
-  "初一考试词汇": "./word-data/quiz-grade7-sentences.js?v=20260524-grade7",
-  "初二课内词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
-  "初二考试词汇": "./word-data/quiz-grade8-sentences.js?v=20260525-grade8",
-  "初三课内词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
-  "初三考试词汇": "./word-data/quiz-sentences.js?v=20260601-quiz340",
-  "高一课内词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
-  "高一考试词汇": "./word-data/quiz-grade10-sentences.js?v=20260530-senior-quiz",
-  "高二课内词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz",
-  "高二考试词汇": "./word-data/quiz-grade11-sentences.js?v=20260530-senior-quiz"
-};
+const storage = window.WordSnapStorage;
+const { escapeHtml, escapeAttr, shuffle, uniqueById, percent, formatDuration } = window.WordSnapUtils;
+const { prepareRotationBatch, completeRotationItem } = window.WordSnapRotation;
+const {
+  normalizeDisplayedChoiceText: normalizeChoiceDisplayText,
+  normalizeEnglishWord,
+  dedupeVocabularyEntries,
+  isEquivalentVocabularyAnswer,
+  splitChineseSenses,
+  hasMeaningConflict
+} = window.WordSnapChoiceUtils;
+const { getCheckinThreshold, makeProgressKey, advanceDailyProgress, reconcileTrainingStreak } = window.WordSnapDailyStreaks;
+const {
+  DAILY_TASK_LIMIT,
+  DUE_REVIEW_LIMIT,
+  dateKey: getDailyDateKey,
+  isSevenDayEligible,
+  planDailyTask,
+  resizeDailyTask,
+  getDueReviewWordIds,
+  creditDailyTask,
+  applyLearningResult,
+  getSevenDayRetentionStats,
+  getTodayStageCompletion
+} = window.WordSnapDailyLearning;
+const { loadScriptWithRetry } = window.WordSnapAssetLoader;
+const decksModule = window.WordSnapDecks;
+const battleModule = window.WordSnapBattle;
+const quizModule = window.WordSnapQuiz;
 
 const state = {
   db: null,
@@ -45,12 +55,21 @@ const state = {
   weakFilter: "wrong",
   queueNotice: "",
   streaks: new Map(),
-  stageLoads: new Map()
+  stageLoads: new Map(),
+  dailyTasks: new Map(),
+  fullStageCelebrations: new Set(),
+  wordbookSaved: new Map(),
+  learningFlow: null,
+  learningDays: new Set(),
+  learningCompletions: new Map(),
+  viewedCompletion: null
 };
 
 const els = {
-  // Nav & views
   tabs: [...document.querySelectorAll(".tab")],
+  mobileViewButtons: [...document.querySelectorAll("[data-mobile-view]")],
+  mobileMoreButton: document.querySelector("[data-mobile-more]"),
+  mobileMoreMenu: document.querySelector("#mobileMoreMenu"),
   views: {
     train: document.querySelector("#view-train"),
     battle: document.querySelector("#view-battle"),
@@ -60,11 +79,20 @@ const els = {
     quiz: document.querySelector("#view-quiz")
   },
   // Training
+  trainerPanel: document.querySelector(".trainer"),
   totalWords: document.querySelector("#totalWords"),
   doneCount: document.querySelector("#doneCount"),
   accuracy: document.querySelector("#accuracy"),
   fastRate: document.querySelector("#fastRate"),
   weakCount: document.querySelector("#weakCount"),
+  dailyTaskPanel: document.querySelector("#dailyTaskPanel"),
+  dailyTaskSummary: document.querySelector("#dailyTaskSummary"),
+  dailyDueCount: document.querySelector("#dailyDueCount"),
+  dailyNewCount: document.querySelector("#dailyNewCount"),
+  sevenDayRetention: document.querySelector("#sevenDayRetention"),
+  sevenDayPending: document.querySelector("#sevenDayPending"),
+  startDailyTaskBtn: document.querySelector("#startDailyTaskBtn"),
+  startDueReviewBtn: document.querySelector("#startDueReviewBtn"),
   stageSelect: document.querySelector("#stageSelect"),
   sessionSize: document.querySelector("#sessionSize"),
   trainingScope: document.querySelector("#trainingScope"),
@@ -75,10 +103,18 @@ const els = {
   progressBar: document.querySelector("#progressBar"),
   tag: document.querySelector("#tag"),
   word: document.querySelector("#word"),
+  audioPromptBtn: document.querySelector("#audioPromptBtn"),
+  pronunciationAudio: document.querySelector("#pronunciationAudio"),
   hint: document.querySelector("#hint"),
+  contextSentence: document.querySelector("#contextSentence"),
   timer: document.querySelector("#timer"),
   choices: document.querySelector("#choices"),
   feedback: document.querySelector("#feedback"),
+  wordbookExplanation: document.querySelector("#wordbookExplanation"),
+  resumeFlowBtn: document.querySelector("#resumeFlowBtn"),
+  todayRecordBar: document.querySelector("#todayRecordBar"),
+  todayRecordBtn: document.querySelector("#todayRecordBtn"),
+  todayRecordStatus: document.querySelector("#todayRecordStatus"),
   trainContinueBtn: document.querySelector("#trainContinueBtn"),
   skipBtn: document.querySelector("#skipBtn"),
   sessionReport: document.querySelector("#sessionReport"),
@@ -96,6 +132,8 @@ const els = {
   clearCustomDecksBtn: document.querySelector("#clearCustomDecksBtn"),
   exportBtn: document.querySelector("#exportBtn"),
   importJson: document.querySelector("#importJson"),
+  wordbookSearch: document.querySelector("#wordbookSearch"),
+  wordbookResults: document.querySelector("#wordbookResults"),
   // Wrong words
   weakList: document.querySelector("#weakList"),
   weakFilterBtns: [...document.querySelectorAll("[data-weak-filter]")],
@@ -133,23 +171,11 @@ const els = {
   quizAccuracy: document.querySelector("#quizAccuracy"),
   quizFastRate: document.querySelector("#quizFastRate"),
   quizWrongCount: document.querySelector("#quizWrongCount"),
-  trainQuizBankTotal: document.querySelector("#trainQuizBankTotal"),
-  trainQuizDoneCount: document.querySelector("#trainQuizDoneCount"),
-  trainQuizAccuracy: document.querySelector("#trainQuizAccuracy"),
-  trainQuizFastRate: document.querySelector("#trainQuizFastRate"),
-  trainQuizWrongCount: document.querySelector("#trainQuizWrongCount"),
   // Streaks
   trainStreakCard: document.querySelector("#trainStreakCard"),
-  trainStreak: document.querySelector("#trainStreak"),
   trainTodayProgress: document.querySelector("#trainTodayProgress"),
-  trainCheckinStatus: document.querySelector("#trainCheckinStatus"),
-  weeklyFireCount: document.querySelector("#weeklyFireCount"),
-  streakIcon: document.querySelector("#streakIcon"),
-  flameWrap: document.querySelector("#flameWrap"),
   quizStreakCard: document.querySelector("#quizStreakCard"),
-  quizStreak: document.querySelector("#quizStreak"),
   quizTodayProgress: document.querySelector("#quizTodayProgress"),
-  quizCheckinStatus: document.querySelector("#quizCheckinStatus"),
   // Quiz game
   quizTag: document.querySelector("#quizTag"),
   quizSentence: document.querySelector("#quizSentence"),
@@ -162,106 +188,40 @@ const els = {
   quizWrongList: document.querySelector("#quizWrongList")
 };
 
-function openDb() {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
-    request.onupgradeneeded = () => {
-      const db = request.result;
-      if (!db.objectStoreNames.contains("words")) {
-        const words = db.createObjectStore("words", { keyPath: "id" });
-        words.createIndex("stage", "grade", { unique: false });
-        words.createIndex("sourceType", "sourceType", { unique: false });
-      }
-      if (!db.objectStoreNames.contains("records")) db.createObjectStore("records", { keyPath: "wordId" });
-      if (!db.objectStoreNames.contains("meta")) db.createObjectStore("meta", { keyPath: "key" });
-      if (!db.objectStoreNames.contains("quizWrongAnswers")) db.createObjectStore("quizWrongAnswers", { keyPath: "questionId" });
-      if (!db.objectStoreNames.contains("streaks")) db.createObjectStore("streaks", { keyPath: "key" });
-      if (db.objectStoreNames.contains("achievements")) db.deleteObjectStore("achievements");
-    };
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
-  });
+const pronunciationPlayer = new window.WordSnapPronunciationAudio.PronunciationAudioPlayer(
+  els.pronunciationAudio
+);
+
+// Thin storage wrappers preserving clean signatures for sibling modules and tests.
+function tx(storeName, mode = "readonly") { return storage.storeTx(state.db, storeName, mode); }
+function getAll(storeName) { return storage.getAll(state.db, storeName); }
+function getWordsByStage(stage) { return storage.getWordsByStage(state.db, stage); }
+function put(storeName, value) { return storage.put(state.db, storeName, value); }
+function putBatch(storeName, values) { return storage.putBatch(state.db, storeName, values); }
+function remove(storeName, key) { return storage.remove(state.db, storeName, key); }
+function clearStore(storeName) { return storage.clearStore(state.db, storeName); }
+
+function setTrainingSessionState(sessionState) {
+  if (els.views.train) els.views.train.dataset.sessionState = sessionState;
+  if (els.trainerPanel) els.trainerPanel.dataset.sessionState = sessionState;
 }
 
-function tx(storeName, mode = "readonly") {
-  return state.db.transaction(storeName, mode).objectStore(storeName);
+function setTrainingFeedback(text) {
+  if (!els.feedback) return;
+  els.feedback.textContent = text;
+  els.feedback.hidden = !text;
 }
 
-function getAll(storeName) {
-  return new Promise((resolve, reject) => {
-    const request = tx(storeName).getAll();
-    request.onsuccess = () => resolve(request.result || []);
-    request.onerror = () => reject(request.error);
-  });
+function setTrainingHint(text) {
+  if (!els.hint) return;
+  els.hint.textContent = text;
+  els.hint.hidden = !text;
 }
 
-function getAllKeys(storeName) {
-  return new Promise((resolve, reject) => {
-    const request = tx(storeName).getAllKeys();
-    request.onsuccess = () => resolve(request.result || []);
-    request.onerror = () => reject(request.error);
-  });
-}
-
-function getWordsByStage(stage) {
-  return new Promise((resolve, reject) => {
-    const request = tx("words").index("stage").getAll(stage);
-    request.onsuccess = () => resolve(request.result || []);
-    request.onerror = () => reject(request.error);
-  });
-}
-
-function put(storeName, value) {
-  return new Promise((resolve, reject) => {
-    const request = tx(storeName, "readwrite").put(value);
-    request.onsuccess = () => resolve();
-    request.onerror = () => reject(request.error);
-  });
-}
-
-function putBatch(storeName, values) {
-  if (!values.length) return Promise.resolve();
-  return new Promise((resolve, reject) => {
-    const transaction = state.db.transaction(storeName, "readwrite");
-    const store = transaction.objectStore(storeName);
-    values.forEach((value) => store.put(value));
-    transaction.oncomplete = () => resolve();
-    transaction.onerror = () => reject(transaction.error);
-  });
-}
-
-function clearStore(storeName) {
-  return new Promise((resolve, reject) => {
-    const request = tx(storeName, "readwrite").clear();
-    request.onsuccess = () => resolve();
-    request.onerror = () => reject(request.error);
-  });
-}
-
-function deleteWordsBySourceType(sourceType) {
-  return new Promise((resolve, reject) => {
-    const request = tx("words", "readwrite").openCursor();
-    request.onsuccess = () => {
-      const cursor = request.result;
-      if (!cursor) return resolve();
-      if (cursor.value.sourceType === sourceType) cursor.delete();
-      cursor.continue();
-    };
-    request.onerror = () => reject(request.error);
-  });
-}
-
-function deleteRecordsForMissingWords(validWordIds) {
-  return new Promise((resolve, reject) => {
-    const request = tx("records", "readwrite").openCursor();
-    request.onsuccess = () => {
-      const cursor = request.result;
-      if (!cursor) return resolve();
-      if (!validWordIds.has(cursor.value.wordId)) cursor.delete();
-      cursor.continue();
-    };
-    request.onerror = () => reject(request.error);
-  });
+function setTrainingTag(text) {
+  if (!els.tag) return;
+  els.tag.textContent = text;
+  els.tag.hidden = !text;
 }
 
 function slugWord(value) {
@@ -272,9 +232,10 @@ function slugWord(value) {
 }
 
 function normalizeBuiltinWord(word, index, list) {
-  const grade = list.grade || "初三课内词汇";
-  const source = list.source || "初三课内词汇";
-  const stageKey = encodeURIComponent(grade).replace(/%/g, "").toLowerCase();
+  const grade = list.grade || "初三课本单元词汇";
+  const source = list.source || "初三课本单元词汇";
+  const idGrade = list.idGrade || grade;
+  const stageKey = encodeURIComponent(idGrade).replace(/%/g, "").toLowerCase();
   const id = list.legacyIds
     ? `builtin-${word.en.toLowerCase()}`
     : `builtin-${stageKey}-${String(index + 1).padStart(4, "0")}-${slugWord(word.en)}`;
@@ -297,59 +258,38 @@ function normalizeBuiltinWord(word, index, list) {
     promptLabel: word.promptLabel || "",
     answerText: word.answerText || "",
     answerFeedback: word.answerFeedback || "",
+    contextSentence: word.contextSentence || "",
     choiceOptions: Array.isArray(word.choiceOptions) ? word.choiceOptions : null
   };
 }
 
-function replaceBuiltinStageWords(stage, words) {
-  return new Promise((resolve, reject) => {
-    const transaction = state.db.transaction("words", "readwrite");
-    const store = transaction.objectStore("words");
-    const request = store.openCursor();
-    request.onsuccess = () => {
-      const cursor = request.result;
-      if (cursor) {
-        if (cursor.value.sourceType === "builtin" && cursor.value.grade === stage) cursor.delete();
-        cursor.continue();
-        return;
-      }
-      words.forEach((word) => store.put(word));
-    };
-    request.onerror = () => reject(request.error);
-    transaction.oncomplete = () => resolve();
-    transaction.onerror = () => reject(transaction.error);
-  });
+function stageLoadMessage(stage, failed = false) {
+  if (failed) return `${stage} 加载失败，点击重试或访问备用入口：${BACKUP_SITE_URL}`;
+  return `正在加载 ${stage}...`;
 }
 
-function stageLoadMessage(stage, failed = false) {
-  if (failed) return `${stage}词库加载失败。请点击"开始训练"重试，或使用备用入口：${BACKUP_SITE_URL}`;
-  return `正在加载${stage}词库，请稍候...`;
+function versionedAssetSrc(src, version) {
+  const separator = src.includes("?") ? "&" : "?";
+  return `${src}${separator}v=${encodeURIComponent(version)}`;
 }
 
 async function seedStageWords(stage, list, version) {
   const metaKey = `builtinStageVersion:${stage}`;
-  const seedMeta = await new Promise((resolve) => {
-    const request = tx("meta").get(metaKey);
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => resolve(null);
-  });
+  const seedMeta = await storage.getMeta(state.db, metaKey);
   const existing = await getWordsByStage(stage);
   const hasBuiltinWords = existing.some((word) => word.sourceType === "builtin");
   if (seedMeta?.value === version && hasBuiltinWords) return;
-  const words = (list.words || [])
+  // 先按原始位置生成 ID，再去重，避免清理重复数据时让已有学习记录串到别的单词。
+  const words = dedupeVocabularyEntries((list.words || [])
     .map((word, index) => normalizeBuiltinWord(word, index, list))
-    .filter((word) => word.en && word.zh);
-  await replaceBuiltinStageWords(stage, words);
+    .filter((word) => word.en && word.zh));
+  await storage.replaceBuiltinStageWords(state.db, stage, words);
   await put("meta", { key: metaKey, value: version, at: Date.now() });
 }
 
 async function isStageSeeded(stage, version) {
   const metaKey = `builtinStageVersion:${stage}`;
-  const seedMeta = await new Promise((resolve) => {
-    const request = tx("meta").get(metaKey);
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => resolve(null);
-  });
+  const seedMeta = await storage.getMeta(state.db, metaKey);
   if (seedMeta?.value !== version) return false;
   return (await getWordsByStage(stage)).some((word) => word.sourceType === "builtin");
 }
@@ -360,18 +300,18 @@ async function ensureStageLoaded(stage) {
   if (!entry) return false;
   const promise = (async () => {
     if (await isStageSeeded(stage, entry.version)) return true;
-    els.feedback.textContent = stageLoadMessage(stage);
+    setTrainingFeedback(stageLoadMessage(stage));
     try {
-      await loadScriptWithRetry(entry.src);
+      await loadScriptWithRetry(versionedAssetSrc(entry.src, entry.version));
       const list = window.WORD_SNAP_STAGE_LISTS?.[stage];
       if (!list?.words?.length) throw new Error(`${stage}词库数据为空`);
       await seedStageWords(stage, list, entry.version);
       if (!state.session && els.feedback.textContent === stageLoadMessage(stage)) {
-        els.feedback.textContent = "练习记录只保存在本机浏览器，不会上传。";
+        setTrainingFeedback("");
       }
       return true;
     } catch (error) {
-      els.feedback.textContent = stageLoadMessage(stage, true);
+      setTrainingFeedback(stageLoadMessage(stage, true));
       throw error;
     }
   })();
@@ -385,92 +325,20 @@ async function ensureStageLoaded(stage) {
 }
 
 async function seedBuiltinWords() {
-  const seedMeta = await new Promise((resolve) => {
-    const request = tx("meta").get("builtinSeedVersion");
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => resolve(null);
-  });
-  const hasBuiltinWords = (await getAll("words")).some((word) => word.sourceType === "builtin");
-  if (Number(seedMeta?.value || 0) >= BUILTIN_SEED_VERSION && hasBuiltinWords) return;
-
-  // Load all stage scripts first to populate WORD_SNAP_STAGE_LISTS
-  const manifest = window.WORD_SNAP_BUILTIN_MANIFEST?.stages || {};
-  for (const stage of Object.keys(manifest)) {
-    const entry = manifest[stage];
-    if (entry?.src) {
-      try {
-        await loadScriptWithRetry(entry.src);
-      } catch (e) {
-        console.warn(`Failed to load ${stage} script:`, e);
-      }
-    }
+  const allWords = await getAll("words");
+  const canonicalStages = new Set(STAGES);
+  const legacyBuiltinWords = allWords.filter((word) => word.sourceType === "builtin" && !canonicalStages.has(word.grade));
+  if (legacyBuiltinWords.length) {
+    const staleLegacyIds = new Set(legacyBuiltinWords
+      .filter((word) => !RENAMED_STAGE_LEGACY_NAMES.has(word.grade))
+      .map((word) => word.id));
+    await storage.deleteWordsByIds(state.db, legacyBuiltinWords.map((word) => word.id));
+    // Renamed curriculum stages deliberately reuse their old IDs, preserving progress
+    // for the in-class words that remain. Removed stages such as grade 12 are cleared.
+    await storage.deleteRecordsByWordIds(state.db, staleLegacyIds);
   }
-
-  // Get lists from both WORD_SNAP_BUILTIN_LISTS and WORD_SNAP_STAGE_LISTS
-  const builtinLists = [
-    ...(window.WORD_SNAP_BUILTIN_LISTS || []),
-    ...Object.values(window.WORD_SNAP_STAGE_LISTS || {})
-  ];
-  const words = builtinLists.flatMap((list) => (list.words || [])
-    .map((word, index) => normalizeBuiltinWord(word, index, list))
-    .filter((word) => word.en && word.zh));
-  const currentVersion = Number(seedMeta?.value || 0);
-  if (currentVersion < 15) {
-    const decksToDelete = [];
-    if (currentVersion < 3) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "高三", source: "高三高频词库" });
-    if (currentVersion < 5) decksToDelete.push({ grade: "初三", source: "近五年中考结合最新一模" }, { grade: "初三", source: "初三核心词库" }, { grade: "初三", source: "初三刷题词库" });
-    if (currentVersion < 6) decksToDelete.push({ grade: "初三", source: "初三核心词库" }, { grade: "中考常考词组总复习", source: "中考常考词组总复习" });
-    if (currentVersion < 8) decksToDelete.push({ grade: "初三", source: "初三核心词库" });
-    if (currentVersion < 9) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "高三", source: "高三高频词库" });
-    if (currentVersion < 10) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" });
-    if (currentVersion < 11) decksToDelete.push({ grade: "初三", source: "初三核心词库" });
-    if (currentVersion < 12) decksToDelete.push({ grade: "初一", source: "初一内置词库" });
-    if (currentVersion < 13) decksToDelete.push({ grade: "初一", source: "初一内置词库" });
-    if (currentVersion < 14) decksToDelete.push({ grade: "高一", source: "高一内置词库" }, { grade: "高二", source: "高二内置词库" }, { grade: "初二", source: "初二内置词库" });
-    if (currentVersion < 15) decksToDelete.push({ grade: "高二", source: "高二内置词库" }, { grade: "中考作文高级动词替换", source: "中考作文高级动词替换" });
-    if (currentVersion < 16) {
-      // Delete all old builtin words since we changed stage names
-      const allWords = await getAll("words");
-      const oldBuiltinWords = allWords.filter(w => w.sourceType === "builtin");
-      if (oldBuiltinWords.length) {
-        await new Promise((resolve, reject) => {
-          const transaction = state.db.transaction("words", "readwrite");
-          const store = transaction.objectStore("words");
-          oldBuiltinWords.forEach(w => store.delete(w.id));
-          transaction.oncomplete = () => resolve();
-          transaction.onerror = () => reject(transaction.error);
-        });
-      }
-    }
-    if (decksToDelete.length) await deleteBuiltinDecks(decksToDelete);
-  }
-  // 串行执行 put 操作，避免 IndexedDB 事务竞争
-  const store = tx("words", "readwrite");
-  for (const word of words) {
-    await new Promise((resolve, reject) => {
-      const request = store.put(word);
-      request.onsuccess = () => resolve();
-      request.onerror = () => reject(request.error);
-    });
-  }
-  await deleteRecordsForMissingWords(new Set(await getAllKeys("words")));
   await put("meta", { key: "builtinSeedVersion", value: BUILTIN_SEED_VERSION, at: Date.now() });
   await put("meta", { key: "builtinSeeded", value: true, at: Date.now() });
-}
-
-function deleteBuiltinDecks(decks) {
-  return new Promise((resolve, reject) => {
-    const request = tx("words", "readwrite").openCursor();
-    request.onsuccess = () => {
-      const cursor = request.result;
-      if (!cursor) return resolve();
-      const word = cursor.value;
-      const shouldDelete = word.sourceType === "builtin" && decks.some((deck) => word.grade === deck.grade && word.source === deck.source);
-      if (shouldDelete) cursor.delete();
-      cursor.continue();
-    };
-    request.onerror = () => reject(request.error);
-  });
 }
 
 // ============ 打卡系统 ============
@@ -478,10 +346,13 @@ function deleteBuiltinDecks(decks) {
 async function loadStreaks() {
   const streaks = await getAll("streaks");
   state.streaks = new Map(streaks.map((streak) => [streak.key, streak]));
+  for (const streak of streaks) {
+    const updated = reconcileTrainingStreak(streak, getTodayStr(), getYesterdayStr());
+    if (updated !== streak) await saveStreak(updated);
+  }
 }
 
 async function saveStreak(streak) {
-  // 先写入 IndexedDB，再更新内存，避免竞争条件
   await put("streaks", streak);
   state.streaks.set(streak.key, streak);
 }
@@ -498,19 +369,11 @@ async function resetStreak(kind, grade) {
 }
 
 function getTodayStr() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
+  return getDailyDateKey();
 }
 
 function getYesterdayStr() {
-  const now = new Date(Date.now() - 86400000);
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
+  return getDailyDateKey(Date.now() - 86400000);
 }
 
 function getStreak(kind, grade) {
@@ -524,32 +387,24 @@ async function recordDailyActivity(kind, grade) {
   const next = advanceDailyProgress(getStreak(kind, grade), 1, threshold, getTodayStr(), getYesterdayStr());
   next.key = key;
   await saveStreak(next);
-  if (next.justCheckedIn) showToast(`🔥 ${kind === "train" ? "刷词" : "刷题"}达标，自动打卡成功！`);
+  if (next.justCheckedIn) showToast(`🔥 ${kind === "train" ? "刷词" : "刷题"}达标，今日火花已点亮`);
   renderDailyProgress();
 }
 
-function showToast(message) {
+function showToast(message, options = {}) {
   const toast = document.createElement("div");
-  toast.className = "toast-notification";
+  const variant = String(options.variant || "").trim();
+  const duration = Math.max(800, Number(options.duration || 2500));
+  toast.className = `toast-notification${variant ? ` ${variant}` : ""}`;
   toast.textContent = message;
+  toast.setAttribute("role", variant === "achievement" ? "alert" : "status");
+  toast.setAttribute("aria-live", "polite");
   document.body.appendChild(toast);
   requestAnimationFrame(() => toast.classList.add("show"));
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.remove(), 300);
-  }, 2500);
-}
-
-function getWeekFireCount(streak) {
-  if (!streak?.checkInDates?.length) return 0;
-  const now = new Date();
-  const dayOfWeek = now.getDay(); // 0=Sun, 1=Mon, ...
-  const mondayOffset = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
-  const monday = new Date(now);
-  monday.setDate(now.getDate() - mondayOffset);
-  monday.setHours(0, 0, 0, 0);
-  const mondayStr = `${monday.getFullYear()}-${String(monday.getMonth() + 1).padStart(2, "0")}-${String(monday.getDate()).padStart(2, "0")}`;
-  return streak.checkInDates.filter((d) => d >= mondayStr).length;
+  }, duration);
 }
 
 function renderStreakCard(card, progressEl, kind, grade) {
@@ -560,8 +415,10 @@ function renderStreakCard(card, progressEl, kind, grade) {
   const streak = getStreak(kind, grade) || {};
   const todayCount = streak.progressDate === getTodayStr() ? Number(streak.todayCount || 0) : 0;
   const checked = streak.lastCheckIn === getTodayStr();
-  progressEl.textContent = `今日 ${Math.min(todayCount, threshold)}/${threshold}`;
+  progressEl.textContent = `今日 ${todayCount}/${threshold}`;
   card.classList.toggle("checked-in", checked);
+  card.title = checked ? "今日火花已点亮" : `每日 ${threshold} ${kind === "train" ? "词" : "题"}点亮火花`;
+  card.setAttribute("aria-label", `${card.title}，${progressEl.textContent}`);
 }
 
 function renderDailyProgress() {
@@ -582,38 +439,64 @@ async function loadState() {
   state.rotationQueues = new Map(meta
     .filter((entry) => entry.key?.startsWith(ROTATION_META_PREFIX))
     .map((entry) => [entry.key, entry.value]));
+  state.dailyTasks = new Map(meta
+    .filter((entry) => entry.key?.startsWith(DAILY_TASK_META_PREFIX))
+    .map((entry) => [entry.key, entry.value]));
+  for (const [key, task] of state.dailyTasks) {
+    if (!key.startsWith(`${DAILY_TASK_META_PREFIX}${getDailyDateKey()}:`)) continue;
+    const resized = resizeDailyTask(task);
+    if (!resized.changed) continue;
+    state.dailyTasks.set(key, resized.task);
+    await put("meta", { key, value: resized.task, at: Date.now() });
+  }
+  state.fullStageCelebrations = new Set(meta
+    .filter((entry) => entry.key?.startsWith(FULL_STAGE_CELEBRATION_META_PREFIX))
+    .map((entry) => entry.key));
+  state.wordbookSaved = new Map(meta.filter((entry) => entry.key?.startsWith("wordbook:v1:") && entry.value)
+    .map((entry) => [entry.key.slice("wordbook:v1:".length), entry.value]));
+  state.learningDays = new Set(meta.filter((entry) => entry.key?.startsWith("learningDay:v1:"))
+    .map((entry) => entry.key.slice("learningDay:v1:".length)));
+  state.learningCompletions = new Map(meta.filter((entry) => entry.key?.startsWith("learningCompletion:v1:") && entry.value)
+    .map((entry) => [entry.key.slice("learningCompletion:v1:".length), entry.value]));
+  state.learningFlow = meta.find((entry) => entry.key === "learningFlow:v1")?.value || null;
+  if (state.learningFlow && state.learningFlow.version !== 2 && state.learningFlow.phase !== "done") {
+    const flow = state.learningFlow;
+    const ids = new Set(flow.report?.wrongWordIds || []);
+    flow.spelling = makeSpellingItems(state.words.filter((word) => ids.has(word.id)));
+    flow.version = 2;
+    flow.index = 0;
+    flow.response = null;
+    flow.scores = { spelling: 0 };
+    flow.phase = flow.spelling.length ? "spelling" : "done";
+    if (flow.phase === "done") {
+      await recordLearningDay();
+      await recordLearningCompletion(flow);
+    }
+    await saveLearningFlow();
+  }
+  els.resumeFlowBtn.hidden = !state.learningFlow || state.learningFlow.phase === "done";
   await loadStreaks();
 
   renderAll();
 }
 
 function switchView(view) {
+  document.body.dataset.activeView = view;
   els.tabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.view === view));
+  els.mobileViewButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.mobileView === view);
+  });
+  els.mobileMoreButton?.classList.toggle("active", ["battle", "decks", "quiz"].includes(view));
   Object.entries(els.views).forEach(([name, el]) => el.classList.toggle("active", name === view));
+  if (els.mobileMoreMenu?.matches(":popover-open")) els.mobileMoreMenu.hidePopover();
   renderAll();
-  if (view === "quiz") updateQuizSizeOptions();
-}
-
-// 兼容性映射：单文件版简短年级名 -> 主版本完整阶段名
-const GRADE_COMPAT_MAP = {
-  "初一": ["初一课内词汇", "初一考试词汇"],
-  "初二": ["初二课内词汇", "初二考试词汇"],
-  "初三": ["初三课内词汇", "初三考试词汇"],
-  "高一": ["高一课内词汇", "高一考试词汇", "高一课改词库"],
-  "高二": ["高二课内词汇", "高二考试词汇"],
-  "高三": ["高三考试词汇"]
-};
-
-function normalizeGrade(grade) {
-  return GRADE_COMPAT_MAP[grade] || [grade];
+  if (view === "quiz") quizModule.updateQuizSizeOptions(moduleContext());
+  if (view === "decks") prepareWordbookStages();
+  window.scrollTo({ top: 0, behavior: "auto" });
 }
 
 function stageMatches(word, stage) {
-  // 直接匹配
-  if (word.grade === stage || (word.goals || []).includes(stage)) return true;
-  // 兼容性匹配：检查 word.grade 是否是 stage 的简写形式
-  const compatibleGrades = GRADE_COMPAT_MAP[word.grade] || [];
-  return compatibleGrades.includes(stage);
+  return word.grade === stage || (word.goals || []).includes(stage);
 }
 
 function getEligibleWords() {
@@ -635,13 +518,205 @@ function getRecord(wordId) {
     slow: 0,
     mastery: 0,
     lastSeenAt: 0,
-    nextReviewAt: 0
+    nextReviewAt: 0,
+    firstLearnedAt: 0,
+    reviewStep: -1,
+    fsrsCard: null,
+    sevenDayTestedAt: 0,
+    sevenDayCorrect: false,
+    sevenDayTestMode: ""
   };
 }
 
-function isWeak(word) {
-  const record = getRecord(word.id);
-  return record.wrong > 0 || record.slow > 0;
+function buildDailyTaskKey(
+  stage = els.stageSelect.value,
+  filter = els.deckFilter.value,
+  today = getDailyDateKey()
+) {
+  return `${DAILY_TASK_META_PREFIX}${today}:${encodeURIComponent(stage)}:${filter}`;
+}
+
+function getDailyTaskPreview() {
+  return planDailyTask(getEligibleWords(), state.records, {
+    limit: DAILY_TASK_LIMIT
+  });
+}
+
+function getPendingDailyTaskIds(task) {
+  const existingIds = new Set(state.words.map((word) => word.id));
+  const completedIds = new Set(task?.completedIds || []);
+  return (task?.wordIds || []).filter((id) => existingIds.has(id) && !completedIds.has(id));
+}
+
+function getBuiltinStageWords(stage = els.stageSelect.value) {
+  return state.words.filter((word) => {
+    return word.sourceType === "builtin" && stageMatches(word, stage) && word.en && word.zh;
+  });
+}
+
+function getFullStageCompletion(stage = els.stageSelect.value) {
+  return getTodayStageCompletion(getBuiltinStageWords(stage), state.records);
+}
+
+function buildFullStageCelebrationKey(stage, today = getDailyDateKey()) {
+  return `${FULL_STAGE_CELEBRATION_META_PREFIX}${today}:${encodeURIComponent(stage)}`;
+}
+
+function showFullStageCelebration() {
+  els.dailyTaskPanel?.classList.add("achievement-unlocked");
+  setTimeout(() => els.dailyTaskPanel?.classList.remove("achievement-unlocked"), 900);
+  showToast("太棒了，一天完成所有单词！", {
+    variant: "achievement",
+    duration: 1800
+  });
+}
+
+async function maybeCelebrateFullStage(stage) {
+  const completion = getFullStageCompletion(stage);
+  if (!completion.isComplete) return false;
+  const key = buildFullStageCelebrationKey(stage);
+  if (state.fullStageCelebrations.has(key)) return false;
+  state.fullStageCelebrations.add(key);
+  await put("meta", {
+    key,
+    value: {
+      stage,
+      date: getDailyDateKey(),
+      total: completion.total,
+      completedAt: Date.now()
+    },
+    at: Date.now()
+  });
+  renderDailyTask();
+  showFullStageCelebration();
+  return true;
+}
+
+async function ensureDailyTask() {
+  const key = buildDailyTaskKey();
+  const existing = state.dailyTasks.get(key);
+  if (existing) return { key, task: existing };
+
+  const preview = getDailyTaskPreview();
+  const task = {
+    date: getDailyDateKey(),
+    stage: els.stageSelect.value,
+    filter: els.deckFilter.value,
+    wordIds: preview.wordIds,
+    dueWordIds: preview.dueWordIds,
+    newWordIds: preview.newWordIds,
+    dueCount: preview.dueCount,
+    newCount: preview.newCount,
+    completedIds: [],
+    createdAt: Date.now(),
+    completedAt: 0
+  };
+  state.dailyTasks.set(key, task);
+  await put("meta", { key, value: task, at: Date.now() });
+  return { key, task };
+}
+
+async function completeDailyTaskItem(key, wordId, options = {}) {
+  if (!key) return;
+  const task = state.dailyTasks.get(key);
+  if (!task) return;
+  const { task: updated, changed } = creditDailyTask(task, wordId, options);
+  if (!changed) return;
+  state.dailyTasks.set(key, updated);
+  await put("meta", { key, value: updated, at: Date.now() });
+}
+
+async function syncDailyTaskFromTraining(word, isCorrect, session) {
+  if (!isCorrect || !word || !session) return;
+  if (session.dailyTaskKey) {
+    await completeDailyTaskItem(session.dailyTaskKey, word.id);
+    return;
+  }
+  const { key } = await ensureDailyTask();
+  await completeDailyTaskItem(key, word.id, { allowExternal: true });
+}
+
+function renderDailyTask() {
+  if (!els.dailyTaskPanel) return;
+  const preview = getDailyTaskPreview();
+  const key = buildDailyTaskKey();
+  const task = state.dailyTasks.get(key);
+  const pendingIds = task ? getPendingDailyTaskIds(task) : preview.wordIds;
+  const pendingSet = new Set(pendingIds);
+  const dueIds = task?.dueWordIds || (task?.wordIds || []).slice(0, task?.dueCount || 0);
+  const newIds = task?.newWordIds || (task?.wordIds || []).slice(task?.dueCount || 0);
+  const pendingDue = task ? dueIds.filter((id) => pendingSet.has(id)).length : preview.dueCount;
+  const pendingNew = task ? newIds.filter((id) => pendingSet.has(id)).length : preview.newCount;
+  const retention = getSevenDayRetentionStats(getEligibleWords(), state.records);
+  const dueReviewIds = getDueReviewWordIds(getEligibleWords(), state.records, {
+    limit: DUE_REVIEW_LIMIT
+  });
+  const fullStageCompletion = getFullStageCompletion();
+
+  els.dailyDueCount.textContent = pendingDue;
+  els.dailyNewCount.textContent = pendingNew;
+  els.sevenDayRetention.textContent = retention.rate === null ? "—" : `${retention.rate}%`;
+  els.sevenDayPending.textContent = retention.pending;
+
+  const completed = Boolean(task && pendingIds.length === 0);
+  els.dailyTaskSummary.textContent = fullStageCompletion.isComplete
+    ? `今日已完成本阶段全部 ${fullStageCompletion.total} 词`
+    : "";
+  els.dailyTaskSummary.hidden = !fullStageCompletion.isComplete;
+
+  els.dailyTaskPanel.dataset.taskState = fullStageCompletion.isComplete
+    ? "all-complete"
+    : completed
+      ? "completed"
+      : "pending";
+  els.dailyTaskPanel.classList.toggle("completed", completed && !fullStageCompletion.isComplete);
+  els.dailyTaskPanel.classList.toggle("all-words-complete", fullStageCompletion.isComplete);
+  els.startDailyTaskBtn.disabled = fullStageCompletion.isComplete || pendingIds.length === 0;
+  els.startDailyTaskBtn.textContent = fullStageCompletion.isComplete
+    ? "本阶段已完成"
+    : completed
+      ? "今日任务已完成"
+      : task
+        ? `继续今日任务 (${pendingIds.length})`
+        : `开始今日任务 (${preview.total})`;
+  els.startDueReviewBtn.disabled = dueReviewIds.length === 0;
+  els.startDueReviewBtn.textContent = `复习到期词 (${dueReviewIds.length})`;
+}
+
+async function startDailyTask() {
+  primePronunciationAudio();
+  const { key, task } = await ensureDailyTask();
+  const wordIds = getPendingDailyTaskIds(task);
+  if (!wordIds.length) {
+    renderDailyTask();
+    return;
+  }
+  await startSession({
+    wordIds,
+    grade: task.stage,
+    notice: "今日任务",
+    preserveOrder: true,
+    sessionKind: "daily",
+    dailyTaskKey: key
+  });
+}
+
+async function startDueReview() {
+  primePronunciationAudio();
+  const wordIds = getDueReviewWordIds(getEligibleWords(), state.records, {
+    limit: DUE_REVIEW_LIMIT
+  });
+  if (!wordIds.length) {
+    renderDailyTask();
+    return;
+  }
+  await startSession({
+    wordIds,
+    grade: els.stageSelect.value,
+    notice: "到期复习",
+    preserveOrder: true,
+    sessionKind: "due"
+  });
 }
 
 function isWrongWord(word) {
@@ -652,36 +727,10 @@ function isSlowWord(word) {
   return getRecord(word.id).slow > 0;
 }
 
-function shuffle(items) {
-  const copy = [...items];
-  for (let i = copy.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
-function uniqueById(items) {
-  const seen = new Set();
-  return items.filter((item) => {
-    if (seen.has(item.id)) return false;
-    seen.add(item.id);
-    return true;
-  });
-}
-
 function priorityScore(word) {
   const record = getRecord(word.id);
   const due = record.nextReviewAt && record.nextReviewAt <= Date.now() ? 20 : 0;
   return (word.frequency || 0) + record.wrong * 10 + record.slow * 5 - record.mastery + due;
-}
-
-function randomizedPrioritySort(items) {
-  return shuffle(items).sort((a, b) => priorityScore(b) - priorityScore(a));
-}
-
-function weightedPick(items, count) {
-  return randomizedPrioritySort(items).slice(0, count);
 }
 
 function hashString(value) {
@@ -733,19 +782,19 @@ function buildQueue() {
   const candidates = getTrainingCandidates(words, scope);
 
   if (!words.length) {
-    state.queueNotice = "当前阶段没有可训练词。请切换阶段，或先在词库页上传词表。";
+    state.queueNotice = "当前阶段暂无词汇";
     return { queue: [], rotationKey: null, rotationState: null };
   }
 
   if (!candidates.length) {
-    if (scope === "wrong" || scope === "weak") state.queueNotice = "还没有错词。请先完成一轮训练，或把训练范围切回智能混合。";
-    if (scope === "slow") state.queueNotice = "还没有慢词。请先完成一轮训练，或把训练范围切回智能混合。";
-    if (scope === "new") state.queueNotice = "当前阶段没有新词了。可以改练错词、慢词或全部单词。";
+    if (scope === "wrong" || scope === "weak") state.queueNotice = "暂无错词";
+    if (scope === "slow") state.queueNotice = "暂无慢词";
+    if (scope === "new") state.queueNotice = "暂无新词";
     return { queue: [], rotationKey: null, rotationState: null };
   }
 
   if (sizeValue !== "all" && candidates.length < Number(sizeValue)) {
-    state.queueNotice = `当前筛选只有 ${candidates.length} 个词，本轮会练完这些词。`;
+    state.queueNotice = `共 ${candidates.length} 词`;
   }
 
   if (!usesPersistentTrainingRotation(scope)) {
@@ -770,15 +819,29 @@ function buildQueue() {
   };
 }
 
+function buildExactTrainingQueue(wordIds, notice, preserveOrder = false) {
+  const wordsById = new Map(state.words.map((word) => [word.id, word]));
+  const seenIds = new Set();
+  const queue = (Array.isArray(wordIds) ? wordIds : [])
+    .map((id) => wordsById.get(id))
+    .filter((word) => {
+      if (!word || seenIds.has(word.id)) return false;
+      seenIds.add(word.id);
+      return true;
+    });
+  state.queueNotice = notice || "仅练本轮新增错词。";
+  return { queue: preserveOrder ? queue : shuffle(queue), rotationKey: null, rotationState: null };
+}
+
 function updateTrainingEstimate() {
   if (state.session) return;
+  setTrainingSessionState("idle");
   const { queue } = buildQueue();
   if (!queue.length) {
-    els.progressText.textContent = state.queueNotice || "当前设置下暂无可练单词";
+    els.progressText.textContent = state.queueNotice || "暂无可练词";
     return;
   }
-  const suffix = state.queueNotice ? ` · ${state.queueNotice}` : "";
-  els.progressText.textContent = `本轮预计 ${queue.length} 词${suffix}`;
+  els.progressText.textContent = state.queueNotice || `${els.stageSelect.value} · ${queue.length} 词`;
 }
 
 function updateSessionSizeOptions() {
@@ -788,7 +851,8 @@ function updateSessionSizeOptions() {
     ["100", "100 词"],
     ["200", "200 词"],
     ["300", "300 词"],
-    ["all", "全部单词"]
+    ["400", "400 词"],
+    ["all", "全部词"]
   ];
   els.sessionSize.innerHTML = options
     .map(([value, label], index) => `<option value="${value}"${index === 0 ? " selected" : ""}>${label}</option>`)
@@ -796,17 +860,45 @@ function updateSessionSizeOptions() {
   els.sessionSize.value = options.some(([value]) => value === previous) ? previous : "200";
 }
 
-function resolvePracticeMode(word) {
+function resolvePracticeMode(word, selectedMode = state.session?.practiceMode || els.practiceMode.value) {
   if (word?.fixedMode === "customChoice") return "customChoice";
-  const selected = els.practiceMode.value;
-  if (selected === "zhToEnChoice" || selected === "enToZhChoice") return selected;
+  if (selectedMode === "audioToZhChoice" && word?.sourceType !== "builtin") return "enToZhChoice";
+  if (["zhToEnChoice", "enToZhChoice", "audioToZhChoice"].includes(selectedMode)) return selectedMode;
   return Math.random() < 0.5 ? "zhToEnChoice" : "enToZhChoice";
 }
 
-async function startSession() {
+function practiceModeLabel(mode) {
+  const labels = {
+    audioToZhChoice: "听英文选中文",
+    enToZhChoice: "看英文选中文",
+    zhToEnChoice: "看中文选英文",
+    auto: "智能双选",
+    customChoice: "专项选择题"
+  };
+  return labels[mode] || "看英文选中文";
+}
+
+function primePronunciationAudio(practiceMode = els.practiceMode.value) {
+  if (practiceMode === "audioToZhChoice") pronunciationPlayer.prime();
+}
+
+async function startSession(options = {}) {
+  if (state.learningFlow && state.learningFlow.phase !== "done") {
+    if (!confirm("还有未完成的巩固练习。开始新一轮训练会替换它，确定继续吗？")) {
+      renderLearningFlow(true);
+      return;
+    }
+    clearTimeout(flowAdvanceTimer);
+    document.querySelector("#learningFlow").hidden = true;
+    state.learningFlow = null;
+    await saveLearningFlow();
+  }
+  const practiceMode = els.practiceMode.value;
+  primePronunciationAudio(practiceMode);
   if (state.session) clearInterval(state.session.timerId);
   hideTrainContinueButton();
-  const stage = els.stageSelect.value;
+  const stage = Array.isArray(options?.wordIds) && options.grade ? options.grade : els.stageSelect.value;
+  if (els.stageSelect.value !== stage) els.stageSelect.value = stage;
   try {
     await ensureStageLoaded(stage);
     await loadState();
@@ -814,23 +906,33 @@ async function startSession() {
     els.progressText.textContent = stageLoadMessage(stage, true);
     return;
   }
-  const { queue, rotationKey, rotationState } = buildQueue();
+  const queueResult = Array.isArray(options?.wordIds)
+    ? buildExactTrainingQueue(options.wordIds, options.notice, options.preserveOrder)
+    : buildQueue();
+  const { queue, rotationKey, rotationState } = queueResult;
   if (!queue.length) {
-    els.feedback.textContent = state.queueNotice || "当前设置下暂无可练单词。";
+    setTrainingFeedback(state.queueNotice || "暂无可练单词");
     els.progressText.textContent = els.feedback.textContent;
     return;
   }
   await persistRotationState(rotationKey, rotationState);
   state.session = {
     queue,
+    sourceWords: [...queue],
     total: queue.length,
     grade: els.stageSelect.value,
+    practiceMode,
     current: null,
     mode: "enToZhChoice",
     sessionStartedAt: performance.now(),
     startedAt: 0,
     timerId: 0,
+    advanceTimerId: 0,
+    timingReady: false,
+    promptToken: 0,
     rotationKey,
+    kind: options.sessionKind || "free",
+    dailyTaskKey: options.dailyTaskKey || null,
     answered: false,
     done: 0,
     correct: 0,
@@ -839,7 +941,9 @@ async function startSession() {
     slowWords: [],
     notice: state.queueNotice
   };
+  setTrainingSessionState("playing");
   els.skipBtn.disabled = false;
+  els.skipBtn.hidden = false;
   els.sessionReport.hidden = true;
   els.sessionReport.innerHTML = "";
   nextWord();
@@ -847,18 +951,39 @@ async function startSession() {
 
 function nextWord() {
   const session = state.session;
+  clearInterval(session.timerId);
+  clearTimeout(session.advanceTimerId);
+  pronunciationPlayer.stop();
   hideTrainContinueButton();
+  els.wordbookExplanation.hidden = true;
+  els.wordbookExplanation.textContent = "";
   session.answered = false;
+  session.timingReady = false;
+  session.lastAnswerCorrect = null;
+  session.lastAnswerFeedback = "";
+  session.promptToken += 1;
   session.current = session.queue.shift();
   if (!session.current) return finishSession();
 
-  session.mode = resolvePracticeMode(session.current);
+  setTrainingSessionState("playing");
+  const isSevenDayCheck = session.current.fixedMode !== "customChoice"
+    && isSevenDayEligible(getRecord(session.current.id));
+  session.mode = resolvePracticeMode(session.current, session.practiceMode);
   const word = session.current;
   const isPromptChinese = session.mode === "zhToEnChoice";
-  els.word.textContent = word.promptText || (isPromptChinese ? word.zh : word.en);
-  els.tag.textContent = `${word.grade} · ${word.promptLabel || (word.sourceType === "builtin" ? "内置" : "自定义")}`;
-  els.hint.textContent = hintForMode(session.mode, word);
-  els.feedback.textContent = "计时中。";
+  const isAudioPrompt = session.mode === "audioToZhChoice";
+  els.word.textContent = isAudioPrompt ? "听发音" : (word.promptText || (isPromptChinese ? word.zh : word.en));
+  els.word.hidden = false;
+  const taskLabel = isSevenDayCheck ? "七日检测" : word.promptLabel;
+  setTrainingTag(taskLabel || "");
+  setTrainingHint(hintForMode(session.mode, word));
+  els.audioPromptBtn.hidden = !isAudioPrompt;
+  els.audioPromptBtn.disabled = isAudioPrompt;
+  els.audioPromptBtn.classList.remove("needs-gesture", "audio-error");
+  els.audioPromptBtn.textContent = "播放发音";
+  els.contextSentence.hidden = true;
+  els.contextSentence.textContent = "";
+  setTrainingFeedback("");
   els.choices.innerHTML = "";
   els.choices.hidden = false;
   makeChoices(word).forEach((choice, index) => {
@@ -866,6 +991,7 @@ function nextWord() {
     button.className = "choice";
     button.type = "button";
     button.dataset.choiceId = choice.id;
+    button.dataset.choiceEnglish = normalizeEnglishWord(choice.en);
     const key = document.createElement("span");
     key.className = "choice-key";
     key.textContent = CHOICE_KEYS[index];
@@ -873,76 +999,154 @@ function nextWord() {
     text.className = "choice-text";
     text.textContent = choiceText(choice, session.mode);
     button.append(key, text);
+    button.disabled = true;
     button.addEventListener("click", () => answer(choice, button));
     els.choices.append(button);
   });
-  session.startedAt = performance.now();
-  startTimer();
+  els.timer.hidden = false;
+  els.timer.classList.remove("fast", "slow");
+  els.timer.textContent = isAudioPrompt ? "准备发音..." : "用时 0.0 秒";
   updateProgress();
+  pronunciationPlayer.prefetch([word, ...session.queue.slice(0, 4)]);
+  prepareTrainingPrompt(session.promptToken);
 }
 
 function hintForMode(mode, word) {
-  if (mode === "customChoice") return word.notes || "根据题干选择最匹配的答案。1.5 秒内算秒选，超过 3.5 秒记慢词。";
-  const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  if (mode === "enToZhChoice") return detail || "看英文选中文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
-  return "看中文选英文。1.5 秒内算秒选，超过 3.5 秒记慢词。";
+  if (mode === "customChoice") return word.notes || "";
+  if (mode === "enToZhChoice") return [word.pos, word.notes].filter(Boolean).join(" · ");
+  return "";
+}
+
+function waitForPaint() {
+  return new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+}
+
+function setTrainingChoicesEnabled(enabled) {
+  [...els.choices.children].forEach((button) => {
+    button.disabled = !enabled;
+  });
+}
+
+function startTrainingTimerAfterAudio(session) {
+  if (session.timingReady) return;
+  session.startedAt = performance.now();
+  session.timingReady = true;
+  setTrainingChoicesEnabled(true);
+  startTimer();
+}
+
+function showAudioRecovery(result) {
+  els.audioPromptBtn.disabled = false;
+  els.audioPromptBtn.setAttribute("aria-busy", "false");
+  if (result.status === "blocked") {
+    els.audioPromptBtn.classList.add("needs-gesture");
+    els.audioPromptBtn.textContent = "点一下听发音";
+    setTrainingFeedback("微信或当前浏览器需点击一下播放发音");
+    return;
+  }
+  if (result.status === "missing") {
+    els.audioPromptBtn.classList.add("audio-error");
+    els.audioPromptBtn.textContent = "暂无发音";
+    els.audioPromptBtn.disabled = true;
+    setTrainingFeedback("自定义词暂无发音，可点“不会”跳过");
+    return;
+  }
+  els.audioPromptBtn.classList.add("audio-error");
+  els.audioPromptBtn.textContent = "重试发音";
+  setTrainingFeedback("音频加载失败，请点击重试");
+}
+
+async function prepareTrainingPrompt(promptToken) {
+  const session = state.session;
+  const card = els.word.closest(".word-card");
+  card?.scrollIntoView({ block: "start", behavior: "auto" });
+  await waitForPaint();
+  if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
+
+  if (session.mode === "audioToZhChoice") {
+    els.audioPromptBtn.setAttribute("aria-busy", "true");
+    const result = await pronunciationPlayer.playWord(session.current);
+    if (!state.session || state.session !== session || session.promptToken !== promptToken || session.answered) return;
+    if (result.status !== "played") {
+      showAudioRecovery(result);
+      return;
+    }
+    els.audioPromptBtn.disabled = false;
+    els.audioPromptBtn.setAttribute("aria-busy", "false");
+    els.audioPromptBtn.textContent = "再听一次";
+    setTrainingFeedback("");
+    startTrainingTimerAfterAudio(session);
+  } else {
+    setTrainingFeedback("");
+    startTrainingTimerAfterAudio(session);
+  }
+}
+
+async function replayAudioPrompt() {
+  const session = state.session;
+  const isWrongReview = session?.answered && session.lastAnswerCorrect === false;
+  if (!session?.current || session.mode !== "audioToZhChoice" || (session.answered && !isWrongReview)) return;
+  const feedbackBeforeReplay = session.lastAnswerFeedback || els.feedback.textContent;
+  els.audioPromptBtn.classList.remove("needs-gesture", "audio-error");
+  els.audioPromptBtn.disabled = true;
+  els.audioPromptBtn.setAttribute("aria-busy", "true");
+  els.audioPromptBtn.textContent = "播放中...";
+  const result = await pronunciationPlayer.playWord(session.current);
+  if (!state.session || state.session !== session || (session.answered && !isWrongReview)) return;
+  if (result.status !== "played") {
+    showAudioRecovery(result);
+    return;
+  }
+  els.audioPromptBtn.disabled = false;
+  els.audioPromptBtn.setAttribute("aria-busy", "false");
+  els.audioPromptBtn.textContent = "再听一次";
+  if (isWrongReview) {
+    setTrainingFeedback(feedbackBeforeReplay);
+  } else {
+    setTrainingFeedback("");
+    startTrainingTimerAfterAudio(session);
+  }
 }
 
 function startTimer() {
   clearInterval(state.session.timerId);
-  els.timer.classList.remove("fast");
-  els.timer.textContent = "用时 0.0 秒 · 1.5 秒内算秒选，超过 3.5 秒记慢词";
+  els.timer.hidden = false;
+  els.timer.classList.remove("fast", "slow");
+  els.timer.textContent = "用时 0.0 秒";
   state.session.timerId = setInterval(() => {
     const elapsed = performance.now() - state.session.startedAt;
-    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 1.5 秒内算秒选，超过 3.5 秒记慢词`;
+    els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒`;
+    els.timer.classList.toggle("fast", elapsed <= FAST_PICK_LIMIT);
+    els.timer.classList.toggle("slow", elapsed > SLOW_PICK_LIMIT);
   }, 100);
 }
 
 function getTrainingChoiceCount(answer) {
-  if (answer.choiceCount) return answer.choiceCount;
-  return (answer.grade === "初二课内词汇" || answer.grade === "初二考试词汇") ? 5 : 4;
+  return 4;
 }
 
 function getGradeWordPool(grade) {
   return state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh);
 }
 
-function isSimilarWordShape(a, b) {
-  const left = String(a || "").toLowerCase();
-  const right = String(b || "").toLowerCase();
-  const samePhraseShape = left.includes(" ") === right.includes(" ");
-  const sameHyphenShape = left.includes("-") === right.includes("-");
-  const closeLength = Math.abs(left.length - right.length) <= 3;
-  return (samePhraseShape && closeLength) || (sameHyphenShape && closeLength);
-}
-
 function normalizeDisplayedChoiceText(value) {
-  return String(value || "").replace(/\s+/g, " ").trim();
+  return normalizeChoiceDisplayText(value);
 }
 
 function choiceDisplayKey(choice, mode) {
   return normalizeDisplayedChoiceText(choiceText(choice, mode));
 }
 
-function isUsableDistractor(candidate, answer, mode, usedDisplayKeys) {
+function isUsableDistractor(candidate, answer, mode, usedDisplayKeys, usedChoices = []) {
   if (!candidate || candidate.id === answer.id || !candidate.en || !candidate.zh) return false;
+  if (isEquivalentVocabularyAnswer(candidate, answer)) return false;
   const candidateDisplayKey = choiceDisplayKey(candidate, mode);
   const answerDisplayKey = choiceDisplayKey(answer, mode);
   if (!candidateDisplayKey || candidateDisplayKey === answerDisplayKey || usedDisplayKeys.has(candidateDisplayKey)) return false;
 
-  // 排除中文释义完全相同的选项（如 attend/attendance 都是"出席；参加"）
-  if (mode === "enToZhChoice" || mode === "auto") {
-    const candidateZh = normalizeDisplayedChoiceText(candidate.zh);
-    const answerZh = normalizeDisplayedChoiceText(answer.zh);
-    if (candidateZh && answerZh && candidateZh === answerZh) return false;
-  }
-
-  // 排除英文单词完全相同的选项
-  if (mode === "zhToEnChoice" || mode === "auto") {
-    const candidateEn = normalizeDisplayedChoiceText(candidate.en);
-    const answerEn = normalizeDisplayedChoiceText(answer.en);
-    if (candidateEn && answerEn && candidateEn === answerEn) return false;
-  }
+  // 中文释义按义项去重，避免同义词同时成为可选答案。
+  if (hasMeaningConflict(candidate, answer)) return false;
+  if (usedChoices.some((choice) => choice?.id !== answer.id && hasMeaningConflict(candidate, choice))) return false;
 
   return true;
 }
@@ -951,32 +1155,41 @@ function buildChoiceSet(answer, distractors, mode) {
   const choices = [answer];
   const usedDisplayKeys = new Set([choiceDisplayKey(answer, mode)]);
   distractors.forEach((candidate) => {
-    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys, choices)) return;
     usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
     choices.push(candidate);
   });
   return choices;
 }
 
-function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = null) {
+function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = null, externalUsedChoices = null) {
   const usedDisplayKeys = externalUsedKeys || new Set([choiceDisplayKey(answer, mode)]);
+  const usedChoices = externalUsedChoices || [answer];
   if (!externalUsedKeys) {
     usedDisplayKeys.add(choiceDisplayKey(answer, mode));
   }
   const ranked = pool
-    .filter((candidate) => candidate?.id !== answer.id && candidate?.zh)
-    .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer) }))
+    .filter((candidate) => {
+      if (!candidate?.en || !candidate?.zh || candidate.id === answer.id) return false;
+      if (isEquivalentVocabularyAnswer(candidate, answer) || hasMeaningConflict(candidate, answer)) return false;
+      return choiceDisplayKey(candidate, mode) !== choiceDisplayKey(answer, mode);
+    })
+    .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer, mode) }))
     .sort((a, b) => {
       return b.score - a.score || hashString(`${answer.id}:${a.candidate.id}`) - hashString(`${answer.id}:${b.candidate.id}`);
     });
-  const preferred = ranked.filter((item) => item.score > 0).map((item) => item.candidate);
+  const bestScore = ranked[0]?.score || 0;
+  const preferred = ranked
+    .filter((item) => item.score >= Math.max(1, bestScore - 3))
+    .map((item) => item.candidate);
   const fallback = ranked.map((item) => item.candidate);
   const distractors = [];
 
-  uniqueById([...shuffle(preferred.slice(0, 24)), ...fallback]).forEach((candidate) => {
+  uniqueById([...shuffle(preferred), ...fallback]).forEach((candidate) => {
     if (distractors.length >= count) return;
-    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+    if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys, usedChoices)) return;
     usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
+    usedChoices.push(candidate);
     distractors.push(candidate);
   });
 
@@ -985,11 +1198,12 @@ function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = n
 
 function getStructuredDistractors(answer, count, mode) {
   const gradePool = getGradeWordPool(answer.grade);
-  const fallbackPool = getEligibleWords();
+  const fallbackPool = uniqueById([...getEligibleWords(), ...state.words]);
   const sharedUsedKeys = new Set([choiceDisplayKey(answer, mode)]);
-  const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool, sharedUsedKeys);
+  const sharedUsedChoices = [answer];
+  const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool, sharedUsedKeys, sharedUsedChoices);
   if (primary.length >= count) return primary;
-  const extra = selectRankedDistractors(answer, count, mode, fallbackPool, sharedUsedKeys);
+  const extra = selectRankedDistractors(answer, count - primary.length, mode, fallbackPool, sharedUsedKeys, sharedUsedChoices);
   return [...primary, ...extra].slice(0, count);
 }
 
@@ -1019,9 +1233,6 @@ function makeChoices(answer) {
     return getCustomChoices(answer, mode);
   }
   const distractorCount = getTrainingChoiceCount(answer) - 1;
-  if (answer.grade === "初二课内词汇" || answer.grade === "初二考试词汇" || answer.grade === "高二课内词汇" || answer.grade === "高二考试词汇") {
-    return shuffle(buildChoiceSet(answer, getStructuredDistractors(answer, distractorCount, mode), mode));
-  }
   return shuffle(buildChoiceSet(answer, getStructuredDistractors(answer, distractorCount, mode), mode));
 }
 
@@ -1047,47 +1258,111 @@ function similarWordShape(candidate, answer) {
   return (lengthClose && (prefixClose || suffixClose)) || familyClose;
 }
 
-function scoreDistractorChoice(candidate, answer) {
+function englishEditDistance(leftValue, rightValue) {
+  const left = normalizeChoiceText(leftValue);
+  const right = normalizeChoiceText(rightValue);
+  if (!left) return right.length;
+  if (!right) return left.length;
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let i = 1; i <= left.length; i += 1) {
+    const current = [i];
+    for (let j = 1; j <= right.length; j += 1) {
+      current[j] = Math.min(
+        current[j - 1] + 1,
+        previous[j] + 1,
+        previous[j - 1] + (left[i - 1] === right[j - 1] ? 0 : 1)
+      );
+    }
+    previous.splice(0, previous.length, ...current);
+  }
+  return previous[right.length];
+}
+
+function scoreDistractorChoice(candidate, answer, mode) {
   if (!candidate?.en || !answer?.en) return 0;
   let score = 0;
   if (sameInitial(candidate, answer)) score += 6;
   if (similarWordShape(candidate, answer)) score += 5;
   const lengthGap = Math.abs(normalizeChoiceText(candidate.en).length - normalizeChoiceText(answer.en).length);
   if (lengthGap <= 1) score += 2;
-  if (candidate.pos && answer.pos && candidate.pos === answer.pos) score += 1;
+  const editDistance = englishEditDistance(candidate.en, answer.en);
+  if (editDistance === 1) score += 5;
+  else if (editDistance === 2) score += 3;
+  else if (editDistance === 3) score += 1;
+  if (candidate.pos && answer.pos && candidate.pos === answer.pos) score += 3;
+  const displayLengthGap = Math.abs(choiceDisplayKey(candidate, mode).length - choiceDisplayKey(answer, mode).length);
+  if (displayLengthGap <= 2) score += 3;
+  else if (displayLengthGap <= 5) score += 1;
+  if (splitChineseSenses(candidate.zh).length === splitChineseSenses(answer.zh).length) score += 1;
   return score;
 }
 
 function normalizeChoiceText(value) {
-  return String(value || "").toLowerCase().replace(/[^a-z]/g, "");
+  return normalizeEnglishWord(value);
+}
+
+function buildContextSentence(word) {
+  const builtInContext = String(word.contextSentence || "").trim();
+  if (builtInContext) return builtInContext;
+
+  const english = String(word.en || "").trim();
+  const normalized = normalizeEnglishWord(english);
+  const notes = String(word.notes || "").trim();
+  const noteSentences = notes.match(/[A-Z][^.!?]{5,90}[.!?]/g) || [];
+  const fromNotes = noteSentences.find((sentence) => {
+    const lowerSentence = sentence.toLowerCase();
+    return lowerSentence.includes(normalized) && sentence.split(/\s+/).length <= 16;
+  });
+  if (fromNotes) return fromNotes;
+
+  if (String(word.pos || "").includes("v.")) return `They decided to ${english} before the lesson ended.`;
+  if (String(word.pos || "").includes("adj.")) return `The students found the idea ${english}.`;
+  return `We noticed the ${english} during our class project.`;
+}
+
+function revealContextSentence(word) {
+  els.contextSentence.textContent = buildContextSentence(word);
+  els.contextSentence.hidden = false;
 }
 
 async function answer(value, button) {
   const session = state.session;
-  if (!session || session.answered || !session.current) return;
+  if (!session || session.answered || !session.current || !session.timingReady) return;
   session.answered = true;
+  session.timingReady = false;
+  setTrainingSessionState("answered");
+  els.skipBtn.hidden = true;
+  els.skipBtn.disabled = true;
+  pronunciationPlayer.stop();
   clearInterval(session.timerId);
   const elapsed = performance.now() - session.startedAt;
   const word = session.current;
   const isCorrect = isCorrectAnswer(value, word, session.mode);
+  session.lastAnswerCorrect = isCorrect;
   const isFast = isCorrect && elapsed <= FAST_PICK_LIMIT;
   const isSlow = isCorrect && elapsed > SLOW_PICK_LIMIT;
-  els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(2)} 秒 · ${isFast ? "秒选成功" : isSlow ? "已记慢词" : "答对未秒选"}`;
+  els.timer.textContent = `用时 ${(elapsed / 1000).toFixed(2)} 秒${isFast ? " · 秒选" : isSlow ? " · 慢词" : ""}`;
   els.timer.classList.toggle("fast", isFast);
+  els.timer.classList.toggle("slow", isSlow);
   session.done += 1;
   session.correct += isCorrect ? 1 : 0;
   session.fast += isFast ? 1 : 0;
   if (!isCorrect) session.wrongWords.push(word);
   if (isSlow) session.slowWords.push(word);
   paintChoices(value, button);
-  els.feedback.textContent = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
+  session.lastAnswerFeedback = feedbackText(word, isCorrect, isFast, isSlow, elapsed);
+  setTrainingFeedback(session.lastAnswerFeedback);
+  revealContextSentence(word);
+  if (!isCorrect) showWordbookExplanation(word);
   await recordAnswer(word, isCorrect, isFast, isSlow);
+  await syncDailyTaskFromTraining(word, isCorrect, session);
   await recordDailyActivity("train", session.grade);
   await completePersistentRotationItem(session.rotationKey, word.id);
+  await maybeCelebrateFullStage(session.grade);
   renderAllDebounced();
   updateProgress();
   if (isCorrect) {
-    setTimeout(nextWord, 500);
+    session.advanceTimerId = setTimeout(nextWord, CORRECT_ADVANCE_DELAY_MS);
   } else {
     showTrainContinueButton();
   }
@@ -1105,7 +1380,7 @@ function showTrainContinueButton() {
 
 function isCorrectAnswer(value, word, mode) {
   if (mode === "customChoice") return Boolean(value?.isAnswer);
-  return value?.id === word.id;
+  return isEquivalentVocabularyAnswer(value, word);
 }
 
 function paintChoices(answerWord, clickedButton) {
@@ -1113,7 +1388,7 @@ function paintChoices(answerWord, clickedButton) {
     const current = state.session.current;
     const isCorrectChoice = state.session.mode === "customChoice" && Array.isArray(current.choiceOptions) && current.choiceOptions.length
       ? current.choiceOptions.some((choice) => choice.isAnswer && choice.id === button.dataset.choiceId)
-      : button.dataset.choiceId === current.id;
+      : button.dataset.choiceId === current.id || button.dataset.choiceEnglish === normalizeEnglishWord(current.en);
     button.classList.toggle("correct", isCorrectChoice);
     button.disabled = true;
   });
@@ -1125,25 +1400,31 @@ function paintChoices(answerWord, clickedButton) {
 function feedbackText(word, isCorrect, isFast, isSlow, elapsed) {
   const seconds = (elapsed / 1000).toFixed(2);
   const detail = [word.pos, word.notes].filter(Boolean).join(" · ");
-  const answer = word.answerFeedback || `${word.en} = ${word.zh}${detail ? `｜${detail}` : ""}`;
-  if (!isCorrect) return `错题：${answer}`;
-  if (isFast) return `秒选成功：${seconds} 秒`;
-  if (isSlow) return `答对了，用时 ${seconds} 秒，已记为慢词。`;
-  return `答对了，用时 ${seconds} 秒，未记为慢词。`;
+  const answerText = word.answerFeedback || `${word.en} = ${word.zh}${detail ? ` · ${detail}` : ""}`;
+  if (!isCorrect) return `错题：${answerText}`;
+  if (isFast) return `秒选 ${seconds} 秒`;
+  if (isSlow) return `正确 · ${seconds} 秒 · 慢词`;
+  return `正确 · ${seconds} 秒`;
 }
 
 async function recordAnswer(word, isCorrect, isFast, isSlow) {
   const record = getRecord(word.id);
+  const now = Date.now();
+  const learningResult = applyLearningResult(record, {
+    isCorrect,
+    isFast,
+    isSlow,
+    mode: state.session?.mode || ""
+  }, now);
   record.seen += 1;
   record.correct += isCorrect ? 1 : 0;
   record.wrong += isCorrect ? 0 : 1;
   record.fast += isFast ? 1 : 0;
   record.slow += isSlow ? 1 : 0;
-  record.lastSeenAt = Date.now();
+  record.lastSeenAt = now;
   const delta = isCorrect ? (isFast ? 18 : 8) : -24;
   record.mastery = Math.max(0, Math.min(100, Math.round((record.mastery || 0) + delta)));
-  const intervalHours = isCorrect ? (isFast ? 48 : 24) : 4;
-  record.nextReviewAt = Date.now() + intervalHours * 60 * 60 * 1000;
+  Object.assign(record, learningResult);
   state.records.set(word.id, record);
   await put("records", record);
 }
@@ -1152,12 +1433,18 @@ async function skipWord() {
   const session = state.session;
   if (!session || session.answered || !session.current) return;
   session.answered = true;
+  session.timingReady = false;
+  setTrainingSessionState("answered");
+  els.skipBtn.hidden = true;
+  els.skipBtn.disabled = true;
+  window.speechSynthesis?.cancel();
   clearInterval(session.timerId);
   const word = session.current;
-  els.timer.textContent = "已跳过，不计入错误。";
-  els.timer.classList.remove("fast");
+  els.timer.textContent = "已跳过";
+  els.timer.classList.remove("fast", "slow");
   paintChoices(null, null);
-  els.feedback.textContent = `跳过：${word.en} = ${word.zh}`;
+  setTrainingFeedback(`跳过：${word.en} = ${word.zh}`);
+  revealContextSentence(word);
   await completePersistentRotationItem(session.rotationKey, word.id);
   renderAll();
   updateProgress();
@@ -1168,33 +1455,52 @@ async function finishSession() {
   const session = state.session;
   clearInterval(session.timerId);
   const totalSeconds = Math.max(1, Math.round((performance.now() - session.sessionStartedAt) / 1000));
-  const tomorrow = uniqueById([...session.wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
+  const wrongWords = uniqueById(session.wrongWords);
+  const tomorrow = uniqueById([...wrongWords, ...session.slowWords]).length || Math.ceil(session.total * 0.25);
+  const dailyTask = session.dailyTaskKey ? state.dailyTasks.get(session.dailyTaskKey) : null;
+  const dailyRemaining = dailyTask ? getPendingDailyTaskIds(dailyTask).length : 0;
+  const dailyCompleted = session.kind === "daily" && dailyRemaining === 0;
   state.lastReport = {
     grade: session.grade,
     total: session.total,
     correct: session.correct,
     fast: session.fast,
-    wrong: session.wrongWords.length,
+    wrong: wrongWords.length,
+    wrongWordIds: wrongWords.map((word) => word.id),
     slow: session.slowWords.length,
     tomorrow,
-    totalSeconds
+    totalSeconds,
+    kind: session.kind,
+    dailyCompleted,
+    dailyRemaining,
+    practiceMode: session.practiceMode
   };
-  els.word.textContent = "Done";
-  els.tag.textContent = "本轮完成";
-  els.hint.textContent = "建议明天优先复习本轮错词和慢词。";
-  els.timer.textContent = "本轮已完成";
-  els.timer.classList.remove("fast");
+  setTrainingSessionState("completed");
+  els.word.textContent = "本轮完成";
+  els.word.hidden = false;
+  setTrainingTag("");
+  setTrainingHint(
+    session.kind === "daily" && !dailyCompleted
+      ? `今日任务还剩 ${dailyRemaining} 词`
+      : ""
+  );
+  els.timer.hidden = true;
+  els.contextSentence.hidden = true;
+  els.contextSentence.textContent = "";
   els.choices.innerHTML = "";
-  els.choices.hidden = false;
+  els.choices.hidden = true;
   els.skipBtn.disabled = true;
-  els.feedback.textContent = `完成 ${session.total} 词，正确率 ${percent(session.correct, session.total)}，秒选率 ${percent(session.fast, session.total)}。`;
-  els.progressText.textContent = "本轮已完成";
+  els.skipBtn.hidden = true;
+  setTrainingFeedback(
+    `完成 ${session.total} 词 · 正确率 ${percent(session.correct, session.total)} · 秒选率 ${percent(session.fast, session.total)}`
+  );
+  els.progressText.textContent = session.kind === "daily" && !dailyCompleted ? `今日剩 ${dailyRemaining} 词` : "已完成";
   els.progressBar.style.width = "100%";
   hideTrainContinueButton();
   renderSessionReport();
   renderAll();
 
-  showSessionCompleteModal(state.lastReport);
+  await startLearningFlow(state.lastReport, session.sourceWords, wrongWords, uniqueById(session.slowWords));
   state.session = null;
 }
 
@@ -1204,7 +1510,9 @@ function showSessionCompleteModal(report) {
   const icon = document.getElementById("modalIcon");
   const title = document.getElementById("modalTitle");
   const datetimeEl = document.getElementById("modalDatetime");
-  const sessionInfoEl = document.getElementById("modalSessionInfo");
+  const practiceModeEl = document.getElementById("modalPracticeMode");
+  const sessionGradeEl = document.getElementById("modalSessionGrade");
+  const sessionDurationEl = document.getElementById("modalSessionDuration");
   const totalEl = document.getElementById("modalTotal");
   const accuracyEl = document.getElementById("modalAccuracy");
   const fastRateEl = document.getElementById("modalFastRate");
@@ -1215,677 +1523,52 @@ function showSessionCompleteModal(report) {
 
   const accuracyNum = report.total ? Math.round((report.correct / report.total) * 100) : 0;
   const fastNum = report.total ? Math.round((report.fast / report.total) * 100) : 0;
-  const passed = accuracyNum >= 90;
+  const passed = accuracyNum >= 80;
 
-  // 设置日期和时间
   const now = new Date();
   const weekdays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
   const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${weekdays[now.getDay()]}`;
   const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
   datetimeEl.textContent = `${dateStr} ${timeStr}`;
 
-  // 设置年级段和用时信息
-  const grade = state.lastReport?.grade || els.stageSelect?.value || "未知年级";
+  const grade = report.grade || els.stageSelect?.value || "未知阶段";
   const totalSeconds = report.totalSeconds || 0;
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
   const timeText = minutes > 0 ? `${minutes}分${seconds}秒` : `${seconds}秒`;
-  sessionInfoEl.textContent = `本次${grade}刷词共用时${timeText}`;
+  practiceModeEl.textContent = practiceModeLabel(report.practiceMode || els.practiceMode?.value);
+  sessionGradeEl.textContent = grade;
+  sessionDurationEl.textContent = `用时 ${timeText}`;
 
   totalEl.textContent = report.total;
   accuracyEl.textContent = `${accuracyNum}%`;
   fastRateEl.textContent = `${fastNum}%`;
+  accuracyEl.className = `modal-stat-value ${passed ? "pass" : "encourage"}`;
 
-  // 设置正确率颜色
-  if (accuracyNum >= 90) {
-    accuracyEl.style.color = "#075f3c";
-  } else if (accuracyNum >= 80) {
-    accuracyEl.style.color = "#d97706";
-  } else {
-    accuracyEl.style.color = "#dc2626";
-  }
+  header.className = "modal-header " + (passed ? "pass" : "encourage");
+  icon.textContent = passed ? "🎉" : "🌟";
+  title.textContent = passed ? "太棒了，顺利过关！" : "继续加油呀！";
 
-  // 设置头部样式
-  header.className = "modal-header " + (passed ? "pass" : "fail");
-  icon.textContent = passed ? "🎉" : "💪";
-  title.textContent = passed ? "恭喜，已通过！" : "继续加油！";
-
-  // 设置结果提示
   if (passed) {
     resultEl.className = "modal-result pass";
-    resultEl.innerHTML = "✅ 正确率 90% 以上，已通过！<br>📸 请截图发给代老师或学长学姐";
+    resultEl.textContent = "正确率已达 80%，可截图发给代老师或学长学姐";
   } else {
-    resultEl.className = "modal-result fail";
-    resultEl.innerHTML = "❌ 正确率未达 90%，请再来一遍！<br>🎯 达到 90% 后再截图发给代老师或学长学姐";
+    resultEl.className = "modal-result encourage";
+    resultEl.textContent = "再巩固一轮就能达到 80% 过关线";
   }
 
-  // 按钮事件
   const closeModal = () => { modal.hidden = true; };
   closeBtn.onclick = closeModal;
-  againBtn.onclick = () => { closeModal(); els.trainingScope.value = "wrong"; els.sessionSize.value = "all"; startSession(); };
+  againBtn.disabled = !report.wrongWordIds?.length;
+  againBtn.textContent = report.wrongWordIds?.length ? "再练一遍" : "本轮无错词";
+  againBtn.onclick = () => {
+    if (!report.wrongWordIds?.length) return;
+    closeModal();
+    startSession({ wordIds: report.wrongWordIds, grade: report.grade, notice: "仅练本轮新增错词。" });
+  };
   nextBtn.onclick = () => { closeModal(); els.trainingScope.value = "smart"; startSession(); };
 
   modal.hidden = false;
-}
-
-function getBattleWords(stage) {
-  return state.words.filter((word) => stageMatches(word, stage) && word.en && word.zh);
-}
-
-function buildBattleQueue() {
-  const words = getBattleWords(els.battleStage.value);
-  const sizeValue = els.battleSize.value;
-  const size = sizeValue === "all" ? words.length : Math.min(Number(sizeValue), words.length);
-  return shuffle(words).slice(0, size);
-}
-
-async function startBattle() {
-  const stage = els.battleStage.value;
-  try {
-    els.battleStatus.textContent = stageLoadMessage(stage);
-    await ensureStageLoaded(stage);
-    await loadState();
-  } catch (error) {
-    els.battleStatus.textContent = stageLoadMessage(stage, true);
-    return;
-  }
-  const queue = buildBattleQueue();
-  if (!queue.length) {
-    els.battleStatus.textContent = "当前年级没有可对战单词，请换一个年级或先导入词库。";
-    return;
-  }
-  state.battle = {
-    queue,
-    total: queue.length,
-    current: null,
-    done: 0,
-    skipped: 0,
-    mode: els.battleMode.value,
-    scores: { left: 0, right: 0 },
-    playerLocked: { left: false, right: false },
-    choices: [],
-    answered: false
-  };
-  els.skipBattleBtn.disabled = false;
-  nextBattleWord();
-}
-
-function nextBattleWord() {
-  const battle = state.battle;
-  if (!battle) return;
-  battle.current = battle.queue.shift();
-  battle.answered = false;
-  battle.playerLocked = { left: false, right: false };
-  if (!battle.current) return finishBattle();
-
-  const isPromptChinese = battle.mode === "zhToEnChoice";
-  battle.choices = makeBattleChoices(battle.current);
-  els.battlePrompt.textContent = isPromptChinese ? battle.current.zh : battle.current.en;
-  els.battleHint.textContent = isPromptChinese ? "看中文，抢选正确英文。" : "看英文，抢选正确中文。";
-  els.battleStatus.textContent = "本题开始，左右双方各自点击答案。";
-  renderBattleScore();
-  renderBattleChoices("left");
-  renderBattleChoices("right");
-}
-
-function makeBattleChoices(answer) {
-  const mode = state.battle?.mode || "enToZhChoice";
-  const stagePool = getBattleWords(els.battleStage.value).filter((word) => word.id !== answer.id);
-  const fallbackPool = state.words.filter((word) => word.id !== answer.id && word.en && word.zh);
-  const distractors = selectRankedDistractors(answer, 3, mode, uniqueById([...stagePool, ...fallbackPool]));
-  return shuffle(buildChoiceSet(answer, distractors, mode));
-}
-
-function renderBattleChoices(player) {
-  const battle = state.battle;
-  const container = player === "left" ? els.leftBattleChoices : els.rightBattleChoices;
-  container.innerHTML = "";
-  battle.choices.forEach((choice, index) => {
-    const button = document.createElement("button");
-    button.className = "battle-choice";
-    button.type = "button";
-    button.dataset.wordId = choice.id;
-    button.innerHTML = `<span>${CHOICE_KEYS[index]}</span><strong>${escapeHtml(battle.mode === "zhToEnChoice" ? choice.en : choice.zh)}</strong>`;
-    button.addEventListener("click", () => answerBattle(player, choice, button));
-    container.append(button);
-  });
-}
-
-function answerBattle(player, choice, button) {
-  const battle = state.battle;
-  if (!battle || battle.answered || battle.playerLocked[player]) return;
-  const isCorrect = choice.id === battle.current.id;
-  if (!isCorrect) {
-    battle.playerLocked[player] = true;
-    button.classList.add("wrong");
-    [...(player === "left" ? els.leftBattleChoices : els.rightBattleChoices).children].forEach((item) => {
-      item.disabled = true;
-    });
-    els.battleStatus.textContent = `${player === "left" ? "左方" : "右方"}点错，本题不扣分，另一方还能继续答。`;
-    if (battle.playerLocked.left && battle.playerLocked.right) {
-      els.battleStatus.textContent = "双方本题都点错了，可以跳过进入下一题。";
-    }
-    return;
-  }
-  battle.answered = true;
-  battle.scores[player] += 1;
-  battle.done += 1;
-  markBattleResolved(player);
-  renderBattleScore();
-  els.battleStatus.textContent = `${player === "left" ? "左方" : "右方"}抢答正确，得 1 分。`;
-  setTimeout(nextBattleWord, 900);
-}
-
-function markBattleResolved(winner) {
-  ["left", "right"].forEach((player) => {
-    const container = player === "left" ? els.leftBattleChoices : els.rightBattleChoices;
-    [...container.children].forEach((button) => {
-      button.disabled = true;
-      if (button.dataset.wordId === state.battle.current.id) button.classList.add("correct");
-      if (player === winner && button.dataset.wordId === state.battle.current.id) button.classList.add("winner");
-    });
-  });
-}
-
-function skipBattleWord() {
-  if (!state.battle?.current) return;
-  state.battle.done += 1;
-  state.battle.skipped += 1;
-  els.battleStatus.textContent = "已跳过本题。";
-  nextBattleWord();
-}
-
-function renderBattleScore() {
-  const battle = state.battle;
-  els.leftBattleScore.textContent = battle?.scores.left || 0;
-  els.rightBattleScore.textContent = battle?.scores.right || 0;
-  els.battleProgress.textContent = battle ? `题号 ${Math.min(battle.done + 1, battle.total)}/${battle.total}` : "请选择年级后开始";
-}
-
-async function finishBattle() {
-  const battle = state.battle;
-  const left = battle.scores.left;
-  const right = battle.scores.right;
-  const result = left === right ? "平局" : left > right ? "左方获胜" : "右方获胜";
-  els.battlePrompt.textContent = result;
-  els.battleHint.textContent = `最终比分 左方 ${left} : ${right} 右方`;
-  els.battleStatus.textContent = `对战结束：${result}。本模式不会写入个人练习记录。`;
-  const skipText = battle.skipped > 0 ? `（跳过 ${battle.skipped} 题）` : "";
-  els.battleProgress.textContent = `完成 ${battle.total} 题${skipText}`;
-  els.leftBattleChoices.innerHTML = "";
-  els.rightBattleChoices.innerHTML = "";
-  els.skipBattleBtn.disabled = true;
-
-  state.battle = null;
-}
-
-function resetBattle() {
-  state.battle = null;
-  els.leftBattleScore.textContent = "0";
-  els.rightBattleScore.textContent = "0";
-  els.battleProgress.textContent = "请选择年级后开始";
-  els.battlePrompt.textContent = "Ready?";
-  els.battleHint.textContent = "左右两边各自点击答案，先点对的一方得分。";
-  els.battleStatus.textContent = "对战结果不会写入个人练习记录。";
-  els.leftBattleChoices.innerHTML = "";
-  els.rightBattleChoices.innerHTML = "";
-  els.skipBattleBtn.disabled = true;
-}
-
-function getQuizSentenceData(grade) {
-  if (grade === "初一课内词汇" || grade === "初一考试词汇") return window.WORD_SNAP_GRADE7_QUIZ_SENTENCES || [];
-  if (grade === "初二课内词汇" || grade === "初二考试词汇") return window.WORD_SNAP_GRADE8_QUIZ_SENTENCES || [];
-  if (grade === "初三课内词汇" || grade === "初三考试词汇") return window.WORD_SNAP_QUIZ_SENTENCES || [];
-  if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return window.WORD_SNAP_GRADE10_QUIZ_SENTENCES || [];
-  if (grade === "高二课内词汇" || grade === "高二考试词汇") return window.WORD_SNAP_GRADE11_QUIZ_SENTENCES || [];
-  return [];
-}
-
-function loadScriptOnce(src) {
-  return loadScriptWithRetry(src);
-}
-
-async function ensureQuizBankLoaded(grade) {
-  if (getQuizSentenceData(grade).length) return true;
-  const src = QUIZ_BANK_SCRIPTS[grade];
-  if (!src) return false;
-  els.quizStatusText.textContent = `正在加载${grade}刷题题库...`;
-  try {
-    await loadScriptOnce(src);
-    return true;
-  } catch (error) {
-    els.quizStatusText.textContent = `${grade}刷题题库加载失败，请刷新重试，或使用备用入口：${BACKUP_SITE_URL}`;
-    return false;
-  }
-}
-
-function getExpectedQuizCount(grade) {
-  if (grade === "初一课内词汇" || grade === "初一考试词汇") return GRADE7_QUIZ_COUNT;
-  if (grade === "初二课内词汇" || grade === "初二考试词汇") return GRADE8_QUIZ_COUNT;
-  if (grade === "初三课内词汇" || grade === "初三考试词汇") return 340;
-  if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return GRADE10_QUIZ_COUNT;
-  if (grade === "高二课内词汇" || grade === "高二考试词汇") return GRADE11_QUIZ_COUNT;
-  return 0;
-}
-
-function getQuizBankTotal(grade) {
-  const sentenceTotal = getQuizSentenceData(grade).length;
-  if (sentenceTotal) return sentenceTotal;
-  const expectedTotal = getExpectedQuizCount(grade);
-  if (expectedTotal) return expectedTotal;
-  return generateWordQuiz(grade).length;
-}
-
-function getQuizWrongCount(grade) {
-  return [...state.quizWrongRecords.values()].filter((record) => {
-    if (record.grade) return record.grade === grade;
-    if (grade === "初一课内词汇" || grade === "初一考试词汇") return String(record.questionId || "").startsWith("g7-");
-    if (grade === "初二课内词汇" || grade === "初二考试词汇") return String(record.questionId || "").startsWith("g8-");
-    if (grade === "初三课内词汇" || grade === "初三考试词汇") return String(record.questionId || "").startsWith("g9-");
-    if (grade === "高一课内词汇" || grade === "高一考试词汇" || grade === "高一课改词库") return String(record.questionId || "").startsWith("g10-");
-    if (grade === "高二课内词汇" || grade === "高二考试词汇") return String(record.questionId || "").startsWith("g11-");
-    if (grade === "高三考试词汇") return String(record.questionId || "").startsWith("g12-");
-    return false;
-  }).length;
-}
-
-function renderQuizStats() {
-  const grade = els.quizStage.value;
-  const stats = state.quizStats.get(grade) || { attempted: 0, correct: 0, fast: 0 };
-  els.quizBankTotal.textContent = getQuizBankTotal(grade);
-  els.quizDoneCount.textContent = stats.attempted || 0;
-  els.quizAccuracy.textContent = percent(stats.correct || 0, stats.attempted || 0);
-  els.quizFastRate.textContent = percent(stats.fast || 0, stats.attempted || 0);
-  els.quizWrongCount.textContent = getQuizWrongCount(grade);
-}
-
-function renderTrainQuizStats() {
-  // Quiz stats display removed from home page - function kept for compatibility
-}
-
-async function recordQuizAnswer(q, isCorrect, isFast) {
-  const grade = state.quiz?.grade || q.grade || els.quizStage.value;
-  const stats = state.quizStats.get(grade) || { attempted: 0, correct: 0, fast: 0 };
-  stats.attempted += 1;
-  stats.correct += isCorrect ? 1 : 0;
-  stats.fast += isCorrect && isFast ? 1 : 0;
-  state.quizStats.set(grade, stats);
-  await put("meta", { key: `quizStats:${grade}`, value: stats, at: Date.now() });
-  await recordDailyActivity("quiz", grade);
-  renderQuizStats();
-  renderTrainQuizStats();
-}
-
-function generateWordQuiz(grade) {
-  const words = state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh);
-  if (!words.length) return [];
-  return words
-    .filter((w) => w.en && w.zh)
-    .map((w, i) => ({ id: `w-${grade}-${i}`, sentence: w.zh, answer: w.en, type: "word" }));
-}
-
-async function updateQuizSizeOptions() {
-  const grade = els.quizStage.value;
-  const sel = els.quizSize;
-  const prev = sel.value;
-  sel.innerHTML = "";
-  await ensureQuizBankLoaded(grade);
-  const sentenceQuizTotal = getQuizSentenceData(grade).length;
-  const expectedQuizTotal = getExpectedQuizCount(grade);
-  if (expectedQuizTotal && sentenceQuizTotal !== expectedQuizTotal) {
-    sel.innerHTML = `<option value="all">暂无${grade}题库</option>`;
-  } else if (sentenceQuizTotal) {
-    const opts = [];
-    if (sentenceQuizTotal > 50) opts.push('<option value="50" selected>50 题</option>');
-    if (sentenceQuizTotal > 100) opts.push('<option value="100">100 题</option>');
-    if (sentenceQuizTotal > 150) opts.push('<option value="150">150 题</option>');
-    opts.push(`<option value="all">全部 ${sentenceQuizTotal} 题</option>`);
-    sel.innerHTML = opts.join("");
-  } else {
-    const total = state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh).length;
-    const opts = [];
-    if (total > 50) opts.push('<option value="50" selected>50 词</option>');
-    if (total > 100) opts.push('<option value="100">100 词</option>');
-    if (total > 150) opts.push('<option value="150">150 词</option>');
-    opts.push(`<option value="all">全部 ${total} 词</option>`);
-    sel.innerHTML = opts.join("");
-  }
-  renderQuizStats();
-}
-
-function getQuizDistractorsForSentence(answer, vocabPool) {
-  const pool = [];
-  const used = new Set([answer.toLowerCase()]);
-  const firstLetter = answer[0].toLowerCase();
-
-  const sameFirst = vocabPool.filter((w) => w.en && w.en[0].toLowerCase() === firstLetter && !used.has(w.en.toLowerCase()));
-  shuffle(sameFirst).forEach((w) => {
-    if (pool.length < 4) { pool.push(w.en); used.add(w.en.toLowerCase()); }
-  });
-
-  if (pool.length < 4) {
-    const others = vocabPool.filter((w) => w.en && !used.has(w.en.toLowerCase()));
-    shuffle(others).forEach((w) => {
-      if (pool.length < 4) { pool.push(w.en); used.add(w.en.toLowerCase()); }
-    });
-  }
-
-  return shuffle(pool).slice(0, 4);
-}
-
-async function startQuiz(isReview) {
-  const grade = els.quizStage.value;
-  let allData;
-  let vocabPool;
-  if (state.quiz) {
-    clearInterval(state.quiz.timerId);
-    clearTimeout(state.quiz.advanceTimerId);
-  }
-  hideQuizContinueButton();
-
-  await ensureQuizBankLoaded(grade);
-  const sentenceQuizData = getQuizSentenceData(grade);
-  const expectedQuizTotal = getExpectedQuizCount(grade);
-  if (expectedQuizTotal && sentenceQuizData.length !== expectedQuizTotal) {
-    els.quizStatusText.textContent = `${grade}题库应为 ${expectedQuizTotal} 题，当前未正确加载。请刷新页面后再试。`;
-    return;
-  }
-
-  if (sentenceQuizData.length) {
-    allData = sentenceQuizData;
-    vocabPool = sentenceQuizData
-      .flatMap((q) => q.options?.length ? q.options : [q.answer])
-      .filter(Boolean)
-      .map((en, index) => ({ id: `quiz-${grade}-${index}`, en, zh: "" }));
-  } else {
-    try {
-      await ensureStageLoaded(grade);
-      await loadState();
-    } catch (error) {
-      els.quizStatusText.textContent = stageLoadMessage(grade, true);
-      return;
-    }
-    allData = generateWordQuiz(grade);
-    vocabPool = state.words.filter((word) => stageMatches(word, grade) && word.en && word.zh);
-  }
-
-  if (!allData.length) {
-    els.quizStatusText.textContent = "暂无题目数据。";
-    return;
-  }
-
-  let queue;
-  if (isReview) {
-    const wrongIds = [...state.quizWrongRecords.keys()];
-    queue = allData.filter((q) => wrongIds.includes(q.id));
-    if (!queue.length) {
-      els.quizStatusText.textContent = "没有错题，无需复盘。";
-      return;
-    }
-    queue = shuffle(queue);
-  } else {
-    const rotationKey = buildQuizRotationKey(grade);
-    const prepared = prepareRotationBatch(
-      state.rotationQueues.get(rotationKey),
-      allData.map((question) => question.id),
-      els.quizSize.value
-    );
-    await persistRotationState(rotationKey, prepared.state);
-    const questionsById = new Map(allData.map((question) => [question.id, question]));
-    queue = prepared.batch.map((id) => questionsById.get(id)).filter(Boolean);
-  }
-
-  state.quiz = {
-    queue,
-    vocabPool,
-    grade,
-    total: queue.length,
-    done: 0,
-    correct: 0,
-    fast: 0,
-    slow: 0,
-    wrongList: [],
-    isReview,
-    rotationKey: isReview ? null : buildQuizRotationKey(grade),
-    sessionStartedAt: performance.now(),
-    currentQ: null,
-    currentIndex: 0,
-    startedAt: 0,
-    timerId: 0,
-    advanceTimerId: 0,
-    answered: false
-  };
-
-  els.quizArea.hidden = false;
-  els.quizReport.hidden = true;
-  els.quizReport.innerHTML = "";
-  els.quizStatusText.textContent = isReview ? `错题复盘模式：${queue.length} 题` : `${grade} 刷题模式：${queue.length} 题`;
-  nextQuizQuestion();
-}
-
-function nextQuizQuestion() {
-  const quiz = state.quiz;
-  if (!quiz) return;
-  clearTimeout(quiz.advanceTimerId);
-  clearInterval(quiz.timerId);
-  quiz.advanceTimerId = 0;
-  quiz.timerId = 0;
-  hideQuizContinueButton();
-  quiz.answered = false;
-  quiz.currentQ = quiz.queue.shift();
-
-  if (!quiz.currentQ) return finishQuiz();
-  quiz.currentIndex = quiz.done + 1;
-
-  const q = quiz.currentQ;
-  const allChoices = q.options?.length
-    ? shuffle([...q.options])
-    : shuffle([q.answer, ...getQuizDistractorsForSentence(q.answer, quiz.vocabPool)]);
-
-  els.quizTag.textContent = `第 ${quiz.done + 1}/${quiz.total} 题`;
-  els.quizSentence.textContent = q.sentence;
-  els.quizHint.textContent = q.type === "word" ? "选择正确的英文单词" : q.type === "multiple-choice" ? "选择最佳答案" : `首字母：${q.answer[0]}`;
-  els.quizFeedback.textContent = "计时中。";
-  els.quizChoices.innerHTML = "";
-
-  allChoices.forEach((word, index) => {
-    const button = document.createElement("button");
-    button.className = "choice";
-    button.type = "button";
-    button.dataset.isCorrect = word === q.answer ? "1" : "0";
-    const key = document.createElement("span");
-    key.className = "choice-key";
-    key.textContent = CHOICE_KEYS[index];
-    const text = document.createElement("span");
-    text.className = "choice-text";
-    text.textContent = word;
-    button.append(key, text);
-    button.addEventListener("click", () => answerQuizChoice(word === q.answer, button));
-    els.quizChoices.append(button);
-  });
-
-  quiz.startedAt = performance.now();
-  startQuizTimer();
-  updateQuizProgress();
-}
-
-function hideQuizContinueButton() {
-  els.quizContinueBtn.hidden = true;
-}
-
-function showQuizContinueButton() {
-  const quiz = state.quiz;
-  els.quizContinueBtn.textContent = quiz?.queue.length ? "继续做题" : "查看结果";
-  els.quizContinueBtn.hidden = false;
-  els.quizContinueBtn.focus();
-}
-
-function startQuizTimer() {
-  clearInterval(state.quiz.timerId);
-  els.quizTimer.classList.remove("fast", "slow");
-  els.quizTimer.textContent = "用时 0.0 秒 · 5 秒内算快题，超过 12 秒记慢题";
-  state.quiz.timerId = setInterval(() => {
-    const elapsed = performance.now() - state.quiz.startedAt;
-    els.quizTimer.textContent = `用时 ${(elapsed / 1000).toFixed(1)} 秒 · 5 秒内算快题，超过 12 秒记慢题`;
-    els.quizTimer.classList.toggle("fast", elapsed < QUIZ_FAST);
-    els.quizTimer.classList.toggle("slow", elapsed > QUIZ_SLOW);
-  }, 100);
-}
-
-async function answerQuizChoice(isCorrect, button) {
-  const quiz = state.quiz;
-  if (!quiz || quiz.answered || !quiz.currentQ) return;
-  quiz.answered = true;
-  clearInterval(quiz.timerId);
-
-  const elapsed = performance.now() - quiz.startedAt;
-  const q = quiz.currentQ;
-  const isFast = elapsed < QUIZ_FAST;
-  const isSlow = elapsed > QUIZ_SLOW && isCorrect;
-
-  quiz.done += 1;
-  quiz.correct += isCorrect ? 1 : 0;
-  if (isCorrect && isFast) quiz.fast += 1;
-  if (isCorrect && isSlow) quiz.slow += 1;
-  await recordQuizAnswer(q, isCorrect, isFast);
-
-  els.quizTimer.textContent = `用时 ${(elapsed / 1000).toFixed(2)} 秒`;
-  els.quizTimer.classList.toggle("fast", isCorrect && isFast);
-  els.quizTimer.classList.toggle("slow", isCorrect && isSlow);
-
-  [...els.quizChoices.children].forEach((btn) => {
-    btn.disabled = true;
-    if (btn.dataset.isCorrect === "1") btn.classList.add("correct");
-  });
-  if (!isCorrect) button.classList.add("wrong");
-
-  if (!isCorrect) {
-    quiz.wrongList.push(q);
-    await saveQuizWrongAnswer(q, button.querySelector(".choice-text").textContent);
-  } else if (quiz.isReview) {
-    await removeQuizWrongAnswer(q.id);
-  }
-  await completePersistentRotationItem(quiz.rotationKey, q.id);
-  renderAllDebounced();
-
-  if (isCorrect && isFast) {
-    els.quizFeedback.textContent = "秒选！";
-  } else if (isCorrect && isSlow) {
-    els.quizFeedback.textContent = "正确（慢题）";
-  } else if (isCorrect) {
-    els.quizFeedback.textContent = "正确！";
-  } else {
-    els.quizFeedback.textContent = `错误！正确答案：${q.answer}`;
-  }
-
-  updateQuizProgress();
-  pulseQuizProgress();
-  if (isCorrect) {
-    quiz.advanceTimerId = setTimeout(nextQuizQuestion, 500);
-  } else {
-    showQuizContinueButton();
-  }
-}
-
-function updateQuizProgress() {
-  const quiz = state.quiz;
-  if (!quiz) return;
-  const current = getQuizProgressValue(quiz);
-  els.quizProgressText.textContent = `题号 ${current}/${quiz.total}`;
-  els.quizProgressBar.style.width = `${Math.round((current / quiz.total) * 100)}%`;
-}
-
-function getQuizProgressValue(quiz) {
-  if (!quiz.total) return 0;
-  if (quiz.done >= quiz.total) return quiz.total;
-  return Math.max(quiz.currentIndex || 1, quiz.done);
-}
-
-function pulseQuizProgress() {
-  els.quizProgressBar.classList.remove("quiz-progress-pulse");
-  void els.quizProgressBar.offsetWidth;
-  els.quizProgressBar.classList.add("quiz-progress-pulse");
-  window.setTimeout(() => els.quizProgressBar.classList.remove("quiz-progress-pulse"), 260);
-}
-
-async function saveQuizWrongAnswer(q, userAnswer) {
-  const existing = state.quizWrongRecords.get(q.id);
-  const record = {
-    questionId: q.id,
-    grade: state.quiz?.grade || q.grade || els.quizStage.value,
-    sentence: q.sentence,
-    answer: q.answer,
-    wrongCount: (existing?.wrongCount || 0) + 1,
-    lastWrongAt: Date.now(),
-    userAnswer
-  };
-  state.quizWrongRecords.set(q.id, record);
-  await put("quizWrongAnswers", record);
-  renderQuizStats();
-}
-
-async function removeQuizWrongAnswer(qId) {
-  state.quizWrongRecords.delete(qId);
-  await new Promise((resolve, reject) => {
-    const request = tx("quizWrongAnswers", "readwrite").delete(qId);
-    request.onsuccess = () => resolve();
-    request.onerror = () => reject(request.error);
-  });
-  renderQuizStats();
-}
-
-async function finishQuiz() {
-  const quiz = state.quiz;
-  clearInterval(quiz.timerId);
-  clearTimeout(quiz.advanceTimerId);
-  hideQuizContinueButton();
-  const totalSeconds = Math.max(1, Math.round((performance.now() - quiz.sessionStartedAt) / 1000));
-
-  els.quizArea.hidden = true;
-  els.quizReport.hidden = false;
-  const fastRate = quiz.correct > 0 ? Math.round(quiz.fast / quiz.correct * 100) : 0;
-  els.quizReport.innerHTML = `
-    <div class="session-report-card"><strong>${quiz.total}</strong><span>总题数</span></div>
-    <div class="session-report-card"><strong>${percent(quiz.correct, quiz.total)}</strong><span>正确率</span></div>
-    <div class="session-report-card"><strong>${fastRate}%</strong><span>快题率</span></div>
-    <div class="session-report-card"><strong>${formatDuration(totalSeconds)}</strong><span>总用时</span></div>
-    <div class="session-report-card"><strong>${quiz.correct}</strong><span>正确</span></div>
-    <div class="session-report-card"><strong>${quiz.wrongList.length}</strong><span>错误</span></div>
-    <div class="session-report-card"><strong>${quiz.fast}</strong><span>快题</span></div>
-    <div class="session-report-card"><strong>${quiz.slow}</strong><span>慢题</span></div>
-    <button id="quizAgainBtn" type="button">${quiz.wrongList.length ? "错题复盘" : "再刷一次"}</button>
-    <button id="quizNewBtn" type="button" class="secondary">重新开始</button>
-  `;
-
-  document.querySelector("#quizAgainBtn").addEventListener("click", () => {
-    if (quiz.wrongList.length) startQuiz(true);
-    else startQuiz(false);
-  });
-  document.querySelector("#quizNewBtn").addEventListener("click", () => startQuiz(false));
-
-  els.quizStatusText.textContent = quiz.isReview
-    ? `复盘完成！正确率 ${percent(quiz.correct, quiz.total)}。`
-    : `刷题完成！正确率 ${percent(quiz.correct, quiz.total)}，错题 ${quiz.wrongList.length} 道。`;
-
-  state.quiz = null;
-  renderQuizWrongList();
-}
-
-function renderQuizWrongList() {
-  const wrongs = [...state.quizWrongRecords.values()].sort((a, b) => b.lastWrongAt - a.lastWrongAt);
-  if (!wrongs.length) {
-    els.quizWrongList.innerHTML = "<p class='status-text'>暂无错题记录。完成一轮刷题后这里会显示答错的题目。</p>";
-    return;
-  }
-  els.quizWrongList.innerHTML = wrongs.map((r) => `
-    <div class="quiz-wrong-item">
-      <div class="quiz-wrong-header">
-        <span>错 ${r.wrongCount} 次 · 正确答案: <strong>${escapeHtml(r.answer)}</strong></span>
-        <button type="button" class="secondary danger quiz-wrong-delete" data-delete-wrong="${escapeAttr(r.questionId)}">删除</button>
-      </div>
-      <span class="quiz-wrong-sentence">${escapeHtml(r.sentence)}</span>
-    </div>
-  `).join("");
 }
 
 function updateProgress() {
@@ -1894,134 +1577,6 @@ function updateProgress() {
   const currentNo = session.current && !session.answered ? Math.min(session.done + 1, session.total) : session.done;
   els.progressText.textContent = `题号 ${currentNo}/${session.total}`;
   els.progressBar.style.width = `${Math.round((session.done / session.total) * 100)}%`;
-}
-
-function percent(value, total) {
-  return total ? `${Math.round((value / total) * 100)}%` : "0%";
-}
-
-function formatDuration(totalSeconds) {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${String(seconds).padStart(2, "0")}`;
-}
-
-function normalizeEnglish(value) {
-  return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
-}
-
-function normalizeChinese(value) {
-  return String(value || "").replace(/[，。；;、\s]/g, "").trim();
-}
-
-function parseWordsFromText(text) {
-  const rows = [];
-  const seen = new Set();
-  String(text || "").split(/\n|;/).forEach((raw) => {
-    const line = raw.replace(/\s+/g, " ").trim();
-    if (!line || isSectionHeader(line)) return;
-    const pipeParts = line.split("|").map((part) => part.trim());
-    if (pipeParts.length >= 2 && /^[A-Za-z][A-Za-z'-]{0,24}$/.test(pipeParts[0])) {
-      const en = pipeParts[0].toLowerCase();
-      if (!seen.has(en) && !COMMON_NOISE.has(en)) {
-        seen.add(en);
-        rows.push({ en, zh: pipeParts[1] || "", pos: pipeParts[2] || "", notes: pipeParts.slice(3).join(" | ") });
-      }
-      return;
-    }
-    const compactMatch = matchCompactWordLine(line);
-    const match = compactMatch || line.match(/^([A-Za-z][A-Za-z'-]{0,24})\s*(?:\(([^)]{1,12})\)|\b(n\.|v\.|adj\.|adv\.|prep\.|conj\.|pron\.)\b)?\s*[:：\-—]?\s*(.*)$/i);
-    if (!match) return;
-    const en = match[1].toLowerCase();
-    if (seen.has(en) || COMMON_NOISE.has(en)) return;
-    seen.add(en);
-    const pos = (match[2] || match[3] || "").trim();
-    const rest = (match[4] || "").trim();
-    const zhMatch = rest.match(/[\u4e00-\u9fa5][\u4e00-\u9fa5，、；;（）() ]{0,50}/);
-    rows.push({ en, zh: zhMatch ? zhMatch[0].trim() : "", pos, notes: rest.slice(0, 120) });
-  });
-  return rows;
-}
-
-function isSectionHeader(line) {
-  return /^[A-Z](?:-[A-Z])?$/.test(line);
-}
-
-function matchCompactWordLine(line) {
-  const match = line.match(/^([A-Za-z][A-Za-z'-]{0,24})([\u4e00-\u9fff].*)$/);
-  if (!match) return null;
-  return [match[0], match[1], "", "", match[2]];
-}
-
-const COMMON_NOISE = new Set(["the", "and", "for", "with", "from", "this", "that", "page", "unit", "name", "class"]);
-
-function sanitizeRows(rows) {
-  const seen = new Set();
-  return rows.map((row) => ({
-    en: String(row.en || "").trim().toLowerCase(),
-    zh: String(row.zh || "").trim(),
-    pos: String(row.pos || "").trim(),
-    notes: String(row.notes || "").trim(),
-    confidence: Number(row.confidence || 0)
-  })).filter((row) => {
-    if (!/^[a-z][a-z'-]{1,24}$/.test(row.en)) return false;
-    if (seen.has(row.en) || COMMON_NOISE.has(row.en)) return false;
-    seen.add(row.en);
-    return true;
-  });
-}
-
-function renderReviewRows() {
-  els.reviewBody.innerHTML = "";
-  state.reviewRows.forEach((row, index) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td><input data-field="en" data-index="${index}" value="${escapeAttr(row.en)}"></td>
-      <td><input data-field="zh" data-index="${index}" value="${escapeAttr(row.zh)}"></td>
-      <td><input data-field="pos" data-index="${index}" value="${escapeAttr(row.pos)}"></td>
-      <td><input data-field="notes" data-index="${index}" value="${escapeAttr(row.notes)}"></td>
-      <td><button type="button" class="secondary danger" data-remove="${index}">删除</button></td>
-    `;
-    els.reviewBody.append(tr);
-  });
-}
-
-function syncReviewRowsFromDom() {
-  els.reviewBody.querySelectorAll("input").forEach((input) => {
-    const index = Number(input.dataset.index);
-    state.reviewRows[index][input.dataset.field] = input.value.trim();
-  });
-}
-
-async function saveReviewDeck() {
-  syncReviewRowsFromDom();
-  const stage = els.uploadStage.value;
-  const source = els.sourceName.value.trim() || "自定义词库";
-  const createdAt = Date.now();
-  const rows = state.reviewRows.filter((row) => row.en.trim()).map((row, index) => ({
-    id: `custom-${createdAt}-${index}-${row.en.toLowerCase()}`,
-    en: row.en.trim(),
-    zh: row.zh.trim() || "待补充中文",
-    pos: row.pos.trim(),
-    notes: row.notes.trim(),
-    grade: stage,
-    goals: stage.includes("考") ? [stage] : [stage],
-    source,
-    sourceType: "custom",
-    frequency: 0,
-    createdAt,
-    order: index + 1
-  }));
-  if (!rows.length) {
-    els.importStatus.textContent = "没有可保存的英文词条。";
-    return;
-  }
-  await putBatch("words", rows);
-  state.reviewRows = [];
-  els.reviewPanel.hidden = true;
-  els.textImport.value = "";
-  els.importStatus.textContent = `已保存 ${rows.length} 个词到 ${stage}。`;
-  await loadState();
 }
 
 let renderAllTimer = 0;
@@ -2037,26 +1592,67 @@ function getActiveView() {
   return "train";
 }
 
+function moduleContext() {
+  return {
+    state,
+    els,
+    storage,
+    STAGES,
+    CHOICE_KEYS,
+    BACKUP_SITE_URL,
+    stageMatches,
+    stageLoadMessage,
+    ensureStageLoaded,
+    loadState,
+    renderAll,
+    renderAllDebounced,
+    switchView,
+    startSession,
+    resetStreak,
+    put,
+    putBatch,
+    remove,
+    clearStore,
+    getRecord,
+    isWrongWord,
+    isSlowWord,
+    priorityScore,
+    selectRankedDistractors,
+    buildChoiceSet,
+    loadScriptWithRetry,
+    recordDailyActivity,
+    buildQuizRotationKey,
+    prepareRotationBatch,
+    persistRotationState,
+    completePersistentRotationItem,
+    renderWeakListFn: () => decksModule.renderWeakList(moduleContext())
+  };
+}
+
 function renderAll() {
   const active = getActiveView();
+  const ctx = moduleContext();
   renderStats();
   renderDailyProgress();
   if (active === "train") {
+    renderTodayCompletion();
+    renderDailyTask();
     updateSessionSizeOptions();
-    renderTrainQuizStats();
     updateTrainingEstimate();
   }
   if (active === "quiz") {
-    renderQuizStats();
+    quizModule.renderQuizStats(ctx);
+    quizModule.renderQuizWrongList(state, els);
   }
   if (active === "decks") {
-    renderDecks();
+    decksModule.renderDecks(state, els);
+    renderWordbook();
   }
   if (active === "wrong") {
-    renderWeakList();
+    decksModule.renderWeakList(ctx);
   }
   if (active === "report") {
-    renderReport();
+    decksModule.renderReport(ctx);
   }
 }
 
@@ -2080,91 +1676,6 @@ function renderStats() {
   els.weakCount.textContent = weakCount;
 }
 
-function renderDecks() {
-  const groups = new Map();
-  state.words.forEach((word) => {
-    const key = `${word.sourceType}|${word.source}|${word.grade}`;
-    if (!groups.has(key)) groups.set(key, { ...word, count: 0 });
-    groups.get(key).count += 1;
-  });
-  if (!groups.size) {
-    els.deckList.innerHTML = "<p class='status-text'>还没有词库。</p>";
-    return;
-  }
-  els.deckList.innerHTML = [...groups.values()].sort((a, b) => a.grade.localeCompare(b.grade, "zh")).map((deck) => `
-    <div class="deck-card">
-      <strong>${escapeHtml(deck.source)}</strong>
-      <p class="meta">${deck.grade} · ${deck.sourceType === "builtin" ? "内置词库" : "自定义词库"} · ${deck.count} 词</p>
-    </div>
-  `).join("");
-}
-
-function renderWeakList() {
-  els.weakFilterBtns.forEach((button) => {
-    button.classList.toggle("active", button.dataset.weakFilter === state.weakFilter);
-  });
-  const isTarget = state.weakFilter === "slow" ? isSlowWord : isWrongWord;
-  const label = state.weakFilter === "slow" ? "慢词" : "错词";
-  const words = state.words.filter(isTarget).sort((a, b) => priorityScore(b) - priorityScore(a)).slice(0, 120);
-  if (!words.length) {
-    els.weakList.innerHTML = `<p class='status-text'>还没有${label}。完成一轮训练后这里会自动更新。</p>`;
-    return;
-  }
-  els.weakList.innerHTML = words.map((word) => {
-    const record = getRecord(word.id);
-    const countText = state.weakFilter === "slow" ? `慢 ${record.slow}` : `错 ${record.wrong}`;
-    return `<div class="word-chip">
-      <strong>${escapeHtml(word.en)}</strong>
-      <span>${escapeHtml(word.zh)} · ${word.grade}</span><br>
-      <span>${countText} · 掌握 ${record.mastery}%</span>
-    </div>`;
-  }).join("");
-}
-
-function renderReport() {
-  const now = Date.now();
-  const todayStart = new Date();
-  todayStart.setHours(0, 0, 0, 0);
-  const todayTs = todayStart.getTime();
-  const stageStats = new Map();
-  STAGES.forEach((stage) => stageStats.set(stage, { stage, total: 0, practiced: 0, mastered: 0 }));
-  let due = 0;
-  let todaySeen = 0;
-  let todayCorrect = 0;
-  const seenWords = [];
-  for (const word of state.words) {
-    const record = state.records.get(word.id);
-    if (!record) continue;
-    for (const stage of STAGES) {
-      if (stageMatches(word, stage)) {
-        const stat = stageStats.get(stage);
-        stat.total += 1;
-        if (record.seen > 0) stat.practiced += 1;
-        if (record.mastery >= 80) stat.mastered += 1;
-      }
-    }
-    if (record.seen > 0) {
-      if (record.nextReviewAt <= now) due += 1;
-      seenWords.push(word);
-    }
-    if (record.lastSeenAt >= todayTs) {
-      todaySeen += record.seen;
-      todayCorrect += record.correct;
-    }
-  }
-  const byStage = [...stageStats.values()].filter((item) => item.total > 0);
-  seenWords.sort((a, b) => priorityScore(b) - priorityScore(a));
-  const topReview = seenWords.slice(0, 10);
-  const todayAccuracy = todaySeen > 0 ? percent(todayCorrect, todaySeen) : "—";
-  els.reportContent.innerHTML = [
-    `<div class="report-card"><strong>${todaySeen}</strong><span>今日练习次数</span></div>`,
-    `<div class="report-card"><strong>${todayAccuracy}</strong><span>今日正确率</span></div>`,
-    `<div class="report-card"><strong>${due}</strong><span>今日到期复习词</span></div>`,
-    `<div class="report-card"><strong>今日最该复习</strong><span>${topReview.length ? topReview.map((word) => `${escapeHtml(word.en)}(${escapeHtml(word.zh)})`).join("、") : "完成一轮训练后生成"}</span></div>`,
-    ...byStage.map((item) => `<div class="report-card"><strong>${item.stage}</strong><span>${item.practiced}/${item.total} 已练 · ${item.mastered} 已掌握</span></div>`)
-  ].join("");
-}
-
 function renderSessionReport() {
   const report = state.lastReport;
   if (!report) return;
@@ -2176,14 +1687,15 @@ function renderSessionReport() {
     <div class="session-report-card"><strong>${formatDuration(report.totalSeconds)}</strong><span>本轮用时</span></div>
     <div class="session-report-card"><strong>${report.wrong}</strong><span>错词</span></div>
     <div class="session-report-card"><strong>${report.slow}</strong><span>慢词</span></div>
-    <div class="session-report-card"><strong>${report.tomorrow}</strong><span>建议明天复习</span></div>
-    <button id="againWeakBtn" type="button">再练错词</button>
-    <button id="nextSessionBtn" type="button" class="secondary">继续下一组</button>
+    <div class="session-report-card"><strong>${report.tomorrow}</strong><span>明日复习</span></div>
+    <div class="session-report-actions">
+      <button id="againWeakBtn" type="button"${report.wrongWordIds?.length ? "" : " disabled"}>${report.wrongWordIds?.length ? "再练本轮错词" : "本轮无错词"}</button>
+      <button id="nextSessionBtn" type="button" class="secondary">继续下一组</button>
+    </div>
   `;
   document.querySelector("#againWeakBtn").addEventListener("click", () => {
-    els.trainingScope.value = "wrong";
-    els.sessionSize.value = "all";
-    startSession();
+    if (!report.wrongWordIds?.length) return;
+    startSession({ wordIds: report.wrongWordIds, grade: report.grade, notice: "仅练本轮新增错词。" });
   });
   document.querySelector("#nextSessionBtn").addEventListener("click", () => {
     els.trainingScope.value = "smart";
@@ -2191,40 +1703,24 @@ function renderSessionReport() {
   });
 }
 
-async function exportData() {
-  const payload = { version: 2, exportedAt: new Date().toISOString(), words: state.words, records: [...state.records.values()] };
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `秒懂词词库-${new Date().toISOString().slice(0, 10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-async function importData(file) {
-  const data = JSON.parse(await file.text());
-  const words = Array.isArray(data.words) ? data.words : [];
-  const records = Array.isArray(data.records) ? data.records : [];
-  const existingIds = new Set(state.words.map((w) => w.id));
-  const conflictCount = words.filter((w) => existingIds.has(w.id)).length;
-  if (conflictCount > 0 && !confirm(`导入的词库中有 ${conflictCount} 个词与已有词库 ID 重复，将被覆盖。确定继续？`)) return;
-  await putBatch("words", words);
-  await putBatch("records", records);
-  await loadState();
-  els.importStatus.textContent = `已导入 ${words.length} 个词、${records.length} 条记录。${conflictCount > 0 ? `（覆盖 ${conflictCount} 条）` : ""}`;
-}
-
-function escapeHtml(value) {
-  return String(value || "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
-}
-
-function escapeAttr(value) {
-  return escapeHtml(value).replace(/`/g, "&#96;");
-}
-
 function bindEvents() {
+  const ctx = moduleContext();
+  els.resumeFlowBtn.addEventListener("click", () => renderLearningFlow(true));
+  els.todayRecordBtn.addEventListener("click", openTodayCompletion);
+  els.wordbookSearch.addEventListener("input", renderWordbook);
+  els.wordbookResults.addEventListener("click", handleWordbookClick);
+  document.querySelector("#flowClose").addEventListener("click", () => {
+    clearTimeout(flowAdvanceTimer);
+    document.querySelector("#flowAudio")?.pause();
+    if (!state.viewedCompletion) pauseLearningFlow();
+    document.querySelector("#learningFlow").hidden = true;
+    state.viewedCompletion = null;
+    els.resumeFlowBtn.hidden = !state.learningFlow || state.learningFlow.phase === "done";
+  });
   els.tabs.forEach((tab) => tab.addEventListener("click", () => switchView(tab.dataset.view)));
+  els.mobileViewButtons.forEach((button) => {
+    button.addEventListener("click", () => switchView(button.dataset.mobileView));
+  });
   [els.deckFilter, els.sessionSize, els.trainingScope].forEach((el) => el.addEventListener("change", renderAll));
   els.stageSelect.addEventListener("change", async () => {
     const stage = els.stageSelect.value;
@@ -2236,88 +1732,19 @@ function bindEvents() {
     }
   });
   els.startBtn.addEventListener("click", startSession);
+  els.startDailyTaskBtn.addEventListener("click", startDailyTask);
+  els.startDueReviewBtn.addEventListener("click", startDueReview);
   els.skipBtn.addEventListener("click", skipWord);
   els.trainContinueBtn.addEventListener("click", nextWord);
+  els.audioPromptBtn.addEventListener("click", replayAudioPrompt);
 
-  els.parseTextBtn.addEventListener("click", () => {
-    state.reviewRows = parseWordsFromText(els.textImport.value);
-    if (!state.reviewRows.length) state.reviewRows = [{ en: "", zh: "", pos: "", notes: "" }];
-    renderReviewRows();
-    els.reviewPanel.hidden = false;
-    els.importStatus.textContent = `从文字中解析到 ${state.reviewRows.length} 条候选词，请确认后保存。`;
-  });
-  els.addRowBtn.addEventListener("click", () => {
-    syncReviewRowsFromDom();
-    state.reviewRows.push({ en: "", zh: "", pos: "", notes: "" });
-    renderReviewRows();
-  });
-  els.reviewBody.addEventListener("click", (event) => {
-    const remove = event.target.dataset.remove;
-    if (remove === undefined) return;
-    syncReviewRowsFromDom();
-    state.reviewRows.splice(Number(remove), 1);
-    renderReviewRows();
-  });
-  els.saveDeckBtn.addEventListener("click", saveReviewDeck);
-  els.clearCustomDecksBtn.addEventListener("click", async () => {
-    if (!confirm("确定清空所有自定义词库吗？内置词库和练习记录会保留。")) return;
-    await deleteWordsBySourceType("custom");
-    await loadState();
-  });
-  els.resetRecordsBtn.addEventListener("click", async () => {
-    if (!confirm(`确定清空所有练习记录吗？词库会保留，${els.stageSelect.value}的刷词火花将从 0 开始。`)) return;
-    await clearStore("records");
-    await resetStreak("train", els.stageSelect.value);
-    await loadState();
-  });
-  els.exportBtn.addEventListener("click", exportData);
-  els.startBattleBtn.addEventListener("click", startBattle);
-  els.resetBattleBtn.addEventListener("click", resetBattle);
-  els.skipBattleBtn.addEventListener("click", skipBattleWord);
-  [els.battleStage, els.battleSize, els.battleMode].forEach((el) => {
-    el.addEventListener("change", resetBattle);
-  });
-  els.weakFilterBtns.forEach((button) => {
-    button.addEventListener("click", () => {
-      state.weakFilter = button.dataset.weakFilter;
-      renderWeakList();
-    });
-  });
-  els.trainWeakBtn.addEventListener("click", () => {
-    switchView("train");
-    els.trainingScope.value = state.weakFilter === "slow" ? "slow" : "wrong";
-    els.sessionSize.value = "all";
-    startSession();
-  });
-  els.importJson.addEventListener("change", () => {
-    const file = els.importJson.files?.[0];
-    if (file) importData(file);
-  });
-  els.startQuizBtn.addEventListener("click", () => startQuiz(false));
-  els.reviewQuizWrongBtn.addEventListener("click", () => startQuiz(true));
-  els.quizContinueBtn.addEventListener("click", nextQuizQuestion);
-  els.quizStage.addEventListener("change", async () => {
-    await updateQuizSizeOptions();
-    renderAll();
-  });
-  els.clearQuizWrongBtn.addEventListener("click", async () => {
-    if (!confirm(`确定清空所有刷题错题记录吗？${els.quizStage.value}的刷题火花将从 0 开始。`)) return;
-    await clearStore("quizWrongAnswers");
-    await resetStreak("quiz", els.quizStage.value);
-    state.quizWrongRecords.clear();
-    renderQuizStats();
-    renderQuizWrongList();
-  });
-  els.quizWrongList.addEventListener("click", async (event) => {
-    const btn = event.target.closest("[data-delete-wrong]");
-    if (!btn) return;
-    const qId = btn.dataset.deleteWrong;
-    await removeQuizWrongAnswer(qId);
-    renderQuizWrongList();
-  });
+  decksModule.bindDecksEvents(ctx);
+  battleModule.bindBattleEvents(ctx);
+  quizModule.bindQuizEvents(ctx);
+
   document.addEventListener("keydown", (event) => {
     if (els.views.train.classList.contains("active") && state.session && !state.session.answered) {
-      if (state.session.mode === "enToZhChoice" || state.session.mode === "zhToEnChoice" || state.session.mode === "customChoice") {
+      if (["enToZhChoice", "zhToEnChoice", "audioToZhChoice", "customChoice"].includes(state.session.mode)) {
         const key = event.key.toUpperCase();
         const choiceIndex = /^[1-5]$/.test(key) ? Number(key) - 1 : CHOICE_KEYS.indexOf(key);
         const button = choiceIndex >= 0 ? els.choices.children[choiceIndex] : null;
@@ -2357,21 +1784,56 @@ function bindEvents() {
 
 function clearAllTimers() {
   if (state.session?.timerId) { clearInterval(state.session.timerId); state.session.timerId = 0; }
+  if (state.session?.advanceTimerId) { clearTimeout(state.session.advanceTimerId); state.session.advanceTimerId = 0; }
   if (state.quiz?.timerId) { clearInterval(state.quiz.timerId); state.quiz.timerId = 0; }
   if (state.quiz?.advanceTimerId) { clearTimeout(state.quiz.advanceTimerId); state.quiz.advanceTimerId = 0; }
+  pronunciationPlayer.stop();
 }
 
+window.WordSnapInspector = {
+  getSnapshot() {
+    return {
+      activeView: getActiveView(),
+      stage: els.stageSelect.value,
+      totalWords: Number(els.totalWords.textContent || 0),
+      sessionState: els.views.train?.dataset.sessionState || "idle",
+      battleState: els.views.battle?.dataset.battleState || "idle",
+      quizState: els.views.quiz?.dataset.quizState || "idle",
+      flowPhase: document.querySelector("#learningFlow")?.hidden ? "closed" : (state.learningFlow?.phase || "open")
+    };
+  }
+};
+
 async function init() {
+  document.body.dataset.activeView = getActiveView();
+  setTrainingSessionState("idle");
   bindEvents();
+  window.addEventListener("pagehide", () => {
+    if (!document.querySelector("#learningFlow").hidden && !state.viewedCompletion) pauseLearningFlow();
+  });
+  document.addEventListener("WeixinJSBridgeReady", () => {
+    if (els.practiceMode.value === "audioToZhChoice") pronunciationPlayer.prime();
+  }, { once: true });
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) clearAllTimers();
+    if (document.hidden) {
+      if (!document.querySelector("#learningFlow").hidden && !state.viewedCompletion) pauseLearningFlow();
+      document.querySelector("#flowAudio")?.pause();
+      clearAllTimers();
+      return;
+    }
+    if (!document.querySelector("#learningFlow").hidden && !state.viewedCompletion) resumeLearningFlow();
+    if (state.session?.mode === "audioToZhChoice" && !state.session.answered && !state.session.timingReady) {
+      showAudioRecovery({ status: "blocked" });
+    }
   });
   try {
-    state.db = await openDb();
+    state.db = await storage.openDb();
+    await seedBuiltinWords();
     await ensureStageLoaded(els.stageSelect.value);
     await loadState();
+    if (state.learningFlow && state.learningFlow.phase !== "done") renderLearningFlow(true);
   } catch (error) {
-    els.feedback.textContent = `初始化失败：${error.message || error}`;
+    setTrainingFeedback(`初始化失败：${error.message || error}`);
   }
 }
 

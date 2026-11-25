@@ -79,11 +79,18 @@ while (rollover.state.remaining.length) {
 const deferredBatch = prepareRotationBatch(rollover.state, pool, 200, {
   random: seededRandom(321)
 });
-assert.strictEqual(deferredBatch.batch.length, 150, "deferred unanswered items should return at the end of the cycle");
-assert.deepStrictEqual(
-  new Set(deferredBatch.batch),
-  new Set(firstBatch.slice(50)),
-  "only unanswered items from the abandoned batch should return"
-);
+assert.strictEqual(deferredBatch.batch.length, 200, "a selected 200-word batch should stay full across a cycle boundary");
+assert.strictEqual(new Set(deferredBatch.batch).size, 200, "a cycle-boundary batch must not repeat a word");
+firstBatch.slice(50).forEach((id) => {
+  assert(deferredBatch.batch.includes(id), "deferred unanswered items should return before the new cycle fills the batch");
+});
+assert.strictEqual(deferredBatch.state.cycle, 2, "filling a tail batch should open the next rotation cycle");
+
+const grade9Pool = Array.from({ length: 261 }, (_, index) => `grade9-${index}`);
+let grade9 = prepareRotationBatch(null, grade9Pool, 200, { random: seededRandom(901) });
+grade9.state = completeBatch(grade9.state, grade9.batch);
+const grade9Tail = prepareRotationBatch(grade9.state, grade9Pool, 200, { random: seededRandom(902) });
+assert.strictEqual(grade9Tail.batch.length, 200, "a 261-word bank must not produce a short second 200-word session");
+assert.strictEqual(new Set(grade9Tail.batch).size, 200, "the filled second session must contain 200 different words");
 
 console.log("persistent rotation checks passed");

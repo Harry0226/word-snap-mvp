@@ -3,8 +3,8 @@
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.WordSnapDailyStreaks = api;
 })(typeof window !== "undefined" ? window : globalThis, function createDailyStreaks() {
-  const JUNIOR_KEYWORDS = ["初一", "初二", "初三"];
-  const SENIOR_KEYWORDS = ["高一", "高二", "高三"];
+  const JUNIOR_KEYWORDS = ["初一", "初二", "初三", "初中"];
+  const SENIOR_KEYWORDS = ["高一", "高二", "高三", "高中"];
 
   function matchesAny(grade, keywords) {
     return keywords.some((k) => grade.includes(k));
@@ -13,8 +13,7 @@
   function getCheckinThreshold(kind, grade) {
     if (kind === "quiz") return matchesAny(grade, JUNIOR_KEYWORDS) ? 100 : null;
     if (kind !== "train") return null;
-    if (grade === "小学六年级" || matchesAny(grade, JUNIOR_KEYWORDS)) return 200;
-    if (matchesAny(grade, SENIOR_KEYWORDS)) return 300;
+    if (grade === "小学六年级" || matchesAny(grade, JUNIOR_KEYWORDS) || matchesAny(grade, SENIOR_KEYWORDS)) return 100;
     return null;
   }
 
@@ -49,5 +48,12 @@
     };
   }
 
-  return { getCheckinThreshold, makeProgressKey, advanceDailyProgress };
+  function reconcileTrainingStreak(saved, today, yesterday) {
+    if (!saved?.key?.startsWith("train:") || saved.progressDate !== today || saved.lastCheckIn === today) return saved;
+    const threshold = getCheckinThreshold("train", saved.key.slice("train:".length));
+    if (!threshold || Number(saved.todayCount || 0) < threshold) return saved;
+    return advanceDailyProgress(saved, 0, threshold, today, yesterday);
+  }
+
+  return { getCheckinThreshold, makeProgressKey, advanceDailyProgress, reconcileTrainingStreak };
 });

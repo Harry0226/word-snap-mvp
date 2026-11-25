@@ -377,7 +377,7 @@ window.WORD_SNAP_STAGE_LISTS["高一考试词汇"] = {"grade":"高一考试词�
     {"en":"serve","zh":"服务","pos":"","notes":"","frequency":0},
     {"en":"set","zh":"设置","pos":"","notes":"","frequency":0},
     {"en":"shape","zh":"形状","pos":"","notes":"","frequency":0},
-    {"en":"sharp","zh":"塑造","pos":"","notes":"","frequency":0},
+    {"en":"shape","zh":"塑造","pos":"","notes":"","frequency":0},
     {"en":"sign","zh":"标志","pos":"","notes":"","frequency":0},
     {"en":"similar","zh":"相似的","pos":"","notes":"","frequency":0},
     {"en":"single","zh":"单一的","pos":"","notes":"","frequency":0},

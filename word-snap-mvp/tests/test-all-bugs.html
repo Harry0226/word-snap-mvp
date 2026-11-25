@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>全面Bug检测</title>
+  <style>
+    body { font-family: monospace; padding: 20px; font-size: 13px; }
+    .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+    .section h2 { margin-top: 0; color: #333; }
+    .pass { color: green; }
+    .warn { color: orange; }
+    .fail { color: red; }
+    .info { color: #666; }
+    table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f5f5f5; }
+    .summary { margin-top: 20px; padding: 15px; background: #f0f0f0; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>🔍 秒懂词 全面Bug检测报告</h1>
+  <div id="results"></div>
+
+  <!-- 加载词库数据 -->
+  <script src="../word-data/builtin-manifest.js"></script>
+  <script src="../word-data/builtin-word-lists.js"></script>
+  <script src="../word-data/stages/grade7-exam.js"></script>
+  <script src="../word-data/stages/grade7-inclass.js"></script>
+  <script src="../word-data/stages/grade8-exam.js"></script>
+  <script src="../word-data/stages/grade8-inclass.js"></script>
+  <script src="../word-data/stages/grade9-exam.js"></script>
+  <script src="../word-data/stages/grade9-inclass.js"></script>
+  <script src="../word-data/stages/grade10-exam.js"></script>
+  <script src="../word-data/stages/grade10-inclass.js"></script>
+  <script src="../word-data/stages/grade11-exam.js"></script>
+  <script src="../word-data/stages/grade11-inclass.js"></script>
+  <script src="../word-data/stages/grade12-inclass.js"></script>
+
+  <script>
+    const results = [];
+    const stageLists = window.WORD_SNAP_STAGE_LISTS || {};
+
+    // 辅助函数
+    function addResult(category, level, message, details = null) {
+      results.push({ category, level, message, details });
+    }
+
+    function getAllWords() {
+      const all = [];
+      Object.values(stageLists).forEach(list => {
+        (list.words || []).forEach((w, i) => {
+          all.push({ ...w, grade: list.grade, index: i });
+        });
+      });
+      return all;
+    }
+
+    function getWordsByGrade(grade) {
+      const list = stageLists[grade];
+      return list ? list.words || [] : [];
+    }
+
+    // ==================== 检测1: 词库数据完整性 ====================
+    function testDataIntegrity() {
+      const category = "词库数据完整性";
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        const words = list.words || [];
+        let issues = [];
+
+        words.forEach((w, i) => {
+          // 检查必填字段
+          if (!w.en) issues.push(`第${i+1}项: 缺少英文 (en)`);
+          if (!w.zh) issues.push(`第${i+1}项: 缺少中文 (zh)`);
+          if (!w.id) issues.push(`第${i+1}项: 缺少ID (id)`);
+
+          // 检查数据类型
+          if (w.en && typeof w.en !== 'string') issues.push(`第${i+1}项: en 不是字符串`);
+          if (w.zh && typeof w.zh !== 'string') issues.push(`第${i+1}项: zh 不是字符串`);
+
+          // 检查空字符串
+          if (w.en === '') issues.push(`第${i+1}项: en 为空字符串`);
+          if (w.zh === '') issues.push(`第${i+1}项: zh 为空字符串`);
+
+          // 检查特殊字符
+          if (w.en && /[一-龥]/.test(w.en)) issues.push(`第${i+1}项: en 包含中文字符 "${w.en}"`);
+          if (w.zh && /^[a-zA-Z]+$/.test(w.zh)) issues.push(`第${i+1}项: zh 疯狂是纯英文 "${w.zh}"`);
+        });
+
+        if (issues.length > 0) {
+          addResult(category, 'fail', `${grade}: 发现 ${issues.length} 个数据问题`, issues.slice(0, 5));
+        } else {
+          addResult(category, 'pass', `${grade}: ${words.length} 个单词数据完整`);
+        }
+      });
+    }
+
+    // ==================== 检测2: 重复单词ID ====================
+    function testDuplicateIds() {
+      const category = "重复单词ID";
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        const words = list.words || [];
+        const idMap = {};
+        const duplicates = [];
+
+        words.forEach((w, i) => {
+          if (w.id) {
+            if (idMap[w.id] !== undefined) {
+              duplicates.push({ id: w.id, en: w.en, firstIndex: idMap[w.id], secondIndex: i });
+            } else {
+              idMap[w.id] = i;
+            }
+          }
+        });
+
+        if (duplicates.length > 0) {
+          addResult(category, 'fail', `${grade}: 发现 ${duplicates.length} 个重复ID`, duplicates.slice(0, 3));
+        } else {
+          addResult(category, 'pass', `${grade}: 所有ID唯一`);
+        }
+      });
+    }
+
+    // ==================== 检测3: 重复英文单词 ====================
+    function testDuplicateEnglish() {
+      const category = "重复英文单词";
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        const words = list.words || [];
+        const enMap = {};
+        const duplicates = [];
+
+        words.forEach((w, i) => {
+          const enLower = (w.en || '').toLowerCase().trim();
+          if (enLower) {
+            if (enMap[enLower] !== undefined) {
+              duplicates.push({ en: w.en, zh1: words[enMap[enLower]].zh, zh2: w.zh });
+            } else {
+              enMap[enLower] = i;
+            }
+          }
+        });
+
+        if (duplicates.length > 0) {
+          addResult(category, 'warn', `${grade}: 发现 ${duplicates.length} 个重复英文单词`, duplicates);
+        } else {
+          addResult(category, 'pass', `${grade}: 英文单词唯一`);
+        }
+      });
+    }
+
+    // ==================== 检测4: 重复中文翻译 ====================
+    function testDuplicateChinese() {
+      const category = "重复中文翻译";
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        const words = list.words || [];
+        const zhMap = {};
+        const duplicates = [];
+
+        words.forEach((w, i) => {
+          const zh = (w.zh || '').trim();
+          if (zh) {
+            if (!zhMap[zh]) zhMap[zh] = [];
+            zhMap[zh].push({ en: w.en, index: i });
+          }
+        });
+
+        Object.entries(zhMap).forEach(([zh, items]) => {
+          if (items.length > 1) {
+            duplicates.push({ zh, words: items.map(i => i.en) });
+          }
+        });
+
+        if (duplicates.length > 0) {
+          addResult(category, 'warn', `${grade}: 发现 ${duplicates.length} 组重复中文翻译`, duplicates.slice(0, 5));
+        } else {
+          addResult(category, 'pass', `${grade}: 中文翻译唯一`);
+        }
+      });
+    }
+
+    // ==================== 检测5: 选项数量不足 ====================
+    function testInsufficientChoices() {
+      const category = "选项数量不足";
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        const words = list.words || [];
+        if (words.length < 4) {
+          addResult(category, 'fail', `${grade}: 词库只有 ${words.length} 个单词，无法生成4个选项`);
+        } else {
+          addResult(category, 'pass', `${grade}: ${words.length} 个单词，足够生成选项`);
+        }
+      });
+    }
+
+    // ==================== 检测6: 翻译质量 ====================
+    function testTranslationQuality() {
+      const category = "翻译质量";
+      const issues = [];
+
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        (list.words || []).forEach((w, i) => {
+          // 检查过长的翻译
+          if (w.zh && w.zh.length > 50) {
+            issues.push({ grade, en: w.en, zh: w.zh.substring(0, 30) + '...', issue: '翻译过长' });
+          }
+
+          // 检查包含特殊标记
+          if (w.zh && (w.zh.includes('[') || w.zh.includes('{') || w.zh.includes('<'))) {
+            issues.push({ grade, en: w.en, zh: w.zh, issue: '包含特殊标记' });
+          }
+
+          // 检查英文单词包含数字
+          if (w.en && /\d/.test(w.en)) {
+            issues.push({ grade, en: w.en, issue: '英文包含数字' });
+          }
+        });
+      });
+
+      if (issues.length > 0) {
+        addResult(category, 'warn', `发现 ${issues.length} 个翻译质量问题`, issues.slice(0, 10));
+      } else {
+        addResult(category, 'pass', '翻译质量良好');
+      }
+    }
+
+    // ==================== 检测7: 单词长度异常 ====================
+    function testWordLength() {
+      const category = "单词长度异常";
+      const tooShort = [];
+      const tooLong = [];
+
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        (list.words || []).forEach(w => {
+          if (w.en && w.en.length <= 1) {
+            tooShort.push({ grade, en: w.en, zh: w.zh });
+          }
+          if (w.en && w.en.length > 25) {
+            tooLong.push({ grade, en: w.en, zh: w.zh });
+          }
+        });
+      });
+
+      if (tooShort.length > 0) {
+        addResult(category, 'warn', `发现 ${tooShort.length} 个过短单词`, tooShort);
+      }
+      if (tooLong.length > 0) {
+        addResult(category, 'warn', `发现 ${tooLong.length} 个过长单词`, tooLong.slice(0, 5));
+      }
+      if (tooShort.length === 0 && tooLong.length === 0) {
+        addResult(category, 'pass', '单词长度正常');
+      }
+    }
+
+    // ==================== 检测8: 跨年级重复 ====================
+    function testCrossGradeDuplicates() {
+      const category = "跨年级重复";
+      const allWords = getAllWords();
+      const enMap = {};
+      const crossDuplicates = [];
+
+      allWords.forEach(w => {
+        const enLower = (w.en || '').toLowerCase().trim();
+        if (enLower) {
+          if (!enMap[enLower]) enMap[enLower] = [];
+          enMap[enLower].push({ grade: w.grade, zh: w.zh });
+        }
+      });
+
+      Object.entries(enMap).forEach(([en, items]) => {
+        const grades = [...new Set(items.map(i => i.grade))];
+        if (grades.length > 1) {
+          crossDuplicates.push({ en, grades, zhList: items.map(i => `${i.grade}: ${i.zh}`) });
+        }
+      });
+
+      if (crossDuplicates.length > 0) {
+        addResult(category, 'info', `发现 ${crossDuplicates.length} 个单词在多个年级出现（正常现象）`, crossDuplicates.slice(0, 5));
+      } else {
+        addResult(category, 'pass', '无跨年级重复');
+      }
+    }
+
+    // ==================== 检测9: 词库大小统计 ====================
+    function testGradeStats() {
+      const category = "词库统计";
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        const words = list.words || [];
+        const withPos = words.filter(w => w.pos).length;
+        const withNotes = words.filter(w => w.notes).length;
+        addResult(category, 'info', `${grade}: ${words.length}词, ${withPos}有词性, ${withNotes}有备注`);
+      });
+    }
+
+    // ==================== 检测10: 选项干扰项质量 ====================
+    function testDistractorQuality() {
+      const category = "干扰项质量";
+      const issues = [];
+
+      Object.entries(stageLists).forEach(([grade, list]) => {
+        const words = list.words || [];
+        if (words.length < 10) return;
+
+        // 检查是否有足够的相似词作为干扰项
+        const shortWords = words.filter(w => w.en && w.en.length <= 3);
+        const longWords = words.filter(w => w.en && w.en.length >= 8);
+
+        if (shortWords.length < 3 && words.length > 20) {
+          issues.push({ grade, issue: `短词(≤3字母)仅${shortWords.length}个，干扰项可能不够相似` });
+        }
+      });
+
+      if (issues.length > 0) {
+        addResult(category, 'warn', '部分词库干扰项质量可能受影响', issues);
+      } else {
+        addResult(category, 'pass', '干扰项质量良好');
+      }
+    }
+
+    // 运行所有检测
+    testDataIntegrity();
+    testDuplicateIds();
+    testDuplicateEnglish();
+    testDuplicateChinese();
+    testInsufficientChoices();
+    testTranslationQuality();
+    testWordLength();
+    testCrossGradeDuplicates();
+    testGradeStats();
+    testDistractorQuality();
+
+    // ==================== 渲染结果 ====================
+    const container = document.getElementById('results');
+    const categories = [...new Set(results.map(r => r.category))];
+
+    let passCount = 0, warnCount = 0, failCount = 0, infoCount = 0;
+
+    categories.forEach(cat => {
+      const section = document.createElement('div');
+      section.className = 'section';
+      section.innerHTML = `<h2>${cat}</h2>`;
+
+      const catResults = results.filter(r => r.category === cat);
+      catResults.forEach(r => {
+        const div = document.createElement('div');
+        div.className = r.level;
+
+        let icon = '';
+        if (r.level === 'pass') { icon = '✅'; passCount++; }
+        else if (r.level === 'warn') { icon = '⚠️'; warnCount++; }
+        else if (r.level === 'fail') { icon = '❌'; failCount++; }
+        else if (r.level === 'info') { icon = 'ℹ️'; infoCount++; }
+
+        let html = `${icon} ${r.message}`;
+        if (r.details && r.details.length > 0) {
+          html += '<ul>' + r.details.map(d => {
+            if (typeof d === 'string') return `<li>${d}</li>`;
+            return `<li>${JSON.stringify(d)}</li>`;
+          }).join('') + '</ul>';
+        }
+        div.innerHTML = html;
+        section.appendChild(div);
+      });
+
+      container.appendChild(section);
+    });
+
+    // 总结
+    const summary = document.createElement('div');
+    summary.className = 'summary';
+    summary.innerHTML = `
+      <h2>📊 检测总结</h2>
+      <p>✅ 通过: ${passCount} | ⚠️ 警告: ${warnCount} | ❌ 失败: ${failCount} | ℹ️ 信息: ${infoCount}</p>
+      ${failCount > 0 ? '<p style="color:red"><strong>发现严重问题，请及时修复！</strong></p>' : ''}
+      ${warnCount > 0 && failCount === 0 ? '<p style="color:orange"><strong>发现警告，建议优化。</strong></p>' : ''}
+      ${failCount === 0 && warnCount === 0 ? '<p style="color:green"><strong>所有检测通过！</strong></p>' : ''}
+    `;
+    container.appendChild(summary);
+  </script>
+</body>
+</html>

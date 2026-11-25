@@ -95,15 +95,20 @@
       state.deferred = [];
     } else {
       const requestedSize = Math.max(1, Number(sizeValue) || 1);
+      const targetSize = Math.min(requestedSize, ids.length);
       // 优先从 remaining 中取，不足时再从 deferred 中取
       const batchIds = [];
-      while (batchIds.length < requestedSize) {
+      while (batchIds.length < targetSize) {
         if (state.remaining.length) {
           batchIds.push(state.remaining.shift());
         } else if (state.deferred.length) {
           batchIds.push(state.deferred.shift());
         } else {
-          break;
+          // 一轮末尾不足所选题量时，立即开启下一轮补足；同一批内不重复。
+          state.cycle += 1;
+          const selected = new Set(batchIds);
+          state.remaining = shuffleIds(ids, random).filter((id) => !selected.has(id));
+          if (!state.remaining.length) break;
         }
       }
       batch = batchIds;

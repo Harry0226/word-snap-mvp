@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试重复选项</title>
+  <style>
+    body { font-family: monospace; padding: 20px; }
+    .pass { color: green; }
+    .fail { color: red; }
+    .summary { margin-top: 20px; padding: 10px; background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <h1>重复选项检测测试</h1>
+  <div id="results"></div>
+  <div id="summary" class="summary"></div>
+
+  <!-- 加载词库数据 -->
+  <script src="../word-data/builtin-manifest.js"></script>
+  <script src="../word-data/builtin-word-lists.js"></script>
+  <script src="../word-data/stages/grade7-exam.js"></script>
+  <script src="../word-data/stages/grade7-inclass.js"></script>
+  <script src="../word-data/stages/grade8-exam.js"></script>
+  <script src="../word-data/stages/grade8-inclass.js"></script>
+  <script src="../word-data/stages/grade9-exam.js"></script>
+  <script src="../word-data/stages/grade9-inclass.js"></script>
+  <script src="../word-data/stages/grade10-exam.js"></script>
+  <script src="../word-data/stages/grade10-inclass.js"></script>
+  <script src="../word-data/stages/grade11-exam.js"></script>
+  <script src="../word-data/stages/grade11-inclass.js"></script>
+  <script src="../word-data/stages/grade12-inclass.js"></script>
+
+  <script>
+    // 模拟 app.js 中的函数
+    function normalizeDisplayedChoiceText(value) {
+      return String(value || "").replace(/\s+/g, " ").trim();
+    }
+
+    function choiceText(choice, mode) {
+      if (choice?.text !== undefined) return choice.text;
+      return mode === "zhToEnChoice" ? choice.en : choice.zh;
+    }
+
+    function choiceDisplayKey(choice, mode) {
+      return normalizeDisplayedChoiceText(choiceText(choice, mode));
+    }
+
+    function isUsableDistractor(candidate, answer, mode, usedDisplayKeys) {
+      if (!candidate || candidate.id === answer.id || !candidate.en || !candidate.zh) return false;
+      const candidateDisplayKey = choiceDisplayKey(candidate, mode);
+      const answerDisplayKey = choiceDisplayKey(answer, mode);
+      if (!candidateDisplayKey || candidateDisplayKey === answerDisplayKey || usedDisplayKeys.has(candidateDisplayKey)) return false;
+      return true;
+    }
+
+    function hashString(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return hash;
+    }
+
+    function shuffle(array) {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.abs(hashString(`${i}-${Date.now()}`)) % (i + 1);
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    function uniqueById(arr) {
+      const seen = new Set();
+      return arr.filter(item => {
+        if (seen.has(item.id)) return false;
+        seen.add(item.id);
+        return true;
+      });
+    }
+
+    function normalizeChoiceText(value) {
+      return String(value || "").toLowerCase().replace(/[^a-z]/g, "");
+    }
+
+    function sameInitial(candidate, answer) {
+      return normalizeChoiceText(candidate.en)[0] === normalizeChoiceText(answer.en)[0];
+    }
+
+    function similarWordShape(candidate, answer) {
+      const candidateText = normalizeChoiceText(candidate.en);
+      const answerText = normalizeChoiceText(answer.en);
+      if (!candidateText || !answerText) return false;
+      const lengthClose = Math.abs(candidateText.length - answerText.length) <= 2;
+      const prefixClose = candidateText.slice(0, 3) === answerText.slice(0, 3) || candidateText.slice(0, 2) === answerText.slice(0, 2);
+      const suffixClose = candidateText.slice(-4) === answerText.slice(-4) || candidateText.slice(-3) === answerText.slice(-3);
+      const familyClose = ["ing", "ed", "er", "ly", "tion", "sion", "ment", "able", "ible", "ive", "al", "ous"].some((ending) => {
+        return candidateText.endsWith(ending) && answerText.endsWith(ending);
+      });
+      return (lengthClose && (prefixClose || suffixClose)) || familyClose;
+    }
+
+    function scoreDistractorChoice(candidate, answer) {
+      if (!candidate?.en || !answer?.en) return 0;
+      let score = 0;
+      if (sameInitial(candidate, answer)) score += 6;
+      if (similarWordShape(candidate, answer)) score += 5;
+      const lengthGap = Math.abs(normalizeChoiceText(candidate.en).length - normalizeChoiceText(answer.en).length);
+      if (lengthGap <= 1) score += 2;
+      if (candidate.pos && answer.pos && candidate.pos === answer.pos) score += 1;
+      return score;
+    }
+
+    function selectRankedDistractors(answer, count, mode, pool, externalUsedKeys = null) {
+      const usedDisplayKeys = externalUsedKeys || new Set([choiceDisplayKey(answer, mode)]);
+      if (!externalUsedKeys) {
+        usedDisplayKeys.add(choiceDisplayKey(answer, mode));
+      }
+      const ranked = pool
+        .filter((candidate) => candidate?.id !== answer.id && candidate?.zh)
+        .map((candidate) => ({ candidate, score: scoreDistractorChoice(candidate, answer) }))
+        .sort((a, b) => {
+          return b.score - a.score || hashString(`${answer.id}:${a.candidate.id}`) - hashString(`${answer.id}:${b.candidate.id}`);
+        });
+      const preferred = ranked.filter((item) => item.score > 0).map((item) => item.candidate);
+      const fallback = ranked.map((item) => item.candidate);
+      const distractors = [];
+
+      uniqueById([...shuffle(preferred.slice(0, 24)), ...fallback]).forEach((candidate) => {
+        if (distractors.length >= count) return;
+        if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+        usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
+        distractors.push(candidate);
+      });
+
+      return distractors;
+    }
+
+    function buildChoiceSet(answer, distractors, mode) {
+      const choices = [answer];
+      const usedDisplayKeys = new Set([choiceDisplayKey(answer, mode)]);
+      distractors.forEach((candidate) => {
+        if (!isUsableDistractor(candidate, answer, mode, usedDisplayKeys)) return;
+        usedDisplayKeys.add(choiceDisplayKey(candidate, mode));
+        choices.push(candidate);
+      });
+      return choices;
+    }
+
+    function getStructuredDistractors(answer, count, mode) {
+      const gradePool = getGradeWordPool(answer.grade);
+      const fallbackPool = getEligibleWords();
+      const sharedUsedKeys = new Set([choiceDisplayKey(answer, mode)]);
+      const primary = selectRankedDistractors(answer, count, mode, gradePool.length ? gradePool : fallbackPool, sharedUsedKeys);
+      if (primary.length >= count) return primary;
+      const extra = selectRankedDistractors(answer, count, mode, fallbackPool, sharedUsedKeys);
+      return [...primary, ...extra].slice(0, count);
+    }
+
+    function getGradeWordPool(grade) {
+      const stageLists = window.WORD_SNAP_STAGE_LISTS || {};
+      const gradeWords = [];
+      Object.values(stageLists).forEach(list => {
+        if (list.grade === grade || list.goals?.includes(grade)) {
+          gradeWords.push(...(list.words || []));
+        }
+      });
+      return gradeWords;
+    }
+
+    function getEligibleWords() {
+      const stageLists = window.WORD_SNAP_STAGE_LISTS || {};
+      const allWords = [];
+      Object.values(stageLists).forEach(list => {
+        allWords.push(...(list.words || []));
+      });
+      return allWords;
+    }
+
+    // 测试函数
+    function testGradeForDuplicates(grade, mode, testCount = 100) {
+      const pool = getGradeWordPool(grade);
+      if (pool.length === 0) return { grade, mode, pass: true, message: '无词库数据' };
+
+      const failures = [];
+      const wordsToTest = shuffle(pool).slice(0, Math.min(testCount, pool.length));
+
+      wordsToTest.forEach(word => {
+        const distractors = getStructuredDistractors(word, 3, mode);
+        const choices = buildChoiceSet(word, distractors, mode);
+        const displayKeys = choices.map(c => choiceDisplayKey(c, mode));
+        const uniqueKeys = new Set(displayKeys);
+
+        if (displayKeys.length !== uniqueKeys.size) {
+          failures.push({
+            word: word.en,
+            zh: word.zh,
+            choices: displayKeys,
+            duplicates: displayKeys.filter((item, index) => displayKeys.indexOf(item) !== index)
+          });
+        }
+      });
+
+      return {
+        grade,
+        mode,
+        pass: failures.length === 0,
+        failures,
+        totalTested: wordsToTest.length
+      };
+    }
+
+    // 运行测试
+    const results = [];
+    const grades = ['初一考试词汇', '初一课内词汇', '初二考试词汇', '初二课内词汇', '初三考试词汇', '初三课内词汇',
+                    '高一考试词汇', '高一课内词汇', '高二考试词汇', '高二课内词汇', '高三课内词汇'];
+    const modes = ['enToZhChoice', 'zhToEnChoice'];
+
+    grades.forEach(grade => {
+      modes.forEach(mode => {
+        results.push(testGradeForDuplicates(grade, mode, 50));
+      });
+    });
+
+    // 显示结果
+    const resultsDiv = document.getElementById('results');
+    let passCount = 0;
+    let failCount = 0;
+
+    results.forEach(result => {
+      const div = document.createElement('div');
+      if (result.pass) {
+        div.className = 'pass';
+        div.textContent = `✓ ${result.grade} (${result.mode}): 通过 - 测试了 ${result.totalTested || 0} 个单词`;
+        passCount++;
+      } else {
+        div.className = 'fail';
+        div.innerHTML = `✗ ${result.grade} (${result.mode}): 发现 ${result.failures.length} 个重复选项<br>` +
+          result.failures.slice(0, 3).map(f =>
+            `  - "${f.word}" (${f.zh}): ${f.choices.join(' | ')} [重复: ${f.duplicates.join(', ')}]`
+          ).join('<br>');
+        failCount++;
+      }
+      resultsDiv.appendChild(div);
+    });
+
+    // 显示总结
+    const summaryDiv = document.getElementById('summary');
+    if (failCount === 0) {
+      summaryDiv.innerHTML = `<strong style="color: green;">✓ 所有测试通过！共 ${passCount} 项测试无重复选项。</strong>`;
+    } else {
+      summaryDiv.innerHTML = `<strong style="color: red;">✗ 发现问题！${failCount} 项测试失败，${passCount} 项通过。</strong>`;
+    }
+  </script>
+</body>
+</html>
